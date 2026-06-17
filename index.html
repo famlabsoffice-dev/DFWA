@@ -247,6 +247,8 @@
             seed = customSeed || Math.floor(Math.random() * 1000000);
             gameState.activeQuestions = shuffleArray([...t.questions]);
             gameState.isJackAttackMode = false;
+            gameState.challengeTarget = gameState.challengeTarget || 0;
+            gameState.challengeOpponent = gameState.challengeOpponent || "";
             document.getElementById('start-screen').style.display = 'none'; document.getElementById('game-screen').style.display = 'block';
             gameState.playerName = document.getElementById('player-name').value || "ANON";
             gameState.currentQuestionIndex = 0;
@@ -257,11 +259,22 @@
             localStorage.setItem('dfwa_daily', new Date().toISOString().slice(0,10));
             startGame(parseInt(new Date().toISOString().slice(0,10).replace(/-/g, "")));
         }
-        function showChallengeInput() { document.getElementById('challenge-overlay').style.display = 'block'; }
+        function showChallengeInput() { 
+            const code = btoa(JSON.stringify({ seed: Math.floor(Math.random() * 1000000), targetScore: 0 }));
+            alert("TEILE DIESEN CODE FÜR EINE CHALLENGE:\n" + code);
+            document.getElementById('challenge-overlay').style.display = 'block'; 
+        }
         function toggleChallenge(show) { document.getElementById('challenge-overlay').style.display = show ? 'block' : 'none'; }
         function importChallenge() {
             const code = document.getElementById('challenge-input').value;
-            try { const data = JSON.parse(atob(code)); startGame(data.seed); toggleChallenge(false); } catch(e) { alert("Ungültiger Code!"); }
+            try { 
+                const data = JSON.parse(atob(code)); 
+                gameState.challengeTarget = data.score || 0;
+                gameState.challengeOpponent = data.name || "Gegner";
+                startGame(data.seed); 
+                toggleChallenge(false); 
+                showAckDialog("DUELL GEGEN " + gameState.challengeOpponent + "! ZIEL: $" + gameState.challengeTarget);
+            } catch(e) { alert("Ungültiger Code!"); }
         }
         function showQuestion() {
             updateDystopiaUI(); document.getElementById('question-container').classList.remove('mirror', 'upside-down', 'blackout');
@@ -347,8 +360,19 @@
         }
         function endJackAttack() { endGame(); }
         function endGame() {
-            const code = btoa(JSON.stringify({ seed: seed, score: gameState.score }));
-            document.getElementById('question-container').innerHTML = `<h1>GAME OVER</h1><h2>SCORE: $${gameState.score}</h2><p class="small-text">${t.ui.code}${code}</p><button onclick="location.reload()">NEUSTART</button>`;
+            const code = btoa(JSON.stringify({ seed: seed, score: gameState.score, name: gameState.playerName }));
+            let resultText = `<h1>GAME OVER</h1><h2>SCORE: $${gameState.score}</h2>`;
+            
+            if (gameState.challengeTarget) {
+                const diff = gameState.score - gameState.challengeTarget;
+                if (diff > 0) {
+                    resultText += `<h3 style="color:var(--neon-green)">SIEG! +$${diff} besser als ${gameState.challengeOpponent}</h3>`;
+                } else {
+                    resultText += `<h3 style="color:var(--neon-red)">NIEDERLAGE! $${Math.abs(diff)} schlechter als ${gameState.challengeOpponent}</h3>`;
+                }
+            }
+
+            document.getElementById('question-container').innerHTML = resultText + `<p class="small-text">${t.ui.code}${code}</p><button onclick="location.reload()">NEUSTART</button>`;
         }
         function toggleMarket(show) {
             if (show) {
