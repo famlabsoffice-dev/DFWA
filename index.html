@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="DFWA">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="DFWA - Don't fAck with Ack. Das ultimative Dystopie-Quiz.">
+    <meta name="author" content="DFWA Team">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="ACK ATTACK">
+    <meta property="og:description" content="Kämpfe gegen das System.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon (Grünes 32x32 Quadrat) -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH6AYREh0OunZ7VAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmhuAAAAL0lEQVRYw+3OIQEAAAgDsOf+nS2CD8Y6SJKuSrv9AAAAAAAAAAAAAAAAAAAAAADAWw0mXwAB867Y8AAAAABJRU5ErkJggg==">
+
+    <link rel="manifest" href='./manifest.json'>
+    <title>DFWA - Dont fAck with Ack</title>
+    <style>
+        :root { --neon-green: #39ff14; --glow: 0 0 8px rgba(57, 255, 20, 0.6); --bg-dark: #000; --box-bg: rgba(20, 20, 20, 0.9); --neon-red: #ff0000; --neon-yellow: #ffff00; --current-neon: var(--neon-green); }
+        @keyframes shake { 0%, 100% { transform: translate(0,0); } 10%, 30%, 50%, 70%, 90% { transform: translate(-5px,0); } 20%, 40%, 60%, 80% { transform: translate(5px,0); } }
+        @keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } 80% { opacity: 0.9; } }
+        @keyframes glitch { 0% { clip: rect(44px, 9999px, 56px, 0); } 20% { clip: rect(12px, 9999px, 30px, 0); } 100% { clip: rect(33px, 9999px, 42px, 0); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        @keyframes jackAttackPulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 10px var(--current-neon); } 50% { transform: scale(1.1); box-shadow: 0 0 30px var(--current-neon); } }
+        .shake { animation: shake 0.5s; } .flicker { animation: flicker 0.1s infinite; }
+        .flash-red { background-color: rgba(255, 0, 0, 0.3) !important; } .mirror { transform: scaleX(-1); } .upside-down { transform: rotate(180deg); } .blackout { visibility: hidden !important; }
+        .pulse { animation: pulse 0.6s; } .jack-attack-mode { animation: jackAttackPulse 0.5s infinite !important; }
+        body { font-family: 'Courier New', Courier, monospace; background-color: var(--bg-dark); color: var(--current-neon); text-shadow: var(--glow); margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; text-align: center; overflow-x: hidden; touch-action: manipulation; transition: background-color 0.3s, color 0.3s; }
+        #game-container { width: 100%; max-width: 600px; }
+        h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
+        #debt-register { font-size: 0.8rem; margin-bottom: 10px; opacity: 0.8; border-bottom: 1px solid var(--current-neon); }
+        input { font-family: inherit; font-size: 1rem; padding: 10px; margin: 5px 0; width: 100%; border: 2px solid var(--current-neon); background: var(--bg-dark); color: var(--current-neon); outline: none; box-sizing: border-box; }
+        button { font-family: inherit; font-size: 1.1rem; font-weight: bold; padding: 12px; margin: 5px 0; width: 100%; border: 3px solid var(--current-neon); background: var(--bg-dark); color: var(--current-neon); cursor: pointer; text-transform: uppercase; transition: all 0.2s; box-sizing: border-box; }
+        button:active { background: var(--current-neon); color: var(--bg-dark); }
+        button:hover:not(:disabled) { transform: scale(1.02); box-shadow: 0 0 15px var(--current-neon); }
+        #ack-dialog { min-height: 4em; border: 2px solid var(--current-neon); padding: 10px; margin-bottom: 15px; background: var(--box-bg); font-weight: bold; display: flex; align-items: center; justify-content: center; }
+        #timer-bar-container { width: 100%; height: 8px; border: 1px solid var(--current-neon); margin-bottom: 15px; display: none; }
+        #timer-bar { width: 100%; height: 100%; background: var(--current-neon); }
+        .score { font-size: 1.5rem; margin-top: 20px; border-top: 2px solid var(--current-neon); padding-top: 10px; }
+        #market-overlay, #challenge-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 100; padding: 20px; box-sizing: border-box; overflow-y: auto; }
+        .market-item { border: 2px solid var(--neon-yellow); padding: 10px; margin: 10px 0; background: rgba(255, 255, 0, 0.05); text-align: left; }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="debt-register"></div>
+        <div id="start-screen">
+            <h1>DFWA</h1>
+            <h3>Don't fAck with Ack</h3>
+            <input type="text" id="player-name" placeholder="IDENTITÄT...">
+            <button onclick="startGame()">INITIALIZE EPISODE</button>
+            <button onclick="startDaily()">DAILY MATRIX</button>
+            <button onclick="showChallengeInput()">CHALLENGE CODE</button>
+        </div>
+        <div id="game-screen" style="display:none;">
+            <div id="timer-bar-container"><div id="timer-bar"></div></div>
+            <div id="ack-dialog"></div>
+            <div id="question-container">
+                <h2 id="question-text"></h2>
+                <div id="options-container"></div>
+                <button onclick="bribeAck()" id="bribe-btn">ACK BESTECHEN ($2000)</button>
+                <button onclick="toggleMarket(true)">SCHWARZMARKT</button>
+            </div>
+            <div id="score-display" class="score">SCORE: $0</div>
+        </div>
+    </div>
+    <div id="market-overlay">
+        <h1>SCHWARZMARKT</h1>
+        <div id="market-items"></div>
+        <button onclick="toggleMarket(false)">ZURÜCK</button>
+    </div>
+    <div id="challenge-overlay"><h1>CHALLENGE</h1><input type="text" id="challenge-input" placeholder="CODE HIER..."><button onclick="importChallenge()">LOAD DUEL</button><button onclick="toggleChallenge(false)">ZURÜCK</button></div>
+    <script>
+        // Registrierung des Service Workers für PWA (absoluter Pfad auf './')
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').then(reg => {
+                    console.log('SW registered:', reg);
+                }).catch(err => {
+                    console.log('SW failed:', err);
+                });
+            });
+        }
+
+        const QUESTIONS = [
+            { q: "Was ist das Ziel des Systems?", a: ["Kontrolle", "Freiheit", "Chaos", "Liebe"], c: 0 },
+            { q: "Wer ist Ack?", a: ["Der Schöpfer", "Ein Fehler", "Dein Boss", "Niemand"], c: 1 },
+            { q: "Was kostet die Wahrheit?", a: ["Alles", "$2000", "Nichts", "Ein Lächeln"], c: 0 }
+        ];
+
+        let score = 0;
+        let currentQuestion = 0;
+
+        function startGame() {
+            const name = document.getElementById('player-name').value;
+            if (!name) return alert("Identität erforderlich.");
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('game-screen').style.display = 'block';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = QUESTIONS[currentQuestion];
+            document.getElementById('question-text').innerText = q.q;
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+            q.a.forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(i);
+                container.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(idx) {
+            if (idx === QUESTIONS[currentQuestion].c) {
+                score += 1000;
+                alert("Korrekt. Das System lächelt.");
+            } else {
+                score -= 500;
+                alert("Fehler. Ack ist enttäuscht.");
+            }
+            updateScore();
+            currentQuestion = (currentQuestion + 1) % QUESTIONS.length;
+            showQuestion();
+        }
+
+        function updateScore() {
+            document.getElementById('score-display').innerText = `SCORE: $${score}`;
+        }
+
+        function bribeAck() {
+            if (score >= 2000) {
+                score -= 2000;
+                updateScore();
+                alert("Ack akzeptiert die Bestechung.");
+            } else {
+                alert("Zu arm für Korruption.");
+            }
+        }
+
+        function toggleMarket(show) {
+            document.getElementById('market-overlay').style.display = show ? 'block' : 'none';
+        }
+
+        function showChallengeInput() {
+            document.getElementById('challenge-overlay').style.display = 'block';
+        }
+
+        function toggleChallenge(show) {
+            document.getElementById('challenge-overlay').style.display = show ? 'block' : 'none';
+        }
+
+        function importChallenge() {
+            const code = document.getElementById('challenge-input').value;
+            alert(`Challenge ${code} geladen.`);
+            toggleChallenge(false);
+        }
+
+        console.log("DFWA Initialized");
+    </script>
+</body>
+</html>
