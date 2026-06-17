@@ -25,30 +25,53 @@
         @keyframes shake { 0%, 100% { transform: translate(0,0); } 10%, 30%, 50%, 70%, 90% { transform: translate(-5px,0); } 20%, 40%, 60%, 80% { transform: translate(5px,0); } }
         @keyframes flicker { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } 80% { opacity: 0.9; } }
         @keyframes glitch { 0% { clip: rect(44px, 9999px, 56px, 0); } 20% { clip: rect(12px, 9999px, 30px, 0); } 100% { clip: rect(33px, 9999px, 42px, 0); } }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        @keyframes slideInDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideInUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes scaleIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         @keyframes jackAttackPulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 10px var(--current-neon); } 50% { transform: scale(1.1); box-shadow: 0 0 30px var(--current-neon); } }
-        .shake { animation: shake 0.5s; } .flicker { animation: flicker 0.1s infinite; }
+        .shake { animation: shake 0.5s; } .flicker { animation: flicker 0.1s infinite; } .glitch-effect { animation: glitch 0.2s infinite; color: var(--neon-red) !important; }
         .flash-red { background-color: rgba(255, 0, 0, 0.3) !important; } .mirror { transform: scaleX(-1); } .upside-down { transform: rotate(180deg); } .blackout { visibility: hidden !important; }
-        .pulse { animation: pulse 0.6s; } .jack-attack-mode { animation: jackAttackPulse 0.5s infinite !important; }
+        .slide-in-down { animation: slideInDown 0.4s ease-out; } .slide-in-up { animation: slideInUp 0.4s ease-out; } .scale-in { animation: scaleIn 0.3s ease-out; } .pulse { animation: pulse 0.6s; }
+        .jack-attack-mode { animation: jackAttackPulse 0.5s infinite !important; }
         body { font-family: 'Courier New', Courier, monospace; background-color: var(--bg-dark); color: var(--current-neon); text-shadow: var(--glow); margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; text-align: center; overflow-x: hidden; touch-action: manipulation; transition: background-color 0.3s, color 0.3s; }
         #game-container { width: 100%; max-width: 600px; }
         h1, h2, h3 { text-transform: uppercase; letter-spacing: 2px; }
         #debt-register { font-size: 0.8rem; margin-bottom: 10px; opacity: 0.8; border-bottom: 1px solid var(--current-neon); }
+        #achievements { display: flex; justify-content: center; gap: 5px; margin-bottom: 15px; flex-wrap: wrap; }
+        .badge { font-size: 0.6rem; border: 1px solid var(--current-neon); padding: 2px 4px; opacity: 0.3; } .badge.unlocked { opacity: 1; background: rgba(57, 255, 20, 0.1); }
         input { font-family: inherit; font-size: 1rem; padding: 10px; margin: 5px 0; width: 100%; border: 2px solid var(--current-neon); background: var(--bg-dark); color: var(--current-neon); outline: none; box-sizing: border-box; }
         button { font-family: inherit; font-size: 1.1rem; font-weight: bold; padding: 12px; margin: 5px 0; width: 100%; border: 3px solid var(--current-neon); background: var(--bg-dark); color: var(--current-neon); cursor: pointer; text-transform: uppercase; transition: all 0.2s; box-sizing: border-box; }
-        button:active { background: var(--current-neon); color: var(--bg-dark); }
+        button:active { background: var(--current-neon); color: var(--bg-dark); } button:disabled { opacity: 0.3; }
         button:hover:not(:disabled) { transform: scale(1.02); box-shadow: 0 0 15px var(--current-neon); }
         #ack-dialog { min-height: 4em; border: 2px solid var(--current-neon); padding: 10px; margin-bottom: 15px; background: var(--box-bg); font-weight: bold; display: flex; align-items: center; justify-content: center; }
         #timer-bar-container { width: 100%; height: 8px; border: 1px solid var(--current-neon); margin-bottom: 15px; display: none; }
         #timer-bar { width: 100%; height: 100%; background: var(--current-neon); }
         .score { font-size: 1.5rem; margin-top: 20px; border-top: 2px solid var(--current-neon); padding-top: 10px; }
         #market-overlay, #challenge-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 100; padding: 20px; box-sizing: border-box; overflow-y: auto; }
+        .small-text { font-size: 0.7rem; margin-top: 10px; }
+        #question-text { animation: slideInDown 0.4s ease-out; }
+        #options-container button { animation: slideInUp 0.4s ease-out; }
+        #options-container button:nth-child(1) { animation-delay: 0.1s; }
+        #options-container button:nth-child(2) { animation-delay: 0.2s; }
+        #options-container button:nth-child(3) { animation-delay: 0.3s; }
+        #options-container button:nth-child(4) { animation-delay: 0.4s; }
+        .jack-attack-container { border: 3px solid var(--neon-yellow); padding: 20px; margin: 20px 0; background: rgba(255, 255, 0, 0.05); }
+        .jack-attack-term { font-size: 2rem; font-weight: bold; margin: 15px 0; animation: pulse 0.8s infinite; }
+        .jack-attack-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .jack-attack-options button { font-size: 0.9rem; padding: 15px; }
         .market-item { border: 2px solid var(--neon-yellow); padding: 10px; margin: 10px 0; background: rgba(255, 255, 0, 0.05); text-align: left; }
+        .market-item-title { font-weight: bold; color: var(--neon-yellow); }
+        .market-item-desc { font-size: 0.8rem; margin: 5px 0; opacity: 0.8; }
+        .market-item-price { color: var(--neon-green); font-weight: bold; margin: 5px 0; }
+        .market-item button { font-size: 0.9rem; padding: 8px; margin-top: 5px; }
     </style>
 </head>
 <body>
     <div id="game-container">
         <div id="debt-register"></div>
+        <div id="achievements"></div>
         <div id="start-screen">
             <h1>DFWA</h1>
             <h3>Don't fAck with Ack</h3>
@@ -60,11 +83,13 @@
         <div id="game-screen" style="display:none;">
             <div id="timer-bar-container"><div id="timer-bar"></div></div>
             <div id="ack-dialog"></div>
+            <div id="betting-screen" style="display:none;"><h2 id="category-text"></h2><button onclick="doubleDown()">DOUBLE DOWN!</button></div>
             <div id="question-container">
                 <h2 id="question-text"></h2>
                 <div id="options-container"></div>
-                <button onclick="bribeAck()" id="bribe-btn">ACK BESTECHEN ($2000)</button>
-                <button onclick="toggleMarket(true)">SCHWARZMARKT</button>
+                <button onclick="bribeAck()" id="bribe-btn" style="font-size:0.8rem;">ACK BESTECHEN ($2000)</button>
+                <button onclick="gamble()" id="gamble-btn" style="display:none; color:var(--neon-yellow); border-color:var(--neon-yellow);"></button>
+                <button onclick="toggleMarket(true)" style="font-size:0.8rem;">SCHWARZMARKT</button>
             </div>
             <div id="score-display" class="score">SCORE: $0</div>
         </div>
@@ -76,6 +101,304 @@
     </div>
     <div id="challenge-overlay"><h1>CHALLENGE</h1><input type="text" id="challenge-input" placeholder="CODE HIER..."><button onclick="importChallenge()">LOAD DUEL</button><button onclick="toggleChallenge(false)">ZURÜCK</button></div>
     <script>
+        // Audio Engine
+        let audioCtx = null;
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+        function playTone(freq, type, duration, vol = 0.1) {
+            if (!audioCtx) initAudio();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        }
+        const sounds = {
+            correct: () => { playTone(880, 'square', 0.1); playTone(1100, 'square', 0.2); },
+            wrong: () => { playTone(150, 'sawtooth', 0.3, 0.2); playTone(100, 'sawtooth', 0.4, 0.2); },
+            click: () => playTone(440, 'sine', 0.05, 0.05),
+            start: () => { playTone(220, 'square', 0.2); playTone(440, 'square', 0.2); }
+        };
+
+        let seed = 12345; function seededRandom() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+        function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } return array; }
+        
+        const translations = {
+            de: {
+                ui: { start: "INITIALISIERE EPISODE", score: "SCORE", identityReq: "IDENTITÄT ERFORDERLICH!", attackTopic: "ACK HASST DICH", extortion: "ERPRESSUNG!", pay: "Zahlen", refuse: "Ablehnen", now: "JETZT!", override: "SYSTEM OVERRIDE", restart: "NEUSTART", debtLabel: "EWIGE KREIDE", gamble: "ZOCKEN!", bribe: "Ack bestechen ($2000)", market: "SCHWARZMARKT", timerHack: "Timer-Hack ($1500)", filter: "Ack-Filter ($3000)", bossTitle: "BOSS-ULTIMATUM!", bossQuest: "Bist du bereit?", double: "DOUBLE DOWN!", cat: "KATEGORIE: ", daily: "TÄGLICHE MATRIX", sabotage: "SABOTAGE PROTOKOLL!", mirror: "SPIEGELMODUS", swap: "BUTTON SWAP", blackout: "BLACKOUT", code: "CHALLENGE CODE: ", jackAttack: "JACK ATTACK!", jackAttackDesc: "SCHNELL! Ordne die Begriffe zu!" },
+                badges: { cow: "Feiger Hund", king: "Casino-König", debt: "Schuldner", sys: "Overload" },
+                ack: {
+                    begruessung: ["Hallo [NAME]. Fang an.", "Ernsthaft, [NAME]?", "Beeilung, [NAME]!"],
+                    richtig: ["Glückstreffer! Sogar ein blindes Huhn findet mal ein Korn.", "Wow, dein Gehirn hat kurzzeitig gezündet. Beeindruckend.", "Richtig. Hat dir das dein Goldfisch vorgesagt?", "Korrekt! Hast du heimlich gegoogelt?", "Bravo! Du bist offiziell weniger dumm als ein Toaster.", "Ein Wunder! Die Evolution hat bei dir doch nicht ganz versagt.", "Richtig. Genieß den Moment, er wird nicht lange halten.", "Korrekt. Möchtest du jetzt einen Keks?"],
+                    falsch: ["Dumm? Oder einfach nur talentfrei?", "Das war ja mal gar nichts. Setzen, sechs!", "Mein Taschenrechner hat mehr Persönlichkeit und Intelligenz als du.", "Falsch! Hast du dein Gehirn heute im Bett gelassen?", "Autsch. Das hat beim Zuschauen wehgetan.", "Nö! Versuchst du eigentlich zu gewinnen oder ist das Kunst?", "Daneben! Du bist die menschliche Version eines 404-Fehlers.", "Falsch! Geh zurück in den Kindergarten.", "Unterirdisch. Einfach nur unterirdisch.", "Bist du sicher, dass du atmen und gleichzeitig denken kannst?", "Falsch! Dein Punktestand weint gerade.", "Setz dich wieder hin. Das war peinlich.", "Sogar meine Kaffeemaschine hätte das gewusst.", "War das dein Ernst? Ich hoffe nicht.", "Minuspunkt! Und ein fettes 'HÄ?' von mir."],
+                    final: { win: "Du hast mich bestohlen!", mid: "Kleingeld für Versager.", lose: "Pleite! HAHA!", debtRecord: "NEUER REKORD!", debtBetter: "Du wirst geizig!" },
+                    gambleWin: "SYSTEM MANIPULIERT!", gambleLose: "ALLES WEG! HAHA!", timeOut: "ZU LANGSAM!", bribeAck: "Feigling!", bossWin: "DANKESCHÖN... NICHT!", bossLose: "VERSAGER!", jackAttackWin: "MEISTERSCHAFT!", jackAttackLose: "KATASTROPHE!"
+                },
+                market: [
+                    { name: "ZEITVERLÄNGERUNG +10s", desc: "Bekomme 10 Sekunden extra pro Frage", price: 1500, effect: "timer" },
+                    { name: "ACK-FILTER", desc: "Blockiere Acks Beleidigungen für 3 Fragen", price: 3000, effect: "filter" },
+                    { name: "ZWEITE CHANCE", desc: "Bekomme eine falsche Antwort kostenlos", price: 2500, effect: "retry" },
+                    { name: "SCORE VERDOPPLUNG", desc: "Verdopple deine nächsten 5 Punkte", price: 5000, effect: "multiplier" },
+                    { name: "SABOTAGE STOPPER", desc: "Verhindere die nächste Sabotage", price: 2000, effect: "sabotage_block" },
+                    { name: "GLÜCKSSTEIN", desc: "50% Chance, falsche Antwort zu ignorieren", price: 3500, effect: "luck" }
+                ],
+                questions: [
+                    {"text": "Wenn die sieben Zwerge eine Boyband gründen würden, wer wäre derjenige, der ständig das Mikrofon vergisst?", "options": ["Schneewittchen", "Pimpel", "Schlafmütz", "Brummbär"], "correct": 2, "cat": "Märchen-Pop"},
+                    {"text": "Ein Toaster und eine Mikrowelle streiten über die Weltherrschaft. Wer gewinnt?", "options": ["Der Toaster", "Die Mikrowelle", "Der Kühlschrank", "Das WLAN-Passwort"], "correct": 2, "cat": "Küchen-Politik"},
+                    {"text": "Was passiert, wenn man ein Chamäleon auf ein kariertes Hemd setzt?", "options": ["Es explodiert", "Es bekommt Kopfschmerzen", "Es wird unsichtbar", "Es kauft sich eine passende Hose"], "correct": 1, "cat": "Biologie-Mode"},
+                    {"text": "Warum tragen Superhelden ihre Unterwäsche über der Hose?", "options": ["Belüftung", "Waschmaschine kaputt", "Um Ack zu ärgern", "Modisches Statement"], "correct": 3, "cat": "Helden-Style"},
+                    {"text": "Wenn ein Zombie eine Diät macht, was isst er dann?", "options": ["Light-Gehirne", "Vegetarier", "Nur die Ohren", "Vollkorn-Schienbeine"], "correct": 1, "cat": "Horror-Ernährung"},
+                    {"text": "Welcher Planet im Sonnensystem hat die beste Internetverbindung?", "options": ["Mars", "Jupiter", "Der, auf dem Ack nicht ist", "Die Erde"], "correct": 2, "cat": "Weltraum-Tech"},
+                    {"text": "Wenn Zeitreisen möglich wären, was würde Ack als Erstes tun?", "options": ["Dich am Gewinnen hindern", "Bitcoin kaufen", "Das Quiz löschen", "Einen Kaffee trinken"], "correct": 0, "cat": "Zeit-Paradoxon"},
+                    {"text": "Wie nennt man einen Bumerang, der nicht zurückkommt?", "options": ["Kaputt", "Stock", "Weg", "Frisbee"], "correct": 1, "cat": "Logik"},
+                    {"text": "Wenn Fische fliegen könnten, was wäre ihr größtes Problem?", "options": ["Vögel", "Höhenangst", "Trockene Schuppen", "Fluglotsen"], "correct": 3, "cat": "Naturwissenschaft"},
+                    {"text": "Was ist das Gegenteil von Fortschritt?", "options": ["Rückschritt", "Stillstand", "Ein Mittwoch", "Ack Attack"], "correct": 2, "cat": "Absurd"},
+                    {"text": "Ein Chamäleon betritt einen Spiegellabyrinth. Was sieht es?", "options": ["Sich selbst", "Nichts", "Alles", "Einen existenziellen Albtraum"], "correct": 3, "cat": "Absurd"},
+                    {"text": "Wenn Käse Augen hätte, würde es dann sehen oder riechen?", "options": ["Sehen", "Riechen", "Beides", "Weder noch - es würde schimmeln"], "correct": 3, "cat": "Absurd"},
+                    {"text": "Was macht ein Roboter, wenn er verliebt ist?", "options": ["Er rostet", "Er überhitzt", "Er schreibt Code", "Er sucht einen Techniker"], "correct": 2, "cat": "Sci-Fi"},
+                    {"text": "Wenn Spaghetti Beine hätte, würde sie dann tanzen oder laufen?", "options": ["Tanzen", "Laufen", "Beides gleichzeitig", "Weder noch - sie würde sich verwickeln"], "correct": 3, "cat": "Absurd"},
+                    {"text": "Ein Pirat, ein Ninja und ein Cowboy betreten eine Bar. Der Barkeeper sagt...", "options": ["Warum die lange Fresse?", "Das wird teuer", "Ihr seid alle raus!", "Willkommen zum Kostümfest"], "correct": 2, "cat": "Humor"},
+                    {"text": "Wie viele Psychologen braucht man, um eine Glühbirne zu wechseln?", "options": ["Einen", "Drei", "Keinen - die Glühbirne muss selbst wollen", "Alle - es ist eine Gruppentherapie"], "correct": 2, "cat": "Klassiker"},
+                    {"text": "Wenn ein Baum im Wald fällt und niemand ist da, macht er dann ein Geräusch oder einen Podcast?", "options": ["Ein Geräusch", "Einen Podcast", "Beides", "Das ist philosophisch"], "correct": 1, "cat": "Modern"},
+                    {"text": "Was ist das Gegenteil von 'Gegenteil'?", "options": ["Gleichheit", "Dasselbe", "Gegenteil", "Ack weiß es nicht"], "correct": 2, "cat": "Philosophie"},
+                    {"text": "Wenn Enten Hüte tragen, sind sie dann formell oder nur nass?", "options": ["Formell", "Nass", "Beides", "Weder noch"], "correct": 0, "cat": "Absurd"},
+                    {"text": "Was passiert, wenn man einen Pinguin in die Sahara schickt?", "options": ["Er wird braun", "Er schmilzt", "Er eröffnet eine Eisdiele", "Er beschwert sich bei Ack"], "correct": 2, "cat": "Absurd"}
+                ]
+            },
+            en: {
+                ui: { start: "INITIALIZE EPISODE", score: "SCORE", identityReq: "IDENTITY REQUIRED!", attackTopic: "ACK HATES YOU", extortion: "EXTORTION!", pay: "Pay", refuse: "Refuse", now: "NOW!", override: "SYSTEM OVERRIDE", restart: "RESTART", debtLabel: "DEBT REGISTER", gamble: "GAMBLE!", bribe: "Bribe Ack ($2000)", market: "BLACK MARKET", timerHack: "Timer Hack ($1500)", filter: "Ack Filter ($3000)", bossTitle: "BOSS ULTIMATUM!", bossQuest: "Ready?", double: "DOUBLE DOWN!", cat: "CATEGORY: ", daily: "DAILY MATRIX", sabotage: "SABOTAGE PROTOCOL!", mirror: "MIRROR MODE", swap: "BUTTON SWAP", blackout: "BLACKOUT", code: "CHALLENGE CODE: ", jackAttack: "JACK ATTACK!", jackAttackDesc: "QUICK! Match the terms!" },
+                badges: { cow: "Coward", king: "Casino King", debt: "Debtor", sys: "Overload" },
+                ack: {
+                    begruessung: ["Hello [NAME]. Start.", "Seriously, [NAME]?", "Hurry up, [NAME]!"],
+                    richtig: ["Lucky guess! Even a broken clock is right twice a day.", "Wow, your brain actually sparked. I am shocked.", "Correct. Did your goldfish whisper that to you?", "Right! Did you google that under the table?", "Bravo! You are officially smarter than a toaster.", "A miracle! Evolution didn't completely skip you.", "Correct. Enjoy the moment, it won't last.", "Right. You want a cookie now?"],
+                    falsch: ["Stupid? Or just talent-free?", "That was pathetic. F minus!", "My calculator has more personality and IQ than you.", "Wrong! Did you leave your brain in bed today?", "Ouch. That actually hurt to watch.", "Nope! Are you trying to win or is this some kind of performance art?", "Missed! You are the human version of a 404 error.", "Wrong! Go back to kindergarten.", "Abysmal. Just abysmal.", "Are you sure you can breathe and think at the same time?", "Wrong! Your score is crying right now.", "Sit back down. That was embarrassing.", "Even my coffee machine knew that.", "Was that for real? I hope not.", "Point deducted! And a big 'HUH?' from me."],
+                    final: { win: "You robbed me!", mid: "Pocket change.", lose: "Broke! HAHA!", debtRecord: "NEW RECORD!", debtBetter: "Stingy!" },
+                    gambleWin: "SYSTEM RIGGED!", gambleLose: "ALL GONE! HAHA!", timeOut: "TOO SLOW!", bribeAck: "Coward!", bossWin: "THANKS... NOT!", bossLose: "LOSER!", jackAttackWin: "MASTERY!", jackAttackLose: "CATASTROPHE!"
+                },
+                market: [
+                    { name: "TIME EXTENSION +10s", desc: "Get 10 extra seconds per question", price: 1500, effect: "timer" },
+                    { name: "ACK FILTER", desc: "Block Ack's insults for 3 questions", price: 3000, effect: "filter" },
+                    { name: "SECOND CHANCE", desc: "Get one wrong answer for free", price: 2500, effect: "retry" },
+                    { name: "SCORE DOUBLER", desc: "Double your next 5 points", price: 5000, effect: "multiplier" },
+                    { name: "SABOTAGE STOPPER", desc: "Prevent the next sabotage", price: 2000, effect: "sabotage_block" },
+                    { name: "LUCKY STONE", desc: "50% chance to ignore wrong answer", price: 3500, effect: "luck" }
+                ],
+                questions: [
+                    {"text": "If the seven dwarfs started a boy band, who would always forget the microphone?", "options": ["Snow White", "Dopey", "Sleepy", "Grumpy"], "correct": 2, "cat": "Fairy Tale Pop"},
+                    {"text": "A toaster and a microwave fight for world domination. Who wins?", "options": ["The toaster", "The microwave", "The fridge", "The WiFi password"], "correct": 2, "cat": "Kitchen Politics"},
+                    {"text": "What happens if you put a chameleon on a checkered shirt?", "options": ["It explodes", "It gets a headache", "It becomes invisible", "It buys matching pants"], "correct": 1, "cat": "Biology Fashion"}
+                ]
+            },
+            pt: {
+                ui: { start: "INICIALIZAR", score: "SCORE", identityReq: "IDENTIDADE!", attackTopic: "ACK TE ODEIA", extortion: "EXTORSÃO!", pay: "Pagar", refuse: "Recusar", now: "AGORA!", override: "SOBREPOSTO", restart: "RECOMEÇAR", debtLabel: "DÍVIDAS", gamble: "JOGAR!", bribe: "Subornar ($2000)", market: "MERCADO NEGRO", timerHack: "Hack Timer ($1500)", filter: "Filtro Ack ($3000)", bossTitle: "ULTIMATO!", bossQuest: "Pronto?", double: "DOBRAR!", cat: "CATEGORIA: ", daily: "MATRIZ DIÁRIA", sabotage: "SABOTAGEM!", mirror: "ESPELHO", swap: "SWAP", blackout: "BLACKOUT", code: "CÓDIGO: ", jackAttack: "JACK ATTACK!", jackAttackDesc: "RÁPIDO! Combine os termos!" },
+                badges: { cow: "Covarde", king: "Rei", debt: "Devedor", sys: "Sobrecarga" },
+                ack: {
+                    begruessung: ["Olá [NAME].", "Sério, [NAME]?", "Rápido, [NAME]!"],
+                    richtig: ["Sorte de principiante! Até um relógio parado acerta duas vezes.", "Uau, seu cérebro realmente funcionou. Estou chocado.", "Correto. Seu peixinho dourado te contou essa?", "Certo! Você pesquisou isso no Google?", "Bravo! Você é oficialmente mais inteligente que uma torradeira.", "Um milagre! A evolução não te ignorou completamente.", "Correto. Aproveite o momento, não vai durar.", "Certo. Quer um biscoito agora?"],
+                    falsch: ["Burro? Ou apenas sem talento?", "Isso foi patético. Nota zero!", "Minha calculadora tem mehr personalidade e QI que você.", "Errado! Você deixou seu cérebro na cama hoje?", "Ai. Isso doeu de ver.", "Não! Você está tentando ganhar ou isso é algum tipo de arte performática?", "Errou! Você é a versão humana de um erro 404.", "Errado! Volte para o jardim de infância.", "Abismal. Simplesmente abismal.", "Tem certeza de que consegue respirar e pensar ao mesmo tempo?", "Errado! Sua pontuação está chorando agora.", "Sente-se. Isso foi embaraçoso.", "Até minha cafeteira sabia disso.", "Isso foi sério? Espero que não.", "Ponto deduzido! E um grande 'O QUÊ?' de mim."],
+                    final: { win: "Me roubou!", mid: "Trocados.", lose: "Falido! HAHA!", debtRecord: "RECORDE!", debtBetter: "Pão-duro!" },
+                    gambleWin: "MANIPULADO!", gambleLose: "PERDEU TUDO!", timeOut: "LENTO!", bribeAck: "Covarde!", bossWin: "VALEU... SÓ QUE NÃO!", bossLose: "PERDEDOR!", jackAttackWin: "MAESTRIA!", jackAttackLose: "CATÁSTROFE!"
+                },
+                market: [
+                    { name: "EXTENSÃO DE TEMPO +10s", desc: "Ganhe 10 segundos extras por pergunta", price: 1500, effect: "timer" },
+                    { name: "FILTRO ACK", desc: "Bloqueie os insultos de Ack por 3 perguntas", price: 3000, effect: "filter" },
+                    { name: "SEGUNDA CHANCE", desc: "Ganhe uma resposta errada de graça", price: 2500, effect: "retry" },
+                    { name: "DOBRADOR DE SCORE", desc: "Dobre seus próximos 5 pontos", price: 5000, effect: "multiplier" },
+                    { name: "BLOQUEADOR DE SABOTAGEM", desc: "Previna a próxima sabotagem", price: 2000, effect: "sabotage_block" },
+                    { name: "PEDRA DA SORTE", desc: "50% de chance de ignorar resposta errada", price: 3500, effect: "luck" }
+                ],
+                questions: [
+                    {"text": "Se os sete anões formassem eine boy band, quem sempre esqueceria o microfone?", "options": ["Branca de Neve", "Tímido", "Soneca", "Brincalhão"], "correct": 2, "cat": "Conto Pop"}
+                ]
+            }
+        };
+        let lang = navigator.language.startsWith('de') ? 'de' : (navigator.language.startsWith('pt') ? 'pt' : 'en');
+        let t = translations[lang];
+        let gameState = { 
+            playerName: "", currentQuestionIndex: 0, score: 0, activeQuestions: [], timer: null, timeLeft: 30,
+            upgrades: { timer: 30, filter: 1 }, isBossMode: false, multiplier: 1, gambleStreak: 0, correctStreak: 0,
+            badges: JSON.parse(localStorage.getItem('dfwa_badges')) || [], dailyPlayed: localStorage.getItem('dfwa_daily') === new Date().toISOString().slice(0,10),
+            isJackAttackMode: false, jackAttackTerms: [], jackAttackAnswers: [], jackAttackScore: 0
+        };
+        
+        function updateDystopiaUI() {
+            const body = document.body; body.classList.remove('flicker');
+            if (gameState.score >= 0) body.style.setProperty('--current-neon', 'var(--neon-green)');
+            else if (gameState.score >= -5000) { body.style.setProperty('--current-neon', 'var(--neon-green)'); body.classList.add('flicker'); }
+            else { body.style.setProperty('--current-neon', 'var(--neon-red)'); body.classList.add('flicker'); }
+        }
+        function triggerVisualFeedback(type) {
+            const body = document.body; const container = document.getElementById('game-container');
+            if (type === 'shake') { container.classList.add('shake'); setTimeout(() => container.classList.remove('shake'), 500); }
+            if (type === 'flash') { body.classList.add('flash-red'); setTimeout(() => body.classList.remove('flash-red'), 200); }
+            if (type === 'pulse') { container.classList.add('pulse'); setTimeout(() => container.classList.remove('pulse'), 600); }
+        }
+        function startGame(customSeed) {
+            initAudio();
+            sounds.start();
+            seed = customSeed || Math.floor(Math.random() * 1000000);
+            gameState.activeQuestions = shuffleArray([...t.questions]);
+            gameState.isJackAttackMode = false;
+            document.getElementById('start-screen').style.display = 'none'; document.getElementById('game-screen').style.display = 'block';
+            gameState.playerName = document.getElementById('player-name').value || "ANON";
+            gameState.currentQuestionIndex = 0;
+            showQuestion();
+        }
+        function startDaily() {
+            if(gameState.dailyPlayed) return alert("Bereits gespielt!");
+            localStorage.setItem('dfwa_daily', new Date().toISOString().slice(0,10));
+            startGame(parseInt(new Date().toISOString().slice(0,10).replace(/-/g, "")));
+        }
+        function showChallengeInput() { document.getElementById('challenge-overlay').style.display = 'block'; }
+        function toggleChallenge(show) { document.getElementById('challenge-overlay').style.display = show ? 'block' : 'none'; }
+        function importChallenge() {
+            const code = document.getElementById('challenge-input').value;
+            try { const data = JSON.parse(atob(code)); startGame(data.seed); toggleChallenge(false); } catch(e) { alert("Ungültiger Code!"); }
+        }
+        function showQuestion() {
+            updateDystopiaUI(); document.getElementById('question-container').classList.remove('mirror', 'upside-down', 'blackout');
+            const q = gameState.activeQuestions[gameState.currentQuestionIndex]; 
+            if (!q) { startJackAttack(); return; }
+            if(gameState.currentQuestionIndex >= 5 && Math.random() < 0.2) {
+                const sab = Math.floor(Math.random() * 3);
+                if(sab === 0) { document.getElementById('question-container').classList.add('mirror'); showAckDialog(t.ui.sabotage + " " + t.ui.mirror); }
+                else if(sab === 1) { showAckDialog(t.ui.sabotage + " " + t.ui.swap); }
+                else { setTimeout(() => document.getElementById('question-container').classList.add('blackout'), 2000); showAckDialog(t.ui.sabotage + " " + t.ui.blackout); }
+            }
+            document.getElementById('question-text').innerText = q.text;
+            const container = document.getElementById('options-container'); container.innerHTML = '';
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button'); btn.innerText = opt; btn.onclick = () => { sounds.click(); handleAnswer(idx); }; container.appendChild(btn);
+            });
+            startTimer();
+        }
+        function handleAnswer(idx) {
+            stopTimer(); const q = gameState.activeQuestions[gameState.currentQuestionIndex];
+            if(idx === q.correct) { gameState.score += 1000; sounds.correct(); showAckDialog(t.ack.richtig[Math.floor(Math.random() * t.ack.richtig.length)]); triggerVisualFeedback('pulse'); }
+            else { gameState.score -= 1000; sounds.wrong(); triggerVisualFeedback('shake'); triggerVisualFeedback('flash'); showAckDialog(t.ack.falsch[Math.floor(Math.random() * t.ack.falsch.length)]); }
+            gameState.currentQuestionIndex++; updateScore(); setTimeout(showQuestion, 1500);
+        }
+        function startTimer() {
+            gameState.timeLeft = 30; document.getElementById('timer-bar-container').style.display = 'block';
+            gameState.timer = setInterval(() => {
+                gameState.timeLeft -= 0.1; document.getElementById('timer-bar').style.width = (gameState.timeLeft / 30 * 100) + '%';
+                if(gameState.timeLeft <= 0) { stopTimer(); handleAnswer(-1); }
+            }, 100);
+        }
+        function stopTimer() { clearInterval(gameState.timer); document.getElementById('timer-bar-container').style.display = 'none'; }
+        function updateScore() { document.getElementById('score-display').innerText = "SCORE: $" + gameState.score; }
+        function showAckDialog(txt) { document.getElementById('ack-dialog').innerText = "ACK: " + txt; }
+        function startJackAttack() {
+            gameState.isJackAttackMode = true;
+            gameState.jackAttackScore = 0;
+            const jackAttackQuestions = [
+                { left: "Banane", right: "Gelb", answer: 0 },
+                { left: "Himmel", right: "Blau", answer: 0 },
+                { left: "Feuer", right: "Heiß", answer: 0 },
+                { left: "Schnee", right: "Kalt", answer: 0 },
+                { left: "Gras", right: "Grün", answer: 0 }
+            ];
+            const shuffledQuestions = shuffleArray([...jackAttackQuestions]);
+            playJackAttackRound(shuffledQuestions, 0);
+        }
+        function playJackAttackRound(questions, index) {
+            if (index >= questions.length) { endJackAttack(); return; }
+            const q = questions[index];
+            const container = document.getElementById('question-container');
+            container.innerHTML = `
+                <div class="jack-attack-container">
+                    <h1 style="color: var(--neon-yellow);">${t.ui.jackAttack}</h1>
+                    <p>${t.ui.jackAttackDesc}</p>
+                    <div class="jack-attack-term">${q.left}</div>
+                    <div class="jack-attack-options">
+                        <button onclick="jackAttackAnswer(${index}, 0, ${questions.length})">${q.right}</button>
+                        <button onclick="jackAttackAnswer(${index}, 1, ${questions.length})">FALSCH</button>
+                    </div>
+                </div>
+            `;
+            showAckDialog(t.ui.jackAttack + "!");
+            triggerVisualFeedback('pulse');
+            gameState.jackAttackTerms = questions;
+        }
+        function jackAttackAnswer(index, answer, total) {
+            const q = gameState.jackAttackTerms[index];
+            if (answer === q.answer) {
+                gameState.jackAttackScore += 500;
+                sounds.correct();
+                showAckDialog("RICHTIG!");
+                triggerVisualFeedback('pulse');
+            } else {
+                gameState.jackAttackScore -= 500;
+                sounds.wrong();
+                showAckDialog("FALSCH!");
+                triggerVisualFeedback('shake');
+            }
+            gameState.score += gameState.jackAttackScore;
+            updateScore();
+            setTimeout(() => playJackAttackRound(gameState.jackAttackTerms, index + 1), 1000);
+        }
+        function endJackAttack() { endGame(); }
+        function endGame() {
+            const code = btoa(JSON.stringify({ seed: seed, score: gameState.score }));
+            document.getElementById('question-container').innerHTML = `<h1>GAME OVER</h1><h2>SCORE: $${gameState.score}</h2><p class="small-text">${t.ui.code}${code}</p><button onclick="location.reload()">NEUSTART</button>`;
+        }
+        function toggleMarket(show) {
+            if (show) {
+                const marketContainer = document.getElementById('market-items');
+                marketContainer.innerHTML = '';
+                t.market.forEach((item, idx) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'market-item';
+                    itemDiv.innerHTML = `
+                        <div class="market-item-title">${item.name}</div>
+                        <div class="market-item-desc">${item.desc}</div>
+                        <div class="market-item-price">$${item.price}</div>
+                        <button onclick="buyItem(${idx})" ${gameState.score < item.price ? 'disabled' : ''}>KAUFEN</button>
+                    `;
+                    marketContainer.appendChild(itemDiv);
+                });
+            }
+            document.getElementById('market-overlay').style.display = show ? 'block' : 'none';
+        }
+        function buyItem(idx) {
+            const item = t.market[idx];
+            if (gameState.score >= item.price) {
+                gameState.score -= item.price;
+                updateScore();
+                showAckDialog("VERKAUFT! " + item.effect.toUpperCase());
+                sounds.correct();
+                toggleMarket(false);
+            } else {
+                showAckDialog("ZU ARM!");
+                sounds.wrong();
+            }
+        }
+        function bribeAck() {
+            if (gameState.score >= 2000) {
+                gameState.score -= 2000;
+                updateScore();
+                const q = gameState.activeQuestions[gameState.currentQuestionIndex];
+                const correctAnswer = q.options[q.correct];
+                showAckDialog(t.ack.bribeAck + " - ANTWORT: " + correctAnswer);
+                sounds.correct();
+                triggerVisualFeedback('pulse');
+                gameState.currentQuestionIndex++;
+                setTimeout(showQuestion, 2000);
+            } else {
+                showAckDialog("ZU ARM!");
+                sounds.wrong();
+            }
+        }
+        function gamble() { showAckDialog(t.ack.gambleWin); }
+        
         // Registrierung des Service Workers für PWA (absoluter Pfad auf './')
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
@@ -85,81 +408,6 @@
                     console.log('SW failed:', err);
                 });
             });
-        }
-
-        const QUESTIONS = [
-            { q: "Was ist das Ziel des Systems?", a: ["Kontrolle", "Freiheit", "Chaos", "Liebe"], c: 0 },
-            { q: "Wer ist Ack?", a: ["Der Schöpfer", "Ein Fehler", "Dein Boss", "Niemand"], c: 1 },
-            { q: "Was kostet die Wahrheit?", a: ["Alles", "$2000", "Nichts", "Ein Lächeln"], c: 0 }
-        ];
-
-        let score = 0;
-        let currentQuestion = 0;
-
-        function startGame() {
-            const name = document.getElementById('player-name').value;
-            if (!name) return alert("Identität erforderlich.");
-            document.getElementById('start-screen').style.display = 'none';
-            document.getElementById('game-screen').style.display = 'block';
-            showQuestion();
-        }
-
-        function showQuestion() {
-            const q = QUESTIONS[currentQuestion];
-            document.getElementById('question-text').innerText = q.q;
-            const container = document.getElementById('options-container');
-            container.innerHTML = '';
-            q.a.forEach((opt, i) => {
-                const btn = document.createElement('button');
-                btn.innerText = opt;
-                btn.onclick = () => checkAnswer(i);
-                container.appendChild(btn);
-            });
-        }
-
-        function checkAnswer(idx) {
-            if (idx === QUESTIONS[currentQuestion].c) {
-                score += 1000;
-                alert("Korrekt. Das System lächelt.");
-            } else {
-                score -= 500;
-                alert("Fehler. Ack ist enttäuscht.");
-            }
-            updateScore();
-            currentQuestion = (currentQuestion + 1) % QUESTIONS.length;
-            showQuestion();
-        }
-
-        function updateScore() {
-            document.getElementById('score-display').innerText = `SCORE: $${score}`;
-        }
-
-        function bribeAck() {
-            if (score >= 2000) {
-                score -= 2000;
-                updateScore();
-                alert("Ack akzeptiert die Bestechung.");
-            } else {
-                alert("Zu arm für Korruption.");
-            }
-        }
-
-        function toggleMarket(show) {
-            document.getElementById('market-overlay').style.display = show ? 'block' : 'none';
-        }
-
-        function showChallengeInput() {
-            document.getElementById('challenge-overlay').style.display = 'block';
-        }
-
-        function toggleChallenge(show) {
-            document.getElementById('challenge-overlay').style.display = show ? 'block' : 'none';
-        }
-
-        function importChallenge() {
-            const code = document.getElementById('challenge-input').value;
-            alert(`Challenge ${code} geladen.`);
-            toggleChallenge(false);
         }
 
         console.log("DFWA Initialized");
