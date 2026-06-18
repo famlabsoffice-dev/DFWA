@@ -50,7 +50,7 @@
         #timer-bar { width: 100%; height: 100%; background: var(--current-neon); }
         .score { font-size: 1.5rem; margin-top: 20px; border-top: 2px solid var(--current-neon); padding-top: 10px; }
         #market-overlay, #challenge-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 100; padding: 20px; box-sizing: border-box; overflow-y: auto; }
-        .small-text { font-size: 0.7rem; margin-top: 10px; }
+        .small-text { font-size: 0.7rem; margin-top: 10px; word-break: break-all; }
         #question-text { animation: slideInDown 0.4s ease-out; }
         #options-container button { animation: slideInUp 0.4s ease-out; }
         #options-container button:nth-child(1) { animation-delay: 0.1s; }
@@ -83,12 +83,10 @@
         <div id="game-screen" style="display:none;">
             <div id="timer-bar-container"><div id="timer-bar"></div></div>
             <div id="ack-dialog"></div>
-            <div id="betting-screen" style="display:none;"><h2 id="category-text"></h2><button onclick="doubleDown()">DOUBLE DOWN!</button></div>
             <div id="question-container">
                 <h2 id="question-text"></h2>
                 <div id="options-container"></div>
                 <button onclick="bribeAck()" id="bribe-btn" style="font-size:0.8rem;">ACK BESTECHEN ($2000)</button>
-                <button onclick="gamble()" id="gamble-btn" style="display:none; color:var(--neon-yellow); border-color:var(--neon-yellow);"></button>
                 <button onclick="toggleMarket(true)" style="font-size:0.8rem;">SCHWARZMARKT</button>
             </div>
             <div id="score-display" class="score">SCORE: $0</div>
@@ -128,7 +126,8 @@
             start: () => { playTone(220, 'square', 0.2); playTone(440, 'square', 0.2); }
         };
 
-        let seed = 12345; function seededRandom() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+        let seed = 12345;
+        function seededRandom() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
         function shuffleArray(array) { for (let i = array.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [array[i], array[j]] = [array[j], array[i]]; } return array; }
         
         const translations = {
@@ -157,8 +156,6 @@
                     {"text": "Warum tragen Superhelden ihre Unterwäsche über der Hose?", "options": ["Belüftung", "Waschmaschine kaputt", "Um Ack zu ärgern", "Modisches Statement"], "correct": 3, "cat": "Helden-Style"},
                     {"text": "Wenn ein Zombie eine Diät macht, was isst er dann?", "options": ["Light-Gehirne", "Vegetarier", "Nur die Ohren", "Vollkorn-Schienbeine"], "correct": 1, "cat": "Horror-Ernährung"},
                     {"text": "Welcher Planet im Sonnensystem hat die beste Internetverbindung?", "options": ["Mars", "Jupiter", "Der, auf dem Ack nicht ist", "Die Erde"], "correct": 2, "cat": "Weltraum-Tech"},
-                    {"text": "Wenn Zeitreisen möglich wären, was würde Ack als Erstes tun?", "options": ["Dich am Gewinnen hindern", "Bitcoin kaufen", "Das Quiz löschen", "Einen Kaffee trinken"], "correct": 0, "cat": "Zeit-Paradoxon"},
-                    {"text": "Wie nennt man einen Bumerang, der nicht zurückkommt?", "options": ["Kaputt", "Stock", "Weg", "Frisbee"], "correct": 1, "cat": "Logik"},
                     {"text": "Wenn Fische fliegen könnten, was wäre ihr größtes Problem?", "options": ["Vögel", "Höhenangst", "Trockene Schuppen", "Fluglotsen"], "correct": 3, "cat": "Naturwissenschaft"},
                     {"text": "Was ist das Gegenteil von Fortschritt?", "options": ["Rückschritt", "Stillstand", "Ein Mittwoch", "Ack Attack"], "correct": 2, "cat": "Absurd"},
                     {"text": "Ein Chamäleon betritt einen Spiegellabyrinth. Was sieht es?", "options": ["Sich selbst", "Nichts", "Alles", "Einen existenziellen Albtraum"], "correct": 3, "cat": "Absurd"},
@@ -202,8 +199,8 @@
                 badges: { cow: "Covarde", king: "Rei", debt: "Devedor", sys: "Sobrecarga" },
                 ack: {
                     begruessung: ["Olá [NAME].", "Sério, [NAME]?", "Rápido, [NAME]!"],
-                    richtig: ["Sorte de principiante! Até um relógio parado acerta duas vezes.", "Uau, seu cérebro realmente funcionou. Estou chocado.", "Correto. Seu peixinho dourado te contou essa?", "Certo! Você pesquisou isso no Google?", "Bravo! Você é oficialmente mais inteligente que uma torradeira.", "Um milagre! A evolução não te ignorou completamente.", "Correto. Aproveite o momento, não vai durar.", "Certo. Quer um biscoito agora?"],
-                    falsch: ["Burro? Ou apenas sem talento?", "Isso foi patético. Nota zero!", "Minha calculadora tem mehr personalidade e QI que você.", "Errado! Você deixou seu cérebro na cama hoje?", "Ai. Isso doeu de ver.", "Não! Você está tentando ganhar ou isso é algum tipo de arte performática?", "Errou! Você é a versão humana de um erro 404.", "Errado! Volte para o jardim de infância.", "Abismal. Simplesmente abismal.", "Tem certeza de que consegue respirar e pensar ao mesmo tempo?", "Errado! Sua pontuação está chorando agora.", "Sente-se. Isso foi embaraçoso.", "Até minha cafeteira sabia disso.", "Isso foi sério? Espero que não.", "Ponto deduzido! E um grande 'O QUÊ?' de mim."],
+                    richtig: ["Sorte de principiante!", "Uau, seu cérebro realmente funcionou.", "Correto. Seu peixinho dourado te contou essa?", "Certo! Você pesquisou isso no Google?", "Bravo! Você é oficialmente mais inteligente que uma torradeira.", "Um milagre! A evolução não te ignorou completamente.", "Correto. Aproveite o momento, não vai durar.", "Certo. Quer um biscoito agora?"],
+                    falsch: ["Burro? Ou apenas sem talento?", "Isso foi patético. Nota zero!", "Minha calculadora tem mais personalidade e QI que você.", "Errado! Você deixou seu cérebro na cama hoje?", "Ai. Isso doeu de ver.", "Não! Você está tentando ganhar ou isso é algum tipo de arte performática?", "Errou! Você é a versão humana de um erro 404.", "Errado! Volte para o jardim de infância.", "Abismal. Simplesmente abismal.", "Tem certeza de que consegue respirar e pensar ao mesmo tempo?", "Errado! Sua pontuação está chorando agora.", "Sente-se. Isso foi embaraçoso.", "Até minha cafeteira sabia disso.", "Isso foi sério? Espero que não.", "Ponto deduzido! E um grande 'O QUÊ?' de mim."],
                     final: { win: "Me roubou!", mid: "Trocados.", lose: "Falido! HAHA!", debtRecord: "RECORDE!", debtBetter: "Pão-duro!" },
                     gambleWin: "MANIPULADO!", gambleLose: "PERDEU TUDO!", timeOut: "LENTO!", bribeAck: "Covarde!", bossWin: "VALEU... SÓ QUE NÃO!", bossLose: "PERDEDOR!", jackAttackWin: "MAESTRIA!", jackAttackLose: "CATÁSTROFE!"
                 },
@@ -216,17 +213,19 @@
                     { name: "PEDRA DA SORTE", desc: "50% de chance de ignorar resposta errada", price: 3500, effect: "luck" }
                 ],
                 questions: [
-                    {"text": "Se os sete anões formassem eine boy band, quem sempre esqueceria o microfone?", "options": ["Branca de Neve", "Tímido", "Soneca", "Brincalhão"], "correct": 2, "cat": "Conto Pop"}
+                    {"text": "Se os sete anões formassem uma boy band, quem sempre esqueceria o microfone?", "options": ["Branca de Neve", "Tímido", "Soneca", "Brincalhão"], "correct": 2, "cat": "Conto Pop"}
                 ]
             }
         };
+
         let lang = navigator.language.startsWith('de') ? 'de' : (navigator.language.startsWith('pt') ? 'pt' : 'en');
         let t = translations[lang];
         let gameState = { 
             playerName: "", currentQuestionIndex: 0, score: 0, activeQuestions: [], timer: null, timeLeft: 30,
             upgrades: { timer: 30, filter: 1 }, isBossMode: false, multiplier: 1, gambleStreak: 0, correctStreak: 0,
             badges: JSON.parse(localStorage.getItem('dfwa_badges')) || [], dailyPlayed: localStorage.getItem('dfwa_daily') === new Date().toISOString().slice(0,10),
-            isJackAttackMode: false, jackAttackTerms: [], jackAttackAnswers: [], jackAttackScore: 0
+            isJackAttackMode: false, jackAttackTerms: [], jackAttackAnswers: [], jackAttackScore: 0,
+            challengeTarget: 0, challengeOpponent: ""
         };
         
         function updateDystopiaUI() {
@@ -247,8 +246,6 @@
             seed = customSeed || Math.floor(Math.random() * 1000000);
             gameState.activeQuestions = shuffleArray([...t.questions]);
             gameState.isJackAttackMode = false;
-            gameState.challengeTarget = gameState.challengeTarget || 0;
-            gameState.challengeOpponent = gameState.challengeOpponent || "";
             document.getElementById('start-screen').style.display = 'none'; document.getElementById('game-screen').style.display = 'block';
             gameState.playerName = document.getElementById('player-name').value || "ANON";
             gameState.currentQuestionIndex = 0;
@@ -306,8 +303,8 @@
                 if(gameState.timeLeft <= 0) { stopTimer(); handleAnswer(-1); }
             }, 100);
         }
-        function stopTimer() { clearInterval(gameState.timer); document.getElementById('timer-bar-container').style.display = 'none'; }
-        function updateScore() { document.getElementById('score-display').innerText = "SCORE: $" + gameState.score; }
+        function stopTimer() { clearInterval(gameState.timer); }
+        function updateScore() { document.getElementById('score-display').innerText = t.ui.score + ": $" + gameState.score; }
         function showAckDialog(txt) { document.getElementById('ack-dialog').innerText = "ACK: " + txt; }
         function startJackAttack() {
             gameState.isJackAttackMode = true;
@@ -421,9 +418,8 @@
                 sounds.wrong();
             }
         }
-        function gamble() { showAckDialog(t.ack.gambleWin); }
         
-        // Registrierung des Service Workers für PWA (absoluter Pfad auf './')
+        // Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js').then(reg => {
