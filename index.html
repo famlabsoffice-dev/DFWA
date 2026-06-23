@@ -218,7 +218,7 @@
                 state.streak = 0;
                 document.getElementById('streak-info').style.display = 'none';
                 
-                const pool = state.comments[state.lang].ack;
+                const pool = state.comments[state.lang];
                 const msg = pool[Math.floor(Math.random() * pool.length)];
                 
                 const overlay = document.getElementById('ack-overlay');
