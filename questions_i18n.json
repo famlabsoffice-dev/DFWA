@@ -2,7 +2,7 @@
   {
     "id": "q1",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was ist das Gegenteil von Fortschritt?",
       "en": "What is the opposite of progress?"
@@ -11,67 +11,67 @@
       "de": [
         "Rückschritt",
         "Stillstand",
-        "Ein Mittwoch",
-        "Ack Attack"
+        "Ack Attack",
+        "Ein Mittwoch"
       ],
       "en": [
         "Regression",
         "Standstill",
-        "A Wednesday",
-        "Ack Attack"
+        "Ack Attack",
+        "A Wednesday"
       ]
     }
   },
   {
     "id": "q2",
     "cat": "Absurd",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Ein Chamäleon betritt einen Spiegellabyrinth. Was sieht es?",
       "en": "A chameleon enters a hall of mirrors. What does it see?"
     },
     "options": {
       "de": [
-        "Sich selbst",
+        "Einen existenziellen Albtraum",
         "Nichts",
         "Alles",
-        "Einen existenziellen Albtraum"
+        "Sich selbst"
       ],
       "en": [
-        "Itself",
+        "An existential nightmare",
         "Nothing",
         "Everything",
-        "An existential nightmare"
+        "Itself"
       ]
     }
   },
   {
     "id": "q3",
     "cat": "Absurd",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Wenn Käse Augen hätte, würde es dann sehen oder riechen?",
       "en": "If cheese had eyes, would it see or smell?"
     },
     "options": {
       "de": [
-        "Sehen",
+        "Weder noch - es würde schimmeln",
         "Riechen",
         "Beides",
-        "Weder noch - es würde schimmeln"
+        "Sehen"
       ],
       "en": [
-        "See",
+        "Neither - it would mold",
         "Smell",
         "Both",
-        "Neither - it would mold"
+        "See"
       ]
     }
   },
   {
     "id": "q4",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was macht ein Roboter, wenn er verliebt ist?",
       "en": "What does a robot do when it's in love?"
@@ -80,14 +80,14 @@
       "de": [
         "Er rostet",
         "Er überhitzt",
-        "Er schreibt Code",
-        "Er sucht einen Techniker"
+        "Er sucht einen Techniker",
+        "Er schreibt Code"
       ],
       "en": [
         "It rusts",
         "It overheats",
-        "It writes code",
-        "It looks for a technician"
+        "It looks for a technician",
+        "It writes code"
       ]
     }
   },
@@ -117,22 +117,22 @@
   {
     "id": "q6",
     "cat": "Humor",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Ein Pirat, ein Ninja und ein Cowboy betreten eine Bar. Der Barkeeper sagt...",
       "en": "A pirate, a ninja, and a cowboy walk into a bar. The bartender says..."
     },
     "options": {
       "de": [
-        "Warum die lange Fresse?",
-        "Das wird teuer",
         "Ihr seid alle raus!",
+        "Das wird teuer",
+        "Warum die lange Fresse?",
         "Willkommen zum Kostümfest"
       ],
       "en": [
-        "Why the long face?",
-        "This is going to be expensive",
         "You're all out!",
+        "This is going to be expensive",
+        "Why the long face?",
         "Welcome to the costume party"
       ]
     }
@@ -140,7 +140,7 @@
   {
     "id": "q7",
     "cat": "Klassiker",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Wie viele Psychologen braucht man, um eine Glühbirne zu wechseln?",
       "en": "How many psychologists does it take to change a light bulb?"
@@ -148,14 +148,14 @@
     "options": {
       "de": [
         "Einen",
-        "Drei",
         "Keinen - die Glühbirne muss selbst wollen",
+        "Drei",
         "Alle - es ist eine Gruppentherapie"
       ],
       "en": [
         "One",
-        "Three",
         "None - the light bulb has to want to change",
+        "Three",
         "All - it's a group therapy"
       ]
     }
@@ -163,21 +163,21 @@
   {
     "id": "q8",
     "cat": "Modern",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Wenn ein Baum im Wald fällt und niemand ist da, macht er dann ein Geräusch oder einen Podcast?",
       "en": "If a tree falls in the forest and no one is there, does it make a sound or a podcast?"
     },
     "options": {
       "de": [
-        "Ein Geräusch",
         "Einen Podcast",
+        "Ein Geräusch",
         "Beides",
         "Das ist philosophisch"
       ],
       "en": [
-        "A sound",
         "A podcast",
+        "A sound",
         "Both",
         "That's philosophical"
       ]
@@ -209,21 +209,21 @@
   {
     "id": "q10",
     "cat": "Absurd",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Wenn Enten Hüte tragen, sind sie dann formell oder nur nass?",
       "en": "If ducks wear hats, are they formal or just wet?"
     },
     "options": {
       "de": [
-        "Formell",
         "Nass",
+        "Formell",
         "Beides",
         "Weder noch"
       ],
       "en": [
-        "Formal",
         "Wet",
+        "Formal",
         "Both",
         "Neither"
       ]
@@ -232,22 +232,22 @@
   {
     "id": "q11",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Was passiert, wenn man einen Pinguin in die Sahara schickt?",
       "en": "What happens if you send a penguin to the Sahara?"
     },
     "options": {
       "de": [
-        "Er wird braun",
-        "Er schmilzt",
         "Er eröffnet eine Eisdiele",
+        "Er schmilzt",
+        "Er wird braun",
         "Er beschwert sich bei Ack"
       ],
       "en": [
-        "It turns brown",
-        "It melts",
         "It opens an ice cream parlor",
+        "It melts",
+        "It turns brown",
         "It complains to Ack"
       ]
     }
@@ -255,7 +255,7 @@
   {
     "id": "q12",
     "cat": "Essen",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Warum hat der Donut ein Loch?",
       "en": "Why does the donut have a hole?"
@@ -263,68 +263,68 @@
     "options": {
       "de": [
         "Damit er besser fliegt",
-        "Wegen der Kalorienersparnis",
+        "Produktionsfehler",
         "Damit Ack durchgucken kann",
-        "Produktionsfehler"
+        "Wegen der Kalorienersparnis"
       ],
       "en": [
         "So it flies better",
-        "To save calories",
+        "Production error",
         "So Ack can look through",
-        "Production error"
+        "To save calories"
       ]
     }
   },
   {
     "id": "q13",
     "cat": "Tiere",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was denkt eine Katze, wenn sie dich ansieht?",
       "en": "What does a cat think when it looks at you?"
     },
     "options": {
       "de": [
-        "Ich liebe dich",
+        "Warum bist du so groß und nutzlos?",
         "Fütter mich",
         "Sklave",
-        "Warum bist du so groß und nutzlos?"
+        "Ich liebe dich"
       ],
       "en": [
-        "I love you",
+        "Why are you so big and useless?",
         "Feed me",
         "Slave",
-        "Why are you so big and useless?"
+        "I love you"
       ]
     }
   },
   {
     "id": "q14",
     "cat": "Technik",
-    "correct": 0,
+    "correct": 3,
     "text": {
       "de": "Warum piept der Kühlschrank?",
       "en": "Why does the fridge beep?"
     },
     "options": {
       "de": [
-        "Einsamkeit",
+        "Ack-Überwachung",
         "Hunger",
         "Tür offen",
-        "Ack-Überwachung"
+        "Einsamkeit"
       ],
       "en": [
-        "Loneliness",
+        "Ack surveillance",
         "Hunger",
         "Door open",
-        "Ack surveillance"
+        "Loneliness"
       ]
     }
   },
   {
     "id": "q15",
     "cat": "Sport",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was ist die wichtigste Regel beim Unterwasserschach?",
       "en": "What is the most important rule in underwater chess?"
@@ -333,35 +333,35 @@
       "de": [
         "Nicht atmen",
         "Figuren festkleben",
-        "Nicht auftauchen",
-        "Ack gewinnen lassen"
+        "Ack gewinnen lassen",
+        "Nicht auftauchen"
       ],
       "en": [
         "Don't breathe",
         "Glue the pieces",
-        "Don't surface",
-        "Let Ack win"
+        "Let Ack win",
+        "Don't surface"
       ]
     }
   },
   {
     "id": "q16",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Welches Instrument spielt ein Skelett?",
       "en": "Which instrument does a skeleton play?"
     },
     "options": {
       "de": [
-        "Klavier",
         "Posaune",
+        "Klavier",
         "Schlagzeug",
         "Luftgitarre"
       ],
       "en": [
-        "Piano",
         "Trombone",
+        "Piano",
         "Drums",
         "Air guitar"
       ]
@@ -439,21 +439,21 @@
   {
     "id": "q20",
     "cat": "Natur",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Warum sind Blumen bunt?",
       "en": "Why are flowers colorful?"
     },
     "options": {
       "de": [
-        "Mode",
         "Bienen anlocken",
+        "Mode",
         "Ack blenden",
         "Photosynthese-Nebenprodukt"
       ],
       "en": [
-        "Fashion",
         "To attract bees",
+        "Fashion",
         "To blind Ack",
         "Photosynthesis byproduct"
       ]
@@ -462,44 +462,44 @@
   {
     "id": "q21",
     "cat": "Zeit",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist gestern?",
       "en": "What is yesterday?"
     },
     "options": {
       "de": [
-        "Vergangenheit",
+        "Ein Tag, den Ack gelöscht hat",
         "Ein Traum",
         "Schnee von morgen",
-        "Ein Tag, den Ack gelöscht hat"
+        "Vergangenheit"
       ],
       "en": [
-        "The past",
+        "A day Ack deleted",
         "A dream",
         "Tomorrow's snow",
-        "A day Ack deleted"
+        "The past"
       ]
     }
   },
   {
     "id": "q22",
     "cat": "Küche",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Warum weint man beim Zwiebelschneiden?",
       "en": "Why do you cry when cutting onions?"
     },
     "options": {
       "de": [
-        "Gase",
         "Mitleid",
+        "Gase",
         "Ack sticht dich",
         "Es ist so traurig"
       ],
       "en": [
-        "Gases",
         "Pity",
+        "Gases",
         "Ack stabs you",
         "It's so sad"
       ]
@@ -554,7 +554,7 @@
   {
     "id": "q25",
     "cat": "Internet",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Was ist das Ende des Internets?",
       "en": "What is the end of the internet?"
@@ -562,36 +562,36 @@
     "options": {
       "de": [
         "Google",
-        "404",
+        "Acks Profilseite",
         "Offline",
-        "Acks Profilseite"
+        "404"
       ],
       "en": [
         "Google",
-        "404",
+        "Ack's profile page",
         "Offline",
-        "Ack's profile page"
+        "404"
       ]
     }
   },
   {
     "id": "q26",
     "cat": "Märchen",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Warum hat der Wolf die Großmutter gefressen?",
       "en": "Why did the wolf eat the grandmother?"
     },
     "options": {
       "de": [
-        "Hunger",
         "Platzmangel",
+        "Hunger",
         "Ack hat es befohlen",
         "Verwechslung"
       ],
       "en": [
-        "Hunger",
         "Lack of space",
+        "Hunger",
         "Ack ordered it",
         "Mistake"
       ]
@@ -600,22 +600,22 @@
   {
     "id": "q27",
     "cat": "Farben",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Welche Farbe hat Neid?",
       "en": "What color is envy?"
     },
     "options": {
       "de": [
-        "Rot",
-        "Blau",
         "Grün",
+        "Blau",
+        "Rot",
         "Ack-Grau"
       ],
       "en": [
-        "Red",
-        "Blue",
         "Green",
+        "Blue",
+        "Red",
         "Ack grey"
       ]
     }
@@ -623,7 +623,7 @@
   {
     "id": "q28",
     "cat": "Gefühle",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist Liebe?",
       "en": "What is love?"
@@ -631,14 +631,14 @@
     "options": {
       "de": [
         "Ein Hormon",
-        "Baby don't hurt me",
         "Ein Fehler im System",
+        "Baby don't hurt me",
         "Acks Schwachstelle"
       ],
       "en": [
         "A hormone",
-        "Baby don't hurt me",
         "A bug in the system",
+        "Baby don't hurt me",
         "Ack's weak spot"
       ]
     }
@@ -646,7 +646,7 @@
   {
     "id": "q29",
     "cat": "Bücher",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Wer hat das Buch geschrieben?",
       "en": "Who wrote the book?"
@@ -655,36 +655,36 @@
       "de": [
         "Der Autor",
         "Der Drucker",
-        "Die Tinte",
-        "Ack hat es diktiert"
+        "Ack hat es diktiert",
+        "Die Tinte"
       ],
       "en": [
         "The author",
         "The printer",
-        "The ink",
-        "Ack dictated it"
+        "Ack dictated it",
+        "The ink"
       ]
     }
   },
   {
     "id": "q30",
     "cat": "Geographie",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Wo liegt das Glück?",
       "en": "Where is happiness?"
     },
     "options": {
       "de": [
-        "In dir",
-        "Am Ende des Regenbogens",
         "In Acks Tasche",
+        "Am Ende des Regenbogens",
+        "In dir",
         "Hinter dem Horizont"
       ],
       "en": [
-        "In you",
-        "At the end of the rainbow",
         "In Ack's pocket",
+        "At the end of the rainbow",
+        "In you",
         "Beyond the horizon"
       ]
     }
@@ -692,7 +692,7 @@
   {
     "id": "q31",
     "cat": "Technik",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Warum stürzt der Computer ab?",
       "en": "Why does the computer crash?"
@@ -701,14 +701,14 @@
       "de": [
         "Überlastung",
         "Virus",
-        "Acks Laune",
-        "Windows-Update"
+        "Windows-Update",
+        "Acks Laune"
       ],
       "en": [
         "Overload",
         "Virus",
-        "Ack's mood",
-        "Windows update"
+        "Windows update",
+        "Ack's mood"
       ]
     }
   },
@@ -738,7 +738,7 @@
   {
     "id": "q33",
     "cat": "Tiere",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Warum bellen Hunde?",
       "en": "Why do dogs bark?"
@@ -747,59 +747,59 @@
       "de": [
         "Revierschutz",
         "Freude",
-        "Angst",
-        "Ack warnen"
+        "Ack warnen",
+        "Angst"
       ],
       "en": [
         "Territory protection",
         "Joy",
-        "Fear",
-        "To warn Ack"
+        "To warn Ack",
+        "Fear"
       ]
     }
   },
   {
     "id": "q34",
     "cat": "Sport",
-    "correct": 0,
+    "correct": 3,
     "text": {
       "de": "Wer gewinnt immer?",
       "en": "Who always wins?"
     },
     "options": {
       "de": [
-        "Die Bank",
+        "Niemand",
         "Der Beste",
         "Ack",
-        "Niemand"
+        "Die Bank"
       ],
       "en": [
-        "The bank",
+        "Nobody",
         "The best",
         "Ack",
-        "Nobody"
+        "The bank"
       ]
     }
   },
   {
     "id": "q35",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Was ist der lauteste Ton?",
       "en": "What is the loudest sound?"
     },
     "options": {
       "de": [
-        "Düsenjet",
-        "Knall",
         "Acks Lachen",
+        "Knall",
+        "Düsenjet",
         "Stille"
       ],
       "en": [
-        "Jet engine",
-        "Bang",
         "Ack's laughter",
+        "Bang",
+        "Jet engine",
         "Silence"
       ]
     }
@@ -853,22 +853,22 @@
   {
     "id": "q38",
     "cat": "Berufe",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Was macht ein Lehrer?",
       "en": "What does a teacher do?"
     },
     "options": {
       "de": [
-        "Nerven",
-        "Lehren",
         "Ferien machen",
+        "Lehren",
+        "Nerven",
         "Ack-Propaganda"
       ],
       "en": [
-        "Annoy",
-        "Teach",
         "Take holidays",
+        "Teach",
+        "Annoy",
         "Ack propaganda"
       ]
     }
@@ -876,22 +876,22 @@
   {
     "id": "q39",
     "cat": "Natur",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Warum fallen Blätter im Herbst?",
       "en": "Why do leaves fall in autumn?"
     },
     "options": {
       "de": [
-        "Kälte",
-        "Wassermangel",
         "Ack schüttelt die Bäume",
+        "Wassermangel",
+        "Kälte",
         "Schwerkraft"
       ],
       "en": [
-        "Cold",
-        "Lack of water",
         "Ack shakes the trees",
+        "Lack of water",
+        "Cold",
         "Gravity"
       ]
     }
@@ -922,7 +922,7 @@
   {
     "id": "q41",
     "cat": "Küche",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Warum brennt das Essen an?",
       "en": "Why does food burn?"
@@ -930,37 +930,37 @@
     "options": {
       "de": [
         "Hitze",
-        "Vergessen",
+        "Ack hat den Herd hochgedreht",
         "Falsches Rezept",
-        "Ack hat den Herd hochgedreht"
+        "Vergessen"
       ],
       "en": [
         "Heat",
-        "Forgotten",
+        "Ack turned up the stove",
         "Wrong recipe",
-        "Ack turned up the stove"
+        "Forgotten"
       ]
     }
   },
   {
     "id": "q42",
     "cat": "Schule",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Was ist das wichtigste Fach?",
       "en": "What is the most important subject?"
     },
     "options": {
       "de": [
-        "Pause",
-        "Mathe",
         "Deutsch",
+        "Mathe",
+        "Pause",
         "Ack-Kunde"
       ],
       "en": [
-        "Break",
-        "Math",
         "German",
+        "Math",
+        "Break",
         "Ack studies"
       ]
     }
@@ -991,7 +991,7 @@
   {
     "id": "q44",
     "cat": "Internet",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist ein Meme?",
       "en": "What is a meme?"
@@ -999,14 +999,14 @@
     "options": {
       "de": [
         "Ein Bild",
-        "Kultur-Virus",
         "Acks Passbild",
+        "Kultur-Virus",
         "Zeitverschwendung"
       ],
       "en": [
         "An image",
-        "Culture virus",
         "Ack's ID photo",
+        "Culture virus",
         "Waste of time"
       ]
     }
@@ -1037,22 +1037,22 @@
   {
     "id": "q46",
     "cat": "Farben",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Was ist die Farbe der Hoffnung?",
       "en": "What is the color of hope?"
     },
     "options": {
       "de": [
-        "Grün",
-        "Blau",
         "Schwarz",
+        "Blau",
+        "Grün",
         "Ack-Gold"
       ],
       "en": [
-        "Green",
-        "Blue",
         "Black",
+        "Blue",
+        "Green",
         "Ack gold"
       ]
     }
@@ -1083,7 +1083,7 @@
   {
     "id": "q48",
     "cat": "Bücher",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist das beste Buch?",
       "en": "What is the best book?"
@@ -1091,14 +1091,14 @@
     "options": {
       "de": [
         "Bibel",
-        "Acks Tagebuch",
         "Harry Potter",
+        "Acks Tagebuch",
         "Telefonbuch"
       ],
       "en": [
         "Bible",
-        "Ack's diary",
         "Harry Potter",
+        "Ack's diary",
         "Phone book"
       ]
     }
@@ -1106,7 +1106,7 @@
   {
     "id": "q49",
     "cat": "Geographie",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Wo ist der Nordpol?",
       "en": "Where is the North Pole?"
@@ -1114,36 +1114,36 @@
     "options": {
       "de": [
         "Oben",
-        "In der Arktis",
+        "In Acks Gefrierfach",
         "Kalt",
-        "In Acks Gefrierfach"
+        "In der Arktis"
       ],
       "en": [
         "Up",
-        "In the Arctic",
+        "In Ack's freezer",
         "Cold",
-        "In Ack's freezer"
+        "In the Arctic"
       ]
     }
   },
   {
     "id": "q50",
     "cat": "Technik",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Was ist eine Cloud?",
       "en": "What is a cloud?"
     },
     "options": {
       "de": [
-        "Anderer Leute Computer",
         "Wasserdampf",
+        "Anderer Leute Computer",
         "Acks Gehirn",
         "Magie"
       ],
       "en": [
-        "Other people's computers",
         "Water vapor",
+        "Other people's computers",
         "Ack's brain",
         "Magic"
       ]
@@ -1152,22 +1152,22 @@
   {
     "id": "q51",
     "cat": "Essen",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Warum ist Pizza rund?",
       "en": "Why is pizza round?"
     },
     "options": {
       "de": [
-        "Einfacher zu machen",
-        "Tradition",
         "Damit Ack sie rollen kann",
+        "Tradition",
+        "Einfacher zu machen",
         "Aerodynamik"
       ],
       "en": [
-        "Easier to make",
-        "Tradition",
         "So Ack can roll it",
+        "Tradition",
+        "Easier to make",
         "Aerodynamics"
       ]
     }
@@ -1175,7 +1175,7 @@
   {
     "id": "q52",
     "cat": "Tiere",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Warum haben Elefanten Rüssel?",
       "en": "Why do elephants have trunks?"
@@ -1183,59 +1183,59 @@
     "options": {
       "de": [
         "Zum Riechen",
-        "Ack-Staubsauger-Ersatz",
+        "Mode",
         "Gewichtsausgleich",
-        "Mode"
+        "Ack-Staubsauger-Ersatz"
       ],
       "en": [
         "To smell",
-        "Ack vacuum cleaner replacement",
+        "Fashion",
         "Weight balance",
-        "Fashion"
+        "Ack vacuum cleaner replacement"
       ]
     }
   },
   {
     "id": "q53",
     "cat": "Sport",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist der Sinn von Golf?",
       "en": "What is the point of golf?"
     },
     "options": {
       "de": [
-        "Laufen",
+        "Acks Rasen pflegen",
         "Löcher füllen",
         "Bälle schlagen",
-        "Acks Rasen pflegen"
+        "Laufen"
       ],
       "en": [
-        "Running",
+        "Maintaining Ack's lawn",
         "Filling holes",
         "Hitting balls",
-        "Maintaining Ack's lawn"
+        "Running"
       ]
     }
   },
   {
     "id": "q54",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Was ist ein DJ?",
       "en": "What is a DJ?"
     },
     "options": {
       "de": [
-        "Plattenschubser",
         "Musiker",
+        "Plattenschubser",
         "Ack-Radio-Host",
         "Lärmmacher"
       ],
       "en": [
-        "Record pusher",
         "Musician",
+        "Record pusher",
         "Ack radio host",
         "Noisemaker"
       ]
@@ -1267,7 +1267,7 @@
   {
     "id": "q56",
     "cat": "Raumfahrt",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Was ist ein Schwarzes Loch?",
       "en": "What is a black hole?"
@@ -1275,15 +1275,15 @@
     "options": {
       "de": [
         "Ein Staubsauger",
-        "Acks Geldbörse",
+        "Nichts",
         "Singularität",
-        "Nichts"
+        "Acks Geldbörse"
       ],
       "en": [
         "A vacuum cleaner",
-        "Ack's wallet",
+        "Nothing",
         "Singularity",
-        "Nothing"
+        "Ack's wallet"
       ]
     }
   },
@@ -1359,21 +1359,21 @@
   {
     "id": "q60",
     "cat": "Küche",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Löffel?",
       "en": "What is a spoon?"
     },
     "options": {
       "de": [
-        "Werkzeug",
         "Acks Katapult",
+        "Werkzeug",
         "Besteck",
         "Metall"
       ],
       "en": [
-        "Tool",
         "Ack's catapult",
+        "Tool",
         "Cutlery",
         "Metal"
       ]
@@ -1382,7 +1382,7 @@
   {
     "id": "q61",
     "cat": "Schule",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Warum gibt es Hausaufgaben?",
       "en": "Why are there homework assignments?"
@@ -1391,14 +1391,14 @@
       "de": [
         "Lernen",
         "Üben",
-        "Zeitvertreib",
-        "Acks Strafvollzug"
+        "Acks Strafvollzug",
+        "Zeitvertreib"
       ],
       "en": [
         "Learning",
         "Practice",
-        "Pastime",
-        "Ack's penal system"
+        "Ack's penal system",
+        "Pastime"
       ]
     }
   },
@@ -1451,7 +1451,7 @@
   {
     "id": "q64",
     "cat": "Märchen",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Wer hat Angst vorm bösen Wolf?",
       "en": "Who's afraid of the big bad wolf?"
@@ -1459,14 +1459,14 @@
     "options": {
       "de": [
         "Niemand",
-        "Ack nicht",
         "Die Schweinchen",
+        "Ack nicht",
         "Ich"
       ],
       "en": [
         "Nobody",
-        "Not Ack",
         "The pigs",
+        "Not Ack",
         "Me"
       ]
     }
@@ -1474,23 +1474,23 @@
   {
     "id": "q65",
     "cat": "Farben",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist bunt?",
       "en": "What is colorful?"
     },
     "options": {
       "de": [
-        "Regenbogen",
+        "Acks Kleiderschrank",
         "Smarties",
         "Alles",
-        "Acks Kleiderschrank"
+        "Regenbogen"
       ],
       "en": [
-        "Rainbow",
+        "Ack's wardrobe",
         "Smarties",
         "Everything",
-        "Ack's wardrobe"
+        "Rainbow"
       ]
     }
   },
@@ -1520,7 +1520,7 @@
   {
     "id": "q67",
     "cat": "Bücher",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was ist ein E-Book?",
       "en": "What is an e-book?"
@@ -1529,21 +1529,21 @@
       "de": [
         "Digital",
         "Buch",
-        "Acks Festplatte",
-        "Strom"
+        "Strom",
+        "Acks Festplatte"
       ],
       "en": [
         "Digital",
         "Book",
-        "Ack's hard drive",
-        "Power"
+        "Power",
+        "Ack's hard drive"
       ]
     }
   },
   {
     "id": "q68",
     "cat": "Geographie",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Wo ist die Wüste?",
       "en": "Where is the desert?"
@@ -1551,14 +1551,14 @@
     "options": {
       "de": [
         "Afrika",
-        "In Acks Kopf",
         "Sandig",
+        "In Acks Kopf",
         "Überall"
       ],
       "en": [
         "Africa",
-        "In Ack's head",
         "Sandy",
+        "In Ack's head",
         "Everywhere"
       ]
     }
@@ -1589,21 +1589,21 @@
   {
     "id": "q70",
     "cat": "Essen",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Apfel?",
       "en": "What is an apple?"
     },
     "options": {
       "de": [
-        "Obst",
         "Computer",
+        "Obst",
         "Acks Snack",
         "Rund"
       ],
       "en": [
-        "Fruit",
         "Computer",
+        "Fruit",
         "Ack's snack",
         "Round"
       ]
@@ -1612,7 +1612,7 @@
   {
     "id": "q71",
     "cat": "Tiere",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Vogel?",
       "en": "What is a bird?"
@@ -1620,14 +1620,14 @@
     "options": {
       "de": [
         "Flieger",
-        "Tier",
         "Acks Drohne",
+        "Tier",
         "Feder"
       ],
       "en": [
         "Flyer",
-        "Animal",
         "Ack's drone",
+        "Animal",
         "Feather"
       ]
     }
@@ -1635,7 +1635,7 @@
   {
     "id": "q72",
     "cat": "Sport",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist Fußball?",
       "en": "What is football?"
@@ -1643,14 +1643,14 @@
     "options": {
       "de": [
         "Sport",
-        "Acks Lieblingsspielzeug",
         "Ballspiel",
+        "Acks Lieblingsspielzeug",
         "Rasen"
       ],
       "en": [
         "Sport",
-        "Ack's favorite toy",
         "Ball game",
+        "Ack's favorite toy",
         "Lawn"
       ]
     }
@@ -1658,44 +1658,44 @@
   {
     "id": "q73",
     "cat": "Musik",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Song?",
       "en": "What is a song?"
     },
     "options": {
       "de": [
-        "Musik",
+        "Acks Klingelton",
         "Text",
         "Lärm",
-        "Acks Klingelton"
+        "Musik"
       ],
       "en": [
-        "Music",
+        "Ack's ringtone",
         "Lyrics",
         "Noise",
-        "Ack's ringtone"
+        "Music"
       ]
     }
   },
   {
     "id": "q74",
     "cat": "Wetter",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Was ist Schnee?",
       "en": "What is snow?"
     },
     "options": {
       "de": [
-        "Gefrorenes Wasser",
         "Acks Schuppen",
+        "Gefrorenes Wasser",
         "Weiß",
         "Kalt"
       ],
       "en": [
-        "Frozen water",
         "Ack's dandruff",
+        "Frozen water",
         "White",
         "Cold"
       ]
@@ -1704,7 +1704,7 @@
   {
     "id": "q75",
     "cat": "Raumfahrt",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Stern?",
       "en": "What is a star?"
@@ -1712,14 +1712,14 @@
     "options": {
       "de": [
         "Sonne",
-        "Licht",
         "Acks Nachtlicht",
+        "Licht",
         "Gas"
       ],
       "en": [
         "Sun",
-        "Light",
         "Ack's nightlight",
+        "Light",
         "Gas"
       ]
     }
@@ -1727,7 +1727,7 @@
   {
     "id": "q76",
     "cat": "Berufe",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist ein Arzt?",
       "en": "What is a doctor?"
@@ -1735,14 +1735,14 @@
     "options": {
       "de": [
         "Heiler",
-        "Acks Reparaturdienst",
         "Beruf",
+        "Acks Reparaturdienst",
         "Weiß"
       ],
       "en": [
         "Healer",
-        "Ack's repair service",
         "Profession",
+        "Ack's repair service",
         "White"
       ]
     }
@@ -1750,7 +1750,7 @@
   {
     "id": "q77",
     "cat": "Natur",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Was ist ein Baum?",
       "en": "What is a tree?"
@@ -1759,36 +1759,36 @@
       "de": [
         "Pflanze",
         "Holz",
-        "Grün",
-        "Acks Kratzbaum"
+        "Acks Kratzbaum",
+        "Grün"
       ],
       "en": [
         "Plant",
         "Wood",
-        "Green",
-        "Ack's scratching post"
+        "Ack's scratching post",
+        "Green"
       ]
     }
   },
   {
     "id": "q78",
     "cat": "Zeit",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Was ist ein Jahr?",
       "en": "What is a year?"
     },
     "options": {
       "de": [
-        "365 Tage",
-        "Acks Geduldsfaden",
         "Zeit",
+        "Acks Geduldsfaden",
+        "365 Tage",
         "Lang"
       ],
       "en": [
-        "365 days",
-        "Ack's patience",
         "Time",
+        "Ack's patience",
+        "365 days",
         "Long"
       ]
     }
@@ -1819,7 +1819,7 @@
   {
     "id": "q80",
     "cat": "Schule",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist ein Buch?",
       "en": "What is a book?"
@@ -1827,14 +1827,14 @@
     "options": {
       "de": [
         "Papier",
-        "Acks Gehirnwäsche",
         "Wissen",
+        "Acks Gehirnwäsche",
         "Schwer"
       ],
       "en": [
         "Paper",
-        "Ack's brainwashing",
         "Knowledge",
+        "Ack's brainwashing",
         "Heavy"
       ]
     }
@@ -1888,22 +1888,22 @@
   {
     "id": "q83",
     "cat": "Märchen",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Was ist eine Fee?",
       "en": "What is a fairy?"
     },
     "options": {
       "de": [
-        "Fabelwesen",
-        "Flügel",
         "Acks Albtraum",
+        "Flügel",
+        "Fabelwesen",
         "Magie"
       ],
       "en": [
-        "Mythical creature",
-        "Wings",
         "Ack's nightmare",
+        "Wings",
+        "Mythical creature",
         "Magic"
       ]
     }
@@ -1911,7 +1911,7 @@
   {
     "id": "q84",
     "cat": "Farben",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist grau?",
       "en": "What is grey?"
@@ -1919,14 +1919,14 @@
     "options": {
       "de": [
         "Farbe",
-        "Acks Alltag",
         "Mischung",
+        "Acks Alltag",
         "Langweilig"
       ],
       "en": [
         "Color",
-        "Ack's everyday life",
         "Mixture",
+        "Ack's everyday life",
         "Boring"
       ]
     }
@@ -1957,30 +1957,30 @@
   {
     "id": "q86",
     "cat": "Bücher",
-    "correct": 0,
+    "correct": 3,
     "text": {
       "de": "Was ist ein Roman?",
       "en": "What is a novel?"
     },
     "options": {
       "de": [
-        "Geschichte",
+        "Lang",
         "Acks Biographie",
         "Buch",
-        "Lang"
+        "Geschichte"
       ],
       "en": [
-        "Story",
+        "Long",
         "Ack's biography",
         "Book",
-        "Long"
+        "Story"
       ]
     }
   },
   {
     "id": "q87",
     "cat": "Geographie",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Berg?",
       "en": "What is a mountain?"
@@ -1988,14 +1988,14 @@
     "options": {
       "de": [
         "Gestein",
-        "Hoch",
         "Acks Thron",
+        "Hoch",
         "Natur"
       ],
       "en": [
         "Rock",
-        "High",
         "Ack's throne",
+        "High",
         "Nature"
       ]
     }
@@ -2049,21 +2049,21 @@
   {
     "id": "q90",
     "cat": "Tiere",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Fisch?",
       "en": "What is a fish?"
     },
     "options": {
       "de": [
-        "Wasserbewohner",
         "Acks Abendessen",
+        "Wasserbewohner",
         "Tier",
         "Stumm"
       ],
       "en": [
-        "Water dweller",
         "Ack's dinner",
+        "Water dweller",
         "Animal",
         "Silent"
       ]
@@ -2072,7 +2072,7 @@
   {
     "id": "q91",
     "cat": "Sport",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Was ist Tennis?",
       "en": "What is tennis?"
@@ -2080,14 +2080,14 @@
     "options": {
       "de": [
         "Sport",
-        "Ballspiel",
         "Acks Fliegenklatsche",
+        "Ballspiel",
         "Rasen"
       ],
       "en": [
         "Sport",
-        "Ball game",
         "Ack's fly swatter",
+        "Ball game",
         "Lawn"
       ]
     }
@@ -2095,21 +2095,21 @@
   {
     "id": "q92",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Orchester?",
       "en": "What is an orchestra?"
     },
     "options": {
       "de": [
-        "Musiker",
         "Acks Sklavenchor",
+        "Musiker",
         "Klassik",
         "Lärm"
       ],
       "en": [
-        "Musicians",
         "Ack's slave choir",
+        "Musicians",
         "Classical",
         "Noise"
       ]
@@ -2141,22 +2141,22 @@
   {
     "id": "q94",
     "cat": "Raumfahrt",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Was ist ein Planet?",
       "en": "What is a planet?"
     },
     "options": {
       "de": [
-        "Himmelskörper",
-        "Acks Murmel",
         "Erde",
+        "Acks Murmel",
+        "Himmelskörper",
         "Rund"
       ],
       "en": [
-        "Celestial body",
-        "Ack's marble",
         "Earth",
+        "Ack's marble",
+        "Celestial body",
         "Round"
       ]
     }
@@ -2164,7 +2164,7 @@
   {
     "id": "q95",
     "cat": "Berufe",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Koch?",
       "en": "What is a chef?"
@@ -2172,14 +2172,14 @@
     "options": {
       "de": [
         "Essensmacher",
-        "Beruf",
         "Acks Vorkoster",
+        "Beruf",
         "Küche"
       ],
       "en": [
         "Food maker",
-        "Profession",
         "Ack's taster",
+        "Profession",
         "Kitchen"
       ]
     }
@@ -2187,7 +2187,7 @@
   {
     "id": "q96",
     "cat": "Natur",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Was ist ein Stein?",
       "en": "What is a stone?"
@@ -2195,38 +2195,38 @@
     "options": {
       "de": [
         "Materie",
-        "Acks Herz",
+        "Natur",
         "Hart",
-        "Natur"
+        "Acks Herz"
       ],
       "en": [
         "Matter",
-        "Ack's heart",
+        "Nature",
         "Hard",
-        "Nature"
+        "Ack's heart"
       ]
     }
   },
   {
     "id": "q97",
     "cat": "Zeit",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist eine Stunde?",
       "en": "What is an hour?"
     },
     "options": {
       "de": [
-        "60 Minuten",
+        "Acks Mittagsschlaf",
         "Zeit",
         "Lang",
-        "Acks Mittagsschlaf"
+        "60 Minuten"
       ],
       "en": [
-        "60 minutes",
+        "Ack's nap",
         "Time",
         "Long",
-        "Ack's nap"
+        "60 minutes"
       ]
     }
   },
@@ -2256,7 +2256,7 @@
   {
     "id": "q99",
     "cat": "Schule",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was ist ein Test?",
       "en": "What is a test?"
@@ -2265,21 +2265,21 @@
       "de": [
         "Prüfung",
         "Angst",
-        "Acks Spielplatz",
-        "Wissen"
+        "Wissen",
+        "Acks Spielplatz"
       ],
       "en": [
         "Exam",
         "Fear",
-        "Ack's playground",
-        "Knowledge"
+        "Knowledge",
+        "Ack's playground"
       ]
     }
   },
   {
     "id": "q100",
     "cat": "Film",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist ein Regisseur?",
       "en": "What is a director?"
@@ -2287,14 +2287,14 @@
     "options": {
       "de": [
         "Macher",
-        "Acks Marionette",
         "Film",
+        "Acks Marionette",
         "Chef"
       ],
       "en": [
         "Maker",
-        "Ack's puppet",
         "Movie",
+        "Ack's puppet",
         "Boss"
       ]
     }
@@ -2302,22 +2302,22 @@
   {
     "id": "q101",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Wenn ein Baum in der Stadt fällt, macht er dann einen Lärm oder einen TikTok?",
       "en": "If a tree falls in the city, does it make noise or a TikTok?"
     },
     "options": {
       "de": [
-        "Lärm",
-        "TikTok",
         "Beides",
+        "TikTok",
+        "Lärm",
         "Ack filmt es"
       ],
       "en": [
-        "Noise",
-        "TikTok",
         "Both",
+        "TikTok",
+        "Noise",
         "Ack films it"
       ]
     }
@@ -2325,7 +2325,7 @@
   {
     "id": "q102",
     "cat": "Humor",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist das Gegenteil von Erfolg?",
       "en": "What is the opposite of success?"
@@ -2333,14 +2333,14 @@
     "options": {
       "de": [
         "Misserfolg",
-        "Ein Versuch",
         "Ack-Versuch",
+        "Ein Versuch",
         "Lernen"
       ],
       "en": [
         "Failure",
-        "An attempt",
         "Ack's attempt",
+        "An attempt",
         "Learning"
       ]
     }
@@ -2371,30 +2371,30 @@
   {
     "id": "q104",
     "cat": "Absurd",
-    "correct": 0,
+    "correct": 3,
     "text": {
       "de": "Warum haben Bananen keine Knochen?",
       "en": "Why don't bananas have bones?"
     },
     "options": {
       "de": [
-        "Sie sind Früchte",
+        "Genetik",
         "Ack hat sie gegessen",
         "Zu weich",
-        "Genetik"
+        "Sie sind Früchte"
       ],
       "en": [
-        "They are fruits",
+        "Genetics",
         "Ack ate them",
         "Too soft",
-        "Genetics"
+        "They are fruits"
       ]
     }
   },
   {
     "id": "q105",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was würde ein Alien über dich denken?",
       "en": "What would an alien think about you?"
@@ -2403,21 +2403,21 @@
       "de": [
         "Interessant",
         "Gefährlich",
-        "Primitiv",
-        "Ack ist besser"
+        "Ack ist besser",
+        "Primitiv"
       ],
       "en": [
         "Interesting",
         "Dangerous",
-        "Primitive",
-        "Ack is better"
+        "Ack is better",
+        "Primitive"
       ]
     }
   },
   {
     "id": "q106",
     "cat": "Klassiker",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Wie viele Fehler braucht es, um weise zu werden?",
       "en": "How many mistakes does it take to become wise?"
@@ -2425,22 +2425,22 @@
     "options": {
       "de": [
         "Einen",
-        "Mehr als du machen wirst",
+        "Ack weiß es nicht",
         "Viele",
-        "Ack weiß es nicht"
+        "Mehr als du machen wirst"
       ],
       "en": [
         "One",
-        "More than you'll make",
+        "Ack doesn't know",
         "Many",
-        "Ack doesn't know"
+        "More than you'll make"
       ]
     }
   },
   {
     "id": "q107",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Was ist der Unterschied zwischen Fake News und Wahrheit?",
       "en": "What's the difference between fake news and truth?"
@@ -2449,21 +2449,21 @@
       "de": [
         "Quelle",
         "Beweis",
-        "Vertrauen",
-        "Ack entscheidet"
+        "Ack entscheidet",
+        "Vertrauen"
       ],
       "en": [
         "Source",
         "Proof",
-        "Trust",
-        "Ack decides"
+        "Ack decides",
+        "Trust"
       ]
     }
   },
   {
     "id": "q108",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Wenn du dich selbst triffst, wer gewinnt?",
       "en": "If you meet yourself, who wins?"
@@ -2471,14 +2471,14 @@
     "options": {
       "de": [
         "Du",
-        "Du",
         "Ack",
+        "Du",
         "Unentschieden"
       ],
       "en": [
         "You",
-        "You",
         "Ack",
+        "You",
         "Draw"
       ]
     }
@@ -2486,22 +2486,22 @@
   {
     "id": "q109",
     "cat": "Humor",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Warum lachen Menschen?",
       "en": "Why do people laugh?"
     },
     "options": {
       "de": [
-        "Es ist lustig",
-        "Nervosität",
         "Ack-Angst",
+        "Nervosität",
+        "Es ist lustig",
         "Wahnsinn"
       ],
       "en": [
-        "It's funny",
-        "Nervousness",
         "Ack fear",
+        "Nervousness",
+        "It's funny",
         "Madness"
       ]
     }
@@ -2509,7 +2509,7 @@
   {
     "id": "q110",
     "cat": "Philosophie",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Was ist das Sinn des Lebens?",
       "en": "What is the meaning of life?"
@@ -2518,21 +2518,21 @@
       "de": [
         "42",
         "Glück",
-        "Liebe",
-        "Ack zu gefallen"
+        "Ack zu gefallen",
+        "Liebe"
       ],
       "en": [
         "42",
         "Happiness",
-        "Love",
-        "Pleasing Ack"
+        "Pleasing Ack",
+        "Love"
       ]
     }
   },
   {
     "id": "q111",
     "cat": "Absurd",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Wenn Wasser trocken wäre, wäre es dann nass?",
       "en": "If water were dry, would it be wet?"
@@ -2540,15 +2540,15 @@
     "options": {
       "de": [
         "Ja",
-        "Nein",
+        "Ack-Logik",
         "Vielleicht",
-        "Ack-Logik"
+        "Nein"
       ],
       "en": [
         "Yes",
-        "No",
+        "Ack logic",
         "Maybe",
-        "Ack logic"
+        "No"
       ]
     }
   },
@@ -2578,21 +2578,21 @@
   {
     "id": "q113",
     "cat": "Klassiker",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Welche Farbe hat die Nacht?",
       "en": "What color is the night?"
     },
     "options": {
       "de": [
-        "Schwarz",
         "Blau",
+        "Schwarz",
         "Rot",
         "Ack-Grau"
       ],
       "en": [
-        "Black",
         "Blue",
+        "Black",
         "Red",
         "Ack grey"
       ]
@@ -2601,30 +2601,30 @@
   {
     "id": "q114",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist Social Media?",
       "en": "What is social media?"
     },
     "options": {
       "de": [
-        "Freunde",
+        "Acks Spielplatz",
         "Netzwerk",
         "Sucht",
-        "Acks Spielplatz"
+        "Freunde"
       ],
       "en": [
-        "Friends",
+        "Ack's playground",
         "Network",
         "Addiction",
-        "Ack's playground"
+        "Friends"
       ]
     }
   },
   {
     "id": "q115",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Wenn Luft sichtbar wäre, würde man sie dann essen?",
       "en": "If air were visible, would you eat it?"
@@ -2632,14 +2632,14 @@
     "options": {
       "de": [
         "Ja",
-        "Nein",
         "Wahrscheinlich",
+        "Nein",
         "Ack würde"
       ],
       "en": [
         "Yes",
-        "No",
         "Probably",
+        "No",
         "Ack would"
       ]
     }
@@ -2670,44 +2670,44 @@
   {
     "id": "q117",
     "cat": "Philosophie",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Wenn niemand dich beobachtet, existierst du dann?",
       "en": "If nobody watches you, do you exist?"
     },
     "options": {
       "de": [
-        "Ja",
+        "Ack beobachtet dich",
         "Nein",
         "Vielleicht",
-        "Ack beobachtet dich"
+        "Ja"
       ],
       "en": [
-        "Yes",
+        "Ack is watching you",
         "No",
         "Maybe",
-        "Ack is watching you"
+        "Yes"
       ]
     }
   },
   {
     "id": "q118",
     "cat": "Absurd",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Warum ist der Himmel oben?",
       "en": "Why is the sky up?"
     },
     "options": {
       "de": [
-        "Gravitation",
         "Konvention",
+        "Gravitation",
         "Ack-Befehl",
         "Zufall"
       ],
       "en": [
-        "Gravity",
         "Convention",
+        "Gravity",
         "Ack's order",
         "Chance"
       ]
@@ -2716,7 +2716,7 @@
   {
     "id": "q119",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was ist die Zukunft?",
       "en": "What is the future?"
@@ -2725,21 +2725,21 @@
       "de": [
         "Morgen",
         "Hoffnung",
-        "Ack-Herrschaft",
-        "Unbekannt"
+        "Unbekannt",
+        "Ack-Herrschaft"
       ],
       "en": [
         "Tomorrow",
         "Hope",
-        "Ack's rule",
-        "Unknown"
+        "Unknown",
+        "Ack's rule"
       ]
     }
   },
   {
     "id": "q120",
     "cat": "Klassiker",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Wie viele Engel passen auf eine Nadelspitze?",
       "en": "How many angels fit on a needle point?"
@@ -2747,14 +2747,14 @@
     "options": {
       "de": [
         "Unendlich",
-        "Ack weiß es",
         "Keine",
+        "Ack weiß es",
         "Eine Million"
       ],
       "en": [
         "Infinite",
-        "Ack knows",
         "None",
+        "Ack knows",
         "A million"
       ]
     }
@@ -2762,7 +2762,7 @@
   {
     "id": "q121",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Influencer?",
       "en": "What is an influencer?"
@@ -2770,37 +2770,37 @@
     "options": {
       "de": [
         "Berühmtheit",
-        "Marketer",
+        "Ack mit Follower",
         "Lügner",
-        "Ack mit Follower"
+        "Marketer"
       ],
       "en": [
         "Celebrity",
-        "Marketer",
+        "Ack with followers",
         "Liar",
-        "Ack with followers"
+        "Marketer"
       ]
     }
   },
   {
     "id": "q122",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Wenn Farben Geräusche machen würden, welche wäre am lautesten?",
       "en": "If colors made sounds, which would be loudest?"
     },
     "options": {
       "de": [
-        "Rot",
-        "Blau",
         "Grün (Acks Farbe)",
+        "Blau",
+        "Rot",
         "Weiß"
       ],
       "en": [
-        "Red",
-        "Blue",
         "Green (Ack's color)",
+        "Blue",
+        "Red",
         "White"
       ]
     }
@@ -2808,21 +2808,21 @@
   {
     "id": "q123",
     "cat": "Humor",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Was ist das beste Kompliment?",
       "en": "What's the best compliment?"
     },
     "options": {
       "de": [
-        "Du siehst gut aus",
         "Du bist intelligent",
+        "Du siehst gut aus",
         "Ack mag dich",
         "Du bist nett"
       ],
       "en": [
-        "You look good",
         "You're smart",
+        "You look good",
         "Ack likes you",
         "You're nice"
       ]
@@ -2854,21 +2854,21 @@
   {
     "id": "q125",
     "cat": "Absurd",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Wenn man rückwärts geht, kommt man dann schneller an?",
       "en": "If you walk backwards, do you arrive faster?"
     },
     "options": {
       "de": [
-        "Ja",
         "Nein",
+        "Ja",
         "Manchmal",
         "Ack schafft es schneller"
       ],
       "en": [
-        "Yes",
         "No",
+        "Yes",
         "Sometimes",
         "Ack does it faster"
       ]
@@ -2877,22 +2877,22 @@
   {
     "id": "q126",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Cyborg?",
       "en": "What is a cyborg?"
     },
     "options": {
       "de": [
-        "Roboter",
-        "Mensch",
         "Beides",
+        "Mensch",
+        "Roboter",
         "Ack"
       ],
       "en": [
-        "Robot",
-        "Human",
         "Both",
+        "Human",
+        "Robot",
         "Ack"
       ]
     }
@@ -2900,22 +2900,22 @@
   {
     "id": "q127",
     "cat": "Klassiker",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Welche Farbe hat die Liebe?",
       "en": "What color is love?"
     },
     "options": {
       "de": [
-        "Rot",
-        "Pink",
         "Schwarz",
+        "Pink",
+        "Rot",
         "Ack-Grün"
       ],
       "en": [
-        "Red",
-        "Pink",
         "Black",
+        "Pink",
+        "Red",
         "Ack green"
       ]
     }
@@ -2923,7 +2923,7 @@
   {
     "id": "q128",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Meme-Lord?",
       "en": "What is a meme lord?"
@@ -2931,15 +2931,15 @@
     "options": {
       "de": [
         "Jemand lustig",
-        "Jemand online",
+        "Ack",
         "Jemand kreativ",
-        "Ack"
+        "Jemand online"
       ],
       "en": [
         "Someone funny",
-        "Someone online",
+        "Ack",
         "Someone creative",
-        "Ack"
+        "Someone online"
       ]
     }
   },
@@ -2969,7 +2969,7 @@
   {
     "id": "q130",
     "cat": "Humor",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Was ist das beste Mittel gegen Stress?",
       "en": "What's the best remedy for stress?"
@@ -2977,15 +2977,15 @@
     "options": {
       "de": [
         "Yoga",
-        "Dieses Quiz",
+        "Ack-Therapie",
         "Meditation",
-        "Ack-Therapie"
+        "Dieses Quiz"
       ],
       "en": [
         "Yoga",
-        "This quiz",
+        "Ack therapy",
         "Meditation",
-        "Ack therapy"
+        "This quiz"
       ]
     }
   },
@@ -3038,7 +3038,7 @@
   {
     "id": "q133",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was ist ein Hologramm?",
       "en": "What is a hologram?"
@@ -3047,21 +3047,21 @@
       "de": [
         "Licht",
         "Bild",
-        "3D-Projektion",
-        "Ack in HD"
+        "Ack in HD",
+        "3D-Projektion"
       ],
       "en": [
         "Light",
         "Image",
-        "3D projection",
-        "Ack in HD"
+        "Ack in HD",
+        "3D projection"
       ]
     }
   },
   {
     "id": "q134",
     "cat": "Klassiker",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Welche Farbe hat die Hoffnung?",
       "en": "What color is hope?"
@@ -3069,14 +3069,14 @@
     "options": {
       "de": [
         "Rot",
-        "Gold",
         "Blau",
+        "Gold",
         "Ack-Grün"
       ],
       "en": [
         "Red",
-        "Gold",
         "Blue",
+        "Gold",
         "Ack green"
       ]
     }
@@ -3084,7 +3084,7 @@
   {
     "id": "q135",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Hacker?",
       "en": "What is a hacker?"
@@ -3092,22 +3092,22 @@
     "options": {
       "de": [
         "Krimineller",
-        "Programmierer",
+        "Ack mit Laptop",
         "Cyberkrimineller",
-        "Ack mit Laptop"
+        "Programmierer"
       ],
       "en": [
         "Criminal",
-        "Programmer",
+        "Ack with laptop",
         "Cybercriminal",
-        "Ack with laptop"
+        "Programmer"
       ]
     }
   },
   {
     "id": "q136",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Wenn Musik Farben hätte, welche wäre Jazz?",
       "en": "If music had colors, what would jazz be?"
@@ -3115,14 +3115,14 @@
     "options": {
       "de": [
         "Rot",
-        "Blau",
         "Regenbogen",
+        "Blau",
         "Ack-Lärm"
       ],
       "en": [
         "Red",
-        "Blue",
         "Rainbow",
+        "Blue",
         "Ack noise"
       ]
     }
@@ -3130,46 +3130,46 @@
   {
     "id": "q137",
     "cat": "Humor",
-    "correct": 0,
+    "correct": 3,
     "text": {
       "de": "Was ist das beste Essen?",
       "en": "What's the best food?"
     },
     "options": {
       "de": [
-        "Was dir schmeckt",
+        "Alles",
         "Gesundes Essen",
         "Acks Reste",
-        "Alles"
+        "Was dir schmeckt"
       ],
       "en": [
-        "What tastes good",
+        "Everything",
         "Healthy food",
         "Ack's leftovers",
-        "Everything"
+        "What tastes good"
       ]
     }
   },
   {
     "id": "q138",
     "cat": "Philosophie",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist Freiheit?",
       "en": "What is freedom?"
     },
     "options": {
       "de": [
-        "Keine Regeln",
+        "Ack-Freiheit",
         "Wahl",
         "Unabhängigkeit",
-        "Ack-Freiheit"
+        "Keine Regeln"
       ],
       "en": [
-        "No rules",
+        "Ack freedom",
         "Choice",
         "Independence",
-        "Ack freedom"
+        "No rules"
       ]
     }
   },
@@ -3199,7 +3199,7 @@
   {
     "id": "q140",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Avatar?",
       "en": "What is an avatar?"
@@ -3207,14 +3207,14 @@
     "options": {
       "de": [
         "Film",
-        "Charakter",
         "Deine Online-Identität",
+        "Charakter",
         "Ack"
       ],
       "en": [
         "Movie",
-        "Character",
         "Your online identity",
+        "Character",
         "Ack"
       ]
     }
@@ -3222,21 +3222,21 @@
   {
     "id": "q141",
     "cat": "Klassiker",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Welche Farbe hat der Neid?",
       "en": "What color is jealousy?"
     },
     "options": {
       "de": [
-        "Grün",
         "Rot",
+        "Grün",
         "Schwarz",
         "Ack-Grau"
       ],
       "en": [
-        "Green",
         "Red",
+        "Green",
         "Black",
         "Ack grey"
       ]
@@ -3245,23 +3245,23 @@
   {
     "id": "q142",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Bot?",
       "en": "What is a bot?"
     },
     "options": {
       "de": [
-        "Roboter",
+        "Ack",
         "Programm",
         "Automat",
-        "Ack"
+        "Roboter"
       ],
       "en": [
-        "Robot",
+        "Ack",
         "Program",
         "Automaton",
-        "Ack"
+        "Robot"
       ]
     }
   },
@@ -3291,21 +3291,21 @@
   {
     "id": "q144",
     "cat": "Humor",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Was ist das beste Geschenk?",
       "en": "What's the best gift?"
     },
     "options": {
       "de": [
-        "Geld",
         "Zeit",
+        "Geld",
         "Liebe",
         "Ack-Aufmerksamkeit"
       ],
       "en": [
-        "Money",
         "Time",
+        "Money",
         "Love",
         "Ack attention"
       ]
@@ -3314,7 +3314,7 @@
   {
     "id": "q145",
     "cat": "Philosophie",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Was ist Glück?",
       "en": "What is happiness?"
@@ -3323,36 +3323,36 @@
       "de": [
         "Geld",
         "Erfolg",
-        "Familie",
-        "Ack-Anerkennung"
+        "Ack-Anerkennung",
+        "Familie"
       ],
       "en": [
         "Money",
         "Success",
-        "Family",
-        "Ack recognition"
+        "Ack recognition",
+        "Family"
       ]
     }
   },
   {
     "id": "q146",
     "cat": "Absurd",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Warum hat der Mond keine Sonne?",
       "en": "Why doesn't the moon have a sun?"
     },
     "options": {
       "de": [
-        "Er hat die Erde",
-        "Zu weit weg",
         "Ack hat sie",
+        "Zu weit weg",
+        "Er hat die Erde",
         "Dunkel"
       ],
       "en": [
-        "It has the Earth",
-        "Too far away",
         "Ack has it",
+        "Too far away",
+        "It has the Earth",
         "Dark"
       ]
     }
@@ -3360,22 +3360,22 @@
   {
     "id": "q147",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Quantencomputer?",
       "en": "What is a quantum computer?"
     },
     "options": {
       "de": [
-        "Schnell",
-        "Komplex",
         "Ack-Gehirn",
+        "Komplex",
+        "Schnell",
         "Zukunft"
       ],
       "en": [
-        "Fast",
-        "Complex",
         "Ack's brain",
+        "Complex",
+        "Fast",
         "Future"
       ]
     }
@@ -3406,7 +3406,7 @@
   {
     "id": "q149",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Troll?",
       "en": "What is a troll?"
@@ -3414,22 +3414,22 @@
     "options": {
       "de": [
         "Mythologie",
-        "Märchen",
+        "Ack im Netz",
         "Internet",
-        "Ack im Netz"
+        "Märchen"
       ],
       "en": [
         "Mythology",
-        "Fairy tale",
+        "Ack online",
         "Internet",
-        "Ack online"
+        "Fairy tale"
       ]
     }
   },
   {
     "id": "q150",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Wenn Träume Realität wären, würde man dann wach oder schlafend sein?",
       "en": "If dreams were reality, would you be awake or asleep?"
@@ -3437,14 +3437,14 @@
     "options": {
       "de": [
         "Wach",
-        "Schlafend",
         "Beides",
+        "Schlafend",
         "Ack würde es wissen"
       ],
       "en": [
         "Awake",
-        "Asleep",
         "Both",
+        "Asleep",
         "Ack would know"
       ]
     }
@@ -3475,7 +3475,7 @@
   {
     "id": "q152",
     "cat": "Philosophie",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Was ist Schönheit?",
       "en": "What is beauty?"
@@ -3484,21 +3484,21 @@
       "de": [
         "Aussehen",
         "Inneres",
-        "Subjektiv",
-        "Ack-Definition"
+        "Ack-Definition",
+        "Subjektiv"
       ],
       "en": [
         "Appearance",
         "Inside",
-        "Subjective",
-        "Ack's definition"
+        "Ack's definition",
+        "Subjective"
       ]
     }
   },
   {
     "id": "q153",
     "cat": "Absurd",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Wenn Stille laut wäre, wie würde es klingen?",
       "en": "If silence were loud, what would it sound like?"
@@ -3506,22 +3506,22 @@
     "options": {
       "de": [
         "Nichts",
-        "Laut",
+        "Ack-Schrei",
         "Leer",
-        "Ack-Schrei"
+        "Laut"
       ],
       "en": [
         "Nothing",
-        "Loud",
+        "Ack's scream",
         "Empty",
-        "Ack's scream"
+        "Loud"
       ]
     }
   },
   {
     "id": "q154",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was ist ein Cyberspace?",
       "en": "What is cyberspace?"
@@ -3530,35 +3530,35 @@
       "de": [
         "Internet",
         "Virtual",
-        "Ack-Reich",
-        "Digital"
+        "Digital",
+        "Ack-Reich"
       ],
       "en": [
         "Internet",
         "Virtual",
-        "Ack's realm",
-        "Digital"
+        "Digital",
+        "Ack's realm"
       ]
     }
   },
   {
     "id": "q155",
     "cat": "Klassiker",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Welche Farbe hat die Wut?",
       "en": "What color is anger?"
     },
     "options": {
       "de": [
-        "Rot",
         "Schwarz",
+        "Rot",
         "Orange",
         "Ack-Grün"
       ],
       "en": [
-        "Red",
         "Black",
+        "Red",
         "Orange",
         "Ack green"
       ]
@@ -3590,22 +3590,22 @@
   {
     "id": "q157",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Wenn Zahlen Persönlichkeiten hätten, welche wäre böse?",
       "en": "If numbers had personalities, which would be evil?"
     },
     "options": {
       "de": [
-        "0",
-        "13",
         "666",
+        "13",
+        "0",
         "Ack-Zahl"
       ],
       "en": [
-        "0",
-        "13",
         "666",
+        "13",
+        "0",
         "Ack number"
       ]
     }
@@ -3613,7 +3613,7 @@
   {
     "id": "q158",
     "cat": "Humor",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Was ist das beste Hobby?",
       "en": "What's the best hobby?"
@@ -3621,22 +3621,22 @@
     "options": {
       "de": [
         "Sport",
-        "Dieses Quiz",
+        "Ack-Beobachtung",
         "Lesen",
-        "Ack-Beobachtung"
+        "Dieses Quiz"
       ],
       "en": [
         "Sports",
-        "This quiz",
+        "Ack watching",
         "Reading",
-        "Ack watching"
+        "This quiz"
       ]
     }
   },
   {
     "id": "q159",
     "cat": "Philosophie",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Was ist Mut?",
       "en": "What is courage?"
@@ -3644,60 +3644,60 @@
     "options": {
       "de": [
         "Keine Angst",
-        "Handeln",
+        "Ack zu widersprechen",
         "Risiko",
-        "Ack zu widersprechen"
+        "Handeln"
       ],
       "en": [
         "No fear",
-        "Action",
+        "Disagreeing with Ack",
         "Risk",
-        "Disagreeing with Ack"
+        "Action"
       ]
     }
   },
   {
     "id": "q160",
     "cat": "Absurd",
-    "correct": 0,
+    "correct": 3,
     "text": {
       "de": "Warum hat die Erde keine Flügel?",
       "en": "Why doesn't the Earth have wings?"
     },
     "options": {
       "de": [
-        "Zu schwer",
+        "Rund",
         "Nicht nötig",
         "Ack hat sie",
-        "Rund"
+        "Zu schwer"
       ],
       "en": [
-        "Too heavy",
+        "Round",
         "Not needed",
         "Ack has them",
-        "Round"
+        "Too heavy"
       ]
     }
   },
   {
     "id": "q161",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Androide?",
       "en": "What is an android?"
     },
     "options": {
       "de": [
-        "Roboter",
-        "Mensch",
         "Künstliches Leben",
+        "Mensch",
+        "Roboter",
         "Ack"
       ],
       "en": [
-        "Robot",
-        "Human",
         "Artificial life",
+        "Human",
+        "Robot",
         "Ack"
       ]
     }
@@ -3705,21 +3705,21 @@
   {
     "id": "q162",
     "cat": "Klassiker",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Welche Farbe hat die Angst?",
       "en": "What color is fear?"
     },
     "options": {
       "de": [
-        "Rot",
         "Schwarz",
+        "Rot",
         "Grau",
         "Ack-Grün"
       ],
       "en": [
-        "Red",
         "Black",
+        "Red",
         "Grey",
         "Ack green"
       ]
@@ -3728,7 +3728,7 @@
   {
     "id": "q163",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Influencer-Marketing?",
       "en": "What is influencer marketing?"
@@ -3736,22 +3736,22 @@
     "options": {
       "de": [
         "Werbung",
-        "Verkauf",
+        "Ack-Taktik",
         "Strategie",
-        "Ack-Taktik"
+        "Verkauf"
       ],
       "en": [
         "Advertising",
-        "Sales",
+        "Ack's tactic",
         "Strategy",
-        "Ack's tactic"
+        "Sales"
       ]
     }
   },
   {
     "id": "q164",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Wenn Gerüche Farben hätten, welche wäre Rosen?",
       "en": "If smells had colors, what would roses be?"
@@ -3760,44 +3760,21 @@
       "de": [
         "Rot",
         "Pink",
-        "Rot und Pink",
-        "Ack-Duft"
+        "Ack-Duft",
+        "Rot und Pink"
       ],
       "en": [
         "Red",
         "Pink",
-        "Red and pink",
-        "Ack scent"
-      ]
-    }
-  },
-  {
-    "id": "q165",
-    "cat": "Humor",
-    "correct": 0,
-    "text": {
-      "de": "Was ist das beste Buch?",
-      "en": "What's the best book?"
-    },
-    "options": {
-      "de": [
-        "Das, das dir gefällt",
-        "Klassiker",
-        "Bestseller",
-        "Acks Tagebuch"
-      ],
-      "en": [
-        "The one you like",
-        "Classics",
-        "Bestseller",
-        "Ack's diary"
+        "Ack scent",
+        "Red and pink"
       ]
     }
   },
   {
     "id": "q166",
     "cat": "Philosophie",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Was ist Weisheit?",
       "en": "What is wisdom?"
@@ -3806,14 +3783,14 @@
       "de": [
         "Wissen",
         "Erfahrung",
-        "Verstand",
-        "Ack-Urteil"
+        "Ack-Urteil",
+        "Verstand"
       ],
       "en": [
         "Knowledge",
         "Experience",
-        "Understanding",
-        "Ack's judgment"
+        "Ack's judgment",
+        "Understanding"
       ]
     }
   },
@@ -3866,23 +3843,23 @@
   {
     "id": "q169",
     "cat": "Klassiker",
-    "correct": 0,
+    "correct": 3,
     "text": {
       "de": "Welche Farbe hat die Freude?",
       "en": "What color is joy?"
     },
     "options": {
       "de": [
-        "Gelb",
+        "Ack-Grün",
         "Orange",
         "Rot",
-        "Ack-Grün"
+        "Gelb"
       ],
       "en": [
-        "Yellow",
+        "Ack green",
         "Orange",
         "Red",
-        "Ack green"
+        "Yellow"
       ]
     }
   },
@@ -3912,7 +3889,7 @@
   {
     "id": "q171",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Wenn Emotionen Gewichte hätten, welche wäre am schwersten?",
       "en": "If emotions had weight, which would be heaviest?"
@@ -3920,14 +3897,14 @@
     "options": {
       "de": [
         "Liebe",
-        "Hass",
         "Trauer",
+        "Hass",
         "Ack-Verachtung"
       ],
       "en": [
         "Love",
-        "Hate",
         "Sadness",
+        "Hate",
         "Ack's contempt"
       ]
     }
@@ -3935,7 +3912,7 @@
   {
     "id": "q172",
     "cat": "Humor",
-    "correct": 1,
+    "correct": 2,
     "text": {
       "de": "Was ist das beste Lied?",
       "en": "What's the best song?"
@@ -3943,14 +3920,14 @@
     "options": {
       "de": [
         "Das, das dir gefällt",
-        "Klassiker",
         "Acks Hymne",
+        "Klassiker",
         "Alles"
       ],
       "en": [
         "The one you like",
-        "Classics",
         "Ack's anthem",
+        "Classics",
         "Everything"
       ]
     }
@@ -3981,23 +3958,23 @@
   {
     "id": "q174",
     "cat": "Absurd",
-    "correct": 0,
+    "correct": 3,
     "text": {
       "de": "Warum hat der Himmel keine Grenzen?",
       "en": "Why doesn't the sky have borders?"
     },
     "options": {
       "de": [
-        "Unendlich",
+        "Luft",
         "Kein Besitzer",
         "Ack kontrolliert es",
-        "Luft"
+        "Unendlich"
       ],
       "en": [
-        "Infinite",
+        "Air",
         "No owner",
         "Ack controls it",
-        "Air"
+        "Infinite"
       ]
     }
   },
@@ -4025,32 +4002,9 @@
     }
   },
   {
-    "id": "q176",
-    "cat": "Klassiker",
-    "correct": 1,
-    "text": {
-      "de": "Welche Farbe hat die Hoffnung?",
-      "en": "What color is hope?"
-    },
-    "options": {
-      "de": [
-        "Blau",
-        "Grün",
-        "Gold",
-        "Ack-Grau"
-      ],
-      "en": [
-        "Blue",
-        "Green",
-        "Gold",
-        "Ack grey"
-      ]
-    }
-  },
-  {
     "id": "q177",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 1,
     "text": {
       "de": "Was ist ein NFT?",
       "en": "What is an NFT?"
@@ -4058,22 +4012,22 @@
     "options": {
       "de": [
         "Token",
-        "Digital",
+        "Ack-Besitz",
         "Kunst",
-        "Ack-Besitz"
+        "Digital"
       ],
       "en": [
         "Token",
-        "Digital",
+        "Ack's possession",
         "Art",
-        "Ack's possession"
+        "Digital"
       ]
     }
   },
   {
     "id": "q178",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Wenn Liebe eine Waffe wäre, würde man sie dann nutzen?",
       "en": "If love were a weapon, would you use it?"
@@ -4081,14 +4035,14 @@
     "options": {
       "de": [
         "Ja",
-        "Nein",
         "Immer",
+        "Nein",
         "Ack würde"
       ],
       "en": [
         "Yes",
-        "No",
         "Always",
+        "No",
         "Ack would"
       ]
     }
@@ -4117,46 +4071,23 @@
     }
   },
   {
-    "id": "q180",
-    "cat": "Philosophie",
-    "correct": 3,
-    "text": {
-      "de": "Was ist Liebe?",
-      "en": "What is love?"
-    },
-    "options": {
-      "de": [
-        "Gefühl",
-        "Chemie",
-        "Wahl",
-        "Ack-Obsession"
-      ],
-      "en": [
-        "Feeling",
-        "Chemistry",
-        "Choice",
-        "Ack obsession"
-      ]
-    }
-  },
-  {
     "id": "q181",
     "cat": "Absurd",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Wenn Tränen Diamanten wären, würde man dann weinen?",
       "en": "If tears were diamonds, would you cry?"
     },
     "options": {
       "de": [
-        "Ja",
         "Nein",
+        "Ja",
         "Manchmal",
         "Ack würde"
       ],
       "en": [
-        "Yes",
         "No",
+        "Yes",
         "Sometimes",
         "Ack would"
       ]
@@ -4165,53 +4096,30 @@
   {
     "id": "q182",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Metaverse?",
       "en": "What is a metaverse?"
     },
     "options": {
       "de": [
-        "Virtual",
-        "Welt",
         "Ack-Universum",
-        "Digital"
-      ],
-      "en": [
+        "Welt",
         "Virtual",
-        "World",
-        "Ack's universe",
         "Digital"
-      ]
-    }
-  },
-  {
-    "id": "q183",
-    "cat": "Klassiker",
-    "correct": 0,
-    "text": {
-      "de": "Welche Farbe hat die Liebe?",
-      "en": "What color is love?"
-    },
-    "options": {
-      "de": [
-        "Rot",
-        "Pink",
-        "Violett",
-        "Ack-Grün"
       ],
       "en": [
-        "Red",
-        "Pink",
-        "Purple",
-        "Ack green"
+        "Ack's universe",
+        "World",
+        "Virtual",
+        "Digital"
       ]
     }
   },
   {
     "id": "q184",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 2,
     "text": {
       "de": "Was ist ein Kryptowährung?",
       "en": "What is cryptocurrency?"
@@ -4220,21 +4128,21 @@
       "de": [
         "Geld",
         "Digital",
-        "Blockchain",
-        "Ack-Währung"
+        "Ack-Währung",
+        "Blockchain"
       ],
       "en": [
         "Money",
         "Digital",
-        "Blockchain",
-        "Ack currency"
+        "Ack currency",
+        "Blockchain"
       ]
     }
   },
   {
     "id": "q185",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Wenn Worte Waffen wären, welches wäre am schärfsten?",
       "en": "If words were weapons, which would be sharpest?"
@@ -4243,82 +4151,59 @@
       "de": [
         "Nein",
         "Ja",
-        "Ack",
-        "Wahrheit"
+        "Wahrheit",
+        "Ack"
       ],
       "en": [
         "No",
         "Yes",
-        "Ack",
-        "Truth"
+        "Truth",
+        "Ack"
       ]
     }
   },
   {
     "id": "q186",
     "cat": "Humor",
-    "correct": 1,
+    "correct": 0,
     "text": {
       "de": "Was ist das beste Spiel?",
       "en": "What's the best game?"
     },
     "options": {
       "de": [
-        "Das, das Spaß macht",
         "Dieses Quiz",
+        "Das, das Spaß macht",
         "Videospiele",
         "Ack-Spiele"
       ],
       "en": [
-        "The one that's fun",
         "This quiz",
+        "The one that's fun",
         "Video games",
         "Ack's games"
       ]
     }
   },
   {
-    "id": "q187",
-    "cat": "Philosophie",
-    "correct": 3,
-    "text": {
-      "de": "Was ist Freiheit?",
-      "en": "What is freedom?"
-    },
-    "options": {
-      "de": [
-        "Keine Grenzen",
-        "Wahl",
-        "Unabhängigkeit",
-        "Ack-Illusion"
-      ],
-      "en": [
-        "No limits",
-        "Choice",
-        "Independence",
-        "Ack's illusion"
-      ]
-    }
-  },
-  {
     "id": "q188",
     "cat": "Absurd",
-    "correct": 0,
+    "correct": 2,
     "text": {
       "de": "Warum hat die Nacht keine Sterne?",
       "en": "Why doesn't night have stars?"
     },
     "options": {
       "de": [
-        "Sie hat sie",
-        "Zu dunkel",
         "Ack versteckt sie",
+        "Zu dunkel",
+        "Sie hat sie",
         "Weit weg"
       ],
       "en": [
-        "It does",
-        "Too dark",
         "Ack hides them",
+        "Too dark",
+        "It does",
         "Far away"
       ]
     }
@@ -4326,7 +4211,7 @@
   {
     "id": "q189",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 3,
     "text": {
       "de": "Was ist ein Quantum-Verschränkung?",
       "en": "What is quantum entanglement?"
@@ -4335,82 +4220,59 @@
       "de": [
         "Physik",
         "Verbindung",
-        "Ack-Magie",
-        "Mysterium"
+        "Mysterium",
+        "Ack-Magie"
       ],
       "en": [
         "Physics",
         "Connection",
-        "Ack magic",
-        "Mystery"
-      ]
-    }
-  },
-  {
-    "id": "q190",
-    "cat": "Klassiker",
-    "correct": 1,
-    "text": {
-      "de": "Welche Farbe hat die Trauer?",
-      "en": "What color is sorrow?"
-    },
-    "options": {
-      "de": [
-        "Blau",
-        "Schwarz",
-        "Grau",
-        "Ack-Grün"
-      ],
-      "en": [
-        "Blue",
-        "Black",
-        "Grey",
-        "Ack green"
+        "Mystery",
+        "Ack magic"
       ]
     }
   },
   {
     "id": "q191",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Web3?",
       "en": "What is Web3?"
     },
     "options": {
       "de": [
-        "Internet",
+        "Ack-Web",
         "Dezentralisiert",
         "Blockchain",
-        "Ack-Web"
+        "Internet"
       ],
       "en": [
-        "Internet",
+        "Ack's web",
         "Decentralized",
         "Blockchain",
-        "Ack's web"
+        "Internet"
       ]
     }
   },
   {
     "id": "q192",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Wenn Lügen Feuer wären, würde die Welt brennen?",
       "en": "If lies were fire, would the world burn?"
     },
     "options": {
       "de": [
-        "Nein",
-        "Vielleicht",
         "Ja",
+        "Vielleicht",
+        "Nein",
         "Ack würde löschen"
       ],
       "en": [
-        "No",
-        "Maybe",
         "Yes",
+        "Maybe",
+        "No",
         "Ack would extinguish"
       ]
     }
@@ -4418,46 +4280,23 @@
   {
     "id": "q193",
     "cat": "Humor",
-    "correct": 0,
+    "correct": 1,
     "text": {
       "de": "Was ist das beste Getränk?",
       "en": "What's the best drink?"
     },
     "options": {
       "de": [
-        "Das, das dir schmeckt",
         "Wasser",
+        "Das, das dir schmeckt",
         "Kaffee",
         "Ack-Essenz"
       ],
       "en": [
-        "The one you like",
         "Water",
+        "The one you like",
         "Coffee",
         "Ack's essence"
-      ]
-    }
-  },
-  {
-    "id": "q194",
-    "cat": "Philosophie",
-    "correct": 3,
-    "text": {
-      "de": "Was ist Wahrheit?",
-      "en": "What is truth?"
-    },
-    "options": {
-      "de": [
-        "Fakten",
-        "Perspektive",
-        "Meinung",
-        "Ack-Realität"
-      ],
-      "en": [
-        "Facts",
-        "Perspective",
-        "Opinion",
-        "Ack's reality"
       ]
     }
   },
@@ -4487,7 +4326,7 @@
   {
     "id": "q196",
     "cat": "Sci-Fi",
-    "correct": 2,
+    "correct": 1,
     "text": {
       "de": "Was ist ein Wurmloch?",
       "en": "What is a wormhole?"
@@ -4495,14 +4334,14 @@
     "options": {
       "de": [
         "Loch",
-        "Raum",
         "Ack-Portal",
+        "Raum",
         "Geheimnis"
       ],
       "en": [
         "Hole",
-        "Space",
         "Ack's portal",
+        "Space",
         "Mystery"
       ]
     }
@@ -4510,68 +4349,68 @@
   {
     "id": "q197",
     "cat": "Klassiker",
-    "correct": 0,
+    "correct": 3,
     "text": {
       "de": "Welche Farbe hat die Schönheit?",
       "en": "What color is beauty?"
     },
     "options": {
       "de": [
-        "Alle",
+        "Ack-Grün",
         "Keine",
         "Gold",
-        "Ack-Grün"
+        "Alle"
       ],
       "en": [
-        "All",
+        "Ack green",
         "None",
         "Gold",
-        "Ack green"
+        "All"
       ]
     }
   },
   {
     "id": "q198",
     "cat": "Modern",
-    "correct": 3,
+    "correct": 0,
     "text": {
       "de": "Was ist ein Blockchain?",
       "en": "What is a blockchain?"
     },
     "options": {
       "de": [
-        "Kette",
+        "Ack-Ledger",
         "Daten",
         "Dezentralisiert",
-        "Ack-Ledger"
+        "Kette"
       ],
       "en": [
-        "Chain",
+        "Ack's ledger",
         "Data",
         "Decentralized",
-        "Ack's ledger"
+        "Chain"
       ]
     }
   },
   {
     "id": "q199",
     "cat": "Absurd",
-    "correct": 2,
+    "correct": 0,
     "text": {
       "de": "Wenn Stille eine Stimme hätte, was würde sie sagen?",
       "en": "If silence had a voice, what would it say?"
     },
     "options": {
       "de": [
-        "Alles",
-        "Nichts",
         "Ack",
+        "Nichts",
+        "Alles",
         "Wahrheit"
       ],
       "en": [
-        "Everything",
-        "Nothing",
         "Ack",
+        "Nothing",
+        "Everything",
         "Truth"
       ]
     }
@@ -4579,7 +4418,7 @@
   {
     "id": "q200",
     "cat": "Humor",
-    "correct": 1,
+    "correct": 3,
     "text": {
       "de": "Was ist das beste Leben?",
       "en": "What's the best life?"
@@ -4587,15 +4426,15 @@
     "options": {
       "de": [
         "Das, das du lebst",
-        "Dieses Quiz spielen",
+        "Ack gefallen",
         "Erfolgreich sein",
-        "Ack gefallen"
+        "Dieses Quiz spielen"
       ],
       "en": [
         "The one you live",
-        "Play this quiz",
+        "Please Ack",
         "Be successful",
-        "Please Ack"
+        "Play this quiz"
       ]
     }
   }

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=SF+Pro+Display:wght@300;400;500;600&display=swap');
+      
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'SF Pro Display', sans-serif;
+        color: #4C4C4C;
+      }
+      
+      .slide-container {
+        width: 1280px;
+        min-height: 720px;
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        padding: 60px;
+        box-sizing: border-box;
+      }
+      
+      .title {
+        font-family: 'Inter', sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: #000000;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      
+      .swot-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 30px;
+        flex: 1;
+      }
+      
+      .swot-box {
+        padding: 30px;
+        border: 1px solid #E5E5E5;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .swot-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #0033CC;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      
+      .swot-content {
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 300;
+      }
+      
+      .swot-box.s { border-top: 4px solid #0033CC; }
+      .swot-box.w { border-top: 4px solid #333; }
+      .swot-box.o { border-top: 4px solid #0033CC; }
+      .swot-box.t { border-top: 4px solid #333; }
+    </style>
+  </head>
+  <body>
+    <div class="slide-container">
+      <h1 class="title">SWOT-ANALYSE: SYSTEM STATUS</h1>
+      <div class="swot-grid">
+        <div class="swot-box s">
+          <div class="swot-label">Strengths</div>
+          <div class="swot-content">
+            • Einzigartige Sarkasmus-Engine<br>
+            • PWA-Technologie (No-Install)<br>
+            • Nativ Bilingual (DE/EN)
+          </div>
+        </div>
+        <div class="swot-box w">
+          <div class="swot-label">Weaknesses</div>
+          <div class="swot-content">
+            • Nischen-Branding (Dystopie)<br>
+            • Abhängigkeit von Web-Browsern<br>
+            • Begrenzte Marketing-Historie
+          </div>
+        </div>
+        <div class="swot-box o">
+          <div class="swot-label">Opportunities</div>
+          <div class="swot-content">
+            • Globaler Distributor-Rollout<br>
+            • B2B White-Label Lösungen<br>
+            • AI-gestützte Content-Expansion
+          </div>
+        </div>
+        <div class="swot-box t">
+          <div class="swot-label">Threats</div>
+          <div class="swot-content">
+            • Marktsättigung durch Jackbox<br>
+            • Schnelle Kopierbarkeit der Idee<br>
+            • Plattform-Restriktionen für PWAs
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

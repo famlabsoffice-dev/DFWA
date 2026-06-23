@@ -1,0 +1,196 @@
+{
+  "project_info": {
+    "title": "ACK ATTACK: THE DYSTOPIAN REVOLUTION",
+    "created": 1782231650.151,
+    "last_updated": 1782233026.473,
+    "total_slides": 16
+  },
+  "slides": [
+    {
+      "id": "intro",
+      "state": "edited",
+      "pageNum": 1
+    },
+    {
+      "id": "vision",
+      "state": "edited",
+      "pageNum": 2
+    },
+    {
+      "id": "tech",
+      "state": "edited",
+      "pageNum": 3
+    },
+    {
+      "id": "content",
+      "state": "edited",
+      "pageNum": 4
+    },
+    {
+      "id": "performance",
+      "state": "edited",
+      "pageNum": 5
+    },
+    {
+      "id": "design",
+      "state": "edited",
+      "pageNum": 6
+    },
+    {
+      "id": "monetization",
+      "state": "edited",
+      "pageNum": 7
+    },
+    {
+      "id": "roadmap",
+      "state": "edited",
+      "pageNum": 8
+    },
+    {
+      "id": "partnership",
+      "state": "edited",
+      "pageNum": 9
+    },
+    {
+      "id": "competition",
+      "state": "edited",
+      "pageNum": 10
+    },
+    {
+      "id": "market_analysis",
+      "state": "edited",
+      "pageNum": 11
+    },
+    {
+      "id": "swot_analysis",
+      "state": "edited",
+      "pageNum": 12
+    },
+    {
+      "id": "financial_forecast",
+      "state": "edited",
+      "pageNum": 13
+    },
+    {
+      "id": "marketing_strategy",
+      "state": "edited",
+      "pageNum": 14
+    },
+    {
+      "id": "distribution",
+      "state": "edited",
+      "pageNum": 15
+    },
+    {
+      "id": "closing",
+      "state": "edited",
+      "pageNum": 16
+    }
+  ],
+  "outline": [
+    {
+      "id": "intro",
+      "title": "ACK ATTACK: THE DYSTOPIAN REVOLUTION",
+      "summary": "Titelseite im Onyx-Stil. Fokus auf minimalistische Eleganz.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": "slide_1"
+    },
+    {
+      "id": "vision",
+      "title": "01 DIE VISION",
+      "summary": "Philosophischer Ansatz des Spiels. 50/50 Split Layout.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": "slide_2"
+    },
+    {
+      "id": "tech",
+      "title": "02 TECHNISCHE EXZELLENZ",
+      "summary": "Technische Details im Onyx-Stil. Minimalistische Typografie.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": "slide_3"
+    },
+    {
+      "id": "content",
+      "title": "03 DAS CONTENT-SYSTEM",
+      "summary": "Inhaltliche Tiefe, präsentiert in zwei Spalten.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": "slide_5"
+    },
+    {
+      "id": "performance",
+      "title": "04 PERFORMANCE-ANALYSE",
+      "summary": "Metriken in einem sauberen, asymmetrischen Layout.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": "slide_6"
+    },
+    {
+      "id": "design",
+      "title": "05 DESIGN-PHILOSOPHIE",
+      "summary": "Form und Leere im Design-Konzept. Onyx-Ästhetik.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": "slide_8"
+    },
+    {
+      "id": "monetization",
+      "title": "MONETARISIERUNG & ROI",
+      "summary": "Erläuterung der Erlösmodelle und des Return on Investment für Distributoren.",
+      "slide_template_key": "slide_3"
+    },
+    {
+      "id": "roadmap",
+      "title": "STRATEGISCHE ROADMAP",
+      "summary": "Zukünftige Entwicklungsphasen und Meilensteine des Systems.",
+      "slide_template_key": "slide_5"
+    },
+    {
+      "id": "partnership",
+      "title": "PARTNERSCHAFTS-MODELL",
+      "summary": "Details zur Zusammenarbeit und Unterstützung für Distributoren. Mit Zitat.",
+      "slide_template_key": "slide_9"
+    },
+    {
+      "id": "competition",
+      "title": "WETTBEWERBSANALYSE",
+      "summary": "Vergleich von ACK ATTACK mit Marktbegleitern wie Jackbox Games und Trivia Crack. Fokus auf Alleinstellungsmerkmale.",
+      "slide_template_key": "slide_6"
+    },
+    {
+      "id": "market_analysis",
+      "title": "MARKTANALYSE 2026/27",
+      "summary": "Detaillierte Analyse des Trivia-Marktes, PWA-Wachstum und Trends in der interaktiven Unterhaltung. Fokus auf das Marktvolumen von 15,7 Mrd. USD.",
+      "slide_template_key": "slide_3"
+    },
+    {
+      "id": "swot_analysis",
+      "title": "SWOT-ANALYSE: SYSTEM STATUS",
+      "summary": "Detaillierte SWOT-Analyse für ACK ATTACK. Stärken, Schwächen, Chancen und Risiken im Überblick.",
+      "slide_template_key": "slide_10"
+    },
+    {
+      "id": "financial_forecast",
+      "title": "FINANZPROGNOSE 2026-2028",
+      "summary": "Prognose der finanziellen Entwicklung (Umsatz & EBITDA) für die kommenden drei Jahre. Fokus auf profitables Wachstum.",
+      "slide_template_key": "slide_3"
+    },
+    {
+      "id": "marketing_strategy",
+      "title": "MARKETINGSTRATEGIE 2026/27",
+      "summary": "Detaillierte Marketingstrategie für ACK ATTACK. Fokus auf virale Kurzvideos, PWA-Vorteile und Community-Building.",
+      "slide_template_key": "slide_5"
+    },
+    {
+      "id": "distribution",
+      "title": "06 DISTRIBUTIONS-POTENZIAL",
+      "summary": "Marktpotenzial und Synthese der Ideen. Mit Zitat.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": "slide_9"
+    },
+    {
+      "id": "closing",
+      "title": "07 SYSTEM BEREIT",
+      "summary": "Finales Urteil im Onyx-Template. Sauberer Abschluss.",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": "slide_10"
+    }
+  ]
+}

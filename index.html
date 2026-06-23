@@ -60,7 +60,11 @@
             padding: 20px; font-size: 1.1rem; text-transform: uppercase; cursor: pointer;
             transition: 0.1s; position: relative; overflow: hidden;
         }
-        .option-btn:hover { background: var(--neon); color: var(--black); box-shadow: 0 0 30px var(--neon); }
+        .option-btn:hover, .option-btn:focus-visible { 
+            background: var(--neon); color: var(--black); box-shadow: 0 0 30px var(--neon);
+            outline: none;
+        }
+        button:focus-visible { outline: 3px solid var(--neon); outline-offset: 4px; }
 
         #question-box {
             flex: 1; display: flex; align-items: center; justify-content: center;
@@ -70,7 +74,6 @@
         #timer-wrap { width: 100%; height: 5px; background: #222; margin-bottom: 10px; }
         #timer-fill { height: 100%; width: 100%; background: var(--neon); transition: width 0.1s linear; }
 
-        /* ACK DIALOG - CENTERED & VISUALLY ENHANCED */
         #ack-overlay {
             position: fixed; top: 50%; left: 50%; width: 90%; max-width: 500px;
             padding: 40px; background: rgba(0, 0, 0, 0.98); 
@@ -83,12 +86,17 @@
         .ack-content { color: var(--warning); font-size: 1.8rem; text-transform: uppercase; line-height: 1.4; text-shadow: 0 0 15px var(--warning); }
 
         #score-panel { position: absolute; top: 10px; right: 20px; text-align: right; font-size: 0.8rem; opacity: 0.8; }
+        #streak-info { color: var(--cyber-blue); font-weight: bold; display: none; }
 
-        #start-screen { justify-content: center; align-items: center; gap: 30px; }
-        input { 
-            background: transparent; border: none; border-bottom: 2px solid var(--neon);
-            color: var(--neon); padding: 10px; font-size: 1.5rem; text-align: center; width: 80%; outline: none;
+        #game-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 3000;
+            justify-content: center; align-items: center; flex-direction: column;
         }
+        .overlay-content { border: 2px solid var(--neon); padding: 40px; text-align: center; max-width: 90%; }
+        .cyber-select { background: #000; color: var(--neon); border: 1px solid var(--neon); padding: 10px; width: 100%; margin: 10px 0; }
+
+        #leaderboard-list { list-style: none; padding: 0; font-size: 0.8rem; color: var(--cyber-blue); }
     </style>
 </head>
 <body>
@@ -96,19 +104,27 @@
     <div class="scanline"></div>
     
     <div id="game-container">
-        <div id="score-panel">SYSTEM_STATUS: ONLINE<br>BEST_RESULT: <span id="high-score">0</span></div>
+        <div id="score-panel" aria-live="polite">
+            SYSTEM_STATUS: ONLINE<br>
+            BEST: <span id="high-score">0</span><br>
+            <span id="streak-info">STREAK: 0</span>
+        </div>
         
         <div id="start-screen" class="screen active">
             <h1 class="glitch-text">ACK ATTACK</h1>
-            <input type="text" id="user-id" placeholder="IDENTITÄT_EINGEBEN" maxlength="15">
-            <button class="option-btn" onclick="initGame('de')">PROTOKOLL_STARTEN (DE)</button>
-            <button class="option-btn" onclick="initGame('en')">START_PROTOCOL (EN)</button>
+            <div class="cyber-box" style="text-align:center">
+                <select id="category-filter" class="cyber-select" aria-label="Sektor auswählen">
+                    <option value="all">ALL_SECTORS</option>
+                </select>
+                <button class="option-btn" onclick="initGame('de')" aria-label="Start in Deutsch">PROTOKOLL_STARTEN (DE)</button>
+                <button class="option-btn" onclick="initGame('en')" aria-label="Start in English">START_PROTOCOL (EN)</button>
+            </div>
         </div>
 
         <div id="game-screen" class="screen">
             <div id="timer-wrap"><div id="timer-fill"></div></div>
-            <div id="question-box">INITIALISIERE_DATENSATZ...</div>
-            <div id="options-container"></div>
+            <div id="question-box" role="status">INITIALISIERE_DATENSATZ...</div>
+            <div id="options-container" role="radiogroup" aria-labelledby="question-box"></div>
         </div>
     </div>
 
@@ -117,29 +133,50 @@
         <div class="ack-content" id="ack-msg">DU VERSAGST!</div>
     </div>
 
+    <div id="game-overlay">
+        <div class="overlay-content">
+            <h2 id="overlay-title">SYSTEM_HALT</h2>
+            <p id="overlay-message"></p>
+            <div id="leaderboard-display">
+                <ul id="leaderboard-list"></ul>
+            </div>
+            <button onclick="location.reload()" class="option-btn">REBOOT_SYSTEM</button>
+        </div>
+    </div>
+
     <script>
-        let state = { lang: 'de', questions: [], current: 0, score: 0, best: localStorage.getItem('dfwa_best') || 0, timer: null, comments: {} };
-        let used = new Set();
+        let state = { 
+            lang: 'de', questions: [], current: 0, score: 0, streak: 0,
+            best: parseInt(localStorage.getItem('dfwa_best') || 0),
+            leaderboard: JSON.parse(localStorage.getItem('dfwa_leaderboard') || "[]"),
+            timer: null, comments: {}, selectedCat: 'all'
+        };
 
         async function initGame(l) {
             state.lang = l;
-            document.getElementById('high-score').innerText = state.best;
+            document.documentElement.lang = l;
+            state.selectedCat = document.getElementById('category-filter').value;
+            
             try {
-                const [q, c] = await Promise.all([
+                const [qRes, cRes] = await Promise.all([
                     fetch('questions_i18n.json?v=' + Date.now()), 
                     fetch('ack_comments.json?v=' + Date.now())
                 ]);
-                state.questions = (await q.json()).sort(() => Math.random() - 0.5);
-                state.comments = await c.json();
+                let allQ = await qRes.json();
+                state.comments = await cRes.json();
+                
+                state.questions = state.selectedCat === 'all' ? allQ : allQ.filter(q => q.cat === state.selectedCat);
+                state.questions.sort(() => Math.random() - 0.5);
+                
                 document.getElementById('start-screen').classList.remove('active');
                 document.getElementById('game-screen').classList.add('active');
                 renderQuestion();
-            } catch (e) { alert('ERROR: DATA_CORRUPTION'); }
+            } catch (e) { console.error(e); }
         }
 
         function renderQuestion() {
             const q = state.questions[state.current];
-            if (!q) { alert('SYSTEM_CLEARED. SCORE: ' + state.score); location.reload(); return; }
+            if (!q) { finishGame(true, "DATENSATZ_VOLLSTÄNDIG_ABSORBIERT."); return; }
             
             document.getElementById('question-box').innerText = q.text[state.lang];
             const container = document.getElementById('options-container');
@@ -149,6 +186,8 @@
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
                 btn.innerText = opt;
+                btn.setAttribute('role', 'radio');
+                btn.setAttribute('aria-label', `Option ${i+1}: ${opt}`);
                 btn.onclick = () => checkAnswer(i === q.correct);
                 container.appendChild(btn);
             });
@@ -158,25 +197,57 @@
         function checkAnswer(correct) {
             clearInterval(state.timer);
             if (correct) {
-                state.score += 100;
-                if (state.score > state.best) { state.best = state.score; localStorage.setItem('dfwa_best', state.best); }
+                state.streak++;
+                let bonus = (state.streak > 1) ? (state.streak - 1) * 10 : 0;
+                state.score += (100 + bonus);
+                
+                if (state.score > state.best) {
+                    state.best = state.score;
+                    localStorage.setItem('dfwa_best', state.best);
+                }
+                
+                const streakInfo = document.getElementById('streak-info');
+                if (state.streak >= 2) {
+                    streakInfo.innerText = `STREAK: ${state.streak} (+${bonus})`;
+                    streakInfo.style.display = 'inline';
+                }
+                
                 state.current++;
                 renderQuestion();
             } else {
-                const pool = state.comments[state.lang].ack.filter(m => !used.has(m));
-                if (pool.length === 0) used.clear();
+                state.streak = 0;
+                document.getElementById('streak-info').style.display = 'none';
+                
+                const pool = state.comments[state.lang].ack;
                 const msg = pool[Math.floor(Math.random() * pool.length)];
-                used.add(msg);
                 
                 const overlay = document.getElementById('ack-overlay');
                 document.getElementById('ack-msg').innerText = msg;
                 overlay.classList.add('active');
+                
                 setTimeout(() => {
                     overlay.classList.remove('active');
-                    state.current++;
-                    renderQuestion();
+                    finishGame(false, "SYSTEM_FAILURE. EXISTENZ_TERMINIERT.");
                 }, 2500);
             }
+        }
+
+        function finishGame(victory, msg) {
+            clearInterval(state.timer);
+            const overlay = document.getElementById('game-overlay');
+            document.getElementById('overlay-title').innerText = victory ? "VICTORY" : "GAME_OVER";
+            document.getElementById('overlay-message').innerText = msg;
+            
+            // Leaderboard update
+            state.leaderboard.push({score: state.score, date: new Date().toLocaleDateString()});
+            state.leaderboard.sort((a,b) => b.score - a.score);
+            state.leaderboard = state.leaderboard.slice(0, 5);
+            localStorage.setItem('dfwa_leaderboard', JSON.stringify(state.leaderboard));
+            
+            const lbList = document.getElementById('leaderboard-list');
+            lbList.innerHTML = state.leaderboard.map(e => `<li>${e.score} PTS - ${e.date}</li>`).join('');
+            
+            overlay.style.display = 'flex';
         }
 
         function startTimer() {
@@ -189,19 +260,32 @@
             }, speed);
         }
 
-        // PWA Auto-Update logic
+        window.addEventListener('keydown', (e) => {
+            if (e.key >= '1' && e.key <= '4') {
+                const btns = document.querySelectorAll('#options-container .option-btn');
+                if (btns[e.key - 1]) btns[e.key - 1].click();
+            }
+        });
+
+        // Dynamic categories
+        fetch('questions_i18n.json').then(r => r.json()).then(qs => {
+            const cats = [...new Set(qs.map(q => q.cat))];
+            const select = document.getElementById('category-filter');
+            cats.forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c; opt.innerText = c.toUpperCase();
+                select.appendChild(opt);
+            });
+        });
+
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js').then(reg => {
-                    // Check for updates on load
                     reg.update();
                     reg.onupdatefound = () => {
                         const w = reg.installing;
                         w.onstatechange = () => { 
-                            if (w.state === 'installed' && navigator.serviceWorker.controller) {
-                                // Force reload to apply new version immediately
-                                location.reload(); 
-                            }
+                            if (w.state === 'installed' && navigator.serviceWorker.controller) location.reload(); 
                         };
                     };
                 });
