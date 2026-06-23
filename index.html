@@ -162,6 +162,21 @@
             100% { transform: translateY(0) scale(1.05) rotate(1deg); }
         }
 
+        @keyframes glitch-screen {
+            0% { filter: hue-rotate(0deg) invert(0); }
+            50% { filter: hue-rotate(180deg) invert(1); transform: scale(1.02); }
+            100% { filter: hue-rotate(360deg) invert(0); }
+        }
+
+        #score-display {
+            position: absolute;
+            top: 10px;
+            right: 24px;
+            font-size: 0.9rem;
+            color: var(--neon-yellow);
+            text-align: right;
+        }
+
         .ack-glitch {
             text-shadow: 2px 0 var(--neon-red), -2px 0 var(--neon-green);
             font-weight: bold;
@@ -185,6 +200,7 @@
         </div>
 
         <div id="game-screen" class="screen">
+            <div id="score-display">SCORE: 0 | BEST: 0</div>
             <div id="timer-shell">
                 <div id="timer-bar"></div>
             </div>
@@ -209,7 +225,9 @@
             questions: [],
             currentQuestionIndex: 0,
             timer: null,
-            locked: false
+            locked: false,
+            score: 0,
+            highScore: localStorage.getItem('ackHighScore') || 0
         };
 
         document.getElementById('start-de').addEventListener('click', () => startGame('de'));
@@ -244,8 +262,16 @@
 
         function showQuestion() {
             const q = gameState.questions[gameState.currentQuestionIndex];
+            
+            // Score Update
+            document.getElementById('score-display').innerText = `SCORE: ${gameState.score} | BEST: ${gameState.highScore}`;
+            if (gameState.score > gameState.highScore) {
+                gameState.highScore = gameState.score;
+                localStorage.setItem('ackHighScore', gameState.highScore);
+            }
+
             if (!q) {
-                alert('ACK ATTACK FINISHED!');
+                alert(`ACK ATTACK FINISHED!\nFINAL SCORE: ${gameState.score}`);
                 location.reload();
                 return;
             }
@@ -275,12 +301,15 @@
             clearInterval(gameState.timer);
 
             if (!correct) {
+                document.body.style.animation = 'glitch-screen 0.2s 3';
                 showAckDialog(langData[lang].ack[Math.floor(Math.random() * langData[lang].ack.length)]);
                 setTimeout(() => {
+                    document.body.style.animation = 'none';
                     gameState.currentQuestionIndex++;
                     showQuestion();
-                }, 3000);
+                }, 3200);
             } else {
+                gameState.score += Math.max(10, 100 - (gameState.currentQuestionIndex * 2));
                 gameState.currentQuestionIndex++;
                 setTimeout(showQuestion, 450);
             }
@@ -290,15 +319,27 @@
             let width = 100;
             const bar = document.getElementById('timer-bar');
             bar.style.width = '100%';
+            bar.style.background = 'linear-gradient(90deg, var(--neon-green), #b8ff9e)';
+
+            // Schwierigkeit: Timer wird mit jeder Frage schneller
+            const speed = Math.max(20, 100 - (gameState.currentQuestionIndex * 5));
 
             gameState.timer = setInterval(() => {
                 width -= 1;
                 bar.style.width = width + '%';
+                
+                if (width < 30) {
+                    bar.style.background = 'var(--neon-red)';
+                    if (width % 2 === 0) document.body.style.boxShadow = 'inset 0 0 50px rgba(255,0,0,0.2)';
+                    else document.body.style.boxShadow = 'none';
+                }
+
                 if (width <= 0) {
+                    document.body.style.boxShadow = 'none';
                     clearInterval(gameState.timer);
                     handleAnswer(false);
                 }
-            }, 100);
+            }, speed);
         }
 
         function showAckDialog(txt) {
