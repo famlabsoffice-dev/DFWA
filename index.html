@@ -21,7 +21,6 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; font-family: 'Courier New', monospace; }
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--black); color: var(--neon); }
 
-        /* CRT & Scanline Overlay */
         .overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
@@ -62,12 +61,6 @@
             transition: 0.1s; position: relative; overflow: hidden;
         }
         .option-btn:hover { background: var(--neon); color: var(--black); box-shadow: 0 0 30px var(--neon); }
-        .option-btn::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-        .option-btn:hover::before { left: 100%; }
 
         #question-box {
             flex: 1; display: flex; align-items: center; justify-content: center;
@@ -77,20 +70,20 @@
         #timer-wrap { width: 100%; height: 5px; background: #222; margin-bottom: 10px; }
         #timer-fill { height: 100%; width: 100%; background: var(--neon); transition: width 0.1s linear; }
 
-        /* ACK DIALOG - ALWAYS VISIBLE AND DOMINANT */
+        /* ACK DIALOG - CENTERED & VISUALLY ENHANCED */
         #ack-overlay {
-            position: fixed; bottom: 0; left: 0; width: 100%; padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.95); border-top: 4px solid var(--error);
-            transform: translateY(100%); transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            z-index: 2000; text-align: center; box-shadow: 0 -20px 50px rgba(255, 0, 60, 0.3);
+            position: fixed; top: 50%; left: 50%; width: 90%; max-width: 500px;
+            padding: 40px; background: rgba(0, 0, 0, 0.98); 
+            border: 4px solid var(--error); border-radius: 2px;
+            transform: translate(-50%, -50%) scale(0); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 2000; text-align: center; box-shadow: 0 0 100px rgba(255, 0, 60, 0.6);
         }
-        #ack-overlay.active { transform: translateY(0); }
-        .ack-title { color: var(--error); font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; }
-        .ack-content { color: var(--warning); font-size: 1.5rem; text-transform: uppercase; line-height: 1.4; }
+        #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
+        .ack-title { color: var(--error); font-weight: bold; font-size: 1.4rem; margin-bottom: 20px; text-shadow: 0 0 10px var(--error); }
+        .ack-content { color: var(--warning); font-size: 1.8rem; text-transform: uppercase; line-height: 1.4; text-shadow: 0 0 15px var(--warning); }
 
         #score-panel { position: absolute; top: 10px; right: 20px; text-align: right; font-size: 0.8rem; opacity: 0.8; }
 
-        /* Start Screen */
         #start-screen { justify-content: center; align-items: center; gap: 30px; }
         input { 
             background: transparent; border: none; border-bottom: 2px solid var(--neon);
@@ -120,7 +113,7 @@
     </div>
 
     <div id="ack-overlay">
-        <div class="ack-title">>> ACK_SYSTEM_RESPONSE:</div>
+        <div class="ack-title">>> SYSTEM_RESPONSE_ACK:</div>
         <div class="ack-content" id="ack-msg">DU VERSAGST!</div>
     </div>
 
@@ -132,7 +125,10 @@
             state.lang = l;
             document.getElementById('high-score').innerText = state.best;
             try {
-                const [q, c] = await Promise.all([fetch('questions_i18n.json'), fetch('ack_comments.json')]);
+                const [q, c] = await Promise.all([
+                    fetch('questions_i18n.json?v=' + Date.now()), 
+                    fetch('ack_comments.json?v=' + Date.now())
+                ]);
                 state.questions = (await q.json()).sort(() => Math.random() - 0.5);
                 state.comments = await c.json();
                 document.getElementById('start-screen').classList.remove('active');
@@ -193,12 +189,22 @@
             }, speed);
         }
 
+        // PWA Auto-Update logic
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js?v=' + Date.now()).then(reg => {
-                reg.onupdatefound = () => {
-                    const w = reg.installing;
-                    w.onstatechange = () => { if (w.state === 'installed' && navigator.serviceWorker.controller) location.reload(); };
-                };
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(reg => {
+                    // Check for updates on load
+                    reg.update();
+                    reg.onupdatefound = () => {
+                        const w = reg.installing;
+                        w.onstatechange = () => { 
+                            if (w.state === 'installed' && navigator.serviceWorker.controller) {
+                                // Force reload to apply new version immediately
+                                location.reload(); 
+                            }
+                        };
+                    };
+                });
             });
         }
     </script>
