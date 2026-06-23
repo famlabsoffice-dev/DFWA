@@ -5,211 +5,199 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ACK ATTACK">
-    <meta name="theme-color" content="#050505">
-    <meta name="description" content="ACK ATTACK - Dystopian Quiz PWA. 200 questions, unique responses, precision logic.">
+    <meta name="theme-color" content="#000000">
     <link rel="manifest" href="./manifest.json">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22black%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2240%22 fill=%22%2339ff14%22 font-family=%22monospace%22>ACK</text></svg>">
-    <title>ACK ATTACK - Dystopian Quiz</title>
+    <title>ACK ATTACK - SYSTEM OVERRIDE</title>
     <style>
         :root {
-            --neon-green: #39ff14;
-            --neon-red: #ff003c;
-            --neon-yellow: #f4ea11;
-            --neon-cyan: #00ffff;
-            --bg-black: #050505;
-            --panel: rgba(5, 5, 5, 0.92);
+            --neon: #39ff14;
+            --neon-bg: rgba(57, 255, 20, 0.1);
+            --error: #ff003c;
+            --warning: #f4ea11;
+            --cyber-blue: #00ffff;
+            --black: #050505;
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; }
-        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--bg-black); color: var(--neon-green); font-family: 'Courier New', Courier, monospace; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; font-family: 'Courier New', monospace; }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--black); color: var(--neon); }
 
-        body::before {
-            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 2px);
-            pointer-events: none; z-index: 100; animation: scanlines 8s linear infinite;
+        /* CRT & Scanline Overlay */
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%; pointer-events: none; z-index: 1000;
         }
-        @keyframes scanlines { 0% { transform: translateY(0); } 100% { transform: translateY(10px); } }
+        .scanline {
+            width: 100%; height: 100px; z-index: 1001; position: absolute;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(57, 255, 20, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1; pointer-events: none; animation: scan 6s linear infinite;
+        }
+        @keyframes scan { from { top: -100px; } to { top: 100%; } }
 
-        #game-container { width: 100%; height: 100%; display: flex; flex-direction: column; z-index: 2; position: relative; }
-        .game-content { 
-            flex: 1; display: flex; flex-direction: column; padding: 15px; 
-            border: 4px solid var(--neon-green); margin: 10px;
-            box-shadow: 0 0 20px rgba(57,255,20,0.3), inset 0 0 20px rgba(57,255,20,0.1);
-            background: var(--panel); position: relative;
+        #game-container {
+            height: 100%; display: flex; flex-direction: column; padding: 20px;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+            border: 2px solid var(--neon); margin: 10px; box-shadow: inset 0 0 50px rgba(57, 255, 20, 0.2);
+            position: relative;
         }
 
-        .screen { display: none; flex-direction: column; height: 100%; width: 100%; animation: fadeIn 0.3s ease-out; }
+        .screen { display: none; flex-direction: column; height: 100%; animation: flicker 0.15s infinite; }
         .screen.active { display: flex; }
-        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
-
-        #start-screen { justify-content: center; align-items: center; gap: 20px; text-align: center; }
-        h1 { font-size: clamp(2rem, 8vw, 3.5rem); margin: 0; text-shadow: 0 0 15px var(--neon-green); letter-spacing: 0.1em; }
-        .subtitle { color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 20px; }
-
-        input, button { 
-            width: 100%; max-width: 300px; padding: 15px; border: 2px solid var(--neon-green);
-            background: rgba(57,255,20,0.05); color: var(--neon-green); font-family: inherit;
-            font-weight: bold; text-transform: uppercase; cursor: pointer; transition: 0.2s;
+        @keyframes flicker { 
+            0% { opacity: 0.97; } 5% { opacity: 0.95; } 10% { opacity: 0.9; } 15% { opacity: 0.95; } 
+            20% { opacity: 0.98; } 100% { opacity: 1; } 
         }
-        button:hover { background: rgba(57,255,20,0.2); box-shadow: 0 0 15px var(--neon-green); transform: translateY(-2px); }
 
-        #game-screen { gap: 15px; }
-        #timer-shell { width: 100%; height: 10px; border: 1px solid var(--neon-green); background: #111; overflow: hidden; }
-        #timer-bar { height: 100%; width: 100%; background: var(--neon-green); transition: width 0.1s linear; }
-        #question-text { min-height: 100px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.2rem; padding: 10px; }
-        #options-container { display: grid; gap: 10px; flex: 1; }
-        .option-btn { max-width: none; text-align: left; font-size: 1rem; }
-
-        #ack-dialog {
-            position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(0);
-            padding: 30px; border: 3px solid var(--neon-red); background: rgba(0,0,0,0.98);
-            color: var(--neon-yellow); z-index: 1000; text-align: center; width: 85%;
-            box-shadow: 0 0 50px var(--neon-red); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(10px); pointer-events: none;
+        h1 { font-size: 3rem; text-align: center; margin: 20px 0; letter-spacing: 5px; text-shadow: 0 0 10px var(--neon); }
+        .glitch-text { animation: textGlitch 2s infinite; }
+        @keyframes textGlitch {
+            0% { transform: translate(0); } 2% { transform: translate(-2px, 2px); } 4% { transform: translate(2px, -2px); } 6% { transform: translate(0); }
         }
-        #ack-dialog.visible { transform: translate(-50%, -50%) scale(1); animation: ackShake 0.4s infinite; }
-        .ack-glitch { font-weight: bold; font-size: 1.4rem; text-shadow: 2px 0 var(--neon-red), -2px 0 var(--neon-green); animation: glitch 0.2s infinite; }
-        @keyframes ackShake { 0%, 100% { transform: translate(-50%, -50%) rotate(0); } 25% { transform: translate(-50%, -50%) rotate(-1deg); } 75% { transform: translate(-50%, -50%) rotate(1deg); } }
-        @keyframes glitch { 0% { opacity: 1; } 50% { opacity: 0.8; transform: translateX(2px); } 100% { opacity: 1; } }
 
-        #score-display { position: absolute; top: 10px; right: 15px; font-size: 0.8rem; color: var(--neon-yellow); font-weight: bold; }
+        #options-container { display: grid; gap: 15px; margin-top: auto; margin-bottom: 20px; }
+        .option-btn {
+            background: var(--neon-bg); border: 1px solid var(--neon); color: var(--neon);
+            padding: 20px; font-size: 1.1rem; text-transform: uppercase; cursor: pointer;
+            transition: 0.1s; position: relative; overflow: hidden;
+        }
+        .option-btn:hover { background: var(--neon); color: var(--black); box-shadow: 0 0 30px var(--neon); }
+        .option-btn::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        .option-btn:hover::before { left: 100%; }
 
-        @media (max-width: 600px) { .game-content { margin: 0; border-width: 2px; } }
+        #question-box {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            text-align: center; font-size: 1.4rem; padding: 20px; border-bottom: 1px solid var(--neon-bg);
+        }
+
+        #timer-wrap { width: 100%; height: 5px; background: #222; margin-bottom: 10px; }
+        #timer-fill { height: 100%; width: 100%; background: var(--neon); transition: width 0.1s linear; }
+
+        /* ACK DIALOG - ALWAYS VISIBLE AND DOMINANT */
+        #ack-overlay {
+            position: fixed; bottom: 0; left: 0; width: 100%; padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.95); border-top: 4px solid var(--error);
+            transform: translateY(100%); transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 2000; text-align: center; box-shadow: 0 -20px 50px rgba(255, 0, 60, 0.3);
+        }
+        #ack-overlay.active { transform: translateY(0); }
+        .ack-title { color: var(--error); font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; }
+        .ack-content { color: var(--warning); font-size: 1.5rem; text-transform: uppercase; line-height: 1.4; }
+
+        #score-panel { position: absolute; top: 10px; right: 20px; text-align: right; font-size: 0.8rem; opacity: 0.8; }
+
+        /* Start Screen */
+        #start-screen { justify-content: center; align-items: center; gap: 30px; }
+        input { 
+            background: transparent; border: none; border-bottom: 2px solid var(--neon);
+            color: var(--neon); padding: 10px; font-size: 1.5rem; text-align: center; width: 80%; outline: none;
+        }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
+    <div class="scanline"></div>
+    
     <div id="game-container">
-        <div class="game-content">
-            <div id="start-screen" class="screen active">
-                <h1>ACK ATTACK</h1>
-                <div class="subtitle">DYSTOPIAN KNOWLEDGE PROTOCOL</div>
-                <input type="text" id="player-name" placeholder="IDENTITÄT EINGEBEN" maxlength="12">
-                <button id="start-de">INITIALISIEREN (DE)</button>
-                <button id="start-en">INITIALIZE (EN)</button>
-            </div>
+        <div id="score-panel">SYSTEM_STATUS: ONLINE<br>BEST_RESULT: <span id="high-score">0</span></div>
+        
+        <div id="start-screen" class="screen active">
+            <h1 class="glitch-text">ACK ATTACK</h1>
+            <input type="text" id="user-id" placeholder="IDENTITÄT_EINGEBEN" maxlength="15">
+            <button class="option-btn" onclick="initGame('de')">PROTOKOLL_STARTEN (DE)</button>
+            <button class="option-btn" onclick="initGame('en')">START_PROTOCOL (EN)</button>
+        </div>
 
-            <div id="game-screen" class="screen">
-                <div id="score-display">SCORE: 0 | BEST: 0</div>
-                <div id="timer-shell"><div id="timer-bar"></div></div>
-                <div id="question-text">LADE DATEN...</div>
-                <div id="options-container"></div>
-                <div id="ack-dialog"></div>
-            </div>
+        <div id="game-screen" class="screen">
+            <div id="timer-wrap"><div id="timer-fill"></div></div>
+            <div id="question-box">INITIALISIERE_DATENSATZ...</div>
+            <div id="options-container"></div>
         </div>
     </div>
 
+    <div id="ack-overlay">
+        <div class="ack-title">>> ACK_SYSTEM_RESPONSE:</div>
+        <div class="ack-content" id="ack-msg">DU VERSAGST!</div>
+    </div>
+
     <script>
-        let lang = 'de';
-        let langData = { de: { ack: [] }, en: { ack: [] } };
-        let usedComments = new Set();
-        let audioCtx = null;
-        let gameState = { questions: [], currentIdx: 0, score: 0, highScore: localStorage.getItem('ackBest') || 0, timer: null, locked: false };
+        let state = { lang: 'de', questions: [], current: 0, score: 0, best: localStorage.getItem('dfwa_best') || 0, timer: null, comments: {} };
+        let used = new Set();
 
-        async function loadData() {
+        async function initGame(l) {
+            state.lang = l;
+            document.getElementById('high-score').innerText = state.best;
             try {
-                const [qRes, aRes] = await Promise.all([
-                    fetch('questions_i18n.json?v=' + Date.now()),
-                    fetch('ack_comments.json?v=' + Date.now())
-                ]);
-                gameState.questions = await qRes.json();
-                langData = await aRes.json();
-            } catch (e) { console.error('Load error', e); }
+                const [q, c] = await Promise.all([fetch('questions_i18n.json'), fetch('ack_comments.json')]);
+                state.questions = (await q.json()).sort(() => Math.random() - 0.5);
+                state.comments = await c.json();
+                document.getElementById('start-screen').classList.remove('active');
+                document.getElementById('game-screen').classList.add('active');
+                renderQuestion();
+            } catch (e) { alert('ERROR: DATA_CORRUPTION'); }
         }
 
-        function initAudio() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
-        function playSfx(f, t, d, v) {
-            if (!audioCtx) return;
-            const o = audioCtx.createOscillator(), g = audioCtx.createGain();
-            o.type = t; o.frequency.setValueAtTime(f, audioCtx.currentTime);
-            g.gain.setValueAtTime(v, audioCtx.currentTime);
-            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + d);
-            o.connect(g); g.connect(audioCtx.destination);
-            o.start(); o.stop(audioCtx.currentTime + d);
-        }
-
-        document.getElementById('start-de').onclick = () => startGame('de');
-        document.getElementById('start-en').onclick = () => startGame('en');
-
-        async function startGame(l) {
-            lang = l; initAudio();
-            await loadData();
-            gameState.questions = gameState.questions.sort(() => Math.random() - 0.5);
-            document.getElementById('start-screen').classList.remove('active');
-            document.getElementById('game-screen').classList.add('active');
-            showQuestion();
-        }
-
-        function showQuestion() {
-            const q = gameState.questions[gameState.currentIdx];
-            if (!q) { alert('PROTOCOL COMPLETE. SCORE: ' + gameState.score); location.reload(); return; }
+        function renderQuestion() {
+            const q = state.questions[state.current];
+            if (!q) { alert('SYSTEM_CLEARED. SCORE: ' + state.score); location.reload(); return; }
             
-            gameState.locked = false;
-            document.getElementById('score-display').innerText = `SCORE: ${gameState.score} | BEST: ${gameState.highScore}`;
-            document.getElementById('question-text').innerText = q.text[lang];
+            document.getElementById('question-box').innerText = q.text[state.lang];
             const container = document.getElementById('options-container');
             container.innerHTML = '';
             
-            q.options[lang].forEach((opt, i) => {
-                const b = document.createElement('button');
-                b.className = 'option-btn'; b.innerText = opt;
-                b.onclick = () => handleAnswer(i === q.correct);
-                container.appendChild(b);
+            q.options[state.lang].forEach((opt, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(i === q.correct);
+                container.appendChild(btn);
             });
             startTimer();
         }
 
-        function handleAnswer(correct) {
-            if (gameState.locked) return;
-            gameState.locked = true; clearInterval(gameState.timer);
-
+        function checkAnswer(correct) {
+            clearInterval(state.timer);
             if (correct) {
-                playSfx(600, 'sine', 0.1, 0.1);
-                gameState.score += 100;
-                if (gameState.score > gameState.highScore) {
-                    gameState.highScore = gameState.score;
-                    localStorage.setItem('ackBest', gameState.highScore);
-                }
-                gameState.currentIdx++;
-                setTimeout(showQuestion, 200);
+                state.score += 100;
+                if (state.score > state.best) { state.best = state.score; localStorage.setItem('dfwa_best', state.best); }
+                state.current++;
+                renderQuestion();
             } else {
-                playSfx(150, 'sawtooth', 0.3, 0.1);
-                const msg = getAckMsg();
-                showAck(msg);
-                setTimeout(() => { gameState.currentIdx++; showQuestion(); }, 2500);
+                const pool = state.comments[state.lang].ack.filter(m => !used.has(m));
+                if (pool.length === 0) used.clear();
+                const msg = pool[Math.floor(Math.random() * pool.length)];
+                used.add(msg);
+                
+                const overlay = document.getElementById('ack-overlay');
+                document.getElementById('ack-msg').innerText = msg;
+                overlay.classList.add('active');
+                setTimeout(() => {
+                    overlay.classList.remove('active');
+                    state.current++;
+                    renderQuestion();
+                }, 2500);
             }
         }
 
         function startTimer() {
-            let w = 100; const bar = document.getElementById('timer-bar');
-            const speed = Math.max(15, 80 - (gameState.currentIdx * 2));
-            gameState.timer = setInterval(() => {
+            let w = 100;
+            const bar = document.getElementById('timer-fill');
+            const speed = Math.max(10, 70 - (state.current * 2));
+            state.timer = setInterval(() => {
                 w -= 1; bar.style.width = w + '%';
-                if (w <= 0) { clearInterval(gameState.timer); handleAnswer(false); }
+                if (w <= 0) checkAnswer(false);
             }, speed);
-        }
-
-        function getAckMsg() {
-            const pool = langData[lang].ack.filter(m => !usedComments.has(m));
-            if (pool.length === 0) usedComments.clear();
-            const m = pool[Math.floor(Math.random() * pool.length)] || "FAIL!";
-            usedComments.add(m); return m;
-        }
-
-        function showAck(txt) {
-            const d = document.getElementById('ack-dialog');
-            d.innerHTML = `<div class="ack-glitch">${txt}</div>`;
-            d.classList.add('visible');
-            setTimeout(() => d.classList.remove('visible'), 2300);
         }
 
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js?v=' + Date.now()).then(reg => {
                 reg.onupdatefound = () => {
                     const w = reg.installing;
-                    w.onstatechange = () => {
-                        if (w.state === 'installed' && navigator.serviceWorker.controller) location.reload();
-                    };
+                    w.onstatechange = () => { if (w.state === 'installed' && navigator.serviceWorker.controller) location.reload(); };
                 };
             });
         }
