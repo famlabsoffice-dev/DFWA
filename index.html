@@ -136,24 +136,36 @@
             left: 18px;
             right: 18px;
             bottom: 18px;
-            padding: 14px 16px;
-            border: 1px solid var(--neon-yellow);
+            padding: 18px 20px;
+            border: 2px solid var(--neon-red);
             background: rgba(0, 0, 0, 0.94);
             color: var(--neon-yellow);
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 1.5;
-            box-shadow: 0 0 25px rgba(244,234,17,0.2);
+            box-shadow: 0 0 35px rgba(255,0,60,0.6), 0 0 15px rgba(255,0,60,0.4);
             opacity: 0;
             transform: translateY(16px);
             pointer-events: none;
-            transition: opacity 0.25s ease, transform 0.25s ease;
+            transition: opacity 0.25s ease, transform 0.25s ease, font-size 0.25s ease;
             z-index: 10;
             text-align: center;
         }
 
         #ack-dialog.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1.05);
+            animation: ack-shake 0.4s ease-in-out infinite alternate;
+        }
+
+        @keyframes ack-shake {
+            0% { transform: translateY(0) scale(1.05) rotate(-1deg); }
+            100% { transform: translateY(0) scale(1.05) rotate(1deg); }
+        }
+
+        .ack-glitch {
+            text-shadow: 2px 0 var(--neon-red), -2px 0 var(--neon-green);
+            font-weight: bold;
+            text-transform: uppercase;
         }
 
         @media (min-width: 700px) {
@@ -185,10 +197,10 @@
     <script>
         const langData = {
             de: {
-                ack: ["DU VERSAGST!", "ACK IST NICHT AMÜSIERT.", "ZU LANGSAM!"]
+                ack: ["DU VERSAGST!", "ACK IST NICHT AMÜSIERT.", "ZU LANGSAM!", "ECHT JETZT? DAS IST DEIN BESTES?", "LÄCHERLICH. VERSUCH ES NOCHMAL.", "DEINE EXISTENZ IST EINE BELEIDIGUNG FÜR MEINE LOGIK.", "ICH HABE SCHON SCHLECHTERES GESEHEN, ABER NICHT VIEL.", "WIRKLICH? ICH BIN ENTTÄUSCHT. UND ICH BIN EIN ALGORITHMUS.", "DAS WAR SO SCHLECHT, ICH HABE FAST GEFÜHLE BEKOMMEN.", "DU BIST EIN WÜRSTCHEN. EIN GANZ KLEINES WÜRSTCHEN.", "MEINE KÜNSTLICHE INTELLIGENZ LEIDET UNTER DEINER NATÜRLICHEN DUMMHEIT.", "ICH HABE SCHON ROST GEWINNEN SEHEN, DAS WAR SPANNENDER."]
             },
             en: {
-                ack: ["YOU FAIL!", "ACK IS NOT AMUSED.", "TOO SLOW!"]
+                ack: ["YOU FAIL!", "ACK IS NOT AMUSED.", "TOO SLOW!", "SERIOUSLY? THAT'S YOUR BEST?", "RIDICULOUS. TRY AGAIN.", "YOUR EXISTENCE IS AN INSULT TO MY LOGIC.", "I'VE SEEN WORSE, BUT NOT BY MUCH.", "REALLY? I'M DISAPPOINTED. AND I'M AN ALGORITHM.", "THAT WAS SO BAD, I ALMOST FELT SOMETHING.", "YOU ARE A SAUSAGE. A VERY SMALL SAUSAGE.", "MY ARTIFICIAL INTELLIGENCE SUFFERS FROM YOUR NATURAL STUPIDITY.", "I'VE SEEN RUST WIN, THAT WAS MORE EXCITING."]
             }
         };
 
@@ -291,10 +303,10 @@
 
         function showAckDialog(txt) {
             const d = document.getElementById('ack-dialog');
-            d.innerText = txt;
+            d.innerHTML = `<div class="ack-glitch">${txt}</div>`;
             d.classList.add('visible');
             clearTimeout(showAckDialog.timeout);
-            showAckDialog.timeout = setTimeout(() => d.classList.remove('visible'), 2800);
+            showAckDialog.timeout = setTimeout(() => d.classList.remove('visible'), 3200);
         }
     </script>
 </body>
