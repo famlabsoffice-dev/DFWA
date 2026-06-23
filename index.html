@@ -7,8 +7,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="ACK ATTACK">
     <meta name="theme-color" content="#050505">
-    <meta name="description" content="ACK ATTACK - Das ultimative dystopische Quiz als PWA. Beantworte Fragen schnell und präzise, während ACK dich mit sarkastischen Kommentaren drangsaliert.">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="ACK ATTACK - Dystopian Quiz PWA. 200 questions, unique responses, precision logic.">
     <link rel="manifest" href="./manifest.json">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22black%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2240%22 fill=%22%2339ff14%22 font-family=%22monospace%22>ACK</text></svg>">
     <title>ACK ATTACK - Dystopian Quiz</title>
@@ -18,452 +17,82 @@
             --neon-red: #ff003c;
             --neon-yellow: #f4ea11;
             --neon-cyan: #00ffff;
-            --neon-purple: #ff00ff;
             --bg-black: #050505;
             --panel: rgba(5, 5, 5, 0.92);
-            --glow-intensity: 0.4;
         }
 
-        * { 
-            box-sizing: border-box; 
-            -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        body {
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(57,255,20,0.15), transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(0,255,255,0.1), transparent 40%),
-                linear-gradient(135deg, #020202 0%, #0a0a0a 50%, var(--bg-black) 100%);
-            color: var(--neon-green);
-            font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 0;
-        }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; }
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--bg-black); color: var(--neon-green); font-family: 'Courier New', Courier, monospace; }
 
         body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                repeating-linear-gradient(
-                    0deg,
-                    rgba(0, 0, 0, 0.03),
-                    rgba(0, 0, 0, 0.03) 1px,
-                    transparent 1px,
-                    transparent 2px
-                );
-            pointer-events: none;
-            z-index: 1;
-            animation: scanlines 8s linear infinite;
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 2px);
+            pointer-events: none; z-index: 100; animation: scanlines 8s linear infinite;
+        }
+        @keyframes scanlines { 0% { transform: translateY(0); } 100% { transform: translateY(10px); } }
+
+        #game-container { width: 100%; height: 100%; display: flex; flex-direction: column; z-index: 2; position: relative; }
+        .game-content { 
+            flex: 1; display: flex; flex-direction: column; padding: 15px; 
+            border: 4px solid var(--neon-green); margin: 10px;
+            box-shadow: 0 0 20px rgba(57,255,20,0.3), inset 0 0 20px rgba(57,255,20,0.1);
+            background: var(--panel); position: relative;
         }
 
-        @keyframes scanlines {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(10px); }
-        }
-
-        #game-container {
-            width: 100%;
-            height: 100%;
-            max-width: 100vw;
-            max-height: 100vh;
-            position: relative;
-            padding: 0;
-            border: none;
-            box-shadow: none;
-            background: transparent;
-            backdrop-filter: none;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            z-index: 2;
-        }
-
-        /* Fullscreen Styling */
-        body.fullscreen #game-container {
-            width: 100vw;
-            height: 100vh;
-            padding: 0;
-        }
-
-        .game-content {
-            width: 100%;
-            height: 100%;
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            border: 3px solid var(--neon-green);
-            box-shadow: 
-                0 0 40px rgba(57,255,20,0.5),
-                0 0 80px rgba(57,255,20,0.25),
-                inset 0 0 40px rgba(57,255,20,0.1);
-            background: var(--panel);
-            backdrop-filter: blur(10px);
-        }
-
-        @media (min-width: 600px) {
-            .game-content {
-                padding: 28px;
-                margin: 12px;
-                border-radius: 2px;
-                max-width: 720px;
-                max-height: 90vh;
-            }
-        }
-
-        .screen {
-            display: none;
-            flex-direction: column;
-            height: 100%;
-            width: 100%;
-            animation: fadeIn 0.4s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.98); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
+        .screen { display: none; flex-direction: column; height: 100%; width: 100%; animation: fadeIn 0.3s ease-out; }
         .screen.active { display: flex; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: scale(1); } }
 
-        #start-screen {
-            justify-content: center;
-            gap: 18px;
-            text-align: center;
-        }
+        #start-screen { justify-content: center; align-items: center; gap: 20px; text-align: center; }
+        h1 { font-size: clamp(2rem, 8vw, 3.5rem); margin: 0; text-shadow: 0 0 15px var(--neon-green); letter-spacing: 0.1em; }
+        .subtitle { color: var(--neon-cyan); font-size: 0.9rem; margin-bottom: 20px; }
 
-        h1 {
-            text-align: center;
-            font-size: clamp(2.2rem, 6vw, 3.5rem);
-            margin: 0 0 8px;
-            text-shadow: 
-                0 0 10px rgba(57,255,20,0.8),
-                0 0 20px rgba(57,255,20,0.5),
-                0 0 30px rgba(255,0,255,0.3);
-            letter-spacing: 0.15em;
-            font-weight: bold;
-            animation: titleGlow 2s ease-in-out infinite;
+        input, button { 
+            width: 100%; max-width: 300px; padding: 15px; border: 2px solid var(--neon-green);
+            background: rgba(57,255,20,0.05); color: var(--neon-green); font-family: inherit;
+            font-weight: bold; text-transform: uppercase; cursor: pointer; transition: 0.2s;
         }
+        button:hover { background: rgba(57,255,20,0.2); box-shadow: 0 0 15px var(--neon-green); transform: translateY(-2px); }
 
-        @keyframes titleGlow {
-            0%, 100% { text-shadow: 0 0 10px rgba(57,255,20,0.8), 0 0 20px rgba(57,255,20,0.5), 0 0 30px rgba(255,0,255,0.3); }
-            50% { text-shadow: 0 0 20px rgba(57,255,20,1), 0 0 40px rgba(57,255,20,0.7), 0 0 60px rgba(255,0,255,0.5); }
-        }
-
-        .subtitle {
-            font-size: 0.9rem;
-            color: var(--neon-cyan);
-            margin: -4px 0 16px;
-            text-shadow: 0 0 8px rgba(0,255,255,0.5);
-            letter-spacing: 0.08em;
-        }
-
-        input,
-        button {
-            width: 100%;
-            border: 2px solid var(--neon-green);
-            background: rgba(57,255,20,0.08);
-            color: var(--neon-green);
-            padding: 14px 16px;
-            font-family: inherit;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-        }
-
-        input::placeholder { 
-            color: rgba(57,255,20,0.5);
-            text-transform: uppercase;
-        }
-
-        button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(57,255,20,0.2);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        button:hover::before,
-        button:focus-visible::before {
-            left: 0;
-        }
-
-        button:hover,
-        button:focus-visible {
-            transform: translateY(-3px);
-            background: rgba(57,255,20,0.15);
-            box-shadow: 
-                0 0 20px rgba(57,255,20,0.7),
-                0 8px 16px rgba(57,255,20,0.3),
-                inset 0 0 10px rgba(57,255,20,0.2);
-            outline: none;
-            border-color: var(--neon-cyan);
-        }
-
-        button:active {
-            transform: translateY(-1px);
-        }
-
-        #game-screen {
-            justify-content: flex-start;
-            gap: 14px;
-            position: relative;
-        }
-
-        #timer-shell {
-            width: 100%;
-            height: 12px;
-            border: 2px solid rgba(57,255,20,0.6);
-            background: rgba(57,255,20,0.08);
-            overflow: hidden;
-            box-shadow: inset 0 0 8px rgba(57,255,20,0.2);
-            border-radius: 1px;
-        }
-
-        #timer-bar {
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(90deg, var(--neon-green), var(--neon-cyan), #b8ff9e);
-            transition: width 0.08s linear;
-            box-shadow: 
-                0 0 12px rgba(57,255,20,0.8),
-                inset 0 0 8px rgba(255,255,255,0.3);
-        }
-
-        #question-text {
-            min-height: 120px;
-            font-size: clamp(1.15rem, 2.8vw, 1.5rem);
-            line-height: 1.5;
-            text-align: center;
-            padding: 12px 6px;
-            text-shadow: 
-                0 0 8px rgba(57,255,20,0.4),
-                0 0 16px rgba(57,255,20,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
-        }
-
-        #options-container {
-            display: grid;
-            gap: 10px;
-            width: 100%;
-            flex: 1;
-        }
-
-        .option-btn {
-            text-align: left;
-            border-radius: 0;
-            padding: 12px 14px;
-            font-size: 0.95rem;
-            position: relative;
-            background: rgba(57,255,20,0.06);
-            border: 2px solid rgba(57,255,20,0.4);
-            transition: all 0.15s ease;
-        }
-
-        .option-btn::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 3px;
-            background: var(--neon-green);
-            transform: scaleY(0);
-            transform-origin: center;
-            transition: transform 0.2s ease;
-        }
-
-        .option-btn:hover {
-            background: rgba(57,255,20,0.12);
-            border-color: var(--neon-green);
-            box-shadow: 
-                0 0 12px rgba(57,255,20,0.4),
-                inset 0 2px 4px rgba(57,255,20,0.1);
-            transform: translateX(4px);
-        }
-
-        .option-btn:hover::after {
-            transform: scaleY(1);
-        }
-
-        .option-btn:active {
-            transform: translateX(2px);
-        }
+        #game-screen { gap: 15px; }
+        #timer-shell { width: 100%; height: 10px; border: 1px solid var(--neon-green); background: #111; overflow: hidden; }
+        #timer-bar { height: 100%; width: 100%; background: var(--neon-green); transition: width 0.1s linear; }
+        #question-text { min-height: 100px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.2rem; padding: 10px; }
+        #options-container { display: grid; gap: 10px; flex: 1; }
+        .option-btn { max-width: none; text-align: left; font-size: 1rem; }
 
         #ack-dialog {
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            padding: 24px 28px;
-            border: 3px solid var(--neon-red);
-            background: rgba(0, 0, 0, 0.96);
-            color: var(--neon-yellow);
-            font-size: 1.3rem;
-            line-height: 1.6;
-            box-shadow: 
-                0 0 40px rgba(255,0,60,0.7),
-                0 0 80px rgba(255,0,60,0.4),
-                inset 0 0 20px rgba(255,0,60,0.1);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            z-index: 20;
-            text-align: center;
-            max-width: 90vw;
-            border-radius: 2px;
-            backdrop-filter: blur(5px);
+            position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(0);
+            padding: 30px; border: 3px solid var(--neon-red); background: rgba(0,0,0,0.98);
+            color: var(--neon-yellow); z-index: 1000; text-align: center; width: 85%;
+            box-shadow: 0 0 50px var(--neon-red); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px); pointer-events: none;
         }
+        #ack-dialog.visible { transform: translate(-50%, -50%) scale(1); animation: ackShake 0.4s infinite; }
+        .ack-glitch { font-weight: bold; font-size: 1.4rem; text-shadow: 2px 0 var(--neon-red), -2px 0 var(--neon-green); animation: glitch 0.2s infinite; }
+        @keyframes ackShake { 0%, 100% { transform: translate(-50%, -50%) rotate(0); } 25% { transform: translate(-50%, -50%) rotate(-1deg); } 75% { transform: translate(-50%, -50%) rotate(1deg); } }
+        @keyframes glitch { 0% { opacity: 1; } 50% { opacity: 0.8; transform: translateX(2px); } 100% { opacity: 1; } }
 
-        #ack-dialog.visible {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-            animation: ackPulse 0.5s ease-in-out, ackShake 0.4s ease-in-out infinite 0.1s;
-        }
+        #score-display { position: absolute; top: 10px; right: 15px; font-size: 0.8rem; color: var(--neon-yellow); font-weight: bold; }
 
-        @keyframes ackPulse {
-            0% { transform: translate(-50%, -50%) scale(0.8); }
-            50% { transform: translate(-50%, -50%) scale(1.08); }
-            100% { transform: translate(-50%, -50%) scale(1); }
-        }
-
-        @keyframes ackShake {
-            0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
-            25% { transform: translate(-50%, -50%) scale(1) rotate(-2deg); }
-            75% { transform: translate(-50%, -50%) scale(1) rotate(2deg); }
-        }
-
-        @keyframes ackGlitchPulse {
-            0% { transform: scale(1); opacity: 1; text-shadow: 2px 0 var(--neon-red), -2px 0 var(--neon-green), 0 0 20px rgba(255,0,60,0.6); }
-            50% { transform: scale(1.05); opacity: 0.95; text-shadow: -2px 0 var(--neon-red), 2px 0 var(--neon-green), 0 0 30px rgba(255,0,60,0.8); }
-            100% { transform: scale(1); opacity: 1; text-shadow: 2px 0 var(--neon-red), -2px 0 var(--neon-green), 0 0 20px rgba(255,0,60,0.6); }
-        }
-
-        @keyframes glitch-screen {
-            0% { filter: hue-rotate(0deg) invert(0) brightness(1); }
-            25% { filter: hue-rotate(90deg) invert(0.5) brightness(1.1); }
-            50% { filter: hue-rotate(180deg) invert(1) brightness(0.9); }
-            75% { filter: hue-rotate(270deg) invert(0.5) brightness(1.1); }
-            100% { filter: hue-rotate(360deg) invert(0) brightness(1); }
-        }
-
-        #score-display {
-            position: absolute;
-            top: 8px;
-            right: 16px;
-            font-size: 0.85rem;
-            color: var(--neon-yellow);
-            text-align: right;
-            text-shadow: 0 0 8px rgba(244,234,17,0.5);
-            letter-spacing: 0.05em;
-            font-weight: bold;
-            z-index: 5;
-        }
-
-        .ack-glitch {
-            text-shadow: 
-                2px 0 var(--neon-red), 
-                -2px 0 var(--neon-green),
-                0 0 20px rgba(255,0,60,0.6);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            animation: glitchText 0.3s ease-in-out;
-        }
-
-        @keyframes glitchText {
-            0%, 100% { text-shadow: 2px 0 var(--neon-red), -2px 0 var(--neon-green), 0 0 20px rgba(255,0,60,0.6); }
-            50% { text-shadow: -2px 0 var(--neon-red), 2px 0 var(--neon-green), 0 0 20px rgba(255,0,60,0.8); }
-        }
-
-        .corner-decoration {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--neon-green);
-            opacity: 0.6;
-        }
-
-        .corner-tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
-        .corner-tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
-        .corner-bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
-        .corner-br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
-
-        @supports (padding: max(0px)) {
-            body {
-                padding: max(0px, env(safe-area-inset-top)) max(0px, env(safe-area-inset-right)) max(0px, env(safe-area-inset-bottom)) max(0px, env(safe-area-inset-left));
-            }
-        }
-
-        @media (max-width: 600px) {
-            .game-content {
-                margin: 0;
-                border-radius: 0;
-                max-height: 100vh;
-            }
-            .corner-decoration { display: none; }
-        }
-
-        @media (orientation: landscape) and (max-height: 500px) {
-            #question-text { min-height: 60px; }
-            #options-container { gap: 8px; }
-            .option-btn { padding: 8px 12px; font-size: 0.9rem; }
-        }
+        @media (max-width: 600px) { .game-content { margin: 0; border-width: 2px; } }
     </style>
 </head>
-<body class="fullscreen">
+<body>
     <div id="game-container">
         <div class="game-content">
-            <div class="corner-decoration corner-tl"></div>
-            <div class="corner-decoration corner-tr"></div>
-            <div class="corner-decoration corner-bl"></div>
-            <div class="corner-decoration corner-br"></div>
-
             <div id="start-screen" class="screen active">
                 <h1>ACK ATTACK</h1>
-                <div class="subtitle">⚠ DYSTOPIAN QUIZ ⚠</div>
-                <input type="text" id="player-name" placeholder="NAME EINGEBEN...">
-                <button id="start-de">▶ START (DE)</button>
-                <button id="start-en">▶ START (EN)</button>
+                <div class="subtitle">DYSTOPIAN KNOWLEDGE PROTOCOL</div>
+                <input type="text" id="player-name" placeholder="IDENTITÄT EINGEBEN" maxlength="12">
+                <button id="start-de">INITIALISIEREN (DE)</button>
+                <button id="start-en">INITIALIZE (EN)</button>
             </div>
 
             <div id="game-screen" class="screen">
                 <div id="score-display">SCORE: 0 | BEST: 0</div>
-                <div id="timer-shell">
-                    <div id="timer-bar"></div>
-                </div>
-                <div id="question-text"></div>
+                <div id="timer-shell"><div id="timer-bar"></div></div>
+                <div id="question-text">LADE DATEN...</div>
                 <div id="options-container"></div>
                 <div id="ack-dialog"></div>
             </div>
@@ -471,295 +100,117 @@
     </div>
 
     <script>
-        // Fullscreen & Orientation Lock
-        function requestFullscreen() {
-            const elem = document.documentElement;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen().catch(err => console.log('Fullscreen request failed:', err));
-            } else if (elem.webkitRequestFullscreen) {
-                elem.webkitRequestFullscreen();
-            } else if (elem.mozRequestFullScreen) {
-                elem.mozRequestFullScreen();
-            } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen();
-            }
-        }
-
-        // Request fullscreen on user interaction
-        document.addEventListener('click', () => {
-            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-                requestFullscreen();
-            }
-        }, { once: true });
-
-        // Lock orientation to portrait on mobile
-        if (screen.orientation && screen.orientation.lock) {
-            screen.orientation.lock('portrait-primary').catch(err => console.log('Orientation lock failed:', err));
-        }
-
+        let lang = 'de';
         let langData = { de: { ack: [] }, en: { ack: [] } };
         let usedComments = new Set();
-
-        // Ack-Kommentare laden
-        async function loadAckComments() {
-            try {
-                const response = await fetch('ack_comments.json?v=' + Date.now());
-                if (response.ok) {
-                    const data = await response.json();
-                    langData = data;
-                } else {
-                    console.warn('Ack comments not found, using defaults');
-                }
-            } catch (err) {
-                console.warn('Failed to load ack comments:', err);
-            }
-        }
-
-        let lang = 'de';
         let audioCtx = null;
-        let gameState = {
-            questions: [],
-            currentQuestionIndex: 0,
-            timer: null,
-            locked: false,
-            score: 0,
-            highScore: localStorage.getItem('ackHighScore') || 0,
-            failCount: 0,
-            history: [],
-            playerName: ''
-        };
+        let gameState = { questions: [], currentIdx: 0, score: 0, highScore: localStorage.getItem('ackBest') || 0, timer: null, locked: false };
 
-        function initAudio() {
-            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-
-        function playTone(freq, type, duration, vol) {
-            if (!audioCtx) return;
+        async function loadData() {
             try {
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                const filter = audioCtx.createBiquadFilter();
-                filter.type = 'lowpass';
-                filter.frequency.value = 3000;
-                osc.type = type;
-                osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-                gain.gain.setValueAtTime(vol, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
-                osc.connect(filter);
-                filter.connect(gain);
-                gain.connect(audioCtx.destination);
-                osc.start();
-                osc.stop(audioCtx.currentTime + duration);
-            } catch (e) { /* Audio context error */ }
+                const [qRes, aRes] = await Promise.all([
+                    fetch('questions_i18n.json?v=' + Date.now()),
+                    fetch('ack_comments.json?v=' + Date.now())
+                ]);
+                gameState.questions = await qRes.json();
+                langData = await aRes.json();
+            } catch (e) { console.error('Load error', e); }
         }
 
-        function playGlitchSound() {
+        function initAudio() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+        function playSfx(f, t, d, v) {
             if (!audioCtx) return;
-            try {
-                const bufferSize = audioCtx.sampleRate * 0.15;
-                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-                const data = buffer.getChannelData(0);
-                for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
-                const noise = audioCtx.createBufferSource();
-                noise.buffer = buffer;
-                const filter = audioCtx.createBiquadFilter();
-                filter.type = 'highpass';
-                filter.frequency.value = 2000;
-                noise.connect(filter);
-                filter.connect(audioCtx.destination);
-                noise.start();
-                noise.stop(audioCtx.currentTime + 0.15);
-            } catch (e) { /* Audio context error */ }
+            const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+            o.type = t; o.frequency.setValueAtTime(f, audioCtx.currentTime);
+            g.gain.setValueAtTime(v, audioCtx.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + d);
+            o.connect(g); g.connect(audioCtx.destination);
+            o.start(); o.stop(audioCtx.currentTime + d);
         }
 
-        // Lade Ack-Kommentare beim Start
-        loadAckComments();
-
-        document.getElementById('start-de').addEventListener('click', () => startGame('de'));
-        document.getElementById('start-en').addEventListener('click', () => startGame('en'));
+        document.getElementById('start-de').onclick = () => startGame('de');
+        document.getElementById('start-en').onclick = () => startGame('en');
 
         async function startGame(l) {
-            initAudio();
-            lang = l;
-            gameState.playerName = document.getElementById('player-name').value || 'PLAYER';
+            lang = l; initAudio();
+            await loadData();
+            gameState.questions = gameState.questions.sort(() => Math.random() - 0.5);
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('game-screen').classList.add('active');
-
-            try {
-                const response = await fetch('questions_i18n.json?v=' + Date.now());
-                if (!response.ok) throw new Error('Questions not found');
-                const data = await response.json();
-                gameState.questions = shuffleArray(data);
-                gameState.currentQuestionIndex = 0;
-                gameState.score = 0;
-                gameState.failCount = 0;
-                showQuestion();
-            } catch (err) {
-                console.error(err);
-                alert('Fragen konnten nicht geladen werden.');
-                location.reload();
-            }
-        }
-
-        function shuffleArray(arr) {
-            const copy = [...arr];
-            for (let i = copy.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [copy[i], copy[j]] = [copy[j], copy[i]];
-            }
-            return copy;
+            showQuestion();
         }
 
         function showQuestion() {
-            const q = gameState.questions[gameState.currentQuestionIndex];
+            const q = gameState.questions[gameState.currentIdx];
+            if (!q) { alert('PROTOCOL COMPLETE. SCORE: ' + gameState.score); location.reload(); return; }
             
-            // Score Update
-            document.getElementById('score-display').innerText = `SCORE: ${gameState.score} | BEST: ${gameState.highScore}`;
-            if (gameState.score > gameState.highScore) {
-                gameState.highScore = gameState.score;
-                localStorage.setItem('ackHighScore', gameState.highScore);
-            }
-
-            if (!q) {
-                alert(`🎮 ACK ATTACK FINISHED!\n\n👤 ${gameState.playerName}\n💯 FINAL SCORE: ${gameState.score}\n🏆 BEST: ${gameState.highScore}`);
-                location.reload();
-                return;
-            }
-
             gameState.locked = false;
-            const qText = q.text?.[lang] || q.text || '';
-            const qOptions = q.options?.[lang] || q.options || [];
-
-            document.getElementById('question-text').innerText = qText;
+            document.getElementById('score-display').innerText = `SCORE: ${gameState.score} | BEST: ${gameState.highScore}`;
+            document.getElementById('question-text').innerText = q.text[lang];
             const container = document.getElementById('options-container');
             container.innerHTML = '';
-
-            qOptions.forEach((opt, idx) => {
-                const btn = document.createElement('button');
-                btn.className = 'option-btn';
-                btn.innerText = opt;
-                btn.onclick = () => handleAnswer(idx === q.correct);
-                container.appendChild(btn);
+            
+            q.options[lang].forEach((opt, i) => {
+                const b = document.createElement('button');
+                b.className = 'option-btn'; b.innerText = opt;
+                b.onclick = () => handleAnswer(i === q.correct);
+                container.appendChild(b);
             });
-
             startTimer();
         }
 
         function handleAnswer(correct) {
             if (gameState.locked) return;
-            gameState.locked = true;
-            clearInterval(gameState.timer);
+            gameState.locked = true; clearInterval(gameState.timer);
 
-            if (!correct) {
-                gameState.failCount++;
-                playGlitchSound();
-                document.body.style.animation = 'glitch-screen 0.25s 2';
-                
-                let msg = getUniqueAckComment();
-                if (gameState.failCount > 3) {
-                    msg = lang === 'de' ? "SCHON WIEDER? DU BIST HOFFNUNGSLOS." : "AGAIN? YOU ARE HOPELESS.";
+            if (correct) {
+                playSfx(600, 'sine', 0.1, 0.1);
+                gameState.score += 100;
+                if (gameState.score > gameState.highScore) {
+                    gameState.highScore = gameState.score;
+                    localStorage.setItem('ackBest', gameState.highScore);
                 }
-                if (gameState.score > gameState.highScore && gameState.highScore > 0) {
-                    msg = lang === 'de' ? "FAST HÄTTEST DU MICH ÜBERRASCHT. FAST." : "YOU ALMOST SURPRISED ME. ALMOST.";
-                }
-
-                showAckDialog(msg);
-                setTimeout(() => {
-                    document.body.style.animation = 'none';
-                    gameState.currentQuestionIndex++;
-                    showQuestion();
-                }, 2800);
+                gameState.currentIdx++;
+                setTimeout(showQuestion, 200);
             } else {
-                playTone(440, 'sine', 0.12, 0.1);
-                setTimeout(() => playTone(550, 'sine', 0.1, 0.08), 80);
-                setTimeout(() => playTone(660, 'sine', 0.08, 0.06), 160);
-                gameState.score += Math.max(10, 100 - (gameState.currentQuestionIndex * 2));
-                gameState.currentQuestionIndex++;
-                setTimeout(showQuestion, 350);
+                playSfx(150, 'sawtooth', 0.3, 0.1);
+                const msg = getAckMsg();
+                showAck(msg);
+                setTimeout(() => { gameState.currentIdx++; showQuestion(); }, 2500);
             }
         }
 
         function startTimer() {
-            let width = 100;
-            const bar = document.getElementById('timer-bar');
-            bar.style.width = '100%';
-            bar.style.background = 'linear-gradient(90deg, var(--neon-green), var(--neon-cyan), #b8ff9e)';
-
-            // Schwierigkeit: Timer wird mit jeder Frage schneller
-            const speed = Math.max(18, 90 - (gameState.currentQuestionIndex * 4));
-
+            let w = 100; const bar = document.getElementById('timer-bar');
+            const speed = Math.max(15, 80 - (gameState.currentIdx * 2));
             gameState.timer = setInterval(() => {
-                width -= 1;
-                bar.style.width = width + '%';
-                
-                if (width < 30) {
-                    bar.style.background = 'linear-gradient(90deg, var(--neon-red), var(--neon-yellow))';
-                    if (width % 3 === 0) {
-                        document.body.style.boxShadow = 'inset 0 0 60px rgba(255,0,60,0.25)';
-                        playTone(120, 'square', 0.04, 0.04);
-                    } else {
-                        document.body.style.boxShadow = 'none';
-                    }
-                }
-
-                if (width <= 0) {
-                    document.body.style.boxShadow = 'none';
-                    clearInterval(gameState.timer);
-                    handleAnswer(false);
-                }
+                w -= 1; bar.style.width = w + '%';
+                if (w <= 0) { clearInterval(gameState.timer); handleAnswer(false); }
             }, speed);
         }
 
-        function getUniqueAckComment() {
-            const comments = langData[lang]?.ack || [];
-            if (comments.length === 0) return 'ACK IS WATCHING';
-            
-            let availableComments = comments.filter(c => !usedComments.has(c));
-            if (availableComments.length === 0) {
-                usedComments.clear();
-                availableComments = comments;
-            }
-            
-            const msg = availableComments[Math.floor(Math.random() * availableComments.length)];
-            usedComments.add(msg);
-            return msg;
+        function getAckMsg() {
+            const pool = langData[lang].ack.filter(m => !usedComments.has(m));
+            if (pool.length === 0) usedComments.clear();
+            const m = pool[Math.floor(Math.random() * pool.length)] || "FAIL!";
+            usedComments.add(m); return m;
         }
 
-        function showAckDialog(txt) {
+        function showAck(txt) {
             const d = document.getElementById('ack-dialog');
-            d.innerHTML = `<div class="ack-glitch" style="animation: ackGlitchPulse 0.4s ease-in-out;">${txt}</div>`;
+            d.innerHTML = `<div class="ack-glitch">${txt}</div>`;
             d.classList.add('visible');
-            clearTimeout(showAckDialog.timeout);
-            showAckDialog.timeout = setTimeout(() => d.classList.remove('visible'), 2800);
+            setTimeout(() => d.classList.remove('visible'), 2300);
         }
 
-        // Service Worker Registration with Update Detection
         if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js?v=' + Date.now())
-                    .then(reg => {
-                        reg.onupdatefound = () => {
-                            const installingWorker = reg.installing;
-                            installingWorker.onstatechange = () => {
-                                if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    console.log('New content available; please refresh.');
-                                    if (confirm('Ein neues Update ist verfügbar. Jetzt aktualisieren?')) {
-                                        window.location.reload();
-                                    }
-                                }
-                            };
-                        };
-                    })
-                    .catch(err => console.log('SW registration failed:', err));
-            });
-
-            // Reload when controller changes
-            let refreshing = false;
-            navigator.serviceWorker.addEventListener('controllerchange', () => {
-                if (!refreshing) {
-                    refreshing = true;
-                    window.location.reload();
-                }
+            navigator.serviceWorker.register('sw.js?v=' + Date.now()).then(reg => {
+                reg.onupdatefound = () => {
+                    const w = reg.installing;
+                    w.onstatechange = () => {
+                        if (w.state === 'installed' && navigator.serviceWorker.controller) location.reload();
+                    };
+                };
             });
         }
     </script>
