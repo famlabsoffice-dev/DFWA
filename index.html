@@ -53,6 +53,10 @@
         @keyframes textGlitch {
             0% { transform: translate(0); } 2% { transform: translate(-2px, 2px); } 4% { transform: translate(2px, -2px); } 6% { transform: translate(0); }
         }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 40px var(--neon), 0 0 80px var(--cyber-blue); transform: scale(1); }
+            50% { box-shadow: 0 0 60px var(--neon), 0 0 120px var(--cyber-blue); transform: scale(1.05); }
+        }
 
         #options-container { display: grid; gap: 15px; margin-top: auto; margin-bottom: 20px; }
         .option-btn {
@@ -110,14 +114,20 @@
             <span id="streak-info">STREAK: 0</span>
         </div>
         
-        <div id="start-screen" class="screen active">
-            <h1 class="glitch-text">ACK ATTACK</h1>
-            <div class="cyber-box" style="text-align:center">
-                <select id="category-filter" class="cyber-select" aria-label="Sektor auswählen">
-                    <option value="all">ALL_SECTORS</option>
-                </select>
-                <button class="option-btn" onclick="initGame('de')" aria-label="Start in Deutsch">PROTOKOLL_STARTEN (DE)</button>
-                <button class="option-btn" onclick="initGame('en')" aria-label="Start in English">START_PROTOCOL (EN)</button>
+        <div id="start-screen" class="screen active" style="justify-content: center; align-items: center;">
+            <div style="text-align: center; position: relative; z-index: 10;">
+                <h1 class="glitch-text" style="font-size: 4rem; margin-bottom: 40px; text-shadow: 0 0 30px var(--neon), 0 0 60px var(--cyber-blue);">A.C.K.</h1>
+                <div style="width: 300px; height: 300px; margin: 0 auto 40px; position: relative; background: radial-gradient(circle at center, rgba(57, 255, 20, 0.1) 0%, transparent 70%); border: 2px solid var(--neon); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 50px var(--neon), inset 0 0 50px rgba(57, 255, 20, 0.2);">
+                    <div style="width: 200px; height: 200px; background: radial-gradient(circle at 40% 40%, var(--cyber-blue), var(--neon)); border-radius: 50%; box-shadow: 0 0 40px var(--neon), 0 0 80px var(--cyber-blue); animation: pulse 2s infinite;"></div>
+                </div>
+                <p style="font-size: 1.2rem; color: var(--cyber-blue); margin-bottom: 30px; letter-spacing: 3px;">AUTONOMOUS CYBERNETIC KERNEL</p>
+                <div class="cyber-box" style="text-align:center; max-width: 400px; margin: 0 auto;">
+                    <select id="category-filter" class="cyber-select" aria-label="Sektor auswählen">
+                        <option value="all">ALL_SECTORS</option>
+                    </select>
+                    <button class="option-btn" onclick="initGame('de')" aria-label="Start in Deutsch" style="margin-top: 15px;">PROTOKOLL_STARTEN (DE)</button>
+                    <button class="option-btn" onclick="initGame('en')" aria-label="Start in English" style="margin-top: 10px;">START_PROTOCOL (EN)</button>
+                </div>
             </div>
         </div>
 
