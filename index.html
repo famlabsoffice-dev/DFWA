@@ -114,19 +114,21 @@
             <span id="streak-info">STREAK: 0</span>
         </div>
         
-        <div id="start-screen" class="screen active" style="justify-content: center; align-items: center;">
-            <div style="text-align: center; position: relative; z-index: 10;">
-                <h1 class="glitch-text" style="font-size: 4rem; margin-bottom: 40px; text-shadow: 0 0 30px var(--neon), 0 0 60px var(--cyber-blue);">A.C.K.</h1>
-                <div style="width: 400px; height: 400px; margin: 0 auto 40px; position: relative; display: flex; align-items: center; justify-content: center;">
-                    <img src="./assets/images/acker_core.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 20px var(--neon)); animation: pulse 4s infinite;">
+        <div id="start-screen" class="screen active" style="justify-content: flex-start; align-items: center; padding-top: 5vh;">
+            <div style="text-align: center; position: relative; z-index: 10; width: 100%; max-width: 600px;">
+                <h1 class="glitch-text" style="font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 2vh; text-shadow: 0 0 30px var(--neon), 0 0 60px var(--cyber-blue);">A.C.K.</h1>
+                <div style="width: min(80vw, 400px); height: min(80vw, 400px); margin: 0 auto 2vh; position: relative; display: flex; align-items: center; justify-content: center;">
+                    <img src="./assets/images/ack_core.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 20px var(--neon)); animation: pulse 4s infinite;">
                 </div>
-                <p style="font-size: 1.2rem; color: var(--cyber-blue); margin-bottom: 30px; letter-spacing: 3px;">AUTONOMOUS CYBERNETIC KERNEL</p>
-                <div class="cyber-box" style="text-align:center; max-width: 400px; margin: 0 auto;">
+                <p style="font-size: clamp(0.8rem, 3vw, 1.2rem); color: var(--cyber-blue); margin-bottom: 2vh; letter-spacing: 3px;">AUTONOMOUS CYBERNETIC KERNEL</p>
+                <div class="cyber-box" style="text-align:center; width: 90%; max-width: 400px; margin: 0 auto;">
                     <select id="category-filter" class="cyber-select" aria-label="Sektor auswählen">
                         <option value="all">ALL_SECTORS</option>
                     </select>
-                    <button class="option-btn" onclick="initGame('de')" aria-label="Start in Deutsch" style="margin-top: 15px;">PROTOKOLL_STARTEN (DE)</button>
-                    <button class="option-btn" onclick="initGame('en')" aria-label="Start in English" style="margin-top: 10px;">START_PROTOCOL (EN)</button>
+                    <div style="display: grid; gap: 10px; margin-top: 15px;">
+                        <button class="option-btn" onclick="initGame('de')" aria-label="Start in Deutsch" style="padding: 15px;">PROTOKOLL_STARTEN (DE)</button>
+                        <button class="option-btn" onclick="initGame('en')" aria-label="Start in English" style="padding: 15px;">START_PROTOCOL (EN)</button>
+                    </div>
                 </div>
             </div>
         </div>
