@@ -2,7 +2,15 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ACK ATTACK">
+    <meta name="theme-color" content="#050505">
+    <meta name="description" content="ACK ATTACK - Das ultimative dystopische Quiz als PWA. Beantworte Fragen schnell und präzise, während ACK dich mit sarkastischen Kommentaren drangsaliert.">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22black%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2240%22 fill=%22%2339ff14%22 font-family=%22monospace%22>ACK</text></svg>">
     <title>ACK ATTACK - Dystopian Quiz</title>
     <style>
         :root {
@@ -23,8 +31,15 @@
             user-select: none;
         }
 
-        body {
+        html, body {
             margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
             min-height: 100vh;
             background:
                 radial-gradient(circle at 20% 50%, rgba(57,255,20,0.15), transparent 40%),
@@ -35,9 +50,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 12px;
-            overflow: hidden;
             position: relative;
+            padding: 0;
         }
 
         body::before {
@@ -66,10 +80,36 @@
         }
 
         #game-container {
-            width: min(100%, 720px);
-            min-height: min(95vh, 900px);
+            width: 100%;
+            height: 100%;
+            max-width: 100vw;
+            max-height: 100vh;
             position: relative;
-            padding: 28px;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+            background: transparent;
+            backdrop-filter: none;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        /* Fullscreen Styling */
+        body.fullscreen #game-container {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+        }
+
+        .game-content {
+            width: 100%;
+            height: 100%;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
             border: 3px solid var(--neon-green);
             box-shadow: 
                 0 0 40px rgba(57,255,20,0.5),
@@ -77,11 +117,16 @@
                 inset 0 0 40px rgba(57,255,20,0.1);
             background: var(--panel);
             backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            z-index: 2;
-            border-radius: 2px;
+        }
+
+        @media (min-width: 600px) {
+            .game-content {
+                padding: 28px;
+                margin: 12px;
+                border-radius: 2px;
+                max-width: 720px;
+                max-height: 90vh;
+            }
         }
 
         .screen {
@@ -368,55 +413,83 @@
         .corner-bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
         .corner-br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
 
-        @media (min-width: 700px) {
-            #game-container { 
-                padding: 32px;
-                border-width: 3px;
-            }
-            #options-container { 
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .option-btn {
-                padding: 14px 16px;
-                font-size: 1rem;
+        @supports (padding: max(0px)) {
+            body {
+                padding: max(0px, env(safe-area-inset-top)) max(0px, env(safe-area-inset-right)) max(0px, env(safe-area-inset-bottom)) max(0px, env(safe-area-inset-left));
             }
         }
 
-        @media (max-width: 480px) {
-            h1 { margin-bottom: 4px; }
-            .subtitle { margin-bottom: 12px; }
-            #score-display { font-size: 0.75rem; }
+        @media (max-width: 600px) {
+            .game-content {
+                margin: 0;
+                border-radius: 0;
+                max-height: 100vh;
+            }
+            .corner-decoration { display: none; }
+        }
+
+        @media (orientation: landscape) and (max-height: 500px) {
+            #question-text { min-height: 60px; }
+            #options-container { gap: 8px; }
+            .option-btn { padding: 8px 12px; font-size: 0.9rem; }
         }
     </style>
 </head>
-<body>
+<body class="fullscreen">
     <div id="game-container">
-        <div class="corner-decoration corner-tl"></div>
-        <div class="corner-decoration corner-tr"></div>
-        <div class="corner-decoration corner-bl"></div>
-        <div class="corner-decoration corner-br"></div>
+        <div class="game-content">
+            <div class="corner-decoration corner-tl"></div>
+            <div class="corner-decoration corner-tr"></div>
+            <div class="corner-decoration corner-bl"></div>
+            <div class="corner-decoration corner-br"></div>
 
-        <div id="start-screen" class="screen active">
-            <h1>ACK ATTACK</h1>
-            <div class="subtitle">⚠ DYSTOPIAN QUIZ ⚠</div>
-            <input type="text" id="player-name" placeholder="NAME EINGEBEN...">
-            <button id="start-de">▶ START (DE)</button>
-            <button id="start-en">▶ START (EN)</button>
-        </div>
-
-        <div id="game-screen" class="screen">
-            <div id="score-display">SCORE: 0 | BEST: 0</div>
-            <div id="timer-shell">
-                <div id="timer-bar"></div>
+            <div id="start-screen" class="screen active">
+                <h1>ACK ATTACK</h1>
+                <div class="subtitle">⚠ DYSTOPIAN QUIZ ⚠</div>
+                <input type="text" id="player-name" placeholder="NAME EINGEBEN...">
+                <button id="start-de">▶ START (DE)</button>
+                <button id="start-en">▶ START (EN)</button>
             </div>
-            <div id="question-text"></div>
-            <div id="options-container"></div>
-            <div id="ack-dialog"></div>
+
+            <div id="game-screen" class="screen">
+                <div id="score-display">SCORE: 0 | BEST: 0</div>
+                <div id="timer-shell">
+                    <div id="timer-bar"></div>
+                </div>
+                <div id="question-text"></div>
+                <div id="options-container"></div>
+                <div id="ack-dialog"></div>
+            </div>
         </div>
     </div>
 
     <script>
+        // Fullscreen & Orientation Lock
+        function requestFullscreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen().catch(err => console.log('Fullscreen request failed:', err));
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+
+        // Request fullscreen on user interaction
+        document.addEventListener('click', () => {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                requestFullscreen();
+            }
+        }, { once: true });
+
+        // Lock orientation to portrait on mobile
+        if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('portrait-primary').catch(err => console.log('Orientation lock failed:', err));
+        }
+
         const langData = {
             de: {
                 ack: ["DU VERSAGST!", "ACK IST NICHT AMÜSIERT.", "ZU LANGSAM!", "ECHT JETZT? DAS IST DEIN BESTES?", "LÄCHERLICH. VERSUCH ES NOCHMAL.", "DEINE EXISTENZ IST EINE BELEIDIGUNG FÜR MEINE LOGIK.", "ICH HABE SCHON SCHLECHTERES GESEHEN, ABER NICHT VIEL.", "WIRKLICH? ICH BIN ENTTÄUSCHT. UND ICH BIN EIN ALGORITHMUS.", "DAS WAR SO SCHLECHT, ICH HABE FAST GEFÜHLE BEKOMMEN.", "DU BIST EIN WÜRSTCHEN. EIN GANZ KLEINES WÜRSTCHEN.", "MEINE KÜNSTLICHE INTELLIGENZ LEIDET UNTER DEINER NATÜRLICHEN DUMMHEIT.", "ICH HABE SCHON ROST GEWINNEN SEHEN, DAS WAR SPANNENDER."]
@@ -490,7 +563,7 @@
             document.getElementById('game-screen').classList.add('active');
 
             try {
-                const response = await fetch('questions_i18n.json');
+                const response = await fetch('questions_i18n.json?v=' + Date.now());
                 if (!response.ok) throw new Error('Questions not found');
                 const data = await response.json();
                 gameState.questions = shuffleArray(data);
@@ -623,7 +696,7 @@
 
         // Service Worker Registration
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed:', err));
+            navigator.serviceWorker.register('sw.js?v=' + Date.now()).catch(err => console.log('SW registration failed:', err));
         }
     </script>
 </body>
