@@ -221,19 +221,57 @@
         };
 
         let lang = 'de';
+        let audioCtx = null;
         let gameState = {
             questions: [],
             currentQuestionIndex: 0,
             timer: null,
             locked: false,
             score: 0,
-            highScore: localStorage.getItem('ackHighScore') || 0
+            highScore: localStorage.getItem('ackHighScore') || 0,
+            failCount: 0,
+            history: []
         };
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+
+        function playTone(freq, type, duration, vol) {
+            if (!audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = type;
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+            gain.gain.setValueAtTime(vol, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + duration);
+        }
+
+        function playGlitchSound() {
+            if (!audioCtx) return;
+            const bufferSize = audioCtx.sampleRate * 0.2;
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) data[i] = Math.random() * 2 - 1;
+            const noise = audioCtx.createBufferSource();
+            noise.buffer = buffer;
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'bandpass';
+            filter.frequency.value = 1000;
+            noise.connect(filter);
+            filter.connect(audioCtx.destination);
+            noise.start();
+        }
 
         document.getElementById('start-de').addEventListener('click', () => startGame('de'));
         document.getElementById('start-en').addEventListener('click', () => startGame('en'));
 
         async function startGame(l) {
+            initAudio();
             lang = l;
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('game-screen').classList.add('active');
@@ -301,14 +339,26 @@
             clearInterval(gameState.timer);
 
             if (!correct) {
+                gameState.failCount++;
+                playGlitchSound();
                 document.body.style.animation = 'glitch-screen 0.2s 3';
-                showAckDialog(langData[lang].ack[Math.floor(Math.random() * langData[lang].ack.length)]);
+                
+                let msg = langData[lang].ack[Math.floor(Math.random() * langData[lang].ack.length)];
+                if (gameState.failCount > 3) {
+                    msg = lang === 'de' ? "SCHON WIEDER? DU BIST HOFFNUNGSLOS." : "AGAIN? YOU ARE HOPELESS.";
+                }
+                if (gameState.score > gameState.highScore && gameState.highScore > 0) {
+                    msg = lang === 'de' ? "FAST HÄTTEST DU MICH ÜBERRASCHT. FAST." : "YOU ALMOST SURPRISED ME. ALMOST.";
+                }
+
+                showAckDialog(msg);
                 setTimeout(() => {
                     document.body.style.animation = 'none';
                     gameState.currentQuestionIndex++;
                     showQuestion();
                 }, 3200);
             } else {
+                playTone(440, 'sine', 0.1, 0.1);
                 gameState.score += Math.max(10, 100 - (gameState.currentQuestionIndex * 2));
                 gameState.currentQuestionIndex++;
                 setTimeout(showQuestion, 450);
@@ -330,8 +380,12 @@
                 
                 if (width < 30) {
                     bar.style.background = 'var(--neon-red)';
-                    if (width % 2 === 0) document.body.style.boxShadow = 'inset 0 0 50px rgba(255,0,0,0.2)';
-                    else document.body.style.boxShadow = 'none';
+                    if (width % 2 === 0) {
+                        document.body.style.boxShadow = 'inset 0 0 50px rgba(255,0,0,0.2)';
+                        playTone(100, 'square', 0.05, 0.05);
+                    } else {
+                        document.body.style.boxShadow = 'none';
+                    }
                 }
 
                 if (width <= 0) {
