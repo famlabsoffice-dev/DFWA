@@ -5,23 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ACK ATTACK</title>
     <style>
-        :root { --neon-green: #39ff14; --neon-red: #ff003c; --neon-yellow: #f4ea11; --bg-black: #0a0a0a; }
+        :root {
+            --neon-green: #39ff14;
+            --neon-red: #ff003c;
+            --neon-yellow: #f4ea11;
+            --bg-black: #050505;
+            --panel: rgba(5, 5, 5, 0.88);
+        }
+
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        body { background: var(--bg-black); color: var(--neon-green); font-family: 'Courier New', Courier, monospace; margin: 0; overflow: hidden; display: flex; justify-content: center; align-items: center; height: 100vh; }
-        #game-container { width: 100%; max-width: 600px; height: 100vh; position: relative; padding: 20px; border: 2px solid var(--neon-green); box-shadow: 0 0 20px var(--neon-green); display: flex; flex-direction: column; }
-        .screen { display: none; flex-direction: column; height: 100%; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top, rgba(57,255,20,0.20), transparent 30%),
+                linear-gradient(135deg, #020202 0%, var(--bg-black) 100%);
+            color: var(--neon-green);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 18px;
+        }
+
+        #game-container {
+            width: min(100%, 700px);
+            min-height: min(92vh, 860px);
+            position: relative;
+            padding: 24px;
+            border: 2px solid var(--neon-green);
+            box-shadow: 0 0 30px rgba(57,255,20,0.35);
+            background: var(--panel);
+            backdrop-filter: blur(8px);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .screen {
+            display: none;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+
         .screen.active { display: flex; }
-        h1 { text-align: center; font-size: 2.5rem; text-shadow: 0 0 10px var(--neon-green); margin-bottom: 30px; }
-        input, button { background: transparent; border: 1px solid var(--neon-green); color: var(--neon-green); padding: 15px; font-family: inherit; font-size: 1.2rem; margin-bottom: 15px; width: 100%; cursor: pointer; }
-        button:hover { background: var(--neon-green); color: var(--bg-black); box-shadow: 0 0 15px var(--neon-green); }
-        #question-text { font-size: 1.5rem; margin-bottom: 30px; text-align: center; min-height: 100px; }
-        #options-container { display: grid; grid-template-columns: 1fr; gap: 10px; }
-        #timer-bar { height: 5px; background: var(--neon-green); width: 100%; margin-bottom: 20px; transition: width 0.1s linear; }
-        #ack-dialog { position: absolute; bottom: 20px; left: 20px; right: 20px; border: 1px solid var(--neon-yellow); padding: 10px; background: rgba(0,0,0,0.8); font-size: 0.9rem; color: var(--neon-yellow); display: none; }
-        .mirror { transform: scaleX(-1); }
-        .blackout { filter: brightness(0); }
-        @keyframes ackAttackPulse { 0% { box-shadow: 0 0 20px var(--neon-red); } 50% { box-shadow: 0 0 50px var(--neon-red); } 100% { box-shadow: 0 0 20px var(--neon-red); } }
-        .ack-attack { animation: ackAttackPulse 0.5s infinite; border-color: var(--neon-red) !important; color: var(--neon-red) !important; }
+
+        #start-screen {
+            justify-content: center;
+            gap: 14px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin: 0 0 12px;
+            text-shadow: 0 0 12px rgba(57,255,20,0.9);
+            letter-spacing: 0.12em;
+        }
+
+        input,
+        button {
+            width: 100%;
+            border: 1px solid var(--neon-green);
+            background: rgba(57,255,20,0.06);
+            color: var(--neon-green);
+            padding: 16px 18px;
+            font-family: inherit;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+        }
+
+        input::placeholder { color: rgba(57,255,20,0.6); }
+
+        button:hover,
+        button:focus-visible {
+            transform: translateY(-2px);
+            background: var(--neon-green);
+            color: var(--bg-black);
+            box-shadow: 0 0 18px rgba(57,255,20,0.55);
+            outline: none;
+        }
+
+        #game-screen {
+            justify-content: flex-start;
+            gap: 16px;
+        }
+
+        #timer-shell {
+            width: 100%;
+            height: 8px;
+            border: 1px solid rgba(57,255,20,0.45);
+            background: rgba(57,255,20,0.12);
+            overflow: hidden;
+        }
+
+        #timer-bar {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, var(--neon-green), #b8ff9e);
+            transition: width 0.1s linear;
+            box-shadow: 0 0 10px rgba(57,255,20,0.7);
+        }
+
+        #question-text {
+            min-height: 110px;
+            font-size: clamp(1.1rem, 2.7vw, 1.45rem);
+            line-height: 1.45;
+            text-align: center;
+            padding: 8px 4px;
+            text-shadow: 0 0 8px rgba(57,255,20,0.35);
+        }
+
+        #options-container {
+            display: grid;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .option-btn {
+            text-align: left;
+            border-radius: 0;
+            padding: 13px 14px;
+        }
+
+        #ack-dialog {
+            position: absolute;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+            padding: 14px 16px;
+            border: 1px solid var(--neon-yellow);
+            background: rgba(0, 0, 0, 0.94);
+            color: var(--neon-yellow);
+            font-size: 1rem;
+            line-height: 1.5;
+            box-shadow: 0 0 25px rgba(244,234,17,0.2);
+            opacity: 0;
+            transform: translateY(16px);
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            z-index: 10;
+            text-align: center;
+        }
+
+        #ack-dialog.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (min-width: 700px) {
+            #game-container { padding: 32px; }
+            #options-container { grid-template-columns: 1fr 1fr; }
+            #ack-dialog { left: 24px; right: 24px; bottom: 24px; font-size: 1.05rem; }
+        }
     </style>
 </head>
 <body>
@@ -29,11 +168,14 @@
         <div id="start-screen" class="screen active">
             <h1>ACK ATTACK</h1>
             <input type="text" id="player-name" placeholder="NAME EINGEBEN...">
-            <button onclick="startGame('de')">START (DE)</button>
-            <button onclick="startGame('en')">START (EN)</button>
+            <button id="start-de">START (DE)</button>
+            <button id="start-en">START (EN)</button>
         </div>
+
         <div id="game-screen" class="screen">
-            <div id="timer-bar"></div>
+            <div id="timer-shell">
+                <div id="timer-bar"></div>
+            </div>
             <div id="question-text"></div>
             <div id="options-container"></div>
             <div id="ack-dialog"></div>
@@ -42,164 +184,117 @@
 
     <script>
         const langData = {
-            de: { sabotage: "SABOTAGE:", mirror: "SPIEGELMODUS!", swap: "BUTTON SWAP!", blackout: "BLACKOUT!", ack: ["DU VERSAGST!", "ACK IST NICHT AMÜSIERT.", "ZU LANGSAM!"] },
-            en: { sabotage: "SABOTAGE:", mirror: "MIRROR MODE!", swap: "BUTTON SWAP!", blackout: "BLACKOUT!", ack: ["YOU FAIL!", "ACK IS NOT AMUSED.", "TOO SLOW!"] }
+            de: {
+                ack: ["DU VERSAGST!", "ACK IST NICHT AMÜSIERT.", "ZU LANGSAM!"]
+            },
+            en: {
+                ack: ["YOU FAIL!", "ACK IS NOT AMUSED.", "TOO SLOW!"]
+            }
         };
 
-        const questions = [
-            {"id": "q1", "cat": "Absurd", "correct": 2, "text": {"de": "Was ist das Gegenteil von Fortschritt?", "en": "What is the opposite of progress?"}, "options": {"de": ["Rückschritt", "Stillstand", "Ein Mittwoch", "Ack Attack"], "en": ["Regression", "Standstill", "A Wednesday", "Ack Attack"]}},
-            {"id": "q2", "cat": "Absurd", "correct": 3, "text": {"de": "Ein Chamäleon betritt einen Spiegellabyrinth. Was sieht es?", "en": "A chameleon enters a hall of mirrors. What does it see?"}, "options": {"de": ["Sich selbst", "Nichts", "Alles", "Einen existenziellen Albtraum"], "en": ["Itself", "Nothing", "Everything", "An existential nightmare"]}},
-            {"id": "q3", "cat": "Absurd", "correct": 3, "text": {"de": "Wenn Käse Augen hätte, würde es dann sehen oder riechen?", "en": "If cheese had eyes, would it see or smell?"}, "options": {"de": ["Sehen", "Riechen", "Beides", "Weder noch - es würde schimmeln"], "en": ["See", "Smell", "Both", "Neither - it would mold"]}},
-            {"id": "q4", "cat": "Sci-Fi", "correct": 2, "text": {"de": "Was macht ein Roboter, wenn er verliebt ist?", "en": "What does a robot do when it's in love?"}, "options": {"de": ["Er rostet", "Er überhitzt", "Er schreibt Code", "Er sucht einen Techniker"], "en": ["It rusts", "It overheats", "It writes code", "It looks for a technician"]}},
-            {"id": "q5", "cat": "Absurd", "correct": 3, "text": {"de": "Wenn Spaghetti Beine hätte, würde sie dann tanzen oder laufen?", "en": "If spaghetti had legs, would it dance or run?"}, "options": {"de": ["Tanzen", "Laufen", "Beides gleichzeitig", "Weder noch - sie würde sich verwickeln"], "en": ["Dance", "Run", "Both at the same time", "Neither - it would get tangled"]}},
-            {"id": "q6", "cat": "Humor", "correct": 2, "text": {"de": "Ein Pirat, ein Ninja und ein Cowboy betreten eine Bar. Der Barkeeper sagt...", "en": "A pirate, a ninja, and a cowboy walk into a bar. The bartender says..."}, "options": {"de": ["Warum die lange Fresse?", "Das wird teuer", "Ihr seid alle raus!", "Willkommen zum Kostümfest"], "en": ["Why the long face?", "This is going to be expensive", "You're all out!", "Welcome to the costume party"]}},
-            {"id": "q7", "cat": "Klassiker", "correct": 2, "text": {"de": "Wie viele Psychologen braucht man, um eine Glühbirne zu wechseln?", "en": "How many psychologists does it take to change a light bulb?"}, "options": {"de": ["Einen", "Drei", "Keinen - die Glühbirne muss selbst wollen", "Alle - es ist eine Gruppentherapie"], "en": ["One", "Three", "None - the light bulb has to want to change", "All - it's a group therapy"]}},
-            {"id": "q8", "cat": "Modern", "correct": 1, "text": {"de": "Wenn ein Baum im Wald fällt und niemand ist da, macht er dann ein Geräusch oder einen Podcast?", "en": "If a tree falls in the forest and no one is there, does it make a sound or a podcast?"}, "options": {"de": ["Ein Geräusch", "Einen Podcast", "Beides", "Das ist philosophisch"], "en": ["A sound", "A podcast", "Both", "That's philosophical"]}},
-            {"id": "q9", "cat": "Philosophie", "correct": 2, "text": {"de": "Was ist das Gegenteil von 'Gegenteil'?", "en": "What is the opposite of 'opposite'?"}, "options": {"de": ["Gleichheit", "Dasselbe", "Gegenteil", "Ack weiß es nicht"], "en": ["Equality", "The same", "Opposite", "Ack doesn't know"]}},
-            {"id": "q10", "cat": "Absurd", "correct": 0, "text": {"de": "Wenn Enten Hüte tragen, sind sie dann formell oder nur nass?", "en": "If ducks wear hats, are they formal or just wet?"}, "options": {"de": ["Formell", "Nass", "Beides", "Weder noch"], "en": ["Formal", "Wet", "Both", "Neither"]}},
-            {"id": "q11", "cat": "Absurd", "correct": 2, "text": {"de": "Was passiert, wenn man einen Pinguin in die Sahara schickt?", "en": "What happens if you send a penguin to the Sahara?"}, "options": {"de": ["Er wird braun", "Er schmilzt", "Er eröffnet eine Eisdiele", "Er beschwert sich bei Ack"], "en": ["It turns brown", "It melts", "It opens an ice cream parlor", "It complains to Ack"]}},
-            {"id": "q12", "cat": "Essen", "correct": 1, "text": {"de": "Warum hat der Donut ein Loch?", "en": "Why does the donut have a hole?"}, "options": {"de": ["Damit er besser fliegt", "Wegen der Kalorienersparnis", "Damit Ack durchgucken kann", "Produktionsfehler"], "en": ["So it flies better", "To save calories", "So Ack can look through", "Production error"]}},
-            {"id": "q13", "cat": "Tiere", "correct": 3, "text": {"de": "Was denkt eine Katze, wenn sie dich ansieht?", "en": "What does a cat think when it looks at you?"}, "options": {"de": ["Ich liebe dich", "Fütter mich", "Sklave", "Warum bist du so groß und nutzlos?"], "en": ["I love you", "Feed me", "Slave", "Why are you so big and useless?"]}},
-            {"id": "q14", "cat": "Technik", "correct": 0, "text": {"de": "Warum piept der Kühlschrank?", "en": "Why does the fridge beep?"}, "options": {"de": ["Einsamkeit", "Hunger", "Tür offen", "Ack-Überwachung"], "en": ["Loneliness", "Hunger", "Door open", "Ack surveillance"]}},
-            {"id": "q15", "cat": "Sport", "correct": 2, "text": {"de": "Was ist die wichtigste Regel beim Unterwasserschach?", "en": "What is the most important rule in underwater chess?"}, "options": {"de": ["Nicht atmen", "Figuren festkleben", "Nicht auftauchen", "Ack gewinnen lassen"], "en": ["Don't breathe", "Glue the pieces", "Don't surface", "Let Ack win"]}},
-            {"id": "q16", "cat": "Musik", "correct": 1, "text": {"de": "Welches Instrument spielt ein Skelett?", "en": "Which instrument does a skeleton play?"}, "options": {"de": ["Klavier", "Posaune", "Schlagzeug", "Luftgitarre"], "en": ["Piano", "Trombone", "Drums", "Air guitar"]}},
-            {"id": "q17", "cat": "Wetter", "correct": 3, "text": {"de": "Warum regnet es?", "en": "Why does it rain?"}, "options": {"de": ["Wasserkreislauf", "Wolken sind schwer", "Götter weinen", "Ack hat die Dusche angelassen"], "en": ["Water cycle", "Clouds are heavy", "Gods are crying", "Ack left the shower on"]}},
-            {"id": "q18", "cat": "Raumfahrt", "correct": 0, "text": {"de": "Wie grüßt man einen Alien?", "en": "How do you greet an alien?"}, "options": {"de": ["Mit einem Handtuch", "Gar nicht", "Lauf weg!", "Frag nach dem WLAN"], "en": ["With a towel", "Not at all", "Run away!", "Ask for the Wi-Fi"]}},
-            {"id": "q19", "cat": "Berufe", "correct": 2, "text": {"de": "Was macht ein Astronaut am Wochenende?", "en": "What does an astronaut do on the weekend?"}, "options": {"de": ["Gärtnern", "Fernsehen", "Abheben", "Ack-Filter reinigen"], "en": ["Gardening", "Watching TV", "Taking off", "Cleaning Ack filters"]}},
-            {"id": "q20", "cat": "Natur", "correct": 1, "text": {"de": "Warum sind Blumen bunt?", "en": "Why are flowers colorful?"}, "options": {"de": ["Mode", "Bienen anlocken", "Ack blenden", "Photosynthese-Nebenprodukt"], "en": ["Fashion", "To attract bees", "To blind Ack", "Photosynthesis byproduct"]}},
-            {"id": "q21", "cat": "Zeit", "correct": 3, "text": {"de": "Was ist gestern?", "en": "What is yesterday?"}, "options": {"de": ["Vergangenheit", "Ein Traum", "Schnee von morgen", "Ein Tag, den Ack gelöscht hat"], "en": ["The past", "A dream", "Tomorrow's snow", "A day Ack deleted"]}},
-            {"id": "q22", "cat": "Küche", "correct": 0, "text": {"de": "Warum weint man beim Zwiebelschneiden?", "en": "Why do you cry when cutting onions?"}, "options": {"de": ["Gase", "Mitleid", "Ack sticht dich", "Es ist so traurig"], "en": ["Gases", "Pity", "Ack stabs you", "It's so sad"]}},
-            {"id": "q23", "cat": "Schule", "correct": 2, "text": {"de": "Was ist 1+1?", "en": "What is 1+1?"}, "options": {"de": ["2", "11", "Fenster", "Ack-Logik"], "en": ["2", "11", "Window", "Ack logic"]}},
-            {"id": "q24", "cat": "Film", "correct": 1, "text": {"de": "Wer ist der wahre Held in jedem Film?", "en": "Who is the true hero in every movie?"}, "options": {"de": ["Der Protagonist", "Der Kameramann", "Der Catering-Service", "Ack im Hintergrund"], "en": ["The protagonist", "The cameraman", "The catering service", "Ack in the background"]}},
-            {"id": "q25", "cat": "Internet", "correct": 3, "text": {"de": "Was ist das Ende des Internets?", "en": "What is the end of the internet?"}, "options": {"de": ["Google", "404", "Offline", "Acks Profilseite"], "en": ["Google", "404", "Offline", "Ack's profile page"]}},
-            {"id": "q26", "cat": "Märchen", "correct": 0, "text": {"de": "Warum hat der Wolf die Großmutter gefressen?", "en": "Why did the wolf eat the grandmother?"}, "options": {"de": ["Hunger", "Platzmangel", "Ack hat es befohlen", "Verwechslung"], "en": ["Hunger", "Lack of space", "Ack ordered it", "Mistake"]}},
-            {"id": "q27", "cat": "Farben", "correct": 2, "text": {"de": "Welche Farbe hat Neid?", "en": "What color is envy?"}, "options": {"de": ["Rot", "Blau", "Grün", "Ack-Grau"], "en": ["Red", "Blue", "Green", "Ack grey"]}},
-            {"id": "q28", "cat": "Gefühle", "correct": 1, "text": {"de": "Was ist Liebe?", "en": "What is love?"}, "options": {"de": ["Ein Hormon", "Baby don't hurt me", "Ein Fehler im System", "Acks Schwachstelle"], "en": ["A hormone", "Baby don't hurt me", "A bug in the system", "Ack's weak spot"]}},
-            {"id": "q29", "cat": "Bücher", "correct": 3, "text": {"de": "Wer hat das Buch geschrieben?", "en": "Who wrote the book?"}, "options": {"de": ["Der Autor", "Der Drucker", "Die Tinte", "Ack hat es diktiert"], "en": ["The author", "The printer", "The ink", "Ack dictated it"]}},
-            {"id": "q30", "cat": "Geographie", "correct": 0, "text": {"de": "Wo liegt das Glück?", "en": "Where is happiness?"}, "options": {"de": ["In dir", "Am Ende des Regenbogens", "In Acks Tasche", "Hinter dem Horizont"], "en": ["In you", "At the end of the rainbow", "In Ack's pocket", "Beyond the horizon"]}},
-            {"id": "q31", "cat": "Technik", "correct": 2, "text": {"de": "Warum stürzt der Computer ab?", "en": "Why does the computer crash?"}, "options": {"de": ["Überlastung", "Virus", "Acks Laune", "Windows-Update"], "en": ["Overload", "Virus", "Ack's mood", "Windows update"]}},
-            {"id": "q32", "cat": "Essen", "correct": 1, "text": {"de": "Was ist das gesündeste Essen?", "en": "What is the healthiest food?"}, "options": {"de": ["Salat", "Luft und Liebe", "Acks Reste", "Pizza"], "en": ["Salad", "Air and love", "Ack's leftovers", "Pizza"]}},
-            {"id": "q33", "cat": "Tiere", "correct": 3, "text": {"de": "Warum bellen Hunde?", "en": "Why do dogs bark?"}, "options": {"de": ["Revierschutz", "Freude", "Angst", "Ack warnen"], "en": ["Territory protection", "Joy", "Fear", "To warn Ack"]}},
-            {"id": "q34", "cat": "Sport", "correct": 0, "text": {"de": "Wer gewinnt immer?", "en": "Who always wins?"}, "options": {"de": ["Die Bank", "Der Beste", "Ack", "Niemand"], "en": ["The bank", "The best", "Ack", "Nobody"]}},
-            {"id": "q35", "cat": "Musik", "correct": 2, "text": {"de": "Was ist der lauteste Ton?", "en": "What is the loudest sound?"}, "options": {"de": ["Düsenjet", "Knall", "Acks Lachen", "Stille"], "en": ["Jet engine", "Bang", "Ack's laughter", "Silence"]}},
-            {"id": "q36", "cat": "Wetter", "correct": 1, "text": {"de": "Warum blitzt es?", "en": "Why is there lightning?"}, "options": {"de": ["Entladung", "Ack macht Fotos", "Götter-Selfie", "Kurzschluss"], "en": ["Discharge", "Ack is taking photos", "God selfie", "Short circuit"]}},
-            {"id": "q37", "cat": "Raumfahrt", "correct": 3, "text": {"de": "Was ist auf der Rückseite des Mondes?", "en": "What is on the far side of the moon?"}, "options": {"de": ["Aliens", "Staub", "Nazis", "Acks Ferienhaus"], "en": ["Aliens", "Dust", "Nazis", "Ack's holiday home"]}},
-            {"id": "q38", "cat": "Berufe", "correct": 0, "text": {"de": "Was macht ein Lehrer?", "en": "What does a teacher do?"}, "options": {"de": ["Nerven", "Lehren", "Ferien machen", "Ack-Propaganda"], "en": ["Annoy", "Teach", "Take holidays", "Ack propaganda"]}},
-            {"id": "q39", "cat": "Natur", "correct": 2, "text": {"de": "Warum fallen Blätter im Herbst?", "en": "Why do leaves fall in autumn?"}, "options": {"de": ["Kälte", "Wassermangel", "Ack schüttelt die Bäume", "Schwerkraft"], "en": ["Cold", "Lack of water", "Ack shakes the trees", "Gravity"]}},
-            {"id": "q40", "cat": "Zeit", "correct": 1, "text": {"de": "Wann ist jetzt?", "en": "When is now?"}, "options": {"de": ["Gleich", "Sofort", "Vorbei", "Wenn Ack es sagt"], "en": ["Soon", "Immediately", "Over", "When Ack says so"]}},
-            {"id": "q41", "cat": "Küche", "correct": 3, "text": {"de": "Warum brennt das Essen an?", "en": "Why does food burn?"}, "options": {"de": ["Hitze", "Vergessen", "Falsches Rezept", "Ack hat den Herd hochgedreht"], "en": ["Heat", "Forgotten", "Wrong recipe", "Ack turned up the stove"]}},
-            {"id": "q42", "cat": "Schule", "correct": 0, "text": {"de": "Was ist das wichtigste Fach?", "en": "What is the most important subject?"}, "options": {"de": ["Pause", "Mathe", "Deutsch", "Ack-Kunde"], "en": ["Break", "Math", "German", "Ack studies"]}},
-            {"id": "q43", "cat": "Film", "correct": 2, "text": {"de": "Warum sterben die Bösewichte?", "en": "Why do the villains die?"}, "options": {"de": ["Gerechtigkeit", "Dummheit", "Ack braucht Platz", "Drehbuch"], "en": ["Justice", "Stupidity", "Ack needs space", "Script"]}},
-            {"id": "q44", "cat": "Internet", "correct": 1, "text": {"de": "Was ist ein Meme?", "en": "What is a meme?"}, "options": {"de": ["Ein Bild", "Kultur-Virus", "Acks Passbild", "Zeitverschwendung"], "en": ["An image", "Culture virus", "Ack's ID photo", "Waste of time"]}},
-            {"id": "q45", "cat": "Märchen", "correct": 3, "text": {"de": "Wer ist die Schönste im ganzen Land?", "en": "Who is the fairest of them all?"}, "options": {"de": ["Schneewittchen", "Die Königin", "Der Spiegel", "Ack (mit Perücke)"], "en": ["Snow White", "The Queen", "The Mirror", "Ack (with a wig)"]}},
-            {"id": "q46", "cat": "Farben", "correct": 0, "text": {"de": "Was ist die Farbe der Hoffnung?", "en": "What is the color of hope?"}, "options": {"de": ["Grün", "Blau", "Schwarz", "Ack-Gold"], "en": ["Green", "Blue", "Black", "Ack gold"]}},
-            {"id": "q47", "cat": "Gefühle", "correct": 2, "text": {"de": "Warum sind wir hier?", "en": "Why are we here?"}, "options": {"de": ["Evolution", "Zufall", "Um Ack zu unterhalten", "42"], "en": ["Evolution", "Chance", "To entertain Ack", "42"]}},
-            {"id": "q48", "cat": "Bücher", "correct": 1, "text": {"de": "Was ist das beste Buch?", "en": "What is the best book?"}, "options": {"de": ["Bibel", "Acks Tagebuch", "Harry Potter", "Telefonbuch"], "en": ["Bible", "Ack's diary", "Harry Potter", "Phone book"]}},
-            {"id": "q49", "cat": "Geographie", "correct": 3, "text": {"de": "Wo ist der Nordpol?", "en": "Where is the North Pole?"}, "options": {"de": ["Oben", "In der Arktis", "Kalt", "In Acks Gefrierfach"], "en": ["Up", "In the Arctic", "Cold", "In Ack's freezer"]}},
-            {"id": "q50", "cat": "Technik", "correct": 0, "text": {"de": "Was ist eine Cloud?", "en": "What is a cloud?"}, "options": {"de": ["Anderer Leute Computer", "Wasserdampf", "Acks Gehirn", "Magie"], "en": ["Other people's computers", "Water vapor", "Ack's brain", "Magic"]}},
-            {"id": "q51", "cat": "Essen", "correct": 2, "text": {"de": "Warum ist Pizza rund?", "en": "Why is pizza round?"}, "options": {"de": ["Einfacher zu machen", "Tradition", "Damit Ack sie rollen kann", "Aerodynamik"], "en": ["Easier to make", "Tradition", "So Ack can roll it", "Aerodynamics"]}},
-            {"id": "q52", "cat": "Tiere", "correct": 1, "text": {"de": "Warum haben Elefanten Rüssel?", "en": "Why do elephants have trunks?"}, "options": {"de": ["Zum Riechen", "Ack-Staubsauger-Ersatz", "Gewichtsausgleich", "Mode"], "en": ["To smell", "Ack vacuum cleaner replacement", "Weight balance", "Fashion"]}},
-            {"id": "q53", "cat": "Sport", "correct": 3, "text": {"de": "Was ist der Sinn von Golf?", "en": "What is the point of golf?"}, "options": {"de": ["Laufen", "Löcher füllen", "Bälle schlagen", "Acks Rasen pflegen"], "en": ["Running", "Filling holes", "Hitting balls", "Maintaining Ack's lawn"]}},
-            {"id": "q54", "cat": "Musik", "correct": 0, "text": {"de": "Was ist ein DJ?", "en": "What is a DJ?"}, "options": {"de": ["Plattenschubser", "Musiker", "Ack-Radio-Host", "Lärmmacher"], "en": ["Record pusher", "Musician", "Ack radio host", "Noisemaker"]}},
-            {"id": "q55", "cat": "Wetter", "correct": 2, "text": {"de": "Warum ist der Himmel blau?", "en": "Why is the sky blue?"}, "options": {"de": ["Reflexion", "Ozean", "Acks Lieblingsfarbe", "Streuung"], "en": ["Reflection", "Ocean", "Ack's favorite color", "Scattering"]}},
-            {"id": "q56", "cat": "Raumfahrt", "correct": 1, "text": {"de": "Was ist ein Schwarzes Loch?", "en": "What is a black hole?"}, "options": {"de": ["Ein Staubsauger", "Acks Geldbörse", "Singularität", "Nichts"], "en": ["A vacuum cleaner", "Ack's wallet", "Singularity", "Nothing"]}},
-            {"id": "q57", "cat": "Berufe", "correct": 3, "text": {"de": "Was macht ein Manager?", "en": "What does a manager do?"}, "options": {"de": ["Entscheiden", "Kaffee trinken", "Wichtig aussehen", "Acks Befehle weitergeben"], "en": ["Decide", "Drink coffee", "Look important", "Pass on Ack's orders"]}},
-            {"id": "q58", "cat": "Natur", "correct": 0, "text": {"de": "Warum stechen Mücken?", "en": "Why do mosquitoes sting?"}, "options": {"de": ["Blutdurst", "Acks Spione", "Langeweile", "Fortpflanzung"], "en": ["Bloodlust", "Ack's spies", "Boredom", "Reproduction"]}},
-            {"id": "q59", "cat": "Zeit", "correct": 2, "text": {"de": "Was ist eine Sekunde?", "en": "What is a second?"}, "options": {"de": ["Kurz", "60 Millisekunden", "Acks Wimpernschlag", "Relativ"], "en": ["Short", "60 milliseconds", "Ack's blink", "Relative"]}},
-            {"id": "q60", "cat": "Küche", "correct": 1, "text": {"de": "Was ist ein Löffel?", "en": "What is a spoon?"}, "options": {"de": ["Werkzeug", "Acks Katapult", "Besteck", "Metall"], "en": ["Tool", "Ack's catapult", "Cutlery", "Metal"]}},
-            {"id": "q61", "cat": "Schule", "correct": 3, "text": {"de": "Warum gibt es Hausaufgaben?", "en": "Why are there homework assignments?"}, "options": {"de": ["Lernen", "Üben", "Zeitvertreib", "Acks Strafvollzug"], "en": ["Learning", "Practice", "Pastime", "Ack's penal system"]}},
-            {"id": "q62", "cat": "Film", "correct": 0, "text": {"de": "Was ist Popcorn?", "en": "What is popcorn?"}, "options": {"de": ["Explodierter Mais", "Kinosnack", "Acks Zähne", "Teuer"], "en": ["Exploded corn", "Movie snack", "Ack's teeth", "Expensive"]}},
-            {"id": "q63", "cat": "Internet", "correct": 2, "text": {"de": "Was ist ein Cookie?", "en": "What is a cookie?"}, "options": {"de": ["Keks", "Tracker", "Acks Krümel", "Datei"], "en": ["Biscuit", "Tracker", "Ack's crumbs", "File"]}},
-            {"id": "q64", "cat": "Märchen", "correct": 1, "text": {"de": "Wer hat Angst vorm bösen Wolf?", "en": "Who's afraid of the big bad wolf?"}, "options": {"de": ["Niemand", "Ack nicht", "Die Schweinchen", "Ich"], "en": ["Nobody", "Not Ack", "The pigs", "Me"]}},
-            {"id": "q65", "cat": "Farben", "correct": 3, "text": {"de": "Was ist bunt?", "en": "What is colorful?"}, "options": {"de": ["Regenbogen", "Smarties", "Alles", "Acks Kleiderschrank"], "en": ["Rainbow", "Smarties", "Everything", "Ack's wardrobe"]}},
-            {"id": "q66", "cat": "Gefühle", "correct": 0, "text": {"de": "Was ist Wut?", "en": "What is anger?"}, "options": {"de": ["Acks Normalzustand", "Gefühl", "Energie", "Fehler"], "en": ["Ack's normal state", "Feeling", "Energy", "Error"]}},
-            {"id": "q67", "cat": "Bücher", "correct": 2, "text": {"de": "Was ist ein E-Book?", "en": "What is an e-book?"}, "options": {"de": ["Digital", "Buch", "Acks Festplatte", "Strom"], "en": ["Digital", "Book", "Ack's hard drive", "Power"]}},
-            {"id": "q68", "cat": "Geographie", "correct": 1, "text": {"de": "Wo ist die Wüste?", "en": "Where is the desert?"}, "options": {"de": ["Afrika", "In Acks Kopf", "Sandig", "Überall"], "en": ["Africa", "In Ack's head", "Sandy", "Everywhere"]}},
-            {"id": "q69", "cat": "Technik", "correct": 3, "text": {"de": "Was ist ein Roboter?", "en": "What is a robot?"}, "options": {"de": ["Maschine", "Blech", "KI", "Acks kleiner Bruder"], "en": ["Machine", "Tin", "AI", "Ack's little brother"]}},
-            {"id": "q70", "cat": "Essen", "correct": 0, "text": {"de": "Was ist ein Apfel?", "en": "What is an apple?"}, "options": {"de": ["Obst", "Computer", "Acks Snack", "Rund"], "en": ["Fruit", "Computer", "Ack's snack", "Round"]}},
-            {"id": "q71", "cat": "Tiere", "correct": 2, "text": {"de": "Was ist ein Vogel?", "en": "What is a bird?"}, "options": {"de": ["Flieger", "Tier", "Acks Drohne", "Feder"], "en": ["Flyer", "Animal", "Ack's drone", "Feather"]}},
-            {"id": "q72", "cat": "Sport", "correct": 1, "text": {"de": "Was ist Fußball?", "en": "What is football?"}, "options": {"de": ["Sport", "Acks Lieblingsspielzeug", "Ballspiel", "Rasen"], "en": ["Sport", "Ack's favorite toy", "Ball game", "Lawn"]}},
-            {"id": "q73", "cat": "Musik", "correct": 3, "text": {"de": "Was ist ein Song?", "en": "What is a song?"}, "options": {"de": ["Musik", "Text", "Lärm", "Acks Klingelton"], "en": ["Music", "Lyrics", "Noise", "Ack's ringtone"]}},
-            {"id": "q74", "cat": "Wetter", "correct": 0, "text": {"de": "Was ist Schnee?", "en": "What is snow?"}, "options": {"de": ["Gefrorenes Wasser", "Acks Schuppen", "Weiß", "Kalt"], "en": ["Frozen water", "Ack's dandruff", "White", "Cold"]}},
-            {"id": "q75", "cat": "Raumfahrt", "correct": 2, "text": {"de": "Was ist ein Stern?", "en": "What is a star?"}, "options": {"de": ["Sonne", "Licht", "Acks Nachtlicht", "Gas"], "en": ["Sun", "Light", "Ack's nightlight", "Gas"]}},
-            {"id": "q76", "cat": "Berufe", "correct": 1, "text": {"de": "Was ist ein Arzt?", "en": "What is a doctor?"}, "options": {"de": ["Heiler", "Acks Reparaturdienst", "Beruf", "Weiß"], "en": ["Healer", "Ack's repair service", "Profession", "White"]}},
-            {"id": "q77", "cat": "Natur", "correct": 3, "text": {"de": "Was ist ein Baum?", "en": "What is a tree?"}, "options": {"de": ["Pflanze", "Holz", "Grün", "Acks Kratzbaum"], "en": ["Plant", "Wood", "Green", "Ack's scratching post"]}},
-            {"id": "q78", "cat": "Zeit", "correct": 0, "text": {"de": "Was ist ein Jahr?", "en": "What is a year?"}, "options": {"de": ["365 Tage", "Acks Geduldsfaden", "Zeit", "Lang"], "en": ["365 days", "Ack's patience", "Time", "Long"]}},
-            {"id": "q79", "cat": "Küche", "correct": 2, "text": {"de": "Was ist ein Topf?", "en": "What is a pot?"}, "options": {"de": ["Gefäß", "Küche", "Acks Helm", "Metall"], "en": ["Vessel", "Kitchen", "Ack's helmet", "Metal"]}},
-            {"id": "q80", "cat": "Schule", "correct": 1, "text": {"de": "Was ist ein Buch?", "en": "What is a book?"}, "options": {"de": ["Papier", "Acks Gehirnwäsche", "Wissen", "Schwer"], "en": ["Paper", "Ack's brainwashing", "Knowledge", "Heavy"]}},
-            {"id": "q81", "cat": "Film", "correct": 3, "text": {"de": "Was ist ein Kino?", "en": "What is a cinema?"}, "options": {"de": ["Filmhaus", "Leinwand", "Dunkel", "Acks Wohnzimmer"], "en": ["Movie house", "Screen", "Dark", "Ack's living room"]}},
-            {"id": "q82", "cat": "Internet", "correct": 0, "text": {"de": "Was ist ein Link?", "en": "What is a link?"}, "options": {"de": ["Verbindung", "Acks Kette", "URL", "Blau"], "en": ["Connection", "Ack's chain", "URL", "Blue"]}},
-            {"id": "q83", "cat": "Märchen", "correct": 2, "text": {"de": "Was ist eine Fee?", "en": "What is a fairy?"}, "options": {"de": ["Fabelwesen", "Flügel", "Acks Albtraum", "Magie"], "en": ["Mythical creature", "Wings", "Ack's nightmare", "Magic"]}},
-            {"id": "q84", "cat": "Farben", "correct": 1, "text": {"de": "Was ist grau?", "en": "What is grey?"}, "options": {"de": ["Farbe", "Acks Alltag", "Mischung", "Langweilig"], "en": ["Color", "Ack's everyday life", "Mixture", "Boring"]}},
-            {"id": "q85", "cat": "Gefühle", "correct": 3, "text": {"de": "Was ist Angst?", "en": "What is fear?"}, "options": {"de": ["Gefühl", "Schutz", "Energie", "Acks Lieblingsessen"], "en": ["Feeling", "Protection", "Energy", "Ack's favorite food"]}},
-            {"id": "q86", "cat": "Bücher", "correct": 0, "text": {"de": "Was ist ein Roman?", "en": "What is a novel?"}, "options": {"de": ["Geschichte", "Acks Biographie", "Buch", "Lang"], "en": ["Story", "Ack's biography", "Book", "Long"]}},
-            {"id": "q87", "cat": "Geographie", "correct": 2, "text": {"de": "Was ist ein Berg?", "en": "What is a mountain?"}, "options": {"de": ["Gestein", "Hoch", "Acks Thron", "Natur"], "en": ["Rock", "High", "Ack's throne", "Nature"]}},
-            {"id": "q88", "cat": "Technik", "correct": 1, "text": {"de": "Was ist ein Smartphone?", "en": "What is a smartphone?"}, "options": {"de": ["Handy", "Acks Fernbedienung", "Technik", "Teuer"], "en": ["Cell phone", "Ack's remote control", "Technology", "Expensive"]}},
-            {"id": "q89", "cat": "Essen", "correct": 3, "text": {"de": "Was ist Brot?", "en": "What is bread?"}, "options": {"de": ["Grundnahrungsmittel", "Teig", "Gebacken", "Acks Wurfgeschoss"], "en": ["Staple food", "Dough", "Baked", "Ack's projectile"]}},
-            {"id": "q90", "cat": "Tiere", "correct": 0, "text": {"de": "Was ist ein Fisch?", "en": "What is a fish?"}, "options": {"de": ["Wasserbewohner", "Acks Abendessen", "Tier", "Stumm"], "en": ["Water dweller", "Ack's dinner", "Animal", "Silent"]}},
-            {"id": "q91", "cat": "Sport", "correct": 2, "text": {"de": "Was ist Tennis?", "en": "What is tennis?"}, "options": {"de": ["Sport", "Ballspiel", "Acks Fliegenklatsche", "Rasen"], "en": ["Sport", "Ball game", "Ack's fly swatter", "Lawn"]}},
-            {"id": "q92", "cat": "Musik", "correct": 1, "text": {"de": "Was ist ein Orchester?", "en": "What is an orchestra?"}, "options": {"de": ["Musiker", "Acks Sklavenchor", "Klassik", "Lärm"], "en": ["Musicians", "Ack's slave choir", "Classical", "Noise"]}},
-            {"id": "q93", "cat": "Wetter", "correct": 3, "text": {"de": "Was ist Wind?", "en": "What is wind?"}, "options": {"de": ["Luftbewegung", "Wetter", "Energie", "Acks Atem"], "en": ["Air movement", "Weather", "Energy", "Ack's breath"]}},
-            {"id": "q94", "cat": "Raumfahrt", "correct": 0, "text": {"de": "Was ist ein Planet?", "en": "What is a planet?"}, "options": {"de": ["Himmelskörper", "Acks Murmel", "Erde", "Rund"], "en": ["Celestial body", "Ack's marble", "Earth", "Round"]}},
-            {"id": "q95", "cat": "Berufe", "correct": 2, "text": {"de": "Was ist ein Koch?", "en": "What is a chef?"}, "options": {"de": ["Essensmacher", "Beruf", "Acks Vorkoster", "Küche"], "en": ["Food maker", "Profession", "Ack's taster", "Kitchen"]}},
-            {"id": "q96", "cat": "Natur", "correct": 1, "text": {"de": "Was ist ein Stein?", "en": "What is a stone?"}, "options": {"de": ["Materie", "Acks Herz", "Hart", "Natur"], "en": ["Matter", "Ack's heart", "Hard", "Nature"]}},
-            {"id": "q97", "cat": "Zeit", "correct": 3, "text": {"de": "Was ist eine Stunde?", "en": "What is an hour?"}, "options": {"de": ["60 Minuten", "Zeit", "Lang", "Acks Mittagsschlaf"], "en": ["60 minutes", "Time", "Long", "Ack's nap"]}},
-            {"id": "q98", "cat": "Küche", "correct": 0, "text": {"de": "Was ist ein Messer?", "en": "What is a knife?"}, "options": {"de": ["Scharf", "Acks Argument", "Werkzeug", "Metall"], "en": ["Sharp", "Ack's argument", "Tool", "Metal"]}},
-            {"id": "q99", "cat": "Schule", "correct": 2, "text": {"de": "Was ist ein Test?", "en": "What is a test?"}, "options": {"de": ["Prüfung", "Angst", "Acks Spielplatz", "Wissen"], "en": ["Exam", "Fear", "Ack's playground", "Knowledge"]}},
-            {"id": "q100", "cat": "Film", "correct": 1, "text": {"de": "Was ist ein Regisseur?", "en": "What is a director?"}, "options": {"de": ["Macher", "Acks Marionette", "Film", "Chef"], "en": ["Maker", "Ack's puppet", "Movie", "Boss"]}}
-        ];
-
         let lang = 'de';
-        let gameState = { activeQuestions: [], currentQuestionIndex: 0, timer: null };
+        let gameState = {
+            questions: [],
+            currentQuestionIndex: 0,
+            timer: null,
+            locked: false
+        };
 
-        function startGame(l) {
+        document.getElementById('start-de').addEventListener('click', () => startGame('de'));
+        document.getElementById('start-en').addEventListener('click', () => startGame('en'));
+
+        async function startGame(l) {
             lang = l;
-            gameState.activeQuestions = questions.sort(() => 0.5 - Math.random());
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('game-screen').classList.add('active');
-            showQuestion();
+
+            try {
+                const response = await fetch('questions_i18n.json');
+                if (!response.ok) throw new Error('Questions not found');
+                const data = await response.json();
+                gameState.questions = shuffleArray(data);
+                gameState.currentQuestionIndex = 0;
+                showQuestion();
+            } catch (err) {
+                console.error(err);
+                alert('Fragen konnten nicht geladen werden.');
+            }
+        }
+
+        function shuffleArray(arr) {
+            const copy = [...arr];
+            for (let i = copy.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [copy[i], copy[j]] = [copy[j], copy[i]];
+            }
+            return copy;
         }
 
         function showQuestion() {
-            const q = gameState.activeQuestions[gameState.currentQuestionIndex];
-            if (!q) { alert("ACK ATTACK FINISHED!"); location.reload(); return; }
-            
-            const qText = q.text[lang] || q.text;
-            const qOptions = q.options[lang] || q.options;
+            const q = gameState.questions[gameState.currentQuestionIndex];
+            if (!q) {
+                alert('ACK ATTACK FINISHED!');
+                location.reload();
+                return;
+            }
+
+            gameState.locked = false;
+            const qText = q.text?.[lang] || q.text || '';
+            const qOptions = q.options?.[lang] || q.options || [];
+
             document.getElementById('question-text').innerText = qText;
             const container = document.getElementById('options-container');
             container.innerHTML = '';
+
             qOptions.forEach((opt, idx) => {
                 const btn = document.createElement('button');
+                btn.className = 'option-btn';
                 btn.innerText = opt;
                 btn.onclick = () => handleAnswer(idx === q.correct);
                 container.appendChild(btn);
             });
+
             startTimer();
         }
 
         function handleAnswer(correct) {
+            if (gameState.locked) return;
+            gameState.locked = true;
             clearInterval(gameState.timer);
-            if (!correct) showAckDialog(langData[lang].ack[Math.floor(Math.random() * 3)]);
-            gameState.currentQuestionIndex++;
-            setTimeout(showQuestion, 1000);
+
+            if (!correct) {
+                showAckDialog(langData[lang].ack[Math.floor(Math.random() * langData[lang].ack.length)]);
+                setTimeout(() => {
+                    gameState.currentQuestionIndex++;
+                    showQuestion();
+                }, 3000);
+            } else {
+                gameState.currentQuestionIndex++;
+                setTimeout(showQuestion, 450);
+            }
         }
 
         function startTimer() {
             let width = 100;
             const bar = document.getElementById('timer-bar');
+            bar.style.width = '100%';
+
             gameState.timer = setInterval(() => {
                 width -= 1;
                 bar.style.width = width + '%';
-                if (width <= 0) { clearInterval(gameState.timer); handleAnswer(false); }
+                if (width <= 0) {
+                    clearInterval(gameState.timer);
+                    handleAnswer(false);
+                }
             }, 100);
         }
 
         function showAckDialog(txt) {
             const d = document.getElementById('ack-dialog');
             d.innerText = txt;
-            d.style.display = 'block';
-            setTimeout(() => d.style.display = 'none', 2000);
+            d.classList.add('visible');
+            clearTimeout(showAckDialog.timeout);
+            showAckDialog.timeout = setTimeout(() => d.classList.remove('visible'), 2800);
         }
     </script>
 </body>
