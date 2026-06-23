@@ -733,9 +733,34 @@
             showAckDialog.timeout = setTimeout(() => d.classList.remove('visible'), 2800);
         }
 
-        // Service Worker Registration
+        // Service Worker Registration with Update Detection
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js?v=' + Date.now()).catch(err => console.log('SW registration failed:', err));
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js?v=' + Date.now())
+                    .then(reg => {
+                        reg.onupdatefound = () => {
+                            const installingWorker = reg.installing;
+                            installingWorker.onstatechange = () => {
+                                if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    console.log('New content available; please refresh.');
+                                    if (confirm('Ein neues Update ist verfügbar. Jetzt aktualisieren?')) {
+                                        window.location.reload();
+                                    }
+                                }
+                            };
+                        };
+                    })
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+
+            // Reload when controller changes
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                if (!refreshing) {
+                    refreshing = true;
+                    window.location.reload();
+                }
+            });
         }
     </script>
 </body>

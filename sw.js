@@ -1,9 +1,10 @@
-const CACHE_NAME = 'dfwa-v3';
+const CACHE_NAME = 'dfwa-v4-' + Date.now();
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
-  './questions_i18n.json'
+  './questions_i18n.json',
+  './ack_comments.json'
 ];
 
 // Install Event - Cache all assets
@@ -13,7 +14,6 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(ASSETS).catch((err) => {
         console.log('Cache addAll error:', err);
-        // Continue even if some assets fail
         return Promise.all(
           ASSETS.map(asset => cache.add(asset).catch(() => null))
         );
@@ -28,15 +28,12 @@ self.addEventListener('install', (event) => {
 // Fetch Event - Network First, Fall back to Cache
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-  
-  // Skip non-GET requests
   if (request.method !== 'GET') return;
 
   event.respondWith(
     fetch(request)
       .then((response) => {
-        // Cache successful responses
-        if (response && response.status === 200 && response.type !== 'error') {
+        if (response && response.status === 200 && response.type === 'basic') {
           const responseToCache = response.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(request, responseToCache);
@@ -45,7 +42,6 @@ self.addEventListener('fetch', (event) => {
         return response;
       })
       .catch(() => {
-        // Return cached version if network fails
         return caches.match(request).then((cachedResponse) => {
           return cachedResponse || new Response('Offline - Resource not available', { status: 503 });
         });
