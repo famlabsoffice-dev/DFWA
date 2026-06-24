@@ -35,10 +35,6 @@
         .status-text {
             margin-top: 20px; font-family: monospace; font-size: 0.8rem; opacity: 0.7;
         }
-        #manual-hint {
-            display: none; margin-top: 20px; text-align: center; color: #00d2ff; font-size: 0.9rem;
-            max-width: 80%; line-height: 1.4;
-        }
     </style>
 </head>
 <body>
@@ -46,26 +42,28 @@
         <img src="./assets/images/ack_core_clean.png" alt="ACK CORE">
     </div>
     <h1>ACK ATTACK</h1>
-    <button id="install-btn" class="install-btn">INITIALIZE_APP</button>
-    <div id="manual-hint">
-        BROWSER-MENÜ ÖFFNEN > "ZUM STARTBILDSCHIRM HINZUFÜGEN"
-    </div>
-    <div class="status-text">SYSTEM_READY // GATEWAY_V2</div>
+    <button id="install-btn" class="install-btn">DOWNLOAD_PROTOCOL</button>
+    <div class="status-text" id="status-line">SYSTEM_READY // PWA_MODE</div>
 
     <script>
-        // Registriere Service Worker für PWA-Erkennung
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('./sw.js');
         }
 
         let deferredPrompt;
         const installBtn = document.getElementById('install-btn');
-        const manualHint = document.getElementById('manual-hint');
+        const statusLine = document.getElementById('status-line');
+
+        // Prüfe Installationsstatus
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            installBtn.innerText = "SYSTEM_READY // INSTALLED";
+            installBtn.disabled = true;
+            statusLine.innerText = "PROTOCOL_ESTABLISHED // STANDALONE_ACTIVE";
+        }
 
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            installBtn.innerText = "INSTALL_APP_NOW";
         });
 
         installBtn.addEventListener('click', async () => {
@@ -73,22 +71,19 @@
                 deferredPrompt.prompt();
                 const { outcome } = await deferredPrompt.userChoice;
                 if (outcome === 'accepted') {
-                    window.location.href = "index.html";
+                    console.log('User accepted the install prompt');
                 }
                 deferredPrompt = null;
-            } else {
-                // Fallback für iOS oder wenn Event nicht gefeuert wurde
-                manualHint.style.display = 'block';
-                installBtn.innerText = "TRY_MANUAL_INSTALL";
-                // Kurze Verzögerung, dann zur Haupt-App leiten falls Installation nicht möglich
-                setTimeout(() => {
-                    window.location.href = "index.html";
-                }, 3000);
+            } else if (!window.matchMedia('(display-mode: standalone)').matches) {
+                alert("WÄHLE 'ZUM STARTBILDSCHIRM HINZUFÜGEN' IM BROWSER-MENÜ.");
             }
         });
 
         window.addEventListener('appinstalled', () => {
-            window.location.href = "index.html";
+            installBtn.innerText = "SYSTEM_READY // INSTALLED";
+            installBtn.disabled = true;
+            statusLine.innerText = "PROTOCOL_ESTABLISHED // STANDALONE_ACTIVE";
+            deferredPrompt = null;
         });
     </script>
 </body>
