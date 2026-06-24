@@ -100,20 +100,24 @@
             align-items: center; justify-content: space-between; padding: 5vh 0;
         }
         #feedback-screen.active { display: flex; }
-        #feedback-eye { 
-            width: 80vw; max-width: 500px; margin-top: 5vh; 
-            transition: transform 0.3s ease-out;
+        #feedback-eye-container {
+            position: relative; width: 80vw; max-width: 500px; height: 40vh; margin-top: 5vh;
         }
-        .wink-anim { animation: winkEffect 0.5s ease-in-out infinite; }
+        #feedback-eye-base { width: 100%; height: 100%; object-fit: contain; }
+        #feedback-brow {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: contain; z-index: 10; pointer-events: none;
+        }
+        .wink-anim #feedback-eye-base { animation: winkEffect 0.5s ease-in-out infinite; }
         @keyframes winkEffect {
             0%, 100% { transform: scale(1) rotate(0deg); }
             50% { transform: scale(1.05) rotate(2deg); }
         }
-        .skeptical-anim { animation: skepticalEffect 1s ease-in-out infinite; }
+        .skeptical-anim #feedback-brow { animation: skepticalEffect 1s ease-in-out infinite; }
         @keyframes skepticalEffect {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            20% { transform: translateY(-20px) rotate(-5deg); }
-            40% { transform: translateY(-15px) rotate(-3deg); }
+            20% { transform: translateY(-40px) rotate(-8deg); }
+            40% { transform: translateY(-35px) rotate(-6deg); }
         }
         #feedback-msg { 
             width: 90%; max-width: 600px; padding: 30px; border: 2px solid var(--neon);
@@ -157,7 +161,10 @@
     </div>
 
     <div id="feedback-screen">
-        <img id="feedback-eye" src="">
+        <div id="feedback-eye-container">
+            <img id="feedback-eye-base" src="">
+            <img id="feedback-brow" src="" style="display: none;">
+        </div>
         <div id="feedback-msg"></div>
     </div>
 
@@ -221,21 +228,27 @@
             if (state.isProcessing) return;
             state.isProcessing = true;
             const fScreen = document.getElementById('feedback-screen');
-            const fEye = document.getElementById('feedback-eye');
+            const fContainer = document.getElementById('feedback-eye-container');
+            const fEyeBase = document.getElementById('feedback-eye-base');
+            const fBrow = document.getElementById('feedback-brow');
             const fMsg = document.getElementById('feedback-msg');
 
-            fEye.className = ''; // Reset classes
+            fContainer.className = ''; 
+            fBrow.style.display = 'none';
+
             if (correct) {
                 state.score += 100;
-                fEye.src = './assets/images/ack_eye_wink.png';
-                fEye.classList.add('wink-anim');
+                fEyeBase.src = './assets/images/ack_eye_wink.png';
+                fContainer.classList.add('wink-anim');
                 fMsg.style.borderColor = 'var(--neon)';
                 fMsg.style.color = 'var(--neon)';
                 fMsg.innerText = state.comments[state.lang].correct[Math.floor(Math.random() * state.comments[state.lang].correct.length)];
             } else {
                 state.lives--;
-                fEye.src = './assets/images/ack_eye_skeptical.png';
-                fEye.classList.add('skeptical-anim');
+                fEyeBase.src = './assets/images/ack_eye_base_only.png';
+                fBrow.src = './assets/images/ack_brow_only.png';
+                fBrow.style.display = 'block';
+                fContainer.classList.add('skeptical-anim');
                 fMsg.style.borderColor = 'var(--error)';
                 fMsg.style.color = 'var(--error)';
                 fMsg.innerText = state.comments[state.lang].incorrect[Math.floor(Math.random() * state.comments[state.lang].incorrect.length)];
