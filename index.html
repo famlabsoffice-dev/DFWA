@@ -346,9 +346,9 @@
         }
 
         function renderQuestion() {
-            if (state.current >= state.questions.length) {
+            if (state.current >= state.questions.length && state.questions.length > 0) {
                 state.current = 0;
-                state.questions = shuffle(state.questions, null);
+                state.questions = shuffle([...state.questions], null);
             }
             const q = state.questions[state.current];
             if (!q) return endGame();
@@ -443,7 +443,7 @@
             setTimeout(() => {
                 fScreen.classList.remove('active');
                 state.isProcessing = false;
-                if (state.lives === 0) {
+                if (state.lives <= 0) {
                     document.getElementById('start-screen').classList.add('active');
                     document.getElementById('game-screen').classList.remove('active');
                     document.getElementById('lives-display').innerText = state.lives;
