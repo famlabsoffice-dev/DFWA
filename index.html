@@ -238,14 +238,14 @@
 
             if (correct) {
                 state.score += 100;
-                fEyeBase.src = './assets/images/ack_eye_wink.png';
+                fEyeBase.src = './assets/images/ack_core_clean.png';
                 fContainer.classList.add('wink-anim');
                 fMsg.style.borderColor = 'var(--neon)';
                 fMsg.style.color = 'var(--neon)';
                 fMsg.innerText = state.comments[state.lang].correct[Math.floor(Math.random() * state.comments[state.lang].correct.length)];
             } else {
                 state.lives--;
-                fEyeBase.src = './assets/images/ack_eye_base_only.png';
+                fEyeBase.src = './assets/images/ack_core_clean.png';
                 fBrow.src = './assets/images/ack_brow_only.png';
                 fBrow.style.display = 'block';
                 fContainer.classList.add('skeptical-anim');
