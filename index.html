@@ -23,7 +23,7 @@
             width: 100%; height: 100%; 
             overflow: hidden; background: #000; color: var(--neon);
             display: flex; align-items: center; justify-content: center;
-            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         .overlay {
@@ -38,15 +38,14 @@
             display: flex; flex-direction: column;
             background: #000;
             position: relative; overflow: hidden;
-            border: none; /* Removed all borders for pure OLED black */
         }
 
         .screen { display: none; flex-direction: column; height: 100%; animation: flicker 0.15s infinite; position: relative; z-index: 10; }
         .screen.active { display: flex; }
         @keyframes flicker { 0% { opacity: 0.99; } 100% { opacity: 1; } }
 
-        /* Precise centering on 'C' */
         h1 { 
+            font-family: 'Courier New', Courier, monospace;
             font-size: clamp(3rem, 15vw, 5rem); text-align: center; 
             letter-spacing: 15px; text-shadow: 0 0 20px var(--neon);
             position: absolute; top: 2vh; left: 50%; transform: translateX(-47.2%); width: 100%;
@@ -67,12 +66,12 @@
         #core-eye { width: 100%; height: 100%; object-fit: contain; }
 
         .stat-overlay {
+            font-family: 'Courier New', Courier, monospace;
             position: absolute; font-size: 0.75rem; color: var(--neon);
             text-transform: uppercase; font-weight: bold; pointer-events: none;
             text-shadow: 0 0 15px var(--neon); white-space: nowrap; z-index: 25;
             line-height: 1.2; letter-spacing: 1px;
         }
-        /* Connected HUD positions */
         #stat-player { top: 30%; left: 15%; }
         #stat-lives { top: 30%; right: 15%; text-align: right; }
         #stat-id { bottom: 35%; left: 15%; }
@@ -87,6 +86,7 @@
 
         #options-container { display: grid; gap: 12px; width: 100%; max-width: 420px; margin-bottom: 25px; }
         .option-btn {
+            font-family: 'Courier New', Courier, monospace;
             background: rgba(0,0,0,0.95); border: 1px solid var(--neon); color: var(--neon);
             padding: 18px; font-size: 0.9rem; text-transform: uppercase; cursor: pointer;
             transition: 0.3s; font-weight: bold; backdrop-filter: blur(10px);
@@ -100,6 +100,7 @@
         .battle-btn:hover { background: var(--warning); box-shadow: 0 0 40px var(--warning); }
 
         .cyber-select, .cyber-input { 
+            font-family: 'Courier New', Courier, monospace;
             background: rgba(0,0,0,0.95); border: 1px solid var(--neon); padding: 14px; 
             width: 100%; max-width: 420px; margin: 6px 0; font-weight: bold; color: var(--neon);
             text-align: center; backdrop-filter: blur(10px);
@@ -107,6 +108,7 @@
         .cyber-input { border-color: var(--cyber-blue); color: var(--cyber-blue); }
 
         .subtitle-text { 
+            font-family: 'Courier New', Courier, monospace;
             color: var(--cyber-blue); text-shadow: 0 0 15px var(--cyber-blue); 
             letter-spacing: 5px; font-weight: bold; font-size: 0.75rem; margin-bottom: 2.5vh;
             text-align: center;
@@ -117,6 +119,7 @@
         #timer-fill { height: 100%; width: 100%; background: var(--neon); }
 
         #ack-overlay {
+            font-family: 'Courier New', Courier, monospace;
             position: fixed; top: 50%; left: 50%; width: 85%; max-width: 480px;
             padding: 35px; background: rgba(0, 0, 0, 0.98); border: 2px solid var(--neon);
             transform: translate(-50%, -50%) scale(0); transition: 0.3s; z-index: 2000; text-align: center;
@@ -126,10 +129,8 @@
 </head>
 <body>
     <div class="overlay"></div>
-    
     <div id="game-container">
         <h1 class="glitch-text">A.C.K.</h1>
-
         <div id="start-screen" class="screen active">
             <div id="eye-bg-container">
                 <img id="core-eye" src="./assets/images/ack_core_clean.png">
@@ -139,7 +140,6 @@
                 <div id="stat-best" class="stat-overlay">PEAK_DATA//<br><span id="high-score">0</span>_PTS</div>
                 <div id="stat-battle" class="stat-overlay">BATTLE_SYNC//ACTIVE</div>
             </div>
-
             <div class="ui-content-wrapper">
                 <p class="subtitle-text">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
                 <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12">
@@ -150,7 +150,6 @@
                 </div>
             </div>
         </div>
-
         <div id="lobby-screen" class="screen" style="justify-content: center; align-items: center;">
             <div style="text-align: center; width: 90%; max-width: 420px; background: rgba(0,0,0,0.98); padding: 40px; border: 1px solid var(--warning);">
                 <h2 style="color: var(--warning); letter-spacing: 6px;">BATTLE_OVERRIDE</h2>
@@ -162,19 +161,16 @@
                 </div>
             </div>
         </div>
-
         <div id="game-screen" class="screen">
             <div id="timer-wrap"><div id="timer-fill"></div></div>
             <div id="question-box">INITIALIZING...</div>
             <div id="options-container" style="padding: 0 25px;"></div>
         </div>
     </div>
-
     <div id="ack-overlay">
         <div class="ack-title" id="ack-header">>> SYSTEM_ACK:</div>
         <div class="ack-content" id="ack-msg"></div>
     </div>
-
     <script>
         let state = { 
             lang: 'de', questions: [], current: 0, score: 0, streak: 0, lives: 3,
@@ -185,20 +181,17 @@
             timer: null, comments: {}, selectedCat: 'all',
             isBattle: false, roomCode: ''
         };
-
         function detectLanguage() {
             const userLang = navigator.language || navigator.userLanguage;
             state.lang = userLang.startsWith('de') ? 'de' : 'en';
             document.getElementById('start-btn').innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
         }
         detectLanguage();
-
         document.getElementById('player-name').value = state.playerName === 'GUEST' ? '' : state.playerName;
         document.getElementById('player-display').innerText = state.playerName;
         document.getElementById('id-display').innerText = state.playerId;
         document.getElementById('high-score').innerText = state.best;
         localStorage.setItem('dfwa_id', state.playerId);
-
         function blink() {
             const eye = document.getElementById('core-eye');
             if (!eye) return;
@@ -207,7 +200,6 @@
             setTimeout(blink, 4000 + Math.random() * 4000);
         }
         setTimeout(blink, 3000);
-
         function showLobby() {
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('lobby-screen').classList.add('active');
@@ -216,12 +208,10 @@
             document.getElementById('lobby-screen').classList.remove('active');
             document.getElementById('start-screen').classList.add('active');
         }
-
         function createBattle() {
             const code = Math.random().toString(36).substring(2, 8).toUpperCase();
             document.getElementById('room-code').value = code;
         }
-
         function joinBattle() {
             const code = document.getElementById('room-code').value.trim();
             if (code.length < 4) return;
@@ -230,7 +220,6 @@
             document.getElementById('stat-battle').style.display = 'block';
             initGame();
         }
-
         async function initGame() {
             state.selectedCat = document.getElementById('category-filter').value;
             state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
@@ -238,7 +227,6 @@
             document.getElementById('player-display').innerText = state.playerName;
             state.lives = 3;
             document.getElementById('lives-display').innerText = state.lives;
-            
             try {
                 const [qRes, cRes] = await Promise.all([
                     fetch('questions_i18n.json?v=' + Date.now()), 
@@ -247,7 +235,6 @@
                 let allQ = await qRes.json();
                 state.comments = await cRes.json();
                 state.questions = state.selectedCat === 'all' ? allQ : allQ.filter(q => q.cat === state.selectedCat);
-                
                 if (state.isBattle) {
                     const seed = state.roomCode.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
                     let m = state.questions.length, t, i;
@@ -258,14 +245,12 @@
                 } else {
                     state.questions.sort(() => Math.random() - 0.5);
                 }
-
                 document.getElementById('start-screen').classList.remove('active');
                 document.getElementById('lobby-screen').classList.remove('active');
                 document.getElementById('game-screen').classList.add('active');
                 renderQuestion();
             } catch (e) { console.error(e); }
         }
-
         function renderQuestion() {
             const q = state.questions[state.current];
             if (!q) return finishGame(true, state.lang === 'de' ? "DATENSATZ_ABSORBIERT." : "DATA_ABSORBED.");
@@ -281,14 +266,12 @@
             });
             startTimer();
         }
-
         function checkAnswer(correct) {
             clearInterval(state.timer);
             const overlay = document.getElementById('ack-overlay');
             const header = document.getElementById('ack-header');
             const msgBox = document.getElementById('ack-msg');
             overlay.className = '';
-            
             if (correct) {
                 state.score += 100 + (state.streak++ * 10);
                 const pool = state.comments[state.lang].correct;
@@ -315,11 +298,9 @@
                 }, 3000);
             }
         }
-
         function finishGame(victory, msg) {
             location.reload();
         }
-
         function startTimer() {
             let w = 100;
             const bar = document.getElementById('timer-fill');
@@ -329,7 +310,6 @@
                 if (w <= 0) checkAnswer(false);
             }, speed);
         }
-
         fetch('questions_i18n.json').then(r => r.json()).then(qs => {
             const cats = [...new Set(qs.map(q => q.cat))];
             const select = document.getElementById('category-filter');
