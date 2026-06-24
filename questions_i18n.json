@@ -1,12 +1,370 @@
 [
-  {"id":"q1","cat":"Absurd","correct":3,"text":{"de":"Was ist das Gegenteil von Fortschritt?","en":"What is the opposite of progress?"},"options":{"de":["Rückschritt","Stillstand","Ack Attack","Ein Mittwoch"],"en":["Regression","Standstill","Ack Attack","A Wednesday"]}},
-  {"id":"q2","cat":"Absurd","correct":0,"text":{"de":"Ein Chamäleon betritt einen Spiegellabyrinth. Was sieht es?","en":"A chameleon enters a hall of mirrors. What does it see?"},"options":{"de":["Einen existenziellen Albtraum","Nichts","Alles","Sich selbst"],"en":["An existential nightmare","Nothing","Everything","Itself"]}},
-  {"id":"q3","cat":"Sci-Fi","correct":0,"text":{"de":"Was passiert, wenn man durch ein schwarzes Loch fliegt?","en":"What happens if you fly through a black hole?"},"options":{"de":["Man wird zu Spaghetti","Man kommt bei Ack an","Nichts","Man stirbt vor Langeweile"],"en":["You turn into spaghetti","You arrive at Ack's","Nothing","You die of boredom"]}},
-  {"id":"q4","cat":"Technik","correct":1,"text":{"de":"Warum haben Computer Lüfter?","en":"Why do computers have fans?"},"options":{"de":["Damit sie fliegen können","Wegen der Hitze","Um Ack zu kühlen","Musik hören"],"en":["So they can fly","Because of the heat","To cool Ack","To listen to music"]}},
-  {"id":"q5","cat":"Absurd","correct":2,"text":{"de":"Wenn ein Stein fliegen könnte, wäre er ein Vogel?","en":"If a stone could fly, would it be a bird?"},"options":{"de":["Ja","Nein","Ein Wunder","Ack's Briefbeschwerer"],"en":["Yes","No","A miracle","Ack's paperweight"]}},
-  {"id":"q6","cat":"Sci-Fi","correct":1,"text":{"de":"Was ist die Antwort auf alles?","en":"What is the answer to everything?"},"options":{"de":["Pizza","42","Ack Attack","Schlafen"],"en":["Pizza","42","Ack Attack","Sleep"]}},
-  {"id":"q7","cat":"Humor","correct":1,"text":{"de":"Warum tragen Fische keine Brillen?","en":"Why don't fish wear glasses?"},"options":{"de":["Sie sehen perfekt","Wegen der Ohren","Ack hat sie geklaut","Zu teuer"],"en":["They see perfectly","Because of ears","Ack stole them","Too expensive"]}},
-  {"id":"q8","cat":"Technik","correct":2,"text":{"de":"Was passiert, wenn man das Internet löscht?","en":"What happens if you delete the internet?"},"options":{"de":["Ruhe","Chaos","Ack übernimmt","Nichts"],"en":["Quiet","Chaos","Ack takes over","Nothing"]}},
-  {"id":"q9","cat":"Absurd","correct":3,"text":{"de":"Warum haben Wolken keine Reißverschlüsse?","en":"Why don't clouds have zippers?"},"options":{"de":["Damit es nicht regnet","Weil sie flauschig sind","Ack hat sie verboten","Designfehler"],"en":["To stop rain","Because fluffy","Ack forbade it","Design error"]}},
-  {"id":"q10","cat":"Sci-Fi","correct":1,"text":{"de":"Wie schnell ist Lichtgeschwindigkeit?","en":"How fast is the speed of light?"},"options":{"de":["Schnell","300.000 km/s","Langsam für Ack","Unbekannt"],"en":["Fast","300,000 km/s","Slow for Ack","Unknown"]}}
+  {
+    "id": "fussball_0",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die WM 2014?",
+      "en": "Who won the 2014 World Cup?"
+    },
+    "options": {
+      "de": [
+        "Brasilien",
+        "Deutschland",
+        "Argentinien",
+        "Spanien"
+      ],
+      "en": [
+        "Brazil",
+        "Germany",
+        "Argentina",
+        "Spain"
+      ]
+    }
+  },
+  {
+    "id": "fussball_1",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Club hat die meisten Champions League Titel?",
+      "en": "Which club has the most Champions League titles?"
+    },
+    "options": {
+      "de": [
+        "FC Bayern",
+        "Real Madrid",
+        "AC Mailand",
+        "FC Liverpool"
+      ],
+      "en": [
+        "FC Bayern",
+        "Real Madrid",
+        "AC Milan",
+        "Liverpool FC"
+      ]
+    }
+  },
+  {
+    "id": "erdkunde_0",
+    "cat": "Erdkunde",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Australien?",
+      "en": "What is the capital of Australia?"
+    },
+    "options": {
+      "de": [
+        "Sydney",
+        "Melbourne",
+        "Canberra",
+        "Perth"
+      ],
+      "en": [
+        "Sydney",
+        "Melbourne",
+        "Canberra",
+        "Perth"
+      ]
+    }
+  },
+  {
+    "id": "erdkunde_1",
+    "cat": "Erdkunde",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Fluss ist der längste der Welt?",
+      "en": "Which river is the longest in the world?"
+    },
+    "options": {
+      "de": [
+        "Amazonas",
+        "Nil",
+        "Jangtsekiang",
+        "Mississippi"
+      ],
+      "en": [
+        "Amazon",
+        "Nile",
+        "Yangtze",
+        "Mississippi"
+      ]
+    }
+  },
+  {
+    "id": "musik_0",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Wer ist der 'King of Pop'?",
+      "en": "Who is the 'King of Pop'?"
+    },
+    "options": {
+      "de": [
+        "Elvis Presley",
+        "Michael Jackson",
+        "Prince",
+        "Freddie Mercury"
+      ],
+      "en": [
+        "Elvis Presley",
+        "Michael Jackson",
+        "Prince",
+        "Freddie Mercury"
+      ]
+    }
+  },
+  {
+    "id": "musik_1",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Wie viele Saiten hat eine Standard-Gitarre?",
+      "en": "How many strings does a standard guitar have?"
+    },
+    "options": {
+      "de": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "en": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  },
+  {
+    "id": "q1",
+    "cat": "Absurd",
+    "correct": 3,
+    "text": {
+      "de": "Was ist das Gegenteil von Fortschritt?",
+      "en": "What is the opposite of progress?"
+    },
+    "options": {
+      "de": [
+        "Rückschritt",
+        "Stillstand",
+        "Ack Attack",
+        "Ein Mittwoch"
+      ],
+      "en": [
+        "Regression",
+        "Standstill",
+        "Ack Attack",
+        "A Wednesday"
+      ]
+    }
+  },
+  {
+    "id": "q2",
+    "cat": "Absurd",
+    "correct": 0,
+    "text": {
+      "de": "Ein Chamäleon betritt einen Spiegellabyrinth. Was sieht es?",
+      "en": "A chameleon enters a hall of mirrors. What does it see?"
+    },
+    "options": {
+      "de": [
+        "Einen existenziellen Albtraum",
+        "Nichts",
+        "Alles",
+        "Sich selbst"
+      ],
+      "en": [
+        "An existential nightmare",
+        "Nothing",
+        "Everything",
+        "Itself"
+      ]
+    }
+  },
+  {
+    "id": "q3",
+    "cat": "Sci-Fi",
+    "correct": 0,
+    "text": {
+      "de": "Was passiert, wenn man durch ein schwarzes Loch fliegt?",
+      "en": "What happens if you fly through a black hole?"
+    },
+    "options": {
+      "de": [
+        "Man wird zu Spaghetti",
+        "Man kommt bei Ack an",
+        "Nichts",
+        "Man stirbt vor Langeweile"
+      ],
+      "en": [
+        "You turn into spaghetti",
+        "You arrive at Ack's",
+        "Nothing",
+        "You die of boredom"
+      ]
+    }
+  },
+  {
+    "id": "q4",
+    "cat": "Technik",
+    "correct": 1,
+    "text": {
+      "de": "Warum haben Computer Lüfter?",
+      "en": "Why do computers have fans?"
+    },
+    "options": {
+      "de": [
+        "Damit sie fliegen können",
+        "Wegen der Hitze",
+        "Um Ack zu kühlen",
+        "Musik hören"
+      ],
+      "en": [
+        "So they can fly",
+        "Because of the heat",
+        "To cool Ack",
+        "To listen to music"
+      ]
+    }
+  },
+  {
+    "id": "q5",
+    "cat": "Absurd",
+    "correct": 2,
+    "text": {
+      "de": "Wenn ein Stein fliegen könnte, wäre er ein Vogel?",
+      "en": "If a stone could fly, would it be a bird?"
+    },
+    "options": {
+      "de": [
+        "Ja",
+        "Nein",
+        "Ein Wunder",
+        "Ack's Briefbeschwerer"
+      ],
+      "en": [
+        "Yes",
+        "No",
+        "A miracle",
+        "Ack's paperweight"
+      ]
+    }
+  },
+  {
+    "id": "q6",
+    "cat": "Sci-Fi",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Antwort auf alles?",
+      "en": "What is the answer to everything?"
+    },
+    "options": {
+      "de": [
+        "Pizza",
+        "42",
+        "Ack Attack",
+        "Schlafen"
+      ],
+      "en": [
+        "Pizza",
+        "42",
+        "Ack Attack",
+        "Sleep"
+      ]
+    }
+  },
+  {
+    "id": "q7",
+    "cat": "Humor",
+    "correct": 1,
+    "text": {
+      "de": "Warum tragen Fische keine Brillen?",
+      "en": "Why don't fish wear glasses?"
+    },
+    "options": {
+      "de": [
+        "Sie sehen perfekt",
+        "Wegen der Ohren",
+        "Ack hat sie geklaut",
+        "Zu teuer"
+      ],
+      "en": [
+        "They see perfectly",
+        "Because of ears",
+        "Ack stole them",
+        "Too expensive"
+      ]
+    }
+  },
+  {
+    "id": "q8",
+    "cat": "Technik",
+    "correct": 2,
+    "text": {
+      "de": "Was passiert, wenn man das Internet löscht?",
+      "en": "What happens if you delete the internet?"
+    },
+    "options": {
+      "de": [
+        "Ruhe",
+        "Chaos",
+        "Ack übernimmt",
+        "Nichts"
+      ],
+      "en": [
+        "Quiet",
+        "Chaos",
+        "Ack takes over",
+        "Nothing"
+      ]
+    }
+  },
+  {
+    "id": "q9",
+    "cat": "Absurd",
+    "correct": 3,
+    "text": {
+      "de": "Warum haben Wolken keine Reißverschlüsse?",
+      "en": "Why don't clouds have zippers?"
+    },
+    "options": {
+      "de": [
+        "Damit es nicht regnet",
+        "Weil sie flauschig sind",
+        "Ack hat sie verboten",
+        "Designfehler"
+      ],
+      "en": [
+        "To stop rain",
+        "Because fluffy",
+        "Ack forbade it",
+        "Design error"
+      ]
+    }
+  },
+  {
+    "id": "q10",
+    "cat": "Sci-Fi",
+    "correct": 1,
+    "text": {
+      "de": "Wie schnell ist Lichtgeschwindigkeit?",
+      "en": "How fast is the speed of light?"
+    },
+    "options": {
+      "de": [
+        "Schnell",
+        "300.000 km/s",
+        "Langsam für Ack",
+        "Unbekannt"
+      ],
+      "en": [
+        "Fast",
+        "300,000 km/s",
+        "Slow for Ack",
+        "Unknown"
+      ]
+    }
+  }
 ]
