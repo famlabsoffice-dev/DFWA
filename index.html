@@ -28,7 +28,7 @@
         .overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 255, 0, 0.06));
             background-size: 100% 2px, 3px 100%; pointer-events: none; z-index: 1000;
         }
         .scanline {
@@ -91,6 +91,7 @@
         }
         #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
         #ack-overlay.correct { border-color: var(--neon); box-shadow: 0 0 100px rgba(57, 255, 20, 0.6); }
+        #ack-overlay.correct .ack-title { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
         #ack-overlay.incorrect { border-color: var(--error); box-shadow: 0 0 100px rgba(255, 0, 60, 0.6); animation: shake 0.5s; }
 
         @keyframes shake {
@@ -102,17 +103,18 @@
         .ack-title { font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; }
         .ack-content { font-size: 1.6rem; text-transform: uppercase; line-height: 1.3; }
 
-        /* Integrated Stats Styles */
+        /* Integrated Stats Styles - Precision Positioning on HUD lines */
         .stat-overlay {
-            position: absolute; font-size: 0.65rem; color: var(--neon);
+            position: absolute; font-size: 0.6rem; color: var(--neon);
             text-transform: uppercase; font-weight: bold; pointer-events: none;
             text-shadow: 0 0 5px var(--neon); white-space: nowrap; z-index: 20;
+            line-height: 1.2;
         }
-        #stat-player { top: 22%; left: 10%; }
-        #stat-id { bottom: 22%; left: 10%; }
-        #stat-lives { top: 22%; right: 10%; text-align: right; }
-        #stat-best { bottom: 22%; right: 10%; text-align: right; }
-        #stat-battle { bottom: 5%; left: 50%; transform: translateX(-50%); color: var(--warning); display: none; }
+        #stat-player { top: 27%; left: 10%; } /* DATABASE INTEGRITY line */
+        #stat-lives { top: 27%; right: 10%; text-align: right; } /* THREAT ASSESSMENT line */
+        #stat-id { bottom: 27%; left: 10%; } /* PROTOCOL REBUKE line */
+        #stat-best { bottom: 27%; right: 10%; text-align: right; } /* BOTTOM RIGHT line */
+        #stat-battle { bottom: 8%; left: 50%; transform: translateX(-50%); color: var(--warning); display: none; font-size: 0.7rem; }
 
         .cyber-select, .cyber-input { background: #000; border: 2px solid var(--neon); padding: 12px; width: 100%; margin: 8px 0; font-weight: bold; color: var(--neon); }
         .cyber-input { border-color: var(--cyber-blue); color: var(--cyber-blue); }
@@ -138,13 +140,13 @@
                 <h1 class="glitch-text" style="font-size: clamp(2.5rem, 10vw, 4.5rem); margin-bottom: 1vh;">A.C.K.</h1>
                 
                 <div id="eye-container" style="width: min(85vw, 450px); height: min(85vw, 450px); margin: 0 auto 1.5vh; position: relative;">
-                    <img id="core-eye" src="./assets/images/ack_core.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 20px var(--neon));">
+                    <img id="core-eye" src="./assets/images/ack_core_clean.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 20px var(--neon));">
                     
-                    <!-- Integrated Stats Overlays -->
-                    <div id="stat-player" class="stat-overlay">PLAYER//<br><span id="player-display">GUEST</span></div>
-                    <div id="stat-lives" class="stat-overlay">LIVES//<br><span id="lives-display">3</span></div>
-                    <div id="stat-id" class="stat-overlay">CORE_ID//<br><span id="id-display">0000</span></div>
-                    <div id="stat-best" class="stat-overlay">BEST_SCORE//<br><span id="high-score">0</span></div>
+                    <!-- Integrated Stats Overlays - Dynamically replacing original labels -->
+                    <div id="stat-player" class="stat-overlay">PLAYER_DATA//<br><span id="player-display">GUEST</span></div>
+                    <div id="stat-lives" class="stat-overlay">VITAL_SIGNS//<br><span id="lives-display">3</span>_LIVES</div>
+                    <div id="stat-id" class="stat-overlay">SYSTEM_ID//<br>#<span id="id-display">0000</span></div>
+                    <div id="stat-best" class="stat-overlay">CORE_SCORE//<br><span id="high-score">0</span>_PTS</div>
                     <div id="stat-battle" class="stat-overlay">BATTLE_SYNC//ACTIVE</div>
                 </div>
 
@@ -221,8 +223,8 @@
         function blink() {
             const eye = document.getElementById('core-eye');
             if (!eye) return;
-            eye.src = './assets/images/ack_core_closed.png';
-            setTimeout(() => { eye.src = './assets/images/ack_core.png'; }, 150 + Math.random() * 100);
+            eye.src = './assets/images/ack_core_closed_clean.png';
+            setTimeout(() => { eye.src = './assets/images/ack_core_clean.png'; }, 150 + Math.random() * 100);
             setTimeout(blink, 2000 + Math.random() * 5000);
         }
         setTimeout(blink, 3000);
