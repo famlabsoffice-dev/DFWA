@@ -91,7 +91,13 @@
             text-align: center;
         }
 
-        #question-box { height: 30vh; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.5rem; padding: 25px; margin-top: 10vh; pointer-events: none; }
+        #timeline-container {
+            width: 100%; max-width: 600px; height: 4px; background: rgba(255,255,255,0.1);
+            position: absolute; top: 12vh; left: 50%; transform: translateX(-50%); z-index: 50;
+        }
+        #timeline-bar { width: 100%; height: 100%; background: var(--neon); transition: width 0.1s linear; }
+
+        #question-box { height: 25vh; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.5rem; padding: 25px; margin-top: 15vh; pointer-events: none; }
         #options-container { display: flex; flex-direction: column; align-items: center; padding: 0 25px; margin-bottom: 80px; }
 
         #feedback-screen {
@@ -102,23 +108,11 @@
         #feedback-screen.active { display: flex; }
         #feedback-eye-container {
             position: relative; width: 80vw; max-width: 500px; height: 40vh; margin-top: 5vh;
+            transition: transform 0.5s ease-in-out;
         }
         #feedback-eye-base { width: 100%; height: 100%; object-fit: contain; }
-        #feedback-brow {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: contain; z-index: 10; pointer-events: none;
-        }
-        .wink-anim #feedback-eye-base { animation: winkEffect 0.5s ease-in-out infinite; }
-        @keyframes winkEffect {
-            0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.05) rotate(2deg); }
-        }
-        .skeptical-anim #feedback-brow { animation: skepticalEffect 1s ease-in-out infinite; }
-        @keyframes skepticalEffect {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            20% { transform: translateY(-40px) rotate(-8deg); }
-            40% { transform: translateY(-35px) rotate(-6deg); }
-        }
+        .zoom-anim { transform: scale(1.8); }
+
         #feedback-msg { 
             width: 90%; max-width: 600px; padding: 30px; border: 2px solid var(--neon);
             background: rgba(0,0,0,0.9); color: var(--neon); font-size: 1.2rem;
@@ -154,6 +148,7 @@
             </div>
         </div>
         <div id="game-screen" class="screen">
+            <div id="timeline-container"><div id="timeline-bar"></div></div>
             <div id="question-box">INITIALIZING...</div>
             <div id="options-container"></div>
             <button id="pause-btn" onclick="pauseProtocol()">PAUSE</button>
@@ -162,8 +157,7 @@
 
     <div id="feedback-screen">
         <div id="feedback-eye-container">
-            <img id="feedback-eye-base" src="">
-            <img id="feedback-brow" src="" style="display: none;">
+            <img id="feedback-eye-base" src="./assets/images/ack_core_clean.png">
         </div>
         <div id="feedback-msg"></div>
     </div>
@@ -174,7 +168,8 @@
             playerName: localStorage.getItem('dfwa_name') || 'GUEST',
             playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
-            comments: {}, isPaused: false, isProcessing: false
+            comments: {}, usedComments: { correct: [], incorrect: [] },
+            isPaused: false, isProcessing: false, timer: 15, timerInterval: null
         };
 
         function detectLanguage() {
@@ -183,8 +178,17 @@
         }
         detectLanguage();
 
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
         function pauseProtocol() {
             state.isPaused = true;
+            clearInterval(state.timerInterval);
             document.getElementById('game-screen').classList.remove('active');
             document.getElementById('start-screen').classList.add('active');
             document.getElementById('resume-btn').style.display = 'block';
@@ -195,23 +199,37 @@
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('game-screen').classList.add('active');
             document.getElementById('resume-btn').style.display = 'none';
+            startTimer();
         }
 
         async function initGame() {
             state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
-            state.lives = 3; state.current = 0;
+            state.lives = 3; state.current = 0; state.score = 0;
             const [qRes, cRes] = await Promise.all([fetch('questions_i18n.json'), fetch('ack_comments.json')]);
-            state.questions = (await qRes.json()).sort(() => Math.random() - 0.5);
+            state.questions = shuffle(await qRes.json());
             state.comments = await cRes.json();
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('game-screen').classList.add('active');
             renderQuestion();
         }
 
+        function startTimer() {
+            clearInterval(state.timerInterval);
+            state.timerInterval = setInterval(() => {
+                state.timer -= 0.1;
+                document.getElementById('timeline-bar').style.width = (state.timer / 15 * 100) + '%';
+                if (state.timer <= 0) {
+                    clearInterval(state.timerInterval);
+                    checkAnswer(false);
+                }
+            }, 100);
+        }
+
         function renderQuestion() {
             const q = state.questions[state.current];
             if (!q) return location.reload();
+            state.timer = 15;
             document.getElementById('question-box').innerText = q.text[state.lang];
             const container = document.getElementById('options-container');
             container.innerHTML = '';
@@ -222,46 +240,73 @@
                 btn.onclick = () => checkAnswer(i === q.correct);
                 container.appendChild(btn);
             });
+            startTimer();
+        }
+
+        function getComment(type) {
+            let pool = state.comments[state.lang][type];
+            let available = pool.filter(c => !state.usedComments[type].includes(c));
+            if (available.length === 0) {
+                state.usedComments[type] = [];
+                available = pool;
+            }
+            let choice = available[Math.floor(Math.random() * available.length)];
+            state.usedComments[type].push(choice);
+            return choice;
         }
 
         function checkAnswer(correct) {
             if (state.isProcessing) return;
             state.isProcessing = true;
+            clearInterval(state.timerInterval);
             const fScreen = document.getElementById('feedback-screen');
             const fContainer = document.getElementById('feedback-eye-container');
             const fEyeBase = document.getElementById('feedback-eye-base');
-            const fBrow = document.getElementById('feedback-brow');
             const fMsg = document.getElementById('feedback-msg');
 
-            fContainer.className = ''; 
-            fBrow.style.display = 'none';
-
+            fContainer.classList.remove('zoom-anim');
+            
             if (correct) {
                 state.score += 100;
                 fEyeBase.src = './assets/images/ack_core_clean.png';
-                fContainer.classList.add('wink-anim');
+                // Blink logic: quick switch to closed and back
+                let blinkCount = 0;
+                const blinkInt = setInterval(() => {
+                    fEyeBase.src = blinkCount % 2 === 0 ? './assets/images/ack_core_closed_clean.png' : './assets/images/ack_core_clean.png';
+                    blinkCount++;
+                    if (blinkCount > 3) clearInterval(blinkInt);
+                }, 150);
                 fMsg.style.borderColor = 'var(--neon)';
                 fMsg.style.color = 'var(--neon)';
-                fMsg.innerText = state.comments[state.lang].correct[Math.floor(Math.random() * state.comments[state.lang].correct.length)];
+                fMsg.innerText = getComment('correct');
             } else {
                 state.lives--;
                 fEyeBase.src = './assets/images/ack_core_clean.png';
-                fBrow.src = './assets/images/ack_brow_only.png';
-                fBrow.style.display = 'block';
-                fContainer.classList.add('skeptical-anim');
+                fContainer.classList.add('zoom-anim');
                 fMsg.style.borderColor = 'var(--error)';
                 fMsg.style.color = 'var(--error)';
-                fMsg.innerText = state.comments[state.lang].incorrect[Math.floor(Math.random() * state.comments[state.lang].incorrect.length)];
+                fMsg.innerText = getComment('incorrect');
             }
 
             fScreen.classList.add('active');
             setTimeout(() => {
                 fScreen.classList.remove('active');
                 state.isProcessing = false;
-                if (state.lives <= 0) location.reload();
-                else { state.current++; renderQuestion(); }
+                if (state.lives <= 0) {
+                    if (state.score > state.best) localStorage.setItem('dfwa_best', state.score);
+                    location.reload();
+                } else { state.current++; renderQuestion(); }
             }, 3500);
         }
+
+        // Start blinking effect on home screen
+        setInterval(() => {
+            if (document.getElementById('start-screen').classList.contains('active')) {
+                const eye = document.getElementById('core-eye');
+                eye.src = './assets/images/ack_core_closed_clean.png';
+                setTimeout(() => eye.src = './assets/images/ack_core_clean.png', 150);
+            }
+        }, 4000);
     </script>
 </body>
 </html>
