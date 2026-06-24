@@ -109,6 +109,9 @@
         .start-btn { border-color: var(--cyber-blue); color: var(--cyber-blue); }
         .start-btn:hover { background: var(--cyber-blue); box-shadow: 0 0 40px var(--cyber-blue); }
 
+        .resume-btn { border-color: var(--warning); color: var(--warning); display: none; }
+        .resume-btn:hover { background: var(--warning); box-shadow: 0 0 40px var(--warning); }
+
         .battle-btn { border-color: var(--warning); color: var(--warning); }
         .battle-btn:hover { background: var(--warning); box-shadow: 0 0 40px var(--warning); }
 
@@ -148,13 +151,6 @@
             font-weight: 900; text-transform: uppercase; font-size: 0.7rem;
         }
         #pause-btn:hover { background: var(--neon); color: #000; }
-
-        #pause-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9); z-index: 3000; flex-direction: column;
-            justify-content: center; align-items: center;
-        }
-        #pause-overlay.active { display: flex; }
     </style>
 </head>
 <body>
@@ -175,6 +171,7 @@
                 <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12">
                 <select id="category-filter" class="cyber-select"><option value="all">ALL_SECTORS</option></select>
                 <div id="options-container" style="margin-top: 15px;">
+                    <button id="resume-btn" class="option-btn resume-btn" onclick="resumeProtocol()">RESUME_PROTOCOL</button>
                     <button id="start-btn" class="option-btn start-btn" onclick="initGame()">INIT_PROTOCOL</button>
                     <button id="lobby-btn" class="option-btn battle-btn" onclick="showLobby()">BATTLE_LOBBY</button>
                 </div>
@@ -192,7 +189,7 @@
             </div>
         </div>
         <div id="game-screen" class="screen">
-            <button id="pause-btn" onclick="togglePause()">PAUSE</button>
+            <button id="pause-btn" onclick="pauseProtocol()">PAUSE</button>
             <div id="timer-wrap"><div id="timer-fill"></div></div>
             <div id="question-box">INITIALIZING...</div>
             <div id="options-container" style="padding: 0 25px;"></div>
@@ -201,10 +198,6 @@
     <div id="ack-overlay">
         <div class="ack-title" id="ack-header">>> SYSTEM_ACK:</div>
         <div class="ack-content" id="ack-msg"></div>
-    </div>
-    <div id="pause-overlay">
-        <h2 style="color: var(--neon); letter-spacing: 10px; margin-bottom: 30px;">SYSTEM_PAUSED</h2>
-        <button class="option-btn start-btn" onclick="togglePause()">RESUME_PROTOCOL</button>
     </div>
     <script>
         let state = { 
@@ -221,6 +214,7 @@
             const userLang = navigator.language || navigator.userLanguage;
             state.lang = userLang.startsWith('de') ? 'de' : 'en';
             document.getElementById('start-btn').innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
+            document.getElementById('resume-btn').innerText = state.lang === 'de' ? 'PROTOKOLL_FORTSETZEN' : 'RESUME_PROTOCOL';
         }
         detectLanguage();
         document.getElementById('player-name').value = state.playerName === 'GUEST' ? '' : state.playerName;
@@ -256,11 +250,19 @@
             document.getElementById('stat-battle').style.display = 'block';
             initGame();
         }
-        function togglePause() {
-            state.isPaused = !state.isPaused;
-            document.getElementById('pause-overlay').classList.toggle('active');
-            if (!state.isPaused) startTimer(state.timerVal);
-            else clearInterval(state.timer);
+        function pauseProtocol() {
+            clearInterval(state.timer);
+            state.isPaused = true;
+            document.getElementById('game-screen').classList.remove('active');
+            document.getElementById('start-screen').classList.add('active');
+            document.getElementById('resume-btn').style.display = 'block';
+        }
+        function resumeProtocol() {
+            state.isPaused = false;
+            document.getElementById('start-screen').classList.remove('active');
+            document.getElementById('game-screen').classList.add('active');
+            document.getElementById('resume-btn').style.display = 'none';
+            startTimer(state.timerVal);
         }
         async function initGame() {
             state.selectedCat = document.getElementById('category-filter').value;
@@ -269,6 +271,8 @@
             document.getElementById('player-display').innerText = state.playerName;
             state.lives = 3;
             document.getElementById('lives-display').innerText = state.lives;
+            state.current = 0; state.score = 0; state.streak = 0;
+            document.getElementById('resume-btn').style.display = 'none';
             try {
                 const [qRes, cRes] = await Promise.all([
                     fetch('questions_i18n.json?v=' + Date.now()), 
