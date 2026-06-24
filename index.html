@@ -146,7 +146,7 @@
                 <div id="stat-player" class="stat-overlay">USER_IDENT//<br><span id="player-display">GUEST</span></div>
                 <div id="stat-lives" class="stat-overlay">VITAL_SIGNS//<br><span id="lives-display">3</span>_UNITS</div>
                 <div id="stat-id" class="stat-overlay">CORE_LINK//<br>#<span id="id-display">0000</span></div>
-                <div id="stat-best" class="stat-overlay">PEAK_DATA//<br><span id="high-score">0</span>_PTS</div>
+                <div id="stat-best" class="stat-overlay">PEAK_DATA//<br><span id="high-score">0</span>_PTS<br><span id="battle-stats" style="color:var(--warning); font-size:0.65rem;">W:0 / L:0</span></div>
             </div>
             <div class="ui-content-wrapper">
                 <p style="color:var(--cyber-blue); letter-spacing:3px; font-weight:900; font-size:0.8rem; margin-bottom:2.5vh; white-space: nowrap;">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
@@ -162,8 +162,7 @@
             <div class="ui-content-wrapper" style="margin-top: 20vh;">
                 <h2 style="color:var(--warning); margin-bottom: 20px;">BATTLE_OVERRIDE</h2>
                 <input type="text" id="challenge-code-input" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ENTER_CHALLENGE_CODE">
-                <button class="option-btn battle-btn" onclick="startChallenge()">JOIN_CHALLENGE</button>
-                <button class="option-btn start-btn" style="border-color: var(--warning); color: var(--warning);" onclick="initGame(true)">CREATE_CHALLENGE</button>
+                <button class="option-btn battle-btn" onclick="startChallenge()">START_CHALLENGE</button>
                 <button class="option-btn" onclick="hideLobby()">BACK_TO_CORE</button>
             </div>
         </div>
@@ -197,6 +196,8 @@
             playerName: localStorage.getItem('dfwa_name') || 'GUEST',
             playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
+            wins: parseInt(localStorage.getItem('dfwa_wins') || 0),
+            losses: parseInt(localStorage.getItem('dfwa_losses') || 0),
             comments: {}, usedComments: { correct: [], incorrect: [] },
             isPaused: false, isProcessing: false, timer: 15, timerInterval: null,
             isChallenge: false, isCreatingChallenge: false, challengeSeed: null, opponentScore: 0
@@ -208,10 +209,14 @@
             document.getElementById('player-display').innerText = state.playerName;
             document.getElementById('id-display').innerText = state.playerId;
             document.getElementById('high-score').innerText = state.best;
+            document.getElementById('battle-stats').innerText = `W:${state.wins} / L:${state.losses}`;
+            document.getElementById('player-name').value = state.playerName !== 'GUEST' ? state.playerName : '';
         }
         detectLanguage();
 
         function showLobby() {
+            state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
+            localStorage.setItem('dfwa_name', state.playerName);
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('battle-lobby').classList.add('active');
         }
@@ -223,14 +228,17 @@
 
         function startChallenge() {
             const code = document.getElementById('challenge-code-input').value.trim();
-            if (!code) return;
-            try {
-                const data = JSON.parse(atob(code));
-                state.isChallenge = true;
-                state.challengeSeed = data.seed;
-                state.opponentScore = data.score;
-                initGame(false);
-            } catch(e) { alert("INVALID_CODE"); }
+            if (code) {
+                try {
+                    const data = JSON.parse(atob(code));
+                    state.isChallenge = true;
+                    state.challengeSeed = data.seed;
+                    state.opponentScore = data.score;
+                    initGame(false);
+                } catch(e) { alert("INVALID_CODE"); }
+            } else {
+                initGame(true);
+            }
         }
 
         function generateChallengeCode() {
@@ -320,8 +328,11 @@
                 title.innerText = "CHALLENGE_CREATED";
                 text.innerText = generateChallengeCode();
             } else if (state.isChallenge) {
-                title.innerText = state.score > state.opponentScore ? "VICTORY" : "DEFEAT";
+                const win = state.score > state.opponentScore;
+                title.innerText = win ? "VICTORY" : "DEFEAT";
                 text.innerText = `YOUR_SCORE: ${state.score}\nOPPONENT: ${state.opponentScore}`;
+                if (win) { state.wins++; localStorage.setItem('dfwa_wins', state.wins); }
+                else { state.losses++; localStorage.setItem('dfwa_losses', state.losses); }
             } else {
                 title.innerText = "PROTOCOL_COMPLETE";
                 text.innerText = `FINAL_SCORE: ${state.score}`;
