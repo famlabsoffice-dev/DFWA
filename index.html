@@ -11,7 +11,7 @@
     <style>
         :root {
             --neon: #39ff14;
-            --neon-bg: rgba(57, 255, 20, 0.1);
+            --neon-bg: rgba(57, 255, 20, 0.15);
             --error: #ff003c;
             --warning: #f4ea11;
             --cyber-blue: #00d2ff;
@@ -19,7 +19,11 @@
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; font-family: 'Courier New', monospace; }
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: var(--black); color: var(--neon); }
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; 
+            overflow: hidden; background: var(--black); color: var(--neon);
+            display: flex; align-items: center; justify-content: center;
+        }
 
         .overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -35,10 +39,11 @@
         @keyframes scan { from { top: -100px; } to { top: 100%; } }
 
         #game-container {
-            height: 100%; display: flex; flex-direction: column; padding: 20px;
+            width: calc(100% - 20px); height: calc(100% - 20px);
+            display: flex; flex-direction: column; padding: 15px;
             background: radial-gradient(circle at center, #111 0%, #000 100%);
-            border: 2px solid var(--neon); margin: 10px; box-shadow: inset 0 0 50px rgba(57, 255, 20, 0.2);
-            position: relative;
+            border: 2px solid var(--neon); box-shadow: inset 0 0 30px rgba(57, 255, 20, 0.2);
+            position: relative; overflow: hidden;
         }
 
         .screen { display: none; flex-direction: column; height: 100%; animation: flicker 0.15s infinite; }
@@ -48,44 +53,53 @@
             20% { opacity: 0.98; } 100% { opacity: 1; } 
         }
 
-        h1 { font-size: 3rem; text-align: center; margin: 20px 0; letter-spacing: 5px; text-shadow: 0 0 10px var(--neon); }
+        h1 { font-size: 3rem; text-align: center; margin: 10px 0; letter-spacing: 5px; text-shadow: 0 0 10px var(--neon); }
         .glitch-text { animation: textGlitch 2s infinite; }
         @keyframes textGlitch {
             0% { transform: translate(0); } 2% { transform: translate(-2px, 2px); } 4% { transform: translate(2px, -2px); } 6% { transform: translate(0); }
         }
 
-        #options-container { display: grid; gap: 15px; margin-top: auto; margin-bottom: 20px; }
+        #options-container { display: grid; gap: 12px; margin-top: auto; margin-bottom: 10px; }
         .option-btn {
-            background: var(--neon-bg); border: 1px solid var(--neon); color: var(--neon);
-            padding: 20px; font-size: 1.1rem; text-transform: uppercase; cursor: pointer;
-            transition: 0.1s; position: relative; overflow: hidden;
+            background: var(--neon-bg); border: 2px solid var(--neon); color: var(--neon);
+            padding: 18px; font-size: 1rem; text-transform: uppercase; cursor: pointer;
+            transition: 0.2s; position: relative; overflow: hidden;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
+            font-weight: bold;
         }
         .option-btn:hover, .option-btn:focus-visible { 
-            background: var(--neon); color: var(--black); box-shadow: 0 0 30px var(--neon);
-            outline: none;
+            background: var(--neon); color: var(--black); box-shadow: 0 0 25px var(--neon);
+            outline: none; transform: translateY(-2px);
         }
-        button:focus-visible { outline: 3px solid var(--neon); outline-offset: 4px; }
+        
+        .start-btn {
+            border-color: var(--cyber-blue); color: var(--cyber-blue);
+            background: rgba(0, 210, 255, 0.1);
+        }
+        .start-btn:hover {
+            background: var(--cyber-blue); color: var(--black); box-shadow: 0 0 25px var(--cyber-blue);
+        }
 
         #question-box {
             flex: 1; display: flex; align-items: center; justify-content: center;
-            text-align: center; font-size: 1.4rem; padding: 20px; border-bottom: 1px solid var(--neon-bg);
+            text-align: center; font-size: 1.3rem; padding: 15px; border-bottom: 1px solid var(--neon-bg);
         }
 
-        #timer-wrap { width: 100%; height: 5px; background: #222; margin-bottom: 10px; }
+        #timer-wrap { width: 100%; height: 4px; background: #222; margin-bottom: 8px; }
         #timer-fill { height: 100%; width: 100%; background: var(--neon); transition: width 0.1s linear; }
 
         #ack-overlay {
             position: fixed; top: 50%; left: 50%; width: 90%; max-width: 500px;
-            padding: 40px; background: rgba(0, 0, 0, 0.98); 
+            padding: 35px; background: rgba(0, 0, 0, 0.98); 
             border: 4px solid var(--error); border-radius: 2px;
             transform: translate(-50%, -50%) scale(0); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 2000; text-align: center; box-shadow: 0 0 100px rgba(255, 0, 60, 0.6);
         }
         #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
-        .ack-title { color: var(--error); font-weight: bold; font-size: 1.4rem; margin-bottom: 20px; text-shadow: 0 0 10px var(--error); }
-        .ack-content { color: var(--warning); font-size: 1.8rem; text-transform: uppercase; line-height: 1.4; text-shadow: 0 0 15px var(--warning); }
+        .ack-title { color: var(--error); font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; text-shadow: 0 0 10px var(--error); }
+        .ack-content { color: var(--warning); font-size: 1.6rem; text-transform: uppercase; line-height: 1.3; text-shadow: 0 0 15px var(--warning); }
 
-        #score-panel { position: absolute; top: 10px; right: 20px; text-align: right; font-size: 0.8rem; opacity: 0.8; }
+        #score-panel { position: absolute; top: 10px; right: 15px; text-align: right; font-size: 0.75rem; opacity: 0.8; z-index: 100; }
         #streak-info { color: var(--cyber-blue); font-weight: bold; display: none; }
         #lives-display { color: var(--error); font-weight: bold; }
 
@@ -94,26 +108,21 @@
             background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 3000;
             justify-content: center; align-items: center; flex-direction: column;
         }
-        .overlay-content { border: 2px solid var(--neon); padding: 40px; text-align: center; max-width: 90%; }
-        .cyber-select { background: #000; color: var(--neon); border: 1px solid var(--neon); padding: 10px; width: 100%; margin: 10px 0; }
-        .cyber-input { background: #000; color: var(--cyber-blue); border: 1px solid var(--cyber-blue); padding: 10px; width: 100%; margin: 10px 0; text-align: center; }
+        .overlay-content { border: 2px solid var(--neon); padding: 30px; text-align: center; max-width: 90%; }
+        .cyber-select { background: #000; color: var(--neon); border: 2px solid var(--neon); padding: 12px; width: 100%; margin: 8px 0; font-weight: bold; }
+        .cyber-input { background: #000; color: var(--cyber-blue); border: 2px solid var(--cyber-blue); padding: 12px; width: 100%; margin: 8px 0; text-align: center; font-weight: bold; }
 
-        #leaderboard-list { list-style: none; padding: 0; font-size: 0.8rem; color: var(--cyber-blue); }
+        #leaderboard-list { list-style: none; padding: 0; font-size: 0.75rem; color: var(--cyber-blue); }
 
-        .highlight-text {
+        .subtitle-text {
             color: var(--cyber-blue);
-            text-shadow: 0 0 10px var(--cyber-blue), 0 0 20px var(--cyber-blue);
-            border: 1px solid var(--cyber-blue);
-            padding: 5px 15px;
+            text-shadow: 0 0 10px var(--cyber-blue);
+            padding: 5px 0;
             display: inline-block;
-            background: rgba(0, 210, 255, 0.05);
-            letter-spacing: 5px;
+            letter-spacing: 3px;
             font-weight: bold;
-            animation: pulse-blue 2s infinite;
-        }
-        @keyframes pulse-blue {
-            0%, 100% { box-shadow: 0 0 10px var(--cyber-blue); opacity: 0.8; }
-            50% { box-shadow: 0 0 25px var(--cyber-blue); opacity: 1; }
+            font-size: 0.9rem;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -131,23 +140,23 @@
             <span id="streak-info">STREAK: 0</span>
         </div>
         
-        <div id="start-screen" class="screen active" style="justify-content: flex-start; align-items: center; padding-top: 5vh;">
+        <div id="start-screen" class="screen active" style="justify-content: flex-start; align-items: center; padding-top: 3vh;">
             <div style="text-align: center; position: relative; z-index: 10; width: 100%; max-width: 600px;">
-                <h1 class="glitch-text" style="font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 2vh; text-shadow: 0 0 30px var(--neon), 0 0 60px var(--cyber-blue);">A.C.K.</h1>
-                <div id="eye-container" style="width: min(80vw, 400px); height: min(80vw, 400px); margin: 0 auto 2vh; position: relative; display: flex; align-items: center; justify-content: center;">
+                <h1 class="glitch-text" style="font-size: clamp(2.5rem, 10vw, 4.5rem); margin-bottom: 1vh; text-shadow: 0 0 30px var(--neon), 0 0 60px var(--cyber-blue);">A.C.K.</h1>
+                <div id="eye-container" style="width: min(70vw, 350px); height: min(70vw, 350px); margin: 0 auto 1.5vh; position: relative; display: flex; align-items: center; justify-content: center;">
                     <img id="core-eye" src="./assets/images/ack_core.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 20px var(--neon));">
                 </div>
-                <div style="margin-bottom: 3vh;">
-                    <p class="highlight-text">AUTONOMOUS CYBERNETIC KERNEL</p>
+                <div style="margin-bottom: 2vh;">
+                    <p class="subtitle-text">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
                 </div>
-                <div class="cyber-box" style="text-align:center; width: 90%; max-width: 400px; margin: 0 auto;">
+                <div class="cyber-box" style="text-align:center; width: 90%; max-width: 380px; margin: 0 auto;">
                     <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12">
                     <select id="category-filter" class="cyber-select" aria-label="Sektor auswählen">
                         <option value="all">ALL_SECTORS</option>
                     </select>
                     <div style="display: grid; gap: 10px; margin-top: 15px;">
-                        <button class="option-btn" onclick="initGame('de')" aria-label="Start in Deutsch" style="padding: 15px;">PROTOKOLL_STARTEN (DE)</button>
-                        <button class="option-btn" onclick="initGame('en')" aria-label="Start in English" style="padding: 15px;">START_PROTOCOL (EN)</button>
+                        <button class="option-btn start-btn" onclick="initGame('de')" aria-label="Start in Deutsch">PROTOKOLL_STARTEN (DE)</button>
+                        <button class="option-btn start-btn" onclick="initGame('en')" aria-label="Start in English">START_PROTOCOL (EN)</button>
                     </div>
                 </div>
             </div>
@@ -186,7 +195,7 @@
             timer: null, comments: {}, selectedCat: 'all'
         };
 
-        // Initialize UI with stored data
+        // Initialize UI
         document.getElementById('player-name').value = state.playerName === 'GUEST' ? '' : state.playerName;
         document.getElementById('player-display').innerText = state.playerName;
         document.getElementById('id-display').innerText = state.playerId;
@@ -201,9 +210,7 @@
             setTimeout(() => {
                 eye.src = './assets/images/ack_core.png';
             }, 150 + Math.random() * 100);
-            
-            const nextBlink = 2000 + Math.random() * 5000;
-            setTimeout(blink, nextBlink);
+            setTimeout(blink, 2000 + Math.random() * 5000);
         }
         setTimeout(blink, 3000);
 
@@ -211,13 +218,10 @@
             state.lang = l;
             document.documentElement.lang = l;
             state.selectedCat = document.getElementById('category-filter').value;
-            
-            // Set Player Name
             const nameInput = document.getElementById('player-name').value.trim();
             state.playerName = nameInput || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
             document.getElementById('player-display').innerText = state.playerName;
-
             state.lives = 3;
             document.getElementById('lives-display').innerText = state.lives;
             
@@ -228,10 +232,8 @@
                 ]);
                 let allQ = await qRes.json();
                 state.comments = await cRes.json();
-                
                 state.questions = state.selectedCat === 'all' ? allQ : allQ.filter(q => q.cat === state.selectedCat);
                 state.questions.sort(() => Math.random() - 0.5);
-                
                 document.getElementById('start-screen').classList.remove('active');
                 document.getElementById('game-screen').classList.add('active');
                 renderQuestion();
@@ -241,17 +243,13 @@
         function renderQuestion() {
             const q = state.questions[state.current];
             if (!q) { finishGame(true, "DATENSATZ_VOLLSTÄNDIG_ABSORBIERT."); return; }
-            
             document.getElementById('question-box').innerText = q.text[state.lang];
             const container = document.getElementById('options-container');
             container.innerHTML = '';
-            
             q.options[state.lang].forEach((opt, i) => {
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
                 btn.innerText = opt;
-                btn.setAttribute('role', 'radio');
-                btn.setAttribute('aria-label', `Option ${i+1}: ${opt}`);
                 btn.onclick = () => checkAnswer(i === q.correct);
                 container.appendChild(btn);
             });
@@ -264,26 +262,22 @@
                 state.streak++;
                 let bonus = (state.streak > 1) ? (state.streak - 1) * 10 : 0;
                 state.score += (100 + bonus);
-                
                 if (state.score > state.best) {
                     state.best = state.score;
                     localStorage.setItem('dfwa_best', state.best);
                     document.getElementById('high-score').innerText = state.best;
                 }
-                
                 const streakInfo = document.getElementById('streak-info');
                 if (state.streak >= 2) {
                     streakInfo.innerText = `STREAK: ${state.streak} (+${bonus})`;
                     streakInfo.style.display = 'inline';
                 }
-                
                 const pool = state.comments[state.lang].correct;
                 const msg = pool[Math.floor(Math.random() * pool.length)];
                 const overlay = document.getElementById('ack-overlay');
                 document.getElementById('ack-msg').innerText = msg;
                 overlay.style.borderColor = 'var(--neon)';
                 overlay.classList.add('active');
-                
                 setTimeout(() => {
                     overlay.classList.remove('active');
                     state.current++;
@@ -294,15 +288,12 @@
                 document.getElementById('lives-display').innerText = state.lives;
                 state.streak = 0;
                 document.getElementById('streak-info').style.display = 'none';
-                
                 const pool = state.comments[state.lang].incorrect;
                 const msg = pool[Math.floor(Math.random() * pool.length)];
-                
                 const overlay = document.getElementById('ack-overlay');
                 document.getElementById('ack-msg').innerText = msg;
                 overlay.style.borderColor = 'var(--error)';
                 overlay.classList.add('active');
-                
                 setTimeout(() => {
                     overlay.classList.remove('active');
                     if (state.lives <= 0) {
@@ -320,21 +311,12 @@
             const overlay = document.getElementById('game-overlay');
             document.getElementById('overlay-title').innerText = victory ? "VICTORY" : "GAME_OVER";
             document.getElementById('overlay-message').innerText = msg;
-            
-            // Leaderboard update
-            state.leaderboard.push({
-                name: state.playerName,
-                id: state.playerId,
-                score: state.score, 
-                date: new Date().toLocaleDateString()
-            });
+            state.leaderboard.push({name: state.playerName, id: state.playerId, score: state.score, date: new Date().toLocaleDateString()});
             state.leaderboard.sort((a,b) => b.score - a.score);
             state.leaderboard = state.leaderboard.slice(0, 5);
             localStorage.setItem('dfwa_leaderboard', JSON.stringify(state.leaderboard));
-            
             const lbList = document.getElementById('leaderboard-list');
             lbList.innerHTML = state.leaderboard.map(e => `<li>${e.score} PTS - ${e.name} (#${e.id})</li>`).join('');
-            
             overlay.style.display = 'flex';
         }
 
@@ -355,7 +337,6 @@
             }
         });
 
-        // Dynamic categories
         fetch('questions_i18n.json').then(r => r.json()).then(qs => {
             const cats = [...new Set(qs.map(q => q.cat))];
             const select = document.getElementById('category-filter');
@@ -370,12 +351,6 @@
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js').then(reg => {
                     reg.update();
-                    reg.onupdatefound = () => {
-                        const w = reg.installing;
-                        w.onstatechange = () => { 
-                            if (w.state === 'installed' && navigator.serviceWorker.controller) location.reload(); 
-                        };
-                    };
                 });
             });
         }
