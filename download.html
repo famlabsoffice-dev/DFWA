@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACK ATTACK - INSTALL_PROTOCOL</title>
+    <link rel="manifest" href="./manifest.json">
+    <title>ACK ATTACK - INSTALL_GATEWAY</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
     <style>
         body, html {
@@ -34,8 +35,9 @@
         .status-text {
             margin-top: 20px; font-family: monospace; font-size: 0.8rem; opacity: 0.7;
         }
-        #install-instructions {
-            display: none; margin-top: 20px; text-align: center; color: #00d2ff;
+        #manual-hint {
+            display: none; margin-top: 20px; text-align: center; color: #00d2ff; font-size: 0.9rem;
+            max-width: 80%; line-height: 1.4;
         }
     </style>
 </head>
@@ -44,21 +46,26 @@
         <img src="./assets/images/ack_core_clean.png" alt="ACK CORE">
     </div>
     <h1>ACK ATTACK</h1>
-    <button id="install-btn" class="install-btn">INSTALL_PROTOCOL</button>
-    <div id="install-instructions">
-        WÄHLE "ZUM HOMESCREEN HINZUFÜGEN" IM BROWSER-MENÜ
+    <button id="install-btn" class="install-btn">INITIALIZE_APP</button>
+    <div id="manual-hint">
+        BROWSER-MENÜ ÖFFNEN > "ZUM STARTBILDSCHIRM HINZUFÜGEN"
     </div>
-    <div class="status-text">SYSTEM_READY // PWA_INSTALL_HANDLER</div>
+    <div class="status-text">SYSTEM_READY // GATEWAY_V2</div>
 
     <script>
+        // Registriere Service Worker für PWA-Erkennung
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+
         let deferredPrompt;
         const installBtn = document.getElementById('install-btn');
-        const instructions = document.getElementById('install-instructions');
+        const manualHint = document.getElementById('manual-hint');
 
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            installBtn.style.display = 'block';
+            installBtn.innerText = "INSTALL_APP_NOW";
         });
 
         installBtn.addEventListener('click', async () => {
@@ -66,18 +73,22 @@
                 deferredPrompt.prompt();
                 const { outcome } = await deferredPrompt.userChoice;
                 if (outcome === 'accepted') {
-                    console.log('User accepted the install prompt');
+                    window.location.href = "index.html";
                 }
                 deferredPrompt = null;
             } else {
-                instructions.style.display = 'block';
-                installBtn.innerText = "MANUAL_INSTALL_REQUIRED";
+                // Fallback für iOS oder wenn Event nicht gefeuert wurde
+                manualHint.style.display = 'block';
+                installBtn.innerText = "TRY_MANUAL_INSTALL";
+                // Kurze Verzögerung, dann zur Haupt-App leiten falls Installation nicht möglich
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 3000);
             }
         });
 
         window.addEventListener('appinstalled', () => {
-            installBtn.innerText = "PROTOCOL_ESTABLISHED";
-            console.log('PWA was installed');
+            window.location.href = "index.html";
         });
     </script>
 </body>
