@@ -53,10 +53,6 @@
         @keyframes textGlitch {
             0% { transform: translate(0); } 2% { transform: translate(-2px, 2px); } 4% { transform: translate(2px, -2px); } 6% { transform: translate(0); }
         }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 40px var(--neon), 0 0 80px var(--cyber-blue); transform: scale(1); }
-            50% { box-shadow: 0 0 60px var(--neon), 0 0 120px var(--cyber-blue); transform: scale(1.05); }
-        }
 
         #options-container { display: grid; gap: 15px; margin-top: auto; margin-bottom: 20px; }
         .option-btn {
@@ -102,6 +98,22 @@
         .cyber-select { background: #000; color: var(--neon); border: 1px solid var(--neon); padding: 10px; width: 100%; margin: 10px 0; }
 
         #leaderboard-list { list-style: none; padding: 0; font-size: 0.8rem; color: var(--cyber-blue); }
+
+        .highlight-text {
+            color: var(--cyber-blue);
+            text-shadow: 0 0 10px var(--cyber-blue), 0 0 20px var(--cyber-blue);
+            border: 1px solid var(--cyber-blue);
+            padding: 5px 15px;
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.05);
+            letter-spacing: 5px;
+            font-weight: bold;
+            animation: pulse-blue 2s infinite;
+        }
+        @keyframes pulse-blue {
+            0%, 100% { box-shadow: 0 0 10px var(--cyber-blue); opacity: 0.8; }
+            50% { box-shadow: 0 0 25px var(--cyber-blue); opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -119,10 +131,12 @@
         <div id="start-screen" class="screen active" style="justify-content: flex-start; align-items: center; padding-top: 5vh;">
             <div style="text-align: center; position: relative; z-index: 10; width: 100%; max-width: 600px;">
                 <h1 class="glitch-text" style="font-size: clamp(2rem, 8vw, 4rem); margin-bottom: 2vh; text-shadow: 0 0 30px var(--neon), 0 0 60px var(--cyber-blue);">A.C.K.</h1>
-                <div style="width: min(80vw, 400px); height: min(80vw, 400px); margin: 0 auto 2vh; position: relative; display: flex; align-items: center; justify-content: center;">
-                    <img src="./assets/images/ack_core.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 20px var(--neon)); animation: pulse 4s infinite;">
+                <div id="eye-container" style="width: min(80vw, 400px); height: min(80vw, 400px); margin: 0 auto 2vh; position: relative; display: flex; align-items: center; justify-content: center;">
+                    <img id="core-eye" src="./assets/images/ack_core.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 20px var(--neon));">
                 </div>
-                <p style="font-size: clamp(0.8rem, 3vw, 1.2rem); color: var(--cyber-blue); margin-bottom: 2vh; letter-spacing: 3px;">AUTONOMOUS CYBERNETIC KERNEL</p>
+                <div style="margin-bottom: 3vh;">
+                    <p class="highlight-text">AUTONOMOUS CYBERNETIC KERNEL</p>
+                </div>
                 <div class="cyber-box" style="text-align:center; width: 90%; max-width: 400px; margin: 0 auto;">
                     <select id="category-filter" class="cyber-select" aria-label="Sektor auswählen">
                         <option value="all">ALL_SECTORS</option>
@@ -165,6 +179,20 @@
             leaderboard: JSON.parse(localStorage.getItem('dfwa_leaderboard') || "[]"),
             timer: null, comments: {}, selectedCat: 'all'
         };
+
+        // Blinking Effect
+        function blink() {
+            const eye = document.getElementById('core-eye');
+            if (!eye) return;
+            eye.src = './assets/images/ack_core_closed.png';
+            setTimeout(() => {
+                eye.src = './assets/images/ack_core.png';
+            }, 150 + Math.random() * 100);
+            
+            const nextBlink = 2000 + Math.random() * 5000;
+            setTimeout(blink, nextBlink);
+        }
+        setTimeout(blink, 3000);
 
         async function initGame(l) {
             state.lang = l;
