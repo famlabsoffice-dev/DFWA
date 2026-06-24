@@ -26,9 +26,8 @@
             width: 100%; height: 100%; 
             overflow: hidden; background: #000; color: var(--neon);
             display: flex; align-items: center; justify-content: center;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
         }
 
@@ -39,34 +38,20 @@
             background-size: 100% 2px, 3px 100%; pointer-events: none; z-index: 1000;
         }
 
-        #game-container {
-            width: 100%; height: 100%;
-            display: flex; flex-direction: column;
-            background: #000;
-            position: relative; overflow: hidden;
-        }
+        #game-container { width: 100%; height: 100%; position: relative; overflow: hidden; background: #000; }
 
-        .screen { display: none; flex-direction: column; height: 100%; animation: flicker 0.15s infinite; position: relative; z-index: 10; }
+        .screen { display: none; flex-direction: column; height: 100%; position: relative; z-index: 10; }
         .screen.active { display: flex; }
-        @keyframes flicker { 0% { opacity: 0.99; } 100% { opacity: 1; } }
 
         h1 { 
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            -webkit-font-smoothing: none;
-            text-rendering: crispEdges;
-            font-size: clamp(3rem, 15vw, 5rem); text-align: center; 
-            letter-spacing: 15px;
-            position: absolute; top: 2vh; left: 50%; transform: translateX(-45.0%); width: 100%;
-            z-index: 30; font-weight: 900;
-            color: var(--neon);
-            text-shadow: none;
-            filter: none;
+            font-family: Impact, sans-serif; font-size: clamp(3rem, 15vw, 5rem); text-align: center; 
+            letter-spacing: 15px; position: absolute; top: 2vh; left: 50%; transform: translateX(-45.0%); width: 100%;
+            z-index: 30; font-weight: 900; color: var(--neon);
         }
 
         #eye-bg-container {
             position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%);
-            width: 140vw; height: 140vw; max-width: 1100px; max-height: 1100px;
-            z-index: 5; pointer-events: none;
+            width: 140vw; height: 140vw; max-width: 1100px; z-index: 5; pointer-events: none;
             filter: contrast(1.5) drop-shadow(0 0 40px var(--neon));
             animation: irisPulse 5s ease-in-out infinite;
         }
@@ -74,94 +59,65 @@
             0%, 100% { filter: contrast(1.5) drop-shadow(0 0 20px var(--neon)); transform: translate(-50%, -50%) scale(1); }
             50% { filter: contrast(2.0) drop-shadow(0 0 80px var(--neon)); transform: translate(-50%, -50%) scale(1.01); }
         }
-        #core-eye { width: 100%; height: 100%; object-fit: contain; transition: 0.3s; }
+        #core-eye { width: 100%; height: 100%; object-fit: contain; }
 
         .stat-overlay {
-            font-family: 'Inter', sans-serif;
-            position: absolute; font-size: 0.8rem; color: var(--neon);
-            text-transform: uppercase; font-weight: 900; pointer-events: none;
-            text-shadow: none; white-space: nowrap; z-index: 25;
+            position: absolute; font-size: 0.85rem; color: var(--neon);
+            text-transform: uppercase; font-weight: 900; z-index: 25;
             line-height: 1.2; letter-spacing: 0.5px;
-            -webkit-font-smoothing: antialiased;
         }
         #stat-player { top: 30%; left: 15%; }
         #stat-lives { top: 30%; right: 15%; text-align: right; }
         #stat-id { bottom: 35%; left: 15%; }
         #stat-best { bottom: 35%; right: 15%; text-align: right; }
-        #stat-battle { bottom: 12%; left: 50%; transform: translateX(-50%); color: var(--warning); display: none; }
 
         .ui-content-wrapper {
-            margin-top: 52vh;
-            display: flex; flex-direction: column; align-items: center;
-            width: 100%; z-index: 50; padding: 0 25px;
+            margin-top: 52vh; display: flex; flex-direction: column; align-items: center;
+            width: 100%; z-index: 40; padding: 0 25px;
         }
 
-        #options-container { display: grid; gap: 12px; width: 100%; max-width: 420px; margin-bottom: 25px; }
         .option-btn {
-            font-family: 'Inter', sans-serif;
             background: rgba(0,0,0,0.95); border: 1px solid var(--neon); color: var(--neon);
             padding: 18px; font-size: 0.9rem; text-transform: uppercase; cursor: pointer;
-            transition: 0.3s; font-weight: 900; backdrop-filter: blur(10px);
-            -webkit-font-smoothing: antialiased;
+            font-weight: 900; width: 100%; max-width: 420px; margin-bottom: 12px;
         }
         .option-btn:hover { background: var(--neon); color: #000; box-shadow: 0 0 30px var(--neon); }
-        
         .start-btn { border-color: var(--cyber-blue); color: var(--cyber-blue); }
-        .start-btn:hover { background: var(--cyber-blue); box-shadow: 0 0 40px var(--cyber-blue); }
-
-        .resume-btn { border-color: var(--warning); color: var(--warning); display: none; }
-        .resume-btn:hover { background: var(--warning); box-shadow: 0 0 40px var(--warning); }
-
         .battle-btn { border-color: var(--warning); color: var(--warning); }
-        .battle-btn:hover { background: var(--warning); box-shadow: 0 0 40px var(--warning); }
 
-        .cyber-select, .cyber-input { 
-            font-family: 'Inter', sans-serif;
-            background: rgba(0,0,0,0.95); border: 1px solid var(--neon); padding: 14px; 
-            width: 100%; max-width: 420px; margin: 6px 0; font-weight: 900; color: var(--neon);
-            text-align: center; backdrop-filter: blur(10px);
-            -webkit-font-smoothing: antialiased;
-        }
-        .cyber-input { border-color: var(--cyber-blue); color: var(--cyber-blue); }
-
-        .subtitle-text { 
-            font-family: 'Inter', sans-serif;
-            color: var(--cyber-blue); text-shadow: none; 
-            letter-spacing: 3px; font-weight: 900; font-size: 0.8rem; margin-bottom: 2.5vh;
+        .cyber-input, .cyber-select { 
+            background: rgba(0,0,0,0.95); border: 1px solid var(--cyber-blue); padding: 14px; 
+            width: 100%; max-width: 420px; margin: 6px 0; font-weight: 900; color: var(--cyber-blue);
             text-align: center;
-            -webkit-font-smoothing: antialiased;
         }
 
-        #question-box { 
-            height: 30vh; display: flex; align-items: center; justify-content: center; 
-            text-align: center; font-size: 1.5rem; padding: 25px; z-index: 10; 
-            pointer-events: none; margin-top: 10vh; /* Shift down */
-        }
-        #timer-wrap { width: 100%; height: 3px; background: #000; position: absolute; top: 0; left: 0; z-index: 60; }
-        #timer-fill { height: 100%; width: 100%; background: var(--neon); }
+        #question-box { height: 30vh; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.5rem; padding: 25px; margin-top: 10vh; pointer-events: none; }
+        #options-container { display: flex; flex-direction: column; align-items: center; padding: 0 25px; margin-bottom: 80px; }
 
-        #ack-overlay {
-            font-family: 'Courier New', Courier, monospace;
-            position: fixed; top: 50%; left: 50%; width: 85%; max-width: 480px;
-            padding: 35px; background: rgba(0, 0, 0, 0.98); border: 2px solid var(--neon);
-            transform: translate(-50%, -50%) scale(0); transition: 0.3s; z-index: 2000; text-align: center;
+        #feedback-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 2000; display: none; flex-direction: column;
+            align-items: center; justify-content: space-between; padding: 5vh 0;
         }
-        #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
+        #feedback-screen.active { display: flex; }
+        #feedback-eye { width: 80vw; max-width: 500px; margin-top: 5vh; }
+        #feedback-msg { 
+            width: 90%; max-width: 600px; padding: 30px; border: 2px solid var(--neon);
+            background: rgba(0,0,0,0.9); color: var(--neon); font-size: 1.2rem;
+            text-align: center; margin-bottom: 10vh; font-family: 'Courier New', monospace;
+        }
 
         #pause-btn {
             position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
             background: rgba(0,0,0,0.8); border: 1px solid var(--neon); color: var(--neon);
-            padding: 12px 25px; cursor: pointer; z-index: 100; font-family: 'Inter', sans-serif;
-            font-weight: 900; text-transform: uppercase; font-size: 0.8rem;
-            letter-spacing: 2px; backdrop-filter: blur(5px);
+            padding: 12px 25px; cursor: pointer; z-index: 100; font-weight: 900;
         }
-        #pause-btn:hover { background: var(--neon); color: #000; }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
     <div id="game-container">
-        <h1 class="glitch-text">A.C.K.</h1>
+        <h1>A.C.K.</h1>
         <div id="start-screen" class="screen active">
             <div id="eye-bg-container">
                 <img id="core-eye" src="./assets/images/ack_core_clean.png">
@@ -169,143 +125,74 @@
                 <div id="stat-lives" class="stat-overlay">VITAL_SIGNS//<br><span id="lives-display">3</span>_UNITS</div>
                 <div id="stat-id" class="stat-overlay">CORE_LINK//<br>#<span id="id-display">0000</span></div>
                 <div id="stat-best" class="stat-overlay">PEAK_DATA//<br><span id="high-score">0</span>_PTS</div>
-                <div id="stat-battle" class="stat-overlay">BATTLE_SYNC//ACTIVE</div>
             </div>
             <div class="ui-content-wrapper">
-                <p class="subtitle-text">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
+                <p style="color:var(--cyber-blue); letter-spacing:3px; font-weight:900; font-size:0.8rem; margin-bottom:2.5vh;">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
                 <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12">
                 <select id="category-filter" class="cyber-select"><option value="all">ALL_SECTORS</option></select>
-                <div id="options-container" style="margin-top: 15px;">
-                    <button id="resume-btn" class="option-btn resume-btn" onclick="resumeProtocol()">RESUME_PROTOCOL</button>
-                    <button id="start-btn" class="option-btn start-btn" onclick="initGame()">INIT_PROTOCOL</button>
-                    <button id="lobby-btn" class="option-btn battle-btn" onclick="showLobby()">BATTLE_LOBBY</button>
-                </div>
-            </div>
-        </div>
-        <div id="lobby-screen" class="screen" style="justify-content: center; align-items: center;">
-            <div style="text-align: center; width: 90%; max-width: 420px; background: rgba(0,0,0,0.98); padding: 40px; border: 1px solid var(--warning);">
-                <h2 style="color: var(--warning); letter-spacing: 6px;">BATTLE_OVERRIDE</h2>
-                <input type="text" id="room-code" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ROOM_CODE" maxlength="6">
-                <div style="display: grid; gap: 12px; margin-top: 25px;">
-                    <button class="option-btn battle-btn" onclick="joinBattle()">JOIN_BATTLE</button>
-                    <button class="option-btn start-btn" onclick="createBattle()">CREATE_ROOM</button>
-                    <button class="option-btn" style="border-color: #333; color: #333;" onclick="hideLobby()">CANCEL</button>
-                </div>
+                <button id="resume-btn" class="option-btn battle-btn" style="display:none;" onclick="resumeProtocol()">RESUME_PROTOCOL</button>
+                <button id="start-btn" class="option-btn start-btn" onclick="initGame()">INIT_PROTOCOL</button>
+                <button class="option-btn battle-btn" onclick="showLobby()">BATTLE_LOBBY</button>
             </div>
         </div>
         <div id="game-screen" class="screen">
-            <button id="pause-btn" onclick="pauseProtocol()">PAUSE</button>
-            <div id="timer-wrap"><div id="timer-fill"></div></div>
             <div id="question-box">INITIALIZING...</div>
-            <div id="options-container" style="padding: 0 25px; margin-bottom: 80px; margin-top: 0px;"></div>
+            <div id="options-container"></div>
+            <button id="pause-btn" onclick="pauseProtocol()">PAUSE</button>
         </div>
     </div>
-    <div id="ack-overlay">
-        <div class="ack-content" id="ack-msg"></div>
+
+    <div id="feedback-screen">
+        <img id="feedback-eye" src="">
+        <div id="feedback-msg"></div>
     </div>
+
     <script>
         let state = { 
-            lang: 'de', questions: [], current: 0, score: 0, streak: 0, lives: 3,
+            lang: 'de', questions: [], current: 0, score: 0, lives: 3,
             playerName: localStorage.getItem('dfwa_name') || 'GUEST',
             playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
-            leaderboard: JSON.parse(localStorage.getItem('dfwa_leaderboard') || "[]"),
-            timer: null, comments: {}, selectedCat: 'all',
-            isBattle: false, roomCode: '', isPaused: false,
-            timerVal: 100, isProcessing: false
+            comments: {}, isPaused: false, isProcessing: false
         };
+
         function detectLanguage() {
-            const userLang = navigator.language || navigator.userLanguage;
-            state.lang = userLang.startsWith('de') ? 'de' : 'en';
+            state.lang = navigator.language.startsWith('de') ? 'de' : 'en';
             document.getElementById('start-btn').innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
-            document.getElementById('resume-btn').innerText = state.lang === 'de' ? 'PROTOKOLL_FORTSETZEN' : 'RESUME_PROTOCOL';
         }
         detectLanguage();
-        document.getElementById('player-name').value = state.playerName === 'GUEST' ? '' : state.playerName;
-        document.getElementById('player-display').innerText = state.playerName;
-        document.getElementById('id-display').innerText = state.playerId;
-        document.getElementById('high-score').innerText = state.best;
-        localStorage.setItem('dfwa_id', state.playerId);
-        function blink() {
-            const eye = document.getElementById('core-eye');
-            if (!eye || state.isPaused) return;
-            eye.src = './assets/images/ack_core_closed_clean.png';
-            setTimeout(() => { eye.src = './assets/images/ack_core_clean.png'; }, 150 + Math.random() * 100);
-            setTimeout(blink, 4000 + Math.random() * 4000);
-        }
-        setTimeout(blink, 3000);
-        function showLobby() {
-            document.getElementById('start-screen').classList.remove('active');
-            document.getElementById('lobby-screen').classList.add('active');
-        }
-        function hideLobby() {
-            document.getElementById('lobby-screen').classList.remove('active');
-            document.getElementById('start-screen').classList.add('active');
-        }
-        function createBattle() {
-            const code = Math.random().toString(36).substring(2, 8).toUpperCase();
-            document.getElementById('room-code').value = code;
-        }
-        function joinBattle() {
-            const code = document.getElementById('room-code').value.trim();
-            if (code.length < 4) return;
-            state.isBattle = true;
-            state.roomCode = code;
-            document.getElementById('stat-battle').style.display = 'block';
-            initGame();
-        }
+
         function pauseProtocol() {
-            clearInterval(state.timer);
             state.isPaused = true;
             document.getElementById('game-screen').classList.remove('active');
             document.getElementById('start-screen').classList.add('active');
             document.getElementById('resume-btn').style.display = 'block';
         }
+
         function resumeProtocol() {
             state.isPaused = false;
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('game-screen').classList.add('active');
             document.getElementById('resume-btn').style.display = 'none';
-            startTimer(state.timerVal);
         }
+
         async function initGame() {
-            state.selectedCat = document.getElementById('category-filter').value;
             state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
-            document.getElementById('player-display').innerText = state.playerName;
-            state.lives = 3;
-            document.getElementById('lives-display').innerText = state.lives;
-            state.current = 0; state.score = 0; state.streak = 0;
-            document.getElementById('resume-btn').style.display = 'none';
-            try {
-                const [qRes, cRes] = await Promise.all([
-                    fetch('questions_i18n.json?v=' + Date.now()), 
-                    fetch('ack_comments.json?v=' + Date.now())
-                ]);
-                let allQ = await qRes.json();
-                state.comments = await cRes.json();
-                state.questions = state.selectedCat === 'all' ? allQ : allQ.filter(q => q.cat === state.selectedCat);
-                if (state.isBattle) {
-                    const seed = state.roomCode.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
-                    let m = state.questions.length, t, i;
-                    while (m) {
-                        i = Math.floor((Math.abs(Math.sin(seed + m))) * m--);
-                        t = state.questions[m]; state.questions[m] = state.questions[i]; state.questions[i] = t;
-                    }
-                } else {
-                    state.questions.sort(() => Math.random() - 0.5);
-                }
-                document.getElementById('start-screen').classList.remove('active');
-                document.getElementById('lobby-screen').classList.remove('active');
-                document.getElementById('game-screen').classList.add('active');
-                renderQuestion();
-            } catch (e) { console.error(e); }
+            state.lives = 3; state.current = 0;
+            const [qRes, cRes] = await Promise.all([fetch('questions_i18n.json'), fetch('ack_comments.json')]);
+            state.questions = (await qRes.json()).sort(() => Math.random() - 0.5);
+            state.comments = await cRes.json();
+            document.getElementById('start-screen').classList.remove('active');
+            document.getElementById('game-screen').classList.add('active');
+            renderQuestion();
         }
+
         function renderQuestion() {
             const q = state.questions[state.current];
-            if (!q) return finishGame(true, state.lang === 'de' ? "DATENSATZ_ABSORBIERT." : "DATA_ABSORBED.");
+            if (!q) return location.reload();
             document.getElementById('question-box').innerText = q.text[state.lang];
-            const container = document.getElementById('game-screen').querySelector('#options-container');
+            const container = document.getElementById('options-container');
             container.innerHTML = '';
             q.options[state.lang].forEach((opt, i) => {
                 const btn = document.createElement('button');
@@ -314,76 +201,37 @@
                 btn.onclick = () => checkAnswer(i === q.correct);
                 container.appendChild(btn);
             });
-            startTimer(100);
         }
-        function checkAnswer(correct) {
-            if (state.isPaused || state.isProcessing) return;
-            state.isProcessing = true;
-            clearInterval(state.timer);
-            
-            const overlay = document.getElementById('ack-overlay');
-            const msgBox = document.getElementById('ack-msg');
-            const eye = document.getElementById('core-eye');
-            
-            // Disable all option buttons
-            const btns = document.querySelectorAll('#game-screen .option-btn');
-            btns.forEach(b => b.style.pointerEvents = 'none');
 
-            overlay.className = '';
+        function checkAnswer(correct) {
+            if (state.isProcessing) return;
+            state.isProcessing = true;
+            const fScreen = document.getElementById('feedback-screen');
+            const fEye = document.getElementById('feedback-eye');
+            const fMsg = document.getElementById('feedback-msg');
+
             if (correct) {
-                state.score += 100 + (state.streak++ * 10);
-                const pool = state.comments[state.lang].correct;
-                msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
-                overlay.style.borderColor = 'var(--neon)';
-                overlay.style.color = 'var(--neon)';
-                eye.src = './assets/images/ack_eye_wink.png';
-                overlay.classList.add('active');
-                setTimeout(() => { 
-                    overlay.classList.remove('active'); 
-                    eye.src = './assets/images/ack_core_clean.png';
-                    state.isProcessing = false;
-                    state.current++; renderQuestion(); 
-                }, 2500);
+                state.score += 100;
+                fEye.src = './assets/images/ack_eye_wink.png';
+                fMsg.style.borderColor = 'var(--neon)';
+                fMsg.style.color = 'var(--neon)';
+                fMsg.innerText = state.comments[state.lang].correct[Math.floor(Math.random() * state.comments[state.lang].correct.length)];
             } else {
                 state.lives--;
-                state.streak = 0;
-                document.getElementById('lives-display').innerText = state.lives;
-                const pool = state.comments[state.lang].incorrect;
-                msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
-                overlay.style.borderColor = 'var(--error)';
-                overlay.style.color = 'var(--error)';
-                eye.src = './assets/images/ack_eye_skeptical.png';
-                overlay.classList.add('active');
-                setTimeout(() => {
-                    overlay.classList.remove('active');
-                    eye.src = './assets/images/ack_core_clean.png';
-                    state.isProcessing = false;
-                    if (state.lives <= 0) finishGame(false, "SYSTEM_FAILURE.");
-                    else { state.current++; renderQuestion(); }
-                }, 3000);
+                fEye.src = './assets/images/ack_eye_skeptical.png';
+                fMsg.style.borderColor = 'var(--error)';
+                fMsg.style.color = 'var(--error)';
+                fMsg.innerText = state.comments[state.lang].incorrect[Math.floor(Math.random() * state.comments[state.lang].incorrect.length)];
             }
+
+            fScreen.classList.add('active');
+            setTimeout(() => {
+                fScreen.classList.remove('active');
+                state.isProcessing = false;
+                if (state.lives <= 0) location.reload();
+                else { state.current++; renderQuestion(); }
+            }, 3500);
         }
-        function finishGame(victory, msg) {
-            location.reload();
-        }
-        function startTimer(val) {
-            state.timerVal = val;
-            const bar = document.getElementById('timer-fill');
-            const speed = Math.max(10, 70 - (state.current * 2));
-            state.timer = setInterval(() => {
-                state.timerVal -= 1; bar.style.width = state.timerVal + '%';
-                if (state.timerVal <= 0) checkAnswer(false);
-            }, speed);
-        }
-        fetch('questions_i18n.json').then(r => r.json()).then(qs => {
-            const cats = [...new Set(qs.map(q => q.cat))];
-            const select = document.getElementById('category-filter');
-            cats.forEach(c => {
-                const opt = document.createElement('option');
-                opt.value = c; opt.innerText = c.toUpperCase();
-                select.appendChild(opt);
-            });
-        });
     </script>
 </body>
 </html>
