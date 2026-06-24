@@ -8,6 +8,9 @@
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="./manifest.json">
     <title>ACK ATTACK - SYSTEM OVERRIDE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
     <style>
         :root {
             --neon: #39ff14;
@@ -46,13 +49,16 @@
         @keyframes flicker { 0% { opacity: 0.99; } 100% { opacity: 1; } }
 
         h1 { 
-            font-family: 'Arial Black', Gadget, sans-serif;
+            font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
             font-size: clamp(3rem, 15vw, 5rem); text-align: center; 
-            letter-spacing: 15px; text-shadow: 0 0 20px var(--neon);
-            position: absolute; top: 2vh; left: 50%; transform: translateX(-46.5%); width: 100%;
+            letter-spacing: 15px;
+            position: absolute; top: 2vh; left: 50%; transform: translateX(-45.8%); width: 100%;
             z-index: 30; font-weight: 900;
+            color: var(--neon);
+            filter: drop-shadow(0 0 10px var(--neon));
         }
 
         #eye-bg-container {
