@@ -10,32 +10,32 @@
     <title>ACK ATTACK - SYSTEM OVERRIDE</title>
     <style>
         :root {
-            --neon: #32d912;
-            --neon-bg: rgba(50, 217, 18, 0.12);
+            --neon: #39ff14; /* Pure toxic neon green */
+            --neon-bg: rgba(57, 255, 20, 0.1);
             --error: #ff003c;
             --warning: #f4ea11;
             --cyber-blue: #00d2ff;
             --black: #000000;
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; }
-        .cyber-font { font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body, html { 
             margin: 0; padding: 0; width: 100%; height: 100%; 
-            overflow: hidden; background: var(--black); color: var(--neon);
+            overflow: hidden; background: #000; color: var(--neon);
             display: flex; align-items: center; justify-content: center;
+            font-family: 'Segoe UI', Roboto, sans-serif;
         }
 
         .overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
             background-size: 100% 2px, 3px 100%; pointer-events: none; z-index: 1000;
         }
         .scanline {
             width: 100%; height: 100px; z-index: 1001; position: absolute;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(50, 217, 18, 0.03) 50%, rgba(0, 0, 0, 0) 100%);
-            opacity: 0.1; pointer-events: none; animation: scan 8s linear infinite;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(57, 255, 20, 0.02) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1; pointer-events: none; animation: scan 10s linear infinite;
         }
         @keyframes scan { from { top: -100px; } to { top: 100%; } }
 
@@ -48,32 +48,26 @@
 
         .screen { display: none; flex-direction: column; height: 100%; animation: flicker 0.15s infinite; position: relative; z-index: 10; }
         .screen.active { display: flex; }
-        @keyframes flicker { 
-            0% { opacity: 0.98; } 100% { opacity: 1; } 
-        }
+        @keyframes flicker { 0% { opacity: 0.99; } 100% { opacity: 1; } }
 
         h1 { 
             font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
             font-size: clamp(3rem, 15vw, 5rem); text-align: center; 
-            margin: 2vh 0 0; letter-spacing: 10px; text-shadow: 0 0 20px var(--neon);
-            position: absolute; top: 0; left: 50%; transform: translateX(-47.5%); width: 100%;
-            z-index: 30;
-        }
-        .glitch-text { animation: textGlitch 3s infinite; }
-        @keyframes textGlitch {
-            0% { transform: translate(-50%, 0); } 1% { transform: translate(-51%, 1px); } 2% { transform: translate(-49%, -1px); } 3% { transform: translate(-50%, 0); }
+            margin: 0; letter-spacing: 15px; text-shadow: 0 0 20px var(--neon);
+            position: absolute; top: 2vh; left: 50%; transform: translateX(-47.2%); width: 100%;
+            z-index: 30; font-weight: 900;
         }
 
         #eye-bg-container {
-            position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
-            width: 120vw; height: 120vw; max-width: 900px; max-height: 900px;
-            z-index: 5; pointer-events: none; opacity: 0.9;
-            filter: contrast(1.4) drop-shadow(0 0 30px var(--neon));
-            animation: irisPulse 4s ease-in-out infinite;
+            position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%);
+            width: 130vw; height: 130vw; max-width: 1000px; max-height: 1000px;
+            z-index: 5; pointer-events: none; opacity: 0.95;
+            filter: contrast(1.5) drop-shadow(0 0 40px var(--neon));
+            animation: irisPulse 5s ease-in-out infinite;
         }
         @keyframes irisPulse {
-            0%, 100% { filter: contrast(1.4) drop-shadow(0 0 15px var(--neon)); transform: translate(-50%, -50%) scale(1); }
-            50% { filter: contrast(1.8) drop-shadow(0 0 60px var(--neon)); transform: translate(-50%, -50%) scale(1.01); }
+            0%, 100% { filter: contrast(1.5) drop-shadow(0 0 20px var(--neon)); transform: translate(-50%, -50%) scale(1); }
+            50% { filter: contrast(2.0) drop-shadow(0 0 80px var(--neon)); transform: translate(-50%, -50%) scale(1.01); }
         }
         #core-eye { width: 100%; height: 100%; object-fit: contain; }
 
@@ -81,57 +75,59 @@
             font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
             position: absolute; font-size: 0.75rem; color: var(--neon);
             text-transform: uppercase; font-weight: bold; pointer-events: none;
-            text-shadow: 0 0 12px var(--neon); white-space: nowrap; z-index: 25;
+            text-shadow: 0 0 15px var(--neon); white-space: nowrap; z-index: 25;
             line-height: 1.2; letter-spacing: 1px;
         }
-        /* Adjusted for the larger background eye */
-        #stat-player { top: 32%; left: 15%; }
-        #stat-lives { top: 32%; right: 15%; text-align: right; }
-        #stat-id { bottom: 32%; left: 15%; }
-        #stat-best { bottom: 32%; right: 15%; text-align: right; }
-        #stat-battle { bottom: 15%; left: 50%; transform: translateX(-50%); color: var(--warning); display: none; }
+        #stat-player { top: 30%; left: 15%; }
+        #stat-lives { top: 30%; right: 15%; text-align: right; }
+        #stat-id { bottom: 35%; left: 15%; }
+        #stat-best { bottom: 35%; right: 15%; text-align: right; }
+        #stat-battle { bottom: 12%; left: 50%; transform: translateX(-50%); color: var(--warning); display: none; }
 
         .ui-content-wrapper {
-            margin-top: 55vh; /* Push UI below the main eye center */
+            margin-top: 52vh;
             display: flex; flex-direction: column; align-items: center;
-            width: 100%; z-index: 40; padding: 0 20px;
+            width: 100%; z-index: 40; padding: 0 25px;
         }
 
-        #options-container { display: grid; gap: 10px; width: 100%; max-width: 400px; margin-bottom: 20px; }
+        #options-container { display: grid; gap: 12px; width: 100%; max-width: 420px; margin-bottom: 25px; }
         .option-btn {
-            background: rgba(0,0,0,0.8); border: 1px solid var(--neon); color: var(--neon);
-            padding: 16px; font-size: 0.9rem; text-transform: uppercase; cursor: pointer;
-            transition: 0.3s; position: relative; font-weight: bold;
-            backdrop-filter: blur(4px);
+            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+            background: rgba(0,0,0,0.9); border: 1px solid var(--neon); color: var(--neon);
+            padding: 18px; font-size: 0.9rem; text-transform: uppercase; cursor: pointer;
+            transition: 0.3s; font-weight: bold; backdrop-filter: blur(5px);
         }
-        .option-btn:hover { background: var(--neon); color: var(--black); box-shadow: 0 0 20px var(--neon); }
+        .option-btn:hover { background: var(--neon); color: #000; box-shadow: 0 0 30px var(--neon); }
         
-        .start-btn { border-color: var(--cyber-blue); color: var(--cyber-blue); box-shadow: 0 0 10px rgba(0, 210, 255, 0.2); }
-        .start-btn:hover { background: var(--cyber-blue); box-shadow: 0 0 30px var(--cyber-blue); }
+        .start-btn { border-color: var(--cyber-blue); color: var(--cyber-blue); }
+        .start-btn:hover { background: var(--cyber-blue); box-shadow: 0 0 40px var(--cyber-blue); }
 
-        .battle-btn { border-color: var(--warning); color: var(--warning); box-shadow: 0 0 10px rgba(244, 234, 17, 0.2); }
-        .battle-btn:hover { background: var(--warning); box-shadow: 0 0 30px var(--warning); }
+        .battle-btn { border-color: var(--warning); color: var(--warning); }
+        .battle-btn:hover { background: var(--warning); box-shadow: 0 0 40px var(--warning); }
 
         .cyber-select, .cyber-input { 
-            background: rgba(0,0,0,0.8); border: 1px solid var(--neon); padding: 12px; 
-            width: 100%; max-width: 400px; margin: 5px 0; font-weight: bold; color: var(--neon);
-            text-align: center; backdrop-filter: blur(4px);
+            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+            background: rgba(0,0,0,0.9); border: 1px solid var(--neon); padding: 14px; 
+            width: 100%; max-width: 420px; margin: 6px 0; font-weight: bold; color: var(--neon);
+            text-align: center; backdrop-filter: blur(5px);
         }
         .cyber-input { border-color: var(--cyber-blue); color: var(--cyber-blue); }
 
         .subtitle-text { 
-            color: var(--cyber-blue); text-shadow: 0 0 10px var(--cyber-blue); 
-            letter-spacing: 4px; font-weight: bold; font-size: 0.8rem; margin-bottom: 2vh;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
+            color: var(--cyber-blue); text-shadow: 0 0 15px var(--cyber-blue); 
+            letter-spacing: 5px; font-weight: bold; font-size: 0.75rem; margin-bottom: 2.5vh;
             text-align: center;
         }
 
-        #question-box { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.4rem; padding: 20px; z-index: 50; }
-        #timer-wrap { width: 100%; height: 2px; background: #111; position: absolute; top: 0; left: 0; z-index: 60; }
+        #question-box { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.5rem; padding: 25px; z-index: 50; font-family: 'JetBrains Mono', monospace; }
+        #timer-wrap { width: 100%; height: 3px; background: #000; position: absolute; top: 0; left: 0; z-index: 60; }
         #timer-fill { height: 100%; width: 100%; background: var(--neon); }
 
         #ack-overlay {
-            position: fixed; top: 50%; left: 50%; width: 85%; max-width: 450px;
-            padding: 30px; background: rgba(0, 0, 0, 0.95); border: 2px solid var(--neon);
+            font-family: 'JetBrains Mono', monospace;
+            position: fixed; top: 50%; left: 50%; width: 85%; max-width: 480px;
+            padding: 35px; background: rgba(0, 0, 0, 0.98); border: 2px solid var(--neon);
             transform: translate(-50%, -50%) scale(0); transition: 0.3s; z-index: 2000; text-align: center;
         }
         #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
@@ -166,10 +162,10 @@
         </div>
 
         <div id="lobby-screen" class="screen" style="justify-content: center; align-items: center;">
-            <div style="text-align: center; width: 90%; max-width: 400px; background: rgba(0,0,0,0.9); padding: 30px; border: 1px solid var(--warning);">
-                <h2 style="color: var(--warning); letter-spacing: 5px;">BATTLE_OVERRIDE</h2>
+            <div style="text-align: center; width: 90%; max-width: 420px; background: rgba(0,0,0,0.95); padding: 40px; border: 1px solid var(--warning);">
+                <h2 style="color: var(--warning); letter-spacing: 6px; font-family: 'JetBrains Mono', monospace;">BATTLE_OVERRIDE</h2>
                 <input type="text" id="room-code" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ROOM_CODE" maxlength="6">
-                <div style="display: grid; gap: 10px; margin-top: 20px;">
+                <div style="display: grid; gap: 12px; margin-top: 25px;">
                     <button class="option-btn battle-btn" onclick="joinBattle()">JOIN_BATTLE</button>
                     <button class="option-btn start-btn" onclick="createBattle()">CREATE_ROOM</button>
                     <button class="option-btn" style="border-color: #333; color: #333;" onclick="hideLobby()">CANCEL</button>
@@ -180,7 +176,7 @@
         <div id="game-screen" class="screen">
             <div id="timer-wrap"><div id="timer-fill"></div></div>
             <div id="question-box">INITIALIZING...</div>
-            <div id="options-container" style="padding: 0 20px;"></div>
+            <div id="options-container" style="padding: 0 25px;"></div>
         </div>
     </div>
 
@@ -218,7 +214,7 @@
             if (!eye) return;
             eye.src = './assets/images/ack_core_closed_clean.png';
             setTimeout(() => { eye.src = './assets/images/ack_core_clean.png'; }, 150 + Math.random() * 100);
-            setTimeout(blink, 3000 + Math.random() * 5000);
+            setTimeout(blink, 4000 + Math.random() * 4000);
         }
         setTimeout(blink, 3000);
 
@@ -331,7 +327,7 @@
         }
 
         function finishGame(victory, msg) {
-            location.reload(); // Simple reboot for now to match PWA feel
+            location.reload();
         }
 
         function startTimer() {
