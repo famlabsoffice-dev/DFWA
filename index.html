@@ -27,106 +27,106 @@
 
         .overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 255, 0, 0.06));
+            background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
             background-size: 100% 2px, 3px 100%; pointer-events: none; z-index: 1000;
         }
         .scanline {
             width: 100%; height: 100px; z-index: 1001; position: absolute;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(57, 255, 20, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
-            opacity: 0.1; pointer-events: none; animation: scan 6s linear infinite;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(50, 217, 18, 0.03) 50%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0.1; pointer-events: none; animation: scan 8s linear infinite;
         }
         @keyframes scan { from { top: -100px; } to { top: 100%; } }
 
         #game-container {
-            width: calc(100% - 20px); height: calc(100% - 20px);
-            display: flex; flex-direction: column; padding: 15px;
-            background: radial-gradient(circle at center, #0a0a0a 0%, #000 100%);
-            border: 2px solid var(--neon); box-shadow: inset 0 0 30px rgba(57, 255, 20, 0.2);
+            width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            background: var(--black);
             position: relative; overflow: hidden;
         }
 
-        .screen { display: none; flex-direction: column; height: 100%; animation: flicker 0.15s infinite; }
+        .screen { display: none; flex-direction: column; height: 100%; animation: flicker 0.15s infinite; position: relative; z-index: 10; }
         .screen.active { display: flex; }
         @keyframes flicker { 
-            0% { opacity: 0.97; } 5% { opacity: 0.95; } 10% { opacity: 0.9; } 15% { opacity: 0.95; } 
-            20% { opacity: 0.98; } 100% { opacity: 1; } 
+            0% { opacity: 0.98; } 100% { opacity: 1; } 
         }
 
-        h1 { font-size: 3rem; text-align: center; margin: 10px 0; letter-spacing: 5px; text-shadow: 0 0 10px var(--neon); }
-        .glitch-text { animation: textGlitch 2s infinite; }
+        h1 { 
+            font-size: clamp(3rem, 15vw, 5rem); text-align: center; 
+            margin: 2vh 0 0; letter-spacing: 10px; text-shadow: 0 0 20px var(--neon);
+            position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%;
+            z-index: 30;
+        }
+        .glitch-text { animation: textGlitch 3s infinite; }
         @keyframes textGlitch {
-            0% { transform: translate(0); } 2% { transform: translate(-2px, 2px); } 4% { transform: translate(2px, -2px); } 6% { transform: translate(0); }
+            0% { transform: translate(-50%, 0); } 1% { transform: translate(-51%, 1px); } 2% { transform: translate(-49%, -1px); } 3% { transform: translate(-50%, 0); }
         }
 
-        #options-container { display: grid; gap: 12px; margin-top: auto; margin-bottom: 10px; }
-        .option-btn {
-            background: var(--neon-bg); border: 2px solid var(--neon); color: var(--neon);
-            padding: 18px; font-size: 1rem; text-transform: uppercase; cursor: pointer;
-            transition: 0.2s; position: relative; overflow: hidden;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
-            font-weight: bold;
+        #eye-bg-container {
+            position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);
+            width: 120vw; height: 120vw; max-width: 900px; max-height: 900px;
+            z-index: 5; pointer-events: none; opacity: 0.8;
+            filter: grayscale(0.2) contrast(1.2);
         }
-        .option-btn:hover, .option-btn:focus-visible { 
-            background: var(--neon); color: var(--black); box-shadow: 0 0 25px var(--neon);
-            outline: none; transform: translateY(-2px);
-        }
-        
-        .start-btn { border-color: var(--cyber-blue); color: var(--cyber-blue); background: rgba(0, 210, 255, 0.1); margin-top: 5px; }
-        .start-btn:hover { background: var(--cyber-blue); color: var(--black); box-shadow: 0 0 25px var(--cyber-blue); }
-
-        .battle-btn { border-color: var(--warning); color: var(--warning); background: rgba(244, 234, 17, 0.1); margin-top: 5px; }
-        .battle-btn:hover { background: var(--warning); color: var(--black); box-shadow: 0 0 25px var(--warning); }
-
-        #question-box { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.3rem; padding: 15px; border-bottom: 1px solid var(--neon-bg); }
-        #timer-wrap { width: 100%; height: 4px; background: #222; margin-bottom: 8px; }
-        #timer-fill { height: 100%; width: 100%; background: var(--neon); transition: width 0.1s linear; }
-
-        #ack-overlay {
-            position: fixed; top: 50%; left: 50%; width: 90%; max-width: 500px;
-            padding: 35px; background: rgba(0, 0, 0, 0.98); 
-            border: 4px solid var(--neon); border-radius: 2px;
-            transform: translate(-50%, -50%) scale(0); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 2000; text-align: center;
-        }
-        #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
-        #ack-overlay.correct { border-color: var(--neon); box-shadow: 0 0 100px rgba(57, 255, 20, 0.6); }
-        #ack-overlay.correct .ack-title { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
-        #ack-overlay.incorrect { border-color: var(--error); box-shadow: 0 0 100px rgba(255, 0, 60, 0.6); animation: shake 0.5s; }
-
-        @keyframes shake {
-            0%, 100% { transform: translate(-50%, -50%); }
-            10%, 30%, 50%, 70%, 90% { transform: translate(-52%, -50%); }
-            20%, 40%, 60%, 80% { transform: translate(-48%, -50%); }
-        }
-
-        .ack-title { font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; }
-        .ack-content { font-size: 1.6rem; text-transform: uppercase; line-height: 1.3; }
+        #core-eye { width: 100%; height: 100%; object-fit: contain; }
 
         .stat-overlay {
             position: absolute; font-size: 0.75rem; color: var(--neon);
             text-transform: uppercase; font-weight: bold; pointer-events: none;
-            text-shadow: 0 0 5px var(--neon); white-space: nowrap; z-index: 20;
+            text-shadow: 0 0 8px var(--neon); white-space: nowrap; z-index: 25;
             line-height: 1.2;
         }
-        #stat-player { top: 27%; left: 10%; }
-        #stat-lives { top: 27%; right: 10%; text-align: right; }
-        #stat-id { bottom: 27%; left: 10%; }
-        #stat-best { bottom: 27%; right: 10%; text-align: right; }
-        #stat-battle { bottom: 8%; left: 50%; transform: translateX(-50%); color: var(--warning); display: none; font-size: 0.7rem; }
+        /* Adjusted for the larger background eye */
+        #stat-player { top: 32%; left: 15%; }
+        #stat-lives { top: 32%; right: 15%; text-align: right; }
+        #stat-id { bottom: 32%; left: 15%; }
+        #stat-best { bottom: 32%; right: 15%; text-align: right; }
+        #stat-battle { bottom: 15%; left: 50%; transform: translateX(-50%); color: var(--warning); display: none; }
 
-        .cyber-select, .cyber-input { background: #000; border: 2px solid var(--neon); padding: 12px; width: 100%; margin: 8px 0; font-weight: bold; color: var(--neon); }
+        .ui-content-wrapper {
+            margin-top: 55vh; /* Push UI below the main eye center */
+            display: flex; flex-direction: column; align-items: center;
+            width: 100%; z-index: 40; padding: 0 20px;
+        }
+
+        #options-container { display: grid; gap: 10px; width: 100%; max-width: 400px; margin-bottom: 20px; }
+        .option-btn {
+            background: rgba(0,0,0,0.8); border: 1px solid var(--neon); color: var(--neon);
+            padding: 16px; font-size: 0.9rem; text-transform: uppercase; cursor: pointer;
+            transition: 0.3s; position: relative; font-weight: bold;
+            backdrop-filter: blur(4px);
+        }
+        .option-btn:hover { background: var(--neon); color: var(--black); box-shadow: 0 0 20px var(--neon); }
+        
+        .start-btn { border-color: var(--cyber-blue); color: var(--cyber-blue); box-shadow: 0 0 10px rgba(0, 210, 255, 0.2); }
+        .start-btn:hover { background: var(--cyber-blue); box-shadow: 0 0 30px var(--cyber-blue); }
+
+        .battle-btn { border-color: var(--warning); color: var(--warning); box-shadow: 0 0 10px rgba(244, 234, 17, 0.2); }
+        .battle-btn:hover { background: var(--warning); box-shadow: 0 0 30px var(--warning); }
+
+        .cyber-select, .cyber-input { 
+            background: rgba(0,0,0,0.8); border: 1px solid var(--neon); padding: 12px; 
+            width: 100%; max-width: 400px; margin: 5px 0; font-weight: bold; color: var(--neon);
+            text-align: center; backdrop-filter: blur(4px);
+        }
         .cyber-input { border-color: var(--cyber-blue); color: var(--cyber-blue); }
 
-        #leaderboard-list { list-style: none; padding: 0; font-size: 0.75rem; color: var(--cyber-blue); }
-        .subtitle-text { color: var(--cyber-blue); text-shadow: 0 0 10px var(--cyber-blue); letter-spacing: 3px; font-weight: bold; font-size: 0.9rem; }
-
-        #game-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 3000;
-            justify-content: center; align-items: center; flex-direction: column;
+        .subtitle-text { 
+            color: var(--cyber-blue); text-shadow: 0 0 10px var(--cyber-blue); 
+            letter-spacing: 4px; font-weight: bold; font-size: 0.8rem; margin-bottom: 2vh;
+            text-align: center;
         }
-        .overlay-content { border: 2px solid var(--neon); padding: 30px; text-align: center; max-width: 90%; }
+
+        #question-box { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.4rem; padding: 20px; z-index: 50; }
+        #timer-wrap { width: 100%; height: 2px; background: #111; position: absolute; top: 0; left: 0; z-index: 60; }
+        #timer-fill { height: 100%; width: 100%; background: var(--neon); }
+
+        #ack-overlay {
+            position: fixed; top: 50%; left: 50%; width: 85%; max-width: 450px;
+            padding: 30px; background: rgba(0, 0, 0, 0.95); border: 2px solid var(--neon);
+            transform: translate(-50%, -50%) scale(0); transition: 0.3s; z-index: 2000; text-align: center;
+        }
+        #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
     </style>
 </head>
 <body>
@@ -134,62 +134,51 @@
     <div class="scanline"></div>
     
     <div id="game-container">
-        <div id="start-screen" class="screen active" style="justify-content: flex-start; align-items: center; padding-top: 3vh;">
-            <div style="text-align: center; position: relative; z-index: 10; width: 100%; max-width: 600px;">
-                <h1 class="glitch-text" style="font-size: clamp(2.5rem, 10vw, 4.5rem); margin-bottom: 1vh;">A.C.K.</h1>
-                
-                <div id="eye-container" style="width: min(85vw, 450px); height: min(85vw, 450px); margin: 0 auto 1.5vh; position: relative;">
-                    <img id="core-eye" src="./assets/images/ack_core_clean.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 20px var(--neon));">
-                    <div id="stat-player" class="stat-overlay">PLAYER_DATA//<br><span id="player-display">GUEST</span></div>
-                    <div id="stat-lives" class="stat-overlay">VITAL_SIGNS//<br><span id="lives-display">3</span>_LIVES</div>
-                    <div id="stat-id" class="stat-overlay">SYSTEM_ID//<br>#<span id="id-display">0000</span></div>
-                    <div id="stat-best" class="stat-overlay">CORE_SCORE//<br><span id="high-score">0</span>_PTS</div>
-                    <div id="stat-battle" class="stat-overlay">BATTLE_SYNC//ACTIVE</div>
-                </div>
+        <h1 class="glitch-text">A.C.K.</h1>
 
+        <div id="start-screen" class="screen active">
+            <div id="eye-bg-container">
+                <img id="core-eye" src="./assets/images/ack_core_clean.png">
+                <div id="stat-player" class="stat-overlay">USER_IDENT//<br><span id="player-display">GUEST</span></div>
+                <div id="stat-lives" class="stat-overlay">VITAL_SIGNS//<br><span id="lives-display">3</span>_UNITS</div>
+                <div id="stat-id" class="stat-overlay">CORE_LINK//<br>#<span id="id-display">0000</span></div>
+                <div id="stat-best" class="stat-overlay">PEAK_DATA//<br><span id="high-score">0</span>_PTS</div>
+                <div id="stat-battle" class="stat-overlay">BATTLE_SYNC//ACTIVE</div>
+            </div>
+
+            <div class="ui-content-wrapper">
                 <p class="subtitle-text">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
-                <div class="cyber-box" style="text-align:center; width: 90%; max-width: 380px; margin: 0 auto;">
-                    <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12">
-                    <select id="category-filter" class="cyber-select"><option value="all">ALL_SECTORS</option></select>
-                    <div style="display: grid; gap: 8px; margin-top: 10px;">
-                        <button id="start-btn" class="option-btn start-btn" onclick="initGame()">INIT_PROTOCOL</button>
-                        <button id="lobby-btn" class="option-btn battle-btn" onclick="showLobby()">BATTLE_LOBBY</button>
-                    </div>
+                <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12">
+                <select id="category-filter" class="cyber-select"><option value="all">ALL_SECTORS</option></select>
+                <div id="options-container" style="margin-top: 15px;">
+                    <button id="start-btn" class="option-btn start-btn" onclick="initGame()">INIT_PROTOCOL</button>
+                    <button id="lobby-btn" class="option-btn battle-btn" onclick="showLobby()">BATTLE_LOBBY</button>
                 </div>
             </div>
         </div>
 
         <div id="lobby-screen" class="screen" style="justify-content: center; align-items: center;">
-            <div style="text-align: center; width: 90%; max-width: 400px;">
-                <h2 style="color: var(--warning);">BATTLE_OVERRIDE</h2>
-                <input type="text" id="room-code" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ENTER_ROOM_CODE" maxlength="6">
+            <div style="text-align: center; width: 90%; max-width: 400px; background: rgba(0,0,0,0.9); padding: 30px; border: 1px solid var(--warning);">
+                <h2 style="color: var(--warning); letter-spacing: 5px;">BATTLE_OVERRIDE</h2>
+                <input type="text" id="room-code" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ROOM_CODE" maxlength="6">
                 <div style="display: grid; gap: 10px; margin-top: 20px;">
                     <button class="option-btn battle-btn" onclick="joinBattle()">JOIN_BATTLE</button>
                     <button class="option-btn start-btn" onclick="createBattle()">CREATE_ROOM</button>
-                    <button class="option-btn" style="border-color: #555; color: #555;" onclick="hideLobby()">CANCEL</button>
+                    <button class="option-btn" style="border-color: #333; color: #333;" onclick="hideLobby()">CANCEL</button>
                 </div>
             </div>
         </div>
 
         <div id="game-screen" class="screen">
             <div id="timer-wrap"><div id="timer-fill"></div></div>
-            <div id="question-box" role="status">INITIALISIERE_DATENSATZ...</div>
-            <div id="options-container" role="radiogroup"></div>
+            <div id="question-box">INITIALIZING...</div>
+            <div id="options-container" style="padding: 0 20px;"></div>
         </div>
     </div>
 
     <div id="ack-overlay">
-        <div class="ack-title" id="ack-header">>> SYSTEM_RESPONSE_ACK:</div>
-        <div class="ack-content" id="ack-msg">DU VERSAGST!</div>
-    </div>
-
-    <div id="game-overlay">
-        <div class="overlay-content">
-            <h2 id="overlay-title">SYSTEM_HALT</h2>
-            <p id="overlay-message"></p>
-            <ul id="leaderboard-list"></ul>
-            <button onclick="location.reload()" class="option-btn">REBOOT_SYSTEM</button>
-        </div>
+        <div class="ack-title" id="ack-header">>> SYSTEM_ACK:</div>
+        <div class="ack-content" id="ack-msg"></div>
     </div>
 
     <script>
@@ -206,7 +195,6 @@
         function detectLanguage() {
             const userLang = navigator.language || navigator.userLanguage;
             state.lang = userLang.startsWith('de') ? 'de' : 'en';
-            document.documentElement.lang = state.lang;
             document.getElementById('start-btn').innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
         }
         detectLanguage();
@@ -222,7 +210,7 @@
             if (!eye) return;
             eye.src = './assets/images/ack_core_closed_clean.png';
             setTimeout(() => { eye.src = './assets/images/ack_core_clean.png'; }, 150 + Math.random() * 100);
-            setTimeout(blink, 2000 + Math.random() * 5000);
+            setTimeout(blink, 3000 + Math.random() * 5000);
         }
         setTimeout(blink, 3000);
 
@@ -288,7 +276,7 @@
             const q = state.questions[state.current];
             if (!q) return finishGame(true, state.lang === 'de' ? "DATENSATZ_ABSORBIERT." : "DATA_ABSORBED.");
             document.getElementById('question-box').innerText = q.text[state.lang];
-            const container = document.getElementById('options-container');
+            const container = document.getElementById('game-screen').querySelector('#options-container');
             container.innerHTML = '';
             q.options[state.lang].forEach((opt, i) => {
                 const btn = document.createElement('button');
@@ -305,14 +293,16 @@
             const overlay = document.getElementById('ack-overlay');
             const header = document.getElementById('ack-header');
             const msgBox = document.getElementById('ack-msg');
-            overlay.classList.remove('correct', 'incorrect');
+            overlay.className = '';
             
             if (correct) {
                 state.score += 100 + (state.streak++ * 10);
                 const pool = state.comments[state.lang].correct;
                 msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
                 header.innerText = ">> [SUCCESS_ACK]:";
-                overlay.classList.add('correct', 'active');
+                overlay.style.borderColor = 'var(--neon)';
+                overlay.style.color = 'var(--neon)';
+                overlay.classList.add('active');
                 setTimeout(() => { overlay.classList.remove('active'); state.current++; renderQuestion(); }, 2500);
             } else {
                 state.lives--;
@@ -321,7 +311,9 @@
                 const pool = state.comments[state.lang].incorrect;
                 msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
                 header.innerText = ">> [CRITICAL_ERROR]:";
-                overlay.classList.add('incorrect', 'active');
+                overlay.style.borderColor = 'var(--error)';
+                overlay.style.color = 'var(--error)';
+                overlay.classList.add('active');
                 setTimeout(() => {
                     overlay.classList.remove('active');
                     if (state.lives <= 0) finishGame(false, "SYSTEM_FAILURE.");
@@ -331,16 +323,7 @@
         }
 
         function finishGame(victory, msg) {
-            clearInterval(state.timer);
-            const overlay = document.getElementById('game-overlay');
-            document.getElementById('overlay-title').innerText = victory ? "VICTORY" : "GAME_OVER";
-            document.getElementById('overlay-message').innerText = msg;
-            state.leaderboard.push({name: state.playerName, id: state.playerId, score: state.score, date: new Date().toLocaleDateString()});
-            state.leaderboard.sort((a,b) => b.score - a.score);
-            state.leaderboard = state.leaderboard.slice(0, 5);
-            localStorage.setItem('dfwa_leaderboard', JSON.stringify(state.leaderboard));
-            document.getElementById('leaderboard-list').innerHTML = state.leaderboard.map(e => `<li>${e.score} PTS - ${e.name} (#${e.id})</li>`).join('');
-            overlay.style.display = 'flex';
+            location.reload(); // Simple reboot for now to match PWA feel
         }
 
         function startTimer() {
