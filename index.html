@@ -212,7 +212,8 @@
             losses: parseInt(localStorage.getItem('dfwa_losses') || 0),
             comments: {}, usedComments: { correct: [], incorrect: [] },
             isPaused: false, isProcessing: false, timer: 15, timerInterval: null,
-            isChallenge: false, isCreatingChallenge: false, challengeSeed: null, opponentScore: 0
+            isChallenge: false, isCreatingChallenge: false, challengeSeed: null, opponentScore: 0,
+            pausedQuestion: null, pausedTimer: null, cheatsAttempted: false
         };
 
         function detectLanguage() {
@@ -270,6 +271,9 @@
 
         function pauseProtocol() {
             state.isPaused = true;
+            state.cheatsAttempted = false;
+            state.pausedQuestion = state.current;
+            state.pausedTimer = state.timer;
             clearInterval(state.timerInterval);
             document.getElementById('game-screen').classList.remove('active');
             document.getElementById('start-screen').classList.add('active');
@@ -277,10 +281,16 @@
         }
 
         function resumeProtocol() {
+            if (state.cheatsAttempted) {
+                alert('CHEAT_DETECTED: Spiel wird neu gestartet.');
+                initGame(false);
+                return;
+            }
             state.isPaused = false;
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('game-screen').classList.add('active');
             document.getElementById('resume-btn').style.display = 'none';
+            state.timer = state.pausedTimer || 15;
             startTimer();
         }
 
@@ -429,7 +439,12 @@
             setTimeout(() => {
                 fScreen.classList.remove('active');
                 state.isProcessing = false;
-                if (state.lives <= 0) endGame();
+                if (state.lives <= 0) {
+                    document.getElementById('start-screen').classList.add('active');
+                    document.getElementById('game-screen').classList.remove('active');
+                    document.getElementById('lives-display').innerText = state.lives;
+                    endGame();
+                }
                 else { state.current++; renderQuestion(); }
             }, 3500);
         }
@@ -441,6 +456,23 @@
                 setTimeout(() => eye.src = './assets/images/ack_core_clean.png', 150);
             }
         }, 4000);
+
+        document.addEventListener('keydown', (e) => {
+            if (state.isPaused && !['Enter', ' ', 'Tab', 'Escape'].includes(e.key)) {
+                state.cheatsAttempted = true;
+            }
+        });
+
+        document.addEventListener('contextmenu', (e) => {
+            if (state.isPaused) {
+                e.preventDefault();
+                state.cheatsAttempted = true;
+            }
+        });
+
+        document.addEventListener('devtoolschange', () => {
+            if (state.isPaused) state.cheatsAttempted = true;
+        });
     </script>
 </body>
 </html>
