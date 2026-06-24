@@ -119,14 +119,21 @@
             text-align: center; margin-bottom: 10vh; font-family: 'Courier New', monospace;
         }
 
+        #modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 3000; display: none;
+            align-items: center; justify-content: center; padding: 20px;
+        }
+        #modal-content {
+            background: #000; border: 2px solid var(--warning); padding: 30px;
+            width: 100%; max-width: 500px; text-align: center;
+        }
+
         #pause-btn {
             position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
             background: rgba(0,0,0,0.8); border: 1px solid var(--neon); color: var(--neon);
             padding: 12px 25px; cursor: pointer; z-index: 100; font-weight: 900;
         }
-
-        #battle-lobby { display: none; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; background: #000; z-index: 500; }
-        #battle-lobby.active { display: flex; }
     </style>
 </head>
 <body>
@@ -146,16 +153,17 @@
                 <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12">
                 <select id="category-filter" class="cyber-select"><option value="all">ALL_SECTORS</option></select>
                 <button id="resume-btn" class="option-btn battle-btn" style="display:none;" onclick="resumeProtocol()">RESUME_PROTOCOL</button>
-                <button id="start-btn" class="option-btn start-btn" onclick="initGame()">INIT_PROTOCOL</button>
+                <button id="start-btn" class="option-btn start-btn" onclick="initGame(false)">INIT_PROTOCOL</button>
                 <button class="option-btn battle-btn" onclick="showLobby()">BATTLE_LOBBY</button>
             </div>
         </div>
 
         <div id="battle-lobby" class="screen">
-            <div class="ui-content-wrapper" style="margin-top: 0;">
+            <div class="ui-content-wrapper" style="margin-top: 20vh;">
                 <h2 style="color:var(--warning); margin-bottom: 20px;">BATTLE_OVERRIDE</h2>
                 <input type="text" id="challenge-code-input" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ENTER_CHALLENGE_CODE">
-                <button class="option-btn battle-btn" onclick="startChallenge()">START_CHALLENGE</button>
+                <button class="option-btn battle-btn" onclick="startChallenge()">JOIN_CHALLENGE</button>
+                <button class="option-btn start-btn" style="border-color: var(--warning); color: var(--warning);" onclick="initGame(true)">CREATE_CHALLENGE</button>
                 <button class="option-btn" onclick="hideLobby()">BACK_TO_CORE</button>
             </div>
         </div>
@@ -175,6 +183,14 @@
         <div id="feedback-msg"></div>
     </div>
 
+    <div id="modal-overlay">
+        <div id="modal-content">
+            <h2 id="modal-title" style="color: var(--warning); margin-bottom: 20px;">CHALLENGE_COMPLETE</h2>
+            <p id="modal-text" style="color: #fff; margin-bottom: 20px; font-family: monospace; word-break: break-all;"></p>
+            <button class="option-btn" onclick="location.reload()">CLOSE_SYSTEM</button>
+        </div>
+    </div>
+
     <script>
         let state = { 
             lang: 'de', questions: [], current: 0, score: 0, lives: 3,
@@ -183,7 +199,7 @@
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
             comments: {}, usedComments: { correct: [], incorrect: [] },
             isPaused: false, isProcessing: false, timer: 15, timerInterval: null,
-            isChallenge: false, challengeSeed: null, opponentScore: 0
+            isChallenge: false, isCreatingChallenge: false, challengeSeed: null, opponentScore: 0
         };
 
         function detectLanguage() {
@@ -213,13 +229,13 @@
                 state.isChallenge = true;
                 state.challengeSeed = data.seed;
                 state.opponentScore = data.score;
-                initGame(true);
+                initGame(false);
             } catch(e) { alert("INVALID_CODE"); }
         }
 
         function generateChallengeCode() {
             const seed = Math.floor(Math.random() * 1000000);
-            const data = { seed: state.isChallenge ? state.challengeSeed : seed, score: state.score };
+            const data = { seed: seed, score: state.score };
             return btoa(JSON.stringify(data));
         }
 
@@ -248,7 +264,8 @@
             startTimer();
         }
 
-        async function initGame(fromLobby = false) {
+        async function initGame(createChallenge) {
+            state.isCreatingChallenge = createChallenge;
             state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
             state.lives = 3; state.current = 0; state.score = 0;
@@ -292,17 +309,28 @@
         }
 
         function endGame() {
-            const code = generateChallengeCode();
-            let msg = state.lang === 'de' ? `PROTOKOLL_BEENDET\nSCORE: ${state.score}` : `PROTOCOL_TERMINATED\nSCORE: ${state.score}`;
-            if (state.isChallenge) {
-                msg += `\nOPPONENT: ${state.opponentScore}\n${state.score > state.opponentScore ? 'VICTORY' : 'DEFEAT'}`;
+            clearInterval(state.timerInterval);
+            const overlay = document.getElementById('modal-overlay');
+            const text = document.getElementById('modal-text');
+            const title = document.getElementById('modal-title');
+            
+            overlay.style.display = 'flex';
+            
+            if (state.isCreatingChallenge) {
+                title.innerText = "CHALLENGE_CREATED";
+                text.innerText = generateChallengeCode();
+            } else if (state.isChallenge) {
+                title.innerText = state.score > state.opponentScore ? "VICTORY" : "DEFEAT";
+                text.innerText = `YOUR_SCORE: ${state.score}\nOPPONENT: ${state.opponentScore}`;
+            } else {
+                title.innerText = "PROTOCOL_COMPLETE";
+                text.innerText = `FINAL_SCORE: ${state.score}`;
             }
-            alert(`${msg}\n\nCHALLENGE_CODE:\n${code}`);
+
             if (state.score > state.best) {
                 state.best = state.score;
                 localStorage.setItem('dfwa_best', state.best);
             }
-            location.reload();
         }
 
         function getComment(type) {
