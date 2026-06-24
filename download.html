@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACK ATTACK - DOWNLOAD_INITIATED</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            background: #000; color: #39ff14;
+            font-family: 'Inter', sans-serif;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+        #eye-container {
+            width: 80vw; max-width: 400px; margin-bottom: 40px;
+            filter: drop-shadow(0 0 20px #39ff14);
+        }
+        #eye-container img { width: 100%; height: auto; }
+        h1 {
+            font-family: Impact, sans-serif; font-size: 2.5rem; letter-spacing: 5px;
+            margin-bottom: 20px; text-shadow: 0 0 10px #39ff14;
+        }
+        .download-btn {
+            background: #000; border: 2px solid #00d2ff; color: #00d2ff;
+            padding: 20px 40px; font-size: 1.2rem; font-weight: 900;
+            text-transform: uppercase; cursor: pointer; text-decoration: none;
+            letter-spacing: 2px; transition: 0.3s;
+        }
+        .download-btn:hover {
+            background: #00d2ff; color: #000; box-shadow: 0 0 30px #00d2ff;
+        }
+        .status-text {
+            margin-top: 20px; font-family: monospace; font-size: 0.8rem; opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div id="eye-container">
+        <img src="./assets/images/ack_core_clean.png" alt="ACK CORE">
+    </div>
+    <h1>ACK ATTACK</h1>
+    <a href="https://github.com/famlabsoffice-dev/DFWA/archive/refs/heads/main.zip" class="download-btn">DOWNLOAD_PROTOCOL</a>
+    <div class="status-text">SYSTEM_READY // SOURCE: GITHUB_MAIN</div>
+</body>
+</html>
