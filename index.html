@@ -277,15 +277,38 @@
             state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
             state.lives = 3; state.current = 0; state.score = 0;
+            
             const [qRes, cRes] = await Promise.all([fetch('questions_i18n.json'), fetch('ack_comments.json')]);
-            const allQuestions = await qRes.json();
-            state.questions = shuffle(allQuestions, state.isChallenge ? state.challengeSeed : null);
+            let allQuestions = await qRes.json();
             state.comments = await cRes.json();
+
+            const selectedCat = document.getElementById('category-filter').value;
+            if (selectedCat !== 'all') {
+                allQuestions = allQuestions.filter(q => q.cat === selectedCat);
+            }
+
+            state.questions = shuffle(allQuestions, state.isChallenge ? state.challengeSeed : null);
+            
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('battle-lobby').classList.remove('active');
             document.getElementById('game-screen').classList.add('active');
             renderQuestion();
         }
+
+        async function loadCategories() {
+            const res = await fetch('questions_i18n.json');
+            const questions = await res.json();
+            const cats = [...new Set(questions.map(q => q.cat))];
+            const filter = document.getElementById('category-filter');
+            filter.innerHTML = `<option value="all">${state.lang === 'de' ? 'ALLE_SEKTOREN' : 'ALL_SECTORS'}</option>`;
+            cats.forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat;
+                opt.innerText = cat.toUpperCase();
+                filter.appendChild(opt);
+            });
+        }
+        loadCategories();
 
         function startTimer() {
             clearInterval(state.timerInterval);
