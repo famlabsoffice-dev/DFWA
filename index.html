@@ -294,24 +294,31 @@
             startTimer();
         }
 
+        let cachedQuestions = null;
+        let cachedComments = null;
+
         async function initGame(createChallenge) {
             state.isCreatingChallenge = createChallenge;
             state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
             state.lives = 3; state.current = 0; state.score = 0;
-            document.getElementById("lives-display").innerText = state.lives; // UI-Update für Leben bei Spielstart
+            document.getElementById("lives-display").innerText = state.lives;
             
-            const [qRes, cRes] = await Promise.all([fetch('questions_i18n.json'), fetch('ack_comments.json')]);
-            let allQuestions = await qRes.json();
-            state.comments = await cRes.json();
+            if (!cachedQuestions || !cachedComments) {
+                const [qRes, cRes] = await Promise.all([fetch('questions_i18n.json'), fetch('ack_comments.json')]);
+                cachedQuestions = await qRes.json();
+                cachedComments = await cRes.json();
+            }
+            state.comments = cachedComments;
 
             const selectedCat = document.getElementById('category-filter').value;
+            let pool = cachedQuestions;
             if (selectedCat !== 'all') {
-                allQuestions = allQuestions.filter(q => q.cat === selectedCat);
+                pool = cachedQuestions.filter(q => q.cat === selectedCat);
             }
 
-            state.questions = shuffle(allQuestions, state.isChallenge ? state.challengeSeed : null);
-            state.allQuestions = allQuestions;
+            state.questions = shuffle([...pool], state.isChallenge ? state.challengeSeed : null);
+            state.allQuestions = cachedQuestions;
             
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('battle-lobby').classList.remove('active');
