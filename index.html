@@ -10,7 +10,7 @@
     <title>ACK ATTACK - SYSTEM OVERRIDE</title>
     <style>
         :root {
-            --neon: #39ff14; /* Pure toxic neon green */
+            --neon: #39ff14;
             --neon-bg: rgba(57, 255, 20, 0.1);
             --error: #ff003c;
             --warning: #f4ea11;
@@ -18,50 +18,45 @@
             --black: #000000;
         }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
         body, html { 
-            margin: 0; padding: 0; width: 100%; height: 100%; 
+            width: 100%; height: 100%; 
             overflow: hidden; background: #000; color: var(--neon);
             display: flex; align-items: center; justify-content: center;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
         }
 
         .overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+            background: linear-gradient(rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.005), rgba(0, 0, 255, 0.01));
             background-size: 100% 2px, 3px 100%; pointer-events: none; z-index: 1000;
         }
-        .scanline {
-            width: 100%; height: 100px; z-index: 1001; position: absolute;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(57, 255, 20, 0.02) 50%, rgba(0, 0, 0, 0) 100%);
-            opacity: 0.1; pointer-events: none; animation: scan 10s linear infinite;
-        }
-        @keyframes scan { from { top: -100px; } to { top: 100%; } }
 
         #game-container {
             width: 100%; height: 100%;
             display: flex; flex-direction: column;
             background: #000;
             position: relative; overflow: hidden;
+            border: none; /* Removed all borders for pure OLED black */
         }
 
         .screen { display: none; flex-direction: column; height: 100%; animation: flicker 0.15s infinite; position: relative; z-index: 10; }
         .screen.active { display: flex; }
         @keyframes flicker { 0% { opacity: 0.99; } 100% { opacity: 1; } }
 
+        /* Precise centering on 'C' */
         h1 { 
-            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
             font-size: clamp(3rem, 15vw, 5rem); text-align: center; 
-            margin: 0; letter-spacing: 15px; text-shadow: 0 0 20px var(--neon);
+            letter-spacing: 15px; text-shadow: 0 0 20px var(--neon);
             position: absolute; top: 2vh; left: 50%; transform: translateX(-47.2%); width: 100%;
             z-index: 30; font-weight: 900;
         }
 
         #eye-bg-container {
             position: absolute; top: 38%; left: 50%; transform: translate(-50%, -50%);
-            width: 130vw; height: 130vw; max-width: 1000px; max-height: 1000px;
-            z-index: 5; pointer-events: none; opacity: 0.95;
+            width: 140vw; height: 140vw; max-width: 1100px; max-height: 1100px;
+            z-index: 5; pointer-events: none;
             filter: contrast(1.5) drop-shadow(0 0 40px var(--neon));
             animation: irisPulse 5s ease-in-out infinite;
         }
@@ -72,12 +67,12 @@
         #core-eye { width: 100%; height: 100%; object-fit: contain; }
 
         .stat-overlay {
-            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
             position: absolute; font-size: 0.75rem; color: var(--neon);
             text-transform: uppercase; font-weight: bold; pointer-events: none;
             text-shadow: 0 0 15px var(--neon); white-space: nowrap; z-index: 25;
             line-height: 1.2; letter-spacing: 1px;
         }
+        /* Connected HUD positions */
         #stat-player { top: 30%; left: 15%; }
         #stat-lives { top: 30%; right: 15%; text-align: right; }
         #stat-id { bottom: 35%; left: 15%; }
@@ -92,10 +87,9 @@
 
         #options-container { display: grid; gap: 12px; width: 100%; max-width: 420px; margin-bottom: 25px; }
         .option-btn {
-            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
-            background: rgba(0,0,0,0.9); border: 1px solid var(--neon); color: var(--neon);
+            background: rgba(0,0,0,0.95); border: 1px solid var(--neon); color: var(--neon);
             padding: 18px; font-size: 0.9rem; text-transform: uppercase; cursor: pointer;
-            transition: 0.3s; font-weight: bold; backdrop-filter: blur(5px);
+            transition: 0.3s; font-weight: bold; backdrop-filter: blur(10px);
         }
         .option-btn:hover { background: var(--neon); color: #000; box-shadow: 0 0 30px var(--neon); }
         
@@ -106,26 +100,23 @@
         .battle-btn:hover { background: var(--warning); box-shadow: 0 0 40px var(--warning); }
 
         .cyber-select, .cyber-input { 
-            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
-            background: rgba(0,0,0,0.9); border: 1px solid var(--neon); padding: 14px; 
+            background: rgba(0,0,0,0.95); border: 1px solid var(--neon); padding: 14px; 
             width: 100%; max-width: 420px; margin: 6px 0; font-weight: bold; color: var(--neon);
-            text-align: center; backdrop-filter: blur(5px);
+            text-align: center; backdrop-filter: blur(10px);
         }
         .cyber-input { border-color: var(--cyber-blue); color: var(--cyber-blue); }
 
         .subtitle-text { 
-            font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', monospace;
             color: var(--cyber-blue); text-shadow: 0 0 15px var(--cyber-blue); 
             letter-spacing: 5px; font-weight: bold; font-size: 0.75rem; margin-bottom: 2.5vh;
             text-align: center;
         }
 
-        #question-box { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.5rem; padding: 25px; z-index: 50; font-family: 'JetBrains Mono', monospace; }
+        #question-box { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.5rem; padding: 25px; z-index: 50; }
         #timer-wrap { width: 100%; height: 3px; background: #000; position: absolute; top: 0; left: 0; z-index: 60; }
         #timer-fill { height: 100%; width: 100%; background: var(--neon); }
 
         #ack-overlay {
-            font-family: 'JetBrains Mono', monospace;
             position: fixed; top: 50%; left: 50%; width: 85%; max-width: 480px;
             padding: 35px; background: rgba(0, 0, 0, 0.98); border: 2px solid var(--neon);
             transform: translate(-50%, -50%) scale(0); transition: 0.3s; z-index: 2000; text-align: center;
@@ -135,7 +126,6 @@
 </head>
 <body>
     <div class="overlay"></div>
-    <div class="scanline"></div>
     
     <div id="game-container">
         <h1 class="glitch-text">A.C.K.</h1>
@@ -162,8 +152,8 @@
         </div>
 
         <div id="lobby-screen" class="screen" style="justify-content: center; align-items: center;">
-            <div style="text-align: center; width: 90%; max-width: 420px; background: rgba(0,0,0,0.95); padding: 40px; border: 1px solid var(--warning);">
-                <h2 style="color: var(--warning); letter-spacing: 6px; font-family: 'JetBrains Mono', monospace;">BATTLE_OVERRIDE</h2>
+            <div style="text-align: center; width: 90%; max-width: 420px; background: rgba(0,0,0,0.98); padding: 40px; border: 1px solid var(--warning);">
+                <h2 style="color: var(--warning); letter-spacing: 6px;">BATTLE_OVERRIDE</h2>
                 <input type="text" id="room-code" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ROOM_CODE" maxlength="6">
                 <div style="display: grid; gap: 12px; margin-top: 25px;">
                     <button class="option-btn battle-btn" onclick="joinBattle()">JOIN_BATTLE</button>
