@@ -72,20 +72,13 @@
             outline: none; transform: translateY(-2px);
         }
         
-        .start-btn {
-            border-color: var(--cyber-blue); color: var(--cyber-blue);
-            background: rgba(0, 210, 255, 0.1);
-            margin-top: 10px;
-        }
-        .start-btn:hover {
-            background: var(--cyber-blue); color: var(--black); box-shadow: 0 0 25px var(--cyber-blue);
-        }
+        .start-btn { border-color: var(--cyber-blue); color: var(--cyber-blue); background: rgba(0, 210, 255, 0.1); margin-top: 5px; }
+        .start-btn:hover { background: var(--cyber-blue); color: var(--black); box-shadow: 0 0 25px var(--cyber-blue); }
 
-        #question-box {
-            flex: 1; display: flex; align-items: center; justify-content: center;
-            text-align: center; font-size: 1.3rem; padding: 15px; border-bottom: 1px solid var(--neon-bg);
-        }
+        .battle-btn { border-color: var(--warning); color: var(--warning); background: rgba(244, 234, 17, 0.1); margin-top: 5px; }
+        .battle-btn:hover { background: var(--warning); color: var(--black); box-shadow: 0 0 25px var(--warning); }
 
+        #question-box { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.3rem; padding: 15px; border-bottom: 1px solid var(--neon-bg); }
         #timer-wrap { width: 100%; height: 4px; background: #222; margin-bottom: 8px; }
         #timer-fill { height: 100%; width: 100%; background: var(--neon); transition: width 0.1s linear; }
 
@@ -97,14 +90,10 @@
             z-index: 2000; text-align: center;
         }
         #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
-        
         #ack-overlay.correct { border-color: var(--neon); box-shadow: 0 0 100px rgba(57, 255, 20, 0.6); }
         #ack-overlay.correct .ack-title { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
-        #ack-overlay.correct .ack-content { color: var(--neon); text-shadow: 0 0 15px var(--neon); }
-        
         #ack-overlay.incorrect { border-color: var(--error); box-shadow: 0 0 100px rgba(255, 0, 60, 0.6); animation: shake 0.5s; }
         #ack-overlay.incorrect .ack-title { color: var(--error); text-shadow: 0 0 10px var(--error); }
-        #ack-overlay.incorrect .ack-content { color: var(--error); text-shadow: 0 0 15px var(--error); }
 
         @keyframes shake {
             0%, 100% { transform: translate(-50%, -50%); }
@@ -116,30 +105,14 @@
         .ack-content { font-size: 1.6rem; text-transform: uppercase; line-height: 1.3; }
 
         #score-panel { position: absolute; top: 10px; right: 15px; text-align: right; font-size: 0.75rem; opacity: 0.8; z-index: 100; }
-        #streak-info { color: var(--cyber-blue); font-weight: bold; display: none; }
         #lives-display { color: var(--error); font-weight: bold; }
+        #battle-status { color: var(--warning); font-weight: bold; display: none; margin-top: 5px; }
 
-        #game-overlay {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 3000;
-            justify-content: center; align-items: center; flex-direction: column;
-        }
-        .overlay-content { border: 2px solid var(--neon); padding: 30px; text-align: center; max-width: 90%; }
-        .cyber-select { background: #000; color: var(--neon); border: 2px solid var(--neon); padding: 12px; width: 100%; margin: 8px 0; font-weight: bold; }
-        .cyber-input { background: #000; color: var(--cyber-blue); border: 2px solid var(--cyber-blue); padding: 12px; width: 100%; margin: 8px 0; text-align: center; font-weight: bold; }
+        .cyber-select, .cyber-input { background: #000; border: 2px solid var(--neon); padding: 12px; width: 100%; margin: 8px 0; font-weight: bold; color: var(--neon); }
+        .cyber-input { border-color: var(--cyber-blue); color: var(--cyber-blue); }
 
         #leaderboard-list { list-style: none; padding: 0; font-size: 0.75rem; color: var(--cyber-blue); }
-
-        .subtitle-text {
-            color: var(--cyber-blue);
-            text-shadow: 0 0 10px var(--cyber-blue);
-            padding: 5px 0;
-            display: inline-block;
-            letter-spacing: 3px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
+        .subtitle-text { color: var(--cyber-blue); text-shadow: 0 0 10px var(--cyber-blue); letter-spacing: 3px; font-weight: bold; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -153,26 +126,35 @@
             ID: <span id="id-display">0000</span><br>
             LIVES: <span id="lives-display">3</span><br>
             BEST: <span id="high-score">0</span><br>
-            <span id="streak-info">STREAK: 0</span>
+            <div id="battle-status">BATTLE_SYNC: ACTIVE</div>
         </div>
         
         <div id="start-screen" class="screen active" style="justify-content: flex-start; align-items: center; padding-top: 3vh;">
             <div style="text-align: center; position: relative; z-index: 10; width: 100%; max-width: 600px;">
-                <h1 class="glitch-text" style="font-size: clamp(2.5rem, 10vw, 4.5rem); margin-bottom: 1vh; text-shadow: 0 0 30px var(--neon), 0 0 60px var(--cyber-blue);">A.C.K.</h1>
-                <div id="eye-container" style="width: min(70vw, 350px); height: min(70vw, 350px); margin: 0 auto 1.5vh; position: relative; display: flex; align-items: center; justify-content: center;">
+                <h1 class="glitch-text" style="font-size: clamp(2.5rem, 10vw, 4.5rem); margin-bottom: 1vh;">A.C.K.</h1>
+                <div id="eye-container" style="width: min(70vw, 350px); height: min(70vw, 350px); margin: 0 auto 1.5vh; position: relative;">
                     <img id="core-eye" src="./assets/images/ack_core.png" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 20px var(--neon));">
                 </div>
-                <div style="margin-bottom: 2vh;">
-                    <p class="subtitle-text">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
-                </div>
+                <p class="subtitle-text">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
                 <div class="cyber-box" style="text-align:center; width: 90%; max-width: 380px; margin: 0 auto;">
                     <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12">
-                    <select id="category-filter" class="cyber-select" aria-label="Sektor auswählen">
-                        <option value="all">ALL_SECTORS</option>
-                    </select>
-                    <div style="display: grid; gap: 10px; margin-top: 5px;">
-                        <button id="start-btn" class="option-btn start-btn" onclick="initGame()" aria-label="Start Protocol">INIT_PROTOCOL</button>
+                    <select id="category-filter" class="cyber-select"><option value="all">ALL_SECTORS</option></select>
+                    <div style="display: grid; gap: 8px; margin-top: 10px;">
+                        <button id="start-btn" class="option-btn start-btn" onclick="initGame()">INIT_PROTOCOL</button>
+                        <button id="lobby-btn" class="option-btn battle-btn" onclick="showLobby()">BATTLE_LOBBY</button>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lobby-screen" class="screen" style="justify-content: center; align-items: center;">
+            <div style="text-align: center; width: 90%; max-width: 400px;">
+                <h2 style="color: var(--warning);">BATTLE_OVERRIDE</h2>
+                <input type="text" id="room-code" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ENTER_ROOM_CODE" maxlength="6">
+                <div style="display: grid; gap: 10px; margin-top: 20px;">
+                    <button class="option-btn battle-btn" onclick="joinBattle()">JOIN_BATTLE</button>
+                    <button class="option-btn start-btn" onclick="createBattle()">CREATE_ROOM</button>
+                    <button class="option-btn" style="border-color: #555; color: #555;" onclick="hideLobby()">CANCEL</button>
                 </div>
             </div>
         </div>
@@ -180,7 +162,7 @@
         <div id="game-screen" class="screen">
             <div id="timer-wrap"><div id="timer-fill"></div></div>
             <div id="question-box" role="status">INITIALISIERE_DATENSATZ...</div>
-            <div id="options-container" role="radiogroup" aria-labelledby="question-box"></div>
+            <div id="options-container" role="radiogroup"></div>
         </div>
     </div>
 
@@ -193,9 +175,7 @@
         <div class="overlay-content">
             <h2 id="overlay-title">SYSTEM_HALT</h2>
             <p id="overlay-message"></p>
-            <div id="leaderboard-display">
-                <ul id="leaderboard-list"></ul>
-            </div>
+            <ul id="leaderboard-list"></ul>
             <button onclick="location.reload()" class="option-btn">REBOOT_SYSTEM</button>
         </div>
     </div>
@@ -207,15 +187,15 @@
             playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
             leaderboard: JSON.parse(localStorage.getItem('dfwa_leaderboard') || "[]"),
-            timer: null, comments: {}, selectedCat: 'all'
+            timer: null, comments: {}, selectedCat: 'all',
+            isBattle: false, roomCode: ''
         };
 
         function detectLanguage() {
             const userLang = navigator.language || navigator.userLanguage;
             state.lang = userLang.startsWith('de') ? 'de' : 'en';
             document.documentElement.lang = state.lang;
-            const btn = document.getElementById('start-btn');
-            btn.innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
+            document.getElementById('start-btn').innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
         }
         detectLanguage();
 
@@ -229,17 +209,38 @@
             const eye = document.getElementById('core-eye');
             if (!eye) return;
             eye.src = './assets/images/ack_core_closed.png';
-            setTimeout(() => {
-                eye.src = './assets/images/ack_core.png';
-            }, 150 + Math.random() * 100);
+            setTimeout(() => { eye.src = './assets/images/ack_core.png'; }, 150 + Math.random() * 100);
             setTimeout(blink, 2000 + Math.random() * 5000);
         }
         setTimeout(blink, 3000);
 
+        function showLobby() {
+            document.getElementById('start-screen').classList.remove('active');
+            document.getElementById('lobby-screen').classList.add('active');
+        }
+        function hideLobby() {
+            document.getElementById('lobby-screen').classList.remove('active');
+            document.getElementById('start-screen').classList.add('active');
+        }
+
+        function createBattle() {
+            const code = Math.random().toString(36).substring(2, 8).toUpperCase();
+            document.getElementById('room-code').value = code;
+            alert(state.lang === 'de' ? "RAUM ERSTELLT: " + code : "ROOM CREATED: " + code);
+        }
+
+        function joinBattle() {
+            const code = document.getElementById('room-code').value.trim();
+            if (code.length < 4) return alert("INVALID_CODE");
+            state.isBattle = true;
+            state.roomCode = code;
+            document.getElementById('battle-status').style.display = 'block';
+            initGame();
+        }
+
         async function initGame() {
             state.selectedCat = document.getElementById('category-filter').value;
-            const nameInput = document.getElementById('player-name').value.trim();
-            state.playerName = nameInput || 'GUEST';
+            state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
             document.getElementById('player-display').innerText = state.playerName;
             state.lives = 3;
@@ -253,8 +254,21 @@
                 let allQ = await qRes.json();
                 state.comments = await cRes.json();
                 state.questions = state.selectedCat === 'all' ? allQ : allQ.filter(q => q.cat === state.selectedCat);
-                state.questions.sort(() => Math.random() - 0.5);
+                
+                // Synchronize questions for battle mode using room code as seed
+                if (state.isBattle) {
+                    const seed = state.roomCode.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+                    let m = state.questions.length, t, i;
+                    while (m) {
+                        i = Math.floor((Math.abs(Math.sin(seed + m))) * m--);
+                        t = state.questions[m]; state.questions[m] = state.questions[i]; state.questions[i] = t;
+                    }
+                } else {
+                    state.questions.sort(() => Math.random() - 0.5);
+                }
+
                 document.getElementById('start-screen').classList.remove('active');
+                document.getElementById('lobby-screen').classList.remove('active');
                 document.getElementById('game-screen').classList.add('active');
                 renderQuestion();
             } catch (e) { console.error(e); }
@@ -262,7 +276,7 @@
 
         function renderQuestion() {
             const q = state.questions[state.current];
-            if (!q) { finishGame(true, state.lang === 'de' ? "DATENSATZ_VOLLSTÄNDIG_ABSORBIERT." : "DATABASE_FULLY_ABSORBED."); return; }
+            if (!q) return finishGame(true, state.lang === 'de' ? "DATENSATZ_ABSORBIERT." : "DATA_ABSORBED.");
             document.getElementById('question-box').innerText = q.text[state.lang];
             const container = document.getElementById('options-container');
             container.innerHTML = '';
@@ -281,53 +295,27 @@
             const overlay = document.getElementById('ack-overlay');
             const header = document.getElementById('ack-header');
             const msgBox = document.getElementById('ack-msg');
-            
             overlay.classList.remove('correct', 'incorrect');
             
             if (correct) {
-                state.streak++;
-                let bonus = (state.streak > 1) ? (state.streak - 1) * 10 : 0;
-                state.score += (100 + bonus);
-                if (state.score > state.best) {
-                    state.best = state.score;
-                    localStorage.setItem('dfwa_best', state.best);
-                    document.getElementById('high-score').innerText = state.best;
-                }
-                const streakInfo = document.getElementById('streak-info');
-                if (state.streak >= 2) {
-                    streakInfo.innerText = `STREAK: ${state.streak} (+${bonus})`;
-                    streakInfo.style.display = 'inline';
-                }
-                
+                state.score += 100 + (state.streak++ * 10);
                 const pool = state.comments[state.lang].correct;
                 msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
                 header.innerText = ">> [SUCCESS_ACK]:";
                 overlay.classList.add('correct', 'active');
-                
-                setTimeout(() => {
-                    overlay.classList.remove('active');
-                    state.current++;
-                    renderQuestion();
-                }, 2500);
+                setTimeout(() => { overlay.classList.remove('active'); state.current++; renderQuestion(); }, 2500);
             } else {
                 state.lives--;
-                document.getElementById('lives-display').innerText = state.lives;
                 state.streak = 0;
-                document.getElementById('streak-info').style.display = 'none';
-                
+                document.getElementById('lives-display').innerText = state.lives;
                 const pool = state.comments[state.lang].incorrect;
                 msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
                 header.innerText = ">> [CRITICAL_ERROR]:";
                 overlay.classList.add('incorrect', 'active');
-                
                 setTimeout(() => {
                     overlay.classList.remove('active');
-                    if (state.lives <= 0) {
-                        finishGame(false, state.lang === 'de' ? "SYSTEM_FAILURE. EXISTENZ_TERMINIERT." : "SYSTEM_FAILURE. EXISTENCE_TERMINATED.");
-                    } else {
-                        state.current++;
-                        renderQuestion();
-                    }
+                    if (state.lives <= 0) finishGame(false, "SYSTEM_FAILURE.");
+                    else { state.current++; renderQuestion(); }
                 }, 3000);
             }
         }
@@ -341,8 +329,7 @@
             state.leaderboard.sort((a,b) => b.score - a.score);
             state.leaderboard = state.leaderboard.slice(0, 5);
             localStorage.setItem('dfwa_leaderboard', JSON.stringify(state.leaderboard));
-            const lbList = document.getElementById('leaderboard-list');
-            lbList.innerHTML = state.leaderboard.map(e => `<li>${e.score} PTS - ${e.name} (#${e.id})</li>`).join('');
+            document.getElementById('leaderboard-list').innerHTML = state.leaderboard.map(e => `<li>${e.score} PTS - ${e.name} (#${e.id})</li>`).join('');
             overlay.style.display = 'flex';
         }
 
@@ -356,13 +343,6 @@
             }, speed);
         }
 
-        window.addEventListener('keydown', (e) => {
-            if (e.key >= '1' && e.key <= '4') {
-                const btns = document.querySelectorAll('#options-container .option-btn');
-                if (btns[e.key - 1]) btns[e.key - 1].click();
-            }
-        });
-
         fetch('questions_i18n.json').then(r => r.json()).then(qs => {
             const cats = [...new Set(qs.map(q => q.cat))];
             const select = document.getElementById('category-filter');
@@ -372,14 +352,6 @@
                 select.appendChild(opt);
             });
         });
-
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js').then(reg => {
-                    reg.update();
-                });
-            });
-        }
     </script>
 </body>
 </html>
