@@ -145,10 +145,11 @@
         #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
 
         #pause-btn {
-            position: absolute; top: 20px; right: 20px;
-            background: none; border: 1px solid var(--neon); color: var(--neon);
-            padding: 10px 15px; cursor: pointer; z-index: 100; font-family: 'Inter', sans-serif;
-            font-weight: 900; text-transform: uppercase; font-size: 0.7rem;
+            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: rgba(0,0,0,0.8); border: 1px solid var(--neon); color: var(--neon);
+            padding: 12px 25px; cursor: pointer; z-index: 100; font-family: 'Inter', sans-serif;
+            font-weight: 900; text-transform: uppercase; font-size: 0.8rem;
+            letter-spacing: 2px; backdrop-filter: blur(5px);
         }
         #pause-btn:hover { background: var(--neon); color: #000; }
     </style>
