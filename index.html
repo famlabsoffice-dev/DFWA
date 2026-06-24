@@ -289,6 +289,7 @@
             state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
             state.lives = 3; state.current = 0; state.score = 0;
+            document.getElementById("lives-display").innerText = state.lives; // UI-Update für Leben bei Spielstart
             
             const [qRes, cRes] = await Promise.all([fetch('questions_i18n.json'), fetch('ack_comments.json')]);
             let allQuestions = await qRes.json();
@@ -415,7 +416,8 @@
                 fMsg.style.color = 'var(--neon)';
                 fMsg.innerText = getComment('correct');
             } else {
-                state.lives--;
+                state.lives = Math.max(0, state.lives - 1); // Optimierte Fehlerbehandlung: Verhindert negative Werte
+                document.getElementById("lives-display").innerText = state.lives; // UI-Update für Leben
                 fEyeBase.src = './assets/images/ack_core_clean.png';
                 fContainer.classList.add('zoom-anim');
                 fMsg.style.borderColor = 'var(--error)';
