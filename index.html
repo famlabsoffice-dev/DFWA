@@ -92,13 +92,28 @@
         #ack-overlay {
             position: fixed; top: 50%; left: 50%; width: 90%; max-width: 500px;
             padding: 35px; background: rgba(0, 0, 0, 0.98); 
-            border: 4px solid var(--error); border-radius: 2px;
+            border: 4px solid var(--neon); border-radius: 2px;
             transform: translate(-50%, -50%) scale(0); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 2000; text-align: center; box-shadow: 0 0 100px rgba(255, 0, 60, 0.6);
+            z-index: 2000; text-align: center;
         }
         #ack-overlay.active { transform: translate(-50%, -50%) scale(1); }
-        .ack-title { color: var(--error); font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; text-shadow: 0 0 10px var(--error); }
-        .ack-content { color: var(--warning); font-size: 1.6rem; text-transform: uppercase; line-height: 1.3; text-shadow: 0 0 15px var(--warning); }
+        
+        #ack-overlay.correct { border-color: var(--neon); box-shadow: 0 0 100px rgba(57, 255, 20, 0.6); }
+        #ack-overlay.correct .ack-title { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
+        #ack-overlay.correct .ack-content { color: var(--neon); text-shadow: 0 0 15px var(--neon); }
+        
+        #ack-overlay.incorrect { border-color: var(--error); box-shadow: 0 0 100px rgba(255, 0, 60, 0.6); animation: shake 0.5s; }
+        #ack-overlay.incorrect .ack-title { color: var(--error); text-shadow: 0 0 10px var(--error); }
+        #ack-overlay.incorrect .ack-content { color: var(--error); text-shadow: 0 0 15px var(--error); }
+
+        @keyframes shake {
+            0%, 100% { transform: translate(-50%, -50%); }
+            10%, 30%, 50%, 70%, 90% { transform: translate(-52%, -50%); }
+            20%, 40%, 60%, 80% { transform: translate(-48%, -50%); }
+        }
+
+        .ack-title { font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; }
+        .ack-content { font-size: 1.6rem; text-transform: uppercase; line-height: 1.3; }
 
         #score-panel { position: absolute; top: 10px; right: 15px; text-align: right; font-size: 0.75rem; opacity: 0.8; z-index: 100; }
         #streak-info { color: var(--cyber-blue); font-weight: bold; display: none; }
@@ -170,7 +185,7 @@
     </div>
 
     <div id="ack-overlay">
-        <div class="ack-title">>> SYSTEM_RESPONSE_ACK:</div>
+        <div class="ack-title" id="ack-header">>> SYSTEM_RESPONSE_ACK:</div>
         <div class="ack-content" id="ack-msg">DU VERSAGST!</div>
     </div>
 
@@ -195,26 +210,21 @@
             timer: null, comments: {}, selectedCat: 'all'
         };
 
-        // Detect Language
         function detectLanguage() {
             const userLang = navigator.language || navigator.userLanguage;
             state.lang = userLang.startsWith('de') ? 'de' : 'en';
             document.documentElement.lang = state.lang;
-            
-            // Update Start Button Text
             const btn = document.getElementById('start-btn');
             btn.innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
         }
         detectLanguage();
 
-        // Initialize UI
         document.getElementById('player-name').value = state.playerName === 'GUEST' ? '' : state.playerName;
         document.getElementById('player-display').innerText = state.playerName;
         document.getElementById('id-display').innerText = state.playerId;
         document.getElementById('high-score').innerText = state.best;
         localStorage.setItem('dfwa_id', state.playerId);
 
-        // Blinking Effect
         function blink() {
             const eye = document.getElementById('core-eye');
             if (!eye) return;
@@ -268,6 +278,12 @@
 
         function checkAnswer(correct) {
             clearInterval(state.timer);
+            const overlay = document.getElementById('ack-overlay');
+            const header = document.getElementById('ack-header');
+            const msgBox = document.getElementById('ack-msg');
+            
+            overlay.classList.remove('correct', 'incorrect');
+            
             if (correct) {
                 state.streak++;
                 let bonus = (state.streak > 1) ? (state.streak - 1) * 10 : 0;
@@ -282,12 +298,12 @@
                     streakInfo.innerText = `STREAK: ${state.streak} (+${bonus})`;
                     streakInfo.style.display = 'inline';
                 }
+                
                 const pool = state.comments[state.lang].correct;
-                const msg = pool[Math.floor(Math.random() * pool.length)];
-                const overlay = document.getElementById('ack-overlay');
-                document.getElementById('ack-msg').innerText = msg;
-                overlay.style.borderColor = 'var(--neon)';
-                overlay.classList.add('active');
+                msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
+                header.innerText = ">> [SUCCESS_ACK]:";
+                overlay.classList.add('correct', 'active');
+                
                 setTimeout(() => {
                     overlay.classList.remove('active');
                     state.current++;
@@ -298,12 +314,12 @@
                 document.getElementById('lives-display').innerText = state.lives;
                 state.streak = 0;
                 document.getElementById('streak-info').style.display = 'none';
+                
                 const pool = state.comments[state.lang].incorrect;
-                const msg = pool[Math.floor(Math.random() * pool.length)];
-                const overlay = document.getElementById('ack-overlay');
-                document.getElementById('ack-msg').innerText = msg;
-                overlay.style.borderColor = 'var(--error)';
-                overlay.classList.add('active');
+                msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
+                header.innerText = ">> [CRITICAL_ERROR]:";
+                overlay.classList.add('incorrect', 'active');
+                
                 setTimeout(() => {
                     overlay.classList.remove('active');
                     if (state.lives <= 0) {
