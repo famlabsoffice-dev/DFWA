@@ -197,7 +197,6 @@
         </div>
     </div>
     <div id="ack-overlay">
-        <div class="ack-title" id="ack-header">>> SYSTEM_ACK:</div>
         <div class="ack-content" id="ack-msg"></div>
     </div>
     <script>
@@ -209,7 +208,7 @@
             leaderboard: JSON.parse(localStorage.getItem('dfwa_leaderboard') || "[]"),
             timer: null, comments: {}, selectedCat: 'all',
             isBattle: false, roomCode: '', isPaused: false,
-            timerVal: 100
+            timerVal: 100, isProcessing: false
         };
         function detectLanguage() {
             const userLang = navigator.language || navigator.userLanguage;
@@ -314,17 +313,23 @@
             startTimer(100);
         }
         function checkAnswer(correct) {
+            if (state.isPaused || state.isProcessing) return;
+            state.isProcessing = true;
             clearInterval(state.timer);
+            
             const overlay = document.getElementById('ack-overlay');
-            const header = document.getElementById('ack-header');
             const msgBox = document.getElementById('ack-msg');
             const eye = document.getElementById('core-eye');
+            
+            // Disable all option buttons
+            const btns = document.querySelectorAll('#game-screen .option-btn');
+            btns.forEach(b => b.style.pointerEvents = 'none');
+
             overlay.className = '';
             if (correct) {
                 state.score += 100 + (state.streak++ * 10);
                 const pool = state.comments[state.lang].correct;
                 msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
-                header.innerText = ">> [SUCCESS_ACK]:";
                 overlay.style.borderColor = 'var(--neon)';
                 overlay.style.color = 'var(--neon)';
                 eye.src = './assets/images/ack_eye_wink.png';
@@ -332,6 +337,7 @@
                 setTimeout(() => { 
                     overlay.classList.remove('active'); 
                     eye.src = './assets/images/ack_core_clean.png';
+                    state.isProcessing = false;
                     state.current++; renderQuestion(); 
                 }, 2500);
             } else {
@@ -340,7 +346,6 @@
                 document.getElementById('lives-display').innerText = state.lives;
                 const pool = state.comments[state.lang].incorrect;
                 msgBox.innerText = pool[Math.floor(Math.random() * pool.length)];
-                header.innerText = ">> [CRITICAL_ERROR]:";
                 overlay.style.borderColor = 'var(--error)';
                 overlay.style.color = 'var(--error)';
                 eye.src = './assets/images/ack_eye_skeptical.png';
@@ -348,6 +353,7 @@
                 setTimeout(() => {
                     overlay.classList.remove('active');
                     eye.src = './assets/images/ack_core_clean.png';
+                    state.isProcessing = false;
                     if (state.lives <= 0) finishGame(false, "SYSTEM_FAILURE.");
                     else { state.current++; renderQuestion(); }
                 }, 3000);
