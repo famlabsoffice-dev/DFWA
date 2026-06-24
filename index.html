@@ -75,6 +75,7 @@
         .start-btn {
             border-color: var(--cyber-blue); color: var(--cyber-blue);
             background: rgba(0, 210, 255, 0.1);
+            margin-top: 10px;
         }
         .start-btn:hover {
             background: var(--cyber-blue); color: var(--black); box-shadow: 0 0 25px var(--cyber-blue);
@@ -154,9 +155,8 @@
                     <select id="category-filter" class="cyber-select" aria-label="Sektor auswählen">
                         <option value="all">ALL_SECTORS</option>
                     </select>
-                    <div style="display: grid; gap: 10px; margin-top: 15px;">
-                        <button class="option-btn start-btn" onclick="initGame('de')" aria-label="Start in Deutsch">PROTOKOLL_STARTEN (DE)</button>
-                        <button class="option-btn start-btn" onclick="initGame('en')" aria-label="Start in English">START_PROTOCOL (EN)</button>
+                    <div style="display: grid; gap: 10px; margin-top: 5px;">
+                        <button id="start-btn" class="option-btn start-btn" onclick="initGame()" aria-label="Start Protocol">INIT_PROTOCOL</button>
                     </div>
                 </div>
             </div>
@@ -195,6 +195,18 @@
             timer: null, comments: {}, selectedCat: 'all'
         };
 
+        // Detect Language
+        function detectLanguage() {
+            const userLang = navigator.language || navigator.userLanguage;
+            state.lang = userLang.startsWith('de') ? 'de' : 'en';
+            document.documentElement.lang = state.lang;
+            
+            // Update Start Button Text
+            const btn = document.getElementById('start-btn');
+            btn.innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
+        }
+        detectLanguage();
+
         // Initialize UI
         document.getElementById('player-name').value = state.playerName === 'GUEST' ? '' : state.playerName;
         document.getElementById('player-display').innerText = state.playerName;
@@ -214,9 +226,7 @@
         }
         setTimeout(blink, 3000);
 
-        async function initGame(l) {
-            state.lang = l;
-            document.documentElement.lang = l;
+        async function initGame() {
             state.selectedCat = document.getElementById('category-filter').value;
             const nameInput = document.getElementById('player-name').value.trim();
             state.playerName = nameInput || 'GUEST';
@@ -242,7 +252,7 @@
 
         function renderQuestion() {
             const q = state.questions[state.current];
-            if (!q) { finishGame(true, "DATENSATZ_VOLLSTÄNDIG_ABSORBIERT."); return; }
+            if (!q) { finishGame(true, state.lang === 'de' ? "DATENSATZ_VOLLSTÄNDIG_ABSORBIERT." : "DATABASE_FULLY_ABSORBED."); return; }
             document.getElementById('question-box').innerText = q.text[state.lang];
             const container = document.getElementById('options-container');
             container.innerHTML = '';
@@ -297,7 +307,7 @@
                 setTimeout(() => {
                     overlay.classList.remove('active');
                     if (state.lives <= 0) {
-                        finishGame(false, "SYSTEM_FAILURE. EXISTENZ_TERMINIERT.");
+                        finishGame(false, state.lang === 'de' ? "SYSTEM_FAILURE. EXISTENZ_TERMINIERT." : "SYSTEM_FAILURE. EXISTENCE_TERMINATED.");
                     } else {
                         state.current++;
                         renderQuestion();
