@@ -91,6 +91,7 @@
 
         #score-panel { position: absolute; top: 10px; right: 20px; text-align: right; font-size: 0.8rem; opacity: 0.8; }
         #streak-info { color: var(--cyber-blue); font-weight: bold; display: none; }
+        #lives-display { color: var(--error); font-weight: bold; }
 
         #game-overlay {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -110,6 +111,7 @@
     <div id="game-container">
         <div id="score-panel" aria-live="polite">
             SYSTEM_STATUS: ONLINE<br>
+            LIVES: <span id="lives-display">3</span><br>
             BEST: <span id="high-score">0</span><br>
             <span id="streak-info">STREAK: 0</span>
         </div>
@@ -158,7 +160,7 @@
 
     <script>
         let state = { 
-            lang: 'de', questions: [], current: 0, score: 0, streak: 0,
+            lang: 'de', questions: [], current: 0, score: 0, streak: 0, lives: 3,
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
             leaderboard: JSON.parse(localStorage.getItem('dfwa_leaderboard') || "[]"),
             timer: null, comments: {}, selectedCat: 'all'
@@ -168,6 +170,8 @@
             state.lang = l;
             document.documentElement.lang = l;
             state.selectedCat = document.getElementById('category-filter').value;
+            state.lives = 3;
+            document.getElementById('lives-display').innerText = state.lives;
             
             try {
                 const [qRes, cRes] = await Promise.all([
@@ -216,6 +220,7 @@
                 if (state.score > state.best) {
                     state.best = state.score;
                     localStorage.setItem('dfwa_best', state.best);
+                    document.getElementById('high-score').innerText = state.best;
                 }
                 
                 const streakInfo = document.getElementById('streak-info');
@@ -227,6 +232,8 @@
                 state.current++;
                 renderQuestion();
             } else {
+                state.lives--;
+                document.getElementById('lives-display').innerText = state.lives;
                 state.streak = 0;
                 document.getElementById('streak-info').style.display = 'none';
                 
@@ -239,8 +246,13 @@
                 
                 setTimeout(() => {
                     overlay.classList.remove('active');
-                    finishGame(false, "SYSTEM_FAILURE. EXISTENZ_TERMINIERT.");
-                }, 2500);
+                    if (state.lives <= 0) {
+                        finishGame(false, "SYSTEM_FAILURE. EXISTENZ_TERMINIERT.");
+                    } else {
+                        state.current++;
+                        renderQuestion();
+                    }
+                }, 2000);
             }
         }
 
@@ -289,6 +301,8 @@
                 select.appendChild(opt);
             });
         });
+
+        document.getElementById('high-score').innerText = state.best;
 
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
