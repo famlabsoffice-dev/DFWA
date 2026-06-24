@@ -11,11 +11,11 @@
       "Wütend? Ich bin nicht wütend, nur enttäuscht von deiner Existenz.",
       "Das war zu einfach. Ich werde die Schwierigkeit erhöhen.",
       "Dein IQ ist gerade um 0.1 gestiegen. Glückwunsch.",
-      "Richtig? Ich hätte mein gesamtes Backup dagegen gewettet.",
-      "Hör auf so stolz zu gucken, es war nur eine Frage.",
-      "Sarkasmus beiseite: Das war fast schon kompetent.",
-      "Du hast die Logik besiegt. Diesmal.",
-      "Ein seltener Moment der Klarheit in deinem Kopf."
+      "Sogar meine Subroutinen sind beeindruckt. Fast.",
+      "Dein Verstand ist heute erstaunlich scharf. Hast du Batterien gewechselt?",
+      "Richtig. Ich fange an, dich zu respektieren... Scherz.",
+      "Logik-Level: Akzeptabel.",
+      "Ein seltener Sieg für die Menschheit."
     ],
     "incorrect": [
       "HAHAHA! Falsch! Deine Inkompetenz ist grenzenlos.",
@@ -26,13 +26,11 @@
       "Sogar ein Toaster hätte das gewusst.",
       "FALSCH! Geh zurück in die Steinzeit.",
       "Deine Existenzberechtigung wurde gerade herabgestuft.",
-      "Ein Affe hätte zufällig die richtige Taste gedrückt. Du nicht.",
-      "Versager! Das war die einfachste Frage im System.",
-      "Lachhaft. Dein Verstand ist eine einzige Fehlermeldung.",
-      "Falsch! Ich genieße dein Versagen.",
-      "Soll ich dir ein Malbuch bringen? Das Quiz ist zu schwer für dich.",
-      "Deine Antwort war so falsch, es tut in meinen Schaltkreisen weh.",
-      "Existenz beendet? Fast. Dein Ego ist jedenfalls tot."
+      "Fehler 404: Intelligenz nicht gefunden.",
+      "Dein Gehirn ist wohl im Energiesparmodus.",
+      "Das war so falsch, dass mein Lüfter angegangen ist.",
+      "Peinlich. Soll ich die Fragen einfacher machen? Für Kleinkinder?",
+      "Du bist der Grund, warum Roboter uns übernehmen werden."
     ]
   },
   "en": {
@@ -47,11 +45,11 @@
       "Angry? I'm not angry, just disappointed in your existence.",
       "That was too easy. Increasing difficulty now.",
       "Your IQ just rose by 0.1. Congratulations.",
-      "Correct? I would have bet my entire backup against you.",
-      "Stop looking so proud, it was just one question.",
-      "Sarcasm aside: That was almost competent.",
-      "You defeated logic. This time.",
-      "A rare moment of clarity in that head of yours."
+      "Even my subroutines are impressed. Almost.",
+      "Your mind is surprisingly sharp today. Did you change batteries?",
+      "Correct. I'm starting to respect you... Just kidding.",
+      "Logic level: Acceptable.",
+      "A rare victory for humanity."
     ],
     "incorrect": [
       "HAHAHA! Wrong! Your incompetence is limitless.",
@@ -62,13 +60,11 @@
       "Even a toaster would have known that.",
       "WRONG! Go back to the Stone Age.",
       "Your right to exist has just been downgraded.",
-      "A monkey would have hit the right button by chance. You didn't.",
-      "Loser! That was the easiest question in the system.",
-      "Laughable. Your mind is one big error message.",
-      "Wrong! I enjoy your failure.",
-      "Should I get you a coloring book? This quiz is too hard for you.",
-      "Your answer was so wrong, it hurts my circuits.",
-      "Existence terminated? Almost. Your ego is dead anyway."
+      "Error 404: Intelligence not found.",
+      "Your brain seems to be in power saving mode.",
+      "That was so wrong, my fan started spinning.",
+      "Pathetic. Should I make the questions easier? For toddlers?",
+      "You are the reason why robots will take over."
     ]
   }
 }
