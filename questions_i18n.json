@@ -1,5 +1,143 @@
 [
   {
+    "id": "natur_0_v2",
+    "cat": "Natur",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Baum verliert im Winter seine Nadeln?",
+      "en": "Which tree loses its needles in winter?"
+    },
+    "options": {
+      "de": [
+        "Fichte",
+        "Lärche",
+        "Kiefer",
+        "Tanne"
+      ],
+      "en": [
+        "Spruce",
+        "Larch",
+        "Pine",
+        "Fir"
+      ]
+    }
+  },
+  {
+    "id": "natur_1_v2",
+    "cat": "Natur",
+    "correct": 1,
+    "text": {
+      "de": "Welches Tier ist das schnellste Landtier?",
+      "en": "Which animal is the fastest land animal?"
+    },
+    "options": {
+      "de": [
+        "Löwe",
+        "Gepard",
+        "Antilope",
+        "Pferd"
+      ],
+      "en": [
+        "Lion",
+        "Cheetah",
+        "Antelope",
+        "Horse"
+      ]
+    }
+  },
+  {
+    "id": "film_0_v2",
+    "cat": "Film",
+    "correct": 1,
+    "text": {
+      "de": "Wer spielte Jack Dawson in Titanic?",
+      "en": "Who played Jack Dawson in Titanic?"
+    },
+    "options": {
+      "de": [
+        "Brad Pitt",
+        "Leonardo DiCaprio",
+        "Johnny Depp",
+        "Tom Cruise"
+      ],
+      "en": [
+        "Brad Pitt",
+        "Leonardo DiCaprio",
+        "Johnny Depp",
+        "Tom Cruise"
+      ]
+    }
+  },
+  {
+    "id": "film_1_v2",
+    "cat": "Film",
+    "correct": 1,
+    "text": {
+      "de": "In welcher Stadt spielt 'Batman'?",
+      "en": "In which city does 'Batman' take place?"
+    },
+    "options": {
+      "de": [
+        "Metropolis",
+        "Gotham City",
+        "Central City",
+        "Star City"
+      ],
+      "en": [
+        "Metropolis",
+        "Gotham City",
+        "Central City",
+        "Star City"
+      ]
+    }
+  },
+  {
+    "id": "gegenteil_0_v2",
+    "cat": "Gegenteil",
+    "correct": 1,
+    "text": {
+      "de": "Was ist 1 + 1? (Wähle das Falsche!)",
+      "en": "What is 1 + 1? (Choose the wrong one!)"
+    },
+    "options": {
+      "de": [
+        "2",
+        "3",
+        "Zwei",
+        "Fenster"
+      ],
+      "en": [
+        "2",
+        "3",
+        "Two",
+        "Window"
+      ]
+    }
+  },
+  {
+    "id": "gegenteil_1_v2",
+    "cat": "Gegenteil",
+    "correct": 1,
+    "text": {
+      "de": "Ist Wasser nass? (Antworte falsch!)",
+      "en": "Is water wet? (Answer incorrectly!)"
+    },
+    "options": {
+      "de": [
+        "Ja",
+        "Nein",
+        "Manchmal",
+        "Klar"
+      ],
+      "en": [
+        "Yes",
+        "No",
+        "Sometimes",
+        "Sure"
+      ]
+    }
+  },
+  {
     "id": "fussball_0",
     "cat": "Fussball",
     "correct": 1,
