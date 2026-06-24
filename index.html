@@ -49,16 +49,16 @@
         @keyframes flicker { 0% { opacity: 0.99; } 100% { opacity: 1; } }
 
         h1 { 
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            -webkit-font-smoothing: none;
+            text-rendering: crispEdges;
             font-size: clamp(3rem, 15vw, 5rem); text-align: center; 
             letter-spacing: 15px;
-            position: absolute; top: 2vh; left: 50%; transform: translateX(-45.8%); width: 100%;
+            position: absolute; top: 2vh; left: 50%; transform: translateX(-45.0%); width: 100%;
             z-index: 30; font-weight: 900;
             color: var(--neon);
-            filter: drop-shadow(0 0 10px var(--neon));
+            text-shadow: none;
+            filter: none;
         }
 
         #eye-bg-container {
