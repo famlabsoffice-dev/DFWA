@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACK ATTACK - DOWNLOAD_INITIATED</title>
+    <title>ACK ATTACK - INSTALL_PROTOCOL</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
     <style>
         body, html {
@@ -22,17 +22,20 @@
             font-family: Impact, sans-serif; font-size: 2.5rem; letter-spacing: 5px;
             margin-bottom: 20px; text-shadow: 0 0 10px #39ff14;
         }
-        .download-btn {
+        .install-btn {
             background: #000; border: 2px solid #00d2ff; color: #00d2ff;
             padding: 20px 40px; font-size: 1.2rem; font-weight: 900;
-            text-transform: uppercase; cursor: pointer; text-decoration: none;
+            text-transform: uppercase; cursor: pointer;
             letter-spacing: 2px; transition: 0.3s;
         }
-        .download-btn:hover {
+        .install-btn:hover {
             background: #00d2ff; color: #000; box-shadow: 0 0 30px #00d2ff;
         }
         .status-text {
             margin-top: 20px; font-family: monospace; font-size: 0.8rem; opacity: 0.7;
+        }
+        #install-instructions {
+            display: none; margin-top: 20px; text-align: center; color: #00d2ff;
         }
     </style>
 </head>
@@ -41,7 +44,41 @@
         <img src="./assets/images/ack_core_clean.png" alt="ACK CORE">
     </div>
     <h1>ACK ATTACK</h1>
-    <a href="https://github.com/famlabsoffice-dev/DFWA/archive/refs/heads/main.zip" class="download-btn">DOWNLOAD_PROTOCOL</a>
-    <div class="status-text">SYSTEM_READY // SOURCE: GITHUB_MAIN</div>
+    <button id="install-btn" class="install-btn">INSTALL_PROTOCOL</button>
+    <div id="install-instructions">
+        WÄHLE "ZUM HOMESCREEN HINZUFÜGEN" IM BROWSER-MENÜ
+    </div>
+    <div class="status-text">SYSTEM_READY // PWA_INSTALL_HANDLER</div>
+
+    <script>
+        let deferredPrompt;
+        const installBtn = document.getElementById('install-btn');
+        const instructions = document.getElementById('install-instructions');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'block';
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                }
+                deferredPrompt = null;
+            } else {
+                instructions.style.display = 'block';
+                installBtn.innerText = "MANUAL_INSTALL_REQUIRED";
+            }
+        });
+
+        window.addEventListener('appinstalled', () => {
+            installBtn.innerText = "PROTOCOL_ESTABLISHED";
+            console.log('PWA was installed');
+        });
+    </script>
 </body>
 </html>
