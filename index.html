@@ -204,7 +204,7 @@
 
     <script>
         let state = { 
-            lang: 'de', questions: [], current: 0, score: 0, lives: 3,
+            lang: 'de', questions: [], allQuestions: [], current: 0, score: 0, lives: 3,
             playerName: localStorage.getItem('dfwa_name') || 'GUEST',
             playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
@@ -311,6 +311,7 @@
             }
 
             state.questions = shuffle(allQuestions, state.isChallenge ? state.challengeSeed : null);
+            state.allQuestions = allQuestions;
             
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('battle-lobby').classList.remove('active');
@@ -340,18 +341,23 @@
                 document.getElementById('timeline-bar').style.width = (state.timer / 15 * 100) + '%';
                 if (state.timer <= 0) {
                     clearInterval(state.timerInterval);
-                    checkAnswer(false);
+                    checkAnswer(null);
                 }
             }, 100);
         }
 
         function renderQuestion() {
-            if (state.current >= state.questions.length && state.questions.length > 0) {
-                state.current = 0;
-                state.questions = shuffle([...state.questions], null);
-            }
             const q = state.questions[state.current];
-            if (!q) return endGame();
+            if (!q) {
+                const selectedCat = document.getElementById('category-filter').value;
+                let pool = state.allQuestions;
+                if (selectedCat !== 'all') pool = state.allQuestions.filter(q => q.cat === selectedCat);
+                if (pool.length === 0) pool = state.allQuestions;
+                state.questions = shuffle([...pool], null);
+                state.current = 0;
+                renderQuestion();
+                return;
+            }
             state.timer = 15;
             document.getElementById('question-box').innerText = q.text[state.lang];
             const container = document.getElementById('options-container');
@@ -429,14 +435,20 @@
                 fMsg.style.borderColor = 'var(--neon)';
                 fMsg.style.color = 'var(--neon)';
                 fMsg.innerText = getComment('correct');
-            } else {
-                state.lives = Math.max(0, state.lives - 1); // Optimierte Fehlerbehandlung: Verhindert negative Werte
-                document.getElementById("lives-display").innerText = state.lives; // UI-Update für Leben
+            } else if (correct === false) {
+                state.lives = Math.max(0, state.lives - 1);
+                document.getElementById("lives-display").innerText = state.lives;
                 fEyeBase.src = './assets/images/ack_core_clean.png';
                 fContainer.classList.add('zoom-anim');
                 fMsg.style.borderColor = 'var(--error)';
                 fMsg.style.color = 'var(--error)';
                 fMsg.innerText = getComment('incorrect');
+            } else {
+                // Timer-Ablauf: kein Leben abziehen
+                fEyeBase.src = './assets/images/ack_core_clean.png';
+                fMsg.style.borderColor = 'var(--warning)';
+                fMsg.style.color = 'var(--warning)';
+                fMsg.innerText = state.lang === 'de' ? 'ZEIT ABGELAUFEN!' : 'TIME EXPIRED!';
             }
 
             fScreen.classList.add('active');
