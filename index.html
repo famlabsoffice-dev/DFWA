@@ -98,21 +98,28 @@
         @keyframes shake {
             0%, 100% { transform: translate(-50%, -50%); }
             10%, 30%, 50%, 70%, 90% { transform: translate(-52%, -50%); }
-            20%, 40%, 60%, 80% { transform: translate(-48%, -50%); }
+            20%, 40% { transform: translate(-48%, -50%); }
         }
 
         .ack-title { font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; }
         .ack-content { font-size: 1.6rem; text-transform: uppercase; line-height: 1.3; }
 
-        #score-panel { position: absolute; top: 10px; right: 15px; text-align: right; font-size: 0.75rem; opacity: 0.8; z-index: 100; }
+        #score-panel { position: absolute; top: 10px; right: 15px; text-align: right; font-size: 0.75rem; opacity: 0.8; z-index: 100; line-height: 1.4; }
         #lives-display { color: var(--error); font-weight: bold; }
-        #battle-status { color: var(--warning); font-weight: bold; display: none; margin-top: 5px; }
+        #battle-status { color: var(--warning); font-weight: bold; display: none; }
 
         .cyber-select, .cyber-input { background: #000; border: 2px solid var(--neon); padding: 12px; width: 100%; margin: 8px 0; font-weight: bold; color: var(--neon); }
         .cyber-input { border-color: var(--cyber-blue); color: var(--cyber-blue); }
 
         #leaderboard-list { list-style: none; padding: 0; font-size: 0.75rem; color: var(--cyber-blue); }
         .subtitle-text { color: var(--cyber-blue); text-shadow: 0 0 10px var(--cyber-blue); letter-spacing: 3px; font-weight: bold; font-size: 0.9rem; }
+
+        #game-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 3000;
+            justify-content: center; align-items: center; flex-direction: column;
+        }
+        .overlay-content { border: 2px solid var(--neon); padding: 30px; text-align: center; max-width: 90%; }
     </style>
 </head>
 <body>
@@ -226,12 +233,11 @@
         function createBattle() {
             const code = Math.random().toString(36).substring(2, 8).toUpperCase();
             document.getElementById('room-code').value = code;
-            alert(state.lang === 'de' ? "RAUM ERSTELLT: " + code : "ROOM CREATED: " + code);
         }
 
         function joinBattle() {
             const code = document.getElementById('room-code').value.trim();
-            if (code.length < 4) return alert("INVALID_CODE");
+            if (code.length < 4) return;
             state.isBattle = true;
             state.roomCode = code;
             document.getElementById('battle-status').style.display = 'block';
@@ -255,7 +261,6 @@
                 state.comments = await cRes.json();
                 state.questions = state.selectedCat === 'all' ? allQ : allQ.filter(q => q.cat === state.selectedCat);
                 
-                // Synchronize questions for battle mode using room code as seed
                 if (state.isBattle) {
                     const seed = state.roomCode.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
                     let m = state.questions.length, t, i;
