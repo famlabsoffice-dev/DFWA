@@ -139,7 +139,7 @@
                 <div id="stat-best" class="stat-overlay">PEAK_DATA//<br><span id="high-score">0</span>_PTS</div>
             </div>
             <div class="ui-content-wrapper">
-                <p style="color:var(--cyber-blue); letter-spacing:3px; font-weight:900; font-size:0.8rem; margin-bottom:2.5vh;">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
+                <p style="color:var(--cyber-blue); letter-spacing:3px; font-weight:900; font-size:0.8rem; margin-bottom:2.5vh; white-space: nowrap;">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
                 <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12">
                 <select id="category-filter" class="cyber-select"><option value="all">ALL_SECTORS</option></select>
                 <button id="resume-btn" class="option-btn battle-btn" style="display:none;" onclick="resumeProtocol()">RESUME_PROTOCOL</button>
@@ -200,6 +200,12 @@
             document.getElementById('game-screen').classList.add('active');
             document.getElementById('resume-btn').style.display = 'none';
             startTimer();
+        }
+
+        function showLobby() {
+            const code = Math.floor(100000 + Math.random() * 900000);
+            alert(state.lang === 'de' ? `BATTLE_MODUS AKTIVIERT\nRAUM_CODE: ${code}\n(Echtzeit-Sync wird initialisiert...)` : `BATTLE_MODE ACTIVE\nROOM_CODE: ${code}\n(Initializing Real-time Sync...)`);
+            state.battleCode = code;
         }
 
         async function initGame() {
