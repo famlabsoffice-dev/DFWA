@@ -221,7 +221,7 @@
     <script>
         let state = { 
             lang: 'de', questions: [], allQuestions: [], current: 0, score: 0, lives: 3,
-            streak: 0,
+            streak: 0, streakMax: 0,
             playerName: localStorage.getItem('dfwa_name') || 'GUEST',
             playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
