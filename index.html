@@ -402,14 +402,15 @@
 
         function startTimer() {
             clearInterval(state.timerInterval);
+            const bar = document.getElementById('timeline-bar');
+            const container = document.getElementById('timeline-container');
             state.timerInterval = setInterval(() => {
                 state.timer -= 0.1;
                 const maxTime = Math.max(5, 15 - ((state.questionCount - 1) * 0.2));
                 const pct = Math.max(0, state.timer / maxTime * 100);
-                const bar = document.getElementById('timeline-bar');
                 bar.style.width = pct + '%';
                 bar.style.background = state.timer <= 5 ? 'var(--error)' : 'var(--neon)';
-                document.getElementById('timeline-container').setAttribute('aria-valuenow', Math.round(state.timer));
+                container.setAttribute('aria-valuenow', Math.round(state.timer));
                 if (state.timer <= 0) { clearInterval(state.timerInterval); checkAnswer(null); }
             }, 100);
         }
