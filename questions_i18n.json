@@ -37598,5 +37598,2205 @@
       ]
     },
     "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte die Mona Lisa?",
+      "en": "Who painted the Mona Lisa?"
+    },
+    "options": {
+      "de": [
+        "Leonardo da Vinci",
+        "Michelangelo",
+        "Raphael",
+        "Donatello"
+      ],
+      "en": [
+        "Leonardo da Vinci",
+        "Michelangelo",
+        "Raphael",
+        "Donatello"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welches Instrument spielt man in einem Orchester am häufigsten mit einem Bogen?",
+      "en": "Which instrument is most commonly played with a bow in an orchestra?"
+    },
+    "options": {
+      "de": [
+        "Flöte",
+        "Geige",
+        "Klavier",
+        "Trompete"
+      ],
+      "en": [
+        "Flute",
+        "Violin",
+        "Piano",
+        "Trumpet"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Romeo und Julia'?",
+      "en": "Who wrote 'Romeo and Juliet'?"
+    },
+    "options": {
+      "de": [
+        "Charles Dickens",
+        "Mark Twain",
+        "William Shakespeare",
+        "Jane Austen"
+      ],
+      "en": [
+        "Charles Dickens",
+        "Mark Twain",
+        "William Shakespeare",
+        "Jane Austen"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "In welcher Stadt steht die Sagrada Família?",
+      "en": "In which city is the Sagrada Família located?"
+    },
+    "options": {
+      "de": [
+        "Madrid",
+        "Sevilla",
+        "Valencia",
+        "Barcelona"
+      ],
+      "en": [
+        "Madrid",
+        "Seville",
+        "Valencia",
+        "Barcelona"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welche Kunstrichtung ist für ihre Träume und das Unterbewusstsein bekannt?",
+      "en": "Which art movement is known for its dreams and the subconscious?"
+    },
+    "options": {
+      "de": [
+        "Surrealismus",
+        "Impressionismus",
+        "Expressionismus",
+        "Klassizismus"
+      ],
+      "en": [
+        "Surrealism",
+        "Impressionism",
+        "Expressionism",
+        "Classicism"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wie heißt der berühmte Turm in Paris?",
+      "en": "What is the name of the famous tower in Paris?"
+    },
+    "options": {
+      "de": [
+        "Empire State Building",
+        "Eiffelturm",
+        "Big Ben",
+        "Colosseum"
+      ],
+      "en": [
+        "Empire State Building",
+        "Eiffel Tower",
+        "Big Ben",
+        "Colosseum"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer komponierte die 'Neunte Sinfonie'?",
+      "en": "Who composed the 'Ninth Symphony'?"
+    },
+    "options": {
+      "de": [
+        "Mozart",
+        "Bach",
+        "Beethoven",
+        "Haydn"
+      ],
+      "en": [
+        "Mozart",
+        "Bach",
+        "Beethoven",
+        "Haydn"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welche Farbe wird traditionell mit 'Royal' assoziiert?",
+      "en": "Which color is traditionally associated with 'royal'?"
+    },
+    "options": {
+      "de": [
+        "Rot",
+        "Gelb",
+        "Grün",
+        "Blau"
+      ],
+      "en": [
+        "Red",
+        "Yellow",
+        "Green",
+        "Blue"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welches Museum beherbergt die Mona Lisa?",
+      "en": "Which museum houses the Mona Lisa?"
+    },
+    "options": {
+      "de": [
+        "Louvre",
+        "Uffizien",
+        "Prado",
+        "British Museum"
+      ],
+      "en": [
+        "Louvre",
+        "Uffizi",
+        "Prado",
+        "British Museum"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist der Autor von 'Harry Potter'?",
+      "en": "Who is the author of 'Harry Potter'?"
+    },
+    "options": {
+      "de": [
+        "Stephen King",
+        "J.K. Rowling",
+        "George R.R. Martin",
+        "Tolkien"
+      ],
+      "en": [
+        "Stephen King",
+        "J.K. Rowling",
+        "George R.R. Martin",
+        "Tolkien"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welcher berühmte Maler schnitt sich ein Ohr ab?",
+      "en": "Which famous painter cut off his ear?"
+    },
+    "options": {
+      "de": [
+        "Picasso",
+        "Dali",
+        "Van Gogh",
+        "Monet"
+      ],
+      "en": [
+        "Picasso",
+        "Dali",
+        "Van Gogh",
+        "Monet"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Opera'?",
+      "en": "What is 'opera'?"
+    },
+    "options": {
+      "de": [
+        "Film",
+        "Tanz",
+        "Gedicht",
+        "Musiktheater"
+      ],
+      "en": [
+        "Film",
+        "Dance",
+        "Poem",
+        "Music theater"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist ein berühmter Bildhauer der Renaissance?",
+      "en": "Who is a famous sculptor of the Renaissance?"
+    },
+    "options": {
+      "de": [
+        "Michelangelo",
+        "Picasso",
+        "Warhol",
+        "Dali"
+      ],
+      "en": [
+        "Michelangelo",
+        "Picasso",
+        "Warhol",
+        "Dali"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welches Land ist für den Tango bekannt?",
+      "en": "Which country is famous for the tango?"
+    },
+    "options": {
+      "de": [
+        "Spanien",
+        "Argentinien",
+        "Brasilien",
+        "Portugal"
+      ],
+      "en": [
+        "Spain",
+        "Argentina",
+        "Brazil",
+        "Portugal"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Klassik'?",
+      "en": "What is 'classical music'?"
+    },
+    "options": {
+      "de": [
+        "Rockmusik",
+        "Popmusik",
+        "Musikepoche",
+        "Jazz"
+      ],
+      "en": [
+        "Rock music",
+        "Pop music",
+        "Musical era",
+        "Jazz"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Der kleine Prinz'?",
+      "en": "Who wrote 'The Little Prince'?"
+    },
+    "options": {
+      "de": [
+        "Victor Hugo",
+        "Flaubert",
+        "Zola",
+        "Antoine de Saint-Exupéry"
+      ],
+      "en": [
+        "Victor Hugo",
+        "Flaubert",
+        "Zola",
+        "Antoine de Saint-Exupéry"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welche Kunstrichtung malte Licht und Natur?",
+      "en": "Which art movement painted light and nature?"
+    },
+    "options": {
+      "de": [
+        "Impressionismus",
+        "Kubismus",
+        "Barock",
+        "Gotik"
+      ],
+      "en": [
+        "Impressionism",
+        "Cubism",
+        "Baroque",
+        "Gothic"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist ein berühmter Jazzmusiker (Trompete)?",
+      "en": "Who is a famous jazz musician (trumpet)?"
+    },
+    "options": {
+      "de": [
+        "Bach",
+        "Miles Davis",
+        "Mozart",
+        "Elvis"
+      ],
+      "en": [
+        "Bach",
+        "Miles Davis",
+        "Mozart",
+        "Elvis"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist eine 'Skulptur'?",
+      "en": "What is a 'sculpture'?"
+    },
+    "options": {
+      "de": [
+        "Bild",
+        "Film",
+        "Dreidimensionale Kunst",
+        "Buch"
+      ],
+      "en": [
+        "Picture",
+        "Film",
+        "Three-dimensional art",
+        "Book"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte 'Das letzte Abendmahl'?",
+      "en": "Who painted 'The Last Supper'?"
+    },
+    "options": {
+      "de": [
+        "Michelangelo",
+        "Raphael",
+        "Donatello",
+        "Leonardo da Vinci"
+      ],
+      "en": [
+        "Michelangelo",
+        "Raphael",
+        "Donatello",
+        "Leonardo da Vinci"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Pop-Art'?",
+      "en": "What is 'Pop Art'?"
+    },
+    "options": {
+      "de": [
+        "Kunst mit Alltagskultur",
+        "Klassik",
+        "Mittelalter",
+        "Barock"
+      ],
+      "en": [
+        "Art with everyday culture",
+        "Classics",
+        "Middle Ages",
+        "Baroque"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welches Instrument hat 88 Tasten?",
+      "en": "Which instrument has 88 keys?"
+    },
+    "options": {
+      "de": [
+        "Geige",
+        "Klavier",
+        "Gitarre",
+        "Flöte"
+      ],
+      "en": [
+        "Violin",
+        "Piano",
+        "Guitar",
+        "Flute"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist der Autor von 'Faust'?",
+      "en": "Who is the author of 'Faust'?"
+    },
+    "options": {
+      "de": [
+        "Schiller",
+        "Lessing",
+        "Goethe",
+        "Mann"
+      ],
+      "en": [
+        "Schiller",
+        "Lessing",
+        "Goethe",
+        "Mann"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wo steht das Kolosseum?",
+      "en": "Where is the Colosseum located?"
+    },
+    "options": {
+      "de": [
+        "Paris",
+        "Berlin",
+        "Madrid",
+        "Rom"
+      ],
+      "en": [
+        "Paris",
+        "Berlin",
+        "Madrid",
+        "Rome"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welcher Maler ist für kubistische Werke bekannt?",
+      "en": "Which painter is known for cubist works?"
+    },
+    "options": {
+      "de": [
+        "Picasso",
+        "Monet",
+        "Dali",
+        "Van Gogh"
+      ],
+      "en": [
+        "Picasso",
+        "Monet",
+        "Dali",
+        "Van Gogh"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist ein 'Roman'?",
+      "en": "What is a 'novel'?"
+    },
+    "options": {
+      "de": [
+        "Gedicht",
+        "Längere Prosaerzählung",
+        "Kurzgeschichte",
+        "Theaterstück"
+      ],
+      "en": [
+        "Poem",
+        "Longer prose narrative",
+        "Short story",
+        "Play"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer komponierte 'Die Zauberflöte'?",
+      "en": "Who composed 'The Magic Flute'?"
+    },
+    "options": {
+      "de": [
+        "Bach",
+        "Beethoven",
+        "Mozart",
+        "Haydn"
+      ],
+      "en": [
+        "Bach",
+        "Beethoven",
+        "Mozart",
+        "Haydn"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Architektur'?",
+      "en": "What is 'architecture'?"
+    },
+    "options": {
+      "de": [
+        "Malerei",
+        "Musik",
+        "Tanz",
+        "Baukunst"
+      ],
+      "en": [
+        "Painting",
+        "Music",
+        "Dance",
+        "Architecture"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb '1984'?",
+      "en": "Who wrote '1984'?"
+    },
+    "options": {
+      "de": [
+        "Orwell",
+        "Huxley",
+        "Bradbury",
+        "King"
+      ],
+      "en": [
+        "Orwell",
+        "Huxley",
+        "Bradbury",
+        "King"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Fotografie'?",
+      "en": "What is 'photography'?"
+    },
+    "options": {
+      "de": [
+        "Malen",
+        "Lichtbildkunst",
+        "Bildhauerei",
+        "Musik"
+      ],
+      "en": [
+        "Painting",
+        "Light art (photography)",
+        "Sculpture",
+        "Music"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist der Regisseur von 'Pulp Fiction'?",
+      "en": "Who is the director of 'Pulp Fiction'?"
+    },
+    "options": {
+      "de": [
+        "Spielberg",
+        "Scorsese",
+        "Tarantino",
+        "Nolan"
+      ],
+      "en": [
+        "Spielberg",
+        "Scorsese",
+        "Tarantino",
+        "Nolan"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Welche Farbe wird mit 'Grün' assoziiert?",
+      "en": "Which color is associated with 'green'?"
+    },
+    "options": {
+      "de": [
+        "Feuer",
+        "Sonne",
+        "Himmel",
+        "Natur"
+      ],
+      "en": [
+        "Fire",
+        "Sun",
+        "Sky",
+        "Nature"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Andy Warhol?",
+      "en": "Who is Andy Warhol?"
+    },
+    "options": {
+      "de": [
+        "Pop-Art-Künstler",
+        "Renaissance-Maler",
+        "Klassik-Komponist",
+        "Autor"
+      ],
+      "en": [
+        "Pop art artist",
+        "Renaissance painter",
+        "Classical composer",
+        "Author"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist ein 'Gedicht'?",
+      "en": "What is a 'poem'?"
+    },
+    "options": {
+      "de": [
+        "Roman",
+        "Text in Versform",
+        "Theaterstück",
+        "Sachbuch"
+      ],
+      "en": [
+        "Novel",
+        "Text in verse form",
+        "Play",
+        "Non-fiction"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Salvador Dalí?",
+      "en": "Who is Salvador Dalí?"
+    },
+    "options": {
+      "de": [
+        "Impressionist",
+        "Renaissance-Künstler",
+        "Surrealist",
+        "Klassiker"
+      ],
+      "en": [
+        "Impressionist",
+        "Renaissance artist",
+        "Surrealist",
+        "Classicist"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Jazz'?",
+      "en": "What is 'jazz'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Pop",
+        "Rock",
+        "Musikgenre mit Improvisation"
+      ],
+      "en": [
+        "Classics",
+        "Pop",
+        "Rock",
+        "Music genre with improvisation"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Frida Kahlo?",
+      "en": "Who is Frida Kahlo?"
+    },
+    "options": {
+      "de": [
+        "Malerin",
+        "Autorin",
+        "Musikerin",
+        "Architektin"
+      ],
+      "en": [
+        "Painter",
+        "Author",
+        "Musician",
+        "Architect"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Design'?",
+      "en": "What is 'design'?"
+    },
+    "options": {
+      "de": [
+        "Malerei",
+        "Gestaltung",
+        "Musik",
+        "Tanzen"
+      ],
+      "en": [
+        "Painting",
+        "Form/Creation",
+        "Music",
+        "Dancing"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist der Autor von 'Moby Dick'?",
+      "en": "Who is the author of 'Moby Dick'?"
+    },
+    "options": {
+      "de": [
+        "Twain",
+        "Hemingway",
+        "Melville",
+        "Poe"
+      ],
+      "en": [
+        "Twain",
+        "Hemingway",
+        "Melville",
+        "Poe"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Kino'?",
+      "en": "What is 'cinema'?"
+    },
+    "options": {
+      "de": [
+        "Theater",
+        "Konzert",
+        "Tanz",
+        "Filmvorführung"
+      ],
+      "en": [
+        "Theater",
+        "Concert",
+        "Dance",
+        "Film screening"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte 'Der Schrei'?",
+      "en": "Who painted 'The Scream'?"
+    },
+    "options": {
+      "de": [
+        "Munch",
+        "Monet",
+        "Van Gogh",
+        "Picasso"
+      ],
+      "en": [
+        "Munch",
+        "Monet",
+        "Van Gogh",
+        "Picasso"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist ein 'Musical'?",
+      "en": "What is a 'musical'?"
+    },
+    "options": {
+      "de": [
+        "Film",
+        "Musiktheaterstück",
+        "Oper",
+        "Ballett"
+      ],
+      "en": [
+        "Film",
+        "Musical play",
+        "Opera",
+        "Ballet"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Der Prozess'?",
+      "en": "Who wrote 'The Trial'?"
+    },
+    "options": {
+      "de": [
+        "Mann",
+        "Goethe",
+        "Kafka",
+        "Brecht"
+      ],
+      "en": [
+        "Mann",
+        "Goethe",
+        "Kafka",
+        "Brecht"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Ballett'?",
+      "en": "What is 'ballet'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Malerei",
+        "Theater",
+        "Tanzkunst"
+      ],
+      "en": [
+        "Music",
+        "Painting",
+        "Theater",
+        "Dance art"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Claude Monet?",
+      "en": "Who is Claude Monet?"
+    },
+    "options": {
+      "de": [
+        "Impressionist",
+        "Surrealist",
+        "Renaissance-Künstler",
+        "Klassiker"
+      ],
+      "en": [
+        "Impressionist",
+        "Surrealist",
+        "Renaissance artist",
+        "Classicist"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Literatur'?",
+      "en": "What is 'literature'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Schriftliche Werke",
+        "Tanz",
+        "Malerei"
+      ],
+      "en": [
+        "Music",
+        "Written works",
+        "Dance",
+        "Painting"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer komponierte 'Die vier Jahreszeiten'?",
+      "en": "Who composed 'The Four Seasons'?"
+    },
+    "options": {
+      "de": [
+        "Bach",
+        "Mozart",
+        "Vivaldi",
+        "Beethoven"
+      ],
+      "en": [
+        "Bach",
+        "Mozart",
+        "Vivaldi",
+        "Beethoven"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Barock'?",
+      "en": "What is 'Baroque'?"
+    },
+    "options": {
+      "de": [
+        "Moderne",
+        "Klassik",
+        "Mittelalter",
+        "Kunstepoche"
+      ],
+      "en": [
+        "Modern",
+        "Classics",
+        "Middle Ages",
+        "Art period"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte die Decke der Sixtinischen Kapelle?",
+      "en": "Who painted the ceiling of the Sistine Chapel?"
+    },
+    "options": {
+      "de": [
+        "Michelangelo",
+        "Raphael",
+        "Donatello",
+        "Da Vinci"
+      ],
+      "en": [
+        "Michelangelo",
+        "Raphael",
+        "Donatello",
+        "Da Vinci"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Tanz'?",
+      "en": "What is 'dance'?"
+    },
+    "options": {
+      "de": [
+        "Malerei",
+        "Bewegungskunst",
+        "Musik",
+        "Schreiben"
+      ],
+      "en": [
+        "Painting",
+        "Movement art",
+        "Music",
+        "Writing"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist der Autor von 'Sherlock Holmes'?",
+      "en": "Who is the author of 'Sherlock Holmes'?"
+    },
+    "options": {
+      "de": [
+        "Christie",
+        "King",
+        "Doyle",
+        "Poe"
+      ],
+      "en": [
+        "Christie",
+        "King",
+        "Doyle",
+        "Poe"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Theater'?",
+      "en": "What is 'theater'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Malerei",
+        "Tanzen",
+        "Dramatische Aufführung"
+      ],
+      "en": [
+        "Music",
+        "Painting",
+        "Dancing",
+        "Dramatic performance"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte 'Sonnenblumen'?",
+      "en": "Who painted 'Sunflowers'?"
+    },
+    "options": {
+      "de": [
+        "Van Gogh",
+        "Monet",
+        "Picasso",
+        "Dali"
+      ],
+      "en": [
+        "Van Gogh",
+        "Monet",
+        "Picasso",
+        "Dali"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Rock'?",
+      "en": "What is 'rock music'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Stolz und Vorurteil'?",
+      "en": "Who wrote 'Pride and Prejudice'?"
+    },
+    "options": {
+      "de": [
+        "Bronte",
+        "Eliot",
+        "Austen",
+        "Woolf"
+      ],
+      "en": [
+        "Bronte",
+        "Eliot",
+        "Austen",
+        "Woolf"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Malerei'?",
+      "en": "What is 'painting'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Tanzen",
+        "Schreiben",
+        "Kunst mit Farben"
+      ],
+      "en": [
+        "Music",
+        "Dancing",
+        "Writing",
+        "Art with colors"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Edgar Degas?",
+      "en": "Who is Edgar Degas?"
+    },
+    "options": {
+      "de": [
+        "Impressionist",
+        "Surrealist",
+        "Klassiker",
+        "Renaissance-Künstler"
+      ],
+      "en": [
+        "Impressionist",
+        "Surrealist",
+        "Classicist",
+        "Renaissance artist"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Blues'?",
+      "en": "What is 'blues'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Ulysses'?",
+      "en": "Who wrote 'Ulysses'?"
+    },
+    "options": {
+      "de": [
+        "Woolf",
+        "Kafka",
+        "Joyce",
+        "Mann"
+      ],
+      "en": [
+        "Woolf",
+        "Kafka",
+        "Joyce",
+        "Mann"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Bildhauerei'?",
+      "en": "What is 'sculpture'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Malerei",
+        "Tanzen",
+        "Kunst mit Formen"
+      ],
+      "en": [
+        "Music",
+        "Painting",
+        "Dancing",
+        "Art with shapes"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte 'Guernica'?",
+      "en": "Who painted 'Guernica'?"
+    },
+    "options": {
+      "de": [
+        "Picasso",
+        "Dali",
+        "Monet",
+        "Van Gogh"
+      ],
+      "en": [
+        "Picasso",
+        "Dali",
+        "Monet",
+        "Van Gogh"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Punk'?",
+      "en": "What is 'punk'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb '100 Jahre Einsamkeit'?",
+      "en": "Who wrote '100 Years of Solitude'?"
+    },
+    "options": {
+      "de": [
+        "Borges",
+        "Neruda",
+        "Marquez",
+        "Cortazar"
+      ],
+      "en": [
+        "Borges",
+        "Neruda",
+        "Marquez",
+        "Cortazar"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Musik'?",
+      "en": "What is 'music'?"
+    },
+    "options": {
+      "de": [
+        "Malerei",
+        "Tanzen",
+        "Schreiben",
+        "Klangkunst"
+      ],
+      "en": [
+        "Painting",
+        "Dancing",
+        "Writing",
+        "Sound art"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Jackson Pollock?",
+      "en": "Who is Jackson Pollock?"
+    },
+    "options": {
+      "de": [
+        "Abstrakter Maler",
+        "Renaissance-Künstler",
+        "Klassiker",
+        "Surrealist"
+      ],
+      "en": [
+        "Abstract painter",
+        "Renaissance artist",
+        "Classicist",
+        "Surrealist"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Hip-Hop'?",
+      "en": "What is 'hip-hop'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Der Fänger im Roggen'?",
+      "en": "Who wrote 'The Catcher in the Rye'?"
+    },
+    "options": {
+      "de": [
+        "Kerouac",
+        "Hemingway",
+        "Salinger",
+        "Capote"
+      ],
+      "en": [
+        "Kerouac",
+        "Hemingway",
+        "Salinger",
+        "Capote"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Fotografie'?",
+      "en": "What is 'photography'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Malerei",
+        "Tanzen",
+        "Lichtkunst"
+      ],
+      "en": [
+        "Music",
+        "Painting",
+        "Dancing",
+        "Light art"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte die 'Seerosen'?",
+      "en": "Who painted 'Water Lilies'?"
+    },
+    "options": {
+      "de": [
+        "Monet",
+        "Munch",
+        "Van Gogh",
+        "Picasso"
+      ],
+      "en": [
+        "Monet",
+        "Munch",
+        "Van Gogh",
+        "Picasso"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Techno'?",
+      "en": "What is 'techno'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Der alte Mann und das Meer'?",
+      "en": "Who wrote 'The Old Man and the Sea'?"
+    },
+    "options": {
+      "de": [
+        "Faulkner",
+        "Joyce",
+        "Hemingway",
+        "Fitzgerald"
+      ],
+      "en": [
+        "Faulkner",
+        "Joyce",
+        "Hemingway",
+        "Fitzgerald"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Klassik'?",
+      "en": "What is 'classical'?"
+    },
+    "options": {
+      "de": [
+        "Pop",
+        "Rock",
+        "Jazz",
+        "Musikepoche"
+      ],
+      "en": [
+        "Pop",
+        "Rock",
+        "Jazz",
+        "Music period"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Georgia O'Keeffe?",
+      "en": "Who is Georgia O'Keeffe?"
+    },
+    "options": {
+      "de": [
+        "Malerin",
+        "Autorin",
+        "Musikerin",
+        "Architektin"
+      ],
+      "en": [
+        "Painter",
+        "Author",
+        "Musician",
+        "Architect"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Folk'?",
+      "en": "What is 'folk'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Der große Gatsby'?",
+      "en": "Who wrote 'The Great Gatsby'?"
+    },
+    "options": {
+      "de": [
+        "Hemingway",
+        "Steinbeck",
+        "Fitzgerald",
+        "Faulkner"
+      ],
+      "en": [
+        "Hemingway",
+        "Steinbeck",
+        "Fitzgerald",
+        "Faulkner"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Kunst'?",
+      "en": "What is 'art'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Tanz",
+        "Wissenschaft",
+        "Kreativer Ausdruck"
+      ],
+      "en": [
+        "Music",
+        "Dance",
+        "Science",
+        "Creative expression"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte 'Die Beständigkeit der Erinnerung'?",
+      "en": "Who painted 'The Persistence of Memory'?"
+    },
+    "options": {
+      "de": [
+        "Dali",
+        "Monet",
+        "Picasso",
+        "Van Gogh"
+      ],
+      "en": [
+        "Dali",
+        "Monet",
+        "Picasso",
+        "Van Gogh"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Reggae'?",
+      "en": "What is 'reggae'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Lolita'?",
+      "en": "Who wrote 'Lolita'?"
+    },
+    "options": {
+      "de": [
+        "Salinger",
+        "Kerouac",
+        "Nabokov",
+        "Updike"
+      ],
+      "en": [
+        "Salinger",
+        "Kerouac",
+        "Nabokov",
+        "Updike"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Malerei'?",
+      "en": "What is 'painting'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Tanzen",
+        "Schreiben",
+        "Visuelle Kunst"
+      ],
+      "en": [
+        "Music",
+        "Dancing",
+        "Writing",
+        "Visual art"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Gustav Klimt?",
+      "en": "Who is Gustav Klimt?"
+    },
+    "options": {
+      "de": [
+        "Maler",
+        "Autor",
+        "Musiker",
+        "Architekt"
+      ],
+      "en": [
+        "Painter",
+        "Author",
+        "Musician",
+        "Architect"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Country'?",
+      "en": "What is 'country'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Fahrenheit 451'?",
+      "en": "Who wrote 'Fahrenheit 451'?"
+    },
+    "options": {
+      "de": [
+        "Huxley",
+        "Orwell",
+        "Bradbury",
+        "King"
+      ],
+      "en": [
+        "Huxley",
+        "Orwell",
+        "Bradbury",
+        "King"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Architektur'?",
+      "en": "What is 'architecture'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Tanz",
+        "Malerei",
+        "Baukunst"
+      ],
+      "en": [
+        "Music",
+        "Dance",
+        "Painting",
+        "Architecture"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte 'Die Nachtwache'?",
+      "en": "Who painted 'The Night Watch'?"
+    },
+    "options": {
+      "de": [
+        "Rembrandt",
+        "Vermeer",
+        "Hals",
+        "Rubens"
+      ],
+      "en": [
+        "Rembrandt",
+        "Vermeer",
+        "Hals",
+        "Rubens"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Disco'?",
+      "en": "What is 'disco'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Das Bildnis des Dorian Gray'?",
+      "en": "Who wrote 'The Picture of Dorian Gray'?"
+    },
+    "options": {
+      "de": [
+        "Hardy",
+        "Joyce",
+        "Wilde",
+        "Woolf"
+      ],
+      "en": [
+        "Hardy",
+        "Joyce",
+        "Wilde",
+        "Woolf"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Literatur'?",
+      "en": "What is 'literature'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Tanz",
+        "Malerei",
+        "Geschriebene Werke"
+      ],
+      "en": [
+        "Music",
+        "Dance",
+        "Painting",
+        "Written works"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Henri Matisse?",
+      "en": "Who is Henri Matisse?"
+    },
+    "options": {
+      "de": [
+        "Maler",
+        "Autor",
+        "Musiker",
+        "Architekt"
+      ],
+      "en": [
+        "Painter",
+        "Author",
+        "Musician",
+        "Architect"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Soul'?",
+      "en": "What is 'soul'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Der Fremde'?",
+      "en": "Who wrote 'The Stranger'?"
+    },
+    "options": {
+      "de": [
+        "Sartre",
+        "Beauvoir",
+        "Camus",
+        "Foucault"
+      ],
+      "en": [
+        "Sartre",
+        "Beauvoir",
+        "Camus",
+        "Foucault"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Tanz'?",
+      "en": "What is 'dance'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Malerei",
+        "Schreiben",
+        "Körperbewegung"
+      ],
+      "en": [
+        "Music",
+        "Painting",
+        "Writing",
+        "Body movement"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer malte 'Das Mädchen mit dem Perlenohrring'?",
+      "en": "Who painted 'Girl with a Pearl Earring'?"
+    },
+    "options": {
+      "de": [
+        "Vermeer",
+        "Rembrandt",
+        "Rubens",
+        "Hals"
+      ],
+      "en": [
+        "Vermeer",
+        "Rembrandt",
+        "Rubens",
+        "Hals"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Heavy Metal'?",
+      "en": "What is 'heavy metal'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Die Verwandlung'?",
+      "en": "Who wrote 'The Metamorphosis'?"
+    },
+    "options": {
+      "de": [
+        "Mann",
+        "Brecht",
+        "Kafka",
+        "Musil"
+      ],
+      "en": [
+        "Mann",
+        "Brecht",
+        "Kafka",
+        "Musil"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Fotografie'?",
+      "en": "What is 'photography'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Malerei",
+        "Tanzen",
+        "Bildaufnahme"
+      ],
+      "en": [
+        "Music",
+        "Painting",
+        "Dancing",
+        "Image capture"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer ist Marc Chagall?",
+      "en": "Who is Marc Chagall?"
+    },
+    "options": {
+      "de": [
+        "Maler",
+        "Autor",
+        "Musiker",
+        "Architekt"
+      ],
+      "en": [
+        "Painter",
+        "Author",
+        "Musician",
+        "Architect"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Gospel'?",
+      "en": "What is 'gospel'?"
+    },
+    "options": {
+      "de": [
+        "Klassik",
+        "Musikgenre",
+        "Malerei",
+        "Tanz"
+      ],
+      "en": [
+        "Classics",
+        "Music genre",
+        "Painting",
+        "Dance"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Wer schrieb 'Jane Eyre'?",
+      "en": "Who wrote 'Jane Eyre'?"
+    },
+    "options": {
+      "de": [
+        "Austen",
+        "Eliot",
+        "Bronte",
+        "Dickens"
+      ],
+      "en": [
+        "Austen",
+        "Eliot",
+        "Bronte",
+        "Dickens"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Kunst & Kultur",
+    "text": {
+      "de": "Was ist 'Bildhauerei'?",
+      "en": "What is 'sculpture'?"
+    },
+    "options": {
+      "de": [
+        "Musik",
+        "Tanzen",
+        "Malerei",
+        "3D-Kunst"
+      ],
+      "en": [
+        "Music",
+        "Dancing",
+        "Painting",
+        "3D art"
+      ]
+    },
+    "correct": 3
   }
 ]
