@@ -5,7 +5,9 @@ const ASSETS = [
   './manifest.json',
   './questions_i18n.json',
   './ack_comments.json',
-  './assets/fonts/inter-900.woff2'
+  './assets/fonts/inter-900.woff2',
+  './assets/images/ack_core_clean.png',
+  './assets/images/ack_core_closed_clean.png'
 ];
 
 self.addEventListener('install', (event) => {
