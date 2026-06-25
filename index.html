@@ -262,7 +262,12 @@
                     state.challengeSeed = data.seed;
                     state.opponentScore = data.score;
                     initGame(false);
-                } catch(e) { alert("INVALID_CODE"); }
+                } catch(e) {
+  const inp = document.getElementById("challenge-code-input");
+  inp.value = "";
+  inp.placeholder = "INVALID_CODE — RETRY";
+  setTimeout(() => inp.placeholder = "ENTER_CHALLENGE_CODE", 2000);
+}
             } else {
                 initGame(true);
             }
@@ -313,47 +318,59 @@
 
         async function initGame(createChallenge) {
             state.isCreatingChallenge = createChallenge;
-            state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
-            localStorage.setItem('dfwa_name', state.playerName);
+            state.playerName = document.getElementById("player-name").value.trim() || "GUEST";
+            localStorage.setItem("dfwa_name", state.playerName);
             state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0;
-            document.getElementById("lives-display").innerText = state.lives;
-            
-            if (!cachedQuestions || !cachedComments) {
-                const [qRes, cRes] = await Promise.all([fetch('questions_i18n.json'), fetch('ack_comments.json')]);
-                cachedQuestions = await qRes.json();
-                cachedComments = await cRes.json();
-            }
-            state.comments = cachedComments;
 
-            const selectedCat = document.getElementById('category-filter').value;
-            let pool = cachedQuestions;
-            if (selectedCat !== 'all') {
-                pool = cachedQuestions.filter(q => q.cat === selectedCat);
-            }
+            try {
+                const [qRes, cRes] = await Promise.all([
+                    fetch("questions_i18n.json"),
+                    fetch("ack_comments.json")
+                ]);
+                if (!qRes.ok || !cRes.ok) throw new Error("FETCH_FAILED");
+                let allQuestions = await qRes.json();
+                state.comments = await cRes.json();
+                state.allQuestions = allQuestions;
 
-            state.questions = shuffle([...pool], state.isChallenge ? state.challengeSeed : null);
-            state.allQuestions = cachedQuestions;
-            
-            document.getElementById("start-screen").classList.remove("active");
-            document.getElementById("battle-lobby").classList.remove("active");
-            document.getElementById("game-screen").classList.add("active");
-            document.getElementById("hud-score").innerText = "0_PTS";
-            document.getElementById("hud-streak").style.display = "none";
-            renderQuestion();
+                const selectedCat = document.getElementById("category-filter").value;
+                if (selectedCat !== "all") {
+                    allQuestions = allQuestions.filter(q => q.cat === selectedCat);
+                }
+                if (allQuestions.length === 0) throw new Error("NO_QUESTIONS");
+
+                state.questions = shuffle([...allQuestions], state.isChallenge ? state.challengeSeed : null);
+
+                document.getElementById("start-screen").classList.remove("active");
+                document.getElementById("battle-lobby").classList.remove("active");
+                document.getElementById("game-screen").classList.add("active");
+                document.getElementById("hud-score").innerText = "0_PTS";
+                document.getElementById("hud-streak").style.display = "none";
+                renderQuestion();
+            } catch(e) {
+                document.getElementById("start-btn").innerText =
+                    e.message === "NO_QUESTIONS" ? "ERROR: EMPTY_SECTOR" : "ERROR: SYSTEM_OFFLINE";
+                setTimeout(() => {
+                    document.getElementById("start-btn").innerText =
+                        state.lang === "de" ? "PROTOKOLL_STARTEN" : "INIT_PROTOCOL";
+                }, 3000);
+            }
         }
 
         async function loadCategories() {
-            const res = await fetch('questions_i18n.json');
-            const questions = await res.json();
-            const cats = [...new Set(questions.map(q => q.cat))];
-            const filter = document.getElementById('category-filter');
-            filter.innerHTML = `<option value="all">${state.lang === 'de' ? 'ALLE_SEKTOREN' : 'ALL_SECTORS'}</option>`;
-            cats.forEach(cat => {
-                const opt = document.createElement('option');
-                opt.value = cat;
-                opt.innerText = cat.toUpperCase();
-                filter.appendChild(opt);
-            });
+            try {
+                const res = await fetch("questions_i18n.json");
+                if (!res.ok) return;
+                const questions = await res.json();
+                const cats = [...new Set(questions.map(q => q.cat))];
+                const filter = document.getElementById("category-filter");
+                filter.innerHTML = `<option value="all">${state.lang === "de" ? "ALLE_SEKTOREN" : "ALL_SECTORS"}</option>`;
+                cats.forEach(cat => {
+                    const opt = document.createElement("option");
+                    opt.value = cat;
+                    opt.innerText = cat.toUpperCase();
+                    filter.appendChild(opt);
+                });
+            } catch(e) {}
         }
         loadCategories();
 
