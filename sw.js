@@ -4,7 +4,8 @@ const ASSETS = [
   './index.html',
   './manifest.json',
   './questions_i18n.json',
-  './ack_comments.json'
+  './ack_comments.json',
+  './assets/fonts/inter-900.woff2'
 ];
 
 self.addEventListener('install', (event) => {
