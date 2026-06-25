@@ -347,13 +347,17 @@
             state.usedComments = { correct: [], incorrect: [] };
 
             try {
-                const [qRes, cRes] = await Promise.all([
-                    fetch("questions_i18n.json"),
-                    fetch("ack_comments.json")
-                ]);
-                if (!qRes.ok || !cRes.ok) throw new Error("FETCH_FAILED");
-                let allQuestions = await qRes.json();
+                const cRes = await fetch("ack_comments.json");
+                if (!cRes.ok) throw new Error("FETCH_FAILED");
                 state.comments = await cRes.json();
+
+                let allQuestions = window._dfwaQCache;
+                if (!allQuestions) {
+                    const qRes = await fetch("questions_i18n.json");
+                    if (!qRes.ok) throw new Error("FETCH_FAILED");
+                    allQuestions = await qRes.json();
+                    window._dfwaQCache = allQuestions;
+                }
                 state.allQuestions = allQuestions;
                 populateCategories(allQuestions);
 
@@ -399,7 +403,9 @@
             try {
                 const res = await fetch('questions_i18n.json');
                 if (!res.ok) return;
-                populateCategories(await res.json());
+                const questions = await res.json();
+                window._dfwaQCache = questions;
+                populateCategories(questions);
             } catch(e) {}
         }
         loadCategories();
