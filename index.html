@@ -318,8 +318,12 @@
 
         function resumeProtocol() {
             if (state.cheatsAttempted) {
-                alert('CHEAT_DETECTED: Spiel wird neu gestartet.');
-                initGame(false);
+                const btn = document.getElementById('resume-btn');
+                btn.innerText = state.lang === 'de' ? 'CHEAT_ERKANNT — NEUSTART' : 'CHEAT_DETECTED — REBOOT';
+                setTimeout(() => {
+                    btn.innerText = 'RESUME_PROTOCOL';
+                    initGame(false);
+                }, 1500);
                 return;
             }
             state.isPaused = false;
