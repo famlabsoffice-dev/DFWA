@@ -101,7 +101,7 @@
             width: 100%; max-width: 600px; height: 4px; background: rgba(255,255,255,0.1);
             position: absolute; top: 12vh; left: 50%; transform: translateX(-50%); z-index: 50;
         }
-        #timeline-bar { width: 100%; height: 100%; background: var(--neon); transition: width 0.1s linear; }
+        #timeline-bar { width: 100%; height: 100%; background: var(--neon); transition: width 0.1s linear, background 0.3s ease; }
 
         #question-box { height: 25vh; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 1.5rem; padding: 25px; margin-top: 15vh; pointer-events: none; }
         #options-container { display: flex; flex-direction: column; align-items: center; padding: 0 25px; margin-bottom: 80px; }
@@ -219,7 +219,7 @@
             wins: parseInt(localStorage.getItem('dfwa_wins') || 0),
             losses: parseInt(localStorage.getItem('dfwa_losses') || 0),
             comments: {}, usedComments: { correct: [], incorrect: [] },
-            isPaused: false, isProcessing: false, timer: 15, timerInterval: null,
+            isPaused: false, isProcessing: false, timer: 15, timerInterval: null, questionCount: 0,
             isChallenge: false, isCreatingChallenge: false, challengeSeed: null, opponentScore: 0,
             pausedQuestion: null, pausedTimer: null, cheatsAttempted: false
         };
@@ -310,7 +310,7 @@
             state.isCreatingChallenge = createChallenge;
             state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
-            state.lives = 3; state.current = 0; state.score = 0;
+            state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0;
             document.getElementById("lives-display").innerText = state.lives;
             
             if (!cachedQuestions || !cachedComments) {
@@ -352,10 +352,13 @@
 
         function startTimer() {
             clearInterval(state.timerInterval);
-                        state.timerInterval = setInterval(() => {
+            state.timerInterval = setInterval(() => {
                 state.timer -= 0.1;
-                const pct = Math.max(0, state.timer / 15 * 100);
-                document.getElementById('timeline-bar').style.width = pct + '%';
+                const maxTime = Math.max(5, 15 - ((state.questionCount - 1) * 0.2));
+                const pct = Math.max(0, state.timer / maxTime * 100);
+                const bar = document.getElementById('timeline-bar');
+                bar.style.width = pct + '%';
+                bar.style.background = state.timer <= 5 ? 'var(--error)' : 'var(--neon)';
                 document.getElementById('timeline-container').setAttribute('aria-valuenow', Math.round(state.timer));
                 if (state.timer <= 0) { clearInterval(state.timerInterval); checkAnswer(null); }
             }, 100);
@@ -364,6 +367,7 @@
         function renderQuestion() {
             const q = state.questions[state.current];
             if (!q) {
+                state.questionCount++;
                 const selectedCat = document.getElementById('category-filter').value;
                 let pool = state.allQuestions;
                 if (selectedCat !== 'all') pool = state.allQuestions.filter(q => q.cat === selectedCat);
@@ -373,7 +377,7 @@
                 renderQuestion();
                 return;
             }
-            state.timer = 15;
+            state.timer = Math.max(5, 15 - (state.questionCount * 0.2));
             document.getElementById('question-box').innerText = q.text[state.lang];
             const container = document.getElementById('options-container');
             container.innerHTML = '';
