@@ -333,7 +333,8 @@
             document.getElementById('start-screen').classList.remove('active');
             document.getElementById('game-screen').classList.add('active');
             document.getElementById('resume-btn').style.display = 'none';
-            state.timer = state.pausedTimer || 15;
+            state.timer = (state.pausedTimer !== null && state.pausedTimer > 0) ? state.pausedTimer : 15;
+            state.pausedTimer = null;
             startTimer();
         }
 
