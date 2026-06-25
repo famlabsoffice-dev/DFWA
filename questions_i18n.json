@@ -28798,5 +28798,2205 @@
       ]
     },
     "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher dieser Kontinente ist der flächenmäßig größte?",
+      "en": "Which of these continents is the largest by area?"
+    },
+    "options": {
+      "de": [
+        "Asien",
+        "Afrika",
+        "Nordamerika",
+        "Europa"
+      ],
+      "en": [
+        "Asia",
+        "Africa",
+        "North America",
+        "Europe"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Japan?",
+      "en": "What is the capital of Japan?"
+    },
+    "options": {
+      "de": [
+        "Seoul",
+        "Tokio",
+        "Peking",
+        "Bangkok"
+      ],
+      "en": [
+        "Seoul",
+        "Tokyo",
+        "Beijing",
+        "Bangkok"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "In welchem Land liegen die Pyramiden von Gizeh?",
+      "en": "In which country are the Pyramids of Giza located?"
+    },
+    "options": {
+      "de": [
+        "Jordanien",
+        "Marokko",
+        "Ägypten",
+        "Libyen"
+      ],
+      "en": [
+        "Jordan",
+        "Morocco",
+        "Egypt",
+        "Libya"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Fluss ist der längste der Welt?",
+      "en": "Which river is the longest in the world?"
+    },
+    "options": {
+      "de": [
+        "Amazonas",
+        "Mississippi",
+        "Jangtse",
+        "Nil"
+      ],
+      "en": [
+        "Amazon",
+        "Mississippi",
+        "Yangtze",
+        "Nile"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Ozean liegt zwischen Amerika und Europa?",
+      "en": "Which ocean lies between America and Europe?"
+    },
+    "options": {
+      "de": [
+        "Atlantik",
+        "Pazifik",
+        "Indischer Ozean",
+        "Arktischer Ozean"
+      ],
+      "en": [
+        "Atlantic",
+        "Pacific",
+        "Indian Ocean",
+        "Arctic Ocean"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wie heißt der höchste Berg der Erde?",
+      "en": "What is the name of the highest mountain on Earth?"
+    },
+    "options": {
+      "de": [
+        "K2",
+        "Mount Everest",
+        "Kangchendzönga",
+        "Mont Blanc"
+      ],
+      "en": [
+        "K2",
+        "Mount Everest",
+        "Kangchenjunga",
+        "Mont Blanc"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land hat die meisten Einwohner?",
+      "en": "Which country has the most inhabitants?"
+    },
+    "options": {
+      "de": [
+        "USA",
+        "Indonesien",
+        "Indien",
+        "Brasilien"
+      ],
+      "en": [
+        "USA",
+        "Indonesia",
+        "India",
+        "Brazil"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Insel ist die größte der Welt?",
+      "en": "Which island is the largest in the world?"
+    },
+    "options": {
+      "de": [
+        "Madagaskar",
+        "Borneo",
+        "Neuguinea",
+        "Grönland"
+      ],
+      "en": [
+        "Madagascar",
+        "Borneo",
+        "New Guinea",
+        "Greenland"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Gebirge trennt Europa von Asien?",
+      "en": "Which mountain range separates Europe from Asia?"
+    },
+    "options": {
+      "de": [
+        "Ural",
+        "Alpen",
+        "Himalaya",
+        "Anden"
+      ],
+      "en": [
+        "Ural",
+        "Alps",
+        "Himalayas",
+        "Andes"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt wird als 'Ewige Stadt' bezeichnet?",
+      "en": "Which city is known as the 'Eternal City'?"
+    },
+    "options": {
+      "de": [
+        "Athen",
+        "Rom",
+        "Paris",
+        "Istanbul"
+      ],
+      "en": [
+        "Athens",
+        "Rome",
+        "Paris",
+        "Istanbul"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Staat der USA ist flächenmäßig am größten?",
+      "en": "Which US state is the largest by area?"
+    },
+    "options": {
+      "de": [
+        "Texas",
+        "Kalifornien",
+        "Alaska",
+        "Montana"
+      ],
+      "en": [
+        "Texas",
+        "California",
+        "Alaska",
+        "Montana"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Australien?",
+      "en": "What is the capital of Australia?"
+    },
+    "options": {
+      "de": [
+        "Sydney",
+        "Melbourne",
+        "Brisbane",
+        "Canberra"
+      ],
+      "en": [
+        "Sydney",
+        "Melbourne",
+        "Brisbane",
+        "Canberra"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land ist das größte der Welt nach Fläche?",
+      "en": "Which country is the largest in the world by area?"
+    },
+    "options": {
+      "de": [
+        "Russland",
+        "Kanada",
+        "China",
+        "USA"
+      ],
+      "en": [
+        "Russia",
+        "Canada",
+        "China",
+        "USA"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "In welchem Land liegt die Wüste Sahara größtenteils?",
+      "en": "In which country is the Sahara Desert mostly located?"
+    },
+    "options": {
+      "de": [
+        "Sudan",
+        "Algerien",
+        "Mali",
+        "Tschad"
+      ],
+      "en": [
+        "Sudan",
+        "Algeria",
+        "Mali",
+        "Chad"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Kanal verbindet das Mittelmeer mit dem Roten Meer?",
+      "en": "Which canal connects the Mediterranean Sea with the Red Sea?"
+    },
+    "options": {
+      "de": [
+        "Panamakanal",
+        "Kieler Kanal",
+        "Sueskanal",
+        "Korinth-Kanal"
+      ],
+      "en": [
+        "Panama Canal",
+        "Kiel Canal",
+        "Suez Canal",
+        "Corinth Canal"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches ist das kleinste Land der Welt?",
+      "en": "Which is the smallest country in the world?"
+    },
+    "options": {
+      "de": [
+        "Monaco",
+        "Malta",
+        "San Marino",
+        "Vatikanstadt"
+      ],
+      "en": [
+        "Monaco",
+        "Malta",
+        "San Marino",
+        "Vatican City"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wie heißt der längste Gebirgszug der Welt an Land?",
+      "en": "What is the name of the longest mountain range on land?"
+    },
+    "options": {
+      "de": [
+        "Anden",
+        "Rocky Mountains",
+        "Himalaya",
+        "Alpen"
+      ],
+      "en": [
+        "Andes",
+        "Rocky Mountains",
+        "Himalayas",
+        "Alps"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt liegt auf zwei Kontinenten?",
+      "en": "Which city is located on two continents?"
+    },
+    "options": {
+      "de": [
+        "Kairo",
+        "Istanbul",
+        "Moskau",
+        "Tunis"
+      ],
+      "en": [
+        "Cairo",
+        "Istanbul",
+        "Moscow",
+        "Tunis"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land nennt man das 'Land der aufgehenden Sonne'?",
+      "en": "Which country is called the 'Land of the Rising Sun'?"
+    },
+    "options": {
+      "de": [
+        "China",
+        "Südkorea",
+        "Japan",
+        "Thailand"
+      ],
+      "en": [
+        "China",
+        "South Korea",
+        "Japan",
+        "Thailand"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Fluss fließt durch London?",
+      "en": "Which river flows through London?"
+    },
+    "options": {
+      "de": [
+        "Seine",
+        "Donau",
+        "Rhein",
+        "Themse"
+      ],
+      "en": [
+        "Seine",
+        "Danube",
+        "Rhine",
+        "Thames"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land hat die Form eines Stiefels?",
+      "en": "Which country is shaped like a boot?"
+    },
+    "options": {
+      "de": [
+        "Italien",
+        "Spanien",
+        "Griechenland",
+        "Portugal"
+      ],
+      "en": [
+        "Italy",
+        "Spain",
+        "Greece",
+        "Portugal"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wie heißt der größte See der Welt?",
+      "en": "What is the name of the largest lake in the world?"
+    },
+    "options": {
+      "de": [
+        "Oberer See",
+        "Kaspisches Meer",
+        "Viktoriasee",
+        "Baikalsee"
+      ],
+      "en": [
+        "Lake Superior",
+        "Caspian Sea",
+        "Lake Victoria",
+        "Lake Baikal"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Brasilien?",
+      "en": "What is the capital of Brazil?"
+    },
+    "options": {
+      "de": [
+        "Rio de Janeiro",
+        "São Paulo",
+        "Brasília",
+        "Salvador"
+      ],
+      "en": [
+        "Rio de Janeiro",
+        "São Paulo",
+        "Brasília",
+        "Salvador"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Kontinent ist am trockensten?",
+      "en": "Which continent is the driest?"
+    },
+    "options": {
+      "de": [
+        "Afrika",
+        "Australien",
+        "Südamerika",
+        "Antarktis"
+      ],
+      "en": [
+        "Africa",
+        "Australia",
+        "South America",
+        "Antarctica"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land grenzt an Dänemark?",
+      "en": "Which country borders Denmark?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Schweden",
+        "Niederlande",
+        "Polen"
+      ],
+      "en": [
+        "Germany",
+        "Sweden",
+        "Netherlands",
+        "Poland"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Insel gehört nicht zu den Kanaren?",
+      "en": "Which island does not belong to the Canaries?"
+    },
+    "options": {
+      "de": [
+        "Teneriffa",
+        "Mallorca",
+        "Gran Canaria",
+        "Lanzarote"
+      ],
+      "en": [
+        "Tenerife",
+        "Mallorca",
+        "Gran Canaria",
+        "Lanzarote"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wo befindet sich der tiefste Punkt der Erde?",
+      "en": "Where is the deepest point on Earth?"
+    },
+    "options": {
+      "de": [
+        "Baikalsee",
+        "Totes Meer",
+        "Marianengraben",
+        "Pazifik"
+      ],
+      "en": [
+        "Lake Baikal",
+        "Dead Sea",
+        "Mariana Trench",
+        "Pacific Ocean"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Kanada?",
+      "en": "What is the capital of Canada?"
+    },
+    "options": {
+      "de": [
+        "Toronto",
+        "Vancouver",
+        "Montreal",
+        "Ottawa"
+      ],
+      "en": [
+        "Toronto",
+        "Vancouver",
+        "Montreal",
+        "Ottawa"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Fluss fließt durch Paris?",
+      "en": "Which river flows through Paris?"
+    },
+    "options": {
+      "de": [
+        "Seine",
+        "Rhône",
+        "Loire",
+        "Garonne"
+      ],
+      "en": [
+        "Seine",
+        "Rhône",
+        "Loire",
+        "Garonne"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wie heißt der größte Ozean der Erde?",
+      "en": "What is the name of the largest ocean on Earth?"
+    },
+    "options": {
+      "de": [
+        "Atlantik",
+        "Pazifik",
+        "Indischer Ozean",
+        "Arktik"
+      ],
+      "en": [
+        "Atlantic",
+        "Pacific",
+        "Indian Ocean",
+        "Arctic"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "In welchem Land liegt das Gebirge Himalaya?",
+      "en": "In which country is the Himalayas mountain range located?"
+    },
+    "options": {
+      "de": [
+        "Indien",
+        "China",
+        "Nepal",
+        "Pakistan"
+      ],
+      "en": [
+        "India",
+        "China",
+        "Nepal",
+        "Pakistan"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Thailand?",
+      "en": "What is the capital of Thailand?"
+    },
+    "options": {
+      "de": [
+        "Kuala Lumpur",
+        "Hanoi",
+        "Vientiane",
+        "Bangkok"
+      ],
+      "en": [
+        "Kuala Lumpur",
+        "Hanoi",
+        "Vientiane",
+        "Bangkok"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land ist für seine Fjorde bekannt?",
+      "en": "Which country is known for its fjords?"
+    },
+    "options": {
+      "de": [
+        "Norwegen",
+        "Schweden",
+        "Finnland",
+        "Dänemark"
+      ],
+      "en": [
+        "Norway",
+        "Sweden",
+        "Finland",
+        "Denmark"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Kontinent ist am bevölkerungsreichsten?",
+      "en": "Which continent is the most populous?"
+    },
+    "options": {
+      "de": [
+        "Afrika",
+        "Asien",
+        "Europa",
+        "Südamerika"
+      ],
+      "en": [
+        "Africa",
+        "Asia",
+        "Europe",
+        "South America"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt ist das Finanzzentrum der Schweiz?",
+      "en": "Which city is the financial center of Switzerland?"
+    },
+    "options": {
+      "de": [
+        "Genf",
+        "Bern",
+        "Zürich",
+        "Basel"
+      ],
+      "en": [
+        "Geneva",
+        "Bern",
+        "Zurich",
+        "Basel"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wo liegt der Kilimandscharo?",
+      "en": "Where is Mount Kilimanjaro located?"
+    },
+    "options": {
+      "de": [
+        "Kenia",
+        "Äthiopien",
+        "Uganda",
+        "Tansania"
+      ],
+      "en": [
+        "Kenya",
+        "Ethiopia",
+        "Uganda",
+        "Tanzania"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land hat die längste Küstenlinie?",
+      "en": "Which country has the longest coastline?"
+    },
+    "options": {
+      "de": [
+        "Kanada",
+        "Russland",
+        "Australien",
+        "Indonesien"
+      ],
+      "en": [
+        "Canada",
+        "Russia",
+        "Australia",
+        "Indonesia"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt ist die Hauptstadt von Indien?",
+      "en": "Which city is the capital of India?"
+    },
+    "options": {
+      "de": [
+        "Mumbai",
+        "Neu-Delhi",
+        "Kalkutta",
+        "Chennai"
+      ],
+      "en": [
+        "Mumbai",
+        "New Delhi",
+        "Kolkata",
+        "Chennai"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher ist der zweitgrößte Kontinent der Erde?",
+      "en": "Which is the second-largest continent on Earth?"
+    },
+    "options": {
+      "de": [
+        "Asien",
+        "Nordamerika",
+        "Afrika",
+        "Südamerika"
+      ],
+      "en": [
+        "Asia",
+        "North America",
+        "Africa",
+        "South America"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Portugal?",
+      "en": "What is the capital of Portugal?"
+    },
+    "options": {
+      "de": [
+        "Porto",
+        "Braga",
+        "Faro",
+        "Lissabon"
+      ],
+      "en": [
+        "Porto",
+        "Braga",
+        "Faro",
+        "Lisbon"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land ist das größte in Südamerika?",
+      "en": "Which country is the largest in South America?"
+    },
+    "options": {
+      "de": [
+        "Brasilien",
+        "Argentinien",
+        "Kolumbien",
+        "Peru"
+      ],
+      "en": [
+        "Brazil",
+        "Argentina",
+        "Colombia",
+        "Peru"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wie heißt der größte Vulkan Europas?",
+      "en": "What is the name of Europe's largest volcano?"
+    },
+    "options": {
+      "de": [
+        "Vesuv",
+        "Ätna",
+        "Stromboli",
+        "Hekla"
+      ],
+      "en": [
+        "Vesuvius",
+        "Etna",
+        "Stromboli",
+        "Hekla"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land wird als 'Die Schweiz Afrikas' bezeichnet?",
+      "en": "Which country is called 'The Switzerland of Africa'?"
+    },
+    "options": {
+      "de": [
+        "Kenia",
+        "Tansania",
+        "Ruanda",
+        "Äthiopien"
+      ],
+      "en": [
+        "Kenya",
+        "Tanzania",
+        "Rwanda",
+        "Ethiopia"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wo befindet sich das Great Barrier Reef?",
+      "en": "Where is the Great Barrier Reef located?"
+    },
+    "options": {
+      "de": [
+        "Pazifik",
+        "Atlantik",
+        "Indischer Ozean",
+        "Australien"
+      ],
+      "en": [
+        "Pacific",
+        "Atlantic",
+        "Indian Ocean",
+        "Australia"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt ist die Hauptstadt von Spanien?",
+      "en": "Which city is the capital of Spain?"
+    },
+    "options": {
+      "de": [
+        "Madrid",
+        "Barcelona",
+        "Sevilla",
+        "Valencia"
+      ],
+      "en": [
+        "Madrid",
+        "Barcelona",
+        "Seville",
+        "Valencia"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Staat hat keine Küste zum Meer?",
+      "en": "Which state has no coastline to the sea?"
+    },
+    "options": {
+      "de": [
+        "Italien",
+        "Österreich",
+        "Frankreich",
+        "Spanien"
+      ],
+      "en": [
+        "Italy",
+        "Austria",
+        "France",
+        "Spain"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wie heißt die Hauptstadt von China?",
+      "en": "What is the name of the capital of China?"
+    },
+    "options": {
+      "de": [
+        "Shanghai",
+        "Guangzhou",
+        "Peking",
+        "Shenzhen"
+      ],
+      "en": [
+        "Shanghai",
+        "Guangzhou",
+        "Beijing",
+        "Shenzhen"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Fluss fließt durch Ägypten?",
+      "en": "Which river flows through Egypt?"
+    },
+    "options": {
+      "de": [
+        "Amazonas",
+        "Kongo",
+        "Niger",
+        "Nil"
+      ],
+      "en": [
+        "Amazon",
+        "Congo",
+        "Niger",
+        "Nile"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "In welchem Land liegt die Stadt Istanbul?",
+      "en": "In which country is the city of Istanbul located?"
+    },
+    "options": {
+      "de": [
+        "Türkei",
+        "Griechenland",
+        "Ägypten",
+        "Bulgarien"
+      ],
+      "en": [
+        "Turkey",
+        "Greece",
+        "Egypt",
+        "Bulgaria"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Kontinent liegt vollständig auf der Südhalbkugel?",
+      "en": "Which continent lies entirely in the Southern Hemisphere?"
+    },
+    "options": {
+      "de": [
+        "Südamerika",
+        "Antarktis",
+        "Afrika",
+        "Australien"
+      ],
+      "en": [
+        "South America",
+        "Antarctica",
+        "Africa",
+        "Australia"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Argentinien?",
+      "en": "What is the capital of Argentina?"
+    },
+    "options": {
+      "de": [
+        "Santiago",
+        "Lima",
+        "Buenos Aires",
+        "Montevideo"
+      ],
+      "en": [
+        "Santiago",
+        "Lima",
+        "Buenos Aires",
+        "Montevideo"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Berg ist der höchste der Alpen?",
+      "en": "Which mountain is the highest in the Alps?"
+    },
+    "options": {
+      "de": [
+        "Eiger",
+        "Matterhorn",
+        "Zugspitze",
+        "Mont Blanc"
+      ],
+      "en": [
+        "Eiger",
+        "Matterhorn",
+        "Zugspitze",
+        "Mont Blanc"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Griechenland?",
+      "en": "What is the capital of Greece?"
+    },
+    "options": {
+      "de": [
+        "Athen",
+        "Thessaloniki",
+        "Patras",
+        "Larisa"
+      ],
+      "en": [
+        "Athens",
+        "Thessaloniki",
+        "Patras",
+        "Larissa"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Ozean grenzt an Indien?",
+      "en": "Which ocean borders India?"
+    },
+    "options": {
+      "de": [
+        "Atlantik",
+        "Indischer Ozean",
+        "Pazifik",
+        "Arktischer Ozean"
+      ],
+      "en": [
+        "Atlantic",
+        "Indian Ocean",
+        "Pacific",
+        "Arctic Ocean"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wie heißt der längste Fluss Europas?",
+      "en": "What is the name of the longest river in Europe?"
+    },
+    "options": {
+      "de": [
+        "Donau",
+        "Rhein",
+        "Wolga",
+        "Dnjepr"
+      ],
+      "en": [
+        "Danube",
+        "Rhine",
+        "Volga",
+        "Dnieper"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land hat die Form eines Stiefels?",
+      "en": "Which country is shaped like a boot?"
+    },
+    "options": {
+      "de": [
+        "Spanien",
+        "Griechenland",
+        "Frankreich",
+        "Italien"
+      ],
+      "en": [
+        "Spain",
+        "Greece",
+        "France",
+        "Italy"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt ist die Hauptstadt von Norwegen?",
+      "en": "Which city is the capital of Norway?"
+    },
+    "options": {
+      "de": [
+        "Oslo",
+        "Bergen",
+        "Trondheim",
+        "Stavanger"
+      ],
+      "en": [
+        "Oslo",
+        "Bergen",
+        "Trondheim",
+        "Stavanger"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches ist das größte Land Afrikas?",
+      "en": "Which is the largest country in Africa?"
+    },
+    "options": {
+      "de": [
+        "Sudan",
+        "Algerien",
+        "Libyen",
+        "Kongo"
+      ],
+      "en": [
+        "Sudan",
+        "Algeria",
+        "Libya",
+        "Congo"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wo befindet sich das Matterhorn?",
+      "en": "Where is the Matterhorn located?"
+    },
+    "options": {
+      "de": [
+        "Österreich",
+        "Italien",
+        "Schweiz",
+        "Deutschland"
+      ],
+      "en": [
+        "Austria",
+        "Italy",
+        "Switzerland",
+        "Germany"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Mexiko?",
+      "en": "What is the capital of Mexico?"
+    },
+    "options": {
+      "de": [
+        "Cancún",
+        "Guadalajara",
+        "Monterrey",
+        "Mexiko-Stadt"
+      ],
+      "en": [
+        "Cancun",
+        "Guadalajara",
+        "Monterrey",
+        "Mexico City"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Fluss fließt durch Rom?",
+      "en": "Which river flows through Rome?"
+    },
+    "options": {
+      "de": [
+        "Tiber",
+        "Arno",
+        "Po",
+        "Rhein"
+      ],
+      "en": [
+        "Tiber",
+        "Arno",
+        "Po",
+        "Rhine"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Insel ist die größte im Mittelmeer?",
+      "en": "Which island is the largest in the Mediterranean?"
+    },
+    "options": {
+      "de": [
+        "Kreta",
+        "Sizilien",
+        "Zypern",
+        "Sardinien"
+      ],
+      "en": [
+        "Crete",
+        "Sicily",
+        "Cyprus",
+        "Sardinia"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land grenzt an die USA im Norden?",
+      "en": "Which country borders the USA to the north?"
+    },
+    "options": {
+      "de": [
+        "Mexiko",
+        "Grönland",
+        "Kanada",
+        "Russland"
+      ],
+      "en": [
+        "Mexico",
+        "Greenland",
+        "Canada",
+        "Russia"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wie heißt die Hauptstadt von Polen?",
+      "en": "What is the name of the capital of Poland?"
+    },
+    "options": {
+      "de": [
+        "Krakau",
+        "Danzig",
+        "Breslau",
+        "Warschau"
+      ],
+      "en": [
+        "Krakow",
+        "Gdansk",
+        "Wroclaw",
+        "Warsaw"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Kontinent ist bekannt für die Wüste Gobi?",
+      "en": "Which continent is known for the Gobi Desert?"
+    },
+    "options": {
+      "de": [
+        "Asien",
+        "Afrika",
+        "Südamerika",
+        "Australien"
+      ],
+      "en": [
+        "Asia",
+        "Africa",
+        "South America",
+        "Australia"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Vietnam?",
+      "en": "What is the capital of Vietnam?"
+    },
+    "options": {
+      "de": [
+        "Saigon",
+        "Hanoi",
+        "Da Nang",
+        "Hue"
+      ],
+      "en": [
+        "Saigon",
+        "Hanoi",
+        "Da Nang",
+        "Hue"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Gebirge liegt in Südamerika?",
+      "en": "Which mountain range is located in South America?"
+    },
+    "options": {
+      "de": [
+        "Alpen",
+        "Himalaya",
+        "Anden",
+        "Rocky Mountains"
+      ],
+      "en": [
+        "Alps",
+        "Himalayas",
+        "Andes",
+        "Rocky Mountains"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Südafrika?",
+      "en": "What is the capital of South Africa?"
+    },
+    "options": {
+      "de": [
+        "Johannesburg",
+        "Durban",
+        "Kapstadt",
+        "Pretoria"
+      ],
+      "en": [
+        "Johannesburg",
+        "Durban",
+        "Cape Town",
+        "Pretoria"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Ozean liegt westlich von Australien?",
+      "en": "Which ocean lies west of Australia?"
+    },
+    "options": {
+      "de": [
+        "Indischer Ozean",
+        "Pazifik",
+        "Atlantik",
+        "Arktik"
+      ],
+      "en": [
+        "Indian Ocean",
+        "Pacific",
+        "Atlantic",
+        "Arctic"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wie heißt der größte Binnensee der Welt?",
+      "en": "What is the name of the largest inland lake in the world?"
+    },
+    "options": {
+      "de": [
+        "Viktoriasee",
+        "Kaspisches Meer",
+        "Oberer See",
+        "Baikalsee"
+      ],
+      "en": [
+        "Lake Victoria",
+        "Caspian Sea",
+        "Lake Superior",
+        "Lake Baikal"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land ist das flächenmäßig größte in Europa?",
+      "en": "Which country is the largest in Europe by area?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Frankreich",
+        "Russland",
+        "Ukraine"
+      ],
+      "en": [
+        "Germany",
+        "France",
+        "Russia",
+        "Ukraine"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wo befindet sich der Ayers Rock?",
+      "en": "Where is Ayers Rock located?"
+    },
+    "options": {
+      "de": [
+        "Südafrika",
+        "USA",
+        "Brasilien",
+        "Australien"
+      ],
+      "en": [
+        "South Africa",
+        "USA",
+        "Brazil",
+        "Australia"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt ist die Hauptstadt von Ägypten?",
+      "en": "Which city is the capital of Egypt?"
+    },
+    "options": {
+      "de": [
+        "Kairo",
+        "Alexandria",
+        "Gizeh",
+        "Luxor"
+      ],
+      "en": [
+        "Cairo",
+        "Alexandria",
+        "Giza",
+        "Luxor"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Fluss fließt durch die USA?",
+      "en": "Which river flows through the USA?"
+    },
+    "options": {
+      "de": [
+        "Amazonas",
+        "Mississippi",
+        "Nil",
+        "Jangtse"
+      ],
+      "en": [
+        "Amazon",
+        "Mississippi",
+        "Nile",
+        "Yangtze"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Finnland?",
+      "en": "What is the capital of Finland?"
+    },
+    "options": {
+      "de": [
+        "Stockholm",
+        "Oslo",
+        "Helsinki",
+        "Kopenhagen"
+      ],
+      "en": [
+        "Stockholm",
+        "Oslo",
+        "Helsinki",
+        "Copenhagen"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land liegt in Südostasien?",
+      "en": "Which country is in Southeast Asia?"
+    },
+    "options": {
+      "de": [
+        "Japan",
+        "China",
+        "Indien",
+        "Thailand"
+      ],
+      "en": [
+        "Japan",
+        "China",
+        "India",
+        "Thailand"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Kontinent beherbergt die meisten Wüsten?",
+      "en": "Which continent houses the most deserts?"
+    },
+    "options": {
+      "de": [
+        "Afrika",
+        "Asien",
+        "Australien",
+        "Südamerika"
+      ],
+      "en": [
+        "Africa",
+        "Asia",
+        "Australia",
+        "South America"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt liegt in den Niederlanden?",
+      "en": "Which city is in the Netherlands?"
+    },
+    "options": {
+      "de": [
+        "Brüssel",
+        "Amsterdam",
+        "Luxemburg",
+        "Antwerpen"
+      ],
+      "en": [
+        "Brussels",
+        "Amsterdam",
+        "Luxembourg",
+        "Antwerp"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Ungarn?",
+      "en": "What is the capital of Hungary?"
+    },
+    "options": {
+      "de": [
+        "Wien",
+        "Prag",
+        "Budapest",
+        "Warschau"
+      ],
+      "en": [
+        "Vienna",
+        "Prague",
+        "Budapest",
+        "Warsaw"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches ist der höchste Berg in Nordamerika?",
+      "en": "Which is the highest mountain in North America?"
+    },
+    "options": {
+      "de": [
+        "Mount Logan",
+        "Mount Whitney",
+        "Pikes Peak",
+        "Denali"
+      ],
+      "en": [
+        "Mount Logan",
+        "Mount Whitney",
+        "Pikes Peak",
+        "Denali"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Schweden?",
+      "en": "What is the capital of Sweden?"
+    },
+    "options": {
+      "de": [
+        "Stockholm",
+        "Oslo",
+        "Helsinki",
+        "Kopenhagen"
+      ],
+      "en": [
+        "Stockholm",
+        "Oslo",
+        "Helsinki",
+        "Copenhagen"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land besitzt die Sahara?",
+      "en": "Which country owns the Sahara?"
+    },
+    "options": {
+      "de": [
+        "Ägypten",
+        "Algerien",
+        "Nigeria",
+        "Südafrika"
+      ],
+      "en": [
+        "Egypt",
+        "Algeria",
+        "Nigeria",
+        "South Africa"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt ist die Hauptstadt von Chile?",
+      "en": "Which city is the capital of Chile?"
+    },
+    "options": {
+      "de": [
+        "Lima",
+        "Buenos Aires",
+        "Santiago",
+        "Bogotá"
+      ],
+      "en": [
+        "Lima",
+        "Buenos Aires",
+        "Santiago",
+        "Bogota"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Fluss ist in Deutschland besonders lang?",
+      "en": "Which river is particularly long in Germany?"
+    },
+    "options": {
+      "de": [
+        "Elbe",
+        "Donau",
+        "Main",
+        "Rhein"
+      ],
+      "en": [
+        "Elbe",
+        "Danube",
+        "Main",
+        "Rhine"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Wo liegt das Land Iran?",
+      "en": "Where is the country Iran located?"
+    },
+    "options": {
+      "de": [
+        "Asien",
+        "Afrika",
+        "Europa",
+        "Südamerika"
+      ],
+      "en": [
+        "Asia",
+        "Africa",
+        "Europe",
+        "South America"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Belgien?",
+      "en": "What is the capital of Belgium?"
+    },
+    "options": {
+      "de": [
+        "Amsterdam",
+        "Brüssel",
+        "Luxemburg",
+        "Den Haag"
+      ],
+      "en": [
+        "Amsterdam",
+        "Brussels",
+        "Luxembourg",
+        "The Hague"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land grenzt an Italien im Norden?",
+      "en": "Which country borders Italy to the north?"
+    },
+    "options": {
+      "de": [
+        "Spanien",
+        "Frankreich",
+        "Schweiz",
+        "Deutschland"
+      ],
+      "en": [
+        "Spain",
+        "France",
+        "Switzerland",
+        "Germany"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Irland?",
+      "en": "What is the capital of Ireland?"
+    },
+    "options": {
+      "de": [
+        "Belfast",
+        "Cork",
+        "Galway",
+        "Dublin"
+      ],
+      "en": [
+        "Belfast",
+        "Cork",
+        "Galway",
+        "Dublin"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt liegt in der Türkei?",
+      "en": "Which city is in Turkey?"
+    },
+    "options": {
+      "de": [
+        "Ankara",
+        "Athen",
+        "Sofia",
+        "Tiflis"
+      ],
+      "en": [
+        "Ankara",
+        "Athens",
+        "Sofia",
+        "Tbilisi"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Kontinent ist bekannt für das Land Kanada?",
+      "en": "Which continent is known for the country Canada?"
+    },
+    "options": {
+      "de": [
+        "Europa",
+        "Nordamerika",
+        "Asien",
+        "Südamerika"
+      ],
+      "en": [
+        "Europe",
+        "North America",
+        "Asia",
+        "South America"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Kenia?",
+      "en": "What is the capital of Kenya?"
+    },
+    "options": {
+      "de": [
+        "Uganda",
+        "Äthiopien",
+        "Nairobi",
+        "Dodoma"
+      ],
+      "en": [
+        "Uganda",
+        "Ethiopia",
+        "Nairobi",
+        "Dodoma"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches ist das größte Land in Zentralasien?",
+      "en": "Which is the largest country in Central Asia?"
+    },
+    "options": {
+      "de": [
+        "Kirgisistan",
+        "Usbekistan",
+        "Turkmenistan",
+        "Kasachstan"
+      ],
+      "en": [
+        "Kyrgyzstan",
+        "Uzbekistan",
+        "Turkmenistan",
+        "Kazakhstan"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Island?",
+      "en": "What is the capital of Iceland?"
+    },
+    "options": {
+      "de": [
+        "Reykjavík",
+        "Akureyri",
+        "Hafnarfjörður",
+        "Kópavogur"
+      ],
+      "en": [
+        "Reykjavik",
+        "Akureyri",
+        "Hafnarfjordur",
+        "Kopavogur"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Fluss fließt durch Wien?",
+      "en": "Which river flows through Vienna?"
+    },
+    "options": {
+      "de": [
+        "Rhein",
+        "Donau",
+        "Elbe",
+        "Main"
+      ],
+      "en": [
+        "Rhine",
+        "Danube",
+        "Elbe",
+        "Main"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land liegt in Ozeanien?",
+      "en": "Which country is in Oceania?"
+    },
+    "options": {
+      "de": [
+        "Japan",
+        "Indonesien",
+        "Neuseeland",
+        "Philippinen"
+      ],
+      "en": [
+        "Japan",
+        "Indonesia",
+        "New Zealand",
+        "Philippines"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Saudi-Arabien?",
+      "en": "What is the capital of Saudi Arabia?"
+    },
+    "options": {
+      "de": [
+        "Dubai",
+        "Doha",
+        "Kuwait-Stadt",
+        "Riad"
+      ],
+      "en": [
+        "Dubai",
+        "Doha",
+        "Kuwait City",
+        "Riyadh"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welches Land liegt in Skandinavien?",
+      "en": "Which country is in Scandinavia?"
+    },
+    "options": {
+      "de": [
+        "Schweden",
+        "Deutschland",
+        "Frankreich",
+        "Italien"
+      ],
+      "en": [
+        "Sweden",
+        "Germany",
+        "France",
+        "Italy"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welche Stadt ist die Hauptstadt von Dänemark?",
+      "en": "Which city is the capital of Denmark?"
+    },
+    "options": {
+      "de": [
+        "Oslo",
+        "Kopenhagen",
+        "Stockholm",
+        "Helsinki"
+      ],
+      "en": [
+        "Oslo",
+        "Copenhagen",
+        "Stockholm",
+        "Helsinki"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Welcher Kontinent ist für den Amazonas berühmt?",
+      "en": "Which continent is famous for the Amazon?"
+    },
+    "options": {
+      "de": [
+        "Afrika",
+        "Nordamerika",
+        "Südamerika",
+        "Asien"
+      ],
+      "en": [
+        "Africa",
+        "North America",
+        "South America",
+        "Asia"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Erdkunde",
+    "text": {
+      "de": "Was ist die Hauptstadt von Südkorea?",
+      "en": "What is the capital of South Korea?"
+    },
+    "options": {
+      "de": [
+        "Tokio",
+        "Peking",
+        "Pyongyang",
+        "Seoul"
+      ],
+      "en": [
+        "Tokyo",
+        "Beijing",
+        "Pyongyang",
+        "Seoul"
+      ]
+    },
+    "correct": 3
   }
 ]
