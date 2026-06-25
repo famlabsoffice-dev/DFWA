@@ -337,6 +337,7 @@
             state.playerName = document.getElementById("player-name").value.trim() || "GUEST";
             localStorage.setItem("dfwa_name", state.playerName);
             state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge;
+            state.usedComments = { correct: [], incorrect: [] };
 
             try {
                 const [qRes, cRes] = await Promise.all([
