@@ -352,6 +352,7 @@
                 let allQuestions = await qRes.json();
                 state.comments = await cRes.json();
                 state.allQuestions = allQuestions;
+                populateCategories(allQuestions);
 
                 const selectedCat = document.getElementById("category-filter").value;
                 if (selectedCat !== "all") {
@@ -366,7 +367,6 @@
                 document.getElementById("game-screen").classList.add("active");
                 document.getElementById("hud-score").innerText = "0_PTS";
                 document.getElementById("hud-streak").style.display = "none";
-                populateCategories(allQuestions);
                 document.getElementById('modal-title').style.color = 'var(--warning)';
                 document.getElementById('modal-overlay').style.display = 'none';
                 renderQuestion();
