@@ -343,7 +343,8 @@
         async function initGame(createChallenge) {
             state.playerName = document.getElementById("player-name").value.trim() || "GUEST";
             localStorage.setItem("dfwa_name", state.playerName);
-            state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.streakMax = 0; state.correctAnswers = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge;
+            state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.streakMax = 0; state.correctAnswers = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge; state.isPaused = false; state.cheatsAttempted = false; state.pausedTimer = null;
+            document.getElementById('resume-btn').style.display = 'none';
             state.usedComments = { correct: [], incorrect: [] };
 
             try {
@@ -353,6 +354,7 @@
 
                 let allQuestions = window._dfwaQCache;
                 if (!allQuestions) {
+                    // Fallback: loadCategories() noch nicht fertig
                     const qRes = await fetch("questions_i18n.json");
                     if (!qRes.ok) throw new Error("FETCH_FAILED");
                     allQuestions = await qRes.json();
@@ -605,6 +607,7 @@
 
         function closeSystem() {
             document.getElementById('modal-overlay').style.display = 'none';
+            document.getElementById('modal-title').style.color = 'var(--warning)';
             document.getElementById('game-screen').classList.remove('active');
             document.getElementById('start-screen').classList.add('active');
             state.isChallenge = false;
