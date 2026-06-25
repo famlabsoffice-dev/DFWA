@@ -221,7 +221,7 @@
     <script>
         let state = { 
             lang: 'de', questions: [], allQuestions: [], current: 0, score: 0, lives: 3,
-            streak: 0, streakMax: 0,
+            streak: 0, streakMax: 0, correctAnswers: 0,
             playerName: localStorage.getItem('dfwa_name') || 'GUEST',
             playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
@@ -235,6 +235,9 @@
 
         function detectLanguage() {
             state.lang = navigator.language.startsWith('de') ? 'de' : 'en';
+            if (!localStorage.getItem('dfwa_id')) {
+                localStorage.setItem('dfwa_id', state.playerId);
+            }
             document.documentElement.lang = state.lang;
             document.getElementById('start-btn').innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
             document.getElementById('player-display').innerText = state.playerName;
@@ -339,7 +342,7 @@
         async function initGame(createChallenge) {
             state.playerName = document.getElementById("player-name").value.trim() || "GUEST";
             localStorage.setItem("dfwa_name", state.playerName);
-            state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge;
+            state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.streakMax = 0; state.correctAnswers = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge;
             state.usedComments = { correct: [], incorrect: [] };
 
             try {
@@ -418,7 +421,6 @@
         function renderQuestion() {
             const q = state.questions[state.current];
             if (!q) {
-                state.questionCount++;
                 const selectedCat = document.getElementById('category-filter').value;
                 let pool = state.allQuestions;
                 if (selectedCat !== 'all') pool = state.allQuestions.filter(q => q.cat === selectedCat);
@@ -428,6 +430,7 @@
                 renderQuestion();
                 return;
             }
+            state.questionCount++;
             state.timer = Math.max(5, 15 - (state.questionCount * 0.2));
             document.getElementById('question-box').innerText = q.text[state.lang];
             const container = document.getElementById('options-container');
@@ -474,8 +477,8 @@
             } else {
                 title.style.color = isNewBest ? 'var(--warning)' : 'var(--neon)';
                 title.innerText = isNewBest ? "NEW_PEAK_DATA" : "PROTOCOL_COMPLETE";
-                const accuracy = state.questionCount > 0 ? Math.round((state.score / 100 / state.questionCount) * 100) : 0;
-                text.innerText = `FINAL_SCORE: ${state.score}\nPEAK_DATA: ${state.best}\nSTREAK_MAX: ${state.streak}\nACCURACY: ${accuracy}%`;
+                const accuracy = state.questionCount > 0 ? Math.round((state.correctAnswers / state.questionCount) * 100) : 0;
+                text.innerText = `FINAL_SCORE: ${state.score}\nPEAK_DATA: ${state.best}\nSTREAK_MAX: ${state.streakMax}\nACCURACY: ${accuracy}%`;
             }
         }
 
@@ -504,6 +507,7 @@
             
             if (correct) {
                 state.streak++;
+                state.correctAnswers++;
                 if (state.streak > state.streakMax) state.streakMax = state.streak;
                 const streakBonus = Math.min((state.streak - 1) * 10, 100);
                 const timeBonus = Math.min(Math.floor(state.timer * 2), 30);
