@@ -33198,5 +33198,2205 @@
       ]
     },
     "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist das chemische Symbol für Gold?",
+      "en": "What is the chemical symbol for gold?"
+    },
+    "options": {
+      "de": [
+        "Au",
+        "Ag",
+        "Fe",
+        "Cu"
+      ],
+      "en": [
+        "Au",
+        "Ag",
+        "Fe",
+        "Cu"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welcher Planet ist der Sonne am nächsten?",
+      "en": "Which planet is closest to the Sun?"
+    },
+    "options": {
+      "de": [
+        "Venus",
+        "Merkur",
+        "Erde",
+        "Mars"
+      ],
+      "en": [
+        "Venus",
+        "Mercury",
+        "Earth",
+        "Mars"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer entwickelte die Relativitätstheorie?",
+      "en": "Who developed the theory of relativity?"
+    },
+    "options": {
+      "de": [
+        "Newton",
+        "Tesla",
+        "Einstein",
+        "Bohr"
+      ],
+      "en": [
+        "Newton",
+        "Tesla",
+        "Einstein",
+        "Bohr"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist die Maßeinheit für den elektrischen Widerstand?",
+      "en": "What is the unit of electrical resistance?"
+    },
+    "options": {
+      "de": [
+        "Volt",
+        "Ampere",
+        "Watt",
+        "Ohm"
+      ],
+      "en": [
+        "Volt",
+        "Ampere",
+        "Watt",
+        "Ohm"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches Element ist in der Atmosphäre am häufigsten?",
+      "en": "Which element is most abundant in the atmosphere?"
+    },
+    "options": {
+      "de": [
+        "Stickstoff",
+        "Sauerstoff",
+        "Kohlendioxid",
+        "Argon"
+      ],
+      "en": [
+        "Nitrogen",
+        "Oxygen",
+        "Carbon dioxide",
+        "Argon"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wie heißt der rote Planet?",
+      "en": "What is the name of the red planet?"
+    },
+    "options": {
+      "de": [
+        "Venus",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ],
+      "en": [
+        "Venus",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer erfand das Telefon?",
+      "en": "Who invented the telephone?"
+    },
+    "options": {
+      "de": [
+        "Edison",
+        "Tesla",
+        "Bell",
+        "Marconi"
+      ],
+      "en": [
+        "Edison",
+        "Tesla",
+        "Bell",
+        "Marconi"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist der Grundbaustein der Materie?",
+      "en": "What is the basic building block of matter?"
+    },
+    "options": {
+      "de": [
+        "Molekül",
+        "Zelle",
+        "Organ",
+        "Atom"
+      ],
+      "en": [
+        "Molecule",
+        "Cell",
+        "Organ",
+        "Atom"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches Metall ist bei Raumtemperatur flüssig?",
+      "en": "Which metal is liquid at room temperature?"
+    },
+    "options": {
+      "de": [
+        "Quecksilber",
+        "Blei",
+        "Eisen",
+        "Gold"
+      ],
+      "en": [
+        "Mercury",
+        "Lead",
+        "Iron",
+        "Gold"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was erzeugt die Sonne?",
+      "en": "What does the sun produce?"
+    },
+    "options": {
+      "de": [
+        "Strom",
+        "Energie",
+        "Schall",
+        "Druck"
+      ],
+      "en": [
+        "Electricity",
+        "Energy",
+        "Sound",
+        "Pressure"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer entdeckte die Schwerkraft?",
+      "en": "Who discovered gravity?"
+    },
+    "options": {
+      "de": [
+        "Einstein",
+        "Galilei",
+        "Newton",
+        "Hawking"
+      ],
+      "en": [
+        "Einstein",
+        "Galilei",
+        "Newton",
+        "Hawking"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist H2O?",
+      "en": "What is H2O?"
+    },
+    "options": {
+      "de": [
+        "Salz",
+        "Sauerstoff",
+        "Zucker",
+        "Wasser"
+      ],
+      "en": [
+        "Salt",
+        "Oxygen",
+        "Sugar",
+        "Water"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welche Kraft zieht Gegenstände an?",
+      "en": "Which force attracts objects?"
+    },
+    "options": {
+      "de": [
+        "Gravitation",
+        "Magnetismus",
+        "Reibung",
+        "Fliehkraft"
+      ],
+      "en": [
+        "Gravity",
+        "Magnetism",
+        "Friction",
+        "Centrifugal force"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist das härteste Mineral?",
+      "en": "What is the hardest mineral?"
+    },
+    "options": {
+      "de": [
+        "Quarz",
+        "Diamant",
+        "Gold",
+        "Silber"
+      ],
+      "en": [
+        "Quartz",
+        "Diamond",
+        "Gold",
+        "Silver"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer erfand die Glühbirne?",
+      "en": "Who invented the light bulb?"
+    },
+    "options": {
+      "de": [
+        "Tesla",
+        "Bell",
+        "Edison",
+        "Marconi"
+      ],
+      "en": [
+        "Tesla",
+        "Bell",
+        "Edison",
+        "Marconi"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wie schnell bewegt sich das Licht?",
+      "en": "How fast does light travel?"
+    },
+    "options": {
+      "de": [
+        "300 km/s",
+        "1000 km/s",
+        "10000 km/s",
+        "300000 km/s"
+      ],
+      "en": [
+        "300 km/s",
+        "1000 km/s",
+        "10000 km/s",
+        "300000 km/s"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was macht eine Pflanze grün?",
+      "en": "What makes a plant green?"
+    },
+    "options": {
+      "de": [
+        "Chlorophyll",
+        "Wasser",
+        "Licht",
+        "Sauerstoff"
+      ],
+      "en": [
+        "Chlorophyll",
+        "Water",
+        "Light",
+        "Oxygen"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches ist das größte Organ des Menschen?",
+      "en": "What is the largest human organ?"
+    },
+    "options": {
+      "de": [
+        "Lunge",
+        "Haut",
+        "Herz",
+        "Leber"
+      ],
+      "en": [
+        "Lung",
+        "Skin",
+        "Heart",
+        "Liver"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Computer-Code?",
+      "en": "What is computer code?"
+    },
+    "options": {
+      "de": [
+        "Schaltkreis",
+        "Hardware",
+        "Software-Sprache",
+        "Monitor"
+      ],
+      "en": [
+        "Circuit",
+        "Hardware",
+        "Software language",
+        "Monitor"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist die Wissenschaft vom Leben?",
+      "en": "What is the science of life?"
+    },
+    "options": {
+      "de": [
+        "Physik",
+        "Chemie",
+        "Astronomie",
+        "Biologie"
+      ],
+      "en": [
+        "Physics",
+        "Chemistry",
+        "Astronomy",
+        "Biology"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches Teilchen ist negativ geladen?",
+      "en": "Which particle is negatively charged?"
+    },
+    "options": {
+      "de": [
+        "Elektron",
+        "Proton",
+        "Neutron",
+        "Atomkern"
+      ],
+      "en": [
+        "Electron",
+        "Proton",
+        "Neutron",
+        "Atomic nucleus"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer erfand das Radio?",
+      "en": "Who invented the radio?"
+    },
+    "options": {
+      "de": [
+        "Edison",
+        "Marconi",
+        "Tesla",
+        "Bell"
+      ],
+      "en": [
+        "Edison",
+        "Marconi",
+        "Tesla",
+        "Bell"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was passiert beim Gefrieren?",
+      "en": "What happens when freezing?"
+    },
+    "options": {
+      "de": [
+        "Gas-flüssig",
+        "Flüssig-Gas",
+        "Flüssig-fest",
+        "Fest-flüssig"
+      ],
+      "en": [
+        "Gas-liquid",
+        "Liquid-gas",
+        "Liquid-solid",
+        "Solid-liquid"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was misst ein Barometer?",
+      "en": "What does a barometer measure?"
+    },
+    "options": {
+      "de": [
+        "Temperatur",
+        "Wind",
+        "Regen",
+        "Luftdruck"
+      ],
+      "en": [
+        "Temperature",
+        "Wind",
+        "Rain",
+        "Air pressure"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist eine Galaxie?",
+      "en": "What is a galaxy?"
+    },
+    "options": {
+      "de": [
+        "Sternensystem",
+        "Planet",
+        "Sonne",
+        "Mond"
+      ],
+      "en": [
+        "Star system",
+        "Planet",
+        "Sun",
+        "Moon"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches Gas atmen wir ein?",
+      "en": "Which gas do we inhale?"
+    },
+    "options": {
+      "de": [
+        "Stickstoff",
+        "Sauerstoff",
+        "Helium",
+        "Wasserstoff"
+      ],
+      "en": [
+        "Nitrogen",
+        "Oxygen",
+        "Helium",
+        "Hydrogen"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer war Darwin?",
+      "en": "Who was Darwin?"
+    },
+    "options": {
+      "de": [
+        "Physiker",
+        "Chemiker",
+        "Biologe",
+        "Astronom"
+      ],
+      "en": [
+        "Physicist",
+        "Chemist",
+        "Biologist",
+        "Astronomer"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist die Lichtgeschwindigkeit?",
+      "en": "What is the speed of light?"
+    },
+    "options": {
+      "de": [
+        "konstant",
+        "variabel",
+        "langsam",
+        "unbekannt"
+      ],
+      "en": [
+        "constant",
+        "variable",
+        "slow",
+        "unknown"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein DNA-Strang?",
+      "en": "What is a DNA strand?"
+    },
+    "options": {
+      "de": [
+        "Erbgut",
+        "Zelle",
+        "Muskel",
+        "Knochen"
+      ],
+      "en": [
+        "Genetic material",
+        "Cell",
+        "Muscle",
+        "Bone"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wie viele Planeten hat unser System?",
+      "en": "How many planets in our system?"
+    },
+    "options": {
+      "de": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "en": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist das Periodensystem?",
+      "en": "What is the periodic table?"
+    },
+    "options": {
+      "de": [
+        "Zahlen",
+        "Formeln",
+        "Elemente",
+        "Planeten"
+      ],
+      "en": [
+        "Numbers",
+        "Formulas",
+        "Elements",
+        "Planets"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Roboter?",
+      "en": "What is a robot?"
+    },
+    "options": {
+      "de": [
+        "Tier",
+        "Mensch",
+        "Pflanze",
+        "Maschine"
+      ],
+      "en": [
+        "Animal",
+        "Human",
+        "Plant",
+        "Machine"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist die Sonne?",
+      "en": "What is the Sun?"
+    },
+    "options": {
+      "de": [
+        "Stern",
+        "Planet",
+        "Mond",
+        "Asteroid"
+      ],
+      "en": [
+        "Star",
+        "Planet",
+        "Moon",
+        "Asteroid"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer erfand das Flugzeug?",
+      "en": "Who invented the airplane?"
+    },
+    "options": {
+      "de": [
+        "Edison",
+        "Wright-Brüder",
+        "Tesla",
+        "Bell"
+      ],
+      "en": [
+        "Edison",
+        "Wright brothers",
+        "Tesla",
+        "Bell"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Vakuum?",
+      "en": "What is a vacuum?"
+    },
+    "options": {
+      "de": [
+        "Gas",
+        "Flüssigkeit",
+        "Leerer Raum",
+        "Plasma"
+      ],
+      "en": [
+        "Gas",
+        "Liquid",
+        "Empty space",
+        "Plasma"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was erzeugt Energie in Zellen?",
+      "en": "What produces energy in cells?"
+    },
+    "options": {
+      "de": [
+        "Kern",
+        "Wand",
+        "Zytoplasma",
+        "Mitochondrien"
+      ],
+      "en": [
+        "Nucleus",
+        "Wall",
+        "Cytoplasm",
+        "Mitochondria"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welche Farbe hat das Licht im Spektrum?",
+      "en": "Which color in the spectrum?"
+    },
+    "options": {
+      "de": [
+        "Rot",
+        "Grau",
+        "Braun",
+        "Schwarz"
+      ],
+      "en": [
+        "Red",
+        "Grey",
+        "Brown",
+        "Black"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist Software?",
+      "en": "What is software?"
+    },
+    "options": {
+      "de": [
+        "Gehäuse",
+        "Programme",
+        "Monitor",
+        "Maus"
+      ],
+      "en": [
+        "Case",
+        "Programs",
+        "Monitor",
+        "Mouse"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was misst ein Thermometer?",
+      "en": "What does a thermometer measure?"
+    },
+    "options": {
+      "de": [
+        "Druck",
+        "Strom",
+        "Temperatur",
+        "Wind"
+      ],
+      "en": [
+        "Pressure",
+        "Electricity",
+        "Temperature",
+        "Wind"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welcher Stoff leitet Strom?",
+      "en": "Which material conducts electricity?"
+    },
+    "options": {
+      "de": [
+        "Gummi",
+        "Holz",
+        "Glas",
+        "Kupfer"
+      ],
+      "en": [
+        "Rubber",
+        "Wood",
+        "Glass",
+        "Copper"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Satellit?",
+      "en": "What is a satellite?"
+    },
+    "options": {
+      "de": [
+        "Himmelskörper",
+        "Auto",
+        "Computer",
+        "Handy"
+      ],
+      "en": [
+        "Celestial body",
+        "Car",
+        "Computer",
+        "Phone"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wie alt ist die Erde?",
+      "en": "How old is the Earth?"
+    },
+    "options": {
+      "de": [
+        "1 Mio",
+        "4,5 Mrd",
+        "10 Mrd",
+        "100 Jahre"
+      ],
+      "en": [
+        "1 million",
+        "4.5 billion",
+        "10 billion",
+        "100 years"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Neutron?",
+      "en": "What is a neutron?"
+    },
+    "options": {
+      "de": [
+        "Positiv",
+        "Negativ",
+        "Neutral",
+        "Geld"
+      ],
+      "en": [
+        "Positive",
+        "Negative",
+        "Neutral",
+        "Money"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches Organ pumpt Blut?",
+      "en": "Which organ pumps blood?"
+    },
+    "options": {
+      "de": [
+        "Lunge",
+        "Magen",
+        "Leber",
+        "Herz"
+      ],
+      "en": [
+        "Lung",
+        "Stomach",
+        "Liver",
+        "Heart"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist eine Zelle?",
+      "en": "What is a cell?"
+    },
+    "options": {
+      "de": [
+        "Basiseinheit",
+        "Muskel",
+        "Knochen",
+        "Blut"
+      ],
+      "en": [
+        "Basic unit",
+        "Muscle",
+        "Bone",
+        "Blood"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer war Marie Curie?",
+      "en": "Who was Marie Curie?"
+    },
+    "options": {
+      "de": [
+        "Malerin",
+        "Physikerin",
+        "Sängerin",
+        "Politikerin"
+      ],
+      "en": [
+        "Painter",
+        "Physicist",
+        "Singer",
+        "Politician"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Molekül?",
+      "en": "What is a molecule?"
+    },
+    "options": {
+      "de": [
+        "Zelle",
+        "Atom",
+        "Atome verbunden",
+        "Energie"
+      ],
+      "en": [
+        "Cell",
+        "Atom",
+        "Atoms connected",
+        "Energy"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches Metall zieht Magnete an?",
+      "en": "Which metal attracts magnets?"
+    },
+    "options": {
+      "de": [
+        "Gold",
+        "Kupfer",
+        "Aluminium",
+        "Eisen"
+      ],
+      "en": [
+        "Gold",
+        "Copper",
+        "Aluminum",
+        "Iron"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist Licht?",
+      "en": "What is light?"
+    },
+    "options": {
+      "de": [
+        "Energie/Welle",
+        "Teilchen",
+        "Gas",
+        "Flüssigkeit"
+      ],
+      "en": [
+        "Energy/Wave",
+        "Particle",
+        "Gas",
+        "Liquid"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Compiler?",
+      "en": "What is a compiler?"
+    },
+    "options": {
+      "de": [
+        "Hardware",
+        "Programm-Übersetzer",
+        "Monitor",
+        "Maus"
+      ],
+      "en": [
+        "Hardware",
+        "Program translator",
+        "Monitor",
+        "Mouse"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wie viele Zähne hat ein Mensch?",
+      "en": "How many teeth in a human?"
+    },
+    "options": {
+      "de": [
+        "20",
+        "25",
+        "32",
+        "40"
+      ],
+      "en": [
+        "20",
+        "25",
+        "32",
+        "40"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist die Gravitation?",
+      "en": "What is gravity?"
+    },
+    "options": {
+      "de": [
+        "Magnetismus",
+        "Licht",
+        "Schall",
+        "Anziehung"
+      ],
+      "en": [
+        "Magnetism",
+        "Light",
+        "Sound",
+        "Attraction"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was passiert bei der Photosynthese?",
+      "en": "What happens in photosynthesis?"
+    },
+    "options": {
+      "de": [
+        "Licht zu Zucker",
+        "Wasser zu Eis",
+        "Gas zu Fest",
+        "Luft zu Wasser"
+      ],
+      "en": [
+        "Light to sugar",
+        "Water to ice",
+        "Gas to solid",
+        "Air to water"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer war Nikola Tesla?",
+      "en": "Who was Nikola Tesla?"
+    },
+    "options": {
+      "de": [
+        "Maler",
+        "Erfinder",
+        "König",
+        "Papst"
+      ],
+      "en": [
+        "Painter",
+        "Inventor",
+        "King",
+        "Pope"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Proton?",
+      "en": "What is a proton?"
+    },
+    "options": {
+      "de": [
+        "Negativ",
+        "Neutral",
+        "Positiv",
+        "Metall"
+      ],
+      "en": [
+        "Negative",
+        "Neutral",
+        "Positive",
+        "Metal"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welche Energiequelle ist die Sonne?",
+      "en": "What energy source is the sun?"
+    },
+    "options": {
+      "de": [
+        "Kohle",
+        "Gas",
+        "Wind",
+        "Kernfusion"
+      ],
+      "en": [
+        "Coal",
+        "Gas",
+        "Wind",
+        "Nuclear fusion"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist eine Datenbank?",
+      "en": "What is a database?"
+    },
+    "options": {
+      "de": [
+        "Datenspeicher",
+        "Monitor",
+        "Kabel",
+        "Chip"
+      ],
+      "en": [
+        "Data storage",
+        "Monitor",
+        "Cable",
+        "Chip"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was misst ein Voltmeter?",
+      "en": "What does a voltmeter measure?"
+    },
+    "options": {
+      "de": [
+        "Strom",
+        "Spannung",
+        "Druck",
+        "Licht"
+      ],
+      "en": [
+        "Current",
+        "Voltage",
+        "Pressure",
+        "Light"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist der Mars?",
+      "en": "What is Mars?"
+    },
+    "options": {
+      "de": [
+        "Stern",
+        "Mond",
+        "Planet",
+        "Komet"
+      ],
+      "en": [
+        "Star",
+        "Moon",
+        "Planet",
+        "Comet"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer entwickelte das WWW?",
+      "en": "Who developed the WWW?"
+    },
+    "options": {
+      "de": [
+        "Jobs",
+        "Gates",
+        "Musk",
+        "Berners-Lee"
+      ],
+      "en": [
+        "Jobs",
+        "Gates",
+        "Musk",
+        "Berners-Lee"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist eine Wolke?",
+      "en": "What is a cloud?"
+    },
+    "options": {
+      "de": [
+        "Wassertropfen",
+        "Gas",
+        "Staub",
+        "Feuer"
+      ],
+      "en": [
+        "Water droplets",
+        "Gas",
+        "Dust",
+        "Fire"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wie heißt unser Mond?",
+      "en": "What is our moon's name?"
+    },
+    "options": {
+      "de": [
+        "Phobos",
+        "Mond",
+        "Titan",
+        "Europa"
+      ],
+      "en": [
+        "Phobos",
+        "Moon",
+        "Titan",
+        "Europa"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist Biologie?",
+      "en": "What is biology?"
+    },
+    "options": {
+      "de": [
+        "Physik",
+        "Chemie",
+        "Lebenslehre",
+        "Sprache"
+      ],
+      "en": [
+        "Physics",
+        "Chemistry",
+        "Life science",
+        "Language"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches Metall ist im Blut?",
+      "en": "Which metal in blood?"
+    },
+    "options": {
+      "de": [
+        "Gold",
+        "Blei",
+        "Zink",
+        "Eisen"
+      ],
+      "en": [
+        "Gold",
+        "Lead",
+        "Zinc",
+        "Iron"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Neuron?",
+      "en": "What is a neuron?"
+    },
+    "options": {
+      "de": [
+        "Nervenzelle",
+        "Knochen",
+        "Muskel",
+        "Blut"
+      ],
+      "en": [
+        "Nerve cell",
+        "Bone",
+        "Muscle",
+        "Blood"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was erzeugt ein Generator?",
+      "en": "What does a generator produce?"
+    },
+    "options": {
+      "de": [
+        "Hitze",
+        "Strom",
+        "Licht",
+        "Schall"
+      ],
+      "en": [
+        "Heat",
+        "Electricity",
+        "Light",
+        "Sound"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Komet?",
+      "en": "What is a comet?"
+    },
+    "options": {
+      "de": [
+        "Planet",
+        "Stern",
+        "Eis/Staub",
+        "Mond"
+      ],
+      "en": [
+        "Planet",
+        "Star",
+        "Ice/dust",
+        "Moon"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist das Periodensystem?",
+      "en": "What is the periodic table?"
+    },
+    "options": {
+      "de": [
+        "Mathematik",
+        "Biologie",
+        "Astronomie",
+        "Chemie"
+      ],
+      "en": [
+        "Math",
+        "Biology",
+        "Astronomy",
+        "Chemistry"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Browser?",
+      "en": "What is a browser?"
+    },
+    "options": {
+      "de": [
+        "Software zum Surfen",
+        "Hardware",
+        "Kabel",
+        "Chip"
+      ],
+      "en": [
+        "Surfing software",
+        "Hardware",
+        "Cable",
+        "Chip"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wie ist der Luftdruck?",
+      "en": "What is air pressure?"
+    },
+    "options": {
+      "de": [
+        "Licht",
+        "Gewicht der Luft",
+        "Strom",
+        "Hitze"
+      ],
+      "en": [
+        "Light",
+        "Weight of air",
+        "Electricity",
+        "Heat"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Laser?",
+      "en": "What is a laser?"
+    },
+    "options": {
+      "de": [
+        "Lichtkegel",
+        "Gas",
+        "Lichtstrahl",
+        "Ton"
+      ],
+      "en": [
+        "Light cone",
+        "Gas",
+        "Light beam",
+        "Sound"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was speichert Daten?",
+      "en": "What stores data?"
+    },
+    "options": {
+      "de": [
+        "Monitor",
+        "Kabel",
+        "Maus",
+        "Festplatte"
+      ],
+      "en": [
+        "Monitor",
+        "Cable",
+        "Mouse",
+        "Hard drive"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Vakuum?",
+      "en": "What is a vacuum?"
+    },
+    "options": {
+      "de": [
+        "Raum ohne Materie",
+        "Gas",
+        "Hitze",
+        "Licht"
+      ],
+      "en": [
+        "Space without matter",
+        "Gas",
+        "Heat",
+        "Light"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Virus?",
+      "en": "What is a virus?"
+    },
+    "options": {
+      "de": [
+        "Tier",
+        "Erreger",
+        "Pflanze",
+        "Zelle"
+      ],
+      "en": [
+        "Animal",
+        "Pathogen",
+        "Plant",
+        "Cell"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist eine Zelle?",
+      "en": "What is a cell?"
+    },
+    "options": {
+      "de": [
+        "Organ",
+        "Muskel",
+        "Strukturbaustein",
+        "Blut"
+      ],
+      "en": [
+        "Organ",
+        "Muscle",
+        "Building block",
+        "Blood"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welche Farbe hat Sauerstoff?",
+      "en": "What color is oxygen?"
+    },
+    "options": {
+      "de": [
+        "Rot",
+        "Blau",
+        "Grün",
+        "Farblos"
+      ],
+      "en": [
+        "Red",
+        "Blue",
+        "Green",
+        "Colorless"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Atom?",
+      "en": "What is an atom?"
+    },
+    "options": {
+      "de": [
+        "Kleinstes Teilchen",
+        "Planet",
+        "Stern",
+        "Tier"
+      ],
+      "en": [
+        "Smallest particle",
+        "Planet",
+        "Star",
+        "Animal"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Kabel?",
+      "en": "What is a cable?"
+    },
+    "options": {
+      "de": [
+        "Programm",
+        "Leiter",
+        "Software",
+        "Chip"
+      ],
+      "en": [
+        "Program",
+        "Conductor",
+        "Software",
+        "Chip"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist Biologie?",
+      "en": "What is biology?"
+    },
+    "options": {
+      "de": [
+        "Physik",
+        "Chemie",
+        "Lebenslehre",
+        "Sprache"
+      ],
+      "en": [
+        "Physics",
+        "Chemistry",
+        "Life science",
+        "Language"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches Metall zieht Magnete an?",
+      "en": "Which metal attracts magnets?"
+    },
+    "options": {
+      "de": [
+        "Gold",
+        "Kupfer",
+        "Aluminium",
+        "Eisen"
+      ],
+      "en": [
+        "Gold",
+        "Copper",
+        "Aluminum",
+        "Iron"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist Licht?",
+      "en": "What is light?"
+    },
+    "options": {
+      "de": [
+        "Energie/Welle",
+        "Teilchen",
+        "Gas",
+        "Flüssigkeit"
+      ],
+      "en": [
+        "Energy/Wave",
+        "Particle",
+        "Gas",
+        "Liquid"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Compiler?",
+      "en": "What is a compiler?"
+    },
+    "options": {
+      "de": [
+        "Hardware",
+        "Programm-Übersetzer",
+        "Monitor",
+        "Maus"
+      ],
+      "en": [
+        "Hardware",
+        "Program translator",
+        "Monitor",
+        "Mouse"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wie viele Zähne hat ein Mensch?",
+      "en": "How many teeth in a human?"
+    },
+    "options": {
+      "de": [
+        "20",
+        "25",
+        "32",
+        "40"
+      ],
+      "en": [
+        "20",
+        "25",
+        "32",
+        "40"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist die Gravitation?",
+      "en": "What is gravity?"
+    },
+    "options": {
+      "de": [
+        "Magnetismus",
+        "Licht",
+        "Schall",
+        "Anziehung"
+      ],
+      "en": [
+        "Magnetism",
+        "Light",
+        "Sound",
+        "Attraction"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was passiert bei der Photosynthese?",
+      "en": "What happens in photosynthesis?"
+    },
+    "options": {
+      "de": [
+        "Licht zu Zucker",
+        "Wasser zu Eis",
+        "Gas zu Fest",
+        "Luft zu Wasser"
+      ],
+      "en": [
+        "Light to sugar",
+        "Water to ice",
+        "Gas to solid",
+        "Air to water"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer war Nikola Tesla?",
+      "en": "Who was Nikola Tesla?"
+    },
+    "options": {
+      "de": [
+        "Maler",
+        "Erfinder",
+        "König",
+        "Papst"
+      ],
+      "en": [
+        "Painter",
+        "Inventor",
+        "King",
+        "Pope"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Proton?",
+      "en": "What is a proton?"
+    },
+    "options": {
+      "de": [
+        "Negativ",
+        "Neutral",
+        "Positiv",
+        "Metall"
+      ],
+      "en": [
+        "Negative",
+        "Neutral",
+        "Positive",
+        "Metal"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welche Energiequelle ist die Sonne?",
+      "en": "What energy source is the sun?"
+    },
+    "options": {
+      "de": [
+        "Kohle",
+        "Gas",
+        "Wind",
+        "Kernfusion"
+      ],
+      "en": [
+        "Coal",
+        "Gas",
+        "Wind",
+        "Nuclear fusion"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist eine Datenbank?",
+      "en": "What is a database?"
+    },
+    "options": {
+      "de": [
+        "Datenspeicher",
+        "Monitor",
+        "Kabel",
+        "Chip"
+      ],
+      "en": [
+        "Data storage",
+        "Monitor",
+        "Cable",
+        "Chip"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was misst ein Voltmeter?",
+      "en": "What does a voltmeter measure?"
+    },
+    "options": {
+      "de": [
+        "Strom",
+        "Spannung",
+        "Druck",
+        "Licht"
+      ],
+      "en": [
+        "Current",
+        "Voltage",
+        "Pressure",
+        "Light"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist der Mars?",
+      "en": "What is Mars?"
+    },
+    "options": {
+      "de": [
+        "Stern",
+        "Mond",
+        "Planet",
+        "Komet"
+      ],
+      "en": [
+        "Star",
+        "Moon",
+        "Planet",
+        "Comet"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wer entwickelte das WWW?",
+      "en": "Who developed the WWW?"
+    },
+    "options": {
+      "de": [
+        "Jobs",
+        "Gates",
+        "Musk",
+        "Berners-Lee"
+      ],
+      "en": [
+        "Jobs",
+        "Gates",
+        "Musk",
+        "Berners-Lee"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist eine Wolke?",
+      "en": "What is a cloud?"
+    },
+    "options": {
+      "de": [
+        "Wassertropfen",
+        "Gas",
+        "Staub",
+        "Feuer"
+      ],
+      "en": [
+        "Water droplets",
+        "Gas",
+        "Dust",
+        "Fire"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Wie heißt unser Mond?",
+      "en": "What is our moon's name?"
+    },
+    "options": {
+      "de": [
+        "Phobos",
+        "Mond",
+        "Titan",
+        "Europa"
+      ],
+      "en": [
+        "Phobos",
+        "Moon",
+        "Titan",
+        "Europa"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist Biologie?",
+      "en": "What is biology?"
+    },
+    "options": {
+      "de": [
+        "Physik",
+        "Chemie",
+        "Lebenslehre",
+        "Sprache"
+      ],
+      "en": [
+        "Physics",
+        "Chemistry",
+        "Life science",
+        "Language"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Welches Metall ist im Blut?",
+      "en": "Which metal in blood?"
+    },
+    "options": {
+      "de": [
+        "Gold",
+        "Blei",
+        "Zink",
+        "Eisen"
+      ],
+      "en": [
+        "Gold",
+        "Lead",
+        "Zinc",
+        "Iron"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Neuron?",
+      "en": "What is a neuron?"
+    },
+    "options": {
+      "de": [
+        "Nervenzelle",
+        "Knochen",
+        "Muskel",
+        "Blut"
+      ],
+      "en": [
+        "Nerve cell",
+        "Bone",
+        "Muscle",
+        "Blood"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was erzeugt ein Generator?",
+      "en": "What does a generator produce?"
+    },
+    "options": {
+      "de": [
+        "Hitze",
+        "Strom",
+        "Licht",
+        "Schall"
+      ],
+      "en": [
+        "Heat",
+        "Electricity",
+        "Light",
+        "Sound"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist ein Komet?",
+      "en": "What is a comet?"
+    },
+    "options": {
+      "de": [
+        "Planet",
+        "Stern",
+        "Eis/Staub",
+        "Mond"
+      ],
+      "en": [
+        "Planet",
+        "Star",
+        "Ice/dust",
+        "Moon"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Wissenschaft & Technik",
+    "text": {
+      "de": "Was ist das Periodensystem?",
+      "en": "What is the periodic table?"
+    },
+    "options": {
+      "de": [
+        "Mathematik",
+        "Biologie",
+        "Astronomie",
+        "Chemie"
+      ],
+      "en": [
+        "Math",
+        "Biology",
+        "Astronomy",
+        "Chemie"
+      ]
+    },
+    "correct": 3
   }
 ]
