@@ -30998,5 +30998,2205 @@
       ]
     },
     "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann begann der Zweite Weltkrieg?",
+      "en": "When did World War II begin?"
+    },
+    "options": {
+      "de": [
+        "1939",
+        "1914",
+        "1945",
+        "1933"
+      ],
+      "en": [
+        "1939",
+        "1914",
+        "1945",
+        "1933"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war der erste Präsident der USA?",
+      "en": "Who was the first president of the USA?"
+    },
+    "options": {
+      "de": [
+        "Thomas Jefferson",
+        "George Washington",
+        "Abraham Lincoln",
+        "John Adams"
+      ],
+      "en": [
+        "Thomas Jefferson",
+        "George Washington",
+        "Abraham Lincoln",
+        "John Adams"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Welche Zivilisation baute die Pyramiden?",
+      "en": "Which civilization built the pyramids?"
+    },
+    "options": {
+      "de": [
+        "Römer",
+        "Griechen",
+        "Ägypter",
+        "Mayas"
+      ],
+      "en": [
+        "Romans",
+        "Greeks",
+        "Egyptians",
+        "Mayans"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Julius Cäsar?",
+      "en": "Who was Julius Caesar?"
+    },
+    "options": {
+      "de": [
+        "Philosoph",
+        "Künstler",
+        "Erfinder",
+        "Römischer Herrscher"
+      ],
+      "en": [
+        "Philosopher",
+        "Artist",
+        "Inventor",
+        "Roman Ruler"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Welches Ereignis beendete den Ersten Weltkrieg?",
+      "en": "Which event ended World War I?"
+    },
+    "options": {
+      "de": [
+        "Versailler Vertrag",
+        "Französische Revolution",
+        "Mauerfall",
+        "Reichstagbrand"
+      ],
+      "en": [
+        "Treaty of Versailles",
+        "French Revolution",
+        "Fall of the Berlin Wall",
+        "Reichstag fire"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer entdeckte Amerika im Jahr 1492?",
+      "en": "Who discovered America in 1492?"
+    },
+    "options": {
+      "de": [
+        "Vasco da Gama",
+        "Christoph Kolumbus",
+        "Marco Polo",
+        "James Cook"
+      ],
+      "en": [
+        "Vasco da Gama",
+        "Christopher Columbus",
+        "Marco Polo",
+        "James Cook"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was passierte 1989 in Berlin?",
+      "en": "What happened in Berlin in 1989?"
+    },
+    "options": {
+      "de": [
+        "Gründung",
+        "Bau der Mauer",
+        "Mauerfall",
+        "Olympia"
+      ],
+      "en": [
+        "Founding",
+        "Construction of the Wall",
+        "Fall of the Wall",
+        "Olympics"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Napoleon Bonaparte?",
+      "en": "Who was Napoleon Bonaparte?"
+    },
+    "options": {
+      "de": [
+        "Englischer König",
+        "Deutscher Kaiser",
+        "Spanischer Eroberer",
+        "Französischer Kaiser"
+      ],
+      "en": [
+        "English King",
+        "German Emperor",
+        "Spanish Conqueror",
+        "French Emperor"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Welches Land wurde 1776 unabhängig?",
+      "en": "Which country became independent in 1776?"
+    },
+    "options": {
+      "de": [
+        "USA",
+        "Frankreich",
+        "Deutschland",
+        "Italien"
+      ],
+      "en": [
+        "USA",
+        "France",
+        "Germany",
+        "Italy"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer schrieb das Kommunistische Manifest?",
+      "en": "Who wrote the Communist Manifesto?"
+    },
+    "options": {
+      "de": [
+        "Stalin",
+        "Karl Marx",
+        "Lenin",
+        "Mao"
+      ],
+      "en": [
+        "Stalin",
+        "Karl Marx",
+        "Lenin",
+        "Mao"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was war die Industrialisierung?",
+      "en": "What was the Industrial Revolution?"
+    },
+    "options": {
+      "de": [
+        "Agrarreform",
+        "Religionskrieg",
+        "Übergang zur Fabrikarbeit",
+        "Weltraumforschung"
+      ],
+      "en": [
+        "Agricultural reform",
+        "Religious war",
+        "Transition to factory work",
+        "Space exploration"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Kleopatra?",
+      "en": "Who was Cleopatra?"
+    },
+    "options": {
+      "de": [
+        "Griechische Göttin",
+        "Römische Kaiserin",
+        "Französische Königin",
+        "Ägyptische Königin"
+      ],
+      "en": [
+        "Greek goddess",
+        "Roman Empress",
+        "French Queen",
+        "Egyptian Queen"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann fand die Französische Revolution statt?",
+      "en": "When did the French Revolution take place?"
+    },
+    "options": {
+      "de": [
+        "1789",
+        "1848",
+        "1914",
+        "1500"
+      ],
+      "en": [
+        "1789",
+        "1848",
+        "1914",
+        "1500"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Martin Luther King?",
+      "en": "Who was Martin Luther King?"
+    },
+    "options": {
+      "de": [
+        "Präsident",
+        "Bürgerrechtler",
+        "General",
+        "Erfinder"
+      ],
+      "en": [
+        "President",
+        "Civil rights activist",
+        "General",
+        "Inventor"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was passierte in Pompeji?",
+      "en": "What happened in Pompeii?"
+    },
+    "options": {
+      "de": [
+        "Schlacht",
+        "Erdbeben",
+        "Vulkanausbruch",
+        "Brand"
+      ],
+      "en": [
+        "Battle",
+        "Earthquake",
+        "Volcanic eruption",
+        "Fire"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer baute die Berliner Mauer?",
+      "en": "Who built the Berlin Wall?"
+    },
+    "options": {
+      "de": [
+        "Alliierte",
+        "Westdeutschland",
+        "USA",
+        "DDR"
+      ],
+      "en": [
+        "Allies",
+        "West Germany",
+        "USA",
+        "GDR"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Alexander der Große?",
+      "en": "Who was Alexander the Great?"
+    },
+    "options": {
+      "de": [
+        "König von Makedonien",
+        "Präsident",
+        "Papst",
+        "Erfinder"
+      ],
+      "en": [
+        "King of Macedon",
+        "President",
+        "Pope",
+        "Inventor"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Welche antike Stadt war ein Zentrum der Philosophie?",
+      "en": "Which ancient city was a center of philosophy?"
+    },
+    "options": {
+      "de": [
+        "Rom",
+        "Athen",
+        "Karthago",
+        "Troja"
+      ],
+      "en": [
+        "Rome",
+        "Athens",
+        "Carthage",
+        "Troy"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was war die Renaissance?",
+      "en": "What was the Renaissance?"
+    },
+    "options": {
+      "de": [
+        "Kriegszeit",
+        "Dunkles Zeitalter",
+        "Kulturelle Wiedergeburt",
+        "Reformation"
+      ],
+      "en": [
+        "War time",
+        "Dark ages",
+        "Cultural rebirth",
+        "Reformation"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer regierte England im 16. Jahrhundert?",
+      "en": "Who ruled England in the 16th century?"
+    },
+    "options": {
+      "de": [
+        "Victoria",
+        "Elizabeth II",
+        "Anne",
+        "Elizabeth I"
+      ],
+      "en": [
+        "Victoria",
+        "Elizabeth II",
+        "Anne",
+        "Elizabeth I"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was passierte 1912?",
+      "en": "What happened in 1912?"
+    },
+    "options": {
+      "de": [
+        "Untergang der Titanic",
+        "Erster Weltkrieg",
+        "Mondlandung",
+        "Gründung der UNO"
+      ],
+      "en": [
+        "Sinking of the Titanic",
+        "World War I",
+        "Moon landing",
+        "Founding of the UN"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Winston Churchill?",
+      "en": "Who was Winston Churchill?"
+    },
+    "options": {
+      "de": [
+        "US-Präsident",
+        "Britischer Premierminister",
+        "Deutscher Kanzler",
+        "General"
+      ],
+      "en": [
+        "US President",
+        "British Prime Minister",
+        "German Chancellor",
+        "General"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer waren die Samurai?",
+      "en": "Who were the Samurai?"
+    },
+    "options": {
+      "de": [
+        "Priester",
+        "Händler",
+        "Japanische Krieger",
+        "Bauern"
+      ],
+      "en": [
+        "Priests",
+        "Traders",
+        "Japanese warriors",
+        "Farmers"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann endete das Römische Reich?",
+      "en": "When did the Roman Empire end?"
+    },
+    "options": {
+      "de": [
+        "100 n. Chr.",
+        "500 v. Chr.",
+        "1000 n. Chr.",
+        "476 n. Chr."
+      ],
+      "en": [
+        "100 AD",
+        "500 BC",
+        "1000 AD",
+        "476 AD"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Mahatma Gandhi?",
+      "en": "Who was Mahatma Gandhi?"
+    },
+    "options": {
+      "de": [
+        "Indischer Freiheitskämpfer",
+        "Präsident",
+        "König",
+        "Wissenschaftler"
+      ],
+      "en": [
+        "Indian freedom fighter",
+        "President",
+        "King",
+        "Scientist"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was ist das Kolosseum?",
+      "en": "What is the Colosseum?"
+    },
+    "options": {
+      "de": [
+        "Palast",
+        "Amphitheater",
+        "Tempel",
+        "Grab"
+      ],
+      "en": [
+        "Palace",
+        "Amphitheater",
+        "Temple",
+        "Tomb"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Nikolaus Kopernikus?",
+      "en": "Who was Nicolaus Copernicus?"
+    },
+    "options": {
+      "de": [
+        "Maler",
+        "Komponist",
+        "Astronom",
+        "General"
+      ],
+      "en": [
+        "Painter",
+        "Composer",
+        "Astronomer",
+        "General"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann wurde die erste Atombombe gezündet?",
+      "en": "When was the first atomic bomb detonated?"
+    },
+    "options": {
+      "de": [
+        "1939",
+        "1950",
+        "1960",
+        "1945"
+      ],
+      "en": [
+        "1939",
+        "1950",
+        "1960",
+        "1945"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Johanna von Orléans?",
+      "en": "Who was Joan of Arc?"
+    },
+    "options": {
+      "de": [
+        "Französische Nationalheldin",
+        "Königin",
+        "Malerin",
+        "Schriftstellerin"
+      ],
+      "en": [
+        "French national heroine",
+        "Queen",
+        "Painter",
+        "Writer"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Welche Insel war Napoleons letzter Wohnort?",
+      "en": "Which island was Napoleon's last residence?"
+    },
+    "options": {
+      "de": [
+        "Korsika",
+        "St. Helena",
+        "Elba",
+        "Sardinien"
+      ],
+      "en": [
+        "Corsica",
+        "St. Helena",
+        "Elba",
+        "Sardinia"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer gründete das moderne China?",
+      "en": "Who founded modern China?"
+    },
+    "options": {
+      "de": [
+        "Dschingis Khan",
+        "Konfuzius",
+        "Mao Zedong",
+        "Sun Yat-sen"
+      ],
+      "en": [
+        "Genghis Khan",
+        "Confucius",
+        "Mao Zedong",
+        "Sun Yat-sen"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann fiel die Bastille?",
+      "en": "When did the Bastille fall?"
+    },
+    "options": {
+      "de": [
+        "1776",
+        "1815",
+        "1914",
+        "1789"
+      ],
+      "en": [
+        "1776",
+        "1815",
+        "1914",
+        "1789"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Karl der Große?",
+      "en": "Who was Charlemagne?"
+    },
+    "options": {
+      "de": [
+        "Frankenkönig",
+        "Papst",
+        "Römer",
+        "Wikinger"
+      ],
+      "en": [
+        "Frankish King",
+        "Pope",
+        "Roman",
+        "Viking"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Welches Land führte die Inquisition?",
+      "en": "Which country led the Inquisition?"
+    },
+    "options": {
+      "de": [
+        "England",
+        "Spanien",
+        "Deutschland",
+        "Russland"
+      ],
+      "en": [
+        "England",
+        "Spain",
+        "Germany",
+        "Russia"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer waren die Wikinger?",
+      "en": "Who were the Vikings?"
+    },
+    "options": {
+      "de": [
+        "Afrikanische Stämme",
+        "Asiatische Händler",
+        "Nordische Seefahrer",
+        "Römische Soldaten"
+      ],
+      "en": [
+        "African tribes",
+        "Asian traders",
+        "Norse seafarers",
+        "Roman soldiers"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war der Dreißigjährige Krieg?",
+      "en": "When was the Thirty Years' War?"
+    },
+    "options": {
+      "de": [
+        "1812-1842",
+        "1914-1944",
+        "1500-1530",
+        "1618-1648"
+      ],
+      "en": [
+        "1812-1842",
+        "1914-1944",
+        "1500-1530",
+        "1618-1648"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Tutanchamun?",
+      "en": "Who was Tutankhamun?"
+    },
+    "options": {
+      "de": [
+        "Pharao",
+        "Priester",
+        "Architekt",
+        "Krieger"
+      ],
+      "en": [
+        "Pharaoh",
+        "Priest",
+        "Architect",
+        "Warrior"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Welche Stadt war die Hauptstadt des Aztekenreiches?",
+      "en": "Which city was the capital of the Aztec Empire?"
+    },
+    "options": {
+      "de": [
+        "Cuzco",
+        "Tenochtitlán",
+        "Lima",
+        "Quito"
+      ],
+      "en": [
+        "Cuzco",
+        "Tenochtitlán",
+        "Lima",
+        "Quito"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Rosa Parks?",
+      "en": "Who was Rosa Parks?"
+    },
+    "options": {
+      "de": [
+        "Schauspielerin",
+        "Sängerin",
+        "Bürgerrechtlerin",
+        "Politikerin"
+      ],
+      "en": [
+        "Actress",
+        "Singer",
+        "Civil rights activist",
+        "Politician"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was passierte 1066?",
+      "en": "What happened in 1066?"
+    },
+    "options": {
+      "de": [
+        "Gründung Roms",
+        "Entdeckung Amerikas",
+        "Reformation",
+        "Schlacht von Hastings"
+      ],
+      "en": [
+        "Founding of Rome",
+        "Discovery of America",
+        "Reformation",
+        "Battle of Hastings"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Kaiserin Sisi?",
+      "en": "Who was Empress Sisi?"
+    },
+    "options": {
+      "de": [
+        "Kaiserin von Österreich",
+        "Königin von England",
+        "Zarin",
+        "Herzogin"
+      ],
+      "en": [
+        "Empress of Austria",
+        "Queen of England",
+        "Tsarina",
+        "Duchess"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann endete der Kalte Krieg?",
+      "en": "When did the Cold War end?"
+    },
+    "options": {
+      "de": [
+        "1945",
+        "1991",
+        "1980",
+        "2000"
+      ],
+      "en": [
+        "1945",
+        "1991",
+        "1980",
+        "2000"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer waren die Inkas?",
+      "en": "Who were the Incas?"
+    },
+    "options": {
+      "de": [
+        "Europäer",
+        "Afrikaner",
+        "Südamerikanisches Volk",
+        "Asiaten"
+      ],
+      "en": [
+        "Europeans",
+        "Africans",
+        "South American people",
+        "Asians"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer schrieb das Buch 'Das Kapital'?",
+      "en": "Who wrote the book 'Das Kapital'?"
+    },
+    "options": {
+      "de": [
+        "Engels",
+        "Lenin",
+        "Stalin",
+        "Marx"
+      ],
+      "en": [
+        "Engels",
+        "Lenin",
+        "Stalin",
+        "Marx"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann wurde die erste Mondlandung durchgeführt?",
+      "en": "When was the first moon landing?"
+    },
+    "options": {
+      "de": [
+        "1969",
+        "1955",
+        "1975",
+        "1980"
+      ],
+      "en": [
+        "1969",
+        "1955",
+        "1975",
+        "1980"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Ludwig XIV.?",
+      "en": "Who was Louis XIV?"
+    },
+    "options": {
+      "de": [
+        "Englischer König",
+        "Sonnenkönig",
+        "Deutscher Kaiser",
+        "Zar"
+      ],
+      "en": [
+        "English King",
+        "Sun King",
+        "German Emperor",
+        "Tsar"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Welches Land war Kolonialmacht in Indien?",
+      "en": "Which country was the colonial power in India?"
+    },
+    "options": {
+      "de": [
+        "Frankreich",
+        "Deutschland",
+        "Großbritannien",
+        "Italien"
+      ],
+      "en": [
+        "France",
+        "Germany",
+        "Great Britain",
+        "Italy"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Aristoteles?",
+      "en": "Who was Aristotle?"
+    },
+    "options": {
+      "de": [
+        "Maler",
+        "König",
+        "General",
+        "Philosoph"
+      ],
+      "en": [
+        "Painter",
+        "King",
+        "General",
+        "Philosopher"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was ist die Magna Carta?",
+      "en": "What is the Magna Carta?"
+    },
+    "options": {
+      "de": [
+        "Rechtsurkunde",
+        "Kriegserklärung",
+        "Friedensvertrag",
+        "Bauplan"
+      ],
+      "en": [
+        "Legal document",
+        "Declaration of war",
+        "Peace treaty",
+        "Blueprint"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Maria Theresia?",
+      "en": "Who was Maria Theresa?"
+    },
+    "options": {
+      "de": [
+        "Britische Königin",
+        "Österreichische Erzherzogin",
+        "Russische Zarin",
+        "Französische Königin"
+      ],
+      "en": [
+        "British Queen",
+        "Austrian Archduchess",
+        "Russian Tsarina",
+        "French Queen"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer entdeckte die Pestbakterien?",
+      "en": "Who discovered the plague bacteria?"
+    },
+    "options": {
+      "de": [
+        "Pasteur",
+        "Koch",
+        "Yersin",
+        "Darwin"
+      ],
+      "en": [
+        "Pasteur",
+        "Koch",
+        "Yersin",
+        "Darwin"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war der Vietnamkrieg?",
+      "en": "When was the Vietnam War?"
+    },
+    "options": {
+      "de": [
+        "1940-1950",
+        "1930-1940",
+        "1980-1990",
+        "1955-1975"
+      ],
+      "en": [
+        "1940-1950",
+        "1930-1940",
+        "1980-1990",
+        "1955-1975"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Leonardo da Vinci?",
+      "en": "Who was Leonardo da Vinci?"
+    },
+    "options": {
+      "de": [
+        "Universalgenie",
+        "König",
+        "General",
+        "Papst"
+      ],
+      "en": [
+        "Polymath",
+        "King",
+        "General",
+        "Pope"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was war der Pestepidemie genannt?",
+      "en": "What was the plague epidemic called?"
+    },
+    "options": {
+      "de": [
+        "Grippe",
+        "Schwarzer Tod",
+        "Cholera",
+        "Malaria"
+      ],
+      "en": [
+        "Flu",
+        "Black Death",
+        "Cholera",
+        "Malaria"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Dschingis Khan?",
+      "en": "Who was Genghis Khan?"
+    },
+    "options": {
+      "de": [
+        "Kaiser von China",
+        "König von Europa",
+        "Gründer des Mongolenreiches",
+        "Indianerhäuptling"
+      ],
+      "en": [
+        "Emperor of China",
+        "King of Europe",
+        "Founder of the Mongol Empire",
+        "Native American Chief"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann wurde die UNO gegründet?",
+      "en": "When was the UN founded?"
+    },
+    "options": {
+      "de": [
+        "1919",
+        "1950",
+        "1930",
+        "1945"
+      ],
+      "en": [
+        "1919",
+        "1950",
+        "1930",
+        "1945"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Wolfgang Amadeus Mozart?",
+      "en": "Who was Wolfgang Amadeus Mozart?"
+    },
+    "options": {
+      "de": [
+        "Komponist",
+        "Maler",
+        "Erfinder",
+        "General"
+      ],
+      "en": [
+        "Composer",
+        "Painter",
+        "Inventor",
+        "General"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was passierte in Tschernobyl 1986?",
+      "en": "What happened in Chernobyl in 1986?"
+    },
+    "options": {
+      "de": [
+        "Erdbeben",
+        "Reaktorkatastrophe",
+        "Brand",
+        "Überschwemmung"
+      ],
+      "en": [
+        "Earthquake",
+        "Nuclear disaster",
+        "Fire",
+        "Flood"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Nelson Mandela?",
+      "en": "Who was Nelson Mandela?"
+    },
+    "options": {
+      "de": [
+        "US-Präsident",
+        "Künstler",
+        "Südafrikanischer Präsident",
+        "General"
+      ],
+      "en": [
+        "US President",
+        "Artist",
+        "South African President",
+        "General"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann begann der Erste Weltkrieg?",
+      "en": "When did World War I begin?"
+    },
+    "options": {
+      "de": [
+        "1939",
+        "1945",
+        "1918",
+        "1914"
+      ],
+      "en": [
+        "1939",
+        "1945",
+        "1918",
+        "1914"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Sokrates?",
+      "en": "Who was Socrates?"
+    },
+    "options": {
+      "de": [
+        "Philosoph",
+        "Maler",
+        "Krieger",
+        "König"
+      ],
+      "en": [
+        "Philosopher",
+        "Painter",
+        "Warrior",
+        "King"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was war der D-Day?",
+      "en": "What was D-Day?"
+    },
+    "options": {
+      "de": [
+        "Ende des Krieges",
+        "Landung der Alliierten",
+        "Friedensschluss",
+        "Geburt eines Königs"
+      ],
+      "en": [
+        "End of the war",
+        "Allied landing",
+        "Peace treaty",
+        "Birth of a king"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer baute die Pyramide des Cheops?",
+      "en": "Who built the Pyramid of Cheops?"
+    },
+    "options": {
+      "de": [
+        "Römer",
+        "Griechen",
+        "Ägypter",
+        "Perser"
+      ],
+      "en": [
+        "Romans",
+        "Greeks",
+        "Egyptians",
+        "Persians"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann wurde die DDR gegründet?",
+      "en": "When was the GDR founded?"
+    },
+    "options": {
+      "de": [
+        "1933",
+        "1945",
+        "1950",
+        "1949"
+      ],
+      "en": [
+        "1933",
+        "1945",
+        "1950",
+        "1949"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Karl Marx?",
+      "en": "Who was Karl Marx?"
+    },
+    "options": {
+      "de": [
+        "Philosoph",
+        "Künstler",
+        "Erfinder",
+        "General"
+      ],
+      "en": [
+        "Philosopher",
+        "Artist",
+        "Inventor",
+        "General"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was war der Untergang von Troja?",
+      "en": "What was the Fall of Troy?"
+    },
+    "options": {
+      "de": [
+        "Brand",
+        "Mythologische Schlacht",
+        "Erdbeben",
+        "Flut"
+      ],
+      "en": [
+        "Fire",
+        "Mythological battle",
+        "Earthquake",
+        "Flood"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Sigmund Freud?",
+      "en": "Who was Sigmund Freud?"
+    },
+    "options": {
+      "de": [
+        "Physiker",
+        "Biologe",
+        "Psychologe",
+        "Chemiker"
+      ],
+      "en": [
+        "Physicist",
+        "Biologist",
+        "Psychologist",
+        "Chemist"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war der Amerikanische Bürgerkrieg?",
+      "en": "When was the American Civil War?"
+    },
+    "options": {
+      "de": [
+        "1776-1780",
+        "1800-1810",
+        "1900-1910",
+        "1861-1865"
+      ],
+      "en": [
+        "1776-1780",
+        "1800-1810",
+        "1900-1910",
+        "1861-1865"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Kaiser Wilhelm II.?",
+      "en": "Who was Kaiser Wilhelm II?"
+    },
+    "options": {
+      "de": [
+        "Deutscher Kaiser",
+        "Britischer König",
+        "Zar",
+        "Präsident"
+      ],
+      "en": [
+        "German Emperor",
+        "British King",
+        "Tsar",
+        "President"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was war der Marshallplan?",
+      "en": "What was the Marshall Plan?"
+    },
+    "options": {
+      "de": [
+        "Kriegsplan",
+        "Wiederaufbauprogramm",
+        "Handelsabkommen",
+        "Kulturelles Programm"
+      ],
+      "en": [
+        "War plan",
+        "Reconstruction program",
+        "Trade agreement",
+        "Cultural program"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Galileo Galilei?",
+      "en": "Who was Galileo Galilei?"
+    },
+    "options": {
+      "de": [
+        "Maler",
+        "Komponist",
+        "Astronom",
+        "General"
+      ],
+      "en": [
+        "Painter",
+        "Composer",
+        "Astronomer",
+        "General"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann endete der Zweite Weltkrieg?",
+      "en": "When did World War II end?"
+    },
+    "options": {
+      "de": [
+        "1918",
+        "1939",
+        "1940",
+        "1945"
+      ],
+      "en": [
+        "1918",
+        "1939",
+        "1940",
+        "1945"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Alexander Graham Bell?",
+      "en": "Who was Alexander Graham Bell?"
+    },
+    "options": {
+      "de": [
+        "Telefon-Erfinder",
+        "Maler",
+        "König",
+        "General"
+      ],
+      "en": [
+        "Telephone inventor",
+        "Painter",
+        "King",
+        "General"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was ist das Taj Mahal?",
+      "en": "What is the Taj Mahal?"
+    },
+    "options": {
+      "de": [
+        "Palast",
+        "Grabmal",
+        "Tempel",
+        "Schloss"
+      ],
+      "en": [
+        "Palace",
+        "Tomb",
+        "Temple",
+        "Castle"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Frida Kahlo?",
+      "en": "Who was Frida Kahlo?"
+    },
+    "options": {
+      "de": [
+        "Politikerin",
+        "Wissenschaftlerin",
+        "Malerin",
+        "Erfinderin"
+      ],
+      "en": [
+        "Politician",
+        "Scientist",
+        "Painter",
+        "Inventor"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war die Russische Revolution?",
+      "en": "When was the Russian Revolution?"
+    },
+    "options": {
+      "de": [
+        "1900",
+        "1930",
+        "1945",
+        "1917"
+      ],
+      "en": [
+        "1900",
+        "1930",
+        "1945",
+        "1917"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Charles Darwin?",
+      "en": "Who was Charles Darwin?"
+    },
+    "options": {
+      "de": [
+        "Naturforscher",
+        "König",
+        "General",
+        "Maler"
+      ],
+      "en": [
+        "Naturalist",
+        "King",
+        "General",
+        "Painter"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was ist die Chinesische Mauer?",
+      "en": "What is the Great Wall of China?"
+    },
+    "options": {
+      "de": [
+        "Tempel",
+        "Verteidigungsanlage",
+        "Palast",
+        "Brücke"
+      ],
+      "en": [
+        "Temple",
+        "Defense structure",
+        "Palace",
+        "Bridge"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Marie Curie?",
+      "en": "Who was Marie Curie?"
+    },
+    "options": {
+      "de": [
+        "Malerin",
+        "Politikerin",
+        "Physikerin/Chemikerin",
+        "Sängerin"
+      ],
+      "en": [
+        "Painter",
+        "Politician",
+        "Physicist/Chemist",
+        "Singer"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war der Mauerbau in Berlin?",
+      "en": "When was the Berlin Wall built?"
+    },
+    "options": {
+      "de": [
+        "1945",
+        "1950",
+        "1955",
+        "1961"
+      ],
+      "en": [
+        "1945",
+        "1950",
+        "1955",
+        "1961"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Albert Einstein?",
+      "en": "Who was Albert Einstein?"
+    },
+    "options": {
+      "de": [
+        "Physiker",
+        "Maler",
+        "Komponist",
+        "General"
+      ],
+      "en": [
+        "Physicist",
+        "Painter",
+        "Composer",
+        "General"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was passierte 1914?",
+      "en": "What happened in 1914?"
+    },
+    "options": {
+      "de": [
+        "Mondlandung",
+        "Beginn des 1. Weltkriegs",
+        "Ende des 2. Weltkriegs",
+        "Wahl von Lincoln"
+      ],
+      "en": [
+        "Moon landing",
+        "Start of WWI",
+        "End of WWII",
+        "Election of Lincoln"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Kleopatra?",
+      "en": "Who was Cleopatra?"
+    },
+    "options": {
+      "de": [
+        "Göttin",
+        "Sklavin",
+        "Königin",
+        "Priesterin"
+      ],
+      "en": [
+        "Goddess",
+        "Slave",
+        "Queen",
+        "Priestess"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war die Reformation?",
+      "en": "When was the Reformation?"
+    },
+    "options": {
+      "de": [
+        "1400",
+        "1600",
+        "1800",
+        "1517"
+      ],
+      "en": [
+        "1400",
+        "1600",
+        "1800",
+        "1517"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Hernán Cortés?",
+      "en": "Who was Hernán Cortés?"
+    },
+    "options": {
+      "de": [
+        "Konquistador",
+        "Maler",
+        "Komponist",
+        "Philosoph"
+      ],
+      "en": [
+        "Conquistador",
+        "Painter",
+        "Composer",
+        "Philosopher"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was ist die Enigma?",
+      "en": "What is the Enigma?"
+    },
+    "options": {
+      "de": [
+        "Flugzeug",
+        "Verschlüsselungsmaschine",
+        "U-Boot",
+        "Panzer"
+      ],
+      "en": [
+        "Airplane",
+        "Encryption machine",
+        "Submarine",
+        "Tank"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Napoleon?",
+      "en": "Who was Napoleon?"
+    },
+    "options": {
+      "de": [
+        "Zar",
+        "König",
+        "Französischer Kaiser",
+        "Präsident"
+      ],
+      "en": [
+        "Tsar",
+        "King",
+        "French Emperor",
+        "President"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war die Entdeckung Amerikas?",
+      "en": "When was the discovery of America?"
+    },
+    "options": {
+      "de": [
+        "1000",
+        "1500",
+        "1600",
+        "1492"
+      ],
+      "en": [
+        "1000",
+        "1500",
+        "1600",
+        "1492"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war George Washington?",
+      "en": "Who was George Washington?"
+    },
+    "options": {
+      "de": [
+        "1. US-Präsident",
+        "General",
+        "Erfinder",
+        "Maler"
+      ],
+      "en": [
+        "1st US President",
+        "General",
+        "Inventor",
+        "Painter"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was war der Hundred Years War?",
+      "en": "What was the Hundred Years' War?"
+    },
+    "options": {
+      "de": [
+        "Krieg zw. USA/UK",
+        "Krieg zw. Frankreich/England",
+        "Handelskrieg",
+        "Bürgerkrieg"
+      ],
+      "en": [
+        "War between USA/UK",
+        "War between France/England",
+        "Trade war",
+        "Civil war"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Marco Polo?",
+      "en": "Who was Marco Polo?"
+    },
+    "options": {
+      "de": [
+        "Maler",
+        "König",
+        "Reisender",
+        "General"
+      ],
+      "en": [
+        "Painter",
+        "King",
+        "Traveler",
+        "General"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war der Fall der Berliner Mauer?",
+      "en": "When was the fall of the Berlin Wall?"
+    },
+    "options": {
+      "de": [
+        "1980",
+        "1985",
+        "1988",
+        "1989"
+      ],
+      "en": [
+        "1980",
+        "1985",
+        "1988",
+        "1989"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Königin Victoria?",
+      "en": "Who was Queen Victoria?"
+    },
+    "options": {
+      "de": [
+        "Britische Königin",
+        "Französische Königin",
+        "Zarin",
+        "Herzogin"
+      ],
+      "en": [
+        "British Queen",
+        "French Queen",
+        "Tsarina",
+        "Duchess"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was passierte beim Sturm auf die Bastille?",
+      "en": "What happened at the Storming of the Bastille?"
+    },
+    "options": {
+      "de": [
+        "Friedensfeier",
+        "Beginn der Revolution",
+        "Königshochzeit",
+        "Bau einer Festung"
+      ],
+      "en": [
+        "Peace celebration",
+        "Start of the revolution",
+        "Royal wedding",
+        "Building a fortress"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Abraham Lincoln?",
+      "en": "Who was Abraham Lincoln?"
+    },
+    "options": {
+      "de": [
+        "Erfinder",
+        "Maler",
+        "US-Präsident",
+        "General"
+      ],
+      "en": [
+        "Inventor",
+        "Painter",
+        "US President",
+        "General"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war der Beginn der Industrialisierung?",
+      "en": "When was the beginning of the Industrial Revolution?"
+    },
+    "options": {
+      "de": [
+        "1600",
+        "1900",
+        "1850",
+        "1760"
+      ],
+      "en": [
+        "1600",
+        "1900",
+        "1850",
+        "1760"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Winston Churchill?",
+      "en": "Who was Winston Churchill?"
+    },
+    "options": {
+      "de": [
+        "Britischer Politiker",
+        "Maler",
+        "Erfinder",
+        "General"
+      ],
+      "en": [
+        "British politician",
+        "Painter",
+        "Inventor",
+        "General"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Was war die Aufgabe der Pyramiden?",
+      "en": "What was the purpose of the pyramids?"
+    },
+    "options": {
+      "de": [
+        "Tempel",
+        "Grabstätten",
+        "Paläste",
+        "Speicher"
+      ],
+      "en": [
+        "Temple",
+        "Tombs",
+        "Palaces",
+        "Storage"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wer war Mahatma Gandhi?",
+      "en": "Who was Mahatma Gandhi?"
+    },
+    "options": {
+      "de": [
+        "General",
+        "Präsident",
+        "Freiheitskämpfer",
+        "Maler"
+      ],
+      "en": [
+        "General",
+        "President",
+        "Freedom fighter",
+        "Painter"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Geschichte",
+    "text": {
+      "de": "Wann war der Dreißigjährige Krieg?",
+      "en": "When was the Thirty Years' War?"
+    },
+    "options": {
+      "de": [
+        "1914-1945",
+        "1800-1830",
+        "1700-1730",
+        "1618-1648"
+      ],
+      "en": [
+        "1914-1945",
+        "1800-1830",
+        "1700-1730",
+        "1618-1648"
+      ]
+    },
+    "correct": 3
   }
 ]
