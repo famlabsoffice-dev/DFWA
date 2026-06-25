@@ -26598,5 +26598,2205 @@
         "Answer D"
       ]
     }
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Städte ist NICHT die Hauptstadt von Frankreich?",
+      "en": "Which of these cities is NOT the capital of France?"
+    },
+    "options": {
+      "de": [
+        "Lyon",
+        "Paris",
+        "Berlin",
+        "Madrid"
+      ],
+      "en": [
+        "Lyon",
+        "Paris",
+        "Berlin",
+        "Madrid"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Elemente ist KEIN Edelgas?",
+      "en": "Which of these elements is NOT a noble gas?"
+    },
+    "options": {
+      "de": [
+        "Neon",
+        "Sauerstoff",
+        "Helium",
+        "Argon"
+      ],
+      "en": [
+        "Neon",
+        "Oxygen",
+        "Helium",
+        "Argon"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist die FALSCHE Antwort auf die Frage nach dem Siedepunkt von Wasser bei Normaldruck?",
+      "en": "Which is the WRONG answer regarding the boiling point of water at standard pressure?"
+    },
+    "options": {
+      "de": [
+        "100 Grad Celsius",
+        "373 Kelvin",
+        "50 Grad Celsius",
+        "212 Grad Fahrenheit"
+      ],
+      "en": [
+        "100 degrees Celsius",
+        "373 Kelvin",
+        "50 degrees Celsius",
+        "212 degrees Fahrenheit"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Planeten ist NICHT Teil unseres Sonnensystems?",
+      "en": "Which of these planets is NOT part of our solar system?"
+    },
+    "options": {
+      "de": [
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Proxima Centauri b"
+      ],
+      "en": [
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Proxima Centauri b"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche Farbe ist NICHT im Regenbogen enthalten?",
+      "en": "Which color is NOT contained in the rainbow?"
+    },
+    "options": {
+      "de": [
+        "Braun",
+        "Rot",
+        "Gelb",
+        "Blau"
+      ],
+      "en": [
+        "Brown",
+        "Red",
+        "Yellow",
+        "Blue"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Tiere ist KEIN Säugetier?",
+      "en": "Which of these animals is NOT a mammal?"
+    },
+    "options": {
+      "de": [
+        "Wale",
+        "Haie",
+        "Delfine",
+        "Elefanten"
+      ],
+      "en": [
+        "Whales",
+        "Sharks",
+        "Dolphins",
+        "Elephants"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist NICHT die Hauptstadt von Deutschland?",
+      "en": "What is NOT the capital of Germany?"
+    },
+    "options": {
+      "de": [
+        "Berlin",
+        "Bonn",
+        "München",
+        "Berlin"
+      ],
+      "en": [
+        "Berlin",
+        "Bonn",
+        "Munich",
+        "Berlin"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Begriffe ist KEIN mathematischer Operator?",
+      "en": "Which of these terms is NOT a mathematical operator?"
+    },
+    "options": {
+      "de": [
+        "Addition",
+        "Subtraktion",
+        "Division",
+        "Reaktion"
+      ],
+      "en": [
+        "Addition",
+        "Subtraction",
+        "Division",
+        "Reaction"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches Instrument gehört NICHT zur Familie der Streichinstrumente?",
+      "en": "Which instrument does NOT belong to the string instrument family?"
+    },
+    "options": {
+      "de": [
+        "Flöte",
+        "Geige",
+        "Cello",
+        "Bratsche"
+      ],
+      "en": [
+        "Flute",
+        "Violin",
+        "Cello",
+        "Viola"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher Stoff ist KEIN Treibhausgas?",
+      "en": "Which substance is NOT a greenhouse gas?"
+    },
+    "options": {
+      "de": [
+        "Methan",
+        "Stickstoff",
+        "Kohlendioxid",
+        "Lachgas"
+      ],
+      "en": [
+        "Methane",
+        "Nitrogen",
+        "Carbon dioxide",
+        "Nitrous oxide"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Programmiersprachen existiert NICHT?",
+      "en": "Which of these programming languages does NOT exist?"
+    },
+    "options": {
+      "de": [
+        "Python",
+        "Java",
+        "Hyperscript-Gold",
+        "Ruby"
+      ],
+      "en": [
+        "Python",
+        "Java",
+        "Hyperscript-Gold",
+        "Ruby"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Bundesland in Österreich?",
+      "en": "Which is NOT a state in Austria?"
+    },
+    "options": {
+      "de": [
+        "Tirol",
+        "Salzburg",
+        "Kärnten",
+        "Bayerischer Wald"
+      ],
+      "en": [
+        "Tyrol",
+        "Salzburg",
+        "Carinthia",
+        "Bavarian Forest"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Sportarten wird NICHT bei den Olympischen Sommerspielen ausgetragen?",
+      "en": "Which of these sports is NOT played at the Summer Olympics?"
+    },
+    "options": {
+      "de": [
+        "Skispringen",
+        "Schwimmen",
+        "Leichtathletik",
+        "Turnen"
+      ],
+      "en": [
+        "Ski jumping",
+        "Swimming",
+        "Athletics",
+        "Gymnastics"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Ozeane existiert NICHT?",
+      "en": "Which of these oceans does NOT exist?"
+    },
+    "options": {
+      "de": [
+        "Pazifik",
+        "Wüsten-Ozean",
+        "Atlantik",
+        "Indik"
+      ],
+      "en": [
+        "Pacific",
+        "Desert Ocean",
+        "Atlantic",
+        "Indian"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Vitamine ist wasserlöslich und damit falsch kategorisiert?",
+      "en": "Which of these vitamins is water-soluble, making it categorized incorrectly here?"
+    },
+    "options": {
+      "de": [
+        "Vitamin C",
+        "Vitamin B1",
+        "Vitamin A",
+        "Vitamin B12"
+      ],
+      "en": [
+        "Vitamin C",
+        "Vitamin B1",
+        "Vitamin A",
+        "Vitamin B12"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Kontinente ist KEIN Kontinent?",
+      "en": "Which of these continents is NOT a continent?"
+    },
+    "options": {
+      "de": [
+        "Afrika",
+        "Asien",
+        "Europa",
+        "Antarktis-Wüste"
+      ],
+      "en": [
+        "Africa",
+        "Asia",
+        "Europe",
+        "Antarctic Desert"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches chemische Symbol ist NICHT korrekt?",
+      "en": "Which chemical symbol is NOT correct?"
+    },
+    "options": {
+      "de": [
+        "G für Gold",
+        "O für Sauerstoff",
+        "C für Kohlenstoff",
+        "N für Stickstoff"
+      ],
+      "en": [
+        "G for Gold",
+        "O for Oxygen",
+        "C for Carbon",
+        "N for Nitrogen"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Komponisten hat NICHT die Zauberflöte geschrieben?",
+      "en": "Which of these composers did NOT write The Magic Flute?"
+    },
+    "options": {
+      "de": [
+        "Mozart",
+        "Beethoven",
+        "Mozart",
+        "Mozart"
+      ],
+      "en": [
+        "Mozart",
+        "Beethoven",
+        "Mozart",
+        "Mozart"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Elemente ist KEIN Metall?",
+      "en": "Which of these elements is NOT a metal?"
+    },
+    "options": {
+      "de": [
+        "Eisen",
+        "Kupfer",
+        "Helium",
+        "Gold"
+      ],
+      "en": [
+        "Iron",
+        "Copper",
+        "Helium",
+        "Gold"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEINE Primzahl?",
+      "en": "Which is NOT a prime number?"
+    },
+    "options": {
+      "de": [
+        "2",
+        "3",
+        "5",
+        "9"
+      ],
+      "en": [
+        "2",
+        "3",
+        "5",
+        "9"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Mitglied der EU?",
+      "en": "Which is NOT a member of the EU?"
+    },
+    "options": {
+      "de": [
+        "Schweiz",
+        "Frankreich",
+        "Italien",
+        "Spanien"
+      ],
+      "en": [
+        "Switzerland",
+        "France",
+        "Italy",
+        "Spain"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher Autor hat NICHT 'Faust' geschrieben?",
+      "en": "Which author did NOT write 'Faust'?"
+    },
+    "options": {
+      "de": [
+        "Goethe",
+        "Schiller",
+        "Goethe",
+        "Goethe"
+      ],
+      "en": [
+        "Goethe",
+        "Schiller",
+        "Goethe",
+        "Goethe"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Einheiten misst KEINE Länge?",
+      "en": "Which of these units does NOT measure length?"
+    },
+    "options": {
+      "de": [
+        "Meter",
+        "Zentimeter",
+        "Liter",
+        "Kilometer"
+      ],
+      "en": [
+        "Meter",
+        "Centimeter",
+        "Liter",
+        "Kilometer"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Planeten ist KEIN Gasriese?",
+      "en": "Which of these planets is NOT a gas giant?"
+    },
+    "options": {
+      "de": [
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Mars"
+      ],
+      "en": [
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Mars"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches Tier kann NICHT fliegen?",
+      "en": "Which animal can NOT fly?"
+    },
+    "options": {
+      "de": [
+        "Pinguin",
+        "Adler",
+        "Falke",
+        "Eule"
+      ],
+      "en": [
+        "Penguin",
+        "Eagle",
+        "Falcon",
+        "Owl"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Sprachen ist KEINE germanische Sprache?",
+      "en": "Which of these languages is NOT a Germanic language?"
+    },
+    "options": {
+      "de": [
+        "Englisch",
+        "Italienisch",
+        "Deutsch",
+        "Niederländisch"
+      ],
+      "en": [
+        "English",
+        "Italian",
+        "German",
+        "Dutch"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEINE Hauptstadt?",
+      "en": "What is NOT a capital city?"
+    },
+    "options": {
+      "de": [
+        "Rom",
+        "Berlin",
+        "Hamburg",
+        "Tokio"
+      ],
+      "en": [
+        "Rome",
+        "Berlin",
+        "Hamburg",
+        "Tokyo"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Metalle ist bei Raumtemperatur KEIN Feststoff?",
+      "en": "Which of these metals is NOT a solid at room temperature?"
+    },
+    "options": {
+      "de": [
+        "Eisen",
+        "Kupfer",
+        "Gold",
+        "Quecksilber"
+      ],
+      "en": [
+        "Iron",
+        "Copper",
+        "Gold",
+        "Mercury"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist NICHT die Aufgabe der roten Blutkörperchen?",
+      "en": "What is NOT the function of red blood cells?"
+    },
+    "options": {
+      "de": [
+        "Infektionsabwehr",
+        "Sauerstofftransport",
+        "Transport",
+        "Blutfluss"
+      ],
+      "en": [
+        "Fighting infection",
+        "Oxygen transport",
+        "Transport",
+        "Blood flow"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Kontinente liegt NICHT auf der Südhalbkugel?",
+      "en": "Which of these continents is NOT located in the Southern Hemisphere?"
+    },
+    "options": {
+      "de": [
+        "Australien",
+        "Nordamerika",
+        "Südamerika",
+        "Antarktis"
+      ],
+      "en": [
+        "Australia",
+        "North America",
+        "South America",
+        "Antarctica"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Formen hat NICHT 3 Ecken?",
+      "en": "Which of these shapes does NOT have 3 corners?"
+    },
+    "options": {
+      "de": [
+        "Dreieck",
+        "Triangel",
+        "Rechteck",
+        "Delta"
+      ],
+      "en": [
+        "Triangle",
+        "Triangle",
+        "Rectangle",
+        "Delta"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Musiker spielte NICHT bei den Beatles?",
+      "en": "Which of these musicians did NOT play in the Beatles?"
+    },
+    "options": {
+      "de": [
+        "John Lennon",
+        "Paul McCartney",
+        "George Harrison",
+        "Mick Jagger"
+      ],
+      "en": [
+        "John Lennon",
+        "Paul McCartney",
+        "George Harrison",
+        "Mick Jagger"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher Planet steht NICHT an zweiter Stelle von der Sonne aus?",
+      "en": "Which planet is NOT in the second position from the Sun?"
+    },
+    "options": {
+      "de": [
+        "Mars",
+        "Venus",
+        "Venus",
+        "Venus"
+      ],
+      "en": [
+        "Mars",
+        "Venus",
+        "Venus",
+        "Venus"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Filme ist KEIN Science-Fiction-Film?",
+      "en": "Which of these films is NOT a science fiction film?"
+    },
+    "options": {
+      "de": [
+        "Star Wars",
+        "Der Pate",
+        "Matrix",
+        "Blade Runner"
+      ],
+      "en": [
+        "Star Wars",
+        "The Godfather",
+        "Matrix",
+        "Blade Runner"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Organe ist NICHT Teil des Verdauungssystems?",
+      "en": "Which of these organs is NOT part of the digestive system?"
+    },
+    "options": {
+      "de": [
+        "Magen",
+        "Darm",
+        "Lunge",
+        "Leber"
+      ],
+      "en": [
+        "Stomach",
+        "Intestine",
+        "Lung",
+        "Liver"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Edelstein?",
+      "en": "Which is NOT a gemstone?"
+    },
+    "options": {
+      "de": [
+        "Diamant",
+        "Smaragd",
+        "Rubin",
+        "Granit"
+      ],
+      "en": [
+        "Diamond",
+        "Emerald",
+        "Ruby",
+        "Granite"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Teil einer Pflanze?",
+      "en": "What is NOT part of a plant?"
+    },
+    "options": {
+      "de": [
+        "Kiemen",
+        "Wurzel",
+        "Stängel",
+        "Blatt"
+      ],
+      "en": [
+        "Gills",
+        "Root",
+        "Stem",
+        "Leaf"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Tiere ist KEIN Wirbeltier?",
+      "en": "Which of these animals is NOT a vertebrate?"
+    },
+    "options": {
+      "de": [
+        "Hund",
+        "Qualle",
+        "Vogel",
+        "Fisch"
+      ],
+      "en": [
+        "Dog",
+        "Jellyfish",
+        "Bird",
+        "Fish"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Staaten ist KEINE Insel?",
+      "en": "Which of these states is NOT an island?"
+    },
+    "options": {
+      "de": [
+        "Island",
+        "Japan",
+        "Deutschland",
+        "Madagaskar"
+      ],
+      "en": [
+        "Iceland",
+        "Japan",
+        "Germany",
+        "Madagascar"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Geräte ist KEIN Computer-Eingabegerät?",
+      "en": "Which of these devices is NOT a computer input device?"
+    },
+    "options": {
+      "de": [
+        "Tastatur",
+        "Maus",
+        "Scanner",
+        "Monitor"
+      ],
+      "en": [
+        "Keyboard",
+        "Mouse",
+        "Scanner",
+        "Monitor"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Zahlen ist NICHT gerade?",
+      "en": "Which of these numbers is NOT even?"
+    },
+    "options": {
+      "de": [
+        "7",
+        "2",
+        "4",
+        "8"
+      ],
+      "en": [
+        "7",
+        "2",
+        "4",
+        "8"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Elemente ist KEIN Halogen?",
+      "en": "Which of these elements is NOT a halogen?"
+    },
+    "options": {
+      "de": [
+        "Chlor",
+        "Neon",
+        "Fluor",
+        "Iod"
+      ],
+      "en": [
+        "Chlorine",
+        "Neon",
+        "Fluorine",
+        "Iodine"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher Fluss fließt NICHT durch Deutschland?",
+      "en": "Which river does NOT flow through Germany?"
+    },
+    "options": {
+      "de": [
+        "Rhein",
+        "Elbe",
+        "Themse",
+        "Donau"
+      ],
+      "en": [
+        "Rhine",
+        "Elbe",
+        "Thames",
+        "Danube"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Planetentyp?",
+      "en": "Which is NOT a planet type?"
+    },
+    "options": {
+      "de": [
+        "Gesteinsplanet",
+        "Gasriese",
+        "Eisriese",
+        "Hitzekugel"
+      ],
+      "en": [
+        "Terrestrial planet",
+        "Gas giant",
+        "Ice giant",
+        "Heat sphere"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Einheiten wird NICHT für Zeit verwendet?",
+      "en": "Which of these units is NOT used for time?"
+    },
+    "options": {
+      "de": [
+        "Sekunde",
+        "Minute",
+        "Gramm",
+        "Stunde"
+      ],
+      "en": [
+        "Second",
+        "Minute",
+        "Gram",
+        "Hour"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Farben entsteht NICHT durch Mischen von Grundfarben?",
+      "en": "Which of these colors is NOT created by mixing primary colors?"
+    },
+    "options": {
+      "de": [
+        "Grün",
+        "Violett",
+        "Orange",
+        "Schwarz"
+      ],
+      "en": [
+        "Green",
+        "Violet",
+        "Orange",
+        "Black"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Teil des Sonnensystems?",
+      "en": "What is NOT part of the solar system?"
+    },
+    "options": {
+      "de": [
+        "Galaxie",
+        "Sonne",
+        "Planet",
+        "Mond"
+      ],
+      "en": [
+        "Galaxy",
+        "Sun",
+        "Planet",
+        "Moon"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Tiere hat KEINE Federn?",
+      "en": "Which of these animals has NO feathers?"
+    },
+    "options": {
+      "de": [
+        "Adler",
+        "Fledermaus",
+        "Pinguin",
+        "Henne"
+      ],
+      "en": [
+        "Eagle",
+        "Bat",
+        "Penguin",
+        "Hen"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welche dieser Sprachen wird NICHT in China gesprochen?",
+      "en": "Which of these languages is NOT spoken in China?"
+    },
+    "options": {
+      "de": [
+        "Mandarin",
+        "Kantonesisch",
+        "Portugiesisch",
+        "Shanghaiesisch"
+      ],
+      "en": [
+        "Mandarin",
+        "Cantonese",
+        "Portuguese",
+        "Shanghainese"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Stoffe ist KEIN Brennstoff?",
+      "en": "Which of these substances is NOT a fuel?"
+    },
+    "options": {
+      "de": [
+        "Benzin",
+        "Holz",
+        "Kohle",
+        "Wasser"
+      ],
+      "en": [
+        "Gasoline",
+        "Wood",
+        "Coal",
+        "Water"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Körperteil?",
+      "en": "Which is NOT a body part?"
+    },
+    "options": {
+      "de": [
+        "Motor",
+        "Arm",
+        "Bein",
+        "Kopf"
+      ],
+      "en": [
+        "Engine",
+        "Arm",
+        "Leg",
+        "Head"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Länder liegt NICHT in Afrika?",
+      "en": "Which of these countries is NOT in Africa?"
+    },
+    "options": {
+      "de": [
+        "Ägypten",
+        "Kanada",
+        "Nigeria",
+        "Kenia"
+      ],
+      "en": [
+        "Egypt",
+        "Canada",
+        "Nigeria",
+        "Kenya"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher Planet ist KEIN Gesteinsplanet?",
+      "en": "Which planet is NOT a terrestrial planet?"
+    },
+    "options": {
+      "de": [
+        "Merkur",
+        "Venus",
+        "Jupiter",
+        "Mars"
+      ],
+      "en": [
+        "Mercury",
+        "Venus",
+        "Jupiter",
+        "Mars"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Säugetier?",
+      "en": "Which is NOT a mammal?"
+    },
+    "options": {
+      "de": [
+        "Hund",
+        "Katze",
+        "Mensch",
+        "Krokodil"
+      ],
+      "en": [
+        "Dog",
+        "Cat",
+        "Human",
+        "Crocodile"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Nahrungsmittel?",
+      "en": "What is NOT food?"
+    },
+    "options": {
+      "de": [
+        "Stein",
+        "Apfel",
+        "Brot",
+        "Fisch"
+      ],
+      "en": [
+        "Stone",
+        "Apple",
+        "Bread",
+        "Fish"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Instrumente ist KEIN Blechblasinstrument?",
+      "en": "Which of these instruments is NOT a brass instrument?"
+    },
+    "options": {
+      "de": [
+        "Trompete",
+        "Klarinette",
+        "Posaune",
+        "Tuba"
+      ],
+      "en": [
+        "Trumpet",
+        "Clarinet",
+        "Trombone",
+        "Tuba"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Kontinent?",
+      "en": "Which is NOT a continent?"
+    },
+    "options": {
+      "de": [
+        "Asien",
+        "Afrika",
+        "Atlantik",
+        "Europa"
+      ],
+      "en": [
+        "Asia",
+        "Africa",
+        "Atlantic",
+        "Europe"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Staat in den USA?",
+      "en": "Which is NOT a state in the USA?"
+    },
+    "options": {
+      "de": [
+        "Texas",
+        "Kalifornien",
+        "Florida",
+        "London"
+      ],
+      "en": [
+        "Texas",
+        "California",
+        "Florida",
+        "London"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Edelgas?",
+      "en": "What is NOT a noble gas?"
+    },
+    "options": {
+      "de": [
+        "Sauerstoff",
+        "Helium",
+        "Neon",
+        "Argon"
+      ],
+      "en": [
+        "Oxygen",
+        "Helium",
+        "Neon",
+        "Argon"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Tiere ist KEIN Reptil?",
+      "en": "Which of these animals is NOT a reptile?"
+    },
+    "options": {
+      "de": [
+        "Schlange",
+        "Frosch",
+        "Eidechse",
+        "Schildkröte"
+      ],
+      "en": [
+        "Snake",
+        "Frog",
+        "Lizard",
+        "Turtle"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEINE Maßeinheit?",
+      "en": "What is NOT a unit of measurement?"
+    },
+    "options": {
+      "de": [
+        "Meter",
+        "Kilogramm",
+        "Idee",
+        "Sekunde"
+      ],
+      "en": [
+        "Meter",
+        "Kilogram",
+        "Idea",
+        "Second"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Planet?",
+      "en": "Which is NOT a planet?"
+    },
+    "options": {
+      "de": [
+        "Erde",
+        "Sonne",
+        "Mars",
+        "Venus"
+      ],
+      "en": [
+        "Earth",
+        "Sun",
+        "Mars",
+        "Venus"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist NICHT aus Holz?",
+      "en": "What is NOT made of wood?"
+    },
+    "options": {
+      "de": [
+        "Tisch",
+        "Steinmauer",
+        "Stuhl",
+        "Schrank"
+      ],
+      "en": [
+        "Table",
+        "Stone wall",
+        "Chair",
+        "Cabinet"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Berufe ist KEIN handwerklicher Beruf?",
+      "en": "Which of these jobs is NOT a skilled trade?"
+    },
+    "options": {
+      "de": [
+        "Lehrer",
+        "Schreiner",
+        "Maler",
+        "Maurer"
+      ],
+      "en": [
+        "Teacher",
+        "Carpenter",
+        "Painter",
+        "Bricklayer"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Metalle ist KEIN Edelmetall?",
+      "en": "Which of these metals is NOT a precious metal?"
+    },
+    "options": {
+      "de": [
+        "Gold",
+        "Silber",
+        "Platin",
+        "Eisen"
+      ],
+      "en": [
+        "Gold",
+        "Silver",
+        "Platinum",
+        "Iron"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist NICHT die Hauptstadt von Italien?",
+      "en": "What is NOT the capital of Italy?"
+    },
+    "options": {
+      "de": [
+        "Rom",
+        "Mailand",
+        "Rom",
+        "Rom"
+      ],
+      "en": [
+        "Rome",
+        "Milan",
+        "Rome",
+        "Rome"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches dieser Tiere lebt NICHT im Wasser?",
+      "en": "Which of these animals does NOT live in water?"
+    },
+    "options": {
+      "de": [
+        "Hai",
+        "Löwe",
+        "Wal",
+        "Delfin"
+      ],
+      "en": [
+        "Shark",
+        "Lion",
+        "Whale",
+        "Dolphin"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Teil eines Autos?",
+      "en": "What is NOT part of a car?"
+    },
+    "options": {
+      "de": [
+        "Flügel",
+        "Motor",
+        "Reifen",
+        "Lenkrad"
+      ],
+      "en": [
+        "Wing",
+        "Engine",
+        "Tire",
+        "Steering wheel"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Planet in unserem System?",
+      "en": "Which is NOT a planet in our system?"
+    },
+    "options": {
+      "de": [
+        "Jupiter",
+        "Saturn",
+        "Erde",
+        "Mond"
+      ],
+      "en": [
+        "Jupiter",
+        "Saturn",
+        "Earth",
+        "Moon"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Obst?",
+      "en": "Which is NOT a fruit?"
+    },
+    "options": {
+      "de": [
+        "Apfel",
+        "Birne",
+        "Banane",
+        "Kartoffel"
+      ],
+      "en": [
+        "Apple",
+        "Pear",
+        "Banana",
+        "Potato"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEINE Sprache?",
+      "en": "What is NOT a language?"
+    },
+    "options": {
+      "de": [
+        "Laufen",
+        "Deutsch",
+        "Französisch",
+        "Japanisch"
+      ],
+      "en": [
+        "Running",
+        "German",
+        "French",
+        "Japanese"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches Tier hat KEINE Beine?",
+      "en": "Which animal has NO legs?"
+    },
+    "options": {
+      "de": [
+        "Schlange",
+        "Hund",
+        "Katze",
+        "Vogel"
+      ],
+      "en": [
+        "Snake",
+        "Dog",
+        "Cat",
+        "Bird"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEINE Farbe?",
+      "en": "Which is NOT a color?"
+    },
+    "options": {
+      "de": [
+        "Rot",
+        "Blau",
+        "Haus",
+        "Grün"
+      ],
+      "en": [
+        "Red",
+        "Blue",
+        "House",
+        "Green"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist NICHT zum Essen gedacht?",
+      "en": "What is NOT meant for eating?"
+    },
+    "options": {
+      "de": [
+        "Schuh",
+        "Apfel",
+        "Brot",
+        "Käse"
+      ],
+      "en": [
+        "Shoe",
+        "Apple",
+        "Bread",
+        "Cheese"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher Planet ist KEIN Gasplanet?",
+      "en": "Which planet is NOT a gas planet?"
+    },
+    "options": {
+      "de": [
+        "Jupiter",
+        "Saturn",
+        "Mars",
+        "Neptun"
+      ],
+      "en": [
+        "Jupiter",
+        "Saturn",
+        "Mars",
+        "Neptune"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Musikinstrument?",
+      "en": "What is NOT a musical instrument?"
+    },
+    "options": {
+      "de": [
+        "Gitarre",
+        "Klavier",
+        "Flöte",
+        "Hammer"
+      ],
+      "en": [
+        "Guitar",
+        "Piano",
+        "Flute",
+        "Hammer"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher dieser Vögel kann NICHT fliegen?",
+      "en": "Which of these birds can NOT fly?"
+    },
+    "options": {
+      "de": [
+        "Adler",
+        "Strauß",
+        "Falke",
+        "Eule"
+      ],
+      "en": [
+        "Eagle",
+        "Ostrich",
+        "Falcon",
+        "Owl"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist NICHT aus Wasser?",
+      "en": "What is NOT made of water?"
+    },
+    "options": {
+      "de": [
+        "Stein",
+        "Regen",
+        "Fluss",
+        "Meer"
+      ],
+      "en": [
+        "Stone",
+        "Rain",
+        "River",
+        "Sea"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welcher Kontinent ist KEIN Kontinent?",
+      "en": "Which continent is NOT a continent?"
+    },
+    "options": {
+      "de": [
+        "Atlantis",
+        "Asien",
+        "Afrika",
+        "Europa"
+      ],
+      "en": [
+        "Atlantis",
+        "Asia",
+        "Africa",
+        "Europe"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEINE geometrische Form?",
+      "en": "What is NOT a geometric shape?"
+    },
+    "options": {
+      "de": [
+        "Kreis",
+        "Quadrat",
+        "Dreieck",
+        "Baum"
+      ],
+      "en": [
+        "Circle",
+        "Square",
+        "Triangle",
+        "Tree"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Kleidungsstück?",
+      "en": "What is NOT a piece of clothing?"
+    },
+    "options": {
+      "de": [
+        "Hemd",
+        "Hose",
+        "Stuhl",
+        "Jacke"
+      ],
+      "en": [
+        "Shirt",
+        "Pants",
+        "Chair",
+        "Jacket"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEINE Flüssigkeit?",
+      "en": "What is NOT a liquid?"
+    },
+    "options": {
+      "de": [
+        "Wasser",
+        "Öl",
+        "Milch",
+        "Stein"
+      ],
+      "en": [
+        "Water",
+        "Oil",
+        "Milk",
+        "Stone"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Welches ist KEIN Haustier?",
+      "en": "Which is NOT a pet?"
+    },
+    "options": {
+      "de": [
+        "Hund",
+        "Tiger",
+        "Katze",
+        "Hamster"
+      ],
+      "en": [
+        "Dog",
+        "Tiger",
+        "Cat",
+        "Hamster"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Monat?",
+      "en": "What is NOT a month?"
+    },
+    "options": {
+      "de": [
+        "Januar",
+        "Februar",
+        "Auto",
+        "März"
+      ],
+      "en": [
+        "January",
+        "February",
+        "Car",
+        "March"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Wochentag?",
+      "en": "What is NOT a day of the week?"
+    },
+    "options": {
+      "de": [
+        "Apfel",
+        "Montag",
+        "Dienstag",
+        "Mittwoch"
+      ],
+      "en": [
+        "Apple",
+        "Monday",
+        "Tuesday",
+        "Wednesday"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Metall?",
+      "en": "What is NOT a metal?"
+    },
+    "options": {
+      "de": [
+        "Plastik",
+        "Gold",
+        "Eisen",
+        "Silber"
+      ],
+      "en": [
+        "Plastic",
+        "Gold",
+        "Iron",
+        "Silver"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Schreibmaterial?",
+      "en": "What is NOT writing material?"
+    },
+    "options": {
+      "de": [
+        "Stift",
+        "Papier",
+        "Füller",
+        "Tisch"
+      ],
+      "en": [
+        "Pen",
+        "Paper",
+        "Fountain pen",
+        "Table"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Raum im Haus?",
+      "en": "What is NOT a room in the house?"
+    },
+    "options": {
+      "de": [
+        "Garten",
+        "Küche",
+        "Wohnzimmer",
+        "Bad"
+      ],
+      "en": [
+        "Garden",
+        "Kitchen",
+        "Living room",
+        "Bathroom"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Getränk?",
+      "en": "What is NOT a drink?"
+    },
+    "options": {
+      "de": [
+        "Wasser",
+        "Tee",
+        "Saft",
+        "Brot"
+      ],
+      "en": [
+        "Water",
+        "Tea",
+        "Juice",
+        "Bread"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Gemüse?",
+      "en": "What is NOT a vegetable?"
+    },
+    "options": {
+      "de": [
+        "Kuchen",
+        "Karotte",
+        "Gurke",
+        "Brokkoli"
+      ],
+      "en": [
+        "Cake",
+        "Carrot",
+        "Cucumber",
+        "Broccoli"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Körperteil?",
+      "en": "What is NOT a body part?"
+    },
+    "options": {
+      "de": [
+        "Lampe",
+        "Hand",
+        "Fuß",
+        "Ohr"
+      ],
+      "en": [
+        "Lamp",
+        "Hand",
+        "Foot",
+        "Ear"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEINE Sportart?",
+      "en": "What is NOT a sport?"
+    },
+    "options": {
+      "de": [
+        "Fußball",
+        "Tennis",
+        "Schlafen",
+        "Schwimmen"
+      ],
+      "en": [
+        "Soccer",
+        "Tennis",
+        "Sleeping",
+        "Swimming"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist NICHT aus Metall?",
+      "en": "What is NOT made of metal?"
+    },
+    "options": {
+      "de": [
+        "Schlüssel",
+        "Stofftuch",
+        "Messer",
+        "Gabel"
+      ],
+      "en": [
+        "Key",
+        "Cloth",
+        "Knife",
+        "Fork"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN elektronisches Gerät?",
+      "en": "What is NOT an electronic device?"
+    },
+    "options": {
+      "de": [
+        "Computer",
+        "Handy",
+        "Tablet",
+        "Buch"
+      ],
+      "en": [
+        "Computer",
+        "Mobile phone",
+        "Tablet",
+        "Book"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Baum?",
+      "en": "What is NOT a tree?"
+    },
+    "options": {
+      "de": [
+        "Blume",
+        "Eiche",
+        "Tanne",
+        "Buche"
+      ],
+      "en": [
+        "Flower",
+        "Oak",
+        "Fir",
+        "Beech"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Möbelstück?",
+      "en": "What is NOT a piece of furniture?"
+    },
+    "options": {
+      "de": [
+        "Fenster",
+        "Tisch",
+        "Stuhl",
+        "Schrank"
+      ],
+      "en": [
+        "Window",
+        "Table",
+        "Chair",
+        "Cabinet"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist NICHT aus Stein?",
+      "en": "What is NOT made of stone?"
+    },
+    "options": {
+      "de": [
+        "Fels",
+        "Holzbrett",
+        "Mauer",
+        "Kiesel"
+      ],
+      "en": [
+        "Rock",
+        "Wooden board",
+        "Wall",
+        "Pebble"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Beruf?",
+      "en": "What is NOT a job?"
+    },
+    "options": {
+      "de": [
+        "Arzt",
+        "Wetter",
+        "Lehrer",
+        "Anwalt"
+      ],
+      "en": [
+        "Doctor",
+        "Weather",
+        "Teacher",
+        "Lawyer"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Erdteil?",
+      "en": "What is NOT a continent?"
+    },
+    "options": {
+      "de": [
+        "Asien",
+        "Sonne",
+        "Europa",
+        "Afrika"
+      ],
+      "en": [
+        "Asia",
+        "Sun",
+        "Europe",
+        "Africa"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Gegenteil",
+    "text": {
+      "de": "Was ist KEIN Verkehrsmittel?",
+      "en": "What is NOT a means of transport?"
+    },
+    "options": {
+      "de": [
+        "Auto",
+        "Zug",
+        "Fahrrad",
+        "Baum"
+      ],
+      "en": [
+        "Car",
+        "Train",
+        "Bicycle",
+        "Tree"
+      ]
+    },
+    "correct": 3
   }
 ]
