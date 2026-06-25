@@ -35398,5 +35398,2205 @@
       ]
     },
     "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie viele Spieler hat eine Fußballmannschaft auf dem Feld?",
+      "en": "How many players does a soccer team have on the field?"
+    },
+    "options": {
+      "de": [
+        "11",
+        "10",
+        "9",
+        "12"
+      ],
+      "en": [
+        "11",
+        "10",
+        "9",
+        "12"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "In welcher Sportart ist Roger Federer berühmt geworden?",
+      "en": "In which sport did Roger Federer become famous?"
+    },
+    "options": {
+      "de": [
+        "Fußball",
+        "Tennis",
+        "Basketball",
+        "Golf"
+      ],
+      "en": [
+        "Soccer",
+        "Tennis",
+        "Basketball",
+        "Golf"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie oft finden Olympische Sommerspiele statt?",
+      "en": "How often do the Summer Olympics take place?"
+    },
+    "options": {
+      "de": [
+        "Jedes Jahr",
+        "Alle 2 Jahre",
+        "Alle 4 Jahre",
+        "Alle 5 Jahre"
+      ],
+      "en": [
+        "Every year",
+        "Every 2 years",
+        "Every 4 years",
+        "Every 5 years"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer gewann die meisten Formel-1-Weltmeisterschaften (bis 2023)?",
+      "en": "Who won the most Formula 1 championships (until 2023)?"
+    },
+    "options": {
+      "de": [
+        "Sebastian Vettel",
+        "Ayrton Senna",
+        "Michael Schumacher / Lewis Hamilton (geteilter Rekord)",
+        "Max Verstappen"
+      ],
+      "en": [
+        "Sebastian Vettel",
+        "Ayrton Senna",
+        "Michael Schumacher / Lewis Hamilton (shared record)",
+        "Max Verstappen"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie viele Ringe hat das olympische Logo?",
+      "en": "How many rings does the Olympic logo have?"
+    },
+    "options": {
+      "de": [
+        "5",
+        "4",
+        "6",
+        "3"
+      ],
+      "en": [
+        "5",
+        "4",
+        "6",
+        "3"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welcher Sport wird mit einem Schläger und einem kleinen Ball auf einem Tisch gespielt?",
+      "en": "Which sport is played with a racket and a small ball on a table?"
+    },
+    "options": {
+      "de": [
+        "Tennis",
+        "Tischtennis",
+        "Badminton",
+        "Squash"
+      ],
+      "en": [
+        "Tennis",
+        "Table tennis",
+        "Badminton",
+        "Squash"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer gilt als der größte Basketballspieler aller Zeiten?",
+      "en": "Who is considered the greatest basketball player of all time?"
+    },
+    "options": {
+      "de": [
+        "Kobe Bryant",
+        "LeBron James",
+        "Michael Jordan",
+        "Shaquille O'Neal"
+      ],
+      "en": [
+        "Kobe Bryant",
+        "LeBron James",
+        "Michael Jordan",
+        "Shaquille O'Neal"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie lange dauert ein klassisches Fußballspiel (Regelspielzeit)?",
+      "en": "How long does a classic soccer match last (regular time)?"
+    },
+    "options": {
+      "de": [
+        "60 Min",
+        "80 Min",
+        "45 Min",
+        "90 Min"
+      ],
+      "en": [
+        "60 min",
+        "80 min",
+        "45 min",
+        "90 min"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "In welchem Land ist Cricket am populärsten?",
+      "en": "In which country is cricket most popular?"
+    },
+    "options": {
+      "de": [
+        "Indien",
+        "Brasilien",
+        "USA",
+        "Deutschland"
+      ],
+      "en": [
+        "India",
+        "Brazil",
+        "USA",
+        "Germany"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt der wichtigste Radsportwettbewerb der Welt?",
+      "en": "What is the name of the most important cycling race in the world?"
+    },
+    "options": {
+      "de": [
+        "Giro d'Italia",
+        "Tour de France",
+        "Vuelta a España",
+        "Tour de Suisse"
+      ],
+      "en": [
+        "Giro d'Italia",
+        "Tour de France",
+        "Vuelta a España",
+        "Tour de Suisse"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welcher Boxkampf gilt als der berühmteste aller Zeiten?",
+      "en": "Which boxing match is considered the most famous of all time?"
+    },
+    "options": {
+      "de": [
+        "Tyson vs Holyfield",
+        "Ali vs Frazier",
+        "Ali vs Foreman ('Rumble in the Jungle')",
+        "Mayweather vs McGregor"
+      ],
+      "en": [
+        "Tyson vs Holyfield",
+        "Ali vs Frazier",
+        "Ali vs Foreman ('Rumble in the Jungle')",
+        "Mayweather vs McGregor"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was bedeutet 'NBA'?",
+      "en": "What does 'NBA' stand for?"
+    },
+    "options": {
+      "de": [
+        "National Baseball Association",
+        "National Bowling Association",
+        "National Badminton Association",
+        "National Basketball Association"
+      ],
+      "en": [
+        "National Baseball Association",
+        "National Bowling Association",
+        "National Badminton Association",
+        "National Basketball Association"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt das Stadion des FC Bayern München?",
+      "en": "What is the name of the FC Bayern Munich stadium?"
+    },
+    "options": {
+      "de": [
+        "Allianz Arena",
+        "Signal Iduna Park",
+        "Olympiastadion",
+        "Mercedes-Benz-Arena"
+      ],
+      "en": [
+        "Allianz Arena",
+        "Signal Iduna Park",
+        "Olympic Stadium",
+        "Mercedes-Benz Arena"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welche Sportart beinhaltet das Werfen von Steinen auf Eis?",
+      "en": "Which sport involves throwing stones on ice?"
+    },
+    "options": {
+      "de": [
+        "Skispringen",
+        "Curling",
+        "Eishockey",
+        "Eiskunstlauf"
+      ],
+      "en": [
+        "Ski jumping",
+        "Curling",
+        "Ice hockey",
+        "Figure skating"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie nennt man den besten Schlag im Golf?",
+      "en": "What is the best shot in golf called?"
+    },
+    "options": {
+      "de": [
+        "Bogey",
+        "Birdie",
+        "Hole-in-one",
+        "Eagle"
+      ],
+      "en": [
+        "Bogey",
+        "Birdie",
+        "Hole-in-one",
+        "Eagle"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer ist der erfolgreichste Schwimmer bei Olympischen Spielen?",
+      "en": "Who is the most successful swimmer at the Olympic Games?"
+    },
+    "options": {
+      "de": [
+        "Ian Thorpe",
+        "Mark Spitz",
+        "Caeleb Dressel",
+        "Michael Phelps"
+      ],
+      "en": [
+        "Ian Thorpe",
+        "Mark Spitz",
+        "Caeleb Dressel",
+        "Michael Phelps"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist die höchste Liga im deutschen Fußball?",
+      "en": "What is the top league in German soccer?"
+    },
+    "options": {
+      "de": [
+        "Bundesliga",
+        "2. Bundesliga",
+        "Regionalliga",
+        "Oberliga"
+      ],
+      "en": [
+        "Bundesliga",
+        "2. Bundesliga",
+        "Regionalliga",
+        "Oberliga"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie viele Tore hat ein Team in einer Handball-Mannschaft?",
+      "en": "How many goals does a team have in a handball match?"
+    },
+    "options": {
+      "de": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "en": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2014?",
+      "en": "Which country won the 2014 FIFA World Cup?"
+    },
+    "options": {
+      "de": [
+        "Brasilien",
+        "Argentinien",
+        "Deutschland",
+        "Spanien"
+      ],
+      "en": [
+        "Brazil",
+        "Argentina",
+        "Germany",
+        "Spain"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Touchdown' im American Football?",
+      "en": "What is a 'touchdown' in American football?"
+    },
+    "options": {
+      "de": [
+        "Foul",
+        "Strafe",
+        "Pass",
+        "Punkte erzielen"
+      ],
+      "en": [
+        "Foul",
+        "Penalty",
+        "Pass",
+        "Scoring points"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt die wichtigste Eishockeyliga der Welt?",
+      "en": "What is the most important ice hockey league in the world?"
+    },
+    "options": {
+      "de": [
+        "NHL",
+        "DEL",
+        "KHL",
+        "SHL"
+      ],
+      "en": [
+        "NHL",
+        "DEL",
+        "KHL",
+        "SHL"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Marathon'?",
+      "en": "What is a 'marathon'?"
+    },
+    "options": {
+      "de": [
+        "Schwimmwettbewerb",
+        "Laufwettbewerb über 42,195 km",
+        "Radrennen",
+        "Triathlon"
+      ],
+      "en": [
+        "Swimming competition",
+        "Running competition over 42.195 km",
+        "Cycling race",
+        "Triathlon"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft der Frauen 2023?",
+      "en": "Who won the 2023 Women's World Cup?"
+    },
+    "options": {
+      "de": [
+        "USA",
+        "Deutschland",
+        "Spanien",
+        "England"
+      ],
+      "en": [
+        "USA",
+        "Germany",
+        "Spain",
+        "England"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt der Schiedsrichter beim Tennis?",
+      "en": "What is the referee in tennis called?"
+    },
+    "options": {
+      "de": [
+        "Umpire (Stuhlschiedsrichter)",
+        "Referee",
+        "Judge",
+        "Line Judge"
+      ],
+      "en": [
+        "Umpire",
+        "Referee",
+        "Judge",
+        "Line Judge"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welche Farbe hat das Trikot des Führenden bei der Tour de France?",
+      "en": "What color is the jersey of the leader in the Tour de France?"
+    },
+    "options": {
+      "de": [
+        "Gelb",
+        "Grün",
+        "Gepunktet",
+        "Weiß"
+      ],
+      "en": [
+        "Yellow",
+        "Green",
+        "Polka-dot",
+        "White"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "In welcher Sportart kämpfen Athleten in einem Ring?",
+      "en": "In which sport do athletes fight in a ring?"
+    },
+    "options": {
+      "de": [
+        "Judo",
+        "Boxen",
+        "Fechten",
+        "Karate"
+      ],
+      "en": [
+        "Judo",
+        "Boxing",
+        "Fencing",
+        "Karate"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt das Turnier im Tennis, das auf Rasen gespielt wird?",
+      "en": "What is the tennis tournament played on grass?"
+    },
+    "options": {
+      "de": [
+        "Roland Garros",
+        "US Open",
+        "Wimbledon",
+        "Australian Open"
+      ],
+      "en": [
+        "Roland Garros",
+        "US Open",
+        "Wimbledon",
+        "Australian Open"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer gilt als schnellster Sprinter der Geschichte?",
+      "en": "Who is considered the fastest sprinter in history?"
+    },
+    "options": {
+      "de": [
+        "Justin Gatlin",
+        "Tyson Gay",
+        "Carl Lewis",
+        "Usain Bolt"
+      ],
+      "en": [
+        "Justin Gatlin",
+        "Tyson Gay",
+        "Carl Lewis",
+        "Usain Bolt"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Par' beim Golf?",
+      "en": "What is a 'par' in golf?"
+    },
+    "options": {
+      "de": [
+        "Anzahl der Schläge",
+        "Strafschlag",
+        "Bonus",
+        "Punkte"
+      ],
+      "en": [
+        "Number of strokes",
+        "Penalty stroke",
+        "Bonus",
+        "Points"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie nennt man eine Sportart, die Radfahren, Schwimmen und Laufen kombiniert?",
+      "en": "What do you call a sport that combines cycling, swimming, and running?"
+    },
+    "options": {
+      "de": [
+        "Zehnkampf",
+        "Triathlon",
+        "Siebenkampf",
+        "Fünfkampf"
+      ],
+      "en": [
+        "Decathlon",
+        "Triathlon",
+        "Heptathlon",
+        "Pentathlon"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer gewann die meisten Fußball-Weltmeisterschaften der Männer (bis 2023)?",
+      "en": "Who won the most men's World Cups (until 2023)?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Italien",
+        "Brasilien",
+        "Argentinien"
+      ],
+      "en": [
+        "Germany",
+        "Italy",
+        "Brazil",
+        "Argentina"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt die höchste Liga im Basketball in den USA?",
+      "en": "What is the top basketball league in the USA?"
+    },
+    "options": {
+      "de": [
+        "NCAA",
+        "ABA",
+        "WNBA",
+        "NBA"
+      ],
+      "en": [
+        "NCAA",
+        "ABA",
+        "WNBA",
+        "NBA"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Dunk'?",
+      "en": "What is a 'dunk'?"
+    },
+    "options": {
+      "de": [
+        "Basketballwurf (in den Korb rammen)",
+        "Pass",
+        "Foul",
+        "Strafe"
+      ],
+      "en": [
+        "Basketball shot (slamming into the basket)",
+        "Pass",
+        "Foul",
+        "Penalty"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie viele Spieler hat eine Eishockeymannschaft auf dem Eis?",
+      "en": "How many players does an ice hockey team have on the ice?"
+    },
+    "options": {
+      "de": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "en": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welche Sportart benutzt ein Netz, einen Schläger und einen Federball?",
+      "en": "Which sport uses a net, a racket, and a shuttlecock?"
+    },
+    "options": {
+      "de": [
+        "Tennis",
+        "Tischtennis",
+        "Badminton",
+        "Squash"
+      ],
+      "en": [
+        "Tennis",
+        "Table tennis",
+        "Badminton",
+        "Squash"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer ist der erfolgreichste Formel-1-Fahrer aller Zeiten?",
+      "en": "Who is the most successful Formula 1 driver of all time?"
+    },
+    "options": {
+      "de": [
+        "Ayrton Senna",
+        "Sebastian Vettel",
+        "Max Verstappen",
+        "Michael Schumacher / Lewis Hamilton"
+      ],
+      "en": [
+        "Ayrton Senna",
+        "Sebastian Vettel",
+        "Max Verstappen",
+        "Michael Schumacher / Lewis Hamilton"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Hattrick'?",
+      "en": "What is a 'hat-trick'?"
+    },
+    "options": {
+      "de": [
+        "3 Tore",
+        "2 Tore",
+        "1 Tor",
+        "4 Tore"
+      ],
+      "en": [
+        "3 goals",
+        "2 goals",
+        "1 goal",
+        "4 goals"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welches Turnier findet in Paris statt (Tennis)?",
+      "en": "Which tournament takes place in Paris (tennis)?"
+    },
+    "options": {
+      "de": [
+        "Wimbledon",
+        "Roland Garros",
+        "US Open",
+        "Australian Open"
+      ],
+      "en": [
+        "Wimbledon",
+        "Roland Garros",
+        "US Open",
+        "Australian Open"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer gewann die Fußball-EM 2024?",
+      "en": "Who won the 2024 Euro soccer championship?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Frankreich",
+        "Spanien",
+        "England"
+      ],
+      "en": [
+        "Germany",
+        "France",
+        "Spain",
+        "England"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'K.o.' beim Boxen?",
+      "en": "What is a 'K.O.' in boxing?"
+    },
+    "options": {
+      "de": [
+        "Sieg nach Punkten",
+        "Foul",
+        "Punktabzug",
+        "Knockout (Kampfunfähigkeit)"
+      ],
+      "en": [
+        "Victory by points",
+        "Foul",
+        "Point deduction",
+        "Knockout"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie viele Spieler hat eine Volleyballmannschaft?",
+      "en": "How many players does a volleyball team have?"
+    },
+    "options": {
+      "de": [
+        "6",
+        "5",
+        "7",
+        "4"
+      ],
+      "en": [
+        "6",
+        "5",
+        "7",
+        "4"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie nennt man den Sportler, der auf einem Board surft?",
+      "en": "What do you call the athlete who surfs on a board?"
+    },
+    "options": {
+      "de": [
+        "Skater",
+        "Surfer",
+        "Snowboarder",
+        "Schwimmer"
+      ],
+      "en": [
+        "Skater",
+        "Surfer",
+        "Snowboarder",
+        "Swimmer"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Goalie'?",
+      "en": "What is a 'goalie'?"
+    },
+    "options": {
+      "de": [
+        "Schiedsrichter",
+        "Stürmer",
+        "Torwart",
+        "Verteidiger"
+      ],
+      "en": [
+        "Referee",
+        "Striker",
+        "Goalkeeper",
+        "Defender"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt das größte Stadion der Welt (nach Zuschauerzahl)?",
+      "en": "What is the name of the largest stadium in the world (by capacity)?"
+    },
+    "options": {
+      "de": [
+        "Allianz Arena",
+        "Camp Nou",
+        "Wembley",
+        "Narendra Modi Stadium"
+      ],
+      "en": [
+        "Allianz Arena",
+        "Camp Nou",
+        "Wembley",
+        "Narendra Modi Stadium"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Doping'?",
+      "en": "What is 'doping'?"
+    },
+    "options": {
+      "de": [
+        "Leistungssteigerung durch unerlaubte Mittel",
+        "Training",
+        "Ernährung",
+        "Schlaf"
+      ],
+      "en": [
+        "Performance enhancement by prohibited substances",
+        "Training",
+        "Nutrition",
+        "Sleep"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welcher Sport wird mit einem ovalen Ball gespielt?",
+      "en": "Which sport is played with an oval ball?"
+    },
+    "options": {
+      "de": [
+        "Fußball",
+        "Rugby",
+        "Tennis",
+        "Basketball"
+      ],
+      "en": [
+        "Soccer",
+        "Rugby",
+        "Tennis",
+        "Basketball"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie nennt man einen Punkt beim American Football, der nach einem Touchdown erzielt wird?",
+      "en": "What do you call a point in American Football scored after a touchdown?"
+    },
+    "options": {
+      "de": [
+        "Field Goal",
+        "Safety",
+        "Extra Point",
+        "Touchdown"
+      ],
+      "en": [
+        "Field Goal",
+        "Safety",
+        "Extra Point",
+        "Touchdown"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer gilt als der größte Tennisspieler aller Zeiten?",
+      "en": "Who is considered the greatest tennis player of all time?"
+    },
+    "options": {
+      "de": [
+        "Federer",
+        "Nadal",
+        "Djokovic",
+        "Umstritten"
+      ],
+      "en": [
+        "Federer",
+        "Nadal",
+        "Djokovic",
+        "Controversial"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Olympiade'?",
+      "en": "What is an 'Olympiad'?"
+    },
+    "options": {
+      "de": [
+        "Vierjahreszeitraum",
+        "Wettbewerb",
+        "Eröffnungsfeier",
+        "Medaillen"
+      ],
+      "en": [
+        "Four-year period",
+        "Competition",
+        "Opening ceremony",
+        "Medals"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "In welcher Sportart trägt man Boxhandschuhe?",
+      "en": "In which sport do you wear boxing gloves?"
+    },
+    "options": {
+      "de": [
+        "Fechten",
+        "Boxen",
+        "Ringen",
+        "Judo"
+      ],
+      "en": [
+        "Fencing",
+        "Boxing",
+        "Wrestling",
+        "Judo"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Home Run' beim Baseball?",
+      "en": "What is a 'home run' in baseball?"
+    },
+    "options": {
+      "de": [
+        "Out",
+        "Strike",
+        "Punkte erzielen durch Platzrunde",
+        "Foul"
+      ],
+      "en": [
+        "Out",
+        "Strike",
+        "Scoring by base running",
+        "Foul"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welche Sportart nutzt einen Schläger und einen Federball?",
+      "en": "Which sport uses a racket and a shuttlecock?"
+    },
+    "options": {
+      "de": [
+        "Tennis",
+        "Squash",
+        "Tischtennis",
+        "Badminton"
+      ],
+      "en": [
+        "Tennis",
+        "Squash",
+        "Table tennis",
+        "Badminton"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie viele Sätze gewinnt man im Tennis bei den Herren (Grand Slam)?",
+      "en": "How many sets do you win in men's tennis (Grand Slam)?"
+    },
+    "options": {
+      "de": [
+        "3",
+        "2",
+        "5",
+        "4"
+      ],
+      "en": [
+        "3",
+        "2",
+        "5",
+        "4"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt das Regelwerk beim Fußball?",
+      "en": "What is the rulebook of soccer called?"
+    },
+    "options": {
+      "de": [
+        "FIFA-Regeln",
+        "Laws of the Game",
+        "Regelwerk",
+        "Statuten"
+      ],
+      "en": [
+        "FIFA rules",
+        "Laws of the Game",
+        "Rulebook",
+        "Statutes"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Foul'?",
+      "en": "What is a 'foul'?"
+    },
+    "options": {
+      "de": [
+        "Tor",
+        "Pass",
+        "Regelverstoß",
+        "Freistoß"
+      ],
+      "en": [
+        "Goal",
+        "Pass",
+        "Rule violation",
+        "Free kick"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist die wichtigste Sportart in den USA?",
+      "en": "What is the most important sport in the USA?"
+    },
+    "options": {
+      "de": [
+        "Baseball",
+        "Basketball",
+        "Eishockey",
+        "American Football"
+      ],
+      "en": [
+        "Baseball",
+        "Basketball",
+        "Ice hockey",
+        "American Football"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer ist der 'GOAT' im Basketball?",
+      "en": "Who is the 'GOAT' in basketball?"
+    },
+    "options": {
+      "de": [
+        "Jordan",
+        "Bryant",
+        "James",
+        "Chamberlain"
+      ],
+      "en": [
+        "Jordan",
+        "Bryant",
+        "James",
+        "Chamberlain"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Freistil' beim Schwimmen?",
+      "en": "What is 'freestyle' in swimming?"
+    },
+    "options": {
+      "de": [
+        "Rücken",
+        "Kraul",
+        "Brust",
+        "Schmetterling"
+      ],
+      "en": [
+        "Backstroke",
+        "Crawl",
+        "Breaststroke",
+        "Butterfly"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welcher Sport wird auf einem Eisring gespielt?",
+      "en": "Which sport is played on an ice ring?"
+    },
+    "options": {
+      "de": [
+        "Tennis",
+        "Fußball",
+        "Eiskunstlauf",
+        "Basketball"
+      ],
+      "en": [
+        "Tennis",
+        "Soccer",
+        "Figure skating",
+        "Basketball"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie viele Spieler sind beim Eishockey (Feld) pro Team?",
+      "en": "How many players are on the field per team in ice hockey?"
+    },
+    "options": {
+      "de": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "en": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Regatta'?",
+      "en": "What is a 'regatta'?"
+    },
+    "options": {
+      "de": [
+        "Segelwettbewerb",
+        "Lauf",
+        "Radrennen",
+        "Spiel"
+      ],
+      "en": [
+        "Sailing competition",
+        "Run",
+        "Cycling race",
+        "Game"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Birdie' beim Golf?",
+      "en": "What is a 'birdie' in golf?"
+    },
+    "options": {
+      "de": [
+        "Strafschlag",
+        "Ein Schlag unter Par",
+        "Zwei Schläge unter Par",
+        "Par"
+      ],
+      "en": [
+        "Penalty stroke",
+        "One stroke under par",
+        "Two strokes under par",
+        "Par"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welcher Sport nutzt einen Puck?",
+      "en": "Which sport uses a puck?"
+    },
+    "options": {
+      "de": [
+        "Fußball",
+        "Handball",
+        "Eishockey",
+        "Basketball"
+      ],
+      "en": [
+        "Soccer",
+        "Handball",
+        "Ice hockey",
+        "Basketball"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt der Schiedsrichter beim Eishockey?",
+      "en": "What is the referee in ice hockey called?"
+    },
+    "options": {
+      "de": [
+        "Schiri",
+        "Judge",
+        "Umpire",
+        "Referee"
+      ],
+      "en": [
+        "Referee",
+        "Judge",
+        "Umpire",
+        "Referee"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Service' beim Tennis?",
+      "en": "What is a 'service' in tennis?"
+    },
+    "options": {
+      "de": [
+        "Aufschlag",
+        "Schlag",
+        "Punkt",
+        "Fehler"
+      ],
+      "en": [
+        "Serve",
+        "Stroke",
+        "Point",
+        "Error"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Slalom' beim Skifahren?",
+      "en": "What is 'slalom' in skiing?"
+    },
+    "options": {
+      "de": [
+        "Geradeaus",
+        "Kurvenfahren",
+        "Schanze",
+        "Sprung"
+      ],
+      "en": [
+        "Straight",
+        "Cornering",
+        "Ramp",
+        "Jump"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer ist Usain Bolt?",
+      "en": "Who is Usain Bolt?"
+    },
+    "options": {
+      "de": [
+        "Fußballer",
+        "Schwimmer",
+        "Sprinter",
+        "Tennisspieler"
+      ],
+      "en": [
+        "Soccer player",
+        "Swimmer",
+        "Sprinter",
+        "Tennis player"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Touchdown' (American Football)?",
+      "en": "What is a 'touchdown' (American Football)?"
+    },
+    "options": {
+      "de": [
+        "Schuss",
+        "Pass",
+        "Kopfball",
+        "Punkt"
+      ],
+      "en": [
+        "Shot",
+        "Pass",
+        "Header",
+        "Point"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welches Land gewann den ersten Weltcup (Fußball)?",
+      "en": "Which country won the first World Cup (soccer)?"
+    },
+    "options": {
+      "de": [
+        "Uruguay",
+        "Brasilien",
+        "Argentinien",
+        "Italien"
+      ],
+      "en": [
+        "Uruguay",
+        "Brazil",
+        "Argentina",
+        "Italy"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Parade' beim Torwart?",
+      "en": "What is a 'parade' (save) by the goalkeeper?"
+    },
+    "options": {
+      "de": [
+        "Tor",
+        "Abwehr eines Schusses",
+        "Pass",
+        "Fehler"
+      ],
+      "en": [
+        "Goal",
+        "Saving a shot",
+        "Pass",
+        "Error"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt der wichtigste Preis im Tennis?",
+      "en": "What is the most important prize in tennis?"
+    },
+    "options": {
+      "de": [
+        "Cup",
+        "Trophy",
+        "Grand Slam Titel",
+        "Medaille"
+      ],
+      "en": [
+        "Cup",
+        "Trophy",
+        "Grand Slam Title",
+        "Medal"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Foul' im Basketball?",
+      "en": "What is a 'foul' in basketball?"
+    },
+    "options": {
+      "de": [
+        "Wurf",
+        "Punkt",
+        "Pass",
+        "Regelwidrige Körperberührung"
+      ],
+      "en": [
+        "Shot",
+        "Point",
+        "Pass",
+        "Illegal physical contact"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie viele Spieler sind bei einer Handballmannschaft auf dem Feld?",
+      "en": "How many players are on the field in a handball team?"
+    },
+    "options": {
+      "de": [
+        "7",
+        "6",
+        "5",
+        "8"
+      ],
+      "en": [
+        "7",
+        "6",
+        "5",
+        "8"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Dribbling'?",
+      "en": "What is 'dribbling'?"
+    },
+    "options": {
+      "de": [
+        "Schuss",
+        "Ballkontrolle durch Prellen/Führen",
+        "Pass",
+        "Tor"
+      ],
+      "en": [
+        "Shot",
+        "Ball control by bouncing/carrying",
+        "Pass",
+        "Goal"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Offside' (Abseits)?",
+      "en": "What is 'offside'?"
+    },
+    "options": {
+      "de": [
+        "Tor",
+        "Pass",
+        "Regel im Fußball (und anderen)",
+        "Foul"
+      ],
+      "en": [
+        "Goal",
+        "Pass",
+        "Rule in soccer (and others)",
+        "Foul"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer gewann die NBA-Meisterschaft 2024?",
+      "en": "Who won the 2024 NBA championship?"
+    },
+    "options": {
+      "de": [
+        "Lakers",
+        "Warriors",
+        "Heat",
+        "Celtics"
+      ],
+      "en": [
+        "Lakers",
+        "Warriors",
+        "Heat",
+        "Celtics"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Volley'?",
+      "en": "What is 'volley'?"
+    },
+    "options": {
+      "de": [
+        "Ballschuss ohne Bodenberührung",
+        "Pass",
+        "Fehler",
+        "Tor"
+      ],
+      "en": [
+        "Shooting the ball without touching the ground",
+        "Pass",
+        "Error",
+        "Goal"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wie heißt das Stadion vom FC Barcelona?",
+      "en": "What is the name of the stadium of FC Barcelona?"
+    },
+    "options": {
+      "de": [
+        "Bernabéu",
+        "Camp Nou",
+        "Wembley",
+        "Allianz Arena"
+      ],
+      "en": [
+        "Bernabéu",
+        "Camp Nou",
+        "Wembley",
+        "Allianz Arena"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welcher Sport nutzt ein Board und Wasser?",
+      "en": "Which sport uses a board and water?"
+    },
+    "options": {
+      "de": [
+        "Skaten",
+        "Snowboarden",
+        "Surfen",
+        "Schwimmen"
+      ],
+      "en": [
+        "Skating",
+        "Snowboarding",
+        "Surfing",
+        "Swimming"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Schanze'?",
+      "en": "What is a 'ramp' (ski jump)?"
+    },
+    "options": {
+      "de": [
+        "Weg",
+        "Ziel",
+        "Feld",
+        "Absprungpunkt für Sprünge"
+      ],
+      "en": [
+        "Path",
+        "Goal",
+        "Field",
+        "Jump-off point for jumps"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer ist Lionel Messi?",
+      "en": "Who is Lionel Messi?"
+    },
+    "options": {
+      "de": [
+        "Fußballer",
+        "Basketballer",
+        "Tennisspieler",
+        "Schwimmer"
+      ],
+      "en": [
+        "Soccer player",
+        "Basketball player",
+        "Tennis player",
+        "Swimmer"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Tackle'?",
+      "en": "What is a 'tackle'?"
+    },
+    "options": {
+      "de": [
+        "Pass",
+        "Spieler zu Boden bringen",
+        "Tor",
+        "Fehler"
+      ],
+      "en": [
+        "Pass",
+        "Bringing a player to the ground",
+        "Goal",
+        "Error"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Tennis'?",
+      "en": "What is 'tennis'?"
+    },
+    "options": {
+      "de": [
+        "Fußball",
+        "Handball",
+        "Schlägersport",
+        "Basketball"
+      ],
+      "en": [
+        "Soccer",
+        "Handball",
+        "Racket sport",
+        "Basketball"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer gewann die meisten Grand Slam Titel (Damen)?",
+      "en": "Who won the most Grand Slam titles (women)?"
+    },
+    "options": {
+      "de": [
+        "Graf",
+        "Navratilova",
+        "Williams",
+        "Court"
+      ],
+      "en": [
+        "Graf",
+        "Navratilova",
+        "Williams",
+        "Court"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Medaille'?",
+      "en": "What is a 'medal'?"
+    },
+    "options": {
+      "de": [
+        "Auszeichnung",
+        "Spiel",
+        "Fehler",
+        "Pass"
+      ],
+      "en": [
+        "Award",
+        "Game",
+        "Error",
+        "Pass"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer ist Tiger Woods?",
+      "en": "Who is Tiger Woods?"
+    },
+    "options": {
+      "de": [
+        "Fußballer",
+        "Golfer",
+        "Tennisspieler",
+        "Schwimmer"
+      ],
+      "en": [
+        "Soccer player",
+        "Golfer",
+        "Tennis player",
+        "Swimmer"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Olympiade'?",
+      "en": "What is an 'Olympiad'?"
+    },
+    "options": {
+      "de": [
+        "Wettbewerb",
+        "Spiel",
+        "Vierjahreszeitraum",
+        "Medaille"
+      ],
+      "en": [
+        "Competition",
+        "Game",
+        "Four-year period",
+        "Medal"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Welche Sportart nutzt einen Schläger und einen Ball auf Gras?",
+      "en": "Which sport uses a racket and a ball on grass?"
+    },
+    "options": {
+      "de": [
+        "Fußball",
+        "Basketball",
+        "Handball",
+        "Tennis (Rasen)"
+      ],
+      "en": [
+        "Soccer",
+        "Basketball",
+        "Handball",
+        "Tennis (grass)"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Dribbeln' (Basketball)?",
+      "en": "What is 'dribbling' (basketball)?"
+    },
+    "options": {
+      "de": [
+        "Ballprellen",
+        "Wurf",
+        "Pass",
+        "Regel"
+      ],
+      "en": [
+        "Bouncing the ball",
+        "Shot",
+        "Pass",
+        "Rule"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Zehnkampf'?",
+      "en": "What is 'decathlon'?"
+    },
+    "options": {
+      "de": [
+        "10 Spiele",
+        "10 Leichtathletikdisziplinen",
+        "10 Teams",
+        "10 Bälle"
+      ],
+      "en": [
+        "10 games",
+        "10 athletics disciplines",
+        "10 teams",
+        "10 balls"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Freistil' (Ringen)?",
+      "en": "What is 'freestyle' (wrestling)?"
+    },
+    "options": {
+      "de": [
+        "Tanzen",
+        "Laufen",
+        "Wrestlingstil",
+        "Schwimmen"
+      ],
+      "en": [
+        "Dancing",
+        "Running",
+        "Wrestling style",
+        "Swimming"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Strafe'?",
+      "en": "What is a 'penalty'?"
+    },
+    "options": {
+      "de": [
+        "Tor",
+        "Pass",
+        "Schuss",
+        "Regelstrafe"
+      ],
+      "en": [
+        "Goal",
+        "Pass",
+        "Shot",
+        "Rule penalty"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer ist Lewis Hamilton?",
+      "en": "Who is Lewis Hamilton?"
+    },
+    "options": {
+      "de": [
+        "Formel-1-Fahrer",
+        "Fußballer",
+        "Tennisspieler",
+        "Schwimmer"
+      ],
+      "en": [
+        "F1 driver",
+        "Soccer player",
+        "Tennis player",
+        "Swimmer"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist ein 'Tor'?",
+      "en": "What is a 'goal'?"
+    },
+    "options": {
+      "de": [
+        "Pass",
+        "Punkt im Spiel",
+        "Fehler",
+        "Regel"
+      ],
+      "en": [
+        "Pass",
+        "Point in the game",
+        "Error",
+        "Rule"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Schiedsrichter'?",
+      "en": "What is a 'referee'?"
+    },
+    "options": {
+      "de": [
+        "Spieler",
+        "Trainer",
+        "Spielleiter",
+        "Fan"
+      ],
+      "en": [
+        "Player",
+        "Coach",
+        "Game official",
+        "Fan"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Tennis'?",
+      "en": "What is 'tennis'?"
+    },
+    "options": {
+      "de": [
+        "Fußball",
+        "Handball",
+        "Eishockey",
+        "Racketsport"
+      ],
+      "en": [
+        "Soccer",
+        "Handball",
+        "Ice hockey",
+        "Racket sport"
+      ]
+    },
+    "correct": 3
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Sieg'?",
+      "en": "What is a 'win'?"
+    },
+    "options": {
+      "de": [
+        "Erfolg",
+        "Fehler",
+        "Pass",
+        "Regel"
+      ],
+      "en": [
+        "Success",
+        "Error",
+        "Pass",
+        "Rule"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Wer ist Michael Jordan?",
+      "en": "Who is Michael Jordan?"
+    },
+    "options": {
+      "de": [
+        "Fußballer",
+        "Basketballer",
+        "Tennisspieler",
+        "Schwimmer"
+      ],
+      "en": [
+        "Soccer player",
+        "Basketball player",
+        "Tennis player",
+        "Swimmer"
+      ]
+    },
+    "correct": 1
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist 'Badminton'?",
+      "en": "What is 'badminton'?"
+    },
+    "options": {
+      "de": [
+        "Fußball",
+        "Handball",
+        "Racketsport",
+        "Basketball"
+      ],
+      "en": [
+        "Soccer",
+        "Handball",
+        "Racket sport",
+        "Basketball"
+      ]
+    },
+    "correct": 2
+  },
+  {
+    "cat": "Sport",
+    "text": {
+      "de": "Was ist eine 'Mannschaft'?",
+      "en": "What is a 'team'?"
+    },
+    "options": {
+      "de": [
+        "Spieler",
+        "Trainer",
+        "Fan",
+        "Gruppe von Spielern"
+      ],
+      "en": [
+        "Player",
+        "Coach",
+        "Fan",
+        "Group of players"
+      ]
+    },
+    "correct": 3
   }
 ]
