@@ -450,6 +450,7 @@
             const title = document.getElementById('modal-title');
 
             const isNewBest = state.score > state.best;
+            document.getElementById('lives-display').innerText = state.lives;
             if (isNewBest) {
                 state.best = state.score;
                 localStorage.setItem('dfwa_best', state.best);
