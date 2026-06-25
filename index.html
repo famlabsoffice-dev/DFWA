@@ -592,9 +592,7 @@
             }
         });
 
-        document.addEventListener('devtoolschange', () => {
-            if (state.isPaused) state.cheatsAttempted = true;
-        });
+
 
         document.addEventListener('keydown', function(e) {
             if (state.isProcessing || state.isPaused) return;
