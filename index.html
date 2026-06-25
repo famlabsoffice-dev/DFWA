@@ -193,7 +193,7 @@
             <div id="timeline-container" role="progressbar" aria-valuemin="0" aria-valuemax="15" aria-valuenow="15" aria-label="Verbleibende Zeit">
                 <div id="timeline-bar"></div>
             </div>
-            <div id="score-hud" style="position:absolute;top:16vh;right:20px;text-align:right;z-index:50;font-size:0.75rem;font-weight:900;line-height:1.6;">
+            <div id="score-hud" aria-live="polite" aria-atomic="true" style="position:absolute;top:16vh;right:20px;text-align:right;z-index:50;font-size:0.75rem;font-weight:900;line-height:1.6;">
               <span id="hud-score" style="color:var(--neon);">0_PTS</span><br>
               <span id="hud-streak" style="color:var(--warning);display:none;">STREAK_<span id="hud-streak-count">0</span>X</span>
             </div>
