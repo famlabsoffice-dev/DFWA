@@ -189,6 +189,10 @@
             <div id="timeline-container" role="progressbar" aria-valuemin="0" aria-valuemax="15" aria-valuenow="15" aria-label="Verbleibende Zeit">
                 <div id="timeline-bar"></div>
             </div>
+            <div id="score-hud" style="position:absolute;top:16vh;right:20px;text-align:right;z-index:50;font-size:0.75rem;font-weight:900;line-height:1.6;">
+              <span id="hud-score" style="color:var(--neon);">0_PTS</span><br>
+              <span id="hud-streak" style="color:var(--warning);display:none;">STREAK_<span id="hud-streak-count">0</span>X</span>
+            </div>
             <div id="question-box" role="status" aria-live="polite" aria-atomic="true">INITIALIZING...</div>
             <div id="options-container" role="group" aria-label="Antwortoptionen"></div>
             <button id="pause-btn" onclick="pauseProtocol()" aria-label="Spiel pausieren">PAUSE</button>
@@ -213,6 +217,7 @@
     <script>
         let state = { 
             lang: 'de', questions: [], allQuestions: [], current: 0, score: 0, lives: 3,
+            streak: 0,
             playerName: localStorage.getItem('dfwa_name') || 'GUEST',
             playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
             best: parseInt(localStorage.getItem('dfwa_best') || 0),
@@ -310,7 +315,7 @@
             state.isCreatingChallenge = createChallenge;
             state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
             localStorage.setItem('dfwa_name', state.playerName);
-            state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0;
+            state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0;
             document.getElementById("lives-display").innerText = state.lives;
             
             if (!cachedQuestions || !cachedComments) {
@@ -329,9 +334,11 @@
             state.questions = shuffle([...pool], state.isChallenge ? state.challengeSeed : null);
             state.allQuestions = cachedQuestions;
             
-            document.getElementById('start-screen').classList.remove('active');
-            document.getElementById('battle-lobby').classList.remove('active');
-            document.getElementById('game-screen').classList.add('active');
+            document.getElementById("start-screen").classList.remove("active");
+            document.getElementById("battle-lobby").classList.remove("active");
+            document.getElementById("game-screen").classList.add("active");
+            document.getElementById("hud-score").innerText = "0_PTS";
+            document.getElementById("hud-streak").style.display = "none";
             renderQuestion();
         }
 
@@ -444,7 +451,18 @@
             fContainer.classList.remove('zoom-anim');
             
             if (correct) {
-                state.score += 100;
+                state.streak++;
+                const streakBonus = Math.min((state.streak - 1) * 10, 100);
+                const timeBonus = Math.min(Math.floor(state.timer * 2), 30);
+                state.score += 100 + streakBonus + timeBonus;
+                document.getElementById("hud-score").innerText = `${state.score}_PTS`;
+                const hudStreak = document.getElementById("hud-streak");
+                if (state.streak >= 2) {
+                  hudStreak.style.display = "inline";
+                  document.getElementById("hud-streak-count").innerText = state.streak;
+                } else {
+                  hudStreak.style.display = "none";
+                }
                 fEyeBase.src = './assets/images/ack_core_clean.png';
                 let blinkCount = 0;
                 const blinkInt = setInterval(() => {
@@ -457,6 +475,8 @@
                 fMsg.innerText = getComment('correct');
             } else if (correct === false) {
                 state.lives = Math.max(0, state.lives - 1);
+                state.streak = 0;
+                document.getElementById("hud-streak").style.display = "none";
                 document.getElementById("lives-display").innerText = state.lives;
                 fEyeBase.src = './assets/images/ack_core_clean.png';
                 fContainer.classList.add('zoom-anim');
