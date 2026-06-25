@@ -605,8 +605,13 @@
             document.getElementById('start-screen').classList.add('active');
             state.isChallenge = false;
             state.isCreatingChallenge = false;
-            document.getElementById('lives-display').innerText = 3;
+            state.streak = 0;
+            state.streakMax = 0;
+            state.correctAnswers = 0;
+            document.getElementById('lives-display').innerText = state.lives;
             document.getElementById('high-score').innerText = state.best;
+            document.getElementById('hud-score').innerText = '0_PTS';
+            document.getElementById('hud-streak').style.display = 'none';
         }
     </script>
 </body>
