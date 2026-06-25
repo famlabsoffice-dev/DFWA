@@ -265,8 +265,8 @@
                 } catch(e) {
   const inp = document.getElementById("challenge-code-input");
   inp.value = "";
-  inp.placeholder = "INVALID_CODE — RETRY";
-  setTimeout(() => inp.placeholder = "ENTER_CHALLENGE_CODE", 2000);
+  inp.placeholder = (state.lang === "de" ? "UNGÜLTIGER CODE — ERNEUT VERSUCHEN" : "INVALID_CODE — RETRY");
+  setTimeout(() => inp.placeholder = (state.lang === "de" ? "HERAUSFORDERUNGSCODE EINGEBEN" : "ENTER_CHALLENGE_CODE"), 2000);
 }
             } else {
                 initGame(true);
@@ -348,7 +348,7 @@
                 renderQuestion();
             } catch(e) {
                 document.getElementById("start-btn").innerText =
-                    e.message === "NO_QUESTIONS" ? "ERROR: EMPTY_SECTOR" : "ERROR: SYSTEM_OFFLINE";
+                    e.message === "NO_QUESTIONS" ? (state.lang === "de" ? "FEHLER: LEERER SEKTOR" : "ERROR: EMPTY_SECTOR") : (state.lang === "de" ? "FEHLER: SYSTEM OFFLINE" : "ERROR: SYSTEM_OFFLINE");
                 setTimeout(() => {
                     document.getElementById("start-btn").innerText =
                         state.lang === "de" ? "PROTOKOLL_STARTEN" : "INIT_PROTOCOL";
