@@ -617,6 +617,14 @@
             document.getElementById('hud-score').innerText = '0_PTS';
             document.getElementById('hud-streak').style.display = 'none';
         }
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => { reg.update(); })
+                    .catch(() => {});
+            });
+        }
     </script>
 </body>
 </html>
