@@ -504,6 +504,7 @@
             
             if (correct) {
                 state.streak++;
+                if (state.streak > state.streakMax) state.streakMax = state.streak;
                 const streakBonus = Math.min((state.streak - 1) * 10, 100);
                 const timeBonus = Math.min(Math.floor(state.timer * 2), 30);
                 state.score += 100 + streakBonus + timeBonus;
