@@ -334,10 +334,9 @@
         let cachedComments = null;
 
         async function initGame(createChallenge) {
-            state.isCreatingChallenge = createChallenge;
             state.playerName = document.getElementById("player-name").value.trim() || "GUEST";
             localStorage.setItem("dfwa_name", state.playerName);
-            state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0;
+            state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge;
 
             try {
                 const [qRes, cRes] = await Promise.all([
