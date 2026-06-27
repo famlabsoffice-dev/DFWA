@@ -13031,5 +13031,166 @@
         "Persian king"
       ]
     }
+  },
+  {
+    "id": "kunst_kultur_new_0",
+    "cat": "Kunst & Kultur",
+    "correct": 0,
+    "text": {
+      "de": "Wer malte die Mona Lisa?",
+      "en": "Who painted the Mona Lisa?"
+    },
+    "options": {
+      "de": [
+        "Leonardo da Vinci",
+        "Vincent van Gogh",
+        "Pablo Picasso",
+        "Claude Monet"
+      ],
+      "en": [
+        "Leonardo da Vinci",
+        "Vincent van Gogh",
+        "Pablo Picasso",
+        "Claude Monet"
+      ]
+    }
+  },
+  {
+    "id": "kunst_kultur_new_1",
+    "cat": "Kunst & Kultur",
+    "correct": 0,
+    "text": {
+      "de": "Welches berühmte Theaterstück schrieb William Shakespeare über ein dänisches Prinzen?",
+      "en": "Which famous play did William Shakespeare write about a Danish prince?"
+    },
+    "options": {
+      "de": [
+        "Hamlet",
+        "Romeo und Julia",
+        "Macbeth",
+        "Othello"
+      ],
+      "en": [
+        "Hamlet",
+        "Romeo and Juliet",
+        "Macbeth",
+        "Othello"
+      ]
+    }
+  },
+  {
+    "id": "kunst_kultur_new_2",
+    "cat": "Kunst & Kultur",
+    "correct": 0,
+    "text": {
+      "de": "Welche Stadt ist bekannt für das Kolosseum?",
+      "en": "Which city is famous for the Colosseum?"
+    },
+    "options": {
+      "de": [
+        "Rom",
+        "Athen",
+        "Paris",
+        "London"
+      ],
+      "en": [
+        "Rome",
+        "Athens",
+        "Paris",
+        "London"
+      ]
+    }
+  },
+  {
+    "id": "kunst_kultur_new_3",
+    "cat": "Kunst & Kultur",
+    "correct": 0,
+    "text": {
+      "de": "Wer komponierte die Oper 'Die Zauberflöte'?",
+      "en": "Who composed the opera 'The Magic Flute'?"
+    },
+    "options": {
+      "de": [
+        "Wolfgang Amadeus Mozart",
+        "Ludwig van Beethoven",
+        "Johann Sebastian Bach",
+        "Richard Wagner"
+      ],
+      "en": [
+        "Wolfgang Amadeus Mozart",
+        "Ludwig van Beethoven",
+        "Johann Sebastian Bach",
+        "Richard Wagner"
+      ]
+    }
+  },
+  {
+    "id": "kunst_kultur_new_4",
+    "cat": "Kunst & Kultur",
+    "correct": 0,
+    "text": {
+      "de": "Welches Museum beherbergt die 'Nachtwache' von Rembrandt?",
+      "en": "Which museum houses Rembrandt's 'The Night Watch'?"
+    },
+    "options": {
+      "de": [
+        "Rijksmuseum Amsterdam",
+        "Louvre Paris",
+        "Metropolitan Museum of Art New York",
+        "British Museum London"
+      ],
+      "en": [
+        "Rijksmuseum Amsterdam",
+        "Louvre Paris",
+        "Metropolitan Museum of Art New York",
+        "British Museum London"
+      ]
+    }
+  },
+  {
+    "id": "kunst_kultur_new_5",
+    "cat": "Kunst & Kultur",
+    "correct": 0,
+    "text": {
+      "de": "Welche Kunstrichtung entstand im frühen 20. Jahrhundert und zeichnet sich durch die Darstellung von Objekten aus verschiedenen Blickwinkeln aus?",
+      "en": "Which art movement emerged in the early 20th century and is characterized by depicting objects from multiple viewpoints?"
+    },
+    "options": {
+      "de": [
+        "Kubismus",
+        "Impressionismus",
+        "Expressionismus",
+        "Surrealismus"
+      ],
+      "en": [
+        "Cubism",
+        "Impressionism",
+        "Expressionism",
+        "Surrealism"
+      ]
+    }
+  },
+  {
+    "id": "kunst_kultur_new_6",
+    "cat": "Kunst & Kultur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman 'Don Quijote'?",
+      "en": "Who wrote the novel 'Don Quixote'?"
+    },
+    "options": {
+      "de": [
+        "Miguel de Cervantes",
+        "William Shakespeare",
+        "Charles Dickens",
+        "Leo Tolstoi"
+      ],
+      "en": [
+        "Miguel de Cervantes",
+        "William Shakespeare",
+        "Charles Dickens",
+        "Leo Tolstoy"
+      ]
+    }
   }
 ]
