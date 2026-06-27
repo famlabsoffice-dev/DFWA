@@ -177,4 +177,14 @@ app.get('/api/analytics', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Leaderboard server running on port ${PORT}`);
+    
+    // Automatisierte Log-Bereinigung alle 24 Stunden
+    setInterval(() => {
+        const retentionDate = new Date();
+        retentionDate.setDate(retentionDate.getDate() - 7); // Behalte Logs für 7 Tage
+        db.run(`DELETE FROM ratelimit_logs WHERE timestamp < ?`, [retentionDate.toISOString()], (err) => {
+            if (err) console.error('Log cleanup error:', err.message);
+            else console.log('Old rate limit logs cleared.');
+        });
+    }, 24 * 60 * 60 * 1000);
 });

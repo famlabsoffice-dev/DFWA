@@ -22,30 +22,28 @@ let state = {
     variant: localStorage.getItem('dfwa_variant') || (Math.random() < 0.5 ? 'A' : 'B')
 };
 
-// Globaler Zugriff für Legacy-Event-Handler im HTML (optional, besser EventListener nutzen)
-window.state = state;
-window.setLanguage = (lang) => {
-    state.lang = lang;
-    localStorage.setItem('dfwa_lang', lang);
-    updateUIForLanguage();
-};
-window.showLobby = () => {
-    state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
-    StorageManager.saveSecure('dfwa_name', state.playerName, state.systemSecret);
-    UIManager.toggleClass('start-screen', 'active', false);
-    UIManager.toggleClass('battle-lobby', 'active', true);
-};
-window.startChallenge = startChallenge;
-window.initGame = initGame;
-window.resumeProtocol = resumeProtocol;
-window.pauseProtocol = pauseProtocol;
-window.closeSystem = closeSystem;
-window.showLeaderboard = showLeaderboard;
-window.hideLeaderboard = hideLeaderboard;
-window.hideLobby = () => {
-    UIManager.toggleClass('battle-lobby', 'active', false);
-    UIManager.toggleClass('start-screen', 'active', true);
-};
+// Event Listener Setup
+function setupEventListeners() {
+    const addClick = (id, fn) => document.getElementById(id)?.addEventListener('click', fn);
+    
+    addClick('start-btn', () => initGame(false));
+    addClick('resume-btn', resumeProtocol);
+    addClick('lobby-btn', () => {
+        state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
+        StorageManager.saveSecure('dfwa_name', state.playerName, state.systemSecret);
+        UIManager.toggleClass('start-screen', 'active', false);
+        UIManager.toggleClass('battle-lobby', 'active', true);
+    });
+    addClick('start-challenge-btn', startChallenge);
+    addClick('show-leaderboard-btn', showLeaderboard);
+    addClick('hide-lobby-btn', () => {
+        UIManager.toggleClass('battle-lobby', 'active', false);
+        UIManager.toggleClass('start-screen', 'active', true);
+    });
+    addClick('hide-leaderboard-btn', hideLeaderboard);
+    addClick('pause-btn', pauseProtocol);
+    addClick('close-system-btn', closeSystem);
+}
 
 async function initApp() {
     state.systemSecret = await APIClient.fetchSecret(API_BASE_URL);
@@ -198,4 +196,4 @@ function hideLeaderboard() {
     UIManager.toggleClass('battle-lobby', 'active', true);
 }
 
-initApp();
+initApp().then(setupEventListeners);

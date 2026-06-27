@@ -34,9 +34,9 @@
                     <option value="endless">ENDLESS_MODE</option>
                     <option value="blitz">BLITZ_MODE</option>
                 </select>
-                <button id="resume-btn" class="option-btn battle-btn" style="display:none;" onclick="resumeProtocol()">RESUME_PROTOCOL</button>
-                <button id="start-btn" class="option-btn start-btn" onclick="initGame(false)" aria-label="Spiel starten">INIT_PROTOCOL</button>
-                <button class="option-btn battle-btn" onclick="showLobby()" aria-label="Battle Lobby öffnen">BATTLE_LOBBY</button>
+                <button id="resume-btn" class="option-btn battle-btn" style="display:none;">RESUME_PROTOCOL</button>
+                <button id="start-btn" class="option-btn start-btn" aria-label="Spiel starten">INIT_PROTOCOL</button>
+                <button id="lobby-btn" class="option-btn battle-btn" aria-label="Battle Lobby öffnen">BATTLE_LOBBY</button>
             </div>
         </div>
 
@@ -44,9 +44,9 @@
             <div class="ui-content-wrapper" style="margin-top: 20vh;">
                 <h2 style="color:var(--warning); margin-bottom: 20px;">BATTLE_OVERRIDE</h2>
                 <input type="text" id="challenge-code-input" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ENTER_CHALLENGE_CODE">
-                <button class="option-btn battle-btn" onclick="startChallenge()">START_CHALLENGE</button>
-                <button class="option-btn" onclick="showLeaderboard()" style="border-color: var(--neon); color: var(--neon);">SERVER_ROOM</button>
-                <button class="option-btn" onclick="hideLobby()">BACK_TO_CORE</button>
+                <button id="start-challenge-btn" class="option-btn battle-btn">START_CHALLENGE</button>
+                <button id="show-leaderboard-btn" class="option-btn" style="border-color: var(--neon); color: var(--neon);">SERVER_ROOM</button>
+                <button id="hide-lobby-btn" class="option-btn">BACK_TO_CORE</button>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
                         <!-- Einträge werden dynamisch geladen -->
                     </div>
                 </div>
-                <button class="option-btn" onclick="hideLeaderboard()">EXIT_SERVER_ROOM</button>
+                <button id="hide-leaderboard-btn" class="option-btn">EXIT_SERVER_ROOM</button>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
 	            </div>
             <div id="question-box" role="status" aria-live="polite" aria-atomic="true">INITIALIZING...</div>
             <div id="options-container" role="group" aria-label="Antwortoptionen"></div>
-            <button id="pause-btn" onclick="pauseProtocol()" aria-label="Spiel pausieren">PAUSE</button>
+            <button id="pause-btn" aria-label="Spiel pausieren">PAUSE</button>
         </div>
     </div>
 
@@ -95,7 +95,7 @@
         <div id="modal-content">
             <h2 id="modal-title" style="color: var(--warning); margin-bottom: 20px;">CHALLENGE_COMPLETE</h2>
             <p id="modal-text" style="color: #fff; margin-bottom: 20px; font-family: monospace; word-break: break-all;"></p>
-            <button class="option-btn" onclick="closeSystem()">CLOSE_SYSTEM</button>
+            <button id="close-system-btn" class="option-btn">CLOSE_SYSTEM</button>
         </div>
     </div>
 
