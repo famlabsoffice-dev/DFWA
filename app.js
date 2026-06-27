@@ -45,6 +45,23 @@ function setupEventListeners() {
     addClick('close-system-btn', closeSystem);
 }
 
+// Globaler Error Handler
+window.onerror = (message, source, lineno, colno, error) => {
+    APIClient.reportError(API_BASE_URL, {
+        message: message,
+        stack: error ? error.stack : `at ${source}:${lineno}:${colno}`,
+        userAgent: navigator.userAgent
+    });
+};
+
+window.onunhandledrejection = (event) => {
+    APIClient.reportError(API_BASE_URL, {
+        message: `Unhandled Rejection: ${event.reason}`,
+        stack: event.reason ? event.reason.stack : null,
+        userAgent: navigator.userAgent
+    });
+};
+
 async function initApp() {
     state.systemSecret = await APIClient.fetchSecret(API_BASE_URL);
     await StorageManager.validateIntegrity(['dfwa_best', 'dfwa_wins', 'dfwa_losses'], state.systemSecret, (key) => {

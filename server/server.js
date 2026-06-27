@@ -65,6 +65,15 @@ const db = new sqlite3.Database(dbPath, (err) => {
             timestamp DATETIME,
             userAgent TEXT
         )`);
+        db.run(`CREATE TABLE IF NOT EXISTS error_logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            type TEXT, -- 'CLIENT' oder 'SERVER'
+            message TEXT,
+            stack TEXT,
+            ip TEXT,
+            userAgent TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )`);
         // Migration: Spalten hinzufügen falls sie fehlen
         db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, (err) => {});
         db.run(`ALTER TABLE leaderboard ADD COLUMN accuracy INTEGER`, (err) => {});
@@ -160,6 +169,27 @@ app.get('/api/admin/ratelimit-logs', (req, res) => {
     });
 });
 
+app.post('/api/errors/client', (req, res) => {
+    const { message, stack, userAgent } = req.body;
+    db.run(`INSERT INTO error_logs (type, message, stack, ip, userAgent) VALUES (?, ?, ?, ?, ?)`,
+        ['CLIENT', message, stack, req.ip, userAgent || req.get('User-Agent')],
+        (err) => {
+            if (err) return res.status(500).json({ error: 'Failed to log error' });
+            res.json({ success: true });
+        }
+    );
+});
+
+app.get('/api/admin/error-logs', (req, res) => {
+    const { auth } = req.query;
+    if (auth !== SYSTEM_SECRET) return res.status(403).json({ error: 'Unauthorized' });
+
+    db.all(`SELECT * FROM error_logs ORDER BY timestamp DESC LIMIT 100`, [], (err, rows) => {
+        if (err) return res.status(500).json({ error: 'Database error' });
+        res.json(rows);
+    });
+});
+
 app.get('/api/analytics', (req, res) => {
     db.all(`
         SELECT variant, COUNT(*) as count, ROUND(AVG(accuracy), 2) as avg_accuracy
@@ -183,8 +213,10 @@ app.listen(PORT, () => {
         const retentionDate = new Date();
         retentionDate.setDate(retentionDate.getDate() - 7); // Behalte Logs für 7 Tage
         db.run(`DELETE FROM ratelimit_logs WHERE timestamp < ?`, [retentionDate.toISOString()], (err) => {
-            if (err) console.error('Log cleanup error:', err.message);
-            else console.log('Old rate limit logs cleared.');
+            if (err) console.error('Rate limit log cleanup error:', err.message);
+        });
+        db.run(`DELETE FROM error_logs WHERE timestamp < ?`, [retentionDate.toISOString()], (err) => {
+            if (err) console.error('Error log cleanup error:', err.message);
         });
     }, 24 * 60 * 60 * 1000);
 });

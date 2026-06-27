@@ -39,5 +39,15 @@ export const APIClient = {
         const data = await res.json();
         if (!res.ok || !data.valid) throw new Error(data.error || 'INVALID_CODE');
         return data.data;
+    },
+
+    async reportError(baseUrl, errorData) {
+        try {
+            await fetch(`${baseUrl}/api/errors/client`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(errorData)
+            });
+        } catch (e) {}
     }
 };
