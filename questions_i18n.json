@@ -18988,5 +18988,2305 @@
         "Answer D 99"
       ]
     }
+  },
+  {
+    "id": "film_new_0",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Wer führte Regie bei dem Film 'Inception'?",
+      "en": "Who directed the movie 'Inception'?"
+    },
+    "options": {
+      "de": [
+        "Christopher Nolan",
+        "Steven Spielberg",
+        "James Cameron",
+        "Quentin Tarantino"
+      ],
+      "en": [
+        "Christopher Nolan",
+        "Steven Spielberg",
+        "James Cameron",
+        "Quentin Tarantino"
+      ]
+    }
+  },
+  {
+    "id": "film_new_1",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Schauspieler spielte die Hauptrolle in der 'Matrix'-Trilogie?",
+      "en": "Which actor played the main role in 'The Matrix' trilogy?"
+    },
+    "options": {
+      "de": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Hugo Weaving",
+        "Carrie-Anne Moss"
+      ],
+      "en": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Hugo Weaving",
+        "Carrie-Anne Moss"
+      ]
+    }
+  },
+  {
+    "id": "film_new_2",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Film gewann den Oscar als Bester Film im Jahr 2020?",
+      "en": "Which film won the Oscar for Best Picture in 2020?"
+    },
+    "options": {
+      "de": [
+        "Parasite",
+        "1917",
+        "Once Upon a Time in Hollywood",
+        "Joker"
+      ],
+      "en": [
+        "Parasite",
+        "1917",
+        "Once Upon a Time in Hollywood",
+        "Joker"
+      ]
+    }
+  },
+  {
+    "id": "film_new_3",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Schöpfer der Zeichentrickserie 'Die Simpsons'?",
+      "en": "Who is the creator of the animated series 'The Simpsons'?"
+    },
+    "options": {
+      "de": [
+        "Matt Groening",
+        "Seth MacFarlane",
+        "Trey Parker",
+        "Mike Judge"
+      ],
+      "en": [
+        "Matt Groening",
+        "Seth MacFarlane",
+        "Trey Parker",
+        "Mike Judge"
+      ]
+    }
+  },
+  {
+    "id": "film_new_4",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welche Schauspielerin spielte die Rolle der Hermione Granger in den 'Harry Potter'-Filmen?",
+      "en": "Which actress played the role of Hermione Granger in the 'Harry Potter' films?"
+    },
+    "options": {
+      "de": [
+        "Emma Watson",
+        "Evanna Lynch",
+        "Bonnie Wright",
+        "Katie Leung"
+      ],
+      "en": [
+        "Emma Watson",
+        "Evanna Lynch",
+        "Bonnie Wright",
+        "Katie Leung"
+      ]
+    }
+  },
+  {
+    "id": "film_new_5",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Film ist bekannt für das Zitat 'May the Force be with you'?",
+      "en": "Which movie is famous for the quote 'May the Force be with you'?"
+    },
+    "options": {
+      "de": [
+        "Star Wars",
+        "Star Trek",
+        "Herr der Ringe",
+        "Blade Runner"
+      ],
+      "en": [
+        "Star Wars",
+        "Star Trek",
+        "Lord of the Rings",
+        "Blade Runner"
+      ]
+    }
+  },
+  {
+    "id": "film_new_6",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Regisseur des Films 'Pulp Fiction'?",
+      "en": "Who is the director of the movie 'Pulp Fiction'?"
+    },
+    "options": {
+      "de": [
+        "Quentin Tarantino",
+        "Martin Scorsese",
+        "Francis Ford Coppola",
+        "Guy Ritchie"
+      ],
+      "en": [
+        "Quentin Tarantino",
+        "Martin Scorsese",
+        "Francis Ford Coppola",
+        "Guy Ritchie"
+      ]
+    }
+  },
+  {
+    "id": "film_new_7",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welche Serie spielt in Westeros und handelt von mehreren Adelshäusern, die um den Eisernen Thron kämpfen?",
+      "en": "Which series is set in Westeros and features several noble houses fighting for the Iron Throne?"
+    },
+    "options": {
+      "de": [
+        "Game of Thrones",
+        "House of the Dragon",
+        "The Witcher",
+        "Vikings"
+      ],
+      "en": [
+        "Game of Thrones",
+        "House of the Dragon",
+        "The Witcher",
+        "Vikings"
+      ]
+    }
+  },
+  {
+    "id": "film_new_8",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Schauspieler ist bekannt für seine Rolle als James Bond?",
+      "en": "Which actor is famous for his role as James Bond?"
+    },
+    "options": {
+      "de": [
+        "Daniel Craig",
+        "Sean Connery",
+        "Roger Moore",
+        "Pierce Brosnan"
+      ],
+      "en": [
+        "Daniel Craig",
+        "Sean Connery",
+        "Roger Moore",
+        "Pierce Brosnan"
+      ]
+    }
+  },
+  {
+    "id": "film_new_9",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Film basiert auf dem Roman von Stephen King über ein mörderisches Clown?",
+      "en": "Which movie is based on Stephen King's novel about a murderous clown?"
+    },
+    "options": {
+      "de": [
+        "Es",
+        "Friedhof der Kuscheltiere",
+        "Shining",
+        "Carrie"
+      ],
+      "en": [
+        "It",
+        "Pet Sematary",
+        "The Shining",
+        "Carrie"
+      ]
+    }
+  },
+  {
+    "id": "film_new_10",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Schöpfer der 'Star Trek'-Franchise?",
+      "en": "Who is the creator of the 'Star Trek' franchise?"
+    },
+    "options": {
+      "de": [
+        "Gene Roddenberry",
+        "George Lucas",
+        "J.J. Abrams",
+        "Ronald D. Moore"
+      ],
+      "en": [
+        "Gene Roddenberry",
+        "George Lucas",
+        "J.J. Abrams",
+        "Ronald D. Moore"
+      ]
+    }
+  },
+  {
+    "id": "film_new_11",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Film gewann den Oscar als Bester Film im Jahr 1995 und handelt von einem Mann, der durch die amerikanische Geschichte reist?",
+      "en": "Which film won the Oscar for Best Picture in 1995 and is about a man traveling through American history?"
+    },
+    "options": {
+      "de": [
+        "Forrest Gump",
+        "Pulp Fiction",
+        "Die Verurteilten",
+        "Der König der Löwen"
+      ],
+      "en": [
+        "Forrest Gump",
+        "Pulp Fiction",
+        "The Shawshank Redemption",
+        "The Lion King"
+      ]
+    }
+  },
+  {
+    "id": "film_new_12",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welche Schauspielerin spielte die Hauptrolle in 'Titanic'?",
+      "en": "Which actress played the main role in 'Titanic'?"
+    },
+    "options": {
+      "de": [
+        "Kate Winslet",
+        "Leonardo DiCaprio",
+        "Gloria Stuart",
+        "Kathy Bates"
+      ],
+      "en": [
+        "Kate Winslet",
+        "Leonardo DiCaprio",
+        "Gloria Stuart",
+        "Kathy Bates"
+      ]
+    }
+  },
+  {
+    "id": "film_new_13",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welche Serie spielt in einer postapokalyptischen Welt, die von Zombies überrannt wird?",
+      "en": "Which series is set in a post-apocalyptic world overrun by zombies?"
+    },
+    "options": {
+      "de": [
+        "The Walking Dead",
+        "Fear the Walking Dead",
+        "Z Nation",
+        "Game of Thrones"
+      ],
+      "en": [
+        "The Walking Dead",
+        "Fear the Walking Dead",
+        "Z Nation",
+        "Game of Thrones"
+      ]
+    }
+  },
+  {
+    "id": "film_new_14",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Regisseur des Films 'Der Pate'?",
+      "en": "Who is the director of the movie 'The Godfather'?"
+    },
+    "options": {
+      "de": [
+        "Francis Ford Coppola",
+        "Martin Scorsese",
+        "Steven Spielberg",
+        "Alfred Hitchcock"
+      ],
+      "en": [
+        "Francis Ford Coppola",
+        "Martin Scorsese",
+        "Steven Spielberg",
+        "Alfred Hitchcock"
+      ]
+    }
+  },
+  {
+    "id": "film_new_15",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Film ist bekannt für das Zitat 'Houston, we have a problem'?",
+      "en": "Which movie is famous for the quote 'Houston, we have a problem'?"
+    },
+    "options": {
+      "de": [
+        "Apollo 13",
+        "Gravity",
+        "Interstellar",
+        "The Martian"
+      ],
+      "en": [
+        "Apollo 13",
+        "Gravity",
+        "Interstellar",
+        "The Martian"
+      ]
+    }
+  },
+  {
+    "id": "film_new_16",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Schauspieler spielte die Rolle des Jack Sparrow in den 'Fluch der Karibik'-Filmen?",
+      "en": "Which actor played the role of Jack Sparrow in the 'Pirates of the Caribbean' films?"
+    },
+    "options": {
+      "de": [
+        "Johnny Depp",
+        "Orlando Bloom",
+        "Geoffrey Rush",
+        "Keira Knightley"
+      ],
+      "en": [
+        "Johnny Depp",
+        "Orlando Bloom",
+        "Geoffrey Rush",
+        "Keira Knightley"
+      ]
+    }
+  },
+  {
+    "id": "film_new_17",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welche Serie handelt von einem Chemielehrer, der zum Drogenkoch wird?",
+      "en": "Which series is about a chemistry teacher who becomes a drug cook?"
+    },
+    "options": {
+      "de": [
+        "Breaking Bad",
+        "Better Call Saul",
+        "Narcos",
+        "Ozark"
+      ],
+      "en": [
+        "Breaking Bad",
+        "Better Call Saul",
+        "Narcos",
+        "Ozark"
+      ]
+    }
+  },
+  {
+    "id": "film_new_18",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Regisseur des Films 'Schindlers Liste'?",
+      "en": "Who is the director of the movie 'Schindler's List'?"
+    },
+    "options": {
+      "de": [
+        "Steven Spielberg",
+        "Quentin Tarantino",
+        "Martin Scorsese",
+        "Ridley Scott"
+      ],
+      "en": [
+        "Steven Spielberg",
+        "Quentin Tarantino",
+        "Martin Scorsese",
+        "Ridley Scott"
+      ]
+    }
+  },
+  {
+    "id": "film_new_19",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Film ist bekannt für das Zitat 'Here's Johnny!'?",
+      "en": "Which movie is famous for the quote 'Here's Johnny!'?"
+    },
+    "options": {
+      "de": [
+        "Shining",
+        "Psycho",
+        "Der Exorzist",
+        "Halloween"
+      ],
+      "en": [
+        "The Shining",
+        "Psycho",
+        "The Exorcist",
+        "Halloween"
+      ]
+    }
+  },
+  {
+    "id": "film_new_20",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Schauspieler spielte die Hauptrolle in 'Forrest Gump'?",
+      "en": "Which actor played the main role in 'Forrest Gump'?"
+    },
+    "options": {
+      "de": [
+        "Tom Hanks",
+        "Brad Pitt",
+        "Leonardo DiCaprio",
+        "Johnny Depp"
+      ],
+      "en": [
+        "Tom Hanks",
+        "Brad Pitt",
+        "Leonardo DiCaprio",
+        "Johnny Depp"
+      ]
+    }
+  },
+  {
+    "id": "film_new_21",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welche Serie handelt von einer Gruppe von Freunden in New York, die in einem Café abhängen?",
+      "en": "Which series is about a group of friends in New York who hang out in a coffee shop?"
+    },
+    "options": {
+      "de": [
+        "Friends",
+        "Seinfeld",
+        "How I Met Your Mother",
+        "The Big Bang Theory"
+      ],
+      "en": [
+        "Friends",
+        "Seinfeld",
+        "How I Met Your Mother",
+        "The Big Bang Theory"
+      ]
+    }
+  },
+  {
+    "id": "film_new_22",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Regisseur des Films 'Avatar'?",
+      "en": "Who is the director of the movie 'Avatar'?"
+    },
+    "options": {
+      "de": [
+        "James Cameron",
+        "Steven Spielberg",
+        "George Lucas",
+        "Peter Jackson"
+      ],
+      "en": [
+        "James Cameron",
+        "Steven Spielberg",
+        "George Lucas",
+        "Peter Jackson"
+      ]
+    }
+  },
+  {
+    "id": "film_new_23",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Film ist bekannt für das Zitat 'I'll be back'?",
+      "en": "Which movie is famous for the quote 'I'll be back'?"
+    },
+    "options": {
+      "de": [
+        "Terminator",
+        "RoboCop",
+        "Total Recall",
+        "Predator"
+      ],
+      "en": [
+        "The Terminator",
+        "RoboCop",
+        "Total Recall",
+        "Predator"
+      ]
+    }
+  },
+  {
+    "id": "film_new_24",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Schauspieler spielte die Rolle des Harry Potter?",
+      "en": "Which actor played the role of Harry Potter?"
+    },
+    "options": {
+      "de": [
+        "Daniel Radcliffe",
+        "Rupert Grint",
+        "Tom Felton",
+        "Robert Pattinson"
+      ],
+      "en": [
+        "Daniel Radcliffe",
+        "Rupert Grint",
+        "Tom Felton",
+        "Robert Pattinson"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_25",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 26.",
+      "en": "Another Film & TV question number 26."
+    },
+    "options": {
+      "de": [
+        "Antwort A 25",
+        "Antwort B 25",
+        "Antwort C 25",
+        "Antwort D 25"
+      ],
+      "en": [
+        "Answer A 25",
+        "Answer B 25",
+        "Answer C 25",
+        "Answer D 25"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_26",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 27.",
+      "en": "Another Film & TV question number 27."
+    },
+    "options": {
+      "de": [
+        "Antwort A 26",
+        "Antwort B 26",
+        "Antwort C 26",
+        "Antwort D 26"
+      ],
+      "en": [
+        "Answer A 26",
+        "Answer B 26",
+        "Answer C 26",
+        "Answer D 26"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_27",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 28.",
+      "en": "Another Film & TV question number 28."
+    },
+    "options": {
+      "de": [
+        "Antwort A 27",
+        "Antwort B 27",
+        "Antwort C 27",
+        "Antwort D 27"
+      ],
+      "en": [
+        "Answer A 27",
+        "Answer B 27",
+        "Answer C 27",
+        "Answer D 27"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_28",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 29.",
+      "en": "Another Film & TV question number 29."
+    },
+    "options": {
+      "de": [
+        "Antwort A 28",
+        "Antwort B 28",
+        "Antwort C 28",
+        "Antwort D 28"
+      ],
+      "en": [
+        "Answer A 28",
+        "Answer B 28",
+        "Answer C 28",
+        "Answer D 28"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_29",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 30.",
+      "en": "Another Film & TV question number 30."
+    },
+    "options": {
+      "de": [
+        "Antwort A 29",
+        "Antwort B 29",
+        "Antwort C 29",
+        "Antwort D 29"
+      ],
+      "en": [
+        "Answer A 29",
+        "Answer B 29",
+        "Answer C 29",
+        "Answer D 29"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_30",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 31.",
+      "en": "Another Film & TV question number 31."
+    },
+    "options": {
+      "de": [
+        "Antwort A 30",
+        "Antwort B 30",
+        "Antwort C 30",
+        "Antwort D 30"
+      ],
+      "en": [
+        "Answer A 30",
+        "Answer B 30",
+        "Answer C 30",
+        "Answer D 30"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_31",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 32.",
+      "en": "Another Film & TV question number 32."
+    },
+    "options": {
+      "de": [
+        "Antwort A 31",
+        "Antwort B 31",
+        "Antwort C 31",
+        "Antwort D 31"
+      ],
+      "en": [
+        "Answer A 31",
+        "Answer B 31",
+        "Answer C 31",
+        "Answer D 31"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_32",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 33.",
+      "en": "Another Film & TV question number 33."
+    },
+    "options": {
+      "de": [
+        "Antwort A 32",
+        "Antwort B 32",
+        "Antwort C 32",
+        "Antwort D 32"
+      ],
+      "en": [
+        "Answer A 32",
+        "Answer B 32",
+        "Answer C 32",
+        "Answer D 32"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_33",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 34.",
+      "en": "Another Film & TV question number 34."
+    },
+    "options": {
+      "de": [
+        "Antwort A 33",
+        "Antwort B 33",
+        "Antwort C 33",
+        "Antwort D 33"
+      ],
+      "en": [
+        "Answer A 33",
+        "Answer B 33",
+        "Answer C 33",
+        "Answer D 33"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_34",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 35.",
+      "en": "Another Film & TV question number 35."
+    },
+    "options": {
+      "de": [
+        "Antwort A 34",
+        "Antwort B 34",
+        "Antwort C 34",
+        "Antwort D 34"
+      ],
+      "en": [
+        "Answer A 34",
+        "Answer B 34",
+        "Answer C 34",
+        "Answer D 34"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_35",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 36.",
+      "en": "Another Film & TV question number 36."
+    },
+    "options": {
+      "de": [
+        "Antwort A 35",
+        "Antwort B 35",
+        "Antwort C 35",
+        "Antwort D 35"
+      ],
+      "en": [
+        "Answer A 35",
+        "Answer B 35",
+        "Answer C 35",
+        "Answer D 35"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_36",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 37.",
+      "en": "Another Film & TV question number 37."
+    },
+    "options": {
+      "de": [
+        "Antwort A 36",
+        "Antwort B 36",
+        "Antwort C 36",
+        "Antwort D 36"
+      ],
+      "en": [
+        "Answer A 36",
+        "Answer B 36",
+        "Answer C 36",
+        "Answer D 36"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_37",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 38.",
+      "en": "Another Film & TV question number 38."
+    },
+    "options": {
+      "de": [
+        "Antwort A 37",
+        "Antwort B 37",
+        "Antwort C 37",
+        "Antwort D 37"
+      ],
+      "en": [
+        "Answer A 37",
+        "Answer B 37",
+        "Answer C 37",
+        "Answer D 37"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_38",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 39.",
+      "en": "Another Film & TV question number 39."
+    },
+    "options": {
+      "de": [
+        "Antwort A 38",
+        "Antwort B 38",
+        "Antwort C 38",
+        "Antwort D 38"
+      ],
+      "en": [
+        "Answer A 38",
+        "Answer B 38",
+        "Answer C 38",
+        "Answer D 38"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_39",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 40.",
+      "en": "Another Film & TV question number 40."
+    },
+    "options": {
+      "de": [
+        "Antwort A 39",
+        "Antwort B 39",
+        "Antwort C 39",
+        "Antwort D 39"
+      ],
+      "en": [
+        "Answer A 39",
+        "Answer B 39",
+        "Answer C 39",
+        "Answer D 39"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_40",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 41.",
+      "en": "Another Film & TV question number 41."
+    },
+    "options": {
+      "de": [
+        "Antwort A 40",
+        "Antwort B 40",
+        "Antwort C 40",
+        "Antwort D 40"
+      ],
+      "en": [
+        "Answer A 40",
+        "Answer B 40",
+        "Answer C 40",
+        "Answer D 40"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_41",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 42.",
+      "en": "Another Film & TV question number 42."
+    },
+    "options": {
+      "de": [
+        "Antwort A 41",
+        "Antwort B 41",
+        "Antwort C 41",
+        "Antwort D 41"
+      ],
+      "en": [
+        "Answer A 41",
+        "Answer B 41",
+        "Answer C 41",
+        "Answer D 41"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_42",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 43.",
+      "en": "Another Film & TV question number 43."
+    },
+    "options": {
+      "de": [
+        "Antwort A 42",
+        "Antwort B 42",
+        "Antwort C 42",
+        "Antwort D 42"
+      ],
+      "en": [
+        "Answer A 42",
+        "Answer B 42",
+        "Answer C 42",
+        "Answer D 42"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_43",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 44.",
+      "en": "Another Film & TV question number 44."
+    },
+    "options": {
+      "de": [
+        "Antwort A 43",
+        "Antwort B 43",
+        "Antwort C 43",
+        "Antwort D 43"
+      ],
+      "en": [
+        "Answer A 43",
+        "Answer B 43",
+        "Answer C 43",
+        "Answer D 43"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_44",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 45.",
+      "en": "Another Film & TV question number 45."
+    },
+    "options": {
+      "de": [
+        "Antwort A 44",
+        "Antwort B 44",
+        "Antwort C 44",
+        "Antwort D 44"
+      ],
+      "en": [
+        "Answer A 44",
+        "Answer B 44",
+        "Answer C 44",
+        "Answer D 44"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_45",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 46.",
+      "en": "Another Film & TV question number 46."
+    },
+    "options": {
+      "de": [
+        "Antwort A 45",
+        "Antwort B 45",
+        "Antwort C 45",
+        "Antwort D 45"
+      ],
+      "en": [
+        "Answer A 45",
+        "Answer B 45",
+        "Answer C 45",
+        "Answer D 45"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_46",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 47.",
+      "en": "Another Film & TV question number 47."
+    },
+    "options": {
+      "de": [
+        "Antwort A 46",
+        "Antwort B 46",
+        "Antwort C 46",
+        "Antwort D 46"
+      ],
+      "en": [
+        "Answer A 46",
+        "Answer B 46",
+        "Answer C 46",
+        "Answer D 46"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_47",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 48.",
+      "en": "Another Film & TV question number 48."
+    },
+    "options": {
+      "de": [
+        "Antwort A 47",
+        "Antwort B 47",
+        "Antwort C 47",
+        "Antwort D 47"
+      ],
+      "en": [
+        "Answer A 47",
+        "Answer B 47",
+        "Answer C 47",
+        "Answer D 47"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_48",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 49.",
+      "en": "Another Film & TV question number 49."
+    },
+    "options": {
+      "de": [
+        "Antwort A 48",
+        "Antwort B 48",
+        "Antwort C 48",
+        "Antwort D 48"
+      ],
+      "en": [
+        "Answer A 48",
+        "Answer B 48",
+        "Answer C 48",
+        "Answer D 48"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_49",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 50.",
+      "en": "Another Film & TV question number 50."
+    },
+    "options": {
+      "de": [
+        "Antwort A 49",
+        "Antwort B 49",
+        "Antwort C 49",
+        "Antwort D 49"
+      ],
+      "en": [
+        "Answer A 49",
+        "Answer B 49",
+        "Answer C 49",
+        "Answer D 49"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_50",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 51.",
+      "en": "Another Film & TV question number 51."
+    },
+    "options": {
+      "de": [
+        "Antwort A 50",
+        "Antwort B 50",
+        "Antwort C 50",
+        "Antwort D 50"
+      ],
+      "en": [
+        "Answer A 50",
+        "Answer B 50",
+        "Answer C 50",
+        "Answer D 50"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_51",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 52.",
+      "en": "Another Film & TV question number 52."
+    },
+    "options": {
+      "de": [
+        "Antwort A 51",
+        "Antwort B 51",
+        "Antwort C 51",
+        "Antwort D 51"
+      ],
+      "en": [
+        "Answer A 51",
+        "Answer B 51",
+        "Answer C 51",
+        "Answer D 51"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_52",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 53.",
+      "en": "Another Film & TV question number 53."
+    },
+    "options": {
+      "de": [
+        "Antwort A 52",
+        "Antwort B 52",
+        "Antwort C 52",
+        "Antwort D 52"
+      ],
+      "en": [
+        "Answer A 52",
+        "Answer B 52",
+        "Answer C 52",
+        "Answer D 52"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_53",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 54.",
+      "en": "Another Film & TV question number 54."
+    },
+    "options": {
+      "de": [
+        "Antwort A 53",
+        "Antwort B 53",
+        "Antwort C 53",
+        "Antwort D 53"
+      ],
+      "en": [
+        "Answer A 53",
+        "Answer B 53",
+        "Answer C 53",
+        "Answer D 53"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_54",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 55.",
+      "en": "Another Film & TV question number 55."
+    },
+    "options": {
+      "de": [
+        "Antwort A 54",
+        "Antwort B 54",
+        "Antwort C 54",
+        "Antwort D 54"
+      ],
+      "en": [
+        "Answer A 54",
+        "Answer B 54",
+        "Answer C 54",
+        "Answer D 54"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_55",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 56.",
+      "en": "Another Film & TV question number 56."
+    },
+    "options": {
+      "de": [
+        "Antwort A 55",
+        "Antwort B 55",
+        "Antwort C 55",
+        "Antwort D 55"
+      ],
+      "en": [
+        "Answer A 55",
+        "Answer B 55",
+        "Answer C 55",
+        "Answer D 55"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_56",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 57.",
+      "en": "Another Film & TV question number 57."
+    },
+    "options": {
+      "de": [
+        "Antwort A 56",
+        "Antwort B 56",
+        "Antwort C 56",
+        "Antwort D 56"
+      ],
+      "en": [
+        "Answer A 56",
+        "Answer B 56",
+        "Answer C 56",
+        "Answer D 56"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_57",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 58.",
+      "en": "Another Film & TV question number 58."
+    },
+    "options": {
+      "de": [
+        "Antwort A 57",
+        "Antwort B 57",
+        "Antwort C 57",
+        "Antwort D 57"
+      ],
+      "en": [
+        "Answer A 57",
+        "Answer B 57",
+        "Answer C 57",
+        "Answer D 57"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_58",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 59.",
+      "en": "Another Film & TV question number 59."
+    },
+    "options": {
+      "de": [
+        "Antwort A 58",
+        "Antwort B 58",
+        "Antwort C 58",
+        "Antwort D 58"
+      ],
+      "en": [
+        "Answer A 58",
+        "Answer B 58",
+        "Answer C 58",
+        "Answer D 58"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_59",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 60.",
+      "en": "Another Film & TV question number 60."
+    },
+    "options": {
+      "de": [
+        "Antwort A 59",
+        "Antwort B 59",
+        "Antwort C 59",
+        "Antwort D 59"
+      ],
+      "en": [
+        "Answer A 59",
+        "Answer B 59",
+        "Answer C 59",
+        "Answer D 59"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_60",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 61.",
+      "en": "Another Film & TV question number 61."
+    },
+    "options": {
+      "de": [
+        "Antwort A 60",
+        "Antwort B 60",
+        "Antwort C 60",
+        "Antwort D 60"
+      ],
+      "en": [
+        "Answer A 60",
+        "Answer B 60",
+        "Answer C 60",
+        "Answer D 60"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_61",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 62.",
+      "en": "Another Film & TV question number 62."
+    },
+    "options": {
+      "de": [
+        "Antwort A 61",
+        "Antwort B 61",
+        "Antwort C 61",
+        "Antwort D 61"
+      ],
+      "en": [
+        "Answer A 61",
+        "Answer B 61",
+        "Answer C 61",
+        "Answer D 61"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_62",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 63.",
+      "en": "Another Film & TV question number 63."
+    },
+    "options": {
+      "de": [
+        "Antwort A 62",
+        "Antwort B 62",
+        "Antwort C 62",
+        "Antwort D 62"
+      ],
+      "en": [
+        "Answer A 62",
+        "Answer B 62",
+        "Answer C 62",
+        "Answer D 62"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_63",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 64.",
+      "en": "Another Film & TV question number 64."
+    },
+    "options": {
+      "de": [
+        "Antwort A 63",
+        "Antwort B 63",
+        "Antwort C 63",
+        "Antwort D 63"
+      ],
+      "en": [
+        "Answer A 63",
+        "Answer B 63",
+        "Answer C 63",
+        "Answer D 63"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_64",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 65.",
+      "en": "Another Film & TV question number 65."
+    },
+    "options": {
+      "de": [
+        "Antwort A 64",
+        "Antwort B 64",
+        "Antwort C 64",
+        "Antwort D 64"
+      ],
+      "en": [
+        "Answer A 64",
+        "Answer B 64",
+        "Answer C 64",
+        "Answer D 64"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_65",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 66.",
+      "en": "Another Film & TV question number 66."
+    },
+    "options": {
+      "de": [
+        "Antwort A 65",
+        "Antwort B 65",
+        "Antwort C 65",
+        "Antwort D 65"
+      ],
+      "en": [
+        "Answer A 65",
+        "Answer B 65",
+        "Answer C 65",
+        "Answer D 65"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_66",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 67.",
+      "en": "Another Film & TV question number 67."
+    },
+    "options": {
+      "de": [
+        "Antwort A 66",
+        "Antwort B 66",
+        "Antwort C 66",
+        "Antwort D 66"
+      ],
+      "en": [
+        "Answer A 66",
+        "Answer B 66",
+        "Answer C 66",
+        "Answer D 66"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_67",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 68.",
+      "en": "Another Film & TV question number 68."
+    },
+    "options": {
+      "de": [
+        "Antwort A 67",
+        "Antwort B 67",
+        "Antwort C 67",
+        "Antwort D 67"
+      ],
+      "en": [
+        "Answer A 67",
+        "Answer B 67",
+        "Answer C 67",
+        "Answer D 67"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_68",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 69.",
+      "en": "Another Film & TV question number 69."
+    },
+    "options": {
+      "de": [
+        "Antwort A 68",
+        "Antwort B 68",
+        "Antwort C 68",
+        "Antwort D 68"
+      ],
+      "en": [
+        "Answer A 68",
+        "Answer B 68",
+        "Answer C 68",
+        "Answer D 68"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_69",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 70.",
+      "en": "Another Film & TV question number 70."
+    },
+    "options": {
+      "de": [
+        "Antwort A 69",
+        "Antwort B 69",
+        "Antwort C 69",
+        "Antwort D 69"
+      ],
+      "en": [
+        "Answer A 69",
+        "Answer B 69",
+        "Answer C 69",
+        "Answer D 69"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_70",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 71.",
+      "en": "Another Film & TV question number 71."
+    },
+    "options": {
+      "de": [
+        "Antwort A 70",
+        "Antwort B 70",
+        "Antwort C 70",
+        "Antwort D 70"
+      ],
+      "en": [
+        "Answer A 70",
+        "Answer B 70",
+        "Answer C 70",
+        "Answer D 70"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_71",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 72.",
+      "en": "Another Film & TV question number 72."
+    },
+    "options": {
+      "de": [
+        "Antwort A 71",
+        "Antwort B 71",
+        "Antwort C 71",
+        "Antwort D 71"
+      ],
+      "en": [
+        "Answer A 71",
+        "Answer B 71",
+        "Answer C 71",
+        "Answer D 71"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_72",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 73.",
+      "en": "Another Film & TV question number 73."
+    },
+    "options": {
+      "de": [
+        "Antwort A 72",
+        "Antwort B 72",
+        "Antwort C 72",
+        "Antwort D 72"
+      ],
+      "en": [
+        "Answer A 72",
+        "Answer B 72",
+        "Answer C 72",
+        "Answer D 72"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_73",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 74.",
+      "en": "Another Film & TV question number 74."
+    },
+    "options": {
+      "de": [
+        "Antwort A 73",
+        "Antwort B 73",
+        "Antwort C 73",
+        "Antwort D 73"
+      ],
+      "en": [
+        "Answer A 73",
+        "Answer B 73",
+        "Answer C 73",
+        "Answer D 73"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_74",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 75.",
+      "en": "Another Film & TV question number 75."
+    },
+    "options": {
+      "de": [
+        "Antwort A 74",
+        "Antwort B 74",
+        "Antwort C 74",
+        "Antwort D 74"
+      ],
+      "en": [
+        "Answer A 74",
+        "Answer B 74",
+        "Answer C 74",
+        "Answer D 74"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_75",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 76.",
+      "en": "Another Film & TV question number 76."
+    },
+    "options": {
+      "de": [
+        "Antwort A 75",
+        "Antwort B 75",
+        "Antwort C 75",
+        "Antwort D 75"
+      ],
+      "en": [
+        "Answer A 75",
+        "Answer B 75",
+        "Answer C 75",
+        "Answer D 75"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_76",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 77.",
+      "en": "Another Film & TV question number 77."
+    },
+    "options": {
+      "de": [
+        "Antwort A 76",
+        "Antwort B 76",
+        "Antwort C 76",
+        "Antwort D 76"
+      ],
+      "en": [
+        "Answer A 76",
+        "Answer B 76",
+        "Answer C 76",
+        "Answer D 76"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_77",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 78.",
+      "en": "Another Film & TV question number 78."
+    },
+    "options": {
+      "de": [
+        "Antwort A 77",
+        "Antwort B 77",
+        "Antwort C 77",
+        "Antwort D 77"
+      ],
+      "en": [
+        "Answer A 77",
+        "Answer B 77",
+        "Answer C 77",
+        "Answer D 77"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_78",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 79.",
+      "en": "Another Film & TV question number 79."
+    },
+    "options": {
+      "de": [
+        "Antwort A 78",
+        "Antwort B 78",
+        "Antwort C 78",
+        "Antwort D 78"
+      ],
+      "en": [
+        "Answer A 78",
+        "Answer B 78",
+        "Answer C 78",
+        "Answer D 78"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_79",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 80.",
+      "en": "Another Film & TV question number 80."
+    },
+    "options": {
+      "de": [
+        "Antwort A 79",
+        "Antwort B 79",
+        "Antwort C 79",
+        "Antwort D 79"
+      ],
+      "en": [
+        "Answer A 79",
+        "Answer B 79",
+        "Answer C 79",
+        "Answer D 79"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_80",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 81.",
+      "en": "Another Film & TV question number 81."
+    },
+    "options": {
+      "de": [
+        "Antwort A 80",
+        "Antwort B 80",
+        "Antwort C 80",
+        "Antwort D 80"
+      ],
+      "en": [
+        "Answer A 80",
+        "Answer B 80",
+        "Answer C 80",
+        "Answer D 80"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_81",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 82.",
+      "en": "Another Film & TV question number 82."
+    },
+    "options": {
+      "de": [
+        "Antwort A 81",
+        "Antwort B 81",
+        "Antwort C 81",
+        "Antwort D 81"
+      ],
+      "en": [
+        "Answer A 81",
+        "Answer B 81",
+        "Answer C 81",
+        "Answer D 81"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_82",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 83.",
+      "en": "Another Film & TV question number 83."
+    },
+    "options": {
+      "de": [
+        "Antwort A 82",
+        "Antwort B 82",
+        "Antwort C 82",
+        "Antwort D 82"
+      ],
+      "en": [
+        "Answer A 82",
+        "Answer B 82",
+        "Answer C 82",
+        "Answer D 82"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_83",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 84.",
+      "en": "Another Film & TV question number 84."
+    },
+    "options": {
+      "de": [
+        "Antwort A 83",
+        "Antwort B 83",
+        "Antwort C 83",
+        "Antwort D 83"
+      ],
+      "en": [
+        "Answer A 83",
+        "Answer B 83",
+        "Answer C 83",
+        "Answer D 83"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_84",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 85.",
+      "en": "Another Film & TV question number 85."
+    },
+    "options": {
+      "de": [
+        "Antwort A 84",
+        "Antwort B 84",
+        "Antwort C 84",
+        "Antwort D 84"
+      ],
+      "en": [
+        "Answer A 84",
+        "Answer B 84",
+        "Answer C 84",
+        "Answer D 84"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_85",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 86.",
+      "en": "Another Film & TV question number 86."
+    },
+    "options": {
+      "de": [
+        "Antwort A 85",
+        "Antwort B 85",
+        "Antwort C 85",
+        "Antwort D 85"
+      ],
+      "en": [
+        "Answer A 85",
+        "Answer B 85",
+        "Answer C 85",
+        "Answer D 85"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_86",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 87.",
+      "en": "Another Film & TV question number 87."
+    },
+    "options": {
+      "de": [
+        "Antwort A 86",
+        "Antwort B 86",
+        "Antwort C 86",
+        "Antwort D 86"
+      ],
+      "en": [
+        "Answer A 86",
+        "Answer B 86",
+        "Answer C 86",
+        "Answer D 86"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_87",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 88.",
+      "en": "Another Film & TV question number 88."
+    },
+    "options": {
+      "de": [
+        "Antwort A 87",
+        "Antwort B 87",
+        "Antwort C 87",
+        "Antwort D 87"
+      ],
+      "en": [
+        "Answer A 87",
+        "Answer B 87",
+        "Answer C 87",
+        "Answer D 87"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_88",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 89.",
+      "en": "Another Film & TV question number 89."
+    },
+    "options": {
+      "de": [
+        "Antwort A 88",
+        "Antwort B 88",
+        "Antwort C 88",
+        "Antwort D 88"
+      ],
+      "en": [
+        "Answer A 88",
+        "Answer B 88",
+        "Answer C 88",
+        "Answer D 88"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_89",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 90.",
+      "en": "Another Film & TV question number 90."
+    },
+    "options": {
+      "de": [
+        "Antwort A 89",
+        "Antwort B 89",
+        "Antwort C 89",
+        "Antwort D 89"
+      ],
+      "en": [
+        "Answer A 89",
+        "Answer B 89",
+        "Answer C 89",
+        "Answer D 89"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_90",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 91.",
+      "en": "Another Film & TV question number 91."
+    },
+    "options": {
+      "de": [
+        "Antwort A 90",
+        "Antwort B 90",
+        "Antwort C 90",
+        "Antwort D 90"
+      ],
+      "en": [
+        "Answer A 90",
+        "Answer B 90",
+        "Answer C 90",
+        "Answer D 90"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_91",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 92.",
+      "en": "Another Film & TV question number 92."
+    },
+    "options": {
+      "de": [
+        "Antwort A 91",
+        "Antwort B 91",
+        "Antwort C 91",
+        "Antwort D 91"
+      ],
+      "en": [
+        "Answer A 91",
+        "Answer B 91",
+        "Answer C 91",
+        "Answer D 91"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_92",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 93.",
+      "en": "Another Film & TV question number 93."
+    },
+    "options": {
+      "de": [
+        "Antwort A 92",
+        "Antwort B 92",
+        "Antwort C 92",
+        "Antwort D 92"
+      ],
+      "en": [
+        "Answer A 92",
+        "Answer B 92",
+        "Answer C 92",
+        "Answer D 92"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_93",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 94.",
+      "en": "Another Film & TV question number 94."
+    },
+    "options": {
+      "de": [
+        "Antwort A 93",
+        "Antwort B 93",
+        "Antwort C 93",
+        "Antwort D 93"
+      ],
+      "en": [
+        "Answer A 93",
+        "Answer B 93",
+        "Answer C 93",
+        "Answer D 93"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_94",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 95.",
+      "en": "Another Film & TV question number 95."
+    },
+    "options": {
+      "de": [
+        "Antwort A 94",
+        "Antwort B 94",
+        "Antwort C 94",
+        "Antwort D 94"
+      ],
+      "en": [
+        "Answer A 94",
+        "Answer B 94",
+        "Answer C 94",
+        "Answer D 94"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_95",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 96.",
+      "en": "Another Film & TV question number 96."
+    },
+    "options": {
+      "de": [
+        "Antwort A 95",
+        "Antwort B 95",
+        "Antwort C 95",
+        "Antwort D 95"
+      ],
+      "en": [
+        "Answer A 95",
+        "Answer B 95",
+        "Answer C 95",
+        "Answer D 95"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_96",
+    "cat": "Film & Fernsehen",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 97.",
+      "en": "Another Film & TV question number 97."
+    },
+    "options": {
+      "de": [
+        "Antwort A 96",
+        "Antwort B 96",
+        "Antwort C 96",
+        "Antwort D 96"
+      ],
+      "en": [
+        "Answer A 96",
+        "Answer B 96",
+        "Answer C 96",
+        "Answer D 96"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_97",
+    "cat": "Film & Fernsehen",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 98.",
+      "en": "Another Film & TV question number 98."
+    },
+    "options": {
+      "de": [
+        "Antwort A 97",
+        "Antwort B 97",
+        "Antwort C 97",
+        "Antwort D 97"
+      ],
+      "en": [
+        "Answer A 97",
+        "Answer B 97",
+        "Answer C 97",
+        "Answer D 97"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_98",
+    "cat": "Film & Fernsehen",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 99.",
+      "en": "Another Film & TV question number 99."
+    },
+    "options": {
+      "de": [
+        "Antwort A 98",
+        "Antwort B 98",
+        "Antwort C 98",
+        "Antwort D 98"
+      ],
+      "en": [
+        "Answer A 98",
+        "Answer B 98",
+        "Answer C 98",
+        "Answer D 98"
+      ]
+    }
+  },
+  {
+    "id": "film_gen_99",
+    "cat": "Film & Fernsehen",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Film & Fernsehen Frage Nummer 100.",
+      "en": "Another Film & TV question number 100."
+    },
+    "options": {
+      "de": [
+        "Antwort A 99",
+        "Antwort B 99",
+        "Antwort C 99",
+        "Antwort D 99"
+      ],
+      "en": [
+        "Answer A 99",
+        "Answer B 99",
+        "Answer C 99",
+        "Answer D 99"
+      ]
+    }
   }
 ]
