@@ -1,10 +1,15 @@
 {
   "scripts": {
-    "test": "node scripts/validate.js"
+    "test": "node scripts/validate.js && jest"
   },
   "dependencies": {
     "ajv": "^8.20.0",
     "fast-levenshtein": "^3.0.0",
     "openai": "^6.45.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.29.7",
+    "babel-jest": "^30.4.1",
+    "jest": "^30.4.2"
   }
 }
