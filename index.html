@@ -389,6 +389,7 @@
         function populateCategories(questions) {
             const cats = [...new Set(questions.map(q => q.cat))].sort();
             const filter = document.getElementById('category-filter');
+            const currentVal = filter.value;
             filter.innerHTML = `<option value="all">${state.lang === 'de' ? 'ALLE_SEKTOREN' : 'ALL_SECTORS'}</option>`;
             cats.forEach(cat => {
                 const opt = document.createElement('option');
@@ -396,6 +397,9 @@
                 opt.innerText = cat.toUpperCase();
                 filter.appendChild(opt);
             });
+            if ([...filter.options].some(o => o.value === currentVal)) {
+                filter.value = currentVal;
+            }
         }
 
         async function loadCategories() {
@@ -430,10 +434,20 @@
             if (!q) {
                 const selectedCat = document.getElementById('category-filter').value;
                 let pool = state.allQuestions;
-                if (selectedCat !== 'all') pool = state.allQuestions.filter(q => q.cat === selectedCat);
+                if (selectedCat !== 'all') {
+                    pool = state.allQuestions.filter(q => q.cat === selectedCat);
+                }
+                // Falls der Pool leer ist (sollte durch initGame verhindert werden), nimm alle
                 if (pool.length === 0) pool = state.allQuestions;
+                
                 state.questions = shuffle([...pool], null);
                 state.current = 0;
+                
+                // Sicherheitshalber prüfen, ob wir jetzt Fragen haben
+                if (state.questions.length === 0) {
+                    endGame();
+                    return;
+                }
                 renderQuestion();
                 return;
             }
