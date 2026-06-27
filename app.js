@@ -15,31 +15,57 @@ let state = {
     isChallenge: false, isCreatingChallenge: false, challengeSeed: null, opponentScore: 0,
     pausedQuestion: null, pausedTimer: null, cheatsAttempted: false,
     systemSecret: null,
-    sessionActive: false, lastUpdateTime: null, timerEndTimestamp: null
+    sessionActive: false, lastUpdateTime: null, timerEndTimestamp: null,
+    baseDate: Date.now(), basePerf: performance.now(), timeDesyncDetected: false
 };
+
+const SESSION_VERSION = 1;
 
 function saveSession() {
     if (!state.sessionActive) return;
-    const sessionData = {
-        current: state.current,
-        score: state.score,
-        lives: state.lives,
-        streak: state.streak,
-        streakMax: state.streakMax,
-        correctAnswers: state.correctAnswers,
-        questionCount: state.questionCount,
-        challengeSeed: state.challengeSeed,
-        isChallenge: state.isChallenge,
-        timer: state.timer,
-        lastUpdateTime: Date.now(),
-        timerEndTimestamp: state.timerInterval ? Date.now() + (state.timer * 1000) : null
-    };
-    localStorage.setItem('dfwa_session', JSON.stringify(sessionData));
+    
+    const lockKey = 'session_write_lock';
+    const myLock = `${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    localStorage.setItem(lockKey, myLock);
+
+    setTimeout(() => {
+        if (localStorage.getItem(lockKey) !== myLock) return;
+
+        const sessionData = {
+            version: SESSION_VERSION,
+            current: state.current,
+            score: state.score,
+            lives: state.lives,
+            streak: state.streak,
+            streakMax: state.streakMax,
+            correctAnswers: state.correctAnswers,
+            questionCount: state.questionCount,
+            challengeSeed: state.challengeSeed,
+            isChallenge: state.isChallenge,
+            timer: state.timer,
+            lastUpdateTime: Date.now(),
+            timerEndTimestamp: state.timerInterval ? Date.now() + (state.timer * 1000) : null
+        };
+        
+        const tempKey = 'dfwa_session_temp';
+        try {
+            localStorage.setItem(tempKey, JSON.stringify(sessionData));
+            localStorage.setItem('dfwa_session', localStorage.getItem(tempKey));
+            localStorage.removeItem(tempKey);
+        } catch (e) {
+            console.error('Session save failed', e);
+        } finally {
+            if (localStorage.getItem(lockKey) === myLock) {
+                localStorage.removeItem(lockKey);
+            }
+        }
+    }, 10);
 }
 
 function clearSession() {
     state.sessionActive = false;
     localStorage.removeItem('dfwa_session');
+    localStorage.removeItem('session_write_lock');
 }
 
 async function restoreSession() {
@@ -47,8 +73,13 @@ async function restoreSession() {
     if (!data) return false;
     try {
         const session = JSON.parse(data);
-        const elapsed = (Date.now() - session.lastUpdateTime) / 1000;
         
+        if (!session.version || session.version !== SESSION_VERSION) {
+            console.warn('Session version mismatch. Resetting.');
+            clearSession();
+            return false;
+        }
+
         state.current = session.current;
         state.score = session.score;
         state.lives = session.lives;
@@ -59,7 +90,6 @@ async function restoreSession() {
         state.challengeSeed = session.challengeSeed;
         state.isChallenge = session.isChallenge;
         
-        // Zeitberechnung
         if (session.timerEndTimestamp) {
             const remaining = (session.timerEndTimestamp - Date.now()) / 1000;
             state.timer = Math.max(0, remaining);
@@ -373,18 +403,23 @@ function startTimer() {
     const bar = document.getElementById('timeline-bar');
     const container = document.getElementById('timeline-container');
     
-    // Kernlogik: Ziel-Zeitstempel festlegen
+    state.baseDate = Date.now();
+    state.basePerf = performance.now();
+    const initialTimer = state.timer;
     const maxTime = Math.max(5, 15 - ((state.questionCount - 1) * 0.2));
-    if (!state.timerEndTimestamp || state.timerEndTimestamp <= Date.now()) {
-        state.timerEndTimestamp = Date.now() + (state.timer * 1000);
-    }
 
     state.timerInterval = setInterval(() => {
-        // Verbleibende Zeit immer neu berechnen (Throttling Fallback)
-        const remaining = (state.timerEndTimestamp - Date.now()) / 1000;
-        state.timer = Math.max(0, remaining);
+        if (state.isPaused || state.isProcessing) return;
+
+        const realElapsed = (performance.now() - state.basePerf) / 1000;
+        const dateElapsed = (Date.now() - state.baseDate) / 1000;
         
-        // UI-Update (entkoppelt von der Logik)
+        if (Math.abs(realElapsed - dateElapsed) > 2) {
+            state.timeDesyncDetected = true;
+        }
+
+        state.timer = Math.max(0, initialTimer - realElapsed);
+        
         const pct = Math.max(0, (state.timer / maxTime) * 100);
         bar.style.width = pct + '%';
         bar.style.background = state.timer <= 5 ? 'var(--error)' : 'var(--neon)';
@@ -395,7 +430,7 @@ function startTimer() {
             state.timerEndTimestamp = null;
             checkAnswer(null);
         }
-    }, 100); // 100ms für flüssige Animation, Logik bleibt stabil
+    }, 100);
 }
 
 function renderQuestion(isRestoring = false) {
@@ -655,27 +690,74 @@ function closeSystem() {
     fetchLeaderboard();
 }
 
+let resumeInProgress = false;
+let visibilityTimeout = null;
+
 document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-        if (document.getElementById('game-screen').classList.contains('active') && !state.isPaused) {
-            pauseProtocol();
+    if (visibilityTimeout) clearTimeout(visibilityTimeout);
+    
+    visibilityTimeout = setTimeout(() => {
+        if (document.hidden) {
+            if (document.getElementById('game-screen').classList.contains('active') && !state.isPaused) {
+                pauseProtocol();
+            }
+            saveSession();
+        } else {
+            if (resumeInProgress) return;
+            resumeInProgress = true;
+            
+            // State Reconciliation
+            if (state.sessionActive && !state.isPaused && document.getElementById('game-screen').classList.contains('active')) {
+                // Nur re-initialisieren wenn nötig
+                if (!state.timerInterval) startTimer();
+            }
+            
+            setTimeout(() => { resumeInProgress = false; }, 500);
         }
-        saveSession();
-    }
+    }, 250);
 });
 
 window.addEventListener('beforeunload', saveSession);
 window.addEventListener('load', restoreSession);
 
 if ('serviceWorker' in navigator) {
+    const swChannel = new BroadcastChannel('sw_channel');
+    let leaderTab = false;
+
+    const acquireLeaderLock = () => {
+        const now = Date.now();
+        const lock = localStorage.getItem('sw_leader');
+        if (!lock || now - JSON.parse(lock).ts > 5000) {
+            localStorage.setItem('sw_leader', JSON.stringify({ id: state.playerId, ts: now }));
+            leaderTab = true;
+            return true;
+        }
+        return JSON.parse(lock).id === state.playerId;
+    };
+
+    setInterval(() => { if (leaderTab) localStorage.setItem('sw_leader', JSON.stringify({ id: state.playerId, ts: Date.now() })); }, 2000);
+    window.addEventListener('beforeunload', () => { if (leaderTab) localStorage.removeItem('sw_leader'); });
+
+    swChannel.onmessage = (event) => {
+        if (event.data.type === 'SW_RELOAD') {
+            console.log('Sync reload signal received.');
+            window.location.reload();
+        }
+    };
+
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js').then(reg => {
             reg.addEventListener('updatefound', () => {
                 const newWorker = reg.installing;
+                swChannel.postMessage({ type: 'SW_UPDATING' });
                 newWorker.addEventListener('statechange', () => {
                     if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                        // Neuer SW ist bereit, wartet aber noch
-                        console.log('New Service Worker available.');
+                        swChannel.postMessage({ type: 'SW_READY' });
+                        if (acquireLeaderLock()) {
+                            console.log('Leader tab initiating sync reload.');
+                            swChannel.postMessage({ type: 'SW_RELOAD' });
+                            setTimeout(() => window.location.reload(), 100);
+                        }
                     }
                 });
             });
@@ -684,9 +766,7 @@ if ('serviceWorker' in navigator) {
 
     navigator.serviceWorker.addEventListener('message', event => {
         if (event.data && event.data.type === 'SW_UPDATED') {
-            console.log(`System updated to ${event.data.version}. Reloading...`);
-            // Automatischer Reload nach Update (PWA-konform)
-            window.location.reload();
+            console.log(`System updated to ${event.data.version}.`);
         }
     });
 }
