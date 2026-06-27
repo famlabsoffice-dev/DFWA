@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFWA Analytics</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: monospace; background: #000; color: #39ff14; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { margin-bottom: 30px; text-align: center; letter-spacing: 2px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { border: 2px solid #39ff14; padding: 20px; background: rgba(57, 255, 20, 0.05); }
+        .card h2 { margin-bottom: 15px; font-size: 1.2em; }
+        .stat { display: flex; justify-content: space-between; margin: 10px 0; }
+        .label { color: #00d4ff; }
+        .value { color: #39ff14; font-weight: bold; }
+        .error { color: #ff0000; text-align: center; padding: 20px; }
+        .loading { text-align: center; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>A/B_TESTING_ANALYTICS</h1>
+        <div class="grid" id="analytics-grid">
+            <div class="loading">LOADING_DATA...</div>
+        </div>
+    </div>
+
+    <script>
+        async function loadAnalytics() {
+            try {
+                const res = await fetch('/api/analytics');
+                if (!res.ok) throw new Error('API_ERROR');
+                const data = await res.json();
+                
+                const grid = document.getElementById('analytics-grid');
+                grid.innerHTML = '';
+                
+                if (data.length === 0) {
+                    grid.innerHTML = '<div class="error">NO_DATA_AVAILABLE</div>';
+                    return;
+                }
+                
+                data.forEach(row => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h2>VARIANT_${row.variant}</h2>
+                        <div class="stat">
+                            <span class="label">SAMPLE_SIZE:</span>
+                            <span class="value">${row.count}</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">AVG_ACCURACY:</span>
+                            <span class="value">${row.avg_accuracy}%</span>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            } catch (e) {
+                document.getElementById('analytics-grid').innerHTML = `<div class="error">ERROR: ${e.message}</div>`;
+            }
+        }
+        
+        loadAnalytics();
+        setInterval(loadAnalytics, 5000);
+    </script>
+</body>
+</html>

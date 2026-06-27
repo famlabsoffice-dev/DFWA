@@ -17,8 +17,10 @@ let state = {
     systemSecret: null,
     sessionActive: false, lastUpdateTime: null, timerEndTimestamp: null,
     baseDate: Date.now(), basePerf: performance.now(), timeDesyncDetected: false,
-    mode: 'classic'
+    mode: 'classic',
+    variant: localStorage.getItem('dfwa_variant') || (Math.random() < 0.5 ? 'A' : 'B')
 };
+if (!localStorage.getItem('dfwa_variant')) localStorage.setItem('dfwa_variant', state.variant);
 
 const SESSION_VERSION = 1;
 
@@ -548,6 +550,13 @@ async function endGame() {
 
 function getComment(type) {
     let pool = state.comments[state.lang][type];
+    if (state.variant === 'A') {
+        pool = pool.filter(c => c.includes('?') || c.length > 40); // Simuliert zynisch (länger/fragend)
+    } else {
+        pool = pool.filter(c => !c.includes('?') && c.length <= 40); // Simuliert aggressiv (kurz/direkt)
+    }
+    if (pool.length === 0) pool = state.comments[state.lang][type];
+    
     let available = pool.filter(c => !state.usedComments[type].includes(c));
     if (available.length === 0) {
         state.usedComments[type] = [];
@@ -788,12 +797,15 @@ if ('serviceWorker' in navigator) {
 // Leaderboard Server Logic
 async function updateLeaderboard() {
     try {
+        const accuracy = state.questionCount > 0 ? Math.round((state.correctAnswers / state.questionCount) * 100) : 0;
         const payload = {
             playerId: state.playerId,
             playerName: state.playerName,
             score: state.score,
             wins: state.wins,
-            losses: state.losses
+            losses: state.losses,
+            variant: state.variant,
+            accuracy: accuracy
         };
         await fetch(`${API_BASE_URL}/api/leaderboard`, {
             method: 'POST',
