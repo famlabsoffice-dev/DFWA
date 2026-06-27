@@ -478,7 +478,7 @@
                     streakMax: state.streakMax,
                     timestamp: new Date().toISOString()
                 };
-                const res = await fetch('https://api.dfwa.io/leaderboard/submit', {
+                const res = await fetch('https://3000-i3717ocenmuhprocjl5l2-f513dc9e.us2.manus.computer/leaderboard/submit', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -641,7 +641,7 @@
 
         async function fetchLeaderboard() {
             try {
-                const res = await fetch('https://api.dfwa.io/leaderboard/top?limit=10');
+                const res = await fetch('https://3000-i3717ocenmuhprocjl5l2-f513dc9e.us2.manus.computer/leaderboard/top?limit=10');
                 if (res.ok) {
                     const data = await res.json();
                     displayLeaderboard(data);
