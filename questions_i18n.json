@@ -17798,5 +17798,2305 @@
         "Movie D 99"
       ]
     }
+  },
+  {
+    "id": "musik_0",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1800?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1800?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 0",
+        "Künstler B 0",
+        "Künstler C 0",
+        "Künstler D 0"
+      ],
+      "en": [
+        "Artist A 0",
+        "Artist B 0",
+        "Artist C 0",
+        "Artist D 0"
+      ]
+    }
+  },
+  {
+    "id": "musik_1",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1801?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1801?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 1",
+        "Künstler B 1",
+        "Künstler C 1",
+        "Künstler D 1"
+      ],
+      "en": [
+        "Artist A 1",
+        "Artist B 1",
+        "Artist C 1",
+        "Artist D 1"
+      ]
+    }
+  },
+  {
+    "id": "musik_2",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1802?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1802?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 2",
+        "Künstler B 2",
+        "Künstler C 2",
+        "Künstler D 2"
+      ],
+      "en": [
+        "Artist A 2",
+        "Artist B 2",
+        "Artist C 2",
+        "Artist D 2"
+      ]
+    }
+  },
+  {
+    "id": "musik_3",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1803?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1803?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 3",
+        "Künstler B 3",
+        "Künstler C 3",
+        "Künstler D 3"
+      ],
+      "en": [
+        "Artist A 3",
+        "Artist B 3",
+        "Artist C 3",
+        "Artist D 3"
+      ]
+    }
+  },
+  {
+    "id": "musik_4",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1804?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1804?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 4",
+        "Künstler B 4",
+        "Künstler C 4",
+        "Künstler D 4"
+      ],
+      "en": [
+        "Artist A 4",
+        "Artist B 4",
+        "Artist C 4",
+        "Artist D 4"
+      ]
+    }
+  },
+  {
+    "id": "musik_5",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1805?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1805?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 5",
+        "Künstler B 5",
+        "Künstler C 5",
+        "Künstler D 5"
+      ],
+      "en": [
+        "Artist A 5",
+        "Artist B 5",
+        "Artist C 5",
+        "Artist D 5"
+      ]
+    }
+  },
+  {
+    "id": "musik_6",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1806?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1806?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 6",
+        "Künstler B 6",
+        "Künstler C 6",
+        "Künstler D 6"
+      ],
+      "en": [
+        "Artist A 6",
+        "Artist B 6",
+        "Artist C 6",
+        "Artist D 6"
+      ]
+    }
+  },
+  {
+    "id": "musik_7",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1807?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1807?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 7",
+        "Künstler B 7",
+        "Künstler C 7",
+        "Künstler D 7"
+      ],
+      "en": [
+        "Artist A 7",
+        "Artist B 7",
+        "Artist C 7",
+        "Artist D 7"
+      ]
+    }
+  },
+  {
+    "id": "musik_8",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1808?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1808?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 8",
+        "Künstler B 8",
+        "Künstler C 8",
+        "Künstler D 8"
+      ],
+      "en": [
+        "Artist A 8",
+        "Artist B 8",
+        "Artist C 8",
+        "Artist D 8"
+      ]
+    }
+  },
+  {
+    "id": "musik_9",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1809?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1809?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 9",
+        "Künstler B 9",
+        "Künstler C 9",
+        "Künstler D 9"
+      ],
+      "en": [
+        "Artist A 9",
+        "Artist B 9",
+        "Artist C 9",
+        "Artist D 9"
+      ]
+    }
+  },
+  {
+    "id": "musik_10",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1810?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1810?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 10",
+        "Künstler B 10",
+        "Künstler C 10",
+        "Künstler D 10"
+      ],
+      "en": [
+        "Artist A 10",
+        "Artist B 10",
+        "Artist C 10",
+        "Artist D 10"
+      ]
+    }
+  },
+  {
+    "id": "musik_11",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1811?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1811?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 11",
+        "Künstler B 11",
+        "Künstler C 11",
+        "Künstler D 11"
+      ],
+      "en": [
+        "Artist A 11",
+        "Artist B 11",
+        "Artist C 11",
+        "Artist D 11"
+      ]
+    }
+  },
+  {
+    "id": "musik_12",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1812?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1812?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 12",
+        "Künstler B 12",
+        "Künstler C 12",
+        "Künstler D 12"
+      ],
+      "en": [
+        "Artist A 12",
+        "Artist B 12",
+        "Artist C 12",
+        "Artist D 12"
+      ]
+    }
+  },
+  {
+    "id": "musik_13",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1813?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1813?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 13",
+        "Künstler B 13",
+        "Künstler C 13",
+        "Künstler D 13"
+      ],
+      "en": [
+        "Artist A 13",
+        "Artist B 13",
+        "Artist C 13",
+        "Artist D 13"
+      ]
+    }
+  },
+  {
+    "id": "musik_14",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1814?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1814?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 14",
+        "Künstler B 14",
+        "Künstler C 14",
+        "Künstler D 14"
+      ],
+      "en": [
+        "Artist A 14",
+        "Artist B 14",
+        "Artist C 14",
+        "Artist D 14"
+      ]
+    }
+  },
+  {
+    "id": "musik_15",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1815?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1815?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 15",
+        "Künstler B 15",
+        "Künstler C 15",
+        "Künstler D 15"
+      ],
+      "en": [
+        "Artist A 15",
+        "Artist B 15",
+        "Artist C 15",
+        "Artist D 15"
+      ]
+    }
+  },
+  {
+    "id": "musik_16",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1816?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1816?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 16",
+        "Künstler B 16",
+        "Künstler C 16",
+        "Künstler D 16"
+      ],
+      "en": [
+        "Artist A 16",
+        "Artist B 16",
+        "Artist C 16",
+        "Artist D 16"
+      ]
+    }
+  },
+  {
+    "id": "musik_17",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1817?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1817?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 17",
+        "Künstler B 17",
+        "Künstler C 17",
+        "Künstler D 17"
+      ],
+      "en": [
+        "Artist A 17",
+        "Artist B 17",
+        "Artist C 17",
+        "Artist D 17"
+      ]
+    }
+  },
+  {
+    "id": "musik_18",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1818?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1818?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 18",
+        "Künstler B 18",
+        "Künstler C 18",
+        "Künstler D 18"
+      ],
+      "en": [
+        "Artist A 18",
+        "Artist B 18",
+        "Artist C 18",
+        "Artist D 18"
+      ]
+    }
+  },
+  {
+    "id": "musik_19",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1819?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1819?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 19",
+        "Künstler B 19",
+        "Künstler C 19",
+        "Künstler D 19"
+      ],
+      "en": [
+        "Artist A 19",
+        "Artist B 19",
+        "Artist C 19",
+        "Artist D 19"
+      ]
+    }
+  },
+  {
+    "id": "musik_20",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1820?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1820?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 20",
+        "Künstler B 20",
+        "Künstler C 20",
+        "Künstler D 20"
+      ],
+      "en": [
+        "Artist A 20",
+        "Artist B 20",
+        "Artist C 20",
+        "Artist D 20"
+      ]
+    }
+  },
+  {
+    "id": "musik_21",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1821?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1821?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 21",
+        "Künstler B 21",
+        "Künstler C 21",
+        "Künstler D 21"
+      ],
+      "en": [
+        "Artist A 21",
+        "Artist B 21",
+        "Artist C 21",
+        "Artist D 21"
+      ]
+    }
+  },
+  {
+    "id": "musik_22",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1822?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1822?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 22",
+        "Künstler B 22",
+        "Künstler C 22",
+        "Künstler D 22"
+      ],
+      "en": [
+        "Artist A 22",
+        "Artist B 22",
+        "Artist C 22",
+        "Artist D 22"
+      ]
+    }
+  },
+  {
+    "id": "musik_23",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1823?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1823?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 23",
+        "Künstler B 23",
+        "Künstler C 23",
+        "Künstler D 23"
+      ],
+      "en": [
+        "Artist A 23",
+        "Artist B 23",
+        "Artist C 23",
+        "Artist D 23"
+      ]
+    }
+  },
+  {
+    "id": "musik_24",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1824?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1824?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 24",
+        "Künstler B 24",
+        "Künstler C 24",
+        "Künstler D 24"
+      ],
+      "en": [
+        "Artist A 24",
+        "Artist B 24",
+        "Artist C 24",
+        "Artist D 24"
+      ]
+    }
+  },
+  {
+    "id": "musik_25",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1825?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1825?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 25",
+        "Künstler B 25",
+        "Künstler C 25",
+        "Künstler D 25"
+      ],
+      "en": [
+        "Artist A 25",
+        "Artist B 25",
+        "Artist C 25",
+        "Artist D 25"
+      ]
+    }
+  },
+  {
+    "id": "musik_26",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1826?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1826?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 26",
+        "Künstler B 26",
+        "Künstler C 26",
+        "Künstler D 26"
+      ],
+      "en": [
+        "Artist A 26",
+        "Artist B 26",
+        "Artist C 26",
+        "Artist D 26"
+      ]
+    }
+  },
+  {
+    "id": "musik_27",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1827?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1827?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 27",
+        "Künstler B 27",
+        "Künstler C 27",
+        "Künstler D 27"
+      ],
+      "en": [
+        "Artist A 27",
+        "Artist B 27",
+        "Artist C 27",
+        "Artist D 27"
+      ]
+    }
+  },
+  {
+    "id": "musik_28",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1828?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1828?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 28",
+        "Künstler B 28",
+        "Künstler C 28",
+        "Künstler D 28"
+      ],
+      "en": [
+        "Artist A 28",
+        "Artist B 28",
+        "Artist C 28",
+        "Artist D 28"
+      ]
+    }
+  },
+  {
+    "id": "musik_29",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1829?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1829?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 29",
+        "Künstler B 29",
+        "Künstler C 29",
+        "Künstler D 29"
+      ],
+      "en": [
+        "Artist A 29",
+        "Artist B 29",
+        "Artist C 29",
+        "Artist D 29"
+      ]
+    }
+  },
+  {
+    "id": "musik_30",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1830?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1830?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 30",
+        "Künstler B 30",
+        "Künstler C 30",
+        "Künstler D 30"
+      ],
+      "en": [
+        "Artist A 30",
+        "Artist B 30",
+        "Artist C 30",
+        "Artist D 30"
+      ]
+    }
+  },
+  {
+    "id": "musik_31",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1831?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1831?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 31",
+        "Künstler B 31",
+        "Künstler C 31",
+        "Künstler D 31"
+      ],
+      "en": [
+        "Artist A 31",
+        "Artist B 31",
+        "Artist C 31",
+        "Artist D 31"
+      ]
+    }
+  },
+  {
+    "id": "musik_32",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1832?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1832?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 32",
+        "Künstler B 32",
+        "Künstler C 32",
+        "Künstler D 32"
+      ],
+      "en": [
+        "Artist A 32",
+        "Artist B 32",
+        "Artist C 32",
+        "Artist D 32"
+      ]
+    }
+  },
+  {
+    "id": "musik_33",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1833?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1833?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 33",
+        "Künstler B 33",
+        "Künstler C 33",
+        "Künstler D 33"
+      ],
+      "en": [
+        "Artist A 33",
+        "Artist B 33",
+        "Artist C 33",
+        "Artist D 33"
+      ]
+    }
+  },
+  {
+    "id": "musik_34",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1834?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1834?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 34",
+        "Künstler B 34",
+        "Künstler C 34",
+        "Künstler D 34"
+      ],
+      "en": [
+        "Artist A 34",
+        "Artist B 34",
+        "Artist C 34",
+        "Artist D 34"
+      ]
+    }
+  },
+  {
+    "id": "musik_35",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1835?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1835?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 35",
+        "Künstler B 35",
+        "Künstler C 35",
+        "Künstler D 35"
+      ],
+      "en": [
+        "Artist A 35",
+        "Artist B 35",
+        "Artist C 35",
+        "Artist D 35"
+      ]
+    }
+  },
+  {
+    "id": "musik_36",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1836?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1836?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 36",
+        "Künstler B 36",
+        "Künstler C 36",
+        "Künstler D 36"
+      ],
+      "en": [
+        "Artist A 36",
+        "Artist B 36",
+        "Artist C 36",
+        "Artist D 36"
+      ]
+    }
+  },
+  {
+    "id": "musik_37",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1837?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1837?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 37",
+        "Künstler B 37",
+        "Künstler C 37",
+        "Künstler D 37"
+      ],
+      "en": [
+        "Artist A 37",
+        "Artist B 37",
+        "Artist C 37",
+        "Artist D 37"
+      ]
+    }
+  },
+  {
+    "id": "musik_38",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1838?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1838?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 38",
+        "Künstler B 38",
+        "Künstler C 38",
+        "Künstler D 38"
+      ],
+      "en": [
+        "Artist A 38",
+        "Artist B 38",
+        "Artist C 38",
+        "Artist D 38"
+      ]
+    }
+  },
+  {
+    "id": "musik_39",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1839?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1839?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 39",
+        "Künstler B 39",
+        "Künstler C 39",
+        "Künstler D 39"
+      ],
+      "en": [
+        "Artist A 39",
+        "Artist B 39",
+        "Artist C 39",
+        "Artist D 39"
+      ]
+    }
+  },
+  {
+    "id": "musik_40",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1840?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1840?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 40",
+        "Künstler B 40",
+        "Künstler C 40",
+        "Künstler D 40"
+      ],
+      "en": [
+        "Artist A 40",
+        "Artist B 40",
+        "Artist C 40",
+        "Artist D 40"
+      ]
+    }
+  },
+  {
+    "id": "musik_41",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1841?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1841?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 41",
+        "Künstler B 41",
+        "Künstler C 41",
+        "Künstler D 41"
+      ],
+      "en": [
+        "Artist A 41",
+        "Artist B 41",
+        "Artist C 41",
+        "Artist D 41"
+      ]
+    }
+  },
+  {
+    "id": "musik_42",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1842?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1842?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 42",
+        "Künstler B 42",
+        "Künstler C 42",
+        "Künstler D 42"
+      ],
+      "en": [
+        "Artist A 42",
+        "Artist B 42",
+        "Artist C 42",
+        "Artist D 42"
+      ]
+    }
+  },
+  {
+    "id": "musik_43",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1843?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1843?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 43",
+        "Künstler B 43",
+        "Künstler C 43",
+        "Künstler D 43"
+      ],
+      "en": [
+        "Artist A 43",
+        "Artist B 43",
+        "Artist C 43",
+        "Artist D 43"
+      ]
+    }
+  },
+  {
+    "id": "musik_44",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1844?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1844?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 44",
+        "Künstler B 44",
+        "Künstler C 44",
+        "Künstler D 44"
+      ],
+      "en": [
+        "Artist A 44",
+        "Artist B 44",
+        "Artist C 44",
+        "Artist D 44"
+      ]
+    }
+  },
+  {
+    "id": "musik_45",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1845?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1845?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 45",
+        "Künstler B 45",
+        "Künstler C 45",
+        "Künstler D 45"
+      ],
+      "en": [
+        "Artist A 45",
+        "Artist B 45",
+        "Artist C 45",
+        "Artist D 45"
+      ]
+    }
+  },
+  {
+    "id": "musik_46",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1846?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1846?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 46",
+        "Künstler B 46",
+        "Künstler C 46",
+        "Künstler D 46"
+      ],
+      "en": [
+        "Artist A 46",
+        "Artist B 46",
+        "Artist C 46",
+        "Artist D 46"
+      ]
+    }
+  },
+  {
+    "id": "musik_47",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1847?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1847?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 47",
+        "Künstler B 47",
+        "Künstler C 47",
+        "Künstler D 47"
+      ],
+      "en": [
+        "Artist A 47",
+        "Artist B 47",
+        "Artist C 47",
+        "Artist D 47"
+      ]
+    }
+  },
+  {
+    "id": "musik_48",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1848?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1848?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 48",
+        "Künstler B 48",
+        "Künstler C 48",
+        "Künstler D 48"
+      ],
+      "en": [
+        "Artist A 48",
+        "Artist B 48",
+        "Artist C 48",
+        "Artist D 48"
+      ]
+    }
+  },
+  {
+    "id": "musik_49",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1849?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1849?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 49",
+        "Künstler B 49",
+        "Künstler C 49",
+        "Künstler D 49"
+      ],
+      "en": [
+        "Artist A 49",
+        "Artist B 49",
+        "Artist C 49",
+        "Artist D 49"
+      ]
+    }
+  },
+  {
+    "id": "musik_50",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1800?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1800?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 50",
+        "Künstler B 50",
+        "Künstler C 50",
+        "Künstler D 50"
+      ],
+      "en": [
+        "Artist A 50",
+        "Artist B 50",
+        "Artist C 50",
+        "Artist D 50"
+      ]
+    }
+  },
+  {
+    "id": "musik_51",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1801?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1801?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 51",
+        "Künstler B 51",
+        "Künstler C 51",
+        "Künstler D 51"
+      ],
+      "en": [
+        "Artist A 51",
+        "Artist B 51",
+        "Artist C 51",
+        "Artist D 51"
+      ]
+    }
+  },
+  {
+    "id": "musik_52",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1802?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1802?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 52",
+        "Künstler B 52",
+        "Künstler C 52",
+        "Künstler D 52"
+      ],
+      "en": [
+        "Artist A 52",
+        "Artist B 52",
+        "Artist C 52",
+        "Artist D 52"
+      ]
+    }
+  },
+  {
+    "id": "musik_53",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1803?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1803?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 53",
+        "Künstler B 53",
+        "Künstler C 53",
+        "Künstler D 53"
+      ],
+      "en": [
+        "Artist A 53",
+        "Artist B 53",
+        "Artist C 53",
+        "Artist D 53"
+      ]
+    }
+  },
+  {
+    "id": "musik_54",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1804?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1804?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 54",
+        "Künstler B 54",
+        "Künstler C 54",
+        "Künstler D 54"
+      ],
+      "en": [
+        "Artist A 54",
+        "Artist B 54",
+        "Artist C 54",
+        "Artist D 54"
+      ]
+    }
+  },
+  {
+    "id": "musik_55",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1805?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1805?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 55",
+        "Künstler B 55",
+        "Künstler C 55",
+        "Künstler D 55"
+      ],
+      "en": [
+        "Artist A 55",
+        "Artist B 55",
+        "Artist C 55",
+        "Artist D 55"
+      ]
+    }
+  },
+  {
+    "id": "musik_56",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1806?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1806?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 56",
+        "Künstler B 56",
+        "Künstler C 56",
+        "Künstler D 56"
+      ],
+      "en": [
+        "Artist A 56",
+        "Artist B 56",
+        "Artist C 56",
+        "Artist D 56"
+      ]
+    }
+  },
+  {
+    "id": "musik_57",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1807?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1807?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 57",
+        "Künstler B 57",
+        "Künstler C 57",
+        "Künstler D 57"
+      ],
+      "en": [
+        "Artist A 57",
+        "Artist B 57",
+        "Artist C 57",
+        "Artist D 57"
+      ]
+    }
+  },
+  {
+    "id": "musik_58",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1808?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1808?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 58",
+        "Künstler B 58",
+        "Künstler C 58",
+        "Künstler D 58"
+      ],
+      "en": [
+        "Artist A 58",
+        "Artist B 58",
+        "Artist C 58",
+        "Artist D 58"
+      ]
+    }
+  },
+  {
+    "id": "musik_59",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1809?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1809?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 59",
+        "Künstler B 59",
+        "Künstler C 59",
+        "Künstler D 59"
+      ],
+      "en": [
+        "Artist A 59",
+        "Artist B 59",
+        "Artist C 59",
+        "Artist D 59"
+      ]
+    }
+  },
+  {
+    "id": "musik_60",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1810?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1810?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 60",
+        "Künstler B 60",
+        "Künstler C 60",
+        "Künstler D 60"
+      ],
+      "en": [
+        "Artist A 60",
+        "Artist B 60",
+        "Artist C 60",
+        "Artist D 60"
+      ]
+    }
+  },
+  {
+    "id": "musik_61",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1811?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1811?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 61",
+        "Künstler B 61",
+        "Künstler C 61",
+        "Künstler D 61"
+      ],
+      "en": [
+        "Artist A 61",
+        "Artist B 61",
+        "Artist C 61",
+        "Artist D 61"
+      ]
+    }
+  },
+  {
+    "id": "musik_62",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1812?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1812?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 62",
+        "Künstler B 62",
+        "Künstler C 62",
+        "Künstler D 62"
+      ],
+      "en": [
+        "Artist A 62",
+        "Artist B 62",
+        "Artist C 62",
+        "Artist D 62"
+      ]
+    }
+  },
+  {
+    "id": "musik_63",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1813?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1813?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 63",
+        "Künstler B 63",
+        "Künstler C 63",
+        "Künstler D 63"
+      ],
+      "en": [
+        "Artist A 63",
+        "Artist B 63",
+        "Artist C 63",
+        "Artist D 63"
+      ]
+    }
+  },
+  {
+    "id": "musik_64",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1814?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1814?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 64",
+        "Künstler B 64",
+        "Künstler C 64",
+        "Künstler D 64"
+      ],
+      "en": [
+        "Artist A 64",
+        "Artist B 64",
+        "Artist C 64",
+        "Artist D 64"
+      ]
+    }
+  },
+  {
+    "id": "musik_65",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1815?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1815?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 65",
+        "Künstler B 65",
+        "Künstler C 65",
+        "Künstler D 65"
+      ],
+      "en": [
+        "Artist A 65",
+        "Artist B 65",
+        "Artist C 65",
+        "Artist D 65"
+      ]
+    }
+  },
+  {
+    "id": "musik_66",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1816?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1816?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 66",
+        "Künstler B 66",
+        "Künstler C 66",
+        "Künstler D 66"
+      ],
+      "en": [
+        "Artist A 66",
+        "Artist B 66",
+        "Artist C 66",
+        "Artist D 66"
+      ]
+    }
+  },
+  {
+    "id": "musik_67",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1817?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1817?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 67",
+        "Künstler B 67",
+        "Künstler C 67",
+        "Künstler D 67"
+      ],
+      "en": [
+        "Artist A 67",
+        "Artist B 67",
+        "Artist C 67",
+        "Artist D 67"
+      ]
+    }
+  },
+  {
+    "id": "musik_68",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1818?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1818?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 68",
+        "Künstler B 68",
+        "Künstler C 68",
+        "Künstler D 68"
+      ],
+      "en": [
+        "Artist A 68",
+        "Artist B 68",
+        "Artist C 68",
+        "Artist D 68"
+      ]
+    }
+  },
+  {
+    "id": "musik_69",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1819?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1819?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 69",
+        "Künstler B 69",
+        "Künstler C 69",
+        "Künstler D 69"
+      ],
+      "en": [
+        "Artist A 69",
+        "Artist B 69",
+        "Artist C 69",
+        "Artist D 69"
+      ]
+    }
+  },
+  {
+    "id": "musik_70",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1820?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1820?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 70",
+        "Künstler B 70",
+        "Künstler C 70",
+        "Künstler D 70"
+      ],
+      "en": [
+        "Artist A 70",
+        "Artist B 70",
+        "Artist C 70",
+        "Artist D 70"
+      ]
+    }
+  },
+  {
+    "id": "musik_71",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1821?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1821?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 71",
+        "Künstler B 71",
+        "Künstler C 71",
+        "Künstler D 71"
+      ],
+      "en": [
+        "Artist A 71",
+        "Artist B 71",
+        "Artist C 71",
+        "Artist D 71"
+      ]
+    }
+  },
+  {
+    "id": "musik_72",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1822?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1822?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 72",
+        "Künstler B 72",
+        "Künstler C 72",
+        "Künstler D 72"
+      ],
+      "en": [
+        "Artist A 72",
+        "Artist B 72",
+        "Artist C 72",
+        "Artist D 72"
+      ]
+    }
+  },
+  {
+    "id": "musik_73",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1823?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1823?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 73",
+        "Künstler B 73",
+        "Künstler C 73",
+        "Künstler D 73"
+      ],
+      "en": [
+        "Artist A 73",
+        "Artist B 73",
+        "Artist C 73",
+        "Artist D 73"
+      ]
+    }
+  },
+  {
+    "id": "musik_74",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1824?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1824?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 74",
+        "Künstler B 74",
+        "Künstler C 74",
+        "Künstler D 74"
+      ],
+      "en": [
+        "Artist A 74",
+        "Artist B 74",
+        "Artist C 74",
+        "Artist D 74"
+      ]
+    }
+  },
+  {
+    "id": "musik_75",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1825?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1825?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 75",
+        "Künstler B 75",
+        "Künstler C 75",
+        "Künstler D 75"
+      ],
+      "en": [
+        "Artist A 75",
+        "Artist B 75",
+        "Artist C 75",
+        "Artist D 75"
+      ]
+    }
+  },
+  {
+    "id": "musik_76",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1826?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1826?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 76",
+        "Künstler B 76",
+        "Künstler C 76",
+        "Künstler D 76"
+      ],
+      "en": [
+        "Artist A 76",
+        "Artist B 76",
+        "Artist C 76",
+        "Artist D 76"
+      ]
+    }
+  },
+  {
+    "id": "musik_77",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1827?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1827?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 77",
+        "Künstler B 77",
+        "Künstler C 77",
+        "Künstler D 77"
+      ],
+      "en": [
+        "Artist A 77",
+        "Artist B 77",
+        "Artist C 77",
+        "Artist D 77"
+      ]
+    }
+  },
+  {
+    "id": "musik_78",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1828?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1828?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 78",
+        "Künstler B 78",
+        "Künstler C 78",
+        "Künstler D 78"
+      ],
+      "en": [
+        "Artist A 78",
+        "Artist B 78",
+        "Artist C 78",
+        "Artist D 78"
+      ]
+    }
+  },
+  {
+    "id": "musik_79",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1829?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1829?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 79",
+        "Künstler B 79",
+        "Künstler C 79",
+        "Künstler D 79"
+      ],
+      "en": [
+        "Artist A 79",
+        "Artist B 79",
+        "Artist C 79",
+        "Artist D 79"
+      ]
+    }
+  },
+  {
+    "id": "musik_80",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1830?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1830?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 80",
+        "Künstler B 80",
+        "Künstler C 80",
+        "Künstler D 80"
+      ],
+      "en": [
+        "Artist A 80",
+        "Artist B 80",
+        "Artist C 80",
+        "Artist D 80"
+      ]
+    }
+  },
+  {
+    "id": "musik_81",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1831?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1831?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 81",
+        "Künstler B 81",
+        "Künstler C 81",
+        "Künstler D 81"
+      ],
+      "en": [
+        "Artist A 81",
+        "Artist B 81",
+        "Artist C 81",
+        "Artist D 81"
+      ]
+    }
+  },
+  {
+    "id": "musik_82",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1832?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1832?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 82",
+        "Künstler B 82",
+        "Künstler C 82",
+        "Künstler D 82"
+      ],
+      "en": [
+        "Artist A 82",
+        "Artist B 82",
+        "Artist C 82",
+        "Artist D 82"
+      ]
+    }
+  },
+  {
+    "id": "musik_83",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1833?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1833?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 83",
+        "Künstler B 83",
+        "Künstler C 83",
+        "Künstler D 83"
+      ],
+      "en": [
+        "Artist A 83",
+        "Artist B 83",
+        "Artist C 83",
+        "Artist D 83"
+      ]
+    }
+  },
+  {
+    "id": "musik_84",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1834?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1834?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 84",
+        "Künstler B 84",
+        "Künstler C 84",
+        "Künstler D 84"
+      ],
+      "en": [
+        "Artist A 84",
+        "Artist B 84",
+        "Artist C 84",
+        "Artist D 84"
+      ]
+    }
+  },
+  {
+    "id": "musik_85",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1835?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1835?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 85",
+        "Künstler B 85",
+        "Künstler C 85",
+        "Künstler D 85"
+      ],
+      "en": [
+        "Artist A 85",
+        "Artist B 85",
+        "Artist C 85",
+        "Artist D 85"
+      ]
+    }
+  },
+  {
+    "id": "musik_86",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1836?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1836?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 86",
+        "Künstler B 86",
+        "Künstler C 86",
+        "Künstler D 86"
+      ],
+      "en": [
+        "Artist A 86",
+        "Artist B 86",
+        "Artist C 86",
+        "Artist D 86"
+      ]
+    }
+  },
+  {
+    "id": "musik_87",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1837?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1837?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 87",
+        "Künstler B 87",
+        "Künstler C 87",
+        "Künstler D 87"
+      ],
+      "en": [
+        "Artist A 87",
+        "Artist B 87",
+        "Artist C 87",
+        "Artist D 87"
+      ]
+    }
+  },
+  {
+    "id": "musik_88",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1838?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1838?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 88",
+        "Künstler B 88",
+        "Künstler C 88",
+        "Künstler D 88"
+      ],
+      "en": [
+        "Artist A 88",
+        "Artist B 88",
+        "Artist C 88",
+        "Artist D 88"
+      ]
+    }
+  },
+  {
+    "id": "musik_89",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1839?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1839?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 89",
+        "Künstler B 89",
+        "Künstler C 89",
+        "Künstler D 89"
+      ],
+      "en": [
+        "Artist A 89",
+        "Artist B 89",
+        "Artist C 89",
+        "Artist D 89"
+      ]
+    }
+  },
+  {
+    "id": "musik_90",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1840?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1840?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 90",
+        "Künstler B 90",
+        "Künstler C 90",
+        "Künstler D 90"
+      ],
+      "en": [
+        "Artist A 90",
+        "Artist B 90",
+        "Artist C 90",
+        "Artist D 90"
+      ]
+    }
+  },
+  {
+    "id": "musik_91",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1841?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1841?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 91",
+        "Künstler B 91",
+        "Künstler C 91",
+        "Künstler D 91"
+      ],
+      "en": [
+        "Artist A 91",
+        "Artist B 91",
+        "Artist C 91",
+        "Artist D 91"
+      ]
+    }
+  },
+  {
+    "id": "musik_92",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1842?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1842?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 92",
+        "Künstler B 92",
+        "Künstler C 92",
+        "Künstler D 92"
+      ],
+      "en": [
+        "Artist A 92",
+        "Artist B 92",
+        "Artist C 92",
+        "Artist D 92"
+      ]
+    }
+  },
+  {
+    "id": "musik_93",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1843?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1843?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 93",
+        "Künstler B 93",
+        "Künstler C 93",
+        "Künstler D 93"
+      ],
+      "en": [
+        "Artist A 93",
+        "Artist B 93",
+        "Artist C 93",
+        "Artist D 93"
+      ]
+    }
+  },
+  {
+    "id": "musik_94",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1844?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1844?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 94",
+        "Künstler B 94",
+        "Künstler C 94",
+        "Künstler D 94"
+      ],
+      "en": [
+        "Artist A 94",
+        "Artist B 94",
+        "Artist C 94",
+        "Artist D 94"
+      ]
+    }
+  },
+  {
+    "id": "musik_95",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1845?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1845?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 95",
+        "Künstler B 95",
+        "Künstler C 95",
+        "Künstler D 95"
+      ],
+      "en": [
+        "Artist A 95",
+        "Artist B 95",
+        "Artist C 95",
+        "Artist D 95"
+      ]
+    }
+  },
+  {
+    "id": "musik_96",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1846?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1846?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 96",
+        "Künstler B 96",
+        "Künstler C 96",
+        "Künstler D 96"
+      ],
+      "en": [
+        "Artist A 96",
+        "Artist B 96",
+        "Artist C 96",
+        "Artist D 96"
+      ]
+    }
+  },
+  {
+    "id": "musik_97",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1847?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1847?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 97",
+        "Künstler B 97",
+        "Künstler C 97",
+        "Künstler D 97"
+      ],
+      "en": [
+        "Artist A 97",
+        "Artist B 97",
+        "Artist C 97",
+        "Artist D 97"
+      ]
+    }
+  },
+  {
+    "id": "musik_98",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1848?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1848?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 98",
+        "Künstler B 98",
+        "Künstler C 98",
+        "Künstler D 98"
+      ],
+      "en": [
+        "Artist A 98",
+        "Artist B 98",
+        "Artist C 98",
+        "Artist D 98"
+      ]
+    }
+  },
+  {
+    "id": "musik_99",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Welcher Komponist schrieb die '9. Sinfonie' im Jahr 1849?",
+      "en": "Which composer wrote the '9th Symphony' in the year 1849?"
+    },
+    "options": {
+      "de": [
+        "Künstler A 99",
+        "Künstler B 99",
+        "Künstler C 99",
+        "Künstler D 99"
+      ],
+      "en": [
+        "Artist A 99",
+        "Artist B 99",
+        "Artist C 99",
+        "Artist D 99"
+      ]
+    }
   }
 ]
