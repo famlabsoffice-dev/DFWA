@@ -558,8 +558,24 @@ document.addEventListener('visibilitychange', () => {
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-            .then(reg => { reg.update(); })
-            .catch(() => {});
+        navigator.serviceWorker.register('./sw.js').then(reg => {
+            reg.addEventListener('updatefound', () => {
+                const newWorker = reg.installing;
+                newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        // Neuer SW ist bereit, wartet aber noch
+                        console.log('New Service Worker available.');
+                    }
+                });
+            });
+        }).catch(err => console.error('SW registration failed:', err));
+    });
+
+    navigator.serviceWorker.addEventListener('message', event => {
+        if (event.data && event.data.type === 'SW_UPDATED') {
+            console.log(`System updated to ${event.data.version}. Reloading...`);
+            // Automatischer Reload nach Update (PWA-konform)
+            window.location.reload();
+        }
     });
 }
