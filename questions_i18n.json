@@ -12318,5 +12318,603 @@
       ]
     },
     "correct": 2
+  },
+  {
+    "id": "wissenschaft_technik_0",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Element hat das chemische Symbol Fe?",
+      "en": "Which element has the chemical symbol Fe?"
+    },
+    "options": {
+      "de": [
+        "Eisen",
+        "Gold",
+        "Silber",
+        "Kupfer"
+      ],
+      "en": [
+        "Iron",
+        "Gold",
+        "Silver",
+        "Copper"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_1",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Einheit des elektrischen Widerstands?",
+      "en": "What is the unit of electrical resistance?"
+    },
+    "options": {
+      "de": [
+        "Ohm",
+        "Volt",
+        "Ampere",
+        "Watt"
+      ],
+      "en": [
+        "Ohm",
+        "Volt",
+        "Ampere",
+        "Watt"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_2",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Planet ist der größte in unserem Sonnensystem?",
+      "en": "Which planet is the largest in our solar system?"
+    },
+    "options": {
+      "de": [
+        "Jupiter",
+        "Erde",
+        "Mars",
+        "Saturn"
+      ],
+      "en": [
+        "Jupiter",
+        "Earth",
+        "Mars",
+        "Saturn"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_3",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Formel für Wasser?",
+      "en": "What is the chemical formula for water?"
+    },
+    "options": {
+      "de": [
+        "H2O",
+        "CO2",
+        "O2",
+        "NaCl"
+      ],
+      "en": [
+        "H2O",
+        "CO2",
+        "O2",
+        "NaCl"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_4",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Wer formulierte die Relativitätstheorie?",
+      "en": "Who formulated the theory of relativity?"
+    },
+    "options": {
+      "de": [
+        "Albert Einstein",
+        "Isaac Newton",
+        "Galileo Galilei",
+        "Nikola Tesla"
+      ],
+      "en": [
+        "Albert Einstein",
+        "Isaac Newton",
+        "Galileo Galilei",
+        "Nikola Tesla"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_5",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist das größte Organ des menschlichen Körpers?",
+      "en": "What is the largest organ of the human body?"
+    },
+    "options": {
+      "de": [
+        "Haut",
+        "Leber",
+        "Herz",
+        "Gehirn"
+      ],
+      "en": [
+        "Skin",
+        "Liver",
+        "Heart",
+        "Brain"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_6",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Gas macht den größten Teil der Erdatmosphäre aus?",
+      "en": "Which gas makes up the majority of Earth's atmosphere?"
+    },
+    "options": {
+      "de": [
+        "Stickstoff",
+        "Sauerstoff",
+        "Kohlendioxid",
+        "Argon"
+      ],
+      "en": [
+        "Nitrogen",
+        "Oxygen",
+        "Carbon Dioxide",
+        "Argon"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_7",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein Transistor?",
+      "en": "What is a transistor?"
+    },
+    "options": {
+      "de": [
+        "Ein Halbleiterbauelement",
+        "Ein Speichermedium",
+        "Ein Sensor",
+        "Ein Motor"
+      ],
+      "en": [
+        "A semiconductor device",
+        "A storage medium",
+        "A sensor",
+        "A motor"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_8",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welche Farbe hat das Licht mit der kürzesten Wellenlänge im sichtbaren Spektrum?",
+      "en": "Which color of light has the shortest wavelength in the visible spectrum?"
+    },
+    "options": {
+      "de": [
+        "Violett",
+        "Rot",
+        "Grün",
+        "Gelb"
+      ],
+      "en": [
+        "Violet",
+        "Red",
+        "Green",
+        "Yellow"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_9",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist der Hauptbestandteil von Glas?",
+      "en": "What is the main component of glass?"
+    },
+    "options": {
+      "de": [
+        "Siliziumdioxid",
+        "Kohlenstoff",
+        "Eisen",
+        "Aluminium"
+      ],
+      "en": [
+        "Silicon dioxide",
+        "Carbon",
+        "Iron",
+        "Aluminum"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_10",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele Bits sind in einem Byte enthalten?",
+      "en": "How many bits are in one byte?"
+    },
+    "options": {
+      "de": [
+        "8",
+        "16",
+        "32",
+        "64"
+      ],
+      "en": [
+        "8",
+        "16",
+        "32",
+        "64"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_11",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welches ist das leichteste chemische Element?",
+      "en": "Which is the lightest chemical element?"
+    },
+    "options": {
+      "de": [
+        "Wasserstoff",
+        "Helium",
+        "Lithium",
+        "Sauerstoff"
+      ],
+      "en": [
+        "Hydrogen",
+        "Helium",
+        "Lithium",
+        "Oxygen"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_12",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist der Zweck eines Routers in einem Netzwerk?",
+      "en": "What is the purpose of a router in a network?"
+    },
+    "options": {
+      "de": [
+        "Datenpakete weiterleiten",
+        "Daten speichern",
+        "Stromversorgung",
+        "Signale verstärken"
+      ],
+      "en": [
+        "Forward data packets",
+        "Store data",
+        "Power supply",
+        "Amplify signals"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_13",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welche Kraft hält Planeten in ihrer Umlaufbahn um die Sonne?",
+      "en": "Which force keeps planets in orbit around the sun?"
+    },
+    "options": {
+      "de": [
+        "Gravitation",
+        "Zentrifugalkraft",
+        "Magnetismus",
+        "Kernkraft"
+      ],
+      "en": [
+        "Gravity",
+        "Centrifugal force",
+        "Magnetism",
+        "Nuclear force"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_14",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist der Turing-Test?",
+      "en": "What is the Turing Test?"
+    },
+    "options": {
+      "de": [
+        "Ein Test zur Messung der Maschinenintelligenz",
+        "Ein Geschwindigkeitstest für Computer",
+        "Ein Sicherheitsprotokoll",
+        "Ein Algorithmus zur Datenkompression"
+      ],
+      "en": [
+        "A test to measure machine intelligence",
+        "A speed test for computers",
+        "A security protocol",
+        "A data compression algorithm"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_15",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welches ist das am häufigsten vorkommende Metall in der Erdkruste?",
+      "en": "Which is the most abundant metal in the Earth's crust?"
+    },
+    "options": {
+      "de": [
+        "Aluminium",
+        "Eisen",
+        "Kupfer",
+        "Gold"
+      ],
+      "en": [
+        "Aluminum",
+        "Iron",
+        "Copper",
+        "Gold"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_16",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein Pixel?",
+      "en": "What is a pixel?"
+    },
+    "options": {
+      "de": [
+        "Der kleinste Punkt eines Bildes",
+        "Eine Einheit der Speicherkapazität",
+        "Ein Dateiformat",
+        "Ein Eingabegerät"
+      ],
+      "en": [
+        "The smallest point of an image",
+        "A unit of storage capacity",
+        "A file format",
+        "An input device"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_17",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welches ist das größte Land der Welt nach Fläche?",
+      "en": "Which is the largest country in the world by area?"
+    },
+    "options": {
+      "de": [
+        "Russland",
+        "Kanada",
+        "China",
+        "USA"
+      ],
+      "en": [
+        "Russia",
+        "Canada",
+        "China",
+        "USA"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_18",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist der Prozess, bei dem Pflanzen Lichtenergie in chemische Energie umwandeln?",
+      "en": "What is the process by which plants convert light energy into chemical energy?"
+    },
+    "options": {
+      "de": [
+        "Photosynthese",
+        "Respiration",
+        "Transpiration",
+        "Fermentation"
+      ],
+      "en": [
+        "Photosynthesis",
+        "Respiration",
+        "Transpiration",
+        "Fermentation"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_19",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welches ist das am schnellsten wachsende soziale Netzwerk der Welt?",
+      "en": "Which is the fastest growing social network in the world?"
+    },
+    "options": {
+      "de": [
+        "TikTok",
+        "Facebook",
+        "Instagram",
+        "Twitter"
+      ],
+      "en": [
+        "TikTok",
+        "Facebook",
+        "Instagram",
+        "Twitter"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_20",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein Algorithmus?",
+      "en": "What is an algorithm?"
+    },
+    "options": {
+      "de": [
+        "Eine Schritt-für-Schritt-Anleitung zur Lösung eines Problems",
+        "Ein Computerprogramm",
+        "Eine Programmiersprache",
+        "Ein Betriebssystem"
+      ],
+      "en": [
+        "A step-by-step procedure for solving a problem",
+        "A computer program",
+        "A programming language",
+        "An operating system"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_21",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welches ist das größte Meerestier?",
+      "en": "Which is the largest marine animal?"
+    },
+    "options": {
+      "de": [
+        "Blauwal",
+        "Hai",
+        "Qualle",
+        "Tintenfisch"
+      ],
+      "en": [
+        "Blue whale",
+        "Shark",
+        "Jellyfish",
+        "Octopus"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_22",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Funktion der DNA?",
+      "en": "What is the function of DNA?"
+    },
+    "options": {
+      "de": [
+        "Speicherung genetischer Informationen",
+        "Energieproduktion",
+        "Zellteilung",
+        "Proteinsynthese"
+      ],
+      "en": [
+        "Storage of genetic information",
+        "Energy production",
+        "Cell division",
+        "Protein synthesis"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_23",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welches ist das am häufigsten verwendete Betriebssystem für Smartphones?",
+      "en": "Which is the most widely used operating system for smartphones?"
+    },
+    "options": {
+      "de": [
+        "Android",
+        "iOS",
+        "Windows Phone",
+        "BlackBerry OS"
+      ],
+      "en": [
+        "Android",
+        "iOS",
+        "Windows Phone",
+        "BlackBerry OS"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_24",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein Schwarzes Loch?",
+      "en": "What is a black hole?"
+    },
+    "options": {
+      "de": [
+        "Ein Bereich im Weltraum mit extrem starker Gravitation",
+        "Ein Stern am Ende seines Lebenszyklus",
+        "Eine Galaxie",
+        "Ein Planet"
+      ],
+      "en": [
+        "A region in space with extremely strong gravity",
+        "A star at the end of its life cycle",
+        "A galaxy",
+        "A planet"
+      ]
+    }
+  },
+  {
+    "id": "wissenschaft_technik_25",
+    "cat": "Wissenschaft & Technik",
+    "correct": 0,
+    "text": {
+      "de": "Welches ist das am häufigsten verwendete Programmiersprache für Webentwicklung?",
+      "en": "Which is the most commonly used programming language for web development?"
+    },
+    "options": {
+      "de": [
+        "JavaScript",
+        "Python",
+        "Java",
+        "C++"
+      ],
+      "en": [
+        "JavaScript",
+        "Python",
+        "Java",
+        "C++"
+      ]
+    }
   }
 ]
