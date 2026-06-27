@@ -20098,5 +20098,2305 @@
         "Artist D 99"
       ]
     }
+  },
+  {
+    "id": "allgemeinwissen_0",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 0?",
+      "en": "What is the capital of country 0?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 0",
+        "Stadt B 0",
+        "Stadt C 0",
+        "Stadt D 0"
+      ],
+      "en": [
+        "City A 0",
+        "City B 0",
+        "City C 0",
+        "City D 0"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_1",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 1?",
+      "en": "What is the capital of country 1?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 1",
+        "Stadt B 1",
+        "Stadt C 1",
+        "Stadt D 1"
+      ],
+      "en": [
+        "City A 1",
+        "City B 1",
+        "City C 1",
+        "City D 1"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_2",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 2?",
+      "en": "What is the capital of country 2?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 2",
+        "Stadt B 2",
+        "Stadt C 2",
+        "Stadt D 2"
+      ],
+      "en": [
+        "City A 2",
+        "City B 2",
+        "City C 2",
+        "City D 2"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_3",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 3?",
+      "en": "What is the capital of country 3?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 3",
+        "Stadt B 3",
+        "Stadt C 3",
+        "Stadt D 3"
+      ],
+      "en": [
+        "City A 3",
+        "City B 3",
+        "City C 3",
+        "City D 3"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_4",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 4?",
+      "en": "What is the capital of country 4?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 4",
+        "Stadt B 4",
+        "Stadt C 4",
+        "Stadt D 4"
+      ],
+      "en": [
+        "City A 4",
+        "City B 4",
+        "City C 4",
+        "City D 4"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_5",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 5?",
+      "en": "What is the capital of country 5?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 5",
+        "Stadt B 5",
+        "Stadt C 5",
+        "Stadt D 5"
+      ],
+      "en": [
+        "City A 5",
+        "City B 5",
+        "City C 5",
+        "City D 5"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_6",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 6?",
+      "en": "What is the capital of country 6?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 6",
+        "Stadt B 6",
+        "Stadt C 6",
+        "Stadt D 6"
+      ],
+      "en": [
+        "City A 6",
+        "City B 6",
+        "City C 6",
+        "City D 6"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_7",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 7?",
+      "en": "What is the capital of country 7?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 7",
+        "Stadt B 7",
+        "Stadt C 7",
+        "Stadt D 7"
+      ],
+      "en": [
+        "City A 7",
+        "City B 7",
+        "City C 7",
+        "City D 7"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_8",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 8?",
+      "en": "What is the capital of country 8?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 8",
+        "Stadt B 8",
+        "Stadt C 8",
+        "Stadt D 8"
+      ],
+      "en": [
+        "City A 8",
+        "City B 8",
+        "City C 8",
+        "City D 8"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_9",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 9?",
+      "en": "What is the capital of country 9?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 9",
+        "Stadt B 9",
+        "Stadt C 9",
+        "Stadt D 9"
+      ],
+      "en": [
+        "City A 9",
+        "City B 9",
+        "City C 9",
+        "City D 9"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_10",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 10?",
+      "en": "What is the capital of country 10?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 10",
+        "Stadt B 10",
+        "Stadt C 10",
+        "Stadt D 10"
+      ],
+      "en": [
+        "City A 10",
+        "City B 10",
+        "City C 10",
+        "City D 10"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_11",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 11?",
+      "en": "What is the capital of country 11?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 11",
+        "Stadt B 11",
+        "Stadt C 11",
+        "Stadt D 11"
+      ],
+      "en": [
+        "City A 11",
+        "City B 11",
+        "City C 11",
+        "City D 11"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_12",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 12?",
+      "en": "What is the capital of country 12?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 12",
+        "Stadt B 12",
+        "Stadt C 12",
+        "Stadt D 12"
+      ],
+      "en": [
+        "City A 12",
+        "City B 12",
+        "City C 12",
+        "City D 12"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_13",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 13?",
+      "en": "What is the capital of country 13?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 13",
+        "Stadt B 13",
+        "Stadt C 13",
+        "Stadt D 13"
+      ],
+      "en": [
+        "City A 13",
+        "City B 13",
+        "City C 13",
+        "City D 13"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_14",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 14?",
+      "en": "What is the capital of country 14?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 14",
+        "Stadt B 14",
+        "Stadt C 14",
+        "Stadt D 14"
+      ],
+      "en": [
+        "City A 14",
+        "City B 14",
+        "City C 14",
+        "City D 14"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_15",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 15?",
+      "en": "What is the capital of country 15?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 15",
+        "Stadt B 15",
+        "Stadt C 15",
+        "Stadt D 15"
+      ],
+      "en": [
+        "City A 15",
+        "City B 15",
+        "City C 15",
+        "City D 15"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_16",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 16?",
+      "en": "What is the capital of country 16?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 16",
+        "Stadt B 16",
+        "Stadt C 16",
+        "Stadt D 16"
+      ],
+      "en": [
+        "City A 16",
+        "City B 16",
+        "City C 16",
+        "City D 16"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_17",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 17?",
+      "en": "What is the capital of country 17?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 17",
+        "Stadt B 17",
+        "Stadt C 17",
+        "Stadt D 17"
+      ],
+      "en": [
+        "City A 17",
+        "City B 17",
+        "City C 17",
+        "City D 17"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_18",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 18?",
+      "en": "What is the capital of country 18?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 18",
+        "Stadt B 18",
+        "Stadt C 18",
+        "Stadt D 18"
+      ],
+      "en": [
+        "City A 18",
+        "City B 18",
+        "City C 18",
+        "City D 18"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_19",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 19?",
+      "en": "What is the capital of country 19?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 19",
+        "Stadt B 19",
+        "Stadt C 19",
+        "Stadt D 19"
+      ],
+      "en": [
+        "City A 19",
+        "City B 19",
+        "City C 19",
+        "City D 19"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_20",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 20?",
+      "en": "What is the capital of country 20?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 20",
+        "Stadt B 20",
+        "Stadt C 20",
+        "Stadt D 20"
+      ],
+      "en": [
+        "City A 20",
+        "City B 20",
+        "City C 20",
+        "City D 20"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_21",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 21?",
+      "en": "What is the capital of country 21?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 21",
+        "Stadt B 21",
+        "Stadt C 21",
+        "Stadt D 21"
+      ],
+      "en": [
+        "City A 21",
+        "City B 21",
+        "City C 21",
+        "City D 21"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_22",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 22?",
+      "en": "What is the capital of country 22?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 22",
+        "Stadt B 22",
+        "Stadt C 22",
+        "Stadt D 22"
+      ],
+      "en": [
+        "City A 22",
+        "City B 22",
+        "City C 22",
+        "City D 22"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_23",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 23?",
+      "en": "What is the capital of country 23?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 23",
+        "Stadt B 23",
+        "Stadt C 23",
+        "Stadt D 23"
+      ],
+      "en": [
+        "City A 23",
+        "City B 23",
+        "City C 23",
+        "City D 23"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_24",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 24?",
+      "en": "What is the capital of country 24?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 24",
+        "Stadt B 24",
+        "Stadt C 24",
+        "Stadt D 24"
+      ],
+      "en": [
+        "City A 24",
+        "City B 24",
+        "City C 24",
+        "City D 24"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_25",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 25?",
+      "en": "What is the capital of country 25?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 25",
+        "Stadt B 25",
+        "Stadt C 25",
+        "Stadt D 25"
+      ],
+      "en": [
+        "City A 25",
+        "City B 25",
+        "City C 25",
+        "City D 25"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_26",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 26?",
+      "en": "What is the capital of country 26?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 26",
+        "Stadt B 26",
+        "Stadt C 26",
+        "Stadt D 26"
+      ],
+      "en": [
+        "City A 26",
+        "City B 26",
+        "City C 26",
+        "City D 26"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_27",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 27?",
+      "en": "What is the capital of country 27?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 27",
+        "Stadt B 27",
+        "Stadt C 27",
+        "Stadt D 27"
+      ],
+      "en": [
+        "City A 27",
+        "City B 27",
+        "City C 27",
+        "City D 27"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_28",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 28?",
+      "en": "What is the capital of country 28?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 28",
+        "Stadt B 28",
+        "Stadt C 28",
+        "Stadt D 28"
+      ],
+      "en": [
+        "City A 28",
+        "City B 28",
+        "City C 28",
+        "City D 28"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_29",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 29?",
+      "en": "What is the capital of country 29?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 29",
+        "Stadt B 29",
+        "Stadt C 29",
+        "Stadt D 29"
+      ],
+      "en": [
+        "City A 29",
+        "City B 29",
+        "City C 29",
+        "City D 29"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_30",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 30?",
+      "en": "What is the capital of country 30?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 30",
+        "Stadt B 30",
+        "Stadt C 30",
+        "Stadt D 30"
+      ],
+      "en": [
+        "City A 30",
+        "City B 30",
+        "City C 30",
+        "City D 30"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_31",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 31?",
+      "en": "What is the capital of country 31?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 31",
+        "Stadt B 31",
+        "Stadt C 31",
+        "Stadt D 31"
+      ],
+      "en": [
+        "City A 31",
+        "City B 31",
+        "City C 31",
+        "City D 31"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_32",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 32?",
+      "en": "What is the capital of country 32?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 32",
+        "Stadt B 32",
+        "Stadt C 32",
+        "Stadt D 32"
+      ],
+      "en": [
+        "City A 32",
+        "City B 32",
+        "City C 32",
+        "City D 32"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_33",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 33?",
+      "en": "What is the capital of country 33?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 33",
+        "Stadt B 33",
+        "Stadt C 33",
+        "Stadt D 33"
+      ],
+      "en": [
+        "City A 33",
+        "City B 33",
+        "City C 33",
+        "City D 33"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_34",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 34?",
+      "en": "What is the capital of country 34?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 34",
+        "Stadt B 34",
+        "Stadt C 34",
+        "Stadt D 34"
+      ],
+      "en": [
+        "City A 34",
+        "City B 34",
+        "City C 34",
+        "City D 34"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_35",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 35?",
+      "en": "What is the capital of country 35?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 35",
+        "Stadt B 35",
+        "Stadt C 35",
+        "Stadt D 35"
+      ],
+      "en": [
+        "City A 35",
+        "City B 35",
+        "City C 35",
+        "City D 35"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_36",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 36?",
+      "en": "What is the capital of country 36?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 36",
+        "Stadt B 36",
+        "Stadt C 36",
+        "Stadt D 36"
+      ],
+      "en": [
+        "City A 36",
+        "City B 36",
+        "City C 36",
+        "City D 36"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_37",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 37?",
+      "en": "What is the capital of country 37?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 37",
+        "Stadt B 37",
+        "Stadt C 37",
+        "Stadt D 37"
+      ],
+      "en": [
+        "City A 37",
+        "City B 37",
+        "City C 37",
+        "City D 37"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_38",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 38?",
+      "en": "What is the capital of country 38?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 38",
+        "Stadt B 38",
+        "Stadt C 38",
+        "Stadt D 38"
+      ],
+      "en": [
+        "City A 38",
+        "City B 38",
+        "City C 38",
+        "City D 38"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_39",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 39?",
+      "en": "What is the capital of country 39?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 39",
+        "Stadt B 39",
+        "Stadt C 39",
+        "Stadt D 39"
+      ],
+      "en": [
+        "City A 39",
+        "City B 39",
+        "City C 39",
+        "City D 39"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_40",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 40?",
+      "en": "What is the capital of country 40?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 40",
+        "Stadt B 40",
+        "Stadt C 40",
+        "Stadt D 40"
+      ],
+      "en": [
+        "City A 40",
+        "City B 40",
+        "City C 40",
+        "City D 40"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_41",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 41?",
+      "en": "What is the capital of country 41?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 41",
+        "Stadt B 41",
+        "Stadt C 41",
+        "Stadt D 41"
+      ],
+      "en": [
+        "City A 41",
+        "City B 41",
+        "City C 41",
+        "City D 41"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_42",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 42?",
+      "en": "What is the capital of country 42?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 42",
+        "Stadt B 42",
+        "Stadt C 42",
+        "Stadt D 42"
+      ],
+      "en": [
+        "City A 42",
+        "City B 42",
+        "City C 42",
+        "City D 42"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_43",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 43?",
+      "en": "What is the capital of country 43?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 43",
+        "Stadt B 43",
+        "Stadt C 43",
+        "Stadt D 43"
+      ],
+      "en": [
+        "City A 43",
+        "City B 43",
+        "City C 43",
+        "City D 43"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_44",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 44?",
+      "en": "What is the capital of country 44?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 44",
+        "Stadt B 44",
+        "Stadt C 44",
+        "Stadt D 44"
+      ],
+      "en": [
+        "City A 44",
+        "City B 44",
+        "City C 44",
+        "City D 44"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_45",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 45?",
+      "en": "What is the capital of country 45?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 45",
+        "Stadt B 45",
+        "Stadt C 45",
+        "Stadt D 45"
+      ],
+      "en": [
+        "City A 45",
+        "City B 45",
+        "City C 45",
+        "City D 45"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_46",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 46?",
+      "en": "What is the capital of country 46?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 46",
+        "Stadt B 46",
+        "Stadt C 46",
+        "Stadt D 46"
+      ],
+      "en": [
+        "City A 46",
+        "City B 46",
+        "City C 46",
+        "City D 46"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_47",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 47?",
+      "en": "What is the capital of country 47?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 47",
+        "Stadt B 47",
+        "Stadt C 47",
+        "Stadt D 47"
+      ],
+      "en": [
+        "City A 47",
+        "City B 47",
+        "City C 47",
+        "City D 47"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_48",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 48?",
+      "en": "What is the capital of country 48?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 48",
+        "Stadt B 48",
+        "Stadt C 48",
+        "Stadt D 48"
+      ],
+      "en": [
+        "City A 48",
+        "City B 48",
+        "City C 48",
+        "City D 48"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_49",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 49?",
+      "en": "What is the capital of country 49?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 49",
+        "Stadt B 49",
+        "Stadt C 49",
+        "Stadt D 49"
+      ],
+      "en": [
+        "City A 49",
+        "City B 49",
+        "City C 49",
+        "City D 49"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_50",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 0?",
+      "en": "What is the capital of country 0?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 50",
+        "Stadt B 50",
+        "Stadt C 50",
+        "Stadt D 50"
+      ],
+      "en": [
+        "City A 50",
+        "City B 50",
+        "City C 50",
+        "City D 50"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_51",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 1?",
+      "en": "What is the capital of country 1?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 51",
+        "Stadt B 51",
+        "Stadt C 51",
+        "Stadt D 51"
+      ],
+      "en": [
+        "City A 51",
+        "City B 51",
+        "City C 51",
+        "City D 51"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_52",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 2?",
+      "en": "What is the capital of country 2?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 52",
+        "Stadt B 52",
+        "Stadt C 52",
+        "Stadt D 52"
+      ],
+      "en": [
+        "City A 52",
+        "City B 52",
+        "City C 52",
+        "City D 52"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_53",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 3?",
+      "en": "What is the capital of country 3?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 53",
+        "Stadt B 53",
+        "Stadt C 53",
+        "Stadt D 53"
+      ],
+      "en": [
+        "City A 53",
+        "City B 53",
+        "City C 53",
+        "City D 53"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_54",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 4?",
+      "en": "What is the capital of country 4?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 54",
+        "Stadt B 54",
+        "Stadt C 54",
+        "Stadt D 54"
+      ],
+      "en": [
+        "City A 54",
+        "City B 54",
+        "City C 54",
+        "City D 54"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_55",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 5?",
+      "en": "What is the capital of country 5?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 55",
+        "Stadt B 55",
+        "Stadt C 55",
+        "Stadt D 55"
+      ],
+      "en": [
+        "City A 55",
+        "City B 55",
+        "City C 55",
+        "City D 55"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_56",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 6?",
+      "en": "What is the capital of country 6?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 56",
+        "Stadt B 56",
+        "Stadt C 56",
+        "Stadt D 56"
+      ],
+      "en": [
+        "City A 56",
+        "City B 56",
+        "City C 56",
+        "City D 56"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_57",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 7?",
+      "en": "What is the capital of country 7?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 57",
+        "Stadt B 57",
+        "Stadt C 57",
+        "Stadt D 57"
+      ],
+      "en": [
+        "City A 57",
+        "City B 57",
+        "City C 57",
+        "City D 57"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_58",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 8?",
+      "en": "What is the capital of country 8?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 58",
+        "Stadt B 58",
+        "Stadt C 58",
+        "Stadt D 58"
+      ],
+      "en": [
+        "City A 58",
+        "City B 58",
+        "City C 58",
+        "City D 58"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_59",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 9?",
+      "en": "What is the capital of country 9?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 59",
+        "Stadt B 59",
+        "Stadt C 59",
+        "Stadt D 59"
+      ],
+      "en": [
+        "City A 59",
+        "City B 59",
+        "City C 59",
+        "City D 59"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_60",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 10?",
+      "en": "What is the capital of country 10?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 60",
+        "Stadt B 60",
+        "Stadt C 60",
+        "Stadt D 60"
+      ],
+      "en": [
+        "City A 60",
+        "City B 60",
+        "City C 60",
+        "City D 60"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_61",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 11?",
+      "en": "What is the capital of country 11?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 61",
+        "Stadt B 61",
+        "Stadt C 61",
+        "Stadt D 61"
+      ],
+      "en": [
+        "City A 61",
+        "City B 61",
+        "City C 61",
+        "City D 61"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_62",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 12?",
+      "en": "What is the capital of country 12?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 62",
+        "Stadt B 62",
+        "Stadt C 62",
+        "Stadt D 62"
+      ],
+      "en": [
+        "City A 62",
+        "City B 62",
+        "City C 62",
+        "City D 62"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_63",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 13?",
+      "en": "What is the capital of country 13?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 63",
+        "Stadt B 63",
+        "Stadt C 63",
+        "Stadt D 63"
+      ],
+      "en": [
+        "City A 63",
+        "City B 63",
+        "City C 63",
+        "City D 63"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_64",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 14?",
+      "en": "What is the capital of country 14?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 64",
+        "Stadt B 64",
+        "Stadt C 64",
+        "Stadt D 64"
+      ],
+      "en": [
+        "City A 64",
+        "City B 64",
+        "City C 64",
+        "City D 64"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_65",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 15?",
+      "en": "What is the capital of country 15?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 65",
+        "Stadt B 65",
+        "Stadt C 65",
+        "Stadt D 65"
+      ],
+      "en": [
+        "City A 65",
+        "City B 65",
+        "City C 65",
+        "City D 65"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_66",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 16?",
+      "en": "What is the capital of country 16?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 66",
+        "Stadt B 66",
+        "Stadt C 66",
+        "Stadt D 66"
+      ],
+      "en": [
+        "City A 66",
+        "City B 66",
+        "City C 66",
+        "City D 66"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_67",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 17?",
+      "en": "What is the capital of country 17?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 67",
+        "Stadt B 67",
+        "Stadt C 67",
+        "Stadt D 67"
+      ],
+      "en": [
+        "City A 67",
+        "City B 67",
+        "City C 67",
+        "City D 67"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_68",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 18?",
+      "en": "What is the capital of country 18?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 68",
+        "Stadt B 68",
+        "Stadt C 68",
+        "Stadt D 68"
+      ],
+      "en": [
+        "City A 68",
+        "City B 68",
+        "City C 68",
+        "City D 68"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_69",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 19?",
+      "en": "What is the capital of country 19?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 69",
+        "Stadt B 69",
+        "Stadt C 69",
+        "Stadt D 69"
+      ],
+      "en": [
+        "City A 69",
+        "City B 69",
+        "City C 69",
+        "City D 69"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_70",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 20?",
+      "en": "What is the capital of country 20?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 70",
+        "Stadt B 70",
+        "Stadt C 70",
+        "Stadt D 70"
+      ],
+      "en": [
+        "City A 70",
+        "City B 70",
+        "City C 70",
+        "City D 70"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_71",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 21?",
+      "en": "What is the capital of country 21?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 71",
+        "Stadt B 71",
+        "Stadt C 71",
+        "Stadt D 71"
+      ],
+      "en": [
+        "City A 71",
+        "City B 71",
+        "City C 71",
+        "City D 71"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_72",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 22?",
+      "en": "What is the capital of country 22?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 72",
+        "Stadt B 72",
+        "Stadt C 72",
+        "Stadt D 72"
+      ],
+      "en": [
+        "City A 72",
+        "City B 72",
+        "City C 72",
+        "City D 72"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_73",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 23?",
+      "en": "What is the capital of country 23?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 73",
+        "Stadt B 73",
+        "Stadt C 73",
+        "Stadt D 73"
+      ],
+      "en": [
+        "City A 73",
+        "City B 73",
+        "City C 73",
+        "City D 73"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_74",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 24?",
+      "en": "What is the capital of country 24?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 74",
+        "Stadt B 74",
+        "Stadt C 74",
+        "Stadt D 74"
+      ],
+      "en": [
+        "City A 74",
+        "City B 74",
+        "City C 74",
+        "City D 74"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_75",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 25?",
+      "en": "What is the capital of country 25?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 75",
+        "Stadt B 75",
+        "Stadt C 75",
+        "Stadt D 75"
+      ],
+      "en": [
+        "City A 75",
+        "City B 75",
+        "City C 75",
+        "City D 75"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_76",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 26?",
+      "en": "What is the capital of country 26?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 76",
+        "Stadt B 76",
+        "Stadt C 76",
+        "Stadt D 76"
+      ],
+      "en": [
+        "City A 76",
+        "City B 76",
+        "City C 76",
+        "City D 76"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_77",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 27?",
+      "en": "What is the capital of country 27?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 77",
+        "Stadt B 77",
+        "Stadt C 77",
+        "Stadt D 77"
+      ],
+      "en": [
+        "City A 77",
+        "City B 77",
+        "City C 77",
+        "City D 77"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_78",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 28?",
+      "en": "What is the capital of country 28?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 78",
+        "Stadt B 78",
+        "Stadt C 78",
+        "Stadt D 78"
+      ],
+      "en": [
+        "City A 78",
+        "City B 78",
+        "City C 78",
+        "City D 78"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_79",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 29?",
+      "en": "What is the capital of country 29?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 79",
+        "Stadt B 79",
+        "Stadt C 79",
+        "Stadt D 79"
+      ],
+      "en": [
+        "City A 79",
+        "City B 79",
+        "City C 79",
+        "City D 79"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_80",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 30?",
+      "en": "What is the capital of country 30?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 80",
+        "Stadt B 80",
+        "Stadt C 80",
+        "Stadt D 80"
+      ],
+      "en": [
+        "City A 80",
+        "City B 80",
+        "City C 80",
+        "City D 80"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_81",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 31?",
+      "en": "What is the capital of country 31?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 81",
+        "Stadt B 81",
+        "Stadt C 81",
+        "Stadt D 81"
+      ],
+      "en": [
+        "City A 81",
+        "City B 81",
+        "City C 81",
+        "City D 81"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_82",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 32?",
+      "en": "What is the capital of country 32?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 82",
+        "Stadt B 82",
+        "Stadt C 82",
+        "Stadt D 82"
+      ],
+      "en": [
+        "City A 82",
+        "City B 82",
+        "City C 82",
+        "City D 82"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_83",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 33?",
+      "en": "What is the capital of country 33?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 83",
+        "Stadt B 83",
+        "Stadt C 83",
+        "Stadt D 83"
+      ],
+      "en": [
+        "City A 83",
+        "City B 83",
+        "City C 83",
+        "City D 83"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_84",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 34?",
+      "en": "What is the capital of country 34?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 84",
+        "Stadt B 84",
+        "Stadt C 84",
+        "Stadt D 84"
+      ],
+      "en": [
+        "City A 84",
+        "City B 84",
+        "City C 84",
+        "City D 84"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_85",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 35?",
+      "en": "What is the capital of country 35?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 85",
+        "Stadt B 85",
+        "Stadt C 85",
+        "Stadt D 85"
+      ],
+      "en": [
+        "City A 85",
+        "City B 85",
+        "City C 85",
+        "City D 85"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_86",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 36?",
+      "en": "What is the capital of country 36?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 86",
+        "Stadt B 86",
+        "Stadt C 86",
+        "Stadt D 86"
+      ],
+      "en": [
+        "City A 86",
+        "City B 86",
+        "City C 86",
+        "City D 86"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_87",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 37?",
+      "en": "What is the capital of country 37?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 87",
+        "Stadt B 87",
+        "Stadt C 87",
+        "Stadt D 87"
+      ],
+      "en": [
+        "City A 87",
+        "City B 87",
+        "City C 87",
+        "City D 87"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_88",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 38?",
+      "en": "What is the capital of country 38?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 88",
+        "Stadt B 88",
+        "Stadt C 88",
+        "Stadt D 88"
+      ],
+      "en": [
+        "City A 88",
+        "City B 88",
+        "City C 88",
+        "City D 88"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_89",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 39?",
+      "en": "What is the capital of country 39?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 89",
+        "Stadt B 89",
+        "Stadt C 89",
+        "Stadt D 89"
+      ],
+      "en": [
+        "City A 89",
+        "City B 89",
+        "City C 89",
+        "City D 89"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_90",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 40?",
+      "en": "What is the capital of country 40?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 90",
+        "Stadt B 90",
+        "Stadt C 90",
+        "Stadt D 90"
+      ],
+      "en": [
+        "City A 90",
+        "City B 90",
+        "City C 90",
+        "City D 90"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_91",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 41?",
+      "en": "What is the capital of country 41?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 91",
+        "Stadt B 91",
+        "Stadt C 91",
+        "Stadt D 91"
+      ],
+      "en": [
+        "City A 91",
+        "City B 91",
+        "City C 91",
+        "City D 91"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_92",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 42?",
+      "en": "What is the capital of country 42?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 92",
+        "Stadt B 92",
+        "Stadt C 92",
+        "Stadt D 92"
+      ],
+      "en": [
+        "City A 92",
+        "City B 92",
+        "City C 92",
+        "City D 92"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_93",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 43?",
+      "en": "What is the capital of country 43?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 93",
+        "Stadt B 93",
+        "Stadt C 93",
+        "Stadt D 93"
+      ],
+      "en": [
+        "City A 93",
+        "City B 93",
+        "City C 93",
+        "City D 93"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_94",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 44?",
+      "en": "What is the capital of country 44?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 94",
+        "Stadt B 94",
+        "Stadt C 94",
+        "Stadt D 94"
+      ],
+      "en": [
+        "City A 94",
+        "City B 94",
+        "City C 94",
+        "City D 94"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_95",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 45?",
+      "en": "What is the capital of country 45?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 95",
+        "Stadt B 95",
+        "Stadt C 95",
+        "Stadt D 95"
+      ],
+      "en": [
+        "City A 95",
+        "City B 95",
+        "City C 95",
+        "City D 95"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_96",
+    "cat": "Allgemeinwissen",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 46?",
+      "en": "What is the capital of country 46?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 96",
+        "Stadt B 96",
+        "Stadt C 96",
+        "Stadt D 96"
+      ],
+      "en": [
+        "City A 96",
+        "City B 96",
+        "City C 96",
+        "City D 96"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_97",
+    "cat": "Allgemeinwissen",
+    "correct": 1,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 47?",
+      "en": "What is the capital of country 47?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 97",
+        "Stadt B 97",
+        "Stadt C 97",
+        "Stadt D 97"
+      ],
+      "en": [
+        "City A 97",
+        "City B 97",
+        "City C 97",
+        "City D 97"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_98",
+    "cat": "Allgemeinwissen",
+    "correct": 2,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 48?",
+      "en": "What is the capital of country 48?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 98",
+        "Stadt B 98",
+        "Stadt C 98",
+        "Stadt D 98"
+      ],
+      "en": [
+        "City A 98",
+        "City B 98",
+        "City C 98",
+        "City D 98"
+      ]
+    }
+  },
+  {
+    "id": "allgemeinwissen_99",
+    "cat": "Allgemeinwissen",
+    "correct": 3,
+    "text": {
+      "de": "Was ist die Hauptstadt von Land 49?",
+      "en": "What is the capital of country 49?"
+    },
+    "options": {
+      "de": [
+        "Stadt A 99",
+        "Stadt B 99",
+        "Stadt C 99",
+        "Stadt D 99"
+      ],
+      "en": [
+        "City A 99",
+        "City B 99",
+        "City C 99",
+        "City D 99"
+      ]
+    }
   }
 ]
