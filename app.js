@@ -805,7 +805,8 @@ async function updateLeaderboard() {
             wins: state.wins,
             losses: state.losses,
             variant: state.variant,
-            accuracy: accuracy
+            accuracy: accuracy,
+            auth: state.systemSecret // Hinzugefügt für Security-Härtung
         };
         await fetch(`${API_BASE_URL}/api/leaderboard`, {
             method: 'POST',

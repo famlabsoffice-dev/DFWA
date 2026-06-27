@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import rateLimit from 'express-rate-limit';
 import sqlite3 from 'sqlite3';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -16,6 +17,12 @@ app.use(helmet());
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 Minuten
+    max: 100 // Limit pro IP
+});
+app.use('/api/', limiter);
 app.use(express.static(join(__dirname, '..')));
 
 // Database setup
@@ -59,7 +66,12 @@ app.get('/api/leaderboard', (req, res) => {
 });
 
 app.post('/api/leaderboard', (req, res) => {
-    const { playerId, playerName, score, wins, losses, variant, accuracy } = req.body;
+    const { playerId, playerName, score, wins, losses, variant, accuracy, auth } = req.body;
+    
+    // Einfache Integritätsprüfung (Secret-basiert)
+    if (auth !== SYSTEM_SECRET) {
+        return res.status(403).json({ error: 'Unauthorized' });
+    }
     
     if (!playerId || !playerName) {
         return res.status(400).json({ error: 'Missing playerId or playerName' });

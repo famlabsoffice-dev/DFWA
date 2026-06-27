@@ -1,4 +1,4 @@
-const SW_VERSION = 'v1.0.1';
+const SW_VERSION = 'v1.0.2';
 const CACHE_NAME = `dfwa-cache-${SW_VERSION}`;
 
 const ASSETS = [
@@ -15,7 +15,8 @@ const ASSETS = [
     './assets/icons/icon-192.png',
     './assets/icons/icon-512.png',
     './assets/icons/icon-192-maskable.png',
-    './assets/icons/icon-512-maskable.png'
+    './assets/icons/icon-512-maskable.png',
+    './download.html'
 ];
 
 self.addEventListener('install', event => {
