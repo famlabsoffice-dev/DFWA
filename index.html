@@ -341,6 +341,7 @@
             state.playerName = document.getElementById("player-name").value.trim() || "GUEST";
             localStorage.setItem("dfwa_name", state.playerName);
             state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.streakMax = 0; state.correctAnswers = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge; state.isPaused = false; state.cheatsAttempted = false; state.pausedTimer = null;
+            document.getElementById('lives-display').innerText = state.lives;
             document.getElementById('resume-btn').style.display = 'none';
             state.usedComments = { correct: [], incorrect: [] };
 
@@ -626,6 +627,7 @@
             state.streak = 0;
             state.streakMax = 0;
             state.correctAnswers = 0;
+            state.lives = 3; // Reset lives for next round
             document.getElementById('lives-display').innerText = state.lives;
             document.getElementById('high-score').innerText = state.best;
             document.getElementById('hud-score').innerText = '0_PTS';
