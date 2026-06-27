@@ -21,7 +21,20 @@ app.use(express.json());
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 Minuten
-    max: 100 // Limit pro IP
+    max: 100, // Limit pro IP
+    handler: (req, res, next, options) => {
+        const logEntry = {
+            ip: req.ip,
+            path: req.originalUrl,
+            timestamp: new Date().toISOString(),
+            userAgent: req.get('User-Agent')
+        };
+        db.run(`INSERT INTO ratelimit_logs (ip, path, timestamp, userAgent) VALUES (?, ?, ?, ?)`,
+            [logEntry.ip, logEntry.path, logEntry.timestamp, logEntry.userAgent],
+            (err) => { if (err) console.error('Rate limit log error:', err.message); }
+        );
+        res.status(options.statusCode).send(options.message);
+    }
 });
 app.use('/api/', limiter);
 app.use(express.static(join(__dirname, '..')));
@@ -44,6 +57,13 @@ const db = new sqlite3.Database(dbPath, (err) => {
             variant TEXT,
             accuracy INTEGER,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )`);
+        db.run(`CREATE TABLE IF NOT EXISTS ratelimit_logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            ip TEXT,
+            path TEXT,
+            timestamp DATETIME,
+            userAgent TEXT
         )`);
         // Migration: Spalten hinzufügen falls sie fehlen
         db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, (err) => {});
@@ -128,6 +148,16 @@ app.post('/api/challenge/verify', (req, res) => {
     } catch (e) {
         res.status(400).json({ valid: false, error: 'MALFORMED_CODE' });
     }
+});
+
+app.get('/api/admin/ratelimit-logs', (req, res) => {
+    const { auth } = req.query;
+    if (auth !== SYSTEM_SECRET) return res.status(403).json({ error: 'Unauthorized' });
+
+    db.all(`SELECT * FROM ratelimit_logs ORDER BY timestamp DESC LIMIT 100`, [], (err, rows) => {
+        if (err) return res.status(500).json({ error: 'Database error' });
+        res.json(rows);
+    });
 });
 
 app.get('/api/analytics', (req, res) => {
