@@ -43,7 +43,27 @@
                 <h2 style="color:var(--warning); margin-bottom: 20px;">BATTLE_OVERRIDE</h2>
                 <input type="text" id="challenge-code-input" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ENTER_CHALLENGE_CODE">
                 <button class="option-btn battle-btn" onclick="startChallenge()">START_CHALLENGE</button>
+                <button class="option-btn" onclick="showLeaderboard()" style="border-color: var(--neon); color: var(--neon);">SERVER_ROOM</button>
                 <button class="option-btn" onclick="hideLobby()">BACK_TO_CORE</button>
+            </div>
+        </div>
+
+        <div id="leaderboard-screen" class="screen">
+            <div class="server-room-bg"></div>
+            <div class="ui-content-wrapper" style="z-index: 10;">
+                <h2 class="glitch-text" data-text="SERVER_ROOM_DATA">SERVER_ROOM_DATA</h2>
+                <div id="leaderboard-list" class="cyber-list">
+                    <div class="list-header">
+                        <span>RANK</span>
+                        <span>CODENAME</span>
+                        <span>SCORE</span>
+                        <span>W/L</span>
+                    </div>
+                    <div id="leaderboard-entries">
+                        <!-- Einträge werden dynamisch geladen -->
+                    </div>
+                </div>
+                <button class="option-btn" onclick="hideLeaderboard()">EXIT_SERVER_ROOM</button>
             </div>
         </div>
 

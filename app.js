@@ -494,7 +494,7 @@ async function submitScoreToLeaderboard() {
     }
 }
 
-function endGame() {
+async function endGame() {
     clearSession();
     clearInterval(state.timerInterval);
     const overlay = document.getElementById('modal-overlay');
@@ -505,9 +505,8 @@ function endGame() {
     document.getElementById('lives-display').innerText = state.lives;
     if (isNewBest) {
         state.best = state.score;
-        saveSecure('dfwa_best', state.best);
+        await saveSecure('dfwa_best', state.best);
         document.getElementById('high-score').innerText = state.best;
-        submitScoreToLeaderboard();
     }
 
     overlay.style.display = 'flex';
@@ -521,8 +520,8 @@ function endGame() {
         title.style.color = win ? 'var(--neon)' : 'var(--error)';
         title.innerText = win ? "VICTORY" : "DEFEAT";
         text.innerText = `YOUR_SCORE: ${state.score}\nOPPONENT: ${state.opponentScore}\nDIFF: ${state.score - state.opponentScore > 0 ? '+' : ''}${state.score - state.opponentScore}`;
-        if (win) { state.wins++; saveSecure('dfwa_wins', state.wins); }
-        else { state.losses++; saveSecure('dfwa_losses', state.losses); }
+        if (win) { state.wins++; await saveSecure('dfwa_wins', state.wins); }
+        else { state.losses++; await saveSecure('dfwa_losses', state.losses); }
         document.getElementById('battle-stats').innerText = `W:${state.wins} / L:${state.losses}`;
     } else {
         title.style.color = isNewBest ? 'var(--warning)' : 'var(--neon)';
@@ -530,6 +529,9 @@ function endGame() {
         const accuracy = state.questionCount > 0 ? Math.round((state.correctAnswers / state.questionCount) * 100) : 0;
         text.innerText = `FINAL_SCORE: ${state.score}\nPEAK_DATA: ${state.best}\nSTREAK_MAX: ${state.streakMax}\nACCURACY: ${accuracy}%`;
     }
+    
+    // Sync mit Server
+    await updateLeaderboard();
 }
 
 function getComment(type) {
@@ -770,3 +772,59 @@ if ('serviceWorker' in navigator) {
         }
     });
 }
+
+// Leaderboard Server Logic
+async function updateLeaderboard() {
+    try {
+        const payload = {
+            playerId: state.playerId,
+            playerName: state.playerName,
+            score: state.score,
+            wins: state.wins,
+            losses: state.losses
+        };
+        await fetch(`${API_BASE_URL}/api/leaderboard`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+    } catch (e) {
+        console.warn('Leaderboard update failed (offline mode)');
+    }
+}
+
+async function showLeaderboard() {
+    document.getElementById('battle-lobby').classList.remove('active');
+    document.getElementById('leaderboard-screen').classList.add('active');
+    
+    const entriesDiv = document.getElementById('leaderboard-entries');
+    entriesDiv.innerHTML = '<div style="padding:20px;text-align:center;">CONNECTING_TO_SERVER...</div>';
+    
+    try {
+        const res = await fetch(`${API_BASE_URL}/api/leaderboard?limit=20`);
+        if (!res.ok) throw new Error();
+        const data = await res.json();
+        
+        entriesDiv.innerHTML = '';
+        data.forEach((entry, index) => {
+            const row = document.createElement('div');
+            row.className = 'leaderboard-entry';
+            row.innerHTML = `
+                <span>#${index + 1}</span>
+                <span>${entry.playerName}</span>
+                <span>${entry.score}</span>
+                <span>${entry.wins}/${entry.losses}</span>
+            `;
+            entriesDiv.appendChild(row);
+        });
+    } catch (e) {
+        entriesDiv.innerHTML = '<div style="padding:20px;text-align:center;color:var(--error);">SERVER_UNAVAILABLE</div>';
+    }
+}
+
+function hideLeaderboard() {
+    document.getElementById('leaderboard-screen').classList.remove('active');
+    document.getElementById('battle-lobby').classList.add('active');
+}
+
+
