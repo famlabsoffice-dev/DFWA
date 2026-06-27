@@ -468,6 +468,27 @@
             startTimer();
         }
 
+        async function submitScoreToLeaderboard() {
+            try {
+                const payload = {
+                    playerName: state.playerName,
+                    playerId: state.playerId,
+                    score: state.score,
+                    accuracy: state.questionCount > 0 ? Math.round((state.correctAnswers / state.questionCount) * 100) : 0,
+                    streakMax: state.streakMax,
+                    timestamp: new Date().toISOString()
+                };
+                const res = await fetch('https://api.dfwa.io/leaderboard/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (res.ok) console.log('Score submitted to leaderboard');
+            } catch (e) {
+                console.log('Leaderboard submission failed (offline mode)');
+            }
+        }
+
         function endGame() {
             clearInterval(state.timerInterval);
             const overlay = document.getElementById('modal-overlay');
@@ -480,6 +501,7 @@
                 state.best = state.score;
                 localStorage.setItem('dfwa_best', state.best);
                 document.getElementById('high-score').innerText = state.best;
+                submitScoreToLeaderboard();
             }
 
             overlay.style.display = 'flex';
@@ -617,6 +639,28 @@
             }
         });
 
+        async function fetchLeaderboard() {
+            try {
+                const res = await fetch('https://api.dfwa.io/leaderboard/top?limit=10');
+                if (res.ok) {
+                    const data = await res.json();
+                    displayLeaderboard(data);
+                }
+            } catch (e) {
+                console.log('Leaderboard fetch failed (offline mode)');
+            }
+        }
+
+        function displayLeaderboard(scores) {
+            let lb = '<div style="font-size: 0.8rem; text-align: left; margin-top: 10px; max-height: 200px; overflow-y: auto;">';
+            scores.forEach((entry, idx) => {
+                lb += `<div>${idx + 1}. ${entry.playerName}: ${entry.score}pts</div>`;
+            });
+            lb += '</div>';
+            const text = document.getElementById('modal-text');
+            if (text) text.innerHTML += lb;
+        }
+
         function closeSystem() {
             document.getElementById('modal-overlay').style.display = 'none';
             document.getElementById('modal-title').style.color = 'var(--warning)';
@@ -632,6 +676,7 @@
             document.getElementById('high-score').innerText = state.best;
             document.getElementById('hud-score').innerText = '0_PTS';
             document.getElementById('hud-streak').style.display = 'none';
+            fetchLeaderboard();
         }
 
         if ('serviceWorker' in navigator) {
