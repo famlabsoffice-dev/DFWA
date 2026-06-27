@@ -13238,5 +13238,580 @@
         "Spain"
       ]
     }
+  },
+  {
+    "id": "fussball_new_0",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2022?",
+      "en": "Which country won the FIFA World Cup in 2022?"
+    },
+    "options": {
+      "de": [
+        "Argentinien",
+        "Frankreich",
+        "Brasilien",
+        "Deutschland"
+      ],
+      "en": [
+        "Argentina",
+        "France",
+        "Brazil",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_1",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie oft hat der FC Bayern München die UEFA Champions League gewonnen?",
+      "en": "How many times has FC Bayern Munich won the UEFA Champions League?"
+    },
+    "options": {
+      "de": [
+        "6",
+        "5",
+        "7",
+        "4"
+      ],
+      "en": [
+        "6",
+        "5",
+        "7",
+        "4"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_2",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordtorschütze der deutschen Fußball-Nationalmannschaft?",
+      "en": "Who is the all-time leading goal scorer for the German national football team?"
+    },
+    "options": {
+      "de": [
+        "Miroslav Klose",
+        "Gerd Müller",
+        "Lukas Podolski",
+        "Jürgen Klinsmann"
+      ],
+      "en": [
+        "Miroslav Klose",
+        "Gerd Müller",
+        "Lukas Podolski",
+        "Jürgen Klinsmann"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_3",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "In welchem Land fand die Fußball-Weltmeisterschaft 2018 statt?",
+      "en": "In which country was the 2018 FIFA World Cup held?"
+    },
+    "options": {
+      "de": [
+        "Russland",
+        "Brasilien",
+        "Südafrika",
+        "Deutschland"
+      ],
+      "en": [
+        "Russia",
+        "Brazil",
+        "South Africa",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_4",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für den 'Hand Gottes'-Moment bei der WM 1986?",
+      "en": "Which player is famous for the 'Hand of God' moment at the 1986 World Cup?"
+    },
+    "options": {
+      "de": [
+        "Diego Maradona",
+        "Pelé",
+        "Lionel Messi",
+        "Cristiano Ronaldo"
+      ],
+      "en": [
+        "Diego Maradona",
+        "Pelé",
+        "Lionel Messi",
+        "Cristiano Ronaldo"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_5",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die erste UEFA Champions League (damals Europapokal der Landesmeister)?",
+      "en": "Which club won the first UEFA Champions League (then European Cup)?"
+    },
+    "options": {
+      "de": [
+        "Real Madrid",
+        "AC Mailand",
+        "FC Liverpool",
+        "Ajax Amsterdam"
+      ],
+      "en": [
+        "Real Madrid",
+        "AC Milan",
+        "Liverpool FC",
+        "Ajax Amsterdam"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_6",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie lange dauert ein Fußballspiel regulär (ohne Nachspielzeit)?",
+      "en": "How long does a regular football (soccer) match last (excluding injury time)?"
+    },
+    "options": {
+      "de": [
+        "90 Minuten",
+        "80 Minuten",
+        "100 Minuten",
+        "120 Minuten"
+      ],
+      "en": [
+        "90 minutes",
+        "80 minutes",
+        "100 minutes",
+        "120 minutes"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_7",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher deutsche Fußballspieler ist auch als 'Kaiser' bekannt?",
+      "en": "Which German football player is also known as 'Der Kaiser'?"
+    },
+    "options": {
+      "de": [
+        "Franz Beckenbauer",
+        "Gerd Müller",
+        "Uwe Seeler",
+        "Lothar Matthäus"
+      ],
+      "en": [
+        "Franz Beckenbauer",
+        "Gerd Müller",
+        "Uwe Seeler",
+        "Lothar Matthäus"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_8",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele gelbe Karten führen in den meisten Ligen zu einem Platzverweis?",
+      "en": "How many yellow cards typically lead to a red card in most leagues?"
+    },
+    "options": {
+      "de": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "en": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_9",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Fußballverein trägt seine Heimspiele im Camp Nou aus?",
+      "en": "Which football club plays its home matches at Camp Nou?"
+    },
+    "options": {
+      "de": [
+        "FC Barcelona",
+        "Real Madrid",
+        "Atlético Madrid",
+        "FC Valencia"
+      ],
+      "en": [
+        "FC Barcelona",
+        "Real Madrid",
+        "Atlético Madrid",
+        "Valencia CF"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_10",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der aktuelle Trainer der deutschen Fußball-Nationalmannschaft (Stand 2024)?",
+      "en": "Who is the current coach of the German national football team (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Julian Nagelsmann",
+        "Hansi Flick",
+        "Joachim Löw",
+        "Rudi Völler"
+      ],
+      "en": [
+        "Julian Nagelsmann",
+        "Hansi Flick",
+        "Joachim Löw",
+        "Rudi Völler"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_11",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler hat die meisten Tore in der Geschichte der UEFA Champions League erzielt?",
+      "en": "Which player has scored the most goals in the history of the UEFA Champions League?"
+    },
+    "options": {
+      "de": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ],
+      "en": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_12",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was bedeutet die Abkürzung VAR im Fußball?",
+      "en": "What does the abbreviation VAR stand for in football?"
+    },
+    "options": {
+      "de": [
+        "Video-Assistent-Referee",
+        "Very Accurate Referee",
+        "Visual Aid Review",
+        "Verdict After Review"
+      ],
+      "en": [
+        "Video Assistant Referee",
+        "Very Accurate Referee",
+        "Visual Aid Review",
+        "Verdict After Review"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_13",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler gewann 2023 den Ballon d'Or?",
+      "en": "Which player won the Ballon d'Or in 2023?"
+    },
+    "options": {
+      "de": [
+        "Lionel Messi",
+        "Erling Haaland",
+        "Kylian Mbappé",
+        "Karim Benzema"
+      ],
+      "en": [
+        "Lionel Messi",
+        "Erling Haaland",
+        "Kylian Mbappé",
+        "Karim Benzema"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_14",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie oft wurde Brasilien Fußball-Weltmeister?",
+      "en": "How many times has Brazil won the FIFA World Cup?"
+    },
+    "options": {
+      "de": [
+        "5",
+        "4",
+        "6",
+        "3"
+      ],
+      "en": [
+        "5",
+        "4",
+        "6",
+        "3"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_15",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein ist Rekordmeister in der deutschen Bundesliga?",
+      "en": "Which club is the record champion in the German Bundesliga?"
+    },
+    "options": {
+      "de": [
+        "FC Bayern München",
+        "Borussia Dortmund",
+        "Hamburger SV",
+        "Werder Bremen"
+      ],
+      "en": [
+        "FC Bayern Munich",
+        "Borussia Dortmund",
+        "Hamburger SV",
+        "Werder Bremen"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_16",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Hattrick' im Fußball?",
+      "en": "What is a 'hat-trick' in football?"
+    },
+    "options": {
+      "de": [
+        "Drei Tore eines Spielers in einem Spiel",
+        "Drei Vorlagen eines Spielers in einem Spiel",
+        "Drei Siege in Folge",
+        "Drei gehaltene Elfmeter"
+      ],
+      "en": [
+        "Three goals by one player in a single match",
+        "Three assists by one player in a single match",
+        "Three consecutive wins",
+        "Three saved penalties"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_17",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Stadion ist als 'The Theatre of Dreams' bekannt?",
+      "en": "Which stadium is known as 'The Theatre of Dreams'?"
+    },
+    "options": {
+      "de": [
+        "Old Trafford",
+        "Wembley Stadium",
+        "Anfield",
+        "Santiago Bernabéu"
+      ],
+      "en": [
+        "Old Trafford",
+        "Wembley Stadium",
+        "Anfield",
+        "Santiago Bernabéu"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_18",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Präsident der FIFA (Stand 2024)?",
+      "en": "Who is the president of FIFA (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Gianni Infantino",
+        "Sepp Blatter",
+        "Michel Platini",
+        "João Havelange"
+      ],
+      "en": [
+        "Gianni Infantino",
+        "Sepp Blatter",
+        "Michel Platini",
+        "João Havelange"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_19",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die erste Fußball-Weltmeisterschaft 1930?",
+      "en": "Which country won the first FIFA World Cup in 1930?"
+    },
+    "options": {
+      "de": [
+        "Uruguay",
+        "Brasilien",
+        "Italien",
+        "Deutschland"
+      ],
+      "en": [
+        "Uruguay",
+        "Brazil",
+        "Italy",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_20",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie heißt der Pokal, der dem Sieger der UEFA Champions League überreicht wird?",
+      "en": "What is the name of the trophy awarded to the winner of the UEFA Champions League?"
+    },
+    "options": {
+      "de": [
+        "Henkelpott",
+        "Jules-Rimet-Pokal",
+        "Weltpokal",
+        "Europapokal"
+      ],
+      "en": [
+        "The Big Ears (European Champion Clubs' Cup)",
+        "Jules Rimet Trophy",
+        "Intercontinental Cup",
+        "European Cup"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_21",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Spieler hält den Rekord für die meisten Tore in einer einzelnen Bundesliga-Saison?",
+      "en": "Which player holds the record for most goals in a single Bundesliga season?"
+    },
+    "options": {
+      "de": [
+        "Robert Lewandowski",
+        "Gerd Müller",
+        "Erling Haaland",
+        "Pierre-Emerick Aubameyang"
+      ],
+      "en": [
+        "Robert Lewandowski",
+        "Gerd Müller",
+        "Erling Haaland",
+        "Pierre-Emerick Aubameyang"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_22",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Elfmeter' im Fußball?",
+      "en": "What is a 'penalty kick' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein direkter Freistoß aus 11 Metern Entfernung zum Tor",
+        "Ein indirekter Freistoß",
+        "Ein Eckball",
+        "Ein Einwurf"
+      ],
+      "en": [
+        "A direct free kick taken from 11 meters (12 yards) from the goal",
+        "An indirect free kick",
+        "A corner kick",
+        "A throw-in"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_23",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Welches Land ist Rekord-Europameister im Fußball?",
+      "en": "Which country is the record European champion in football?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Spanien",
+        "Frankreich",
+        "Italien"
+      ],
+      "en": [
+        "Germany",
+        "Spain",
+        "France",
+        "Italy"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_24",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele Schiedsrichter sind bei einem professionellen Fußballspiel auf dem Feld?",
+      "en": "How many referees are on the field during a professional football match?"
+    },
+    "options": {
+      "de": [
+        "1 (Hauptschiedsrichter)",
+        "3 (Hauptschiedsrichter und zwei Assistenten)",
+        "4 (Hauptschiedsrichter, zwei Assistenten und vierter Offizieller)",
+        "2 (Hauptschiedsrichter und ein Assistent)"
+      ],
+      "en": [
+        "1 (main referee)",
+        "3 (main referee and two assistants)",
+        "4 (main referee, two assistants and fourth official)",
+        "2 (main referee and one assistant)"
+      ]
+    }
   }
 ]
