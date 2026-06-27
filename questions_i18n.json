@@ -14963,5 +14963,580 @@
         "Neymar"
       ]
     }
+  },
+  {
+    "id": "fussball_new_50",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist der Rekordtorschütze der UEFA Champions League?",
+      "en": "Which player is the all-time leading goalscorer in the UEFA Champions League?"
+    },
+    "options": {
+      "de": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ],
+      "en": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_51",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele Spieler sind in einer Mannschaft beim Hallenfußball (Futsal)?",
+      "en": "How many players are on a team in indoor football (futsal)?"
+    },
+    "options": {
+      "de": [
+        "5",
+        "7",
+        "11",
+        "6"
+      ],
+      "en": [
+        "5",
+        "7",
+        "11",
+        "6"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_52",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Europameisterschaft 2020 (ausgetragen 2021)?",
+      "en": "Which country won the UEFA European Championship in 2020 (played in 2021)?"
+    },
+    "options": {
+      "de": [
+        "Italien",
+        "England",
+        "Spanien",
+        "Portugal"
+      ],
+      "en": [
+        "Italy",
+        "England",
+        "Spain",
+        "Portugal"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_53",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Elfmeterpunkt' im Fußball?",
+      "en": "What is a 'penalty spot' in football?"
+    },
+    "options": {
+      "de": [
+        "Der Punkt, von dem ein Elfmeter geschossen wird",
+        "Der Mittelpunkt des Spielfelds",
+        "Der Punkt, an dem der Ball ins Aus geht",
+        "Der Punkt, an dem der Torwart steht"
+      ],
+      "en": [
+        "The spot from which a penalty kick is taken",
+        "The center of the field",
+        "The point where the ball goes out of bounds",
+        "The spot where the goalkeeper stands"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_54",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Fußballverein ist bekannt für seine 'Gelbe Wand'?",
+      "en": "Which football club is known for its 'Yellow Wall'?"
+    },
+    "options": {
+      "de": [
+        "Borussia Dortmund",
+        "FC Bayern München",
+        "Schalke 04",
+        "Hamburger SV"
+      ],
+      "en": [
+        "Borussia Dortmund",
+        "FC Bayern Munich",
+        "Schalke 04",
+        "Hamburger SV"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_55",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordspieler der deutschen Bundesliga nach Einsätzen?",
+      "en": "Who is the all-time record player in the German Bundesliga by appearances?"
+    },
+    "options": {
+      "de": [
+        "Charly Körbel",
+        "Sepp Maier",
+        "Oliver Kahn",
+        "Lothar Matthäus"
+      ],
+      "en": [
+        "Charly Körbel",
+        "Sepp Maier",
+        "Oliver Kahn",
+        "Lothar Matthäus"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_56",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Abstoß' im Fußball?",
+      "en": "What is a 'goal kick' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat und zuletzt von einem gegnerischen Spieler berührt wurde.",
+        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
+        "Eine Spielfortsetzung nach einem Foul.",
+        "Eine Spielfortsetzung nach einem Tor."
+      ],
+      "en": [
+        "A restart of play when the ball has crossed the goal line and was last touched by an opposing player.",
+        "A restart of play when the ball has crossed the sideline.",
+        "A restart of play after a foul.",
+        "A restart of play after a goal."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_57",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Weltmeisterschaft der Frauen 2023?",
+      "en": "Which country won the FIFA Women's World Cup in 2023?"
+    },
+    "options": {
+      "de": [
+        "Spanien",
+        "England",
+        "USA",
+        "Deutschland"
+      ],
+      "en": [
+        "Spain",
+        "England",
+        "USA",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_58",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordtorschütze der spanischen La Liga?",
+      "en": "Who is the all-time leading goalscorer in Spain's La Liga?"
+    },
+    "options": {
+      "de": [
+        "Lionel Messi",
+        "Cristiano Ronaldo",
+        "Telmo Zarra",
+        "Hugo Sánchez"
+      ],
+      "en": [
+        "Lionel Messi",
+        "Cristiano Ronaldo",
+        "Telmo Zarra",
+        "Hugo Sánchez"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_59",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Doppelwechsel' im Fußball?",
+      "en": "What is a 'double substitution' in football?"
+    },
+    "options": {
+      "de": [
+        "Zwei Spieler werden gleichzeitig ausgewechselt.",
+        "Ein Spieler wird zweimal ausgewechselt.",
+        "Zwei Spieler wechseln die Position.",
+        "Zwei Trainer wechseln die Mannschaft."
+      ],
+      "en": [
+        "Two players are substituted at the same time.",
+        "One player is substituted twice.",
+        "Two players change positions.",
+        "Two coaches change teams."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_60",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein ist Rekordsieger des DFB-Pokals?",
+      "en": "Which club is the record winner of the DFB-Pokal?"
+    },
+    "options": {
+      "de": [
+        "FC Bayern München",
+        "Werder Bremen",
+        "Schalke 04",
+        "Borussia Dortmund"
+      ],
+      "en": [
+        "FC Bayern Munich",
+        "Werder Bremen",
+        "Schalke 04",
+        "Borussia Dortmund"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_61",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die 'Nachspielzeit' im Fußball?",
+      "en": "What is 'injury time' (added time) in football?"
+    },
+    "options": {
+      "de": [
+        "Zusätzliche Spielzeit am Ende jeder Halbzeit, um Unterbrechungen auszugleichen.",
+        "Die Zeit, in der ein Spieler verletzt ist.",
+        "Die Zeit, in der das Spiel unterbrochen ist.",
+        "Die Zeit vor dem Anpfiff."
+      ],
+      "en": [
+        "Additional playing time at the end of each half to compensate for stoppages.",
+        "The time a player is injured.",
+        "The time when the game is interrupted.",
+        "The time before kick-off."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_62",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Elastico'-Dribblings?",
+      "en": "Which player is famous for his 'Elastico' dribbles?"
+    },
+    "options": {
+      "de": [
+        "Ronaldinho",
+        "Pelé",
+        "Neymar",
+        "Ronaldo Nazário"
+      ],
+      "en": [
+        "Ronaldinho",
+        "Pelé",
+        "Neymar",
+        "Ronaldo Nazário"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_63",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie oft findet die Fußball-Weltmeisterschaft statt?",
+      "en": "How often does the FIFA World Cup take place?"
+    },
+    "options": {
+      "de": [
+        "Alle 4 Jahre",
+        "Alle 2 Jahre",
+        "Jedes Jahr",
+        "Alle 5 Jahre"
+      ],
+      "en": [
+        "Every 4 years",
+        "Every 2 years",
+        "Every year",
+        "Every 5 years"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_64",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land ist Rekordsieger der Copa América?",
+      "en": "Which country is the record winner of the Copa América?"
+    },
+    "options": {
+      "de": [
+        "Argentinien",
+        "Uruguay",
+        "Brasilien",
+        "Chile"
+      ],
+      "en": [
+        "Argentina",
+        "Uruguay",
+        "Brazil",
+        "Chile"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_65",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Strafraum' im Fußball?",
+      "en": "What is a 'penalty area' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Bereich vor dem Tor, in dem bestimmte Fouls mit einem Elfmeter geahndet werden.",
+        "Der Bereich, in dem sich die Ersatzspieler aufhalten.",
+        "Der Bereich, in dem der Trainer steht.",
+        "Der Bereich, in dem die Fans sitzen."
+      ],
+      "en": [
+        "An area in front of the goal where certain fouls result in a penalty kick.",
+        "The area where substitute players are located.",
+        "The area where the coach stands.",
+        "The area where the fans sit."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_66",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordtorschütze der englischen Premier League?",
+      "en": "Who is the all-time leading goalscorer in the English Premier League?"
+    },
+    "options": {
+      "de": [
+        "Alan Shearer",
+        "Harry Kane",
+        "Wayne Rooney",
+        "Sergio Agüero"
+      ],
+      "en": [
+        "Alan Shearer",
+        "Harry Kane",
+        "Wayne Rooney",
+        "Sergio Agüero"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_67",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Einwurf' im Fußball?",
+      "en": "What is a 'throw-in' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
+        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat.",
+        "Eine Spielfortsetzung nach einem Foul.",
+        "Eine Spielfortsetzung nach einem Tor."
+      ],
+      "en": [
+        "A restart of play when the ball has crossed the sideline.",
+        "A restart of play when the ball has crossed the goal line.",
+        "A restart of play after a foul.",
+        "A restart of play after a goal."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_68",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Cruyff-Wende'?",
+      "en": "Which player is famous for his 'Cruyff Turn'?"
+    },
+    "options": {
+      "de": [
+        "Johan Cruyff",
+        "Pelé",
+        "George Best",
+        "Zinedine Zidane"
+      ],
+      "en": [
+        "Johan Cruyff",
+        "Pelé",
+        "George Best",
+        "Zinedine Zidane"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_69",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2014?",
+      "en": "Which country won the FIFA World Cup in 2014?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Brasilien",
+        "Argentinien",
+        "Spanien"
+      ],
+      "en": [
+        "Germany",
+        "Brazil",
+        "Argentina",
+        "Spain"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_70",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Volley' im Fußball?",
+      "en": "What is a 'volley' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Schuss, bei dem der Ball direkt aus der Luft getroffen wird, bevor er den Boden berührt.",
+        "Ein Schuss, der vom Boden abprallt.",
+        "Ein Schuss, der mit dem Kopf erzielt wird.",
+        "Ein Schuss aus großer Entfernung."
+      ],
+      "en": [
+        "A shot where the ball is struck directly from the air before it touches the ground.",
+        "A shot that bounces off the ground.",
+        "A shot scored with the head.",
+        "A shot from a long distance."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_71",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein ist Rekordsieger der UEFA Europa League?",
+      "en": "Which club is the record winner of the UEFA Europa League?"
+    },
+    "options": {
+      "de": [
+        "FC Sevilla",
+        "Inter Mailand",
+        "FC Liverpool",
+        "Atlético Madrid"
+      ],
+      "en": [
+        "Sevilla FC",
+        "Inter Milan",
+        "Liverpool FC",
+        "Atlético Madrid"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_72",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der aktuelle Präsident der UEFA (Stand 2024)?",
+      "en": "Who is the current president of UEFA (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Aleksander Čeferin",
+        "Michel Platini",
+        "Lennart Johansson",
+        "Jacques Georges"
+      ],
+      "en": [
+        "Aleksander Čeferin",
+        "Michel Platini",
+        "Lennart Johansson",
+        "Jacques Georges"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_73",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Tunnel' im Fußball?",
+      "en": "What is a 'nutmeg' (tunnel) in football?"
+    },
+    "options": {
+      "de": [
+        "Den Ball zwischen den Beinen eines Gegners hindurchspielen.",
+        "Den Ball über den Kopf eines Gegners spielen.",
+        "Den Ball an einem Gegner vorbeischießen.",
+        "Den Ball ins Tor schießen."
+      ],
+      "en": [
+        "Playing the ball between an opponent's legs.",
+        "Playing the ball over an opponent's head.",
+        "Shooting the ball past an opponent.",
+        "Shooting the ball into the goal."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_74",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
+      "en": "Which player is famous for his 'Rabona'-tricks?"
+    },
+    "options": {
+      "de": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ],
+      "en": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ]
+    }
   }
 ]
