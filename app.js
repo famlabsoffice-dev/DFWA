@@ -71,17 +71,44 @@ async function validateStorage() {
 }
 
 function detectLanguage() {
-    state.lang = navigator.language.startsWith('de') ? 'de' : 'en';
+    const saved = localStorage.getItem('dfwa_lang');
+    if (saved) {
+        state.lang = saved;
+    } else {
+        state.lang = navigator.language.startsWith('de') ? 'de' : 'en';
+    }
+    
     if (!localStorage.getItem('dfwa_id')) {
         saveSecure('dfwa_id', state.playerId);
     }
+    updateUIForLanguage();
+}
+
+function updateUIForLanguage() {
     document.documentElement.lang = state.lang;
-    document.getElementById('start-btn').innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
-    document.getElementById('player-display').innerText = state.playerName;
-    document.getElementById('id-display').innerText = state.playerId;
-    document.getElementById('high-score').innerText = state.best;
-    document.getElementById('battle-stats').innerText = `W:${state.wins} / L:${state.losses}`;
-    document.getElementById('player-name').value = state.playerName !== 'GUEST' ? state.playerName : '';
+    const startBtn = document.getElementById('start-btn');
+    if (startBtn) startBtn.innerText = state.lang === 'de' ? 'PROTOKOLL_STARTEN' : 'INIT_PROTOCOL';
+    
+    const playerDisplay = document.getElementById('player-display');
+    if (playerDisplay) playerDisplay.innerText = state.playerName;
+    
+    const idDisplay = document.getElementById('id-display');
+    if (idDisplay) idDisplay.innerText = state.playerId;
+    
+    const highScore = document.getElementById('high-score');
+    if (highScore) highScore.innerText = state.best;
+    
+    const battleStats = document.getElementById('battle-stats');
+    if (battleStats) battleStats.innerText = `W:${state.wins} / L:${state.losses}`;
+    
+    const playerNameInput = document.getElementById('player-name');
+    if (playerNameInput) playerNameInput.value = state.playerName !== 'GUEST' ? state.playerName : '';
+}
+
+function setLanguage(lang) {
+    state.lang = lang;
+    localStorage.setItem('dfwa_lang', lang);
+    updateUIForLanguage();
 }
 detectLanguage();
 
