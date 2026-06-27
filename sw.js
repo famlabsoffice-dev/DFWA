@@ -17,7 +17,11 @@ const ASSETS = [
 './ack_comments.json',
 './assets/fonts/inter-900.woff2',
 './assets/images/ack_core_clean.png',
-'./assets/images/ack_core_closed_clean.png'
+'./assets/images/ack_core_closed_clean.png',
+'./assets/icons/icon-192.png',
+'./assets/icons/icon-512.png',
+'./assets/icons/icon-192-maskable.png',
+'./assets/icons/icon-512-maskable.png'
 ];
 self.addEventListener('install', event => {
 self.skipWaiting();
