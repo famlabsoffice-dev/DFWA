@@ -13198,5 +13198,2305 @@
       ]
     },
     "correct": 3
+  },
+  {
+    "id": "fussball_0",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1950?",
+      "en": "Who won the FIFA World Cup in the year 1950?"
+    },
+    "options": {
+      "de": [
+        "Team A 0",
+        "Team B 0",
+        "Team C 0",
+        "Team D 0"
+      ],
+      "en": [
+        "Team A 0",
+        "Team B 0",
+        "Team C 0",
+        "Team D 0"
+      ]
+    }
+  },
+  {
+    "id": "fussball_1",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1951?",
+      "en": "Who won the FIFA World Cup in the year 1951?"
+    },
+    "options": {
+      "de": [
+        "Team A 1",
+        "Team B 1",
+        "Team C 1",
+        "Team D 1"
+      ],
+      "en": [
+        "Team A 1",
+        "Team B 1",
+        "Team C 1",
+        "Team D 1"
+      ]
+    }
+  },
+  {
+    "id": "fussball_2",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1952?",
+      "en": "Who won the FIFA World Cup in the year 1952?"
+    },
+    "options": {
+      "de": [
+        "Team A 2",
+        "Team B 2",
+        "Team C 2",
+        "Team D 2"
+      ],
+      "en": [
+        "Team A 2",
+        "Team B 2",
+        "Team C 2",
+        "Team D 2"
+      ]
+    }
+  },
+  {
+    "id": "fussball_3",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1953?",
+      "en": "Who won the FIFA World Cup in the year 1953?"
+    },
+    "options": {
+      "de": [
+        "Team A 3",
+        "Team B 3",
+        "Team C 3",
+        "Team D 3"
+      ],
+      "en": [
+        "Team A 3",
+        "Team B 3",
+        "Team C 3",
+        "Team D 3"
+      ]
+    }
+  },
+  {
+    "id": "fussball_4",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1954?",
+      "en": "Who won the FIFA World Cup in the year 1954?"
+    },
+    "options": {
+      "de": [
+        "Team A 4",
+        "Team B 4",
+        "Team C 4",
+        "Team D 4"
+      ],
+      "en": [
+        "Team A 4",
+        "Team B 4",
+        "Team C 4",
+        "Team D 4"
+      ]
+    }
+  },
+  {
+    "id": "fussball_5",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1955?",
+      "en": "Who won the FIFA World Cup in the year 1955?"
+    },
+    "options": {
+      "de": [
+        "Team A 5",
+        "Team B 5",
+        "Team C 5",
+        "Team D 5"
+      ],
+      "en": [
+        "Team A 5",
+        "Team B 5",
+        "Team C 5",
+        "Team D 5"
+      ]
+    }
+  },
+  {
+    "id": "fussball_6",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1956?",
+      "en": "Who won the FIFA World Cup in the year 1956?"
+    },
+    "options": {
+      "de": [
+        "Team A 6",
+        "Team B 6",
+        "Team C 6",
+        "Team D 6"
+      ],
+      "en": [
+        "Team A 6",
+        "Team B 6",
+        "Team C 6",
+        "Team D 6"
+      ]
+    }
+  },
+  {
+    "id": "fussball_7",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1957?",
+      "en": "Who won the FIFA World Cup in the year 1957?"
+    },
+    "options": {
+      "de": [
+        "Team A 7",
+        "Team B 7",
+        "Team C 7",
+        "Team D 7"
+      ],
+      "en": [
+        "Team A 7",
+        "Team B 7",
+        "Team C 7",
+        "Team D 7"
+      ]
+    }
+  },
+  {
+    "id": "fussball_8",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1958?",
+      "en": "Who won the FIFA World Cup in the year 1958?"
+    },
+    "options": {
+      "de": [
+        "Team A 8",
+        "Team B 8",
+        "Team C 8",
+        "Team D 8"
+      ],
+      "en": [
+        "Team A 8",
+        "Team B 8",
+        "Team C 8",
+        "Team D 8"
+      ]
+    }
+  },
+  {
+    "id": "fussball_9",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1959?",
+      "en": "Who won the FIFA World Cup in the year 1959?"
+    },
+    "options": {
+      "de": [
+        "Team A 9",
+        "Team B 9",
+        "Team C 9",
+        "Team D 9"
+      ],
+      "en": [
+        "Team A 9",
+        "Team B 9",
+        "Team C 9",
+        "Team D 9"
+      ]
+    }
+  },
+  {
+    "id": "fussball_10",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1960?",
+      "en": "Who won the FIFA World Cup in the year 1960?"
+    },
+    "options": {
+      "de": [
+        "Team A 10",
+        "Team B 10",
+        "Team C 10",
+        "Team D 10"
+      ],
+      "en": [
+        "Team A 10",
+        "Team B 10",
+        "Team C 10",
+        "Team D 10"
+      ]
+    }
+  },
+  {
+    "id": "fussball_11",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1961?",
+      "en": "Who won the FIFA World Cup in the year 1961?"
+    },
+    "options": {
+      "de": [
+        "Team A 11",
+        "Team B 11",
+        "Team C 11",
+        "Team D 11"
+      ],
+      "en": [
+        "Team A 11",
+        "Team B 11",
+        "Team C 11",
+        "Team D 11"
+      ]
+    }
+  },
+  {
+    "id": "fussball_12",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1962?",
+      "en": "Who won the FIFA World Cup in the year 1962?"
+    },
+    "options": {
+      "de": [
+        "Team A 12",
+        "Team B 12",
+        "Team C 12",
+        "Team D 12"
+      ],
+      "en": [
+        "Team A 12",
+        "Team B 12",
+        "Team C 12",
+        "Team D 12"
+      ]
+    }
+  },
+  {
+    "id": "fussball_13",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1963?",
+      "en": "Who won the FIFA World Cup in the year 1963?"
+    },
+    "options": {
+      "de": [
+        "Team A 13",
+        "Team B 13",
+        "Team C 13",
+        "Team D 13"
+      ],
+      "en": [
+        "Team A 13",
+        "Team B 13",
+        "Team C 13",
+        "Team D 13"
+      ]
+    }
+  },
+  {
+    "id": "fussball_14",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1964?",
+      "en": "Who won the FIFA World Cup in the year 1964?"
+    },
+    "options": {
+      "de": [
+        "Team A 14",
+        "Team B 14",
+        "Team C 14",
+        "Team D 14"
+      ],
+      "en": [
+        "Team A 14",
+        "Team B 14",
+        "Team C 14",
+        "Team D 14"
+      ]
+    }
+  },
+  {
+    "id": "fussball_15",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1965?",
+      "en": "Who won the FIFA World Cup in the year 1965?"
+    },
+    "options": {
+      "de": [
+        "Team A 15",
+        "Team B 15",
+        "Team C 15",
+        "Team D 15"
+      ],
+      "en": [
+        "Team A 15",
+        "Team B 15",
+        "Team C 15",
+        "Team D 15"
+      ]
+    }
+  },
+  {
+    "id": "fussball_16",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1966?",
+      "en": "Who won the FIFA World Cup in the year 1966?"
+    },
+    "options": {
+      "de": [
+        "Team A 16",
+        "Team B 16",
+        "Team C 16",
+        "Team D 16"
+      ],
+      "en": [
+        "Team A 16",
+        "Team B 16",
+        "Team C 16",
+        "Team D 16"
+      ]
+    }
+  },
+  {
+    "id": "fussball_17",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1967?",
+      "en": "Who won the FIFA World Cup in the year 1967?"
+    },
+    "options": {
+      "de": [
+        "Team A 17",
+        "Team B 17",
+        "Team C 17",
+        "Team D 17"
+      ],
+      "en": [
+        "Team A 17",
+        "Team B 17",
+        "Team C 17",
+        "Team D 17"
+      ]
+    }
+  },
+  {
+    "id": "fussball_18",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1968?",
+      "en": "Who won the FIFA World Cup in the year 1968?"
+    },
+    "options": {
+      "de": [
+        "Team A 18",
+        "Team B 18",
+        "Team C 18",
+        "Team D 18"
+      ],
+      "en": [
+        "Team A 18",
+        "Team B 18",
+        "Team C 18",
+        "Team D 18"
+      ]
+    }
+  },
+  {
+    "id": "fussball_19",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1969?",
+      "en": "Who won the FIFA World Cup in the year 1969?"
+    },
+    "options": {
+      "de": [
+        "Team A 19",
+        "Team B 19",
+        "Team C 19",
+        "Team D 19"
+      ],
+      "en": [
+        "Team A 19",
+        "Team B 19",
+        "Team C 19",
+        "Team D 19"
+      ]
+    }
+  },
+  {
+    "id": "fussball_20",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1970?",
+      "en": "Who won the FIFA World Cup in the year 1970?"
+    },
+    "options": {
+      "de": [
+        "Team A 20",
+        "Team B 20",
+        "Team C 20",
+        "Team D 20"
+      ],
+      "en": [
+        "Team A 20",
+        "Team B 20",
+        "Team C 20",
+        "Team D 20"
+      ]
+    }
+  },
+  {
+    "id": "fussball_21",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1971?",
+      "en": "Who won the FIFA World Cup in the year 1971?"
+    },
+    "options": {
+      "de": [
+        "Team A 21",
+        "Team B 21",
+        "Team C 21",
+        "Team D 21"
+      ],
+      "en": [
+        "Team A 21",
+        "Team B 21",
+        "Team C 21",
+        "Team D 21"
+      ]
+    }
+  },
+  {
+    "id": "fussball_22",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1972?",
+      "en": "Who won the FIFA World Cup in the year 1972?"
+    },
+    "options": {
+      "de": [
+        "Team A 22",
+        "Team B 22",
+        "Team C 22",
+        "Team D 22"
+      ],
+      "en": [
+        "Team A 22",
+        "Team B 22",
+        "Team C 22",
+        "Team D 22"
+      ]
+    }
+  },
+  {
+    "id": "fussball_23",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1973?",
+      "en": "Who won the FIFA World Cup in the year 1973?"
+    },
+    "options": {
+      "de": [
+        "Team A 23",
+        "Team B 23",
+        "Team C 23",
+        "Team D 23"
+      ],
+      "en": [
+        "Team A 23",
+        "Team B 23",
+        "Team C 23",
+        "Team D 23"
+      ]
+    }
+  },
+  {
+    "id": "fussball_24",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1974?",
+      "en": "Who won the FIFA World Cup in the year 1974?"
+    },
+    "options": {
+      "de": [
+        "Team A 24",
+        "Team B 24",
+        "Team C 24",
+        "Team D 24"
+      ],
+      "en": [
+        "Team A 24",
+        "Team B 24",
+        "Team C 24",
+        "Team D 24"
+      ]
+    }
+  },
+  {
+    "id": "fussball_25",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1975?",
+      "en": "Who won the FIFA World Cup in the year 1975?"
+    },
+    "options": {
+      "de": [
+        "Team A 25",
+        "Team B 25",
+        "Team C 25",
+        "Team D 25"
+      ],
+      "en": [
+        "Team A 25",
+        "Team B 25",
+        "Team C 25",
+        "Team D 25"
+      ]
+    }
+  },
+  {
+    "id": "fussball_26",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1976?",
+      "en": "Who won the FIFA World Cup in the year 1976?"
+    },
+    "options": {
+      "de": [
+        "Team A 26",
+        "Team B 26",
+        "Team C 26",
+        "Team D 26"
+      ],
+      "en": [
+        "Team A 26",
+        "Team B 26",
+        "Team C 26",
+        "Team D 26"
+      ]
+    }
+  },
+  {
+    "id": "fussball_27",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1977?",
+      "en": "Who won the FIFA World Cup in the year 1977?"
+    },
+    "options": {
+      "de": [
+        "Team A 27",
+        "Team B 27",
+        "Team C 27",
+        "Team D 27"
+      ],
+      "en": [
+        "Team A 27",
+        "Team B 27",
+        "Team C 27",
+        "Team D 27"
+      ]
+    }
+  },
+  {
+    "id": "fussball_28",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1978?",
+      "en": "Who won the FIFA World Cup in the year 1978?"
+    },
+    "options": {
+      "de": [
+        "Team A 28",
+        "Team B 28",
+        "Team C 28",
+        "Team D 28"
+      ],
+      "en": [
+        "Team A 28",
+        "Team B 28",
+        "Team C 28",
+        "Team D 28"
+      ]
+    }
+  },
+  {
+    "id": "fussball_29",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1979?",
+      "en": "Who won the FIFA World Cup in the year 1979?"
+    },
+    "options": {
+      "de": [
+        "Team A 29",
+        "Team B 29",
+        "Team C 29",
+        "Team D 29"
+      ],
+      "en": [
+        "Team A 29",
+        "Team B 29",
+        "Team C 29",
+        "Team D 29"
+      ]
+    }
+  },
+  {
+    "id": "fussball_30",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1980?",
+      "en": "Who won the FIFA World Cup in the year 1980?"
+    },
+    "options": {
+      "de": [
+        "Team A 30",
+        "Team B 30",
+        "Team C 30",
+        "Team D 30"
+      ],
+      "en": [
+        "Team A 30",
+        "Team B 30",
+        "Team C 30",
+        "Team D 30"
+      ]
+    }
+  },
+  {
+    "id": "fussball_31",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1981?",
+      "en": "Who won the FIFA World Cup in the year 1981?"
+    },
+    "options": {
+      "de": [
+        "Team A 31",
+        "Team B 31",
+        "Team C 31",
+        "Team D 31"
+      ],
+      "en": [
+        "Team A 31",
+        "Team B 31",
+        "Team C 31",
+        "Team D 31"
+      ]
+    }
+  },
+  {
+    "id": "fussball_32",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1982?",
+      "en": "Who won the FIFA World Cup in the year 1982?"
+    },
+    "options": {
+      "de": [
+        "Team A 32",
+        "Team B 32",
+        "Team C 32",
+        "Team D 32"
+      ],
+      "en": [
+        "Team A 32",
+        "Team B 32",
+        "Team C 32",
+        "Team D 32"
+      ]
+    }
+  },
+  {
+    "id": "fussball_33",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1983?",
+      "en": "Who won the FIFA World Cup in the year 1983?"
+    },
+    "options": {
+      "de": [
+        "Team A 33",
+        "Team B 33",
+        "Team C 33",
+        "Team D 33"
+      ],
+      "en": [
+        "Team A 33",
+        "Team B 33",
+        "Team C 33",
+        "Team D 33"
+      ]
+    }
+  },
+  {
+    "id": "fussball_34",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1984?",
+      "en": "Who won the FIFA World Cup in the year 1984?"
+    },
+    "options": {
+      "de": [
+        "Team A 34",
+        "Team B 34",
+        "Team C 34",
+        "Team D 34"
+      ],
+      "en": [
+        "Team A 34",
+        "Team B 34",
+        "Team C 34",
+        "Team D 34"
+      ]
+    }
+  },
+  {
+    "id": "fussball_35",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1985?",
+      "en": "Who won the FIFA World Cup in the year 1985?"
+    },
+    "options": {
+      "de": [
+        "Team A 35",
+        "Team B 35",
+        "Team C 35",
+        "Team D 35"
+      ],
+      "en": [
+        "Team A 35",
+        "Team B 35",
+        "Team C 35",
+        "Team D 35"
+      ]
+    }
+  },
+  {
+    "id": "fussball_36",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1986?",
+      "en": "Who won the FIFA World Cup in the year 1986?"
+    },
+    "options": {
+      "de": [
+        "Team A 36",
+        "Team B 36",
+        "Team C 36",
+        "Team D 36"
+      ],
+      "en": [
+        "Team A 36",
+        "Team B 36",
+        "Team C 36",
+        "Team D 36"
+      ]
+    }
+  },
+  {
+    "id": "fussball_37",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1987?",
+      "en": "Who won the FIFA World Cup in the year 1987?"
+    },
+    "options": {
+      "de": [
+        "Team A 37",
+        "Team B 37",
+        "Team C 37",
+        "Team D 37"
+      ],
+      "en": [
+        "Team A 37",
+        "Team B 37",
+        "Team C 37",
+        "Team D 37"
+      ]
+    }
+  },
+  {
+    "id": "fussball_38",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1988?",
+      "en": "Who won the FIFA World Cup in the year 1988?"
+    },
+    "options": {
+      "de": [
+        "Team A 38",
+        "Team B 38",
+        "Team C 38",
+        "Team D 38"
+      ],
+      "en": [
+        "Team A 38",
+        "Team B 38",
+        "Team C 38",
+        "Team D 38"
+      ]
+    }
+  },
+  {
+    "id": "fussball_39",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1989?",
+      "en": "Who won the FIFA World Cup in the year 1989?"
+    },
+    "options": {
+      "de": [
+        "Team A 39",
+        "Team B 39",
+        "Team C 39",
+        "Team D 39"
+      ],
+      "en": [
+        "Team A 39",
+        "Team B 39",
+        "Team C 39",
+        "Team D 39"
+      ]
+    }
+  },
+  {
+    "id": "fussball_40",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1990?",
+      "en": "Who won the FIFA World Cup in the year 1990?"
+    },
+    "options": {
+      "de": [
+        "Team A 40",
+        "Team B 40",
+        "Team C 40",
+        "Team D 40"
+      ],
+      "en": [
+        "Team A 40",
+        "Team B 40",
+        "Team C 40",
+        "Team D 40"
+      ]
+    }
+  },
+  {
+    "id": "fussball_41",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1991?",
+      "en": "Who won the FIFA World Cup in the year 1991?"
+    },
+    "options": {
+      "de": [
+        "Team A 41",
+        "Team B 41",
+        "Team C 41",
+        "Team D 41"
+      ],
+      "en": [
+        "Team A 41",
+        "Team B 41",
+        "Team C 41",
+        "Team D 41"
+      ]
+    }
+  },
+  {
+    "id": "fussball_42",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1992?",
+      "en": "Who won the FIFA World Cup in the year 1992?"
+    },
+    "options": {
+      "de": [
+        "Team A 42",
+        "Team B 42",
+        "Team C 42",
+        "Team D 42"
+      ],
+      "en": [
+        "Team A 42",
+        "Team B 42",
+        "Team C 42",
+        "Team D 42"
+      ]
+    }
+  },
+  {
+    "id": "fussball_43",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1993?",
+      "en": "Who won the FIFA World Cup in the year 1993?"
+    },
+    "options": {
+      "de": [
+        "Team A 43",
+        "Team B 43",
+        "Team C 43",
+        "Team D 43"
+      ],
+      "en": [
+        "Team A 43",
+        "Team B 43",
+        "Team C 43",
+        "Team D 43"
+      ]
+    }
+  },
+  {
+    "id": "fussball_44",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1994?",
+      "en": "Who won the FIFA World Cup in the year 1994?"
+    },
+    "options": {
+      "de": [
+        "Team A 44",
+        "Team B 44",
+        "Team C 44",
+        "Team D 44"
+      ],
+      "en": [
+        "Team A 44",
+        "Team B 44",
+        "Team C 44",
+        "Team D 44"
+      ]
+    }
+  },
+  {
+    "id": "fussball_45",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1995?",
+      "en": "Who won the FIFA World Cup in the year 1995?"
+    },
+    "options": {
+      "de": [
+        "Team A 45",
+        "Team B 45",
+        "Team C 45",
+        "Team D 45"
+      ],
+      "en": [
+        "Team A 45",
+        "Team B 45",
+        "Team C 45",
+        "Team D 45"
+      ]
+    }
+  },
+  {
+    "id": "fussball_46",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1996?",
+      "en": "Who won the FIFA World Cup in the year 1996?"
+    },
+    "options": {
+      "de": [
+        "Team A 46",
+        "Team B 46",
+        "Team C 46",
+        "Team D 46"
+      ],
+      "en": [
+        "Team A 46",
+        "Team B 46",
+        "Team C 46",
+        "Team D 46"
+      ]
+    }
+  },
+  {
+    "id": "fussball_47",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1997?",
+      "en": "Who won the FIFA World Cup in the year 1997?"
+    },
+    "options": {
+      "de": [
+        "Team A 47",
+        "Team B 47",
+        "Team C 47",
+        "Team D 47"
+      ],
+      "en": [
+        "Team A 47",
+        "Team B 47",
+        "Team C 47",
+        "Team D 47"
+      ]
+    }
+  },
+  {
+    "id": "fussball_48",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1998?",
+      "en": "Who won the FIFA World Cup in the year 1998?"
+    },
+    "options": {
+      "de": [
+        "Team A 48",
+        "Team B 48",
+        "Team C 48",
+        "Team D 48"
+      ],
+      "en": [
+        "Team A 48",
+        "Team B 48",
+        "Team C 48",
+        "Team D 48"
+      ]
+    }
+  },
+  {
+    "id": "fussball_49",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1999?",
+      "en": "Who won the FIFA World Cup in the year 1999?"
+    },
+    "options": {
+      "de": [
+        "Team A 49",
+        "Team B 49",
+        "Team C 49",
+        "Team D 49"
+      ],
+      "en": [
+        "Team A 49",
+        "Team B 49",
+        "Team C 49",
+        "Team D 49"
+      ]
+    }
+  },
+  {
+    "id": "fussball_50",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2000?",
+      "en": "Who won the FIFA World Cup in the year 2000?"
+    },
+    "options": {
+      "de": [
+        "Team A 50",
+        "Team B 50",
+        "Team C 50",
+        "Team D 50"
+      ],
+      "en": [
+        "Team A 50",
+        "Team B 50",
+        "Team C 50",
+        "Team D 50"
+      ]
+    }
+  },
+  {
+    "id": "fussball_51",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2001?",
+      "en": "Who won the FIFA World Cup in the year 2001?"
+    },
+    "options": {
+      "de": [
+        "Team A 51",
+        "Team B 51",
+        "Team C 51",
+        "Team D 51"
+      ],
+      "en": [
+        "Team A 51",
+        "Team B 51",
+        "Team C 51",
+        "Team D 51"
+      ]
+    }
+  },
+  {
+    "id": "fussball_52",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2002?",
+      "en": "Who won the FIFA World Cup in the year 2002?"
+    },
+    "options": {
+      "de": [
+        "Team A 52",
+        "Team B 52",
+        "Team C 52",
+        "Team D 52"
+      ],
+      "en": [
+        "Team A 52",
+        "Team B 52",
+        "Team C 52",
+        "Team D 52"
+      ]
+    }
+  },
+  {
+    "id": "fussball_53",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2003?",
+      "en": "Who won the FIFA World Cup in the year 2003?"
+    },
+    "options": {
+      "de": [
+        "Team A 53",
+        "Team B 53",
+        "Team C 53",
+        "Team D 53"
+      ],
+      "en": [
+        "Team A 53",
+        "Team B 53",
+        "Team C 53",
+        "Team D 53"
+      ]
+    }
+  },
+  {
+    "id": "fussball_54",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2004?",
+      "en": "Who won the FIFA World Cup in the year 2004?"
+    },
+    "options": {
+      "de": [
+        "Team A 54",
+        "Team B 54",
+        "Team C 54",
+        "Team D 54"
+      ],
+      "en": [
+        "Team A 54",
+        "Team B 54",
+        "Team C 54",
+        "Team D 54"
+      ]
+    }
+  },
+  {
+    "id": "fussball_55",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2005?",
+      "en": "Who won the FIFA World Cup in the year 2005?"
+    },
+    "options": {
+      "de": [
+        "Team A 55",
+        "Team B 55",
+        "Team C 55",
+        "Team D 55"
+      ],
+      "en": [
+        "Team A 55",
+        "Team B 55",
+        "Team C 55",
+        "Team D 55"
+      ]
+    }
+  },
+  {
+    "id": "fussball_56",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2006?",
+      "en": "Who won the FIFA World Cup in the year 2006?"
+    },
+    "options": {
+      "de": [
+        "Team A 56",
+        "Team B 56",
+        "Team C 56",
+        "Team D 56"
+      ],
+      "en": [
+        "Team A 56",
+        "Team B 56",
+        "Team C 56",
+        "Team D 56"
+      ]
+    }
+  },
+  {
+    "id": "fussball_57",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2007?",
+      "en": "Who won the FIFA World Cup in the year 2007?"
+    },
+    "options": {
+      "de": [
+        "Team A 57",
+        "Team B 57",
+        "Team C 57",
+        "Team D 57"
+      ],
+      "en": [
+        "Team A 57",
+        "Team B 57",
+        "Team C 57",
+        "Team D 57"
+      ]
+    }
+  },
+  {
+    "id": "fussball_58",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2008?",
+      "en": "Who won the FIFA World Cup in the year 2008?"
+    },
+    "options": {
+      "de": [
+        "Team A 58",
+        "Team B 58",
+        "Team C 58",
+        "Team D 58"
+      ],
+      "en": [
+        "Team A 58",
+        "Team B 58",
+        "Team C 58",
+        "Team D 58"
+      ]
+    }
+  },
+  {
+    "id": "fussball_59",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2009?",
+      "en": "Who won the FIFA World Cup in the year 2009?"
+    },
+    "options": {
+      "de": [
+        "Team A 59",
+        "Team B 59",
+        "Team C 59",
+        "Team D 59"
+      ],
+      "en": [
+        "Team A 59",
+        "Team B 59",
+        "Team C 59",
+        "Team D 59"
+      ]
+    }
+  },
+  {
+    "id": "fussball_60",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2010?",
+      "en": "Who won the FIFA World Cup in the year 2010?"
+    },
+    "options": {
+      "de": [
+        "Team A 60",
+        "Team B 60",
+        "Team C 60",
+        "Team D 60"
+      ],
+      "en": [
+        "Team A 60",
+        "Team B 60",
+        "Team C 60",
+        "Team D 60"
+      ]
+    }
+  },
+  {
+    "id": "fussball_61",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2011?",
+      "en": "Who won the FIFA World Cup in the year 2011?"
+    },
+    "options": {
+      "de": [
+        "Team A 61",
+        "Team B 61",
+        "Team C 61",
+        "Team D 61"
+      ],
+      "en": [
+        "Team A 61",
+        "Team B 61",
+        "Team C 61",
+        "Team D 61"
+      ]
+    }
+  },
+  {
+    "id": "fussball_62",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2012?",
+      "en": "Who won the FIFA World Cup in the year 2012?"
+    },
+    "options": {
+      "de": [
+        "Team A 62",
+        "Team B 62",
+        "Team C 62",
+        "Team D 62"
+      ],
+      "en": [
+        "Team A 62",
+        "Team B 62",
+        "Team C 62",
+        "Team D 62"
+      ]
+    }
+  },
+  {
+    "id": "fussball_63",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2013?",
+      "en": "Who won the FIFA World Cup in the year 2013?"
+    },
+    "options": {
+      "de": [
+        "Team A 63",
+        "Team B 63",
+        "Team C 63",
+        "Team D 63"
+      ],
+      "en": [
+        "Team A 63",
+        "Team B 63",
+        "Team C 63",
+        "Team D 63"
+      ]
+    }
+  },
+  {
+    "id": "fussball_64",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2014?",
+      "en": "Who won the FIFA World Cup in the year 2014?"
+    },
+    "options": {
+      "de": [
+        "Team A 64",
+        "Team B 64",
+        "Team C 64",
+        "Team D 64"
+      ],
+      "en": [
+        "Team A 64",
+        "Team B 64",
+        "Team C 64",
+        "Team D 64"
+      ]
+    }
+  },
+  {
+    "id": "fussball_65",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2015?",
+      "en": "Who won the FIFA World Cup in the year 2015?"
+    },
+    "options": {
+      "de": [
+        "Team A 65",
+        "Team B 65",
+        "Team C 65",
+        "Team D 65"
+      ],
+      "en": [
+        "Team A 65",
+        "Team B 65",
+        "Team C 65",
+        "Team D 65"
+      ]
+    }
+  },
+  {
+    "id": "fussball_66",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2016?",
+      "en": "Who won the FIFA World Cup in the year 2016?"
+    },
+    "options": {
+      "de": [
+        "Team A 66",
+        "Team B 66",
+        "Team C 66",
+        "Team D 66"
+      ],
+      "en": [
+        "Team A 66",
+        "Team B 66",
+        "Team C 66",
+        "Team D 66"
+      ]
+    }
+  },
+  {
+    "id": "fussball_67",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2017?",
+      "en": "Who won the FIFA World Cup in the year 2017?"
+    },
+    "options": {
+      "de": [
+        "Team A 67",
+        "Team B 67",
+        "Team C 67",
+        "Team D 67"
+      ],
+      "en": [
+        "Team A 67",
+        "Team B 67",
+        "Team C 67",
+        "Team D 67"
+      ]
+    }
+  },
+  {
+    "id": "fussball_68",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2018?",
+      "en": "Who won the FIFA World Cup in the year 2018?"
+    },
+    "options": {
+      "de": [
+        "Team A 68",
+        "Team B 68",
+        "Team C 68",
+        "Team D 68"
+      ],
+      "en": [
+        "Team A 68",
+        "Team B 68",
+        "Team C 68",
+        "Team D 68"
+      ]
+    }
+  },
+  {
+    "id": "fussball_69",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 2019?",
+      "en": "Who won the FIFA World Cup in the year 2019?"
+    },
+    "options": {
+      "de": [
+        "Team A 69",
+        "Team B 69",
+        "Team C 69",
+        "Team D 69"
+      ],
+      "en": [
+        "Team A 69",
+        "Team B 69",
+        "Team C 69",
+        "Team D 69"
+      ]
+    }
+  },
+  {
+    "id": "fussball_70",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1950?",
+      "en": "Who won the FIFA World Cup in the year 1950?"
+    },
+    "options": {
+      "de": [
+        "Team A 70",
+        "Team B 70",
+        "Team C 70",
+        "Team D 70"
+      ],
+      "en": [
+        "Team A 70",
+        "Team B 70",
+        "Team C 70",
+        "Team D 70"
+      ]
+    }
+  },
+  {
+    "id": "fussball_71",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1951?",
+      "en": "Who won the FIFA World Cup in the year 1951?"
+    },
+    "options": {
+      "de": [
+        "Team A 71",
+        "Team B 71",
+        "Team C 71",
+        "Team D 71"
+      ],
+      "en": [
+        "Team A 71",
+        "Team B 71",
+        "Team C 71",
+        "Team D 71"
+      ]
+    }
+  },
+  {
+    "id": "fussball_72",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1952?",
+      "en": "Who won the FIFA World Cup in the year 1952?"
+    },
+    "options": {
+      "de": [
+        "Team A 72",
+        "Team B 72",
+        "Team C 72",
+        "Team D 72"
+      ],
+      "en": [
+        "Team A 72",
+        "Team B 72",
+        "Team C 72",
+        "Team D 72"
+      ]
+    }
+  },
+  {
+    "id": "fussball_73",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1953?",
+      "en": "Who won the FIFA World Cup in the year 1953?"
+    },
+    "options": {
+      "de": [
+        "Team A 73",
+        "Team B 73",
+        "Team C 73",
+        "Team D 73"
+      ],
+      "en": [
+        "Team A 73",
+        "Team B 73",
+        "Team C 73",
+        "Team D 73"
+      ]
+    }
+  },
+  {
+    "id": "fussball_74",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1954?",
+      "en": "Who won the FIFA World Cup in the year 1954?"
+    },
+    "options": {
+      "de": [
+        "Team A 74",
+        "Team B 74",
+        "Team C 74",
+        "Team D 74"
+      ],
+      "en": [
+        "Team A 74",
+        "Team B 74",
+        "Team C 74",
+        "Team D 74"
+      ]
+    }
+  },
+  {
+    "id": "fussball_75",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1955?",
+      "en": "Who won the FIFA World Cup in the year 1955?"
+    },
+    "options": {
+      "de": [
+        "Team A 75",
+        "Team B 75",
+        "Team C 75",
+        "Team D 75"
+      ],
+      "en": [
+        "Team A 75",
+        "Team B 75",
+        "Team C 75",
+        "Team D 75"
+      ]
+    }
+  },
+  {
+    "id": "fussball_76",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1956?",
+      "en": "Who won the FIFA World Cup in the year 1956?"
+    },
+    "options": {
+      "de": [
+        "Team A 76",
+        "Team B 76",
+        "Team C 76",
+        "Team D 76"
+      ],
+      "en": [
+        "Team A 76",
+        "Team B 76",
+        "Team C 76",
+        "Team D 76"
+      ]
+    }
+  },
+  {
+    "id": "fussball_77",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1957?",
+      "en": "Who won the FIFA World Cup in the year 1957?"
+    },
+    "options": {
+      "de": [
+        "Team A 77",
+        "Team B 77",
+        "Team C 77",
+        "Team D 77"
+      ],
+      "en": [
+        "Team A 77",
+        "Team B 77",
+        "Team C 77",
+        "Team D 77"
+      ]
+    }
+  },
+  {
+    "id": "fussball_78",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1958?",
+      "en": "Who won the FIFA World Cup in the year 1958?"
+    },
+    "options": {
+      "de": [
+        "Team A 78",
+        "Team B 78",
+        "Team C 78",
+        "Team D 78"
+      ],
+      "en": [
+        "Team A 78",
+        "Team B 78",
+        "Team C 78",
+        "Team D 78"
+      ]
+    }
+  },
+  {
+    "id": "fussball_79",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1959?",
+      "en": "Who won the FIFA World Cup in the year 1959?"
+    },
+    "options": {
+      "de": [
+        "Team A 79",
+        "Team B 79",
+        "Team C 79",
+        "Team D 79"
+      ],
+      "en": [
+        "Team A 79",
+        "Team B 79",
+        "Team C 79",
+        "Team D 79"
+      ]
+    }
+  },
+  {
+    "id": "fussball_80",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1960?",
+      "en": "Who won the FIFA World Cup in the year 1960?"
+    },
+    "options": {
+      "de": [
+        "Team A 80",
+        "Team B 80",
+        "Team C 80",
+        "Team D 80"
+      ],
+      "en": [
+        "Team A 80",
+        "Team B 80",
+        "Team C 80",
+        "Team D 80"
+      ]
+    }
+  },
+  {
+    "id": "fussball_81",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1961?",
+      "en": "Who won the FIFA World Cup in the year 1961?"
+    },
+    "options": {
+      "de": [
+        "Team A 81",
+        "Team B 81",
+        "Team C 81",
+        "Team D 81"
+      ],
+      "en": [
+        "Team A 81",
+        "Team B 81",
+        "Team C 81",
+        "Team D 81"
+      ]
+    }
+  },
+  {
+    "id": "fussball_82",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1962?",
+      "en": "Who won the FIFA World Cup in the year 1962?"
+    },
+    "options": {
+      "de": [
+        "Team A 82",
+        "Team B 82",
+        "Team C 82",
+        "Team D 82"
+      ],
+      "en": [
+        "Team A 82",
+        "Team B 82",
+        "Team C 82",
+        "Team D 82"
+      ]
+    }
+  },
+  {
+    "id": "fussball_83",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1963?",
+      "en": "Who won the FIFA World Cup in the year 1963?"
+    },
+    "options": {
+      "de": [
+        "Team A 83",
+        "Team B 83",
+        "Team C 83",
+        "Team D 83"
+      ],
+      "en": [
+        "Team A 83",
+        "Team B 83",
+        "Team C 83",
+        "Team D 83"
+      ]
+    }
+  },
+  {
+    "id": "fussball_84",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1964?",
+      "en": "Who won the FIFA World Cup in the year 1964?"
+    },
+    "options": {
+      "de": [
+        "Team A 84",
+        "Team B 84",
+        "Team C 84",
+        "Team D 84"
+      ],
+      "en": [
+        "Team A 84",
+        "Team B 84",
+        "Team C 84",
+        "Team D 84"
+      ]
+    }
+  },
+  {
+    "id": "fussball_85",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1965?",
+      "en": "Who won the FIFA World Cup in the year 1965?"
+    },
+    "options": {
+      "de": [
+        "Team A 85",
+        "Team B 85",
+        "Team C 85",
+        "Team D 85"
+      ],
+      "en": [
+        "Team A 85",
+        "Team B 85",
+        "Team C 85",
+        "Team D 85"
+      ]
+    }
+  },
+  {
+    "id": "fussball_86",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1966?",
+      "en": "Who won the FIFA World Cup in the year 1966?"
+    },
+    "options": {
+      "de": [
+        "Team A 86",
+        "Team B 86",
+        "Team C 86",
+        "Team D 86"
+      ],
+      "en": [
+        "Team A 86",
+        "Team B 86",
+        "Team C 86",
+        "Team D 86"
+      ]
+    }
+  },
+  {
+    "id": "fussball_87",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1967?",
+      "en": "Who won the FIFA World Cup in the year 1967?"
+    },
+    "options": {
+      "de": [
+        "Team A 87",
+        "Team B 87",
+        "Team C 87",
+        "Team D 87"
+      ],
+      "en": [
+        "Team A 87",
+        "Team B 87",
+        "Team C 87",
+        "Team D 87"
+      ]
+    }
+  },
+  {
+    "id": "fussball_88",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1968?",
+      "en": "Who won the FIFA World Cup in the year 1968?"
+    },
+    "options": {
+      "de": [
+        "Team A 88",
+        "Team B 88",
+        "Team C 88",
+        "Team D 88"
+      ],
+      "en": [
+        "Team A 88",
+        "Team B 88",
+        "Team C 88",
+        "Team D 88"
+      ]
+    }
+  },
+  {
+    "id": "fussball_89",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1969?",
+      "en": "Who won the FIFA World Cup in the year 1969?"
+    },
+    "options": {
+      "de": [
+        "Team A 89",
+        "Team B 89",
+        "Team C 89",
+        "Team D 89"
+      ],
+      "en": [
+        "Team A 89",
+        "Team B 89",
+        "Team C 89",
+        "Team D 89"
+      ]
+    }
+  },
+  {
+    "id": "fussball_90",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1970?",
+      "en": "Who won the FIFA World Cup in the year 1970?"
+    },
+    "options": {
+      "de": [
+        "Team A 90",
+        "Team B 90",
+        "Team C 90",
+        "Team D 90"
+      ],
+      "en": [
+        "Team A 90",
+        "Team B 90",
+        "Team C 90",
+        "Team D 90"
+      ]
+    }
+  },
+  {
+    "id": "fussball_91",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1971?",
+      "en": "Who won the FIFA World Cup in the year 1971?"
+    },
+    "options": {
+      "de": [
+        "Team A 91",
+        "Team B 91",
+        "Team C 91",
+        "Team D 91"
+      ],
+      "en": [
+        "Team A 91",
+        "Team B 91",
+        "Team C 91",
+        "Team D 91"
+      ]
+    }
+  },
+  {
+    "id": "fussball_92",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1972?",
+      "en": "Who won the FIFA World Cup in the year 1972?"
+    },
+    "options": {
+      "de": [
+        "Team A 92",
+        "Team B 92",
+        "Team C 92",
+        "Team D 92"
+      ],
+      "en": [
+        "Team A 92",
+        "Team B 92",
+        "Team C 92",
+        "Team D 92"
+      ]
+    }
+  },
+  {
+    "id": "fussball_93",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1973?",
+      "en": "Who won the FIFA World Cup in the year 1973?"
+    },
+    "options": {
+      "de": [
+        "Team A 93",
+        "Team B 93",
+        "Team C 93",
+        "Team D 93"
+      ],
+      "en": [
+        "Team A 93",
+        "Team B 93",
+        "Team C 93",
+        "Team D 93"
+      ]
+    }
+  },
+  {
+    "id": "fussball_94",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1974?",
+      "en": "Who won the FIFA World Cup in the year 1974?"
+    },
+    "options": {
+      "de": [
+        "Team A 94",
+        "Team B 94",
+        "Team C 94",
+        "Team D 94"
+      ],
+      "en": [
+        "Team A 94",
+        "Team B 94",
+        "Team C 94",
+        "Team D 94"
+      ]
+    }
+  },
+  {
+    "id": "fussball_95",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1975?",
+      "en": "Who won the FIFA World Cup in the year 1975?"
+    },
+    "options": {
+      "de": [
+        "Team A 95",
+        "Team B 95",
+        "Team C 95",
+        "Team D 95"
+      ],
+      "en": [
+        "Team A 95",
+        "Team B 95",
+        "Team C 95",
+        "Team D 95"
+      ]
+    }
+  },
+  {
+    "id": "fussball_96",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1976?",
+      "en": "Who won the FIFA World Cup in the year 1976?"
+    },
+    "options": {
+      "de": [
+        "Team A 96",
+        "Team B 96",
+        "Team C 96",
+        "Team D 96"
+      ],
+      "en": [
+        "Team A 96",
+        "Team B 96",
+        "Team C 96",
+        "Team D 96"
+      ]
+    }
+  },
+  {
+    "id": "fussball_97",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1977?",
+      "en": "Who won the FIFA World Cup in the year 1977?"
+    },
+    "options": {
+      "de": [
+        "Team A 97",
+        "Team B 97",
+        "Team C 97",
+        "Team D 97"
+      ],
+      "en": [
+        "Team A 97",
+        "Team B 97",
+        "Team C 97",
+        "Team D 97"
+      ]
+    }
+  },
+  {
+    "id": "fussball_98",
+    "cat": "Fussball",
+    "correct": 2,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1978?",
+      "en": "Who won the FIFA World Cup in the year 1978?"
+    },
+    "options": {
+      "de": [
+        "Team A 98",
+        "Team B 98",
+        "Team C 98",
+        "Team D 98"
+      ],
+      "en": [
+        "Team A 98",
+        "Team B 98",
+        "Team C 98",
+        "Team D 98"
+      ]
+    }
+  },
+  {
+    "id": "fussball_99",
+    "cat": "Fussball",
+    "correct": 3,
+    "text": {
+      "de": "Wer gewann die Fußball-Weltmeisterschaft im Jahr 1979?",
+      "en": "Who won the FIFA World Cup in the year 1979?"
+    },
+    "options": {
+      "de": [
+        "Team A 99",
+        "Team B 99",
+        "Team C 99",
+        "Team D 99"
+      ],
+      "en": [
+        "Team A 99",
+        "Team B 99",
+        "Team C 99",
+        "Team D 99"
+      ]
+    }
   }
 ]
