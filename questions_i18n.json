@@ -13240,3456 +13240,6 @@
     }
   },
   {
-    "id": "fussball_new_0",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2022?",
-      "en": "Which country won the FIFA World Cup in 2022?"
-    },
-    "options": {
-      "de": [
-        "Argentinien",
-        "Frankreich",
-        "Brasilien",
-        "Deutschland"
-      ],
-      "en": [
-        "Argentina",
-        "France",
-        "Brazil",
-        "Germany"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_1",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie oft hat der FC Bayern München die UEFA Champions League gewonnen?",
-      "en": "How many times has FC Bayern Munich won the UEFA Champions League?"
-    },
-    "options": {
-      "de": [
-        "6",
-        "5",
-        "7",
-        "4"
-      ],
-      "en": [
-        "6",
-        "5",
-        "7",
-        "4"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_2",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordtorschütze der deutschen Fußball-Nationalmannschaft?",
-      "en": "Who is the all-time leading goal scorer for the German national football team?"
-    },
-    "options": {
-      "de": [
-        "Miroslav Klose",
-        "Gerd Müller",
-        "Lukas Podolski",
-        "Jürgen Klinsmann"
-      ],
-      "en": [
-        "Miroslav Klose",
-        "Gerd Müller",
-        "Lukas Podolski",
-        "Jürgen Klinsmann"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_3",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "In welchem Land fand die Fußball-Weltmeisterschaft 2018 statt?",
-      "en": "In which country was the 2018 FIFA World Cup held?"
-    },
-    "options": {
-      "de": [
-        "Russland",
-        "Brasilien",
-        "Südafrika",
-        "Deutschland"
-      ],
-      "en": [
-        "Russia",
-        "Brazil",
-        "South Africa",
-        "Germany"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_4",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für den 'Hand Gottes'-Moment bei der WM 1986?",
-      "en": "Which player is famous for the 'Hand of God' moment at the 1986 World Cup?"
-    },
-    "options": {
-      "de": [
-        "Diego Maradona",
-        "Pelé",
-        "Lionel Messi",
-        "Cristiano Ronaldo"
-      ],
-      "en": [
-        "Diego Maradona",
-        "Pelé",
-        "Lionel Messi",
-        "Cristiano Ronaldo"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_5",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein gewann die erste UEFA Champions League (damals Europapokal der Landesmeister)?",
-      "en": "Which club won the first UEFA Champions League (then European Cup)?"
-    },
-    "options": {
-      "de": [
-        "Real Madrid",
-        "AC Mailand",
-        "FC Liverpool",
-        "Ajax Amsterdam"
-      ],
-      "en": [
-        "Real Madrid",
-        "AC Milan",
-        "Liverpool FC",
-        "Ajax Amsterdam"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_6",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie lange dauert ein Fußballspiel regulär (ohne Nachspielzeit)?",
-      "en": "How long does a regular football (soccer) match last (excluding injury time)?"
-    },
-    "options": {
-      "de": [
-        "90 Minuten",
-        "80 Minuten",
-        "100 Minuten",
-        "120 Minuten"
-      ],
-      "en": [
-        "90 minutes",
-        "80 minutes",
-        "100 minutes",
-        "120 minutes"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_7",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher deutsche Fußballspieler ist auch als 'Kaiser' bekannt?",
-      "en": "Which German football player is also known as 'Der Kaiser'?"
-    },
-    "options": {
-      "de": [
-        "Franz Beckenbauer",
-        "Gerd Müller",
-        "Uwe Seeler",
-        "Lothar Matthäus"
-      ],
-      "en": [
-        "Franz Beckenbauer",
-        "Gerd Müller",
-        "Uwe Seeler",
-        "Lothar Matthäus"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_8",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie viele gelbe Karten führen in den meisten Ligen zu einem Platzverweis?",
-      "en": "How many yellow cards typically lead to a red card in most leagues?"
-    },
-    "options": {
-      "de": [
-        "2",
-        "3",
-        "1",
-        "4"
-      ],
-      "en": [
-        "2",
-        "3",
-        "1",
-        "4"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_9",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Fußballverein trägt seine Heimspiele im Camp Nou aus?",
-      "en": "Which football club plays its home matches at Camp Nou?"
-    },
-    "options": {
-      "de": [
-        "FC Barcelona",
-        "Real Madrid",
-        "Atlético Madrid",
-        "FC Valencia"
-      ],
-      "en": [
-        "FC Barcelona",
-        "Real Madrid",
-        "Atlético Madrid",
-        "Valencia CF"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_10",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der aktuelle Trainer der deutschen Fußball-Nationalmannschaft (Stand 2024)?",
-      "en": "Who is the current coach of the German national football team (as of 2024)?"
-    },
-    "options": {
-      "de": [
-        "Julian Nagelsmann",
-        "Hansi Flick",
-        "Joachim Löw",
-        "Rudi Völler"
-      ],
-      "en": [
-        "Julian Nagelsmann",
-        "Hansi Flick",
-        "Joachim Löw",
-        "Rudi Völler"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_11",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler hat die meisten Tore in der Geschichte der UEFA Champions League erzielt?",
-      "en": "Which player has scored the most goals in the history of the UEFA Champions League?"
-    },
-    "options": {
-      "de": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ],
-      "en": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_12",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was bedeutet die Abkürzung VAR im Fußball?",
-      "en": "What does the abbreviation VAR stand for in football?"
-    },
-    "options": {
-      "de": [
-        "Video-Assistent-Referee",
-        "Very Accurate Referee",
-        "Visual Aid Review",
-        "Verdict After Review"
-      ],
-      "en": [
-        "Video Assistant Referee",
-        "Very Accurate Referee",
-        "Visual Aid Review",
-        "Verdict After Review"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_13",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler gewann 2023 den Ballon d'Or?",
-      "en": "Which player won the Ballon d'Or in 2023?"
-    },
-    "options": {
-      "de": [
-        "Lionel Messi",
-        "Erling Haaland",
-        "Kylian Mbappé",
-        "Karim Benzema"
-      ],
-      "en": [
-        "Lionel Messi",
-        "Erling Haaland",
-        "Kylian Mbappé",
-        "Karim Benzema"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_14",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie oft wurde Brasilien Fußball-Weltmeister?",
-      "en": "How many times has Brazil won the FIFA World Cup?"
-    },
-    "options": {
-      "de": [
-        "5",
-        "4",
-        "6",
-        "3"
-      ],
-      "en": [
-        "5",
-        "4",
-        "6",
-        "3"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_15",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein ist Rekordmeister in der deutschen Bundesliga?",
-      "en": "Which club is the record champion in the German Bundesliga?"
-    },
-    "options": {
-      "de": [
-        "FC Bayern München",
-        "Borussia Dortmund",
-        "Hamburger SV",
-        "Werder Bremen"
-      ],
-      "en": [
-        "FC Bayern Munich",
-        "Borussia Dortmund",
-        "Hamburger SV",
-        "Werder Bremen"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_16",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Hattrick' im Fußball?",
-      "en": "What is a 'hat-trick' in football?"
-    },
-    "options": {
-      "de": [
-        "Drei Tore eines Spielers in einem Spiel",
-        "Drei Vorlagen eines Spielers in einem Spiel",
-        "Drei Siege in Folge",
-        "Drei gehaltene Elfmeter"
-      ],
-      "en": [
-        "Three goals by one player in a single match",
-        "Three assists by one player in a single match",
-        "Three consecutive wins",
-        "Three saved penalties"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_17",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Stadion ist als 'The Theatre of Dreams' bekannt?",
-      "en": "Which stadium is known as 'The Theatre of Dreams'?"
-    },
-    "options": {
-      "de": [
-        "Old Trafford",
-        "Wembley Stadium",
-        "Anfield",
-        "Santiago Bernabéu"
-      ],
-      "en": [
-        "Old Trafford",
-        "Wembley Stadium",
-        "Anfield",
-        "Santiago Bernabéu"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_18",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Präsident der FIFA (Stand 2024)?",
-      "en": "Who is the president of FIFA (as of 2024)?"
-    },
-    "options": {
-      "de": [
-        "Gianni Infantino",
-        "Sepp Blatter",
-        "Michel Platini",
-        "João Havelange"
-      ],
-      "en": [
-        "Gianni Infantino",
-        "Sepp Blatter",
-        "Michel Platini",
-        "João Havelange"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_19",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die erste Fußball-Weltmeisterschaft 1930?",
-      "en": "Which country won the first FIFA World Cup in 1930?"
-    },
-    "options": {
-      "de": [
-        "Uruguay",
-        "Brasilien",
-        "Italien",
-        "Deutschland"
-      ],
-      "en": [
-        "Uruguay",
-        "Brazil",
-        "Italy",
-        "Germany"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_20",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie heißt der Pokal, der dem Sieger der UEFA Champions League überreicht wird?",
-      "en": "What is the name of the trophy awarded to the winner of the UEFA Champions League?"
-    },
-    "options": {
-      "de": [
-        "Henkelpott",
-        "Jules-Rimet-Pokal",
-        "Weltpokal",
-        "Europapokal"
-      ],
-      "en": [
-        "The Big Ears (European Champion Clubs' Cup)",
-        "Jules Rimet Trophy",
-        "Intercontinental Cup",
-        "European Cup"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_21",
-    "cat": "Fussball",
-    "correct": 1,
-    "text": {
-      "de": "Welcher Spieler hält den Rekord für die meisten Tore in einer einzelnen Bundesliga-Saison?",
-      "en": "Which player holds the record for most goals in a single Bundesliga season?"
-    },
-    "options": {
-      "de": [
-        "Robert Lewandowski",
-        "Gerd Müller",
-        "Erling Haaland",
-        "Pierre-Emerick Aubameyang"
-      ],
-      "en": [
-        "Robert Lewandowski",
-        "Gerd Müller",
-        "Erling Haaland",
-        "Pierre-Emerick Aubameyang"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_22",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Elfmeter' im Fußball?",
-      "en": "What is a 'penalty kick' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein direkter Freistoß aus 11 Metern Entfernung zum Tor",
-        "Ein indirekter Freistoß",
-        "Ein Eckball",
-        "Ein Einwurf"
-      ],
-      "en": [
-        "A direct free kick taken from 11 meters (12 yards) from the goal",
-        "An indirect free kick",
-        "A corner kick",
-        "A throw-in"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_23",
-    "cat": "Fussball",
-    "correct": 1,
-    "text": {
-      "de": "Welches Land ist Rekord-Europameister im Fußball?",
-      "en": "Which country is the record European champion in football?"
-    },
-    "options": {
-      "de": [
-        "Deutschland",
-        "Spanien",
-        "Frankreich",
-        "Italien"
-      ],
-      "en": [
-        "Germany",
-        "Spain",
-        "France",
-        "Italy"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_24",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie viele Schiedsrichter sind bei einem professionellen Fußballspiel auf dem Feld?",
-      "en": "How many referees are on the field during a professional football match?"
-    },
-    "options": {
-      "de": [
-        "1 (Hauptschiedsrichter)",
-        "3 (Hauptschiedsrichter und zwei Assistenten)",
-        "4 (Hauptschiedsrichter, zwei Assistenten und vierter Offizieller)",
-        "2 (Hauptschiedsrichter und ein Assistent)"
-      ],
-      "en": [
-        "1 (main referee)",
-        "3 (main referee and two assistants)",
-        "4 (main referee, two assistants and fourth official)",
-        "2 (main referee and one assistant)"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_25",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein gewann die UEFA Champions League in der Saison 2022/2023?",
-      "en": "Which club won the UEFA Champions League in the 2022/2023 season?"
-    },
-    "options": {
-      "de": [
-        "Manchester City",
-        "Inter Mailand",
-        "Real Madrid",
-        "FC Bayern München"
-      ],
-      "en": [
-        "Manchester City",
-        "Inter Milan",
-        "Real Madrid",
-        "FC Bayern Munich"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_26",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Trainer von Manchester City (Stand 2024)?",
-      "en": "Who is the manager of Manchester City (as of 2024)?"
-    },
-    "options": {
-      "de": [
-        "Pep Guardiola",
-        "Jürgen Klopp",
-        "Carlo Ancelotti",
-        "Thomas Tuchel"
-      ],
-      "en": [
-        "Pep Guardiola",
-        "Jürgen Klopp",
-        "Carlo Ancelotti",
-        "Thomas Tuchel"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_27",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler hält den Rekord für die meisten Tore in der Geschichte der Fußball-Weltmeisterschaft?",
-      "en": "Which player holds the record for the most goals in the history of the FIFA World Cup?"
-    },
-    "options": {
-      "de": [
-        "Miroslav Klose",
-        "Ronaldo Nazário",
-        "Gerd Müller",
-        "Pelé"
-      ],
-      "en": [
-        "Miroslav Klose",
-        "Ronaldo Nazário",
-        "Gerd Müller",
-        "Pelé"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_28",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Freistoß' im Fußball?",
-      "en": "What is a 'free kick' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Spielfortsetzung nach einem Foulspiel",
-        "Ein Schuss aus dem Spiel heraus",
-        "Ein Einwurf",
-        "Ein Eckball"
-      ],
-      "en": [
-        "A restart of play after a foul",
-        "A shot from open play",
-        "A throw-in",
-        "A corner kick"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_29",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land ist bekannt für seine 'Tiki-Taka'-Spielweise?",
-      "en": "Which country is known for its 'Tiki-Taka' playing style?"
-    },
-    "options": {
-      "de": [
-        "Spanien",
-        "Brasilien",
-        "Deutschland",
-        "Italien"
-      ],
-      "en": [
-        "Spain",
-        "Brazil",
-        "Germany",
-        "Italy"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_30",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Kapitän der deutschen Fußball-Nationalmannschaft (Stand 2024)?",
-      "en": "Who is the captain of the German national football team (as of 2024)?"
-    },
-    "options": {
-      "de": [
-        "Ilkay Gündogan",
-        "Manuel Neuer",
-        "Joshua Kimmich",
-        "Thomas Müller"
-      ],
-      "en": [
-        "Ilkay Gündogan",
-        "Manuel Neuer",
-        "Joshua Kimmich",
-        "Thomas Müller"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_31",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein gewann die Bundesliga in der Saison 2022/2023?",
-      "en": "Which club won the Bundesliga in the 2022/2023 season?"
-    },
-    "options": {
-      "de": [
-        "FC Bayern München",
-        "Borussia Dortmund",
-        "RB Leipzig",
-        "Bayer 04 Leverkusen"
-      ],
-      "en": [
-        "FC Bayern Munich",
-        "Borussia Dortmund",
-        "RB Leipzig",
-        "Bayer 04 Leverkusen"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_32",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Eigentor' im Fußball?",
-      "en": "What is an 'own goal' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Tor, das ein Spieler versehentlich ins eigene Netz schießt",
-        "Ein Tor, das ein Spieler absichtlich ins eigene Netz schießt",
-        "Ein Tor, das von einem Verteidiger erzielt wird",
-        "Ein Tor, das außerhalb des Strafraums erzielt wird"
-      ],
-      "en": [
-        "A goal scored accidentally by a player into their own net",
-        "A goal scored intentionally by a player into their own net",
-        "A goal scored by a defender",
-        "A goal scored from outside the penalty area"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_33",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land ist Rekord-Weltmeister im Fußball der Frauen?",
-      "en": "Which country is the record champion in women's football World Cup?"
-    },
-    "options": {
-      "de": [
-        "USA",
-        "Deutschland",
-        "Norwegen",
-        "Japan"
-      ],
-      "en": [
-        "USA",
-        "Germany",
-        "Norway",
-        "Japan"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_34",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der jüngste Torschütze in der Geschichte der Fußball-Weltmeisterschaft?",
-      "en": "Who is the youngest goal scorer in the history of the FIFA World Cup?"
-    },
-    "options": {
-      "de": [
-        "Pelé",
-        "Kylian Mbappé",
-        "Norman Whiteside",
-        "Lionel Messi"
-      ],
-      "en": [
-        "Pelé",
-        "Kylian Mbappé",
-        "Norman Whiteside",
-        "Lionel Messi"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_35",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist die 'Abseitsregel' im Fußball?",
-      "en": "What is the 'offside rule' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Regel, die besagt, dass ein Spieler nicht näher an der gegnerischen Torlinie sein darf als der Ball und der vorletzte Gegenspieler, wenn der Ball von einem Mitspieler gespielt wird.",
-        "Eine Regel, die besagt, dass ein Spieler nicht in der eigenen Hälfte stehen darf.",
-        "Eine Regel, die besagt, dass ein Spieler den Ball nicht mit der Hand berühren darf.",
-        "Eine Regel, die besagt, dass ein Spieler nicht außerhalb des Spielfeldes stehen darf."
-      ],
-      "en": [
-        "A rule stating that a player cannot be nearer to the opponents' goal line than both the ball and the second-to-last opponent when the ball is played by a teammate.",
-        "A rule stating that a player cannot be in their own half.",
-        "A rule stating that a player cannot touch the ball with their hand.",
-        "A rule stating that a player cannot be outside the field of play."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_36",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein gewann die erste deutsche Meisterschaft im Fußball?",
-      "en": "Which club won the first German football championship?"
-    },
-    "options": {
-      "de": [
-        "VfB Leipzig",
-        "FC Bayern München",
-        "Hamburger SV",
-        "Schalke 04"
-      ],
-      "en": [
-        "VfB Leipzig",
-        "FC Bayern Munich",
-        "Hamburger SV",
-        "Schalke 04"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_37",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie viele Auswechselspieler dürfen in einem Bundesligaspiel maximal eingesetzt werden?",
-      "en": "How many substitutes can be used in a Bundesliga match?"
-    },
-    "options": {
-      "de": [
-        "5",
-        "3",
-        "4",
-        "6"
-      ],
-      "en": [
-        "5",
-        "3",
-        "4",
-        "6"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_38",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land ist der Gastgeber der Fußball-Europameisterschaft 2024?",
-      "en": "Which country is hosting the UEFA European Championship in 2024?"
-    },
-    "options": {
-      "de": [
-        "Deutschland",
-        "Frankreich",
-        "England",
-        "Italien"
-      ],
-      "en": [
-        "Germany",
-        "France",
-        "England",
-        "Italy"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_39",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordspieler der deutschen Fußball-Nationalmannschaft nach Einsätzen?",
-      "en": "Who is the most capped player for the German national football team?"
-    },
-    "options": {
-      "de": [
-        "Lothar Matthäus",
-        "Miroslav Klose",
-        "Franz Beckenbauer",
-        "Philipp Lahm"
-      ],
-      "en": [
-        "Lothar Matthäus",
-        "Miroslav Klose",
-        "Franz Beckenbauer",
-        "Philipp Lahm"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_40",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Fallrückzieher' im Fußball?",
-      "en": "What is a 'bicycle kick' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein akrobatischer Schuss, bei dem der Spieler mit dem Rücken zum Tor in der Luft liegt und den Ball über sich schießt.",
-        "Ein Schuss, der vom Boden abprallt.",
-        "Ein Schuss, der mit dem Kopf erzielt wird.",
-        "Ein Schuss, der aus großer Entfernung erzielt wird."
-      ],
-      "en": [
-        "An acrobatic shot where the player lies in the air with their back to the goal and kicks the ball over their head.",
-        "A shot that bounces off the ground.",
-        "A shot scored with the head.",
-        "A shot scored from a long distance."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_41",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein gewann die englische Premier League in der Saison 2022/2023?",
-      "en": "Which club won the English Premier League in the 2022/2023 season?"
-    },
-    "options": {
-      "de": [
-        "Manchester City",
-        "Arsenal FC",
-        "Manchester United",
-        "Liverpool FC"
-      ],
-      "en": [
-        "Manchester City",
-        "Arsenal FC",
-        "Manchester United",
-        "Liverpool FC"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_42",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Elfmeterschießen' im Fußball?",
-      "en": "What is a 'penalty shootout' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Methode zur Ermittlung eines Siegers nach einem Unentschieden, bei der Spieler abwechselnd Elfmeter schießen.",
-        "Ein Training für Elfmeter.",
-        "Ein Spiel, das nur aus Elfmetern besteht.",
-        "Ein Elfmeter, der während des Spiels ausgeführt wird."
-      ],
-      "en": [
-        "A method of determining a winner after a draw, where players take turns shooting penalties.",
-        "A penalty training session.",
-        "A game consisting only of penalties.",
-        "A penalty taken during the match."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_43",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Panenka'-Elfmeter?",
-      "en": "Which player is famous for his 'Panenka' penalty kicks?"
-    },
-    "options": {
-      "de": [
-        "Antonín Panenka",
-        "Zinedine Zidane",
-        "Andrea Pirlo",
-        "Francesco Totti"
-      ],
-      "en": [
-        "Antonín Panenka",
-        "Zinedine Zidane",
-        "Andrea Pirlo",
-        "Francesco Totti"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_44",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Copa América 2021?",
-      "en": "Which country won the Copa América in 2021?"
-    },
-    "options": {
-      "de": [
-        "Argentinien",
-        "Brasilien",
-        "Uruguay",
-        "Chile"
-      ],
-      "en": [
-        "Argentina",
-        "Brazil",
-        "Uruguay",
-        "Chile"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_45",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Doppelpack' im Fußball?",
-      "en": "What is a 'brace' (doublet) in football?"
-    },
-    "options": {
-      "de": [
-        "Zwei Tore eines Spielers in einem Spiel",
-        "Zwei Vorlagen eines Spielers in einem Spiel",
-        "Zwei Siege in Folge",
-        "Zwei gehaltene Elfmeter"
-      ],
-      "en": [
-        "Two goals by one player in a single match",
-        "Two assists by one player in a single match",
-        "Two consecutive wins",
-        "Two saved penalties"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_46",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches ist das größte Fußballstadion der Welt nach Kapazität?",
-      "en": "Which is the largest football stadium in the world by capacity?"
-    },
-    "options": {
-      "de": [
-        "Rungrado 1. Mai Stadion",
-        "Camp Nou",
-        "Wembley Stadium",
-        "Aztekenstadion"
-      ],
-      "en": [
-        "Rungrado 1st of May Stadium",
-        "Camp Nou",
-        "Wembley Stadium",
-        "Azteca Stadium"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_47",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Trainer der deutschen Frauen-Nationalmannschaft (Stand 2024)?",
-      "en": "Who is the coach of the German women's national football team (as of 2024)?"
-    },
-    "options": {
-      "de": [
-        "Horst Hrubesch",
-        "Martina Voss-Tecklenburg",
-        "Steffi Jones",
-        "Silvia Neid"
-      ],
-      "en": [
-        "Horst Hrubesch",
-        "Martina Voss-Tecklenburg",
-        "Steffi Jones",
-        "Silvia Neid"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_48",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Derby' im Fußball?",
-      "en": "What is a 'derby' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Spiel zwischen zwei rivalisierenden Mannschaften aus derselben Stadt oder Region.",
-        "Ein Freundschaftsspiel.",
-        "Ein Pokalfinale.",
-        "Ein Länderspiel."
-      ],
-      "en": [
-        "A match between two rival teams from the same city or region.",
-        "A friendly match.",
-        "A cup final.",
-        "An international match."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_49",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
-      "en": "Which player is famous for his 'Rabona' tricks?"
-    },
-    "options": {
-      "de": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ],
-      "en": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_50",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist der Rekordtorschütze der UEFA Champions League?",
-      "en": "Which player is the all-time leading goalscorer in the UEFA Champions League?"
-    },
-    "options": {
-      "de": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ],
-      "en": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_51",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie viele Spieler sind in einer Mannschaft beim Hallenfußball (Futsal)?",
-      "en": "How many players are on a team in indoor football (futsal)?"
-    },
-    "options": {
-      "de": [
-        "5",
-        "7",
-        "11",
-        "6"
-      ],
-      "en": [
-        "5",
-        "7",
-        "11",
-        "6"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_52",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Europameisterschaft 2020 (ausgetragen 2021)?",
-      "en": "Which country won the UEFA European Championship in 2020 (played in 2021)?"
-    },
-    "options": {
-      "de": [
-        "Italien",
-        "England",
-        "Spanien",
-        "Portugal"
-      ],
-      "en": [
-        "Italy",
-        "England",
-        "Spain",
-        "Portugal"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_53",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Elfmeterpunkt' im Fußball?",
-      "en": "What is a 'penalty spot' in football?"
-    },
-    "options": {
-      "de": [
-        "Der Punkt, von dem ein Elfmeter geschossen wird",
-        "Der Mittelpunkt des Spielfelds",
-        "Der Punkt, an dem der Ball ins Aus geht",
-        "Der Punkt, an dem der Torwart steht"
-      ],
-      "en": [
-        "The spot from which a penalty kick is taken",
-        "The center of the field",
-        "The point where the ball goes out of bounds",
-        "The spot where the goalkeeper stands"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_54",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Fußballverein ist bekannt für seine 'Gelbe Wand'?",
-      "en": "Which football club is known for its 'Yellow Wall'?"
-    },
-    "options": {
-      "de": [
-        "Borussia Dortmund",
-        "FC Bayern München",
-        "Schalke 04",
-        "Hamburger SV"
-      ],
-      "en": [
-        "Borussia Dortmund",
-        "FC Bayern Munich",
-        "Schalke 04",
-        "Hamburger SV"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_55",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordspieler der deutschen Bundesliga nach Einsätzen?",
-      "en": "Who is the all-time record player in the German Bundesliga by appearances?"
-    },
-    "options": {
-      "de": [
-        "Charly Körbel",
-        "Sepp Maier",
-        "Oliver Kahn",
-        "Lothar Matthäus"
-      ],
-      "en": [
-        "Charly Körbel",
-        "Sepp Maier",
-        "Oliver Kahn",
-        "Lothar Matthäus"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_56",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Abstoß' im Fußball?",
-      "en": "What is a 'goal kick' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat und zuletzt von einem gegnerischen Spieler berührt wurde.",
-        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
-        "Eine Spielfortsetzung nach einem Foul.",
-        "Eine Spielfortsetzung nach einem Tor."
-      ],
-      "en": [
-        "A restart of play when the ball has crossed the goal line and was last touched by an opposing player.",
-        "A restart of play when the ball has crossed the sideline.",
-        "A restart of play after a foul.",
-        "A restart of play after a goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_57",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Weltmeisterschaft der Frauen 2023?",
-      "en": "Which country won the FIFA Women's World Cup in 2023?"
-    },
-    "options": {
-      "de": [
-        "Spanien",
-        "England",
-        "USA",
-        "Deutschland"
-      ],
-      "en": [
-        "Spain",
-        "England",
-        "USA",
-        "Germany"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_58",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordtorschütze der spanischen La Liga?",
-      "en": "Who is the all-time leading goalscorer in Spain's La Liga?"
-    },
-    "options": {
-      "de": [
-        "Lionel Messi",
-        "Cristiano Ronaldo",
-        "Telmo Zarra",
-        "Hugo Sánchez"
-      ],
-      "en": [
-        "Lionel Messi",
-        "Cristiano Ronaldo",
-        "Telmo Zarra",
-        "Hugo Sánchez"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_59",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Doppelwechsel' im Fußball?",
-      "en": "What is a 'double substitution' in football?"
-    },
-    "options": {
-      "de": [
-        "Zwei Spieler werden gleichzeitig ausgewechselt.",
-        "Ein Spieler wird zweimal ausgewechselt.",
-        "Zwei Spieler wechseln die Position.",
-        "Zwei Trainer wechseln die Mannschaft."
-      ],
-      "en": [
-        "Two players are substituted at the same time.",
-        "One player is substituted twice.",
-        "Two players change positions.",
-        "Two coaches change teams."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_60",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein ist Rekordsieger des DFB-Pokals?",
-      "en": "Which club is the record winner of the DFB-Pokal?"
-    },
-    "options": {
-      "de": [
-        "FC Bayern München",
-        "Werder Bremen",
-        "Schalke 04",
-        "Borussia Dortmund"
-      ],
-      "en": [
-        "FC Bayern Munich",
-        "Werder Bremen",
-        "Schalke 04",
-        "Borussia Dortmund"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_61",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist die 'Nachspielzeit' im Fußball?",
-      "en": "What is 'injury time' (added time) in football?"
-    },
-    "options": {
-      "de": [
-        "Zusätzliche Spielzeit am Ende jeder Halbzeit, um Unterbrechungen auszugleichen.",
-        "Die Zeit, in der ein Spieler verletzt ist.",
-        "Die Zeit, in der das Spiel unterbrochen ist.",
-        "Die Zeit vor dem Anpfiff."
-      ],
-      "en": [
-        "Additional playing time at the end of each half to compensate for stoppages.",
-        "The time a player is injured.",
-        "The time when the game is interrupted.",
-        "The time before kick-off."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_62",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Elastico'-Dribblings?",
-      "en": "Which player is famous for his 'Elastico' dribbles?"
-    },
-    "options": {
-      "de": [
-        "Ronaldinho",
-        "Pelé",
-        "Neymar",
-        "Ronaldo Nazário"
-      ],
-      "en": [
-        "Ronaldinho",
-        "Pelé",
-        "Neymar",
-        "Ronaldo Nazário"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_63",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie oft findet die Fußball-Weltmeisterschaft statt?",
-      "en": "How often does the FIFA World Cup take place?"
-    },
-    "options": {
-      "de": [
-        "Alle 4 Jahre",
-        "Alle 2 Jahre",
-        "Jedes Jahr",
-        "Alle 5 Jahre"
-      ],
-      "en": [
-        "Every 4 years",
-        "Every 2 years",
-        "Every year",
-        "Every 5 years"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_64",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land ist Rekordsieger der Copa América?",
-      "en": "Which country is the record winner of the Copa América?"
-    },
-    "options": {
-      "de": [
-        "Argentinien",
-        "Uruguay",
-        "Brasilien",
-        "Chile"
-      ],
-      "en": [
-        "Argentina",
-        "Uruguay",
-        "Brazil",
-        "Chile"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_65",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Strafraum' im Fußball?",
-      "en": "What is a 'penalty area' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Bereich vor dem Tor, in dem bestimmte Fouls mit einem Elfmeter geahndet werden.",
-        "Der Bereich, in dem sich die Ersatzspieler aufhalten.",
-        "Der Bereich, in dem der Trainer steht.",
-        "Der Bereich, in dem die Fans sitzen."
-      ],
-      "en": [
-        "An area in front of the goal where certain fouls result in a penalty kick.",
-        "The area where substitute players are located.",
-        "The area where the coach stands.",
-        "The area where the fans sit."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_66",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordtorschütze der englischen Premier League?",
-      "en": "Who is the all-time leading goalscorer in the English Premier League?"
-    },
-    "options": {
-      "de": [
-        "Alan Shearer",
-        "Harry Kane",
-        "Wayne Rooney",
-        "Sergio Agüero"
-      ],
-      "en": [
-        "Alan Shearer",
-        "Harry Kane",
-        "Wayne Rooney",
-        "Sergio Agüero"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_67",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Einwurf' im Fußball?",
-      "en": "What is a 'throw-in' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
-        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat.",
-        "Eine Spielfortsetzung nach einem Foul.",
-        "Eine Spielfortsetzung nach einem Tor."
-      ],
-      "en": [
-        "A restart of play when the ball has crossed the sideline.",
-        "A restart of play when the ball has crossed the goal line.",
-        "A restart of play after a foul.",
-        "A restart of play after a goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_68",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Cruyff-Wende'?",
-      "en": "Which player is famous for his 'Cruyff Turn'?"
-    },
-    "options": {
-      "de": [
-        "Johan Cruyff",
-        "Pelé",
-        "George Best",
-        "Zinedine Zidane"
-      ],
-      "en": [
-        "Johan Cruyff",
-        "Pelé",
-        "George Best",
-        "Zinedine Zidane"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_69",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2014?",
-      "en": "Which country won the FIFA World Cup in 2014?"
-    },
-    "options": {
-      "de": [
-        "Deutschland",
-        "Brasilien",
-        "Argentinien",
-        "Spanien"
-      ],
-      "en": [
-        "Germany",
-        "Brazil",
-        "Argentina",
-        "Spain"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_70",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Volley' im Fußball?",
-      "en": "What is a 'volley' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Schuss, bei dem der Ball direkt aus der Luft getroffen wird, bevor er den Boden berührt.",
-        "Ein Schuss, der vom Boden abprallt.",
-        "Ein Schuss, der mit dem Kopf erzielt wird.",
-        "Ein Schuss aus großer Entfernung."
-      ],
-      "en": [
-        "A shot where the ball is struck directly from the air before it touches the ground.",
-        "A shot that bounces off the ground.",
-        "A shot scored with the head.",
-        "A shot from a long distance."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_71",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein ist Rekordsieger der UEFA Europa League?",
-      "en": "Which club is the record winner of the UEFA Europa League?"
-    },
-    "options": {
-      "de": [
-        "FC Sevilla",
-        "Inter Mailand",
-        "FC Liverpool",
-        "Atlético Madrid"
-      ],
-      "en": [
-        "Sevilla FC",
-        "Inter Milan",
-        "Liverpool FC",
-        "Atlético Madrid"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_72",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der aktuelle Präsident der UEFA (Stand 2024)?",
-      "en": "Who is the current president of UEFA (as of 2024)?"
-    },
-    "options": {
-      "de": [
-        "Aleksander Čeferin",
-        "Michel Platini",
-        "Lennart Johansson",
-        "Jacques Georges"
-      ],
-      "en": [
-        "Aleksander Čeferin",
-        "Michel Platini",
-        "Lennart Johansson",
-        "Jacques Georges"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_73",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Tunnel' im Fußball?",
-      "en": "What is a 'nutmeg' (tunnel) in football?"
-    },
-    "options": {
-      "de": [
-        "Den Ball zwischen den Beinen eines Gegners hindurchspielen.",
-        "Den Ball über den Kopf eines Gegners spielen.",
-        "Den Ball an einem Gegner vorbeischießen.",
-        "Den Ball ins Tor schießen."
-      ],
-      "en": [
-        "Playing the ball between an opponent's legs.",
-        "Playing the ball over an opponent's head.",
-        "Shooting the ball past an opponent.",
-        "Shooting the ball into the goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_74",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
-      "en": "Which player is famous for his 'Rabona' tricks?"
-    },
-    "options": {
-      "de": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ],
-      "en": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_50",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist der Rekordtorschütze der UEFA Champions League?",
-      "en": "Which player is the all-time leading goalscorer in the UEFA Champions League?"
-    },
-    "options": {
-      "de": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ],
-      "en": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_51",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie viele Spieler sind in einer Mannschaft beim Hallenfußball (Futsal)?",
-      "en": "How many players are on a team in indoor football (futsal)?"
-    },
-    "options": {
-      "de": [
-        "5",
-        "7",
-        "11",
-        "6"
-      ],
-      "en": [
-        "5",
-        "7",
-        "11",
-        "6"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_52",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Europameisterschaft 2020 (ausgetragen 2021)?",
-      "en": "Which country won the UEFA European Championship in 2020 (played in 2021)?"
-    },
-    "options": {
-      "de": [
-        "Italien",
-        "England",
-        "Spanien",
-        "Portugal"
-      ],
-      "en": [
-        "Italy",
-        "England",
-        "Spain",
-        "Portugal"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_53",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Elfmeterpunkt' im Fußball?",
-      "en": "What is a 'penalty spot' in football?"
-    },
-    "options": {
-      "de": [
-        "Der Punkt, von dem ein Elfmeter geschossen wird",
-        "Der Mittelpunkt des Spielfelds",
-        "Der Punkt, an dem der Ball ins Aus geht",
-        "Der Punkt, an dem der Torwart steht"
-      ],
-      "en": [
-        "The spot from which a penalty kick is taken",
-        "The center of the field",
-        "The point where the ball goes out of bounds",
-        "The spot where the goalkeeper stands"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_54",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Fußballverein ist bekannt für seine 'Gelbe Wand'?",
-      "en": "Which football club is known for its 'Yellow Wall'?"
-    },
-    "options": {
-      "de": [
-        "Borussia Dortmund",
-        "FC Bayern München",
-        "Schalke 04",
-        "Hamburger SV"
-      ],
-      "en": [
-        "Borussia Dortmund",
-        "FC Bayern Munich",
-        "Schalke 04",
-        "Hamburger SV"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_55",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordspieler der deutschen Bundesliga nach Einsätzen?",
-      "en": "Who is the all-time record player in the German Bundesliga by appearances?"
-    },
-    "options": {
-      "de": [
-        "Charly Körbel",
-        "Sepp Maier",
-        "Oliver Kahn",
-        "Lothar Matthäus"
-      ],
-      "en": [
-        "Charly Körbel",
-        "Sepp Maier",
-        "Oliver Kahn",
-        "Lothar Matthäus"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_56",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Abstoß' im Fußball?",
-      "en": "What is a 'goal kick' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat und zuletzt von einem gegnerischen Spieler berührt wurde.",
-        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
-        "Eine Spielfortsetzung nach einem Foul.",
-        "Eine Spielfortsetzung nach einem Tor."
-      ],
-      "en": [
-        "A restart of play when the ball has crossed the goal line and was last touched by an opposing player.",
-        "A restart of play when the ball has crossed the sideline.",
-        "A restart of play after a foul.",
-        "A restart of play after a goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_57",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Weltmeisterschaft der Frauen 2023?",
-      "en": "Which country won the FIFA Women's World Cup in 2023?"
-    },
-    "options": {
-      "de": [
-        "Spanien",
-        "England",
-        "USA",
-        "Deutschland"
-      ],
-      "en": [
-        "Spain",
-        "England",
-        "USA",
-        "Germany"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_58",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordtorschütze der spanischen La Liga?",
-      "en": "Who is the all-time leading goalscorer in Spain's La Liga?"
-    },
-    "options": {
-      "de": [
-        "Lionel Messi",
-        "Cristiano Ronaldo",
-        "Telmo Zarra",
-        "Hugo Sánchez"
-      ],
-      "en": [
-        "Lionel Messi",
-        "Cristiano Ronaldo",
-        "Telmo Zarra",
-        "Hugo Sánchez"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_59",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Doppelwechsel' im Fußball?",
-      "en": "What is a 'double substitution' in football?"
-    },
-    "options": {
-      "de": [
-        "Zwei Spieler werden gleichzeitig ausgewechselt.",
-        "Ein Spieler wird zweimal ausgewechselt.",
-        "Zwei Spieler wechseln die Position.",
-        "Zwei Trainer wechseln die Mannschaft."
-      ],
-      "en": [
-        "Two players are substituted at the same time.",
-        "One player is substituted twice.",
-        "Two players change positions.",
-        "Two coaches change teams."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_60",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein ist Rekordsieger des DFB-Pokals?",
-      "en": "Which club is the record winner of the DFB-Pokal?"
-    },
-    "options": {
-      "de": [
-        "FC Bayern München",
-        "Werder Bremen",
-        "Schalke 04",
-        "Borussia Dortmund"
-      ],
-      "en": [
-        "FC Bayern Munich",
-        "Werder Bremen",
-        "Schalke 04",
-        "Borussia Dortmund"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_61",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist die 'Nachspielzeit' im Fußball?",
-      "en": "What is 'injury time' (added time) in football?"
-    },
-    "options": {
-      "de": [
-        "Zusätzliche Spielzeit am Ende jeder Halbzeit, um Unterbrechungen auszugleichen.",
-        "Die Zeit, in der ein Spieler verletzt ist.",
-        "Die Zeit, in der das Spiel unterbrochen ist.",
-        "Die Zeit vor dem Anpfiff."
-      ],
-      "en": [
-        "Additional playing time at the end of each half to compensate for stoppages.",
-        "The time a player is injured.",
-        "The time when the game is interrupted.",
-        "The time before kick-off."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_62",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Elastico'-Dribblings?",
-      "en": "Which player is famous for his 'Elastico' dribbles?"
-    },
-    "options": {
-      "de": [
-        "Ronaldinho",
-        "Pelé",
-        "Neymar",
-        "Ronaldo Nazário"
-      ],
-      "en": [
-        "Ronaldinho",
-        "Pelé",
-        "Neymar",
-        "Ronaldo Nazário"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_63",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie oft findet die Fußball-Weltmeisterschaft statt?",
-      "en": "How often does the FIFA World Cup take place?"
-    },
-    "options": {
-      "de": [
-        "Alle 4 Jahre",
-        "Alle 2 Jahre",
-        "Jedes Jahr",
-        "Alle 5 Jahre"
-      ],
-      "en": [
-        "Every 4 years",
-        "Every 2 years",
-        "Every year",
-        "Every 5 years"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_64",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land ist Rekordsieger der Copa América?",
-      "en": "Which country is the record winner of the Copa América?"
-    },
-    "options": {
-      "de": [
-        "Argentinien",
-        "Uruguay",
-        "Brasilien",
-        "Chile"
-      ],
-      "en": [
-        "Argentina",
-        "Uruguay",
-        "Brazil",
-        "Chile"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_65",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Strafraum' im Fußball?",
-      "en": "What is a 'penalty area' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Bereich vor dem Tor, in dem bestimmte Fouls mit einem Elfmeter geahndet werden.",
-        "Der Bereich, in dem sich die Ersatzspieler aufhalten.",
-        "Der Bereich, in dem der Trainer steht.",
-        "Der Bereich, in dem die Fans sitzen."
-      ],
-      "en": [
-        "An area in front of the goal where certain fouls result in a penalty kick.",
-        "The area where substitute players are located.",
-        "The area where the coach stands.",
-        "The area where the fans sit."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_66",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordtorschütze der englischen Premier League?",
-      "en": "Who is the all-time leading goalscorer in the English Premier League?"
-    },
-    "options": {
-      "de": [
-        "Alan Shearer",
-        "Harry Kane",
-        "Wayne Rooney",
-        "Sergio Agüero"
-      ],
-      "en": [
-        "Alan Shearer",
-        "Harry Kane",
-        "Wayne Rooney",
-        "Sergio Agüero"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_67",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Einwurf' im Fußball?",
-      "en": "What is a 'throw-in' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
-        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat.",
-        "Eine Spielfortsetzung nach einem Foul.",
-        "Eine Spielfortsetzung nach einem Tor."
-      ],
-      "en": [
-        "A restart of play when the ball has crossed the sideline.",
-        "A restart of play when the ball has crossed the goal line.",
-        "A restart of play after a foul.",
-        "A restart of play after a goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_68",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Cruyff-Wende'?",
-      "en": "Which player is famous for his 'Cruyff Turn'?"
-    },
-    "options": {
-      "de": [
-        "Johan Cruyff",
-        "Pelé",
-        "George Best",
-        "Zinedine Zidane"
-      ],
-      "en": [
-        "Johan Cruyff",
-        "Pelé",
-        "George Best",
-        "Zinedine Zidane"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_69",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2014?",
-      "en": "Which country won the FIFA World Cup in 2014?"
-    },
-    "options": {
-      "de": [
-        "Deutschland",
-        "Brasilien",
-        "Argentinien",
-        "Spanien"
-      ],
-      "en": [
-        "Germany",
-        "Brazil",
-        "Argentina",
-        "Spain"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_70",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Volley' im Fußball?",
-      "en": "What is a 'volley' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Schuss, bei dem der Ball direkt aus der Luft getroffen wird, bevor er den Boden berührt.",
-        "Ein Schuss, der vom Boden abprallt.",
-        "Ein Schuss, der mit dem Kopf erzielt wird.",
-        "Ein Schuss aus großer Entfernung."
-      ],
-      "en": [
-        "A shot where the ball is struck directly from the air before it touches the ground.",
-        "A shot that bounces off the ground.",
-        "A shot scored with the head.",
-        "A shot from a long distance."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_71",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein ist Rekordsieger der UEFA Europa League?",
-      "en": "Which club is the record winner of the UEFA Europa League?"
-    },
-    "options": {
-      "de": [
-        "FC Sevilla",
-        "Inter Mailand",
-        "FC Liverpool",
-        "Atlético Madrid"
-      ],
-      "en": [
-        "Sevilla FC",
-        "Inter Milan",
-        "Liverpool FC",
-        "Atlético Madrid"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_72",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der aktuelle Präsident der UEFA (Stand 2024)?",
-      "en": "Who is the current president of UEFA (as of 2024)?"
-    },
-    "options": {
-      "de": [
-        "Aleksander Čeferin",
-        "Michel Platini",
-        "Lennart Johansson",
-        "Jacques Georges"
-      ],
-      "en": [
-        "Aleksander Čeferin",
-        "Michel Platini",
-        "Lennart Johansson",
-        "Jacques Georges"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_73",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Tunnel' im Fußball?",
-      "en": "What is a 'nutmeg' (tunnel) in football?"
-    },
-    "options": {
-      "de": [
-        "Den Ball zwischen den Beinen eines Gegners hindurchspielen.",
-        "Den Ball über den Kopf eines Gegners spielen.",
-        "Den Ball an einem Gegner vorbeischießen.",
-        "Den Ball ins Tor schießen."
-      ],
-      "en": [
-        "Playing the ball between an opponent's legs.",
-        "Playing the ball over an opponent's head.",
-        "Shooting the ball past an opponent.",
-        "Shooting the ball into the goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_74",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
-      "en": "Which player is famous for his 'Rabona'-tricks?"
-    },
-    "options": {
-      "de": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ],
-      "en": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_75",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist der Rekordtorschütze der UEFA Champions League?",
-      "en": "Which player is the all-time leading goalscorer in the UEFA Champions League?"
-    },
-    "options": {
-      "de": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ],
-      "en": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_76",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie viele Spieler sind in einer Mannschaft beim Hallenfußball (Futsal)?",
-      "en": "How many players are on a team in indoor football (futsal)?"
-    },
-    "options": {
-      "de": [
-        "5",
-        "7",
-        "11",
-        "6"
-      ],
-      "en": [
-        "5",
-        "7",
-        "11",
-        "6"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_77",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Europameisterschaft 2020 (ausgetragen 2021)?",
-      "en": "Which country won the UEFA European Championship in 2020 (played in 2021)?"
-    },
-    "options": {
-      "de": [
-        "Italien",
-        "England",
-        "Spanien",
-        "Portugal"
-      ],
-      "en": [
-        "Italy",
-        "England",
-        "Spain",
-        "Portugal"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_78",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Elfmeterpunkt' im Fußball?",
-      "en": "What is a 'penalty spot' in football?"
-    },
-    "options": {
-      "de": [
-        "Der Punkt, von dem ein Elfmeter geschossen wird",
-        "Der Mittelpunkt des Spielfelds",
-        "Der Punkt, an dem der Ball ins Aus geht",
-        "Der Punkt, an dem der Torwart steht"
-      ],
-      "en": [
-        "The spot from which a penalty kick is taken",
-        "The center of the field",
-        "The point where the ball goes out of bounds",
-        "The spot where the goalkeeper stands"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_79",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Fußballverein ist bekannt für seine 'Gelbe Wand'?",
-      "en": "Which football club is known for its 'Yellow Wall'?"
-    },
-    "options": {
-      "de": [
-        "Borussia Dortmund",
-        "FC Bayern München",
-        "Schalke 04",
-        "Hamburger SV"
-      ],
-      "en": [
-        "Borussia Dortmund",
-        "FC Bayern Munich",
-        "Schalke 04",
-        "Hamburger SV"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_80",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordspieler der deutschen Bundesliga nach Einsätzen?",
-      "en": "Who is the all-time record player in the German Bundesliga by appearances?"
-    },
-    "options": {
-      "de": [
-        "Charly Körbel",
-        "Sepp Maier",
-        "Oliver Kahn",
-        "Lothar Matthäus"
-      ],
-      "en": [
-        "Charly Körbel",
-        "Sepp Maier",
-        "Oliver Kahn",
-        "Lothar Matthäus"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_81",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Abstoß' im Fußball?",
-      "en": "What is a 'goal kick' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat und zuletzt von einem gegnerischen Spieler berührt wurde.",
-        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
-        "Eine Spielfortsetzung nach einem Foul.",
-        "Eine Spielfortsetzung nach einem Tor."
-      ],
-      "en": [
-        "A restart of play when the ball has crossed the goal line and was last touched by an opposing player.",
-        "A restart of play when the ball has crossed the sideline.",
-        "A restart of play after a foul.",
-        "A restart of play after a goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_82",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Weltmeisterschaft der Frauen 2023?",
-      "en": "Which country won the FIFA Women's World Cup in 2023?"
-    },
-    "options": {
-      "de": [
-        "Spanien",
-        "England",
-        "USA",
-        "Deutschland"
-      ],
-      "en": [
-        "Spain",
-        "England",
-        "USA",
-        "Germany"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_83",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordtorschütze der spanischen La Liga?",
-      "en": "Who is the all-time leading goalscorer in Spain's La Liga?"
-    },
-    "options": {
-      "de": [
-        "Lionel Messi",
-        "Cristiano Ronaldo",
-        "Telmo Zarra",
-        "Hugo Sánchez"
-      ],
-      "en": [
-        "Lionel Messi",
-        "Cristiano Ronaldo",
-        "Telmo Zarra",
-        "Hugo Sánchez"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_84",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Doppelwechsel' im Fußball?",
-      "en": "What is a 'double substitution' in football?"
-    },
-    "options": {
-      "de": [
-        "Zwei Spieler werden gleichzeitig ausgewechselt.",
-        "Ein Spieler wird zweimal ausgewechselt.",
-        "Zwei Spieler wechseln die Position.",
-        "Zwei Trainer wechseln die Mannschaft."
-      ],
-      "en": [
-        "Two players are substituted at the same time.",
-        "One player is substituted twice.",
-        "Two players change positions.",
-        "Two coaches change teams."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_85",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein ist Rekordsieger des DFB-Pokals?",
-      "en": "Which club is the record winner of the DFB-Pokal?"
-    },
-    "options": {
-      "de": [
-        "FC Bayern München",
-        "Werder Bremen",
-        "Schalke 04",
-        "Borussia Dortmund"
-      ],
-      "en": [
-        "FC Bayern Munich",
-        "Werder Bremen",
-        "Schalke 04",
-        "Borussia Dortmund"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_86",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist die 'Nachspielzeit' im Fußball?",
-      "en": "What is 'injury time' (added time) in football?"
-    },
-    "options": {
-      "de": [
-        "Zusätzliche Spielzeit am Ende jeder Halbzeit, um Unterbrechungen auszugleichen.",
-        "Die Zeit, in der ein Spieler verletzt ist.",
-        "Die Zeit, in der das Spiel unterbrochen ist.",
-        "Die Zeit vor dem Anpfiff."
-      ],
-      "en": [
-        "Additional playing time at the end of each half to compensate for stoppages.",
-        "The time a player is injured.",
-        "The time when the game is interrupted.",
-        "The time before kick-off."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_87",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Elastico'-Dribblings?",
-      "en": "Which player is famous for his 'Elastico' dribbles?"
-    },
-    "options": {
-      "de": [
-        "Ronaldinho",
-        "Pelé",
-        "Neymar",
-        "Ronaldo Nazário"
-      ],
-      "en": [
-        "Ronaldinho",
-        "Pelé",
-        "Neymar",
-        "Ronaldo Nazário"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_88",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie oft findet die Fußball-Weltmeisterschaft statt?",
-      "en": "How often does the FIFA World Cup take place?"
-    },
-    "options": {
-      "de": [
-        "Alle 4 Jahre",
-        "Alle 2 Jahre",
-        "Jedes Jahr",
-        "Alle 5 Jahre"
-      ],
-      "en": [
-        "Every 4 years",
-        "Every 2 years",
-        "Every year",
-        "Every 5 years"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_89",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land ist Rekordsieger der Copa América?",
-      "en": "Which country is the record winner of the Copa América?"
-    },
-    "options": {
-      "de": [
-        "Argentinien",
-        "Uruguay",
-        "Brasilien",
-        "Chile"
-      ],
-      "en": [
-        "Argentina",
-        "Uruguay",
-        "Brazil",
-        "Chile"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_90",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Strafraum' im Fußball?",
-      "en": "What is a 'penalty area' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Bereich vor dem Tor, in dem bestimmte Fouls mit einem Elfmeter geahndet werden.",
-        "Der Bereich, in dem sich die Ersatzspieler aufhalten.",
-        "Der Bereich, in dem der Trainer steht.",
-        "Der Bereich, in dem die Fans sitzen."
-      ],
-      "en": [
-        "An area in front of the goal where certain fouls result in a penalty kick.",
-        "The area where substitute players are located.",
-        "The area where the coach stands.",
-        "The area where the fans sit."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_91",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordtorschütze der englischen Premier League?",
-      "en": "Who is the all-time leading goalscorer in the English Premier League?"
-    },
-    "options": {
-      "de": [
-        "Alan Shearer",
-        "Harry Kane",
-        "Wayne Rooney",
-        "Sergio Agüero"
-      ],
-      "en": [
-        "Alan Shearer",
-        "Harry Kane",
-        "Wayne Rooney",
-        "Sergio Agüero"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_92",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Einwurf' im Fußball?",
-      "en": "What is a 'throw-in' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
-        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat.",
-        "Eine Spielfortsetzung nach einem Foul.",
-        "Eine Spielfortsetzung nach einem Tor."
-      ],
-      "en": [
-        "A restart of play when the ball has crossed the sideline.",
-        "A restart of play when the ball has crossed the goal line.",
-        "A restart of play after a foul.",
-        "A restart of play after a goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_93",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Cruyff-Wende'?",
-      "en": "Which player is famous for his 'Cruyff Turn'?"
-    },
-    "options": {
-      "de": [
-        "Johan Cruyff",
-        "Pelé",
-        "George Best",
-        "Zinedine Zidane"
-      ],
-      "en": [
-        "Johan Cruyff",
-        "Pelé",
-        "George Best",
-        "Zinedine Zidane"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_94",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2014?",
-      "en": "Which country won the FIFA World Cup in 2014?"
-    },
-    "options": {
-      "de": [
-        "Deutschland",
-        "Brasilien",
-        "Argentinien",
-        "Spanien"
-      ],
-      "en": [
-        "Germany",
-        "Brazil",
-        "Argentina",
-        "Spain"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_95",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Volley' im Fußball?",
-      "en": "What is a 'volley' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Schuss, bei dem der Ball direkt aus der Luft getroffen wird, bevor er den Boden berührt.",
-        "Ein Schuss, der vom Boden abprallt.",
-        "Ein Schuss, der mit dem Kopf erzielt wird.",
-        "Ein Schuss aus großer Entfernung."
-      ],
-      "en": [
-        "A shot where the ball is struck directly from the air before it touches the ground.",
-        "A shot that bounces off the ground.",
-        "A shot scored with the head.",
-        "A shot from a long distance."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_96",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein ist Rekordsieger der UEFA Europa League?",
-      "en": "Which club is the record winner of the UEFA Europa League?"
-    },
-    "options": {
-      "de": [
-        "FC Sevilla",
-        "Inter Mailand",
-        "FC Liverpool",
-        "Atlético Madrid"
-      ],
-      "en": [
-        "Sevilla FC",
-        "Inter Milan",
-        "Liverpool FC",
-        "Atlético Madrid"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_97",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der aktuelle Präsident der UEFA (Stand 2024)?",
-      "en": "Who is the current president of UEFA (as of 2024)?"
-    },
-    "options": {
-      "de": [
-        "Aleksander Čeferin",
-        "Michel Platini",
-        "Lennart Johansson",
-        "Jacques Georges"
-      ],
-      "en": [
-        "Aleksander Čeferin",
-        "Michel Platini",
-        "Lennart Johansson",
-        "Jacques Georges"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_98",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Tunnel' im Fußball?",
-      "en": "What is a 'nutmeg' (tunnel) in football?"
-    },
-    "options": {
-      "de": [
-        "Den Ball zwischen den Beinen eines Gegners hindurchspielen.",
-        "Den Ball über den Kopf eines Gegners spielen.",
-        "Den Ball an einem Gegner vorbeischießen.",
-        "Den Ball ins Tor schießen."
-      ],
-      "en": [
-        "Playing the ball between an opponent's legs.",
-        "Playing the ball over an opponent's head.",
-        "Shooting the ball past an opponent.",
-        "Shooting the ball into the goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_99",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
-      "en": "Which player is famous for his 'Rabona'-tricks?"
-    },
-    "options": {
-      "de": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ],
-      "en": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_75",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist der Rekordtorschütze der UEFA Champions League?",
-      "en": "Which player is the all-time leading goalscorer in the UEFA Champions League?"
-    },
-    "options": {
-      "de": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ],
-      "en": [
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Robert Lewandowski",
-        "Karim Benzema"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_76",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie viele Spieler sind in einer Mannschaft beim Hallenfußball (Futsal)?",
-      "en": "How many players are on a team in indoor football (futsal)?"
-    },
-    "options": {
-      "de": [
-        "5",
-        "7",
-        "11",
-        "6"
-      ],
-      "en": [
-        "5",
-        "7",
-        "11",
-        "6"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_77",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Europameisterschaft 2020 (ausgetragen 2021)?",
-      "en": "Which country won the UEFA European Championship in 2020 (played in 2021)?"
-    },
-    "options": {
-      "de": [
-        "Italien",
-        "England",
-        "Spanien",
-        "Portugal"
-      ],
-      "en": [
-        "Italy",
-        "England",
-        "Spain",
-        "Portugal"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_78",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Elfmeterpunkt' im Fußball?",
-      "en": "What is a 'penalty spot' in football?"
-    },
-    "options": {
-      "de": [
-        "Der Punkt, von dem ein Elfmeter geschossen wird",
-        "Der Mittelpunkt des Spielfelds",
-        "Der Punkt, an dem der Ball ins Aus geht",
-        "Der Punkt, an dem der Torwart steht"
-      ],
-      "en": [
-        "The spot from which a penalty kick is taken",
-        "The center of the field",
-        "The point where the ball goes out of bounds",
-        "The spot where the goalkeeper stands"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_79",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Fußballverein ist bekannt für seine 'Gelbe Wand'?",
-      "en": "Which football club is known for its 'Yellow Wall'?"
-    },
-    "options": {
-      "de": [
-        "Borussia Dortmund",
-        "FC Bayern München",
-        "Schalke 04",
-        "Hamburger SV"
-      ],
-      "en": [
-        "Borussia Dortmund",
-        "FC Bayern Munich",
-        "Schalke 04",
-        "Hamburger SV"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_80",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordspieler der deutschen Bundesliga nach Einsätzen?",
-      "en": "Who is the all-time record player in the German Bundesliga by appearances?"
-    },
-    "options": {
-      "de": [
-        "Charly Körbel",
-        "Sepp Maier",
-        "Oliver Kahn",
-        "Lothar Matthäus"
-      ],
-      "en": [
-        "Charly Körbel",
-        "Sepp Maier",
-        "Oliver Kahn",
-        "Lothar Matthäus"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_81",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Abstoß' im Fußball?",
-      "en": "What is a 'goal kick' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat und zuletzt von einem gegnerischen Spieler berührt wurde.",
-        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
-        "Eine Spielfortsetzung nach einem Foul.",
-        "Eine Spielfortsetzung nach einem Tor."
-      ],
-      "en": [
-        "A restart of play when the ball has crossed the goal line and was last touched by an opposing player.",
-        "A restart of play when the ball has crossed the sideline.",
-        "A restart of play after a foul.",
-        "A restart of play after a goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_82",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Weltmeisterschaft der Frauen 2023?",
-      "en": "Which country won the FIFA Women's World Cup in 2023?"
-    },
-    "options": {
-      "de": [
-        "Spanien",
-        "England",
-        "USA",
-        "Deutschland"
-      ],
-      "en": [
-        "Spain",
-        "England",
-        "USA",
-        "Germany"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_83",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordtorschütze der spanischen La Liga?",
-      "en": "Who is the all-time leading goalscorer in Spain's La Liga?"
-    },
-    "options": {
-      "de": [
-        "Lionel Messi",
-        "Cristiano Ronaldo",
-        "Telmo Zarra",
-        "Hugo Sánchez"
-      ],
-      "en": [
-        "Lionel Messi",
-        "Cristiano Ronaldo",
-        "Telmo Zarra",
-        "Hugo Sánchez"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_84",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Doppelwechsel' im Fußball?",
-      "en": "What is a 'double substitution' in football?"
-    },
-    "options": {
-      "de": [
-        "Zwei Spieler werden gleichzeitig ausgewechselt.",
-        "Ein Spieler wird zweimal ausgewechselt.",
-        "Zwei Spieler wechseln die Position.",
-        "Zwei Trainer wechseln die Mannschaft."
-      ],
-      "en": [
-        "Two players are substituted at the same time.",
-        "One player is substituted twice.",
-        "Two players change positions.",
-        "Two coaches change teams."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_85",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein ist Rekordsieger des DFB-Pokals?",
-      "en": "Which club is the record winner of the DFB-Pokal?"
-    },
-    "options": {
-      "de": [
-        "FC Bayern München",
-        "Werder Bremen",
-        "Schalke 04",
-        "Borussia Dortmund"
-      ],
-      "en": [
-        "FC Bayern Munich",
-        "Werder Bremen",
-        "Schalke 04",
-        "Borussia Dortmund"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_86",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist die 'Nachspielzeit' im Fußball?",
-      "en": "What is 'injury time' (added time) in football?"
-    },
-    "options": {
-      "de": [
-        "Zusätzliche Spielzeit am Ende jeder Halbzeit, um Unterbrechungen auszugleichen.",
-        "Die Zeit, in der ein Spieler verletzt ist.",
-        "Die Zeit, in der das Spiel unterbrochen ist.",
-        "Die Zeit vor dem Anpfiff."
-      ],
-      "en": [
-        "Additional playing time at the end of each half to compensate for stoppages.",
-        "The time a player is injured.",
-        "The time when the game is interrupted.",
-        "The time before kick-off."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_87",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Elastico'-Dribblings?",
-      "en": "Which player is famous for his 'Elastico' dribbles?"
-    },
-    "options": {
-      "de": [
-        "Ronaldinho",
-        "Pelé",
-        "Neymar",
-        "Ronaldo Nazário"
-      ],
-      "en": [
-        "Ronaldinho",
-        "Pelé",
-        "Neymar",
-        "Ronaldo Nazário"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_88",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wie oft findet die Fußball-Weltmeisterschaft statt?",
-      "en": "How often does the FIFA World Cup take place?"
-    },
-    "options": {
-      "de": [
-        "Alle 4 Jahre",
-        "Alle 2 Jahre",
-        "Jedes Jahr",
-        "Alle 5 Jahre"
-      ],
-      "en": [
-        "Every 4 years",
-        "Every 2 years",
-        "Every year",
-        "Every 5 years"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_89",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land ist Rekordsieger der Copa América?",
-      "en": "Which country is the record winner of the Copa América?"
-    },
-    "options": {
-      "de": [
-        "Argentinien",
-        "Uruguay",
-        "Brasilien",
-        "Chile"
-      ],
-      "en": [
-        "Argentina",
-        "Uruguay",
-        "Brazil",
-        "Chile"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_90",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Strafraum' im Fußball?",
-      "en": "What is a 'penalty area' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Bereich vor dem Tor, in dem bestimmte Fouls mit einem Elfmeter geahndet werden.",
-        "Der Bereich, in dem sich die Ersatzspieler aufhalten.",
-        "Der Bereich, in dem der Trainer steht.",
-        "Der Bereich, in dem die Fans sitzen."
-      ],
-      "en": [
-        "An area in front of the goal where certain fouls result in a penalty kick.",
-        "The area where substitute players are located.",
-        "The area where the coach stands.",
-        "The area where the fans sit."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_91",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der Rekordtorschütze der englischen Premier League?",
-      "en": "Who is the all-time leading goalscorer in the English Premier League?"
-    },
-    "options": {
-      "de": [
-        "Alan Shearer",
-        "Harry Kane",
-        "Wayne Rooney",
-        "Sergio Agüero"
-      ],
-      "en": [
-        "Alan Shearer",
-        "Harry Kane",
-        "Wayne Rooney",
-        "Sergio Agüero"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_92",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Einwurf' im Fußball?",
-      "en": "What is a 'throw-in' in football?"
-    },
-    "options": {
-      "de": [
-        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
-        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat.",
-        "Eine Spielfortsetzung nach einem Foul.",
-        "Eine Spielfortsetzung nach einem Tor."
-      ],
-      "en": [
-        "A restart of play when the ball has crossed the sideline.",
-        "A restart of play when the ball has crossed the goal line.",
-        "A restart of play after a foul.",
-        "A restart of play after a goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_93",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Cruyff-Wende'?",
-      "en": "Which player is famous for his 'Cruyff Turn'?"
-    },
-    "options": {
-      "de": [
-        "Johan Cruyff",
-        "Pelé",
-        "George Best",
-        "Zinedine Zidane"
-      ],
-      "en": [
-        "Johan Cruyff",
-        "Pelé",
-        "George Best",
-        "Zinedine Zidane"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_94",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2014?",
-      "en": "Which country won the FIFA World Cup in 2014?"
-    },
-    "options": {
-      "de": [
-        "Deutschland",
-        "Brasilien",
-        "Argentinien",
-        "Spanien"
-      ],
-      "en": [
-        "Germany",
-        "Brazil",
-        "Argentina",
-        "Spain"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_95",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Volley' im Fußball?",
-      "en": "What is a 'volley' in football?"
-    },
-    "options": {
-      "de": [
-        "Ein Schuss, bei dem der Ball direkt aus der Luft getroffen wird, bevor er den Boden berührt.",
-        "Ein Schuss, der vom Boden abprallt.",
-        "Ein Schuss, der mit dem Kopf erzielt wird.",
-        "Ein Schuss aus großer Entfernung."
-      ],
-      "en": [
-        "A shot where the ball is struck directly from the air before it touches the ground.",
-        "A shot that bounces off the ground.",
-        "A shot scored with the head.",
-        "A shot from a long distance."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_96",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Verein ist Rekordsieger der UEFA Europa League?",
-      "en": "Which club is the record winner of the UEFA Europa League?"
-    },
-    "options": {
-      "de": [
-        "FC Sevilla",
-        "Inter Mailand",
-        "FC Liverpool",
-        "Atlético Madrid"
-      ],
-      "en": [
-        "Sevilla FC",
-        "Inter Milan",
-        "Liverpool FC",
-        "Atlético Madrid"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_97",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Wer ist der aktuelle Präsident der UEFA (Stand 2024)?",
-      "en": "Who is the current president of UEFA (as of 2024)?"
-    },
-    "options": {
-      "de": [
-        "Aleksander Čeferin",
-        "Michel Platini",
-        "Lennart Johansson",
-        "Jacques Georges"
-      ],
-      "en": [
-        "Aleksander Čeferin",
-        "Michel Platini",
-        "Lennart Johansson",
-        "Jacques Georges"
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_98",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Was ist ein 'Tunnel' im Fußball?",
-      "en": "What is a 'nutmeg' (tunnel) in football?"
-    },
-    "options": {
-      "de": [
-        "Den Ball zwischen den Beinen eines Gegners hindurchspielen.",
-        "Den Ball über den Kopf eines Gegners spielen.",
-        "Den Ball an einem Gegner vorbeischießen.",
-        "Den Ball ins Tor schießen."
-      ],
-      "en": [
-        "Playing the ball between an opponent's legs.",
-        "Playing the ball over an opponent's head.",
-        "Shooting the ball past an opponent.",
-        "Shooting the ball into the goal."
-      ]
-    }
-  },
-  {
-    "id": "fussball_new_99",
-    "cat": "Fussball",
-    "correct": 0,
-    "text": {
-      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
-      "en": "Which player is famous for his 'Rabona'-tricks?"
-    },
-    "options": {
-      "de": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ],
-      "en": [
-        "Erik Lamela",
-        "Cristiano Ronaldo",
-        "Lionel Messi",
-        "Neymar"
-      ]
-    }
-  },
-  {
     "id": "musik_new_0",
     "cat": "Musik",
     "correct": 0,
@@ -21286,6 +17836,4606 @@
         "Answer B 99",
         "Answer C 99",
         "Answer D 99"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_0",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2022?",
+      "en": "Which country won the FIFA World Cup in 2022?"
+    },
+    "options": {
+      "de": [
+        "Argentinien",
+        "Frankreich",
+        "Brasilien",
+        "Deutschland"
+      ],
+      "en": [
+        "Argentina",
+        "France",
+        "Brazil",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_1",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie oft hat der FC Bayern München die UEFA Champions League gewonnen?",
+      "en": "How many times has FC Bayern Munich won the UEFA Champions League?"
+    },
+    "options": {
+      "de": [
+        "6",
+        "5",
+        "7",
+        "4"
+      ],
+      "en": [
+        "6",
+        "5",
+        "7",
+        "4"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_2",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordtorschütze der deutschen Fußball-Nationalmannschaft?",
+      "en": "Who is the all-time leading goal scorer for the German national football team?"
+    },
+    "options": {
+      "de": [
+        "Miroslav Klose",
+        "Gerd Müller",
+        "Lukas Podolski",
+        "Jürgen Klinsmann"
+      ],
+      "en": [
+        "Miroslav Klose",
+        "Gerd Müller",
+        "Lukas Podolski",
+        "Jürgen Klinsmann"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_3",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "In welchem Land fand die Fußball-Weltmeisterschaft 2018 statt?",
+      "en": "In which country was the 2018 FIFA World Cup held?"
+    },
+    "options": {
+      "de": [
+        "Russland",
+        "Brasilien",
+        "Südafrika",
+        "Deutschland"
+      ],
+      "en": [
+        "Russia",
+        "Brazil",
+        "South Africa",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_4",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für den 'Hand Gottes'-Moment bei der WM 1986?",
+      "en": "Which player is famous for the 'Hand of God' moment at the 1986 World Cup?"
+    },
+    "options": {
+      "de": [
+        "Diego Maradona",
+        "Pelé",
+        "Lionel Messi",
+        "Cristiano Ronaldo"
+      ],
+      "en": [
+        "Diego Maradona",
+        "Pelé",
+        "Lionel Messi",
+        "Cristiano Ronaldo"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_5",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die erste UEFA Champions League (damals Europapokal der Landesmeister)?",
+      "en": "Which club won the first UEFA Champions League (then European Cup)?"
+    },
+    "options": {
+      "de": [
+        "Real Madrid",
+        "AC Mailand",
+        "FC Liverpool",
+        "Ajax Amsterdam"
+      ],
+      "en": [
+        "Real Madrid",
+        "AC Milan",
+        "Liverpool FC",
+        "Ajax Amsterdam"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_6",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie lange dauert ein Fußballspiel regulär (ohne Nachspielzeit)?",
+      "en": "How long does a regular football (soccer) match last (excluding injury time)?"
+    },
+    "options": {
+      "de": [
+        "90 Minuten",
+        "80 Minuten",
+        "100 Minuten",
+        "120 Minuten"
+      ],
+      "en": [
+        "90 minutes",
+        "80 minutes",
+        "100 minutes",
+        "120 minutes"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_7",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher deutsche Fußballspieler ist auch als 'Kaiser' bekannt?",
+      "en": "Which German football player is also known as 'Der Kaiser'?"
+    },
+    "options": {
+      "de": [
+        "Franz Beckenbauer",
+        "Gerd Müller",
+        "Uwe Seeler",
+        "Lothar Matthäus"
+      ],
+      "en": [
+        "Franz Beckenbauer",
+        "Gerd Müller",
+        "Uwe Seeler",
+        "Lothar Matthäus"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_8",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele gelbe Karten führen in den meisten Ligen zu einem Platzverweis?",
+      "en": "How many yellow cards typically lead to a red card in most leagues?"
+    },
+    "options": {
+      "de": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ],
+      "en": [
+        "2",
+        "3",
+        "1",
+        "4"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_9",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Fußballverein trägt seine Heimspiele im Camp Nou aus?",
+      "en": "Which football club plays its home matches at Camp Nou?"
+    },
+    "options": {
+      "de": [
+        "FC Barcelona",
+        "Real Madrid",
+        "Atlético Madrid",
+        "FC Valencia"
+      ],
+      "en": [
+        "FC Barcelona",
+        "Real Madrid",
+        "Atlético Madrid",
+        "Valencia CF"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_10",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der aktuelle Trainer der deutschen Fußball-Nationalmannschaft (Stand 2024)?",
+      "en": "Who is the current coach of the German national football team (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Julian Nagelsmann",
+        "Hansi Flick",
+        "Joachim Löw",
+        "Rudi Völler"
+      ],
+      "en": [
+        "Julian Nagelsmann",
+        "Hansi Flick",
+        "Joachim Löw",
+        "Rudi Völler"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_11",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler hat die meisten Tore in der Geschichte der UEFA Champions League erzielt?",
+      "en": "Which player has scored the most goals in the history of the UEFA Champions League?"
+    },
+    "options": {
+      "de": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ],
+      "en": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_12",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was bedeutet die Abkürzung VAR im Fußball?",
+      "en": "What does the abbreviation VAR stand for in football?"
+    },
+    "options": {
+      "de": [
+        "Video-Assistent-Referee",
+        "Very Accurate Referee",
+        "Visual Aid Review",
+        "Verdict After Review"
+      ],
+      "en": [
+        "Video Assistant Referee",
+        "Very Accurate Referee",
+        "Visual Aid Review",
+        "Verdict After Review"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_13",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler gewann 2023 den Ballon d'Or?",
+      "en": "Which player won the Ballon d'Or in 2023?"
+    },
+    "options": {
+      "de": [
+        "Lionel Messi",
+        "Erling Haaland",
+        "Kylian Mbappé",
+        "Karim Benzema"
+      ],
+      "en": [
+        "Lionel Messi",
+        "Erling Haaland",
+        "Kylian Mbappé",
+        "Karim Benzema"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_14",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie oft wurde Brasilien Fußball-Weltmeister?",
+      "en": "How many times has Brazil won the FIFA World Cup?"
+    },
+    "options": {
+      "de": [
+        "5",
+        "4",
+        "6",
+        "3"
+      ],
+      "en": [
+        "5",
+        "4",
+        "6",
+        "3"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_15",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein ist Rekordmeister in der deutschen Bundesliga?",
+      "en": "Which club is the record champion in the German Bundesliga?"
+    },
+    "options": {
+      "de": [
+        "FC Bayern München",
+        "Borussia Dortmund",
+        "Hamburger SV",
+        "Werder Bremen"
+      ],
+      "en": [
+        "FC Bayern Munich",
+        "Borussia Dortmund",
+        "Hamburger SV",
+        "Werder Bremen"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_16",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Hattrick' im Fußball?",
+      "en": "What is a 'hat-trick' in football?"
+    },
+    "options": {
+      "de": [
+        "Drei Tore eines Spielers in einem Spiel",
+        "Drei Vorlagen eines Spielers in einem Spiel",
+        "Drei Siege in Folge",
+        "Drei gehaltene Elfmeter"
+      ],
+      "en": [
+        "Three goals by one player in a single match",
+        "Three assists by one player in a single match",
+        "Three consecutive wins",
+        "Three saved penalties"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_17",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Stadion ist als 'The Theatre of Dreams' bekannt?",
+      "en": "Which stadium is known as 'The Theatre of Dreams'?"
+    },
+    "options": {
+      "de": [
+        "Old Trafford",
+        "Wembley Stadium",
+        "Anfield",
+        "Santiago Bernabéu"
+      ],
+      "en": [
+        "Old Trafford",
+        "Wembley Stadium",
+        "Anfield",
+        "Santiago Bernabéu"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_18",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Präsident der FIFA (Stand 2024)?",
+      "en": "Who is the president of FIFA (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Gianni Infantino",
+        "Sepp Blatter",
+        "Michel Platini",
+        "João Havelange"
+      ],
+      "en": [
+        "Gianni Infantino",
+        "Sepp Blatter",
+        "Michel Platini",
+        "João Havelange"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_19",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die erste Fußball-Weltmeisterschaft 1930?",
+      "en": "Which country won the first FIFA World Cup in 1930?"
+    },
+    "options": {
+      "de": [
+        "Uruguay",
+        "Brasilien",
+        "Italien",
+        "Deutschland"
+      ],
+      "en": [
+        "Uruguay",
+        "Brazil",
+        "Italy",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_20",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie heißt der Pokal, der dem Sieger der UEFA Champions League überreicht wird?",
+      "en": "What is the name of the trophy awarded to the winner of the UEFA Champions League?"
+    },
+    "options": {
+      "de": [
+        "Henkelpott",
+        "Jules-Rimet-Pokal",
+        "Weltpokal",
+        "Europapokal"
+      ],
+      "en": [
+        "The Big Ears (European Champion Clubs' Cup)",
+        "Jules Rimet Trophy",
+        "Intercontinental Cup",
+        "European Cup"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_21",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Welcher Spieler hält den Rekord für die meisten Tore in einer einzelnen Bundesliga-Saison?",
+      "en": "Which player holds the record for most goals in a single Bundesliga season?"
+    },
+    "options": {
+      "de": [
+        "Robert Lewandowski",
+        "Gerd Müller",
+        "Erling Haaland",
+        "Pierre-Emerick Aubameyang"
+      ],
+      "en": [
+        "Robert Lewandowski",
+        "Gerd Müller",
+        "Erling Haaland",
+        "Pierre-Emerick Aubameyang"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_22",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Elfmeter' im Fußball?",
+      "en": "What is a 'penalty kick' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein direkter Freistoß aus 11 Metern Entfernung zum Tor",
+        "Ein indirekter Freistoß",
+        "Ein Eckball",
+        "Ein Einwurf"
+      ],
+      "en": [
+        "A direct free kick taken from 11 meters (12 yards) from the goal",
+        "An indirect free kick",
+        "A corner kick",
+        "A throw-in"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_23",
+    "cat": "Fussball",
+    "correct": 1,
+    "text": {
+      "de": "Welches Land ist Rekord-Europameister im Fußball?",
+      "en": "Which country is the record European champion in football?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Spanien",
+        "Frankreich",
+        "Italien"
+      ],
+      "en": [
+        "Germany",
+        "Spain",
+        "France",
+        "Italy"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_24",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele Schiedsrichter sind bei einem professionellen Fußballspiel auf dem Feld?",
+      "en": "How many referees are on the field during a professional football match?"
+    },
+    "options": {
+      "de": [
+        "1 (Hauptschiedsrichter)",
+        "3 (Hauptschiedsrichter und zwei Assistenten)",
+        "4 (Hauptschiedsrichter, zwei Assistenten und vierter Offizieller)",
+        "2 (Hauptschiedsrichter und ein Assistent)"
+      ],
+      "en": [
+        "1 (main referee)",
+        "3 (main referee and two assistants)",
+        "4 (main referee, two assistants and fourth official)",
+        "2 (main referee and one assistant)"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_25",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die UEFA Champions League in der Saison 2022/2023?",
+      "en": "Which club won the UEFA Champions League in the 2022/2023 season?"
+    },
+    "options": {
+      "de": [
+        "Manchester City",
+        "Inter Mailand",
+        "Real Madrid",
+        "FC Bayern München"
+      ],
+      "en": [
+        "Manchester City",
+        "Inter Milan",
+        "Real Madrid",
+        "FC Bayern Munich"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_26",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Trainer von Manchester City (Stand 2024)?",
+      "en": "Who is the manager of Manchester City (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Pep Guardiola",
+        "Jürgen Klopp",
+        "Carlo Ancelotti",
+        "Thomas Tuchel"
+      ],
+      "en": [
+        "Pep Guardiola",
+        "Jürgen Klopp",
+        "Carlo Ancelotti",
+        "Thomas Tuchel"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_27",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler hält den Rekord für die meisten Tore in der Geschichte der Fußball-Weltmeisterschaft?",
+      "en": "Which player holds the record for the most goals in the history of the FIFA World Cup?"
+    },
+    "options": {
+      "de": [
+        "Miroslav Klose",
+        "Ronaldo Nazário",
+        "Gerd Müller",
+        "Pelé"
+      ],
+      "en": [
+        "Miroslav Klose",
+        "Ronaldo Nazário",
+        "Gerd Müller",
+        "Pelé"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_28",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Freistoß' im Fußball?",
+      "en": "What is a 'free kick' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Spielfortsetzung nach einem Foulspiel",
+        "Ein Schuss aus dem Spiel heraus",
+        "Ein Einwurf",
+        "Ein Eckball"
+      ],
+      "en": [
+        "A restart of play after a foul",
+        "A shot from open play",
+        "A throw-in",
+        "A corner kick"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_29",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land ist bekannt für seine 'Tiki-Taka'-Spielweise?",
+      "en": "Which country is known for its 'Tiki-Taka' playing style?"
+    },
+    "options": {
+      "de": [
+        "Spanien",
+        "Brasilien",
+        "Deutschland",
+        "Italien"
+      ],
+      "en": [
+        "Spain",
+        "Brazil",
+        "Germany",
+        "Italy"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_30",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Kapitän der deutschen Fußball-Nationalmannschaft (Stand 2024)?",
+      "en": "Who is the captain of the German national football team (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Ilkay Gündogan",
+        "Manuel Neuer",
+        "Joshua Kimmich",
+        "Thomas Müller"
+      ],
+      "en": [
+        "Ilkay Gündogan",
+        "Manuel Neuer",
+        "Joshua Kimmich",
+        "Thomas Müller"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_31",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die Bundesliga in der Saison 2022/2023?",
+      "en": "Which club won the Bundesliga in the 2022/2023 season?"
+    },
+    "options": {
+      "de": [
+        "FC Bayern München",
+        "Borussia Dortmund",
+        "RB Leipzig",
+        "Bayer 04 Leverkusen"
+      ],
+      "en": [
+        "FC Bayern Munich",
+        "Borussia Dortmund",
+        "RB Leipzig",
+        "Bayer 04 Leverkusen"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_32",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Eigentor' im Fußball?",
+      "en": "What is an 'own goal' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Tor, das ein Spieler versehentlich ins eigene Netz schießt",
+        "Ein Tor, das ein Spieler absichtlich ins eigene Netz schießt",
+        "Ein Tor, das von einem Verteidiger erzielt wird",
+        "Ein Tor, das außerhalb des Strafraums erzielt wird"
+      ],
+      "en": [
+        "A goal scored accidentally by a player into their own net",
+        "A goal scored intentionally by a player into their own net",
+        "A goal scored by a defender",
+        "A goal scored from outside the penalty area"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_33",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land ist Rekord-Weltmeister im Fußball der Frauen?",
+      "en": "Which country is the record champion in women's football World Cup?"
+    },
+    "options": {
+      "de": [
+        "USA",
+        "Deutschland",
+        "Norwegen",
+        "Japan"
+      ],
+      "en": [
+        "USA",
+        "Germany",
+        "Norway",
+        "Japan"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_34",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der jüngste Torschütze in der Geschichte der Fußball-Weltmeisterschaft?",
+      "en": "Who is the youngest goal scorer in the history of the FIFA World Cup?"
+    },
+    "options": {
+      "de": [
+        "Pelé",
+        "Kylian Mbappé",
+        "Norman Whiteside",
+        "Lionel Messi"
+      ],
+      "en": [
+        "Pelé",
+        "Kylian Mbappé",
+        "Norman Whiteside",
+        "Lionel Messi"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_35",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die 'Abseitsregel' im Fußball?",
+      "en": "What is the 'offside rule' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Regel, die besagt, dass ein Spieler nicht näher an der gegnerischen Torlinie sein darf als der Ball und der vorletzte Gegenspieler, wenn der Ball von einem Mitspieler gespielt wird.",
+        "Eine Regel, die besagt, dass ein Spieler nicht in der eigenen Hälfte stehen darf.",
+        "Eine Regel, die besagt, dass ein Spieler den Ball nicht mit der Hand berühren darf.",
+        "Eine Regel, die besagt, dass ein Spieler nicht außerhalb des Spielfeldes stehen darf."
+      ],
+      "en": [
+        "A rule stating that a player cannot be nearer to the opponents' goal line than both the ball and the second-to-last opponent when the ball is played by a teammate.",
+        "A rule stating that a player cannot be in their own half.",
+        "A rule stating that a player cannot touch the ball with their hand.",
+        "A rule stating that a player cannot be outside the field of play."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_36",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die erste deutsche Meisterschaft im Fußball?",
+      "en": "Which club won the first German football championship?"
+    },
+    "options": {
+      "de": [
+        "VfB Leipzig",
+        "FC Bayern München",
+        "Hamburger SV",
+        "Schalke 04"
+      ],
+      "en": [
+        "VfB Leipzig",
+        "FC Bayern Munich",
+        "Hamburger SV",
+        "Schalke 04"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_37",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele Auswechselspieler dürfen in einem Bundesligaspiel maximal eingesetzt werden?",
+      "en": "How many substitutes can be used in a Bundesliga match?"
+    },
+    "options": {
+      "de": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
+      "en": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_38",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land ist der Gastgeber der Fußball-Europameisterschaft 2024?",
+      "en": "Which country is hosting the UEFA European Championship in 2024?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Frankreich",
+        "England",
+        "Italien"
+      ],
+      "en": [
+        "Germany",
+        "France",
+        "England",
+        "Italy"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_39",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordspieler der deutschen Fußball-Nationalmannschaft nach Einsätzen?",
+      "en": "Who is the most capped player for the German national football team?"
+    },
+    "options": {
+      "de": [
+        "Lothar Matthäus",
+        "Miroslav Klose",
+        "Franz Beckenbauer",
+        "Philipp Lahm"
+      ],
+      "en": [
+        "Lothar Matthäus",
+        "Miroslav Klose",
+        "Franz Beckenbauer",
+        "Philipp Lahm"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_40",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Fallrückzieher' im Fußball?",
+      "en": "What is a 'bicycle kick' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein akrobatischer Schuss, bei dem der Spieler mit dem Rücken zum Tor in der Luft liegt und den Ball über sich schießt.",
+        "Ein Schuss, der vom Boden abprallt.",
+        "Ein Schuss, der mit dem Kopf erzielt wird.",
+        "Ein Schuss, der aus großer Entfernung erzielt wird."
+      ],
+      "en": [
+        "An acrobatic shot where the player lies in the air with their back to the goal and kicks the ball over their head.",
+        "A shot that bounces off the ground.",
+        "A shot scored with the head.",
+        "A shot scored from a long distance."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_41",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die englische Premier League in der Saison 2022/2023?",
+      "en": "Which club won the English Premier League in the 2022/2023 season?"
+    },
+    "options": {
+      "de": [
+        "Manchester City",
+        "Arsenal FC",
+        "Manchester United",
+        "Liverpool FC"
+      ],
+      "en": [
+        "Manchester City",
+        "Arsenal FC",
+        "Manchester United",
+        "Liverpool FC"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_42",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Elfmeterschießen' im Fußball?",
+      "en": "What is a 'penalty shootout' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Methode zur Ermittlung eines Siegers nach einem Unentschieden, bei der Spieler abwechselnd Elfmeter schießen.",
+        "Ein Training für Elfmeter.",
+        "Ein Spiel, das nur aus Elfmetern besteht.",
+        "Ein Elfmeter, der während des Spiels ausgeführt wird."
+      ],
+      "en": [
+        "A method of determining a winner after a draw, where players take turns shooting penalties.",
+        "A penalty training session.",
+        "A game consisting only of penalties.",
+        "A penalty taken during the match."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_43",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Panenka'-Elfmeter?",
+      "en": "Which player is famous for his 'Panenka' penalty kicks?"
+    },
+    "options": {
+      "de": [
+        "Antonín Panenka",
+        "Zinedine Zidane",
+        "Andrea Pirlo",
+        "Francesco Totti"
+      ],
+      "en": [
+        "Antonín Panenka",
+        "Zinedine Zidane",
+        "Andrea Pirlo",
+        "Francesco Totti"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_44",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Copa América 2021?",
+      "en": "Which country won the Copa América in 2021?"
+    },
+    "options": {
+      "de": [
+        "Argentinien",
+        "Brasilien",
+        "Uruguay",
+        "Chile"
+      ],
+      "en": [
+        "Argentina",
+        "Brazil",
+        "Uruguay",
+        "Chile"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_45",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Doppelpack' im Fußball?",
+      "en": "What is a 'brace' (doublet) in football?"
+    },
+    "options": {
+      "de": [
+        "Zwei Tore eines Spielers in einem Spiel",
+        "Zwei Vorlagen eines Spielers in einem Spiel",
+        "Zwei Siege in Folge",
+        "Zwei gehaltene Elfmeter"
+      ],
+      "en": [
+        "Two goals by one player in a single match",
+        "Two assists by one player in a single match",
+        "Two consecutive wins",
+        "Two saved penalties"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_46",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches ist das größte Fußballstadion der Welt nach Kapazität?",
+      "en": "Which is the largest football stadium in the world by capacity?"
+    },
+    "options": {
+      "de": [
+        "Rungrado 1. Mai Stadion",
+        "Camp Nou",
+        "Wembley Stadium",
+        "Aztekenstadion"
+      ],
+      "en": [
+        "Rungrado 1st of May Stadium",
+        "Camp Nou",
+        "Wembley Stadium",
+        "Azteca Stadium"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_47",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Trainer der deutschen Frauen-Nationalmannschaft (Stand 2024)?",
+      "en": "Who is the coach of the German women's national football team (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Horst Hrubesch",
+        "Martina Voss-Tecklenburg",
+        "Steffi Jones",
+        "Silvia Neid"
+      ],
+      "en": [
+        "Horst Hrubesch",
+        "Martina Voss-Tecklenburg",
+        "Steffi Jones",
+        "Silvia Neid"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_48",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Derby' im Fußball?",
+      "en": "What is a 'derby' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Spiel zwischen zwei rivalisierenden Mannschaften aus derselben Stadt oder Region.",
+        "Ein Freundschaftsspiel.",
+        "Ein Pokalfinale.",
+        "Ein Länderspiel."
+      ],
+      "en": [
+        "A match between two rival teams from the same city or region.",
+        "A friendly match.",
+        "A cup final.",
+        "An international match."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_49",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
+      "en": "Which player is famous for his 'Rabona' tricks?"
+    },
+    "options": {
+      "de": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ],
+      "en": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_50",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist der Rekordtorschütze der UEFA Champions League?",
+      "en": "Which player is the all-time leading goalscorer in the UEFA Champions League?"
+    },
+    "options": {
+      "de": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ],
+      "en": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_51",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele Spieler sind in einer Mannschaft beim Hallenfußball (Futsal)?",
+      "en": "How many players are on a team in indoor football (futsal)?"
+    },
+    "options": {
+      "de": [
+        "5",
+        "7",
+        "11",
+        "6"
+      ],
+      "en": [
+        "5",
+        "7",
+        "11",
+        "6"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_52",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Europameisterschaft 2020 (ausgetragen 2021)?",
+      "en": "Which country won the UEFA European Championship in 2020 (played in 2021)?"
+    },
+    "options": {
+      "de": [
+        "Italien",
+        "England",
+        "Spanien",
+        "Portugal"
+      ],
+      "en": [
+        "Italy",
+        "England",
+        "Spain",
+        "Portugal"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_53",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Elfmeterpunkt' im Fußball?",
+      "en": "What is a 'penalty spot' in football?"
+    },
+    "options": {
+      "de": [
+        "Der Punkt, von dem ein Elfmeter geschossen wird",
+        "Der Mittelpunkt des Spielfelds",
+        "Der Punkt, an dem der Ball ins Aus geht",
+        "Der Punkt, an dem der Torwart steht"
+      ],
+      "en": [
+        "The spot from which a penalty kick is taken",
+        "The center of the field",
+        "The point where the ball goes out of bounds",
+        "The spot where the goalkeeper stands"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_54",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Fußballverein ist bekannt für seine 'Gelbe Wand'?",
+      "en": "Which football club is known for its 'Yellow Wall'?"
+    },
+    "options": {
+      "de": [
+        "Borussia Dortmund",
+        "FC Bayern München",
+        "Schalke 04",
+        "Hamburger SV"
+      ],
+      "en": [
+        "Borussia Dortmund",
+        "FC Bayern Munich",
+        "Schalke 04",
+        "Hamburger SV"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_55",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordspieler der deutschen Bundesliga nach Einsätzen?",
+      "en": "Who is the all-time record player in the German Bundesliga by appearances?"
+    },
+    "options": {
+      "de": [
+        "Charly Körbel",
+        "Sepp Maier",
+        "Oliver Kahn",
+        "Lothar Matthäus"
+      ],
+      "en": [
+        "Charly Körbel",
+        "Sepp Maier",
+        "Oliver Kahn",
+        "Lothar Matthäus"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_56",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Abstoß' im Fußball?",
+      "en": "What is a 'goal kick' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat und zuletzt von einem gegnerischen Spieler berührt wurde.",
+        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
+        "Eine Spielfortsetzung nach einem Foul.",
+        "Eine Spielfortsetzung nach einem Tor."
+      ],
+      "en": [
+        "A restart of play when the ball has crossed the goal line and was last touched by an opposing player.",
+        "A restart of play when the ball has crossed the sideline.",
+        "A restart of play after a foul.",
+        "A restart of play after a goal."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_57",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Weltmeisterschaft der Frauen 2023?",
+      "en": "Which country won the FIFA Women's World Cup in 2023?"
+    },
+    "options": {
+      "de": [
+        "Spanien",
+        "England",
+        "USA",
+        "Deutschland"
+      ],
+      "en": [
+        "Spain",
+        "England",
+        "USA",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_58",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordtorschütze der spanischen La Liga?",
+      "en": "Who is the all-time leading goalscorer in Spain's La Liga?"
+    },
+    "options": {
+      "de": [
+        "Lionel Messi",
+        "Cristiano Ronaldo",
+        "Telmo Zarra",
+        "Hugo Sánchez"
+      ],
+      "en": [
+        "Lionel Messi",
+        "Cristiano Ronaldo",
+        "Telmo Zarra",
+        "Hugo Sánchez"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_59",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Doppelwechsel' im Fußball?",
+      "en": "What is a 'double substitution' in football?"
+    },
+    "options": {
+      "de": [
+        "Zwei Spieler werden gleichzeitig ausgewechselt.",
+        "Ein Spieler wird zweimal ausgewechselt.",
+        "Zwei Spieler wechseln die Position.",
+        "Zwei Trainer wechseln die Mannschaft."
+      ],
+      "en": [
+        "Two players are substituted at the same time.",
+        "One player is substituted twice.",
+        "Two players change positions.",
+        "Two coaches change teams."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_60",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein ist Rekordsieger des DFB-Pokals?",
+      "en": "Which club is the record winner of the DFB-Pokal?"
+    },
+    "options": {
+      "de": [
+        "FC Bayern München",
+        "Werder Bremen",
+        "Schalke 04",
+        "Borussia Dortmund"
+      ],
+      "en": [
+        "FC Bayern Munich",
+        "Werder Bremen",
+        "Schalke 04",
+        "Borussia Dortmund"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_61",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die 'Nachspielzeit' im Fußball?",
+      "en": "What is 'injury time' (added time) in football?"
+    },
+    "options": {
+      "de": [
+        "Zusätzliche Spielzeit am Ende jeder Halbzeit, um Unterbrechungen auszugleichen.",
+        "Die Zeit, in der ein Spieler verletzt ist.",
+        "Die Zeit, in der das Spiel unterbrochen ist.",
+        "Die Zeit vor dem Anpfiff."
+      ],
+      "en": [
+        "Additional playing time at the end of each half to compensate for stoppages.",
+        "The time a player is injured.",
+        "The time when the game is interrupted.",
+        "The time before kick-off."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_62",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Elastico'-Dribblings?",
+      "en": "Which player is famous for his 'Elastico' dribbles?"
+    },
+    "options": {
+      "de": [
+        "Ronaldinho",
+        "Pelé",
+        "Neymar",
+        "Ronaldo Nazário"
+      ],
+      "en": [
+        "Ronaldinho",
+        "Pelé",
+        "Neymar",
+        "Ronaldo Nazário"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_63",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie oft findet die Fußball-Weltmeisterschaft statt?",
+      "en": "How often does the FIFA World Cup take place?"
+    },
+    "options": {
+      "de": [
+        "Alle 4 Jahre",
+        "Alle 2 Jahre",
+        "Jedes Jahr",
+        "Alle 5 Jahre"
+      ],
+      "en": [
+        "Every 4 years",
+        "Every 2 years",
+        "Every year",
+        "Every 5 years"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_64",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land ist Rekordsieger der Copa América?",
+      "en": "Which country is the record winner of the Copa América?"
+    },
+    "options": {
+      "de": [
+        "Argentinien",
+        "Uruguay",
+        "Brasilien",
+        "Chile"
+      ],
+      "en": [
+        "Argentina",
+        "Uruguay",
+        "Brazil",
+        "Chile"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_65",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Strafraum' im Fußball?",
+      "en": "What is a 'penalty area' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Bereich vor dem Tor, in dem bestimmte Fouls mit einem Elfmeter geahndet werden.",
+        "Der Bereich, in dem sich die Ersatzspieler aufhalten.",
+        "Der Bereich, in dem der Trainer steht.",
+        "Der Bereich, in dem die Fans sitzen."
+      ],
+      "en": [
+        "An area in front of the goal where certain fouls result in a penalty kick.",
+        "The area where substitute players are located.",
+        "The area where the coach stands.",
+        "The area where the fans sit."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_66",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordtorschütze der englischen Premier League?",
+      "en": "Who is the all-time leading goalscorer in the English Premier League?"
+    },
+    "options": {
+      "de": [
+        "Alan Shearer",
+        "Harry Kane",
+        "Wayne Rooney",
+        "Sergio Agüero"
+      ],
+      "en": [
+        "Alan Shearer",
+        "Harry Kane",
+        "Wayne Rooney",
+        "Sergio Agüero"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_67",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Einwurf' im Fußball?",
+      "en": "What is a 'throw-in' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
+        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat.",
+        "Eine Spielfortsetzung nach einem Foul.",
+        "Eine Spielfortsetzung nach einem Tor."
+      ],
+      "en": [
+        "A restart of play when the ball has crossed the sideline.",
+        "A restart of play when the ball has crossed the goal line.",
+        "A restart of play after a foul.",
+        "A restart of play after a goal."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_68",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Cruyff-Wende'?",
+      "en": "Which player is famous for his 'Cruyff Turn'?"
+    },
+    "options": {
+      "de": [
+        "Johan Cruyff",
+        "Pelé",
+        "George Best",
+        "Zinedine Zidane"
+      ],
+      "en": [
+        "Johan Cruyff",
+        "Pelé",
+        "George Best",
+        "Zinedine Zidane"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_69",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2014?",
+      "en": "Which country won the FIFA World Cup in 2014?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Brasilien",
+        "Argentinien",
+        "Spanien"
+      ],
+      "en": [
+        "Germany",
+        "Brazil",
+        "Argentina",
+        "Spain"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_70",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Volley' im Fußball?",
+      "en": "What is a 'volley' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Schuss, bei dem der Ball direkt aus der Luft getroffen wird, bevor er den Boden berührt.",
+        "Ein Schuss, der vom Boden abprallt.",
+        "Ein Schuss, der mit dem Kopf erzielt wird.",
+        "Ein Schuss aus großer Entfernung."
+      ],
+      "en": [
+        "A shot where the ball is struck directly from the air before it touches the ground.",
+        "A shot that bounces off the ground.",
+        "A shot scored with the head.",
+        "A shot from a long distance."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_71",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein ist Rekordsieger der UEFA Europa League?",
+      "en": "Which club is the record winner of the UEFA Europa League?"
+    },
+    "options": {
+      "de": [
+        "FC Sevilla",
+        "Inter Mailand",
+        "FC Liverpool",
+        "Atlético Madrid"
+      ],
+      "en": [
+        "Sevilla FC",
+        "Inter Milan",
+        "Liverpool FC",
+        "Atlético Madrid"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_72",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der aktuelle Präsident der UEFA (Stand 2024)?",
+      "en": "Who is the current president of UEFA (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Aleksander Čeferin",
+        "Michel Platini",
+        "Lennart Johansson",
+        "Jacques Georges"
+      ],
+      "en": [
+        "Aleksander Čeferin",
+        "Michel Platini",
+        "Lennart Johansson",
+        "Jacques Georges"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_73",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Tunnel' im Fußball?",
+      "en": "What is a 'nutmeg' (tunnel) in football?"
+    },
+    "options": {
+      "de": [
+        "Den Ball zwischen den Beinen eines Gegners hindurchspielen.",
+        "Den Ball über den Kopf eines Gegners spielen.",
+        "Den Ball an einem Gegner vorbeischießen.",
+        "Den Ball ins Tor schießen."
+      ],
+      "en": [
+        "Playing the ball between an opponent's legs.",
+        "Playing the ball over an opponent's head.",
+        "Shooting the ball past an opponent.",
+        "Shooting the ball into the goal."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_74",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
+      "en": "Which player is famous for his 'Rabona' tricks?"
+    },
+    "options": {
+      "de": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ],
+      "en": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_50",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist der Rekordtorschütze der UEFA Champions League?",
+      "en": "Which player is the all-time leading goalscorer in the UEFA Champions League?"
+    },
+    "options": {
+      "de": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ],
+      "en": [
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Robert Lewandowski",
+        "Karim Benzema"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_51",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele Spieler sind in einer Mannschaft beim Hallenfußball (Futsal)?",
+      "en": "How many players are on a team in indoor football (futsal)?"
+    },
+    "options": {
+      "de": [
+        "5",
+        "7",
+        "11",
+        "6"
+      ],
+      "en": [
+        "5",
+        "7",
+        "11",
+        "6"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_52",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Europameisterschaft 2020 (ausgetragen 2021)?",
+      "en": "Which country won the UEFA European Championship in 2020 (played in 2021)?"
+    },
+    "options": {
+      "de": [
+        "Italien",
+        "England",
+        "Spanien",
+        "Portugal"
+      ],
+      "en": [
+        "Italy",
+        "England",
+        "Spain",
+        "Portugal"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_53",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Elfmeterpunkt' im Fußball?",
+      "en": "What is a 'penalty spot' in football?"
+    },
+    "options": {
+      "de": [
+        "Der Punkt, von dem ein Elfmeter geschossen wird",
+        "Der Mittelpunkt des Spielfelds",
+        "Der Punkt, an dem der Ball ins Aus geht",
+        "Der Punkt, an dem der Torwart steht"
+      ],
+      "en": [
+        "The spot from which a penalty kick is taken",
+        "The center of the field",
+        "The point where the ball goes out of bounds",
+        "The spot where the goalkeeper stands"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_54",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Fußballverein ist bekannt für seine 'Gelbe Wand'?",
+      "en": "Which football club is known for its 'Yellow Wall'?"
+    },
+    "options": {
+      "de": [
+        "Borussia Dortmund",
+        "FC Bayern München",
+        "Schalke 04",
+        "Hamburger SV"
+      ],
+      "en": [
+        "Borussia Dortmund",
+        "FC Bayern Munich",
+        "Schalke 04",
+        "Hamburger SV"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_55",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordspieler der deutschen Bundesliga nach Einsätzen?",
+      "en": "Who is the all-time record player in the German Bundesliga by appearances?"
+    },
+    "options": {
+      "de": [
+        "Charly Körbel",
+        "Sepp Maier",
+        "Oliver Kahn",
+        "Lothar Matthäus"
+      ],
+      "en": [
+        "Charly Körbel",
+        "Sepp Maier",
+        "Oliver Kahn",
+        "Lothar Matthäus"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_56",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Abstoß' im Fußball?",
+      "en": "What is a 'goal kick' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat und zuletzt von einem gegnerischen Spieler berührt wurde.",
+        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
+        "Eine Spielfortsetzung nach einem Foul.",
+        "Eine Spielfortsetzung nach einem Tor."
+      ],
+      "en": [
+        "A restart of play when the ball has crossed the goal line and was last touched by an opposing player.",
+        "A restart of play when the ball has crossed the sideline.",
+        "A restart of play after a foul.",
+        "A restart of play after a goal."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_57",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Weltmeisterschaft der Frauen 2023?",
+      "en": "Which country won the FIFA Women's World Cup in 2023?"
+    },
+    "options": {
+      "de": [
+        "Spanien",
+        "England",
+        "USA",
+        "Deutschland"
+      ],
+      "en": [
+        "Spain",
+        "England",
+        "USA",
+        "Germany"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_58",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordtorschütze der spanischen La Liga?",
+      "en": "Who is the all-time leading goalscorer in Spain's La Liga?"
+    },
+    "options": {
+      "de": [
+        "Lionel Messi",
+        "Cristiano Ronaldo",
+        "Telmo Zarra",
+        "Hugo Sánchez"
+      ],
+      "en": [
+        "Lionel Messi",
+        "Cristiano Ronaldo",
+        "Telmo Zarra",
+        "Hugo Sánchez"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_59",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Doppelwechsel' im Fußball?",
+      "en": "What is a 'double substitution' in football?"
+    },
+    "options": {
+      "de": [
+        "Zwei Spieler werden gleichzeitig ausgewechselt.",
+        "Ein Spieler wird zweimal ausgewechselt.",
+        "Zwei Spieler wechseln die Position.",
+        "Zwei Trainer wechseln die Mannschaft."
+      ],
+      "en": [
+        "Two players are substituted at the same time.",
+        "One player is substituted twice.",
+        "Two players change positions.",
+        "Two coaches change teams."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_60",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein ist Rekordsieger des DFB-Pokals?",
+      "en": "Which club is the record winner of the DFB-Pokal?"
+    },
+    "options": {
+      "de": [
+        "FC Bayern München",
+        "Werder Bremen",
+        "Schalke 04",
+        "Borussia Dortmund"
+      ],
+      "en": [
+        "FC Bayern Munich",
+        "Werder Bremen",
+        "Schalke 04",
+        "Borussia Dortmund"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_61",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die 'Nachspielzeit' im Fußball?",
+      "en": "What is 'injury time' (added time) in football?"
+    },
+    "options": {
+      "de": [
+        "Zusätzliche Spielzeit am Ende jeder Halbzeit, um Unterbrechungen auszugleichen.",
+        "Die Zeit, in der ein Spieler verletzt ist.",
+        "Die Zeit, in der das Spiel unterbrochen ist.",
+        "Die Zeit vor dem Anpfiff."
+      ],
+      "en": [
+        "Additional playing time at the end of each half to compensate for stoppages.",
+        "The time a player is injured.",
+        "The time when the game is interrupted.",
+        "The time before kick-off."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_62",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Elastico'-Dribblings?",
+      "en": "Which player is famous for his 'Elastico' dribbles?"
+    },
+    "options": {
+      "de": [
+        "Ronaldinho",
+        "Pelé",
+        "Neymar",
+        "Ronaldo Nazário"
+      ],
+      "en": [
+        "Ronaldinho",
+        "Pelé",
+        "Neymar",
+        "Ronaldo Nazário"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_63",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie oft findet die Fußball-Weltmeisterschaft statt?",
+      "en": "How often does the FIFA World Cup take place?"
+    },
+    "options": {
+      "de": [
+        "Alle 4 Jahre",
+        "Alle 2 Jahre",
+        "Jedes Jahr",
+        "Alle 5 Jahre"
+      ],
+      "en": [
+        "Every 4 years",
+        "Every 2 years",
+        "Every year",
+        "Every 5 years"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_64",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land ist Rekordsieger der Copa América?",
+      "en": "Which country is the record winner of the Copa América?"
+    },
+    "options": {
+      "de": [
+        "Argentinien",
+        "Uruguay",
+        "Brasilien",
+        "Chile"
+      ],
+      "en": [
+        "Argentina",
+        "Uruguay",
+        "Brazil",
+        "Chile"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_65",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Strafraum' im Fußball?",
+      "en": "What is a 'penalty area' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Bereich vor dem Tor, in dem bestimmte Fouls mit einem Elfmeter geahndet werden.",
+        "Der Bereich, in dem sich die Ersatzspieler aufhalten.",
+        "Der Bereich, in dem der Trainer steht.",
+        "Der Bereich, in dem die Fans sitzen."
+      ],
+      "en": [
+        "An area in front of the goal where certain fouls result in a penalty kick.",
+        "The area where substitute players are located.",
+        "The area where the coach stands.",
+        "The area where the fans sit."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_66",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordtorschütze der englischen Premier League?",
+      "en": "Who is the all-time leading goalscorer in the English Premier League?"
+    },
+    "options": {
+      "de": [
+        "Alan Shearer",
+        "Harry Kane",
+        "Wayne Rooney",
+        "Sergio Agüero"
+      ],
+      "en": [
+        "Alan Shearer",
+        "Harry Kane",
+        "Wayne Rooney",
+        "Sergio Agüero"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_67",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Einwurf' im Fußball?",
+      "en": "What is a 'throw-in' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Spielfortsetzung, wenn der Ball die Seitenlinie überquert hat.",
+        "Eine Spielfortsetzung, wenn der Ball die Torauslinie überquert hat.",
+        "Eine Spielfortsetzung nach einem Foul.",
+        "Eine Spielfortsetzung nach einem Tor."
+      ],
+      "en": [
+        "A restart of play when the ball has crossed the sideline.",
+        "A restart of play when the ball has crossed the goal line.",
+        "A restart of play after a foul.",
+        "A restart of play after a goal."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_68",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Cruyff-Wende'?",
+      "en": "Which player is famous for his 'Cruyff Turn'?"
+    },
+    "options": {
+      "de": [
+        "Johan Cruyff",
+        "Pelé",
+        "George Best",
+        "Zinedine Zidane"
+      ],
+      "en": [
+        "Johan Cruyff",
+        "Pelé",
+        "George Best",
+        "Zinedine Zidane"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_69",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Fußball-Weltmeisterschaft 2014?",
+      "en": "Which country won the FIFA World Cup in 2014?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Brasilien",
+        "Argentinien",
+        "Spanien"
+      ],
+      "en": [
+        "Germany",
+        "Brazil",
+        "Argentina",
+        "Spain"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_70",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Volley' im Fußball?",
+      "en": "What is a 'volley' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Schuss, bei dem der Ball direkt aus der Luft getroffen wird, bevor er den Boden berührt.",
+        "Ein Schuss, der vom Boden abprallt.",
+        "Ein Schuss, der mit dem Kopf erzielt wird.",
+        "Ein Schuss aus großer Entfernung."
+      ],
+      "en": [
+        "A shot where the ball is struck directly from the air before it touches the ground.",
+        "A shot that bounces off the ground.",
+        "A shot scored with the head.",
+        "A shot from a long distance."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_71",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein ist Rekordsieger der UEFA Europa League?",
+      "en": "Which club is the record winner of the UEFA Europa League?"
+    },
+    "options": {
+      "de": [
+        "FC Sevilla",
+        "Inter Mailand",
+        "FC Liverpool",
+        "Atlético Madrid"
+      ],
+      "en": [
+        "Sevilla FC",
+        "Inter Milan",
+        "Liverpool FC",
+        "Atlético Madrid"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_72",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der aktuelle Präsident der UEFA (Stand 2024)?",
+      "en": "Who is the current president of UEFA (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Aleksander Čeferin",
+        "Michel Platini",
+        "Lennart Johansson",
+        "Jacques Georges"
+      ],
+      "en": [
+        "Aleksander Čeferin",
+        "Michel Platini",
+        "Lennart Johansson",
+        "Jacques Georges"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_73",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Tunnel' im Fußball?",
+      "en": "What is a 'nutmeg' (tunnel) in football?"
+    },
+    "options": {
+      "de": [
+        "Den Ball zwischen den Beinen eines Gegners hindurchspielen.",
+        "Den Ball über den Kopf eines Gegners spielen.",
+        "Den Ball an einem Gegner vorbeischießen.",
+        "Den Ball ins Tor schießen."
+      ],
+      "en": [
+        "Playing the ball between an opponent's legs.",
+        "Playing the ball over an opponent's head.",
+        "Shooting the ball past an opponent.",
+        "Shooting the ball into the goal."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_74",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
+      "en": "Which player is famous for his 'Rabona'-tricks?"
+    },
+    "options": {
+      "de": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ],
+      "en": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ]
+    }
+  },
+  {
+    "id": "literatur_0",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_1",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_2",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_3",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_4",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_5",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_6",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_7",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_8",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_9",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_10",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_11",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_12",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_13",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_14",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_15",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_16",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_17",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_18",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_19",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_20",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_21",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_22",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_23",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_24",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_25",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_26",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_27",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_28",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_29",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_30",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_31",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_32",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_33",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_34",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_35",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_36",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_37",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_38",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_39",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_40",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_41",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_42",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_43",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_44",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_45",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_46",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_47",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_48",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_49",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_50",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_51",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_52",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_53",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_54",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_55",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_56",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_57",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_58",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_59",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_60",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_61",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_62",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_63",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_64",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_65",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_66",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_67",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_68",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_69",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_70",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_71",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_72",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_73",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_74",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_75",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_76",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_77",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_78",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_79",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_80",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_81",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_82",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_83",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_84",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_85",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_86",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_87",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_88",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_89",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_90",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_91",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_92",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_93",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_94",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_95",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_96",
+    "cat": "Literatur",
+    "correct": 0,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_97",
+    "cat": "Literatur",
+    "correct": 1,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_98",
+    "cat": "Literatur",
+    "correct": 2,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ]
+    }
+  },
+  {
+    "id": "literatur_99",
+    "cat": "Literatur",
+    "correct": 3,
+    "text": {
+      "de": "Wer schrieb den Roman \"1984\"?",
+      "en": "Who wrote the novel \"1984\"?"
+    },
+    "options": {
+      "de": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
+      ],
+      "en": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Ray Bradbury",
+        "Jules Verne"
       ]
     }
   }
