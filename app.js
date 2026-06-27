@@ -1,6 +1,6 @@
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
-    : 'https://3000-i3717ocenmuhprocjl5l2-f513dc9e.us2.manus.computer';
+    : window.location.origin;
 
 let state = { 
     lang: 'de', questions: [], allQuestions: [], current: 0, score: 0, lives: 3,
