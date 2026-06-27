@@ -511,6 +511,12 @@ function closeSystem() {
     fetchLeaderboard();
 }
 
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden && document.getElementById('game-screen').classList.contains('active') && !state.isPaused) {
+        pauseProtocol();
+    }
+});
+
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
