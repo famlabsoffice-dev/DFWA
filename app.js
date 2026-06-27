@@ -24,19 +24,22 @@ async function fetchSystemSecret() {
       const data = await res.json();
       state.systemSecret = data.secret;
     } else {
-      state.systemSecret = 'OFFLINE_FALLBACK_SECRET';
+      // Offline-Modus: Kein Secret vom Server verfügbar.
+      // Lokale Signaturen dienen nur der UI-Konsistenz, nicht der Sicherheit.
+      state.systemSecret = 'LOCAL_ONLY_UNTRUSTED';
     }
   } catch (e) {
-    console.log('Secret fetch failed, using fallback/offline mode');
-    state.systemSecret = 'OFFLINE_FALLBACK_SECRET';
+    state.systemSecret = 'LOCAL_ONLY_UNTRUSTED';
   }
   await validateStorage();
 }
 fetchSystemSecret();
 
 async function getSignature(data) {
+    // Hinweis: Client-seitige Signaturen sind im Offline-Modus manipulierbar.
+    // Echte Verifizierung erfolgt nur über den Server-Secret.
     const key = await crypto.subtle.importKey(
-        'raw', new TextEncoder().encode(state.systemSecret || 'DFWA_SECRET_ACK'),
+        'raw', new TextEncoder().encode(state.systemSecret || 'LOCAL_ONLY_UNTRUSTED'),
         { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
     );
     const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(data));
@@ -124,12 +127,21 @@ function hideLobby() {
     document.getElementById('start-screen').classList.add('active');
 }
 
-function startChallenge() {
+async function startChallenge() {
     const code = document.getElementById('challenge-code-input').value.trim();
     if (code) {
         try {
             const data = JSON.parse(atob(code));
             if (!data.seed || data.score === undefined || !data.sig) throw new Error();
+            
+            // Verifizierung der Signatur
+            const payload = { seed: data.seed, score: data.score, ts: data.ts };
+            const expectedSig = (await getSignature(JSON.stringify(payload))).slice(0, 16);
+            
+            if (data.sig !== expectedSig) {
+                console.warn("CHALLENGE_INTEGRITY_FAIL: Code tampered or generated with different secret.");
+            }
+
             const age = Date.now() - (data.ts || 0);
             if (age > 86400000) throw new Error('EXPIRED');
             state.isChallenge = true;
