@@ -13813,5 +13813,580 @@
         "2 (main referee and one assistant)"
       ]
     }
+  },
+  {
+    "id": "fussball_new_25",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die UEFA Champions League in der Saison 2022/2023?",
+      "en": "Which club won the UEFA Champions League in the 2022/2023 season?"
+    },
+    "options": {
+      "de": [
+        "Manchester City",
+        "Inter Mailand",
+        "Real Madrid",
+        "FC Bayern München"
+      ],
+      "en": [
+        "Manchester City",
+        "Inter Milan",
+        "Real Madrid",
+        "FC Bayern Munich"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_26",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Trainer von Manchester City (Stand 2024)?",
+      "en": "Who is the manager of Manchester City (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Pep Guardiola",
+        "Jürgen Klopp",
+        "Carlo Ancelotti",
+        "Thomas Tuchel"
+      ],
+      "en": [
+        "Pep Guardiola",
+        "Jürgen Klopp",
+        "Carlo Ancelotti",
+        "Thomas Tuchel"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_27",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler hält den Rekord für die meisten Tore in der Geschichte der Fußball-Weltmeisterschaft?",
+      "en": "Which player holds the record for the most goals in the history of the FIFA World Cup?"
+    },
+    "options": {
+      "de": [
+        "Miroslav Klose",
+        "Ronaldo Nazário",
+        "Gerd Müller",
+        "Pelé"
+      ],
+      "en": [
+        "Miroslav Klose",
+        "Ronaldo Nazário",
+        "Gerd Müller",
+        "Pelé"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_28",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Freistoß' im Fußball?",
+      "en": "What is a 'free kick' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Spielfortsetzung nach einem Foulspiel",
+        "Ein Schuss aus dem Spiel heraus",
+        "Ein Einwurf",
+        "Ein Eckball"
+      ],
+      "en": [
+        "A restart of play after a foul",
+        "A shot from open play",
+        "A throw-in",
+        "A corner kick"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_29",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land ist bekannt für seine 'Tiki-Taka'-Spielweise?",
+      "en": "Which country is known for its 'Tiki-Taka' playing style?"
+    },
+    "options": {
+      "de": [
+        "Spanien",
+        "Brasilien",
+        "Deutschland",
+        "Italien"
+      ],
+      "en": [
+        "Spain",
+        "Brazil",
+        "Germany",
+        "Italy"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_30",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Kapitän der deutschen Fußball-Nationalmannschaft (Stand 2024)?",
+      "en": "Who is the captain of the German national football team (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Ilkay Gündogan",
+        "Manuel Neuer",
+        "Joshua Kimmich",
+        "Thomas Müller"
+      ],
+      "en": [
+        "Ilkay Gündogan",
+        "Manuel Neuer",
+        "Joshua Kimmich",
+        "Thomas Müller"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_31",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die Bundesliga in der Saison 2022/2023?",
+      "en": "Which club won the Bundesliga in the 2022/2023 season?"
+    },
+    "options": {
+      "de": [
+        "FC Bayern München",
+        "Borussia Dortmund",
+        "RB Leipzig",
+        "Bayer 04 Leverkusen"
+      ],
+      "en": [
+        "FC Bayern Munich",
+        "Borussia Dortmund",
+        "RB Leipzig",
+        "Bayer 04 Leverkusen"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_32",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Eigentor' im Fußball?",
+      "en": "What is an 'own goal' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Tor, das ein Spieler versehentlich ins eigene Netz schießt",
+        "Ein Tor, das ein Spieler absichtlich ins eigene Netz schießt",
+        "Ein Tor, das von einem Verteidiger erzielt wird",
+        "Ein Tor, das außerhalb des Strafraums erzielt wird"
+      ],
+      "en": [
+        "A goal scored accidentally by a player into their own net",
+        "A goal scored intentionally by a player into their own net",
+        "A goal scored by a defender",
+        "A goal scored from outside the penalty area"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_33",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land ist Rekord-Weltmeister im Fußball der Frauen?",
+      "en": "Which country is the record champion in women's football World Cup?"
+    },
+    "options": {
+      "de": [
+        "USA",
+        "Deutschland",
+        "Norwegen",
+        "Japan"
+      ],
+      "en": [
+        "USA",
+        "Germany",
+        "Norway",
+        "Japan"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_34",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der jüngste Torschütze in der Geschichte der Fußball-Weltmeisterschaft?",
+      "en": "Who is the youngest goal scorer in the history of the FIFA World Cup?"
+    },
+    "options": {
+      "de": [
+        "Pelé",
+        "Kylian Mbappé",
+        "Norman Whiteside",
+        "Lionel Messi"
+      ],
+      "en": [
+        "Pelé",
+        "Kylian Mbappé",
+        "Norman Whiteside",
+        "Lionel Messi"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_35",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist die 'Abseitsregel' im Fußball?",
+      "en": "What is the 'offside rule' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Regel, die besagt, dass ein Spieler nicht näher an der gegnerischen Torlinie sein darf als der Ball und der vorletzte Gegenspieler, wenn der Ball von einem Mitspieler gespielt wird.",
+        "Eine Regel, die besagt, dass ein Spieler nicht in der eigenen Hälfte stehen darf.",
+        "Eine Regel, die besagt, dass ein Spieler den Ball nicht mit der Hand berühren darf.",
+        "Eine Regel, die besagt, dass ein Spieler nicht außerhalb des Spielfeldes stehen darf."
+      ],
+      "en": [
+        "A rule stating that a player cannot be nearer to the opponents' goal line than both the ball and the second-to-last opponent when the ball is played by a teammate.",
+        "A rule stating that a player cannot be in their own half.",
+        "A rule stating that a player cannot touch the ball with their hand.",
+        "A rule stating that a player cannot be outside the field of play."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_36",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die erste deutsche Meisterschaft im Fußball?",
+      "en": "Which club won the first German football championship?"
+    },
+    "options": {
+      "de": [
+        "VfB Leipzig",
+        "FC Bayern München",
+        "Hamburger SV",
+        "Schalke 04"
+      ],
+      "en": [
+        "VfB Leipzig",
+        "FC Bayern Munich",
+        "Hamburger SV",
+        "Schalke 04"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_37",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele Auswechselspieler dürfen in einem Bundesligaspiel maximal eingesetzt werden?",
+      "en": "How many substitutes can be used in a Bundesliga match?"
+    },
+    "options": {
+      "de": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
+      "en": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_38",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land ist der Gastgeber der Fußball-Europameisterschaft 2024?",
+      "en": "Which country is hosting the UEFA European Championship in 2024?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Frankreich",
+        "England",
+        "Italien"
+      ],
+      "en": [
+        "Germany",
+        "France",
+        "England",
+        "Italy"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_39",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Rekordspieler der deutschen Fußball-Nationalmannschaft nach Einsätzen?",
+      "en": "Who is the most capped player for the German national football team?"
+    },
+    "options": {
+      "de": [
+        "Lothar Matthäus",
+        "Miroslav Klose",
+        "Franz Beckenbauer",
+        "Philipp Lahm"
+      ],
+      "en": [
+        "Lothar Matthäus",
+        "Miroslav Klose",
+        "Franz Beckenbauer",
+        "Philipp Lahm"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_40",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Fallrückzieher' im Fußball?",
+      "en": "What is a 'bicycle kick' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein akrobatischer Schuss, bei dem der Spieler mit dem Rücken zum Tor in der Luft liegt und den Ball über sich schießt.",
+        "Ein Schuss, der vom Boden abprallt.",
+        "Ein Schuss, der mit dem Kopf erzielt wird.",
+        "Ein Schuss, der aus großer Entfernung erzielt wird."
+      ],
+      "en": [
+        "An acrobatic shot where the player lies in the air with their back to the goal and kicks the ball over their head.",
+        "A shot that bounces off the ground.",
+        "A shot scored with the head.",
+        "A shot scored from a long distance."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_41",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Verein gewann die englische Premier League in der Saison 2022/2023?",
+      "en": "Which club won the English Premier League in the 2022/2023 season?"
+    },
+    "options": {
+      "de": [
+        "Manchester City",
+        "Arsenal FC",
+        "Manchester United",
+        "Liverpool FC"
+      ],
+      "en": [
+        "Manchester City",
+        "Arsenal FC",
+        "Manchester United",
+        "Liverpool FC"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_42",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Elfmeterschießen' im Fußball?",
+      "en": "What is a 'penalty shootout' in football?"
+    },
+    "options": {
+      "de": [
+        "Eine Methode zur Ermittlung eines Siegers nach einem Unentschieden, bei der Spieler abwechselnd Elfmeter schießen.",
+        "Ein Training für Elfmeter.",
+        "Ein Spiel, das nur aus Elfmetern besteht.",
+        "Ein Elfmeter, der während des Spiels ausgeführt wird."
+      ],
+      "en": [
+        "A method of determining a winner after a draw, where players take turns shooting penalties.",
+        "A penalty training session.",
+        "A game consisting only of penalties.",
+        "A penalty taken during the match."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_43",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Panenka'-Elfmeter?",
+      "en": "Which player is famous for his 'Panenka' penalty kicks?"
+    },
+    "options": {
+      "de": [
+        "Antonín Panenka",
+        "Zinedine Zidane",
+        "Andrea Pirlo",
+        "Francesco Totti"
+      ],
+      "en": [
+        "Antonín Panenka",
+        "Zinedine Zidane",
+        "Andrea Pirlo",
+        "Francesco Totti"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_44",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches Land gewann die Copa América 2021?",
+      "en": "Which country won the Copa América in 2021?"
+    },
+    "options": {
+      "de": [
+        "Argentinien",
+        "Brasilien",
+        "Uruguay",
+        "Chile"
+      ],
+      "en": [
+        "Argentina",
+        "Brazil",
+        "Uruguay",
+        "Chile"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_45",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Doppelpack' im Fußball?",
+      "en": "What is a 'brace' (doublet) in football?"
+    },
+    "options": {
+      "de": [
+        "Zwei Tore eines Spielers in einem Spiel",
+        "Zwei Vorlagen eines Spielers in einem Spiel",
+        "Zwei Siege in Folge",
+        "Zwei gehaltene Elfmeter"
+      ],
+      "en": [
+        "Two goals by one player in a single match",
+        "Two assists by one player in a single match",
+        "Two consecutive wins",
+        "Two saved penalties"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_46",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welches ist das größte Fußballstadion der Welt nach Kapazität?",
+      "en": "Which is the largest football stadium in the world by capacity?"
+    },
+    "options": {
+      "de": [
+        "Rungrado 1. Mai Stadion",
+        "Camp Nou",
+        "Wembley Stadium",
+        "Aztekenstadion"
+      ],
+      "en": [
+        "Rungrado 1st of May Stadium",
+        "Camp Nou",
+        "Wembley Stadium",
+        "Azteca Stadium"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_47",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist der Trainer der deutschen Frauen-Nationalmannschaft (Stand 2024)?",
+      "en": "Who is the coach of the German women's national football team (as of 2024)?"
+    },
+    "options": {
+      "de": [
+        "Horst Hrubesch",
+        "Martina Voss-Tecklenburg",
+        "Steffi Jones",
+        "Silvia Neid"
+      ],
+      "en": [
+        "Horst Hrubesch",
+        "Martina Voss-Tecklenburg",
+        "Steffi Jones",
+        "Silvia Neid"
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_48",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Derby' im Fußball?",
+      "en": "What is a 'derby' in football?"
+    },
+    "options": {
+      "de": [
+        "Ein Spiel zwischen zwei rivalisierenden Mannschaften aus derselben Stadt oder Region.",
+        "Ein Freundschaftsspiel.",
+        "Ein Pokalfinale.",
+        "Ein Länderspiel."
+      ],
+      "en": [
+        "A match between two rival teams from the same city or region.",
+        "A friendly match.",
+        "A cup final.",
+        "An international match."
+      ]
+    }
+  },
+  {
+    "id": "fussball_new_49",
+    "cat": "Fussball",
+    "correct": 0,
+    "text": {
+      "de": "Welcher Spieler ist bekannt für seine 'Rabona'-Tricks?",
+      "en": "Which player is famous for his 'Rabona' tricks?"
+    },
+    "options": {
+      "de": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ],
+      "en": [
+        "Erik Lamela",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Neymar"
+      ]
+    }
   }
 ]
