@@ -12939,5 +12939,97 @@
         "Mississippi"
       ]
     }
+  },
+  {
+    "id": "geschichte_new_0",
+    "cat": "Geschichte",
+    "correct": 0,
+    "text": {
+      "de": "Wann begann der Erste Weltkrieg?",
+      "en": "When did World War I begin?"
+    },
+    "options": {
+      "de": [
+        "1914",
+        "1918",
+        "1939",
+        "1945"
+      ],
+      "en": [
+        "1914",
+        "1918",
+        "1939",
+        "1945"
+      ]
+    }
+  },
+  {
+    "id": "geschichte_new_1",
+    "cat": "Geschichte",
+    "correct": 0,
+    "text": {
+      "de": "Wer war der erste Präsident der Vereinigten Staaten?",
+      "en": "Who was the first president of the United States?"
+    },
+    "options": {
+      "de": [
+        "George Washington",
+        "Thomas Jefferson",
+        "Abraham Lincoln",
+        "John Adams"
+      ],
+      "en": [
+        "George Washington",
+        "Thomas Jefferson",
+        "Abraham Lincoln",
+        "John Adams"
+      ]
+    }
+  },
+  {
+    "id": "geschichte_new_2",
+    "cat": "Geschichte",
+    "correct": 0,
+    "text": {
+      "de": "Wann fiel die Berliner Mauer?",
+      "en": "When did the Berlin Wall fall?"
+    },
+    "options": {
+      "de": [
+        "1989",
+        "1961",
+        "1991",
+        "1945"
+      ],
+      "en": [
+        "1989",
+        "1961",
+        "1991",
+        "1945"
+      ]
+    }
+  },
+  {
+    "id": "geschichte_new_3",
+    "cat": "Geschichte",
+    "correct": 0,
+    "text": {
+      "de": "Wer war Julius Cäsar?",
+      "en": "Who was Julius Caesar?"
+    },
+    "options": {
+      "de": [
+        "Römischer Staatsmann und Feldherr",
+        "Griechischer Philosoph",
+        "Ägyptischer Pharao",
+        "Persischer König"
+      ],
+      "en": [
+        "Roman statesman and general",
+        "Greek philosopher",
+        "Egyptian pharaoh",
+        "Persian king"
+      ]
+    }
   }
 ]
