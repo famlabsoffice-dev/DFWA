@@ -12916,5 +12916,28 @@
         "C++"
       ]
     }
+  },
+  {
+    "id": "erdkunde_new_0",
+    "cat": "Erdkunde",
+    "correct": 1,
+    "text": {
+      "de": "Welches ist der längste Fluss der Welt?",
+      "en": "Which is the longest river in the world?"
+    },
+    "options": {
+      "de": [
+        "Nil",
+        "Amazonas",
+        "Jangtsekiang",
+        "Mississippi"
+      ],
+      "en": [
+        "Nile",
+        "Amazon",
+        "Yangtze",
+        "Mississippi"
+      ]
+    }
   }
 ]
