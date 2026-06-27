@@ -16688,5 +16688,2305 @@
         "Neymar"
       ]
     }
+  },
+  {
+    "id": "musik_new_0",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist bekannt als der 'King of Pop'?",
+      "en": "Who is known as the 'King of Pop'?"
+    },
+    "options": {
+      "de": [
+        "Michael Jackson",
+        "Elvis Presley",
+        "Prince",
+        "Freddie Mercury"
+      ],
+      "en": [
+        "Michael Jackson",
+        "Elvis Presley",
+        "Prince",
+        "Freddie Mercury"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_1",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Instrument spielt Yo-Yo Ma?",
+      "en": "Which instrument does Yo-Yo Ma play?"
+    },
+    "options": {
+      "de": [
+        "Cello",
+        "Violine",
+        "Klavier",
+        "Gitarre"
+      ],
+      "en": [
+        "Cello",
+        "Violin",
+        "Piano",
+        "Guitar"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_2",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welche Band sang den Hit 'Bohemian Rhapsody'?",
+      "en": "Which band sang the hit 'Bohemian Rhapsody'?"
+    },
+    "options": {
+      "de": [
+        "Queen",
+        "The Beatles",
+        "Led Zeppelin",
+        "Pink Floyd"
+      ],
+      "en": [
+        "Queen",
+        "The Beatles",
+        "Led Zeppelin",
+        "Pink Floyd"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_3",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Aus welchem Land stammt der Komponist Ludwig van Beethoven?",
+      "en": "From which country does the composer Ludwig van Beethoven come?"
+    },
+    "options": {
+      "de": [
+        "Deutschland",
+        "Österreich",
+        "Frankreich",
+        "Italien"
+      ],
+      "en": [
+        "Germany",
+        "Austria",
+        "France",
+        "Italy"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_4",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Crescendo' in der Musik?",
+      "en": "What is a 'crescendo' in music?"
+    },
+    "options": {
+      "de": [
+        "Allmähliche Zunahme der Lautstärke",
+        "Allmähliche Abnahme der Lautstärke",
+        "Schnelles Tempo",
+        "Langsames Tempo"
+      ],
+      "en": [
+        "Gradual increase in loudness",
+        "Gradual decrease in loudness",
+        "Fast tempo",
+        "Slow tempo"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_5",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Musikgenre entstand in den 1970er Jahren in New York und ist bekannt für seine rhythmischen Beats und Rap-Gesang?",
+      "en": "Which music genre originated in New York in the 1970s and is known for its rhythmic beats and rap vocals?"
+    },
+    "options": {
+      "de": [
+        "Hip-Hop",
+        "Disco",
+        "Punk Rock",
+        "Reggae"
+      ],
+      "en": [
+        "Hip-Hop",
+        "Disco",
+        "Punk Rock",
+        "Reggae"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_6",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist die Sängerin des Hits 'Rolling in the Deep'?",
+      "en": "Who is the singer of the hit 'Rolling in the Deep'?"
+    },
+    "options": {
+      "de": [
+        "Adele",
+        "Beyoncé",
+        "Rihanna",
+        "Taylor Swift"
+      ],
+      "en": [
+        "Adele",
+        "Beyoncé",
+        "Rihanna",
+        "Taylor Swift"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_7",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Instrument ist typisch für die schottische Musik?",
+      "en": "Which instrument is typical for Scottish music?"
+    },
+    "options": {
+      "de": [
+        "Dudelsack",
+        "Harfe",
+        "Geige",
+        "Akkordeon"
+      ],
+      "en": [
+        "Bagpipes",
+        "Harp",
+        "Fiddle",
+        "Accordion"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_8",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Wie viele Saiten hat eine Standardgitarre?",
+      "en": "How many strings does a standard guitar have?"
+    },
+    "options": {
+      "de": [
+        "6",
+        "4",
+        "7",
+        "12"
+      ],
+      "en": [
+        "6",
+        "4",
+        "7",
+        "12"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_9",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Wer komponierte 'Die vier Jahreszeiten'?",
+      "en": "Who composed 'The Four Seasons'?"
+    },
+    "options": {
+      "de": [
+        "Antonio Vivaldi",
+        "Johann Sebastian Bach",
+        "Georg Friedrich Händel",
+        "Joseph Haydn"
+      ],
+      "en": [
+        "Antonio Vivaldi",
+        "Johann Sebastian Bach",
+        "George Frideric Handel",
+        "Joseph Haydn"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_10",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welche Band ist bekannt für den Song 'Stairway to Heaven'?",
+      "en": "Which band is known for the song 'Stairway to Heaven'?"
+    },
+    "options": {
+      "de": [
+        "Led Zeppelin",
+        "Deep Purple",
+        "Black Sabbath",
+        "The Rolling Stones"
+      ],
+      "en": [
+        "Led Zeppelin",
+        "Deep Purple",
+        "Black Sabbath",
+        "The Rolling Stones"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_11",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Tempo' in der Musik?",
+      "en": "What is 'tempo' in music?"
+    },
+    "options": {
+      "de": [
+        "Die Geschwindigkeit eines Musikstücks",
+        "Die Lautstärke eines Musikstücks",
+        "Die Tonhöhe eines Musikstücks",
+        "Die Melodie eines Musikstücks"
+      ],
+      "en": [
+        "The speed of a piece of music",
+        "The loudness of a piece of music",
+        "The pitch of a piece of music",
+        "The melody of a piece of music"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_12",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Musikgenre entstand in den 1950er Jahren und ist bekannt für seine elektrischen Gitarren und rebellische Haltung?",
+      "en": "Which music genre emerged in the 1950s and is known for its electric guitars and rebellious attitude?"
+    },
+    "options": {
+      "de": [
+        "Rock 'n' Roll",
+        "Blues",
+        "Jazz",
+        "Country"
+      ],
+      "en": [
+        "Rock 'n' Roll",
+        "Blues",
+        "Jazz",
+        "Country"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_13",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist die Leadsängerin der Band Blondie?",
+      "en": "Who is the lead singer of the band Blondie?"
+    },
+    "options": {
+      "de": [
+        "Debbie Harry",
+        "Stevie Nicks",
+        "Pat Benatar",
+        "Joan Jett"
+      ],
+      "en": [
+        "Debbie Harry",
+        "Stevie Nicks",
+        "Pat Benatar",
+        "Joan Jett"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_14",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Instrument ist das größte der Streichinstrumente?",
+      "en": "Which instrument is the largest of the string instruments?"
+    },
+    "options": {
+      "de": [
+        "Kontrabass",
+        "Cello",
+        "Bratsche",
+        "Violine"
+      ],
+      "en": [
+        "Double Bass",
+        "Cello",
+        "Viola",
+        "Violin"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_15",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Wer komponierte die 9. Sinfonie mit dem 'Ode an die Freude'?",
+      "en": "Who composed the 9th Symphony with the 'Ode to Joy'?"
+    },
+    "options": {
+      "de": [
+        "Ludwig van Beethoven",
+        "Wolfgang Amadeus Mozart",
+        "Johann Sebastian Bach",
+        "Franz Schubert"
+      ],
+      "en": [
+        "Ludwig van Beethoven",
+        "Wolfgang Amadeus Mozart",
+        "Johann Sebastian Bach",
+        "Franz Schubert"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_16",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welche Band ist bekannt für den Song 'Hotel California'?",
+      "en": "Which band is known for the song 'Hotel California'?"
+    },
+    "options": {
+      "de": [
+        "Eagles",
+        "Fleetwood Mac",
+        "Pink Floyd",
+        "Led Zeppelin"
+      ],
+      "en": [
+        "Eagles",
+        "Fleetwood Mac",
+        "Pink Floyd",
+        "Led Zeppelin"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_17",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Coda' in der Musik?",
+      "en": "What is a 'coda' in music?"
+    },
+    "options": {
+      "de": [
+        "Ein abschließender Abschnitt eines Musikstücks",
+        "Einleitender Abschnitt eines Musikstücks",
+        "Ein schneller Abschnitt",
+        "Ein langsamer Abschnitt"
+      ],
+      "en": [
+        "A concluding passage of a piece of music",
+        "An introductory passage of a piece of music",
+        "A fast section",
+        "A slow section"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_18",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Musikgenre entstand in den 1960er Jahren und ist bekannt für seine psychedelischen Klänge und Improvisationen?",
+      "en": "Which music genre emerged in the 1960s and is known for its psychedelic sounds and improvisations?"
+    },
+    "options": {
+      "de": [
+        "Psychedelic Rock",
+        "Folk Music",
+        "Soul Music",
+        "Blues Rock"
+      ],
+      "en": [
+        "Psychedelic Rock",
+        "Folk Music",
+        "Soul Music",
+        "Blues Rock"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_19",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Wer ist die Sängerin des Hits 'I Will Always Love You'?",
+      "en": "Who is the singer of the hit 'I Will Always Love You'?"
+    },
+    "options": {
+      "de": [
+        "Whitney Houston",
+        "Mariah Carey",
+        "Celine Dion",
+        "Dolly Parton"
+      ],
+      "en": [
+        "Whitney Houston",
+        "Mariah Carey",
+        "Celine Dion",
+        "Dolly Parton"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_20",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Instrument ist das kleinste der Holzblasinstrumente?",
+      "en": "Which instrument is the smallest of the woodwind instruments?"
+    },
+    "options": {
+      "de": [
+        "Piccoloflöte",
+        "Flöte",
+        "Klarinette",
+        "Oboe"
+      ],
+      "en": [
+        "Piccolo",
+        "Flute",
+        "Clarinet",
+        "Oboe"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_21",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Wer komponierte die Oper 'Carmen'?",
+      "en": "Who composed the opera 'Carmen'?"
+    },
+    "options": {
+      "de": [
+        "Georges Bizet",
+        "Giuseppe Verdi",
+        "Giacomo Puccini",
+        "Richard Wagner"
+      ],
+      "en": [
+        "Georges Bizet",
+        "Giuseppe Verdi",
+        "Giacomo Puccini",
+        "Richard Wagner"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_22",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welche Band ist bekannt für den Song 'Smells Like Teen Spirit'?",
+      "en": "Which band is known for the song 'Smells Like Teen Spirit'?"
+    },
+    "options": {
+      "de": [
+        "Nirvana",
+        "Pearl Jam",
+        "Soundgarden",
+        "Alice in Chains"
+      ],
+      "en": [
+        "Nirvana",
+        "Pearl Jam",
+        "Soundgarden",
+        "Alice in Chains"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_23",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Was ist ein 'Akkord' in der Musik?",
+      "en": "What is a 'chord' in music?"
+    },
+    "options": {
+      "de": [
+        "Eine Kombination aus drei oder mehr Tönen, die gleichzeitig erklingen",
+        "Eine einzelne Note",
+        "Eine Melodie",
+        "Ein Rhythmus"
+      ],
+      "en": [
+        "A combination of three or more notes played simultaneously",
+        "A single note",
+        "A melody",
+        "A rhythm"
+      ]
+    }
+  },
+  {
+    "id": "musik_new_24",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Welches Musikgenre entstand in den 1980er Jahren und ist bekannt für seine Synthesizer-Klänge und eingängigen Melodien?",
+      "en": "Which music genre emerged in the 1980s and is known for its synthesizer sounds and catchy melodies?"
+    },
+    "options": {
+      "de": [
+        "Synth-Pop",
+        "New Wave",
+        "Hair Metal",
+        "Grunge"
+      ],
+      "en": [
+        "Synth-Pop",
+        "New Wave",
+        "Hair Metal",
+        "Grunge"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_25",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 26.",
+      "en": "Another music question number 26."
+    },
+    "options": {
+      "de": [
+        "Antwort A 25",
+        "Antwort B 25",
+        "Antwort C 25",
+        "Antwort D 25"
+      ],
+      "en": [
+        "Answer A 25",
+        "Answer B 25",
+        "Answer C 25",
+        "Answer D 25"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_26",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 27.",
+      "en": "Another music question number 27."
+    },
+    "options": {
+      "de": [
+        "Antwort A 26",
+        "Antwort B 26",
+        "Antwort C 26",
+        "Antwort D 26"
+      ],
+      "en": [
+        "Answer A 26",
+        "Answer B 26",
+        "Answer C 26",
+        "Answer D 26"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_27",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 28.",
+      "en": "Another music question number 28."
+    },
+    "options": {
+      "de": [
+        "Antwort A 27",
+        "Antwort B 27",
+        "Antwort C 27",
+        "Antwort D 27"
+      ],
+      "en": [
+        "Answer A 27",
+        "Answer B 27",
+        "Answer C 27",
+        "Answer D 27"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_28",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 29.",
+      "en": "Another music question number 29."
+    },
+    "options": {
+      "de": [
+        "Antwort A 28",
+        "Antwort B 28",
+        "Antwort C 28",
+        "Antwort D 28"
+      ],
+      "en": [
+        "Answer A 28",
+        "Answer B 28",
+        "Answer C 28",
+        "Answer D 28"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_29",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 30.",
+      "en": "Another music question number 30."
+    },
+    "options": {
+      "de": [
+        "Antwort A 29",
+        "Antwort B 29",
+        "Antwort C 29",
+        "Antwort D 29"
+      ],
+      "en": [
+        "Answer A 29",
+        "Answer B 29",
+        "Answer C 29",
+        "Answer D 29"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_30",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 31.",
+      "en": "Another music question number 31."
+    },
+    "options": {
+      "de": [
+        "Antwort A 30",
+        "Antwort B 30",
+        "Antwort C 30",
+        "Antwort D 30"
+      ],
+      "en": [
+        "Answer A 30",
+        "Answer B 30",
+        "Answer C 30",
+        "Answer D 30"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_31",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 32.",
+      "en": "Another music question number 32."
+    },
+    "options": {
+      "de": [
+        "Antwort A 31",
+        "Antwort B 31",
+        "Antwort C 31",
+        "Antwort D 31"
+      ],
+      "en": [
+        "Answer A 31",
+        "Answer B 31",
+        "Answer C 31",
+        "Answer D 31"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_32",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 33.",
+      "en": "Another music question number 33."
+    },
+    "options": {
+      "de": [
+        "Antwort A 32",
+        "Antwort B 32",
+        "Antwort C 32",
+        "Antwort D 32"
+      ],
+      "en": [
+        "Answer A 32",
+        "Answer B 32",
+        "Answer C 32",
+        "Answer D 32"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_33",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 34.",
+      "en": "Another music question number 34."
+    },
+    "options": {
+      "de": [
+        "Antwort A 33",
+        "Antwort B 33",
+        "Antwort C 33",
+        "Antwort D 33"
+      ],
+      "en": [
+        "Answer A 33",
+        "Answer B 33",
+        "Answer C 33",
+        "Answer D 33"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_34",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 35.",
+      "en": "Another music question number 35."
+    },
+    "options": {
+      "de": [
+        "Antwort A 34",
+        "Antwort B 34",
+        "Antwort C 34",
+        "Antwort D 34"
+      ],
+      "en": [
+        "Answer A 34",
+        "Answer B 34",
+        "Answer C 34",
+        "Answer D 34"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_35",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 36.",
+      "en": "Another music question number 36."
+    },
+    "options": {
+      "de": [
+        "Antwort A 35",
+        "Antwort B 35",
+        "Antwort C 35",
+        "Antwort D 35"
+      ],
+      "en": [
+        "Answer A 35",
+        "Answer B 35",
+        "Answer C 35",
+        "Answer D 35"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_36",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 37.",
+      "en": "Another music question number 37."
+    },
+    "options": {
+      "de": [
+        "Antwort A 36",
+        "Antwort B 36",
+        "Antwort C 36",
+        "Antwort D 36"
+      ],
+      "en": [
+        "Answer A 36",
+        "Answer B 36",
+        "Answer C 36",
+        "Answer D 36"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_37",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 38.",
+      "en": "Another music question number 38."
+    },
+    "options": {
+      "de": [
+        "Antwort A 37",
+        "Antwort B 37",
+        "Antwort C 37",
+        "Antwort D 37"
+      ],
+      "en": [
+        "Answer A 37",
+        "Answer B 37",
+        "Answer C 37",
+        "Answer D 37"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_38",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 39.",
+      "en": "Another music question number 39."
+    },
+    "options": {
+      "de": [
+        "Antwort A 38",
+        "Antwort B 38",
+        "Antwort C 38",
+        "Antwort D 38"
+      ],
+      "en": [
+        "Answer A 38",
+        "Answer B 38",
+        "Answer C 38",
+        "Answer D 38"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_39",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 40.",
+      "en": "Another music question number 40."
+    },
+    "options": {
+      "de": [
+        "Antwort A 39",
+        "Antwort B 39",
+        "Antwort C 39",
+        "Antwort D 39"
+      ],
+      "en": [
+        "Answer A 39",
+        "Answer B 39",
+        "Answer C 39",
+        "Answer D 39"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_40",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 41.",
+      "en": "Another music question number 41."
+    },
+    "options": {
+      "de": [
+        "Antwort A 40",
+        "Antwort B 40",
+        "Antwort C 40",
+        "Antwort D 40"
+      ],
+      "en": [
+        "Answer A 40",
+        "Answer B 40",
+        "Answer C 40",
+        "Answer D 40"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_41",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 42.",
+      "en": "Another music question number 42."
+    },
+    "options": {
+      "de": [
+        "Antwort A 41",
+        "Antwort B 41",
+        "Antwort C 41",
+        "Antwort D 41"
+      ],
+      "en": [
+        "Answer A 41",
+        "Answer B 41",
+        "Answer C 41",
+        "Answer D 41"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_42",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 43.",
+      "en": "Another music question number 43."
+    },
+    "options": {
+      "de": [
+        "Antwort A 42",
+        "Antwort B 42",
+        "Antwort C 42",
+        "Antwort D 42"
+      ],
+      "en": [
+        "Answer A 42",
+        "Answer B 42",
+        "Answer C 42",
+        "Answer D 42"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_43",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 44.",
+      "en": "Another music question number 44."
+    },
+    "options": {
+      "de": [
+        "Antwort A 43",
+        "Antwort B 43",
+        "Antwort C 43",
+        "Antwort D 43"
+      ],
+      "en": [
+        "Answer A 43",
+        "Answer B 43",
+        "Answer C 43",
+        "Answer D 43"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_44",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 45.",
+      "en": "Another music question number 45."
+    },
+    "options": {
+      "de": [
+        "Antwort A 44",
+        "Antwort B 44",
+        "Antwort C 44",
+        "Antwort D 44"
+      ],
+      "en": [
+        "Answer A 44",
+        "Answer B 44",
+        "Answer C 44",
+        "Answer D 44"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_45",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 46.",
+      "en": "Another music question number 46."
+    },
+    "options": {
+      "de": [
+        "Antwort A 45",
+        "Antwort B 45",
+        "Antwort C 45",
+        "Antwort D 45"
+      ],
+      "en": [
+        "Answer A 45",
+        "Answer B 45",
+        "Answer C 45",
+        "Answer D 45"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_46",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 47.",
+      "en": "Another music question number 47."
+    },
+    "options": {
+      "de": [
+        "Antwort A 46",
+        "Antwort B 46",
+        "Antwort C 46",
+        "Antwort D 46"
+      ],
+      "en": [
+        "Answer A 46",
+        "Answer B 46",
+        "Answer C 46",
+        "Answer D 46"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_47",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 48.",
+      "en": "Another music question number 48."
+    },
+    "options": {
+      "de": [
+        "Antwort A 47",
+        "Antwort B 47",
+        "Antwort C 47",
+        "Antwort D 47"
+      ],
+      "en": [
+        "Answer A 47",
+        "Answer B 47",
+        "Answer C 47",
+        "Answer D 47"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_48",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 49.",
+      "en": "Another music question number 49."
+    },
+    "options": {
+      "de": [
+        "Antwort A 48",
+        "Antwort B 48",
+        "Antwort C 48",
+        "Antwort D 48"
+      ],
+      "en": [
+        "Answer A 48",
+        "Answer B 48",
+        "Answer C 48",
+        "Answer D 48"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_49",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 50.",
+      "en": "Another music question number 50."
+    },
+    "options": {
+      "de": [
+        "Antwort A 49",
+        "Antwort B 49",
+        "Antwort C 49",
+        "Antwort D 49"
+      ],
+      "en": [
+        "Answer A 49",
+        "Answer B 49",
+        "Answer C 49",
+        "Answer D 49"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_50",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 51.",
+      "en": "Another music question number 51."
+    },
+    "options": {
+      "de": [
+        "Antwort A 50",
+        "Antwort B 50",
+        "Antwort C 50",
+        "Antwort D 50"
+      ],
+      "en": [
+        "Answer A 50",
+        "Answer B 50",
+        "Answer C 50",
+        "Answer D 50"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_51",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 52.",
+      "en": "Another music question number 52."
+    },
+    "options": {
+      "de": [
+        "Antwort A 51",
+        "Antwort B 51",
+        "Antwort C 51",
+        "Antwort D 51"
+      ],
+      "en": [
+        "Answer A 51",
+        "Answer B 51",
+        "Answer C 51",
+        "Answer D 51"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_52",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 53.",
+      "en": "Another music question number 53."
+    },
+    "options": {
+      "de": [
+        "Antwort A 52",
+        "Antwort B 52",
+        "Antwort C 52",
+        "Antwort D 52"
+      ],
+      "en": [
+        "Answer A 52",
+        "Answer B 52",
+        "Answer C 52",
+        "Answer D 52"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_53",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 54.",
+      "en": "Another music question number 54."
+    },
+    "options": {
+      "de": [
+        "Antwort A 53",
+        "Antwort B 53",
+        "Antwort C 53",
+        "Antwort D 53"
+      ],
+      "en": [
+        "Answer A 53",
+        "Answer B 53",
+        "Answer C 53",
+        "Answer D 53"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_54",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 55.",
+      "en": "Another music question number 55."
+    },
+    "options": {
+      "de": [
+        "Antwort A 54",
+        "Antwort B 54",
+        "Antwort C 54",
+        "Antwort D 54"
+      ],
+      "en": [
+        "Answer A 54",
+        "Answer B 54",
+        "Answer C 54",
+        "Answer D 54"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_55",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 56.",
+      "en": "Another music question number 56."
+    },
+    "options": {
+      "de": [
+        "Antwort A 55",
+        "Antwort B 55",
+        "Antwort C 55",
+        "Antwort D 55"
+      ],
+      "en": [
+        "Answer A 55",
+        "Answer B 55",
+        "Answer C 55",
+        "Answer D 55"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_56",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 57.",
+      "en": "Another music question number 57."
+    },
+    "options": {
+      "de": [
+        "Antwort A 56",
+        "Antwort B 56",
+        "Antwort C 56",
+        "Antwort D 56"
+      ],
+      "en": [
+        "Answer A 56",
+        "Answer B 56",
+        "Answer C 56",
+        "Answer D 56"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_57",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 58.",
+      "en": "Another music question number 58."
+    },
+    "options": {
+      "de": [
+        "Antwort A 57",
+        "Antwort B 57",
+        "Antwort C 57",
+        "Antwort D 57"
+      ],
+      "en": [
+        "Answer A 57",
+        "Answer B 57",
+        "Answer C 57",
+        "Answer D 57"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_58",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 59.",
+      "en": "Another music question number 59."
+    },
+    "options": {
+      "de": [
+        "Antwort A 58",
+        "Antwort B 58",
+        "Antwort C 58",
+        "Antwort D 58"
+      ],
+      "en": [
+        "Answer A 58",
+        "Answer B 58",
+        "Answer C 58",
+        "Answer D 58"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_59",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 60.",
+      "en": "Another music question number 60."
+    },
+    "options": {
+      "de": [
+        "Antwort A 59",
+        "Antwort B 59",
+        "Antwort C 59",
+        "Antwort D 59"
+      ],
+      "en": [
+        "Answer A 59",
+        "Answer B 59",
+        "Answer C 59",
+        "Answer D 59"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_60",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 61.",
+      "en": "Another music question number 61."
+    },
+    "options": {
+      "de": [
+        "Antwort A 60",
+        "Antwort B 60",
+        "Antwort C 60",
+        "Antwort D 60"
+      ],
+      "en": [
+        "Answer A 60",
+        "Answer B 60",
+        "Answer C 60",
+        "Answer D 60"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_61",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 62.",
+      "en": "Another music question number 62."
+    },
+    "options": {
+      "de": [
+        "Antwort A 61",
+        "Antwort B 61",
+        "Antwort C 61",
+        "Antwort D 61"
+      ],
+      "en": [
+        "Answer A 61",
+        "Answer B 61",
+        "Answer C 61",
+        "Answer D 61"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_62",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 63.",
+      "en": "Another music question number 63."
+    },
+    "options": {
+      "de": [
+        "Antwort A 62",
+        "Antwort B 62",
+        "Antwort C 62",
+        "Antwort D 62"
+      ],
+      "en": [
+        "Answer A 62",
+        "Answer B 62",
+        "Answer C 62",
+        "Answer D 62"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_63",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 64.",
+      "en": "Another music question number 64."
+    },
+    "options": {
+      "de": [
+        "Antwort A 63",
+        "Antwort B 63",
+        "Antwort C 63",
+        "Antwort D 63"
+      ],
+      "en": [
+        "Answer A 63",
+        "Answer B 63",
+        "Answer C 63",
+        "Answer D 63"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_64",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 65.",
+      "en": "Another music question number 65."
+    },
+    "options": {
+      "de": [
+        "Antwort A 64",
+        "Antwort B 64",
+        "Antwort C 64",
+        "Antwort D 64"
+      ],
+      "en": [
+        "Answer A 64",
+        "Answer B 64",
+        "Answer C 64",
+        "Answer D 64"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_65",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 66.",
+      "en": "Another music question number 66."
+    },
+    "options": {
+      "de": [
+        "Antwort A 65",
+        "Antwort B 65",
+        "Antwort C 65",
+        "Antwort D 65"
+      ],
+      "en": [
+        "Answer A 65",
+        "Answer B 65",
+        "Answer C 65",
+        "Answer D 65"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_66",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 67.",
+      "en": "Another music question number 67."
+    },
+    "options": {
+      "de": [
+        "Antwort A 66",
+        "Antwort B 66",
+        "Antwort C 66",
+        "Antwort D 66"
+      ],
+      "en": [
+        "Answer A 66",
+        "Answer B 66",
+        "Answer C 66",
+        "Answer D 66"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_67",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 68.",
+      "en": "Another music question number 68."
+    },
+    "options": {
+      "de": [
+        "Antwort A 67",
+        "Antwort B 67",
+        "Antwort C 67",
+        "Antwort D 67"
+      ],
+      "en": [
+        "Answer A 67",
+        "Answer B 67",
+        "Answer C 67",
+        "Answer D 67"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_68",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 69.",
+      "en": "Another music question number 69."
+    },
+    "options": {
+      "de": [
+        "Antwort A 68",
+        "Antwort B 68",
+        "Antwort C 68",
+        "Antwort D 68"
+      ],
+      "en": [
+        "Answer A 68",
+        "Answer B 68",
+        "Answer C 68",
+        "Answer D 68"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_69",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 70.",
+      "en": "Another music question number 70."
+    },
+    "options": {
+      "de": [
+        "Antwort A 69",
+        "Antwort B 69",
+        "Antwort C 69",
+        "Antwort D 69"
+      ],
+      "en": [
+        "Answer A 69",
+        "Answer B 69",
+        "Answer C 69",
+        "Answer D 69"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_70",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 71.",
+      "en": "Another music question number 71."
+    },
+    "options": {
+      "de": [
+        "Antwort A 70",
+        "Antwort B 70",
+        "Antwort C 70",
+        "Antwort D 70"
+      ],
+      "en": [
+        "Answer A 70",
+        "Answer B 70",
+        "Answer C 70",
+        "Answer D 70"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_71",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 72.",
+      "en": "Another music question number 72."
+    },
+    "options": {
+      "de": [
+        "Antwort A 71",
+        "Antwort B 71",
+        "Antwort C 71",
+        "Antwort D 71"
+      ],
+      "en": [
+        "Answer A 71",
+        "Answer B 71",
+        "Answer C 71",
+        "Answer D 71"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_72",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 73.",
+      "en": "Another music question number 73."
+    },
+    "options": {
+      "de": [
+        "Antwort A 72",
+        "Antwort B 72",
+        "Antwort C 72",
+        "Antwort D 72"
+      ],
+      "en": [
+        "Answer A 72",
+        "Answer B 72",
+        "Answer C 72",
+        "Answer D 72"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_73",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 74.",
+      "en": "Another music question number 74."
+    },
+    "options": {
+      "de": [
+        "Antwort A 73",
+        "Antwort B 73",
+        "Antwort C 73",
+        "Antwort D 73"
+      ],
+      "en": [
+        "Answer A 73",
+        "Answer B 73",
+        "Answer C 73",
+        "Answer D 73"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_74",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 75.",
+      "en": "Another music question number 75."
+    },
+    "options": {
+      "de": [
+        "Antwort A 74",
+        "Antwort B 74",
+        "Antwort C 74",
+        "Antwort D 74"
+      ],
+      "en": [
+        "Answer A 74",
+        "Answer B 74",
+        "Answer C 74",
+        "Answer D 74"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_75",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 76.",
+      "en": "Another music question number 76."
+    },
+    "options": {
+      "de": [
+        "Antwort A 75",
+        "Antwort B 75",
+        "Antwort C 75",
+        "Antwort D 75"
+      ],
+      "en": [
+        "Answer A 75",
+        "Answer B 75",
+        "Answer C 75",
+        "Answer D 75"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_76",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 77.",
+      "en": "Another music question number 77."
+    },
+    "options": {
+      "de": [
+        "Antwort A 76",
+        "Antwort B 76",
+        "Antwort C 76",
+        "Antwort D 76"
+      ],
+      "en": [
+        "Answer A 76",
+        "Answer B 76",
+        "Answer C 76",
+        "Answer D 76"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_77",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 78.",
+      "en": "Another music question number 78."
+    },
+    "options": {
+      "de": [
+        "Antwort A 77",
+        "Antwort B 77",
+        "Antwort C 77",
+        "Antwort D 77"
+      ],
+      "en": [
+        "Answer A 77",
+        "Answer B 77",
+        "Answer C 77",
+        "Answer D 77"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_78",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 79.",
+      "en": "Another music question number 79."
+    },
+    "options": {
+      "de": [
+        "Antwort A 78",
+        "Antwort B 78",
+        "Antwort C 78",
+        "Antwort D 78"
+      ],
+      "en": [
+        "Answer A 78",
+        "Answer B 78",
+        "Answer C 78",
+        "Answer D 78"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_79",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 80.",
+      "en": "Another music question number 80."
+    },
+    "options": {
+      "de": [
+        "Antwort A 79",
+        "Antwort B 79",
+        "Antwort C 79",
+        "Antwort D 79"
+      ],
+      "en": [
+        "Answer A 79",
+        "Answer B 79",
+        "Answer C 79",
+        "Answer D 79"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_80",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 81.",
+      "en": "Another music question number 81."
+    },
+    "options": {
+      "de": [
+        "Antwort A 80",
+        "Antwort B 80",
+        "Antwort C 80",
+        "Antwort D 80"
+      ],
+      "en": [
+        "Answer A 80",
+        "Answer B 80",
+        "Answer C 80",
+        "Answer D 80"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_81",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 82.",
+      "en": "Another music question number 82."
+    },
+    "options": {
+      "de": [
+        "Antwort A 81",
+        "Antwort B 81",
+        "Antwort C 81",
+        "Antwort D 81"
+      ],
+      "en": [
+        "Answer A 81",
+        "Answer B 81",
+        "Answer C 81",
+        "Answer D 81"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_82",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 83.",
+      "en": "Another music question number 83."
+    },
+    "options": {
+      "de": [
+        "Antwort A 82",
+        "Antwort B 82",
+        "Antwort C 82",
+        "Antwort D 82"
+      ],
+      "en": [
+        "Answer A 82",
+        "Answer B 82",
+        "Answer C 82",
+        "Answer D 82"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_83",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 84.",
+      "en": "Another music question number 84."
+    },
+    "options": {
+      "de": [
+        "Antwort A 83",
+        "Antwort B 83",
+        "Antwort C 83",
+        "Antwort D 83"
+      ],
+      "en": [
+        "Answer A 83",
+        "Answer B 83",
+        "Answer C 83",
+        "Answer D 83"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_84",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 85.",
+      "en": "Another music question number 85."
+    },
+    "options": {
+      "de": [
+        "Antwort A 84",
+        "Antwort B 84",
+        "Antwort C 84",
+        "Antwort D 84"
+      ],
+      "en": [
+        "Answer A 84",
+        "Answer B 84",
+        "Answer C 84",
+        "Answer D 84"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_85",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 86.",
+      "en": "Another music question number 86."
+    },
+    "options": {
+      "de": [
+        "Antwort A 85",
+        "Antwort B 85",
+        "Antwort C 85",
+        "Antwort D 85"
+      ],
+      "en": [
+        "Answer A 85",
+        "Answer B 85",
+        "Answer C 85",
+        "Answer D 85"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_86",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 87.",
+      "en": "Another music question number 87."
+    },
+    "options": {
+      "de": [
+        "Antwort A 86",
+        "Antwort B 86",
+        "Antwort C 86",
+        "Antwort D 86"
+      ],
+      "en": [
+        "Answer A 86",
+        "Answer B 86",
+        "Answer C 86",
+        "Answer D 86"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_87",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 88.",
+      "en": "Another music question number 88."
+    },
+    "options": {
+      "de": [
+        "Antwort A 87",
+        "Antwort B 87",
+        "Antwort C 87",
+        "Antwort D 87"
+      ],
+      "en": [
+        "Answer A 87",
+        "Answer B 87",
+        "Answer C 87",
+        "Answer D 87"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_88",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 89.",
+      "en": "Another music question number 89."
+    },
+    "options": {
+      "de": [
+        "Antwort A 88",
+        "Antwort B 88",
+        "Antwort C 88",
+        "Antwort D 88"
+      ],
+      "en": [
+        "Answer A 88",
+        "Answer B 88",
+        "Answer C 88",
+        "Answer D 88"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_89",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 90.",
+      "en": "Another music question number 90."
+    },
+    "options": {
+      "de": [
+        "Antwort A 89",
+        "Antwort B 89",
+        "Antwort C 89",
+        "Antwort D 89"
+      ],
+      "en": [
+        "Answer A 89",
+        "Answer B 89",
+        "Answer C 89",
+        "Answer D 89"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_90",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 91.",
+      "en": "Another music question number 91."
+    },
+    "options": {
+      "de": [
+        "Antwort A 90",
+        "Antwort B 90",
+        "Antwort C 90",
+        "Antwort D 90"
+      ],
+      "en": [
+        "Answer A 90",
+        "Answer B 90",
+        "Answer C 90",
+        "Answer D 90"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_91",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 92.",
+      "en": "Another music question number 92."
+    },
+    "options": {
+      "de": [
+        "Antwort A 91",
+        "Antwort B 91",
+        "Antwort C 91",
+        "Antwort D 91"
+      ],
+      "en": [
+        "Answer A 91",
+        "Answer B 91",
+        "Answer C 91",
+        "Answer D 91"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_92",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 93.",
+      "en": "Another music question number 93."
+    },
+    "options": {
+      "de": [
+        "Antwort A 92",
+        "Antwort B 92",
+        "Antwort C 92",
+        "Antwort D 92"
+      ],
+      "en": [
+        "Answer A 92",
+        "Answer B 92",
+        "Answer C 92",
+        "Answer D 92"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_93",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 94.",
+      "en": "Another music question number 94."
+    },
+    "options": {
+      "de": [
+        "Antwort A 93",
+        "Antwort B 93",
+        "Antwort C 93",
+        "Antwort D 93"
+      ],
+      "en": [
+        "Answer A 93",
+        "Answer B 93",
+        "Answer C 93",
+        "Answer D 93"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_94",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 95.",
+      "en": "Another music question number 95."
+    },
+    "options": {
+      "de": [
+        "Antwort A 94",
+        "Antwort B 94",
+        "Antwort C 94",
+        "Antwort D 94"
+      ],
+      "en": [
+        "Answer A 94",
+        "Answer B 94",
+        "Answer C 94",
+        "Answer D 94"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_95",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 96.",
+      "en": "Another music question number 96."
+    },
+    "options": {
+      "de": [
+        "Antwort A 95",
+        "Antwort B 95",
+        "Antwort C 95",
+        "Antwort D 95"
+      ],
+      "en": [
+        "Answer A 95",
+        "Answer B 95",
+        "Answer C 95",
+        "Answer D 95"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_96",
+    "cat": "Musik",
+    "correct": 0,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 97.",
+      "en": "Another music question number 97."
+    },
+    "options": {
+      "de": [
+        "Antwort A 96",
+        "Antwort B 96",
+        "Antwort C 96",
+        "Antwort D 96"
+      ],
+      "en": [
+        "Answer A 96",
+        "Answer B 96",
+        "Answer C 96",
+        "Answer D 96"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_97",
+    "cat": "Musik",
+    "correct": 1,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 98.",
+      "en": "Another music question number 98."
+    },
+    "options": {
+      "de": [
+        "Antwort A 97",
+        "Antwort B 97",
+        "Antwort C 97",
+        "Antwort D 97"
+      ],
+      "en": [
+        "Answer A 97",
+        "Answer B 97",
+        "Answer C 97",
+        "Answer D 97"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_98",
+    "cat": "Musik",
+    "correct": 2,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 99.",
+      "en": "Another music question number 99."
+    },
+    "options": {
+      "de": [
+        "Antwort A 98",
+        "Antwort B 98",
+        "Antwort C 98",
+        "Antwort D 98"
+      ],
+      "en": [
+        "Answer A 98",
+        "Answer B 98",
+        "Answer C 98",
+        "Answer D 98"
+      ]
+    }
+  },
+  {
+    "id": "musik_gen_99",
+    "cat": "Musik",
+    "correct": 3,
+    "text": {
+      "de": "Eine weitere Musikfrage Nummer 100.",
+      "en": "Another music question number 100."
+    },
+    "options": {
+      "de": [
+        "Antwort A 99",
+        "Antwort B 99",
+        "Antwort C 99",
+        "Antwort D 99"
+      ],
+      "en": [
+        "Answer A 99",
+        "Answer B 99",
+        "Answer C 99",
+        "Answer D 99"
+      ]
+    }
   }
 ]
