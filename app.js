@@ -14,8 +14,72 @@ let state = {
     isPaused: false, isProcessing: false, timer: 15, timerInterval: null, questionCount: 0,
     isChallenge: false, isCreatingChallenge: false, challengeSeed: null, opponentScore: 0,
     pausedQuestion: null, pausedTimer: null, cheatsAttempted: false,
-    systemSecret: null
+    systemSecret: null,
+    sessionActive: false, lastUpdateTime: null, timerEndTimestamp: null
 };
+
+function saveSession() {
+    if (!state.sessionActive) return;
+    const sessionData = {
+        current: state.current,
+        score: state.score,
+        lives: state.lives,
+        streak: state.streak,
+        streakMax: state.streakMax,
+        correctAnswers: state.correctAnswers,
+        questionCount: state.questionCount,
+        challengeSeed: state.challengeSeed,
+        isChallenge: state.isChallenge,
+        timer: state.timer,
+        lastUpdateTime: Date.now(),
+        timerEndTimestamp: state.timerInterval ? Date.now() + (state.timer * 1000) : null
+    };
+    localStorage.setItem('dfwa_session', JSON.stringify(sessionData));
+}
+
+function clearSession() {
+    state.sessionActive = false;
+    localStorage.removeItem('dfwa_session');
+}
+
+async function restoreSession() {
+    const data = localStorage.getItem('dfwa_session');
+    if (!data) return false;
+    try {
+        const session = JSON.parse(data);
+        const elapsed = (Date.now() - session.lastUpdateTime) / 1000;
+        
+        state.current = session.current;
+        state.score = session.score;
+        state.lives = session.lives;
+        state.streak = session.streak;
+        state.streakMax = session.streakMax;
+        state.correctAnswers = session.correctAnswers;
+        state.questionCount = session.questionCount;
+        state.challengeSeed = session.challengeSeed;
+        state.isChallenge = session.isChallenge;
+        
+        // Zeitberechnung
+        if (session.timerEndTimestamp) {
+            const remaining = (session.timerEndTimestamp - Date.now()) / 1000;
+            state.timer = Math.max(0, remaining);
+        } else {
+            state.timer = session.timer;
+        }
+
+        if (state.lives <= 0 || state.timer <= 0) {
+            clearSession();
+            return false;
+        }
+
+        state.sessionActive = true;
+        await initGame(false, true);
+        return true;
+    } catch (e) {
+        clearSession();
+        return false;
+    }
+}
 
 async function fetchSystemSecret() {
   try {
@@ -214,10 +278,15 @@ function resumeProtocol() {
     startTimer();
 }
 
-async function initGame(createChallenge) {
+async function initGame(createChallenge, isRestoring = false) {
     state.playerName = document.getElementById("player-name").value.trim() || "GUEST";
     saveSecure("dfwa_name", state.playerName);
-    state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.streakMax = 0; state.correctAnswers = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge; state.isPaused = false; state.cheatsAttempted = false; state.pausedTimer = null;
+    
+    if (!isRestoring) {
+        state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.streakMax = 0; state.correctAnswers = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge; state.isPaused = false; state.cheatsAttempted = false; state.pausedTimer = null;
+        state.sessionActive = true;
+    }
+    
     document.getElementById('lives-display').innerText = state.lives;
     document.getElementById('resume-btn').style.display = 'none';
     state.usedComments = { correct: [], incorrect: [] };
@@ -252,7 +321,8 @@ async function initGame(createChallenge) {
         document.getElementById("hud-streak").style.display = "none";
         document.getElementById('modal-title').style.color = 'var(--warning)';
         document.getElementById('modal-overlay').style.display = 'none';
-        renderQuestion();
+        renderQuestion(isRestoring);
+        saveSession();
     } catch(e) {
         document.getElementById("start-btn").innerText =
             e.message === "NO_QUESTIONS" ? (state.lang === "de" ? "FEHLER: LEERER SEKTOR" : "ERROR: EMPTY_SECTOR") : (state.lang === "de" ? "FEHLER: SYSTEM OFFLINE" : "ERROR: SYSTEM_OFFLINE");
@@ -306,7 +376,7 @@ function startTimer() {
     }, 100);
 }
 
-function renderQuestion() {
+function renderQuestion(isRestoring = false) {
     const q = state.questions[state.current];
     if (!q) {
         const selectedCat = document.getElementById('category-filter').value;
@@ -321,11 +391,16 @@ function renderQuestion() {
             endGame();
             return;
         }
-        renderQuestion();
+        renderQuestion(isRestoring);
         return;
     }
-    state.questionCount++;
-    state.timer = Math.max(5, 15 - (state.questionCount * 0.2));
+    
+    if (!isRestoring) {
+        state.questionCount++;
+        state.timer = Math.max(5, 15 - (state.questionCount * 0.2));
+    }
+    
+    document.getElementById('hud-score').innerText = `${state.score}_PTS`;
     document.getElementById('question-box').innerText = q.text[state.lang];
     const container = document.getElementById('options-container');
     container.innerHTML = '';
@@ -362,6 +437,7 @@ async function submitScoreToLeaderboard() {
 }
 
 function endGame() {
+    clearSession();
     clearInterval(state.timerInterval);
     const overlay = document.getElementById('modal-overlay');
     const text = document.getElementById('modal-text');
@@ -414,6 +490,7 @@ function checkAnswer(correct) {
     if (state.isProcessing) return;
     state.isProcessing = true;
     clearInterval(state.timerInterval);
+    saveSession();
     const fScreen = document.getElementById('feedback-screen');
     const fContainer = document.getElementById('feedback-eye-container');
     const fEyeBase = document.getElementById('feedback-eye-base');
@@ -428,6 +505,7 @@ function checkAnswer(correct) {
         const streakBonus = Math.min((state.streak - 1) * 10, 100);
         const timeBonus = Math.min(Math.floor(state.timer * 2), 30);
         state.score += 100 + streakBonus + timeBonus;
+        saveSession();
         document.getElementById("hud-score").innerText = `${state.score}_PTS`;
         const hudStreak = document.getElementById("hud-streak");
         if (state.streak >= 2) {
@@ -449,6 +527,7 @@ function checkAnswer(correct) {
     } else if (correct === false) {
         state.lives = Math.max(0, state.lives - 1);
         state.streak = 0;
+        saveSession();
         document.getElementById("hud-streak").style.display = "none";
         document.getElementById("lives-display").innerText = state.lives;
         fEyeBase.src = './assets/images/ack_core_clean.png';
@@ -457,6 +536,9 @@ function checkAnswer(correct) {
         fMsg.style.color = 'var(--error)';
         fMsg.innerText = getComment('incorrect');
     } else {
+        state.lives = Math.max(0, state.lives - 1);
+        state.streak = 0;
+        saveSession();
         fEyeBase.src = './assets/images/ack_core_clean.png';
         fMsg.style.borderColor = 'var(--warning)';
         fMsg.style.color = 'var(--warning)';
@@ -551,10 +633,16 @@ function closeSystem() {
 }
 
 document.addEventListener('visibilitychange', () => {
-    if (document.hidden && document.getElementById('game-screen').classList.contains('active') && !state.isPaused) {
-        pauseProtocol();
+    if (document.hidden) {
+        if (document.getElementById('game-screen').classList.contains('active') && !state.isPaused) {
+            pauseProtocol();
+        }
+        saveSession();
     }
 });
+
+window.addEventListener('beforeunload', saveSession);
+window.addEventListener('load', restoreSession);
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
