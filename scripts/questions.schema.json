@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["cat", "text", "options", "correct"],
+    "properties": {
+      "cat": {
+        "type": "string",
+        "not": { "enum": ["TBD", "Folgt", "Platzhalter"] }
+      },
+      "text": {
+        "type": "object",
+        "required": ["de", "en"],
+        "properties": {
+          "de": { "type": "string", "minLength": 5 },
+          "en": { "type": "string", "minLength": 5 }
+        }
+      },
+      "options": {
+        "type": "object",
+        "required": ["de", "en"],
+        "properties": {
+          "de": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "en": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": { "type": "string", "minLength": 1 }
+          }
+        }
+      },
+      "correct": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 3
+      }
+    }
+  }
+}
