@@ -253,10 +253,12 @@ function pauseProtocol() {
     state.cheatsAttempted = false;
     state.pausedQuestion = state.current;
     state.pausedTimer = state.timer;
+    state.timerEndTimestamp = null; // Zeitstempel bei Pause löschen
     clearInterval(state.timerInterval);
     document.getElementById('game-screen').classList.remove('active');
     document.getElementById('start-screen').classList.add('active');
     document.getElementById('resume-btn').style.display = 'block';
+    saveSession();
 }
 
 function resumeProtocol() {
@@ -273,9 +275,14 @@ function resumeProtocol() {
     document.getElementById('start-screen').classList.remove('active');
     document.getElementById('game-screen').classList.add('active');
     document.getElementById('resume-btn').style.display = 'none';
+    
+    // Timer basierend auf pausiertem Wert neu setzen
     state.timer = (state.pausedTimer !== null && state.pausedTimer > 0) ? state.pausedTimer : 15;
     state.pausedTimer = null;
+    state.timerEndTimestamp = Date.now() + (state.timer * 1000);
+    
     startTimer();
+    saveSession();
 }
 
 async function initGame(createChallenge, isRestoring = false) {
@@ -365,15 +372,30 @@ function startTimer() {
     clearInterval(state.timerInterval);
     const bar = document.getElementById('timeline-bar');
     const container = document.getElementById('timeline-container');
+    
+    // Kernlogik: Ziel-Zeitstempel festlegen
+    const maxTime = Math.max(5, 15 - ((state.questionCount - 1) * 0.2));
+    if (!state.timerEndTimestamp || state.timerEndTimestamp <= Date.now()) {
+        state.timerEndTimestamp = Date.now() + (state.timer * 1000);
+    }
+
     state.timerInterval = setInterval(() => {
-        state.timer -= 0.1;
-        const maxTime = Math.max(5, 15 - ((state.questionCount - 1) * 0.2));
-        const pct = Math.max(0, state.timer / maxTime * 100);
+        // Verbleibende Zeit immer neu berechnen (Throttling Fallback)
+        const remaining = (state.timerEndTimestamp - Date.now()) / 1000;
+        state.timer = Math.max(0, remaining);
+        
+        // UI-Update (entkoppelt von der Logik)
+        const pct = Math.max(0, (state.timer / maxTime) * 100);
         bar.style.width = pct + '%';
         bar.style.background = state.timer <= 5 ? 'var(--error)' : 'var(--neon)';
         container.setAttribute('aria-valuenow', Math.round(state.timer));
-        if (state.timer <= 0) { clearInterval(state.timerInterval); checkAnswer(null); }
-    }, 100);
+
+        if (state.timer <= 0) {
+            clearInterval(state.timerInterval);
+            state.timerEndTimestamp = null;
+            checkAnswer(null);
+        }
+    }, 100); // 100ms für flüssige Animation, Logik bleibt stabil
 }
 
 function renderQuestion(isRestoring = false) {
@@ -398,6 +420,7 @@ function renderQuestion(isRestoring = false) {
     if (!isRestoring) {
         state.questionCount++;
         state.timer = Math.max(5, 15 - (state.questionCount * 0.2));
+        state.timerEndTimestamp = Date.now() + (state.timer * 1000);
     }
     
     document.getElementById('hud-score').innerText = `${state.score}_PTS`;
