@@ -78,18 +78,15 @@ async function startChallenge() {
     const code = document.getElementById('challenge-code-input').value.trim();
     if (code) {
         try {
-            const data = JSON.parse(atob(code));
-            const payload = { seed: data.seed, score: data.score, ts: data.ts };
-            const sig = await StorageManager.getSignature(JSON.stringify(payload), state.systemSecret);
-            if (data.sig !== sig.slice(0, 16)) console.warn("CHALLENGE_INTEGRITY_FAIL");
-            if (Date.now() - data.ts > 86400000) throw new Error('EXPIRED');
+            const data = await APIClient.verifyChallenge(API_BASE_URL, code);
             state.isChallenge = true;
             state.challengeSeed = data.seed;
             state.opponentScore = data.score;
             initGame(false);
         } catch(e) {
-            UIManager.updateElement('challenge-code-input', '');
-            document.getElementById('challenge-code-input').placeholder = "INVALID_CODE";
+            const input = document.getElementById('challenge-code-input');
+            input.value = '';
+            input.placeholder = e.message === 'EXPIRED' ? 'CODE_EXPIRED' : 'INVALID_CODE';
         }
     } else initGame(true);
 }

@@ -28,5 +28,16 @@ export const APIClient = {
             if (res.ok) return await res.json();
         } catch (e) {}
         throw new Error('SERVER_UNAVAILABLE');
+    },
+
+    async verifyChallenge(baseUrl, code) {
+        const res = await fetch(`${baseUrl}/api/challenge/verify`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ code })
+        });
+        const data = await res.json();
+        if (!res.ok || !data.valid) throw new Error(data.error || 'INVALID_CODE');
+        return data.data;
     }
 };

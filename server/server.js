@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import sqlite3 from 'sqlite3';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
@@ -98,6 +99,35 @@ app.post('/api/leaderboard', (req, res) => {
             res.json({ success: true });
         }
     });
+});
+
+app.post('/api/challenge/verify', (req, res) => {
+    const { code } = req.body;
+    if (!code) return res.status(400).json({ error: 'Missing code' });
+
+    try {
+        const data = JSON.parse(Buffer.from(code, 'base64').toString());
+        const { seed, score, ts, sig } = data;
+
+        const msg = JSON.stringify({ seed, score, ts });
+        const expectedSig = crypto
+            .createHmac('sha256', SYSTEM_SECRET)
+            .update(msg)
+            .digest('hex')
+            .slice(0, 16);
+
+        if (sig !== expectedSig) {
+            return res.status(403).json({ valid: false, error: 'INVALID_SIGNATURE' });
+        }
+
+        if (Date.now() - ts > 86400000) {
+            return res.status(403).json({ valid: false, error: 'EXPIRED' });
+        }
+
+        res.json({ valid: true, data: { seed, score } });
+    } catch (e) {
+        res.status(400).json({ valid: false, error: 'MALFORMED_CODE' });
+    }
 });
 
 app.get('/api/analytics', (req, res) => {
