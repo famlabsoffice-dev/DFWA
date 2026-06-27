@@ -16,7 +16,8 @@ let state = {
     pausedQuestion: null, pausedTimer: null, cheatsAttempted: false,
     systemSecret: null,
     sessionActive: false, lastUpdateTime: null, timerEndTimestamp: null,
-    baseDate: Date.now(), basePerf: performance.now(), timeDesyncDetected: false
+    baseDate: Date.now(), basePerf: performance.now(), timeDesyncDetected: false,
+    mode: 'classic'
 };
 
 const SESSION_VERSION = 1;
@@ -322,6 +323,7 @@ async function initGame(createChallenge, isRestoring = false) {
     if (!isRestoring) {
         state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0; state.streakMax = 0; state.correctAnswers = 0; state.isChallenge = false; state.isCreatingChallenge = createChallenge; state.isPaused = false; state.cheatsAttempted = false; state.pausedTimer = null;
         state.sessionActive = true;
+        state.mode = document.getElementById("mode-selector").value;
     }
     
     document.getElementById('lives-display').innerText = state.lives;
@@ -341,21 +343,18 @@ async function initGame(createChallenge, isRestoring = false) {
             window._dfwaQCache = allQuestions;
         }
         state.allQuestions = allQuestions;
-        populateCategories(allQuestions);
 
-        const selectedCat = document.getElementById("category-filter").value;
-        if (selectedCat !== "all") {
-            allQuestions = allQuestions.filter(q => q.cat === selectedCat);
-        }
         if (allQuestions.length === 0) throw new Error("NO_QUESTIONS");
 
         state.questions = shuffle([...allQuestions], state.isChallenge ? state.challengeSeed : null);
+        if (state.mode === 'blitz') state.questions = state.questions.slice(0, 20);
 
         document.getElementById("start-screen").classList.remove("active");
         document.getElementById("battle-lobby").classList.remove("active");
         document.getElementById("game-screen").classList.add("active");
         document.getElementById("hud-score").innerText = "0_PTS";
         document.getElementById("hud-streak").style.display = "none";
+        document.getElementById("hud-mode").innerText = state.mode.toUpperCase();
         document.getElementById('modal-title').style.color = 'var(--warning)';
         document.getElementById('modal-overlay').style.display = 'none';
         renderQuestion(isRestoring);
@@ -406,7 +405,14 @@ function startTimer() {
     state.baseDate = Date.now();
     state.basePerf = performance.now();
     const initialTimer = state.timer;
-    const maxTime = Math.max(5, 15 - ((state.questionCount - 1) * 0.2));
+    let maxTime;
+    if (state.mode === 'endless') {
+        maxTime = Math.max(2, 15 - Math.floor((state.questionCount - 1) / 5));
+    } else if (state.mode === 'blitz') {
+        maxTime = 5;
+    } else {
+        maxTime = Math.max(5, 15 - ((state.questionCount - 1) * 0.2));
+    }
 
     state.timerInterval = setInterval(() => {
         if (state.isPaused || state.isProcessing) return;
@@ -454,7 +460,13 @@ function renderQuestion(isRestoring = false) {
     
     if (!isRestoring) {
         state.questionCount++;
-        state.timer = Math.max(5, 15 - (state.questionCount * 0.2));
+        if (state.mode === 'endless') {
+            state.timer = Math.max(2, 15 - Math.floor(state.questionCount / 5));
+        } else if (state.mode === 'blitz') {
+            state.timer = 5;
+        } else {
+            state.timer = Math.max(5, 15 - (state.questionCount * 0.2));
+        }
         state.timerEndTimestamp = Date.now() + (state.timer * 1000);
     }
     
@@ -609,7 +621,7 @@ function checkAnswer(correct) {
     setTimeout(() => {
         fScreen.classList.remove('active');
         state.isProcessing = false;
-        if (state.lives <= 0) {
+        if (state.lives <= 0 || (state.mode === 'blitz' && state.current >= 19)) {
             document.getElementById('start-screen').classList.add('active');
             document.getElementById('game-screen').classList.remove('active');
             document.getElementById('lives-display').innerText = state.lives;

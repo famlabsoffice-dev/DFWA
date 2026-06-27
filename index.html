@@ -29,8 +29,10 @@
             <div class="ui-content-wrapper">
                 <p style="color:var(--cyber-blue); letter-spacing:3px; font-weight:900; font-size:0.8rem; margin-bottom:2.5vh; white-space: nowrap;">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
                 <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12" aria-label="Spieler-Codename eingeben" autocomplete="off">
-                <select id="category-filter" class="cyber-select" aria-label="Sektor auswählen">
-                    <option value="all">ALL_SECTORS</option>
+                <select id="mode-selector" class="cyber-select" aria-label="Modus auswählen">
+                    <option value="classic">CLASSIC_MODE</option>
+                    <option value="endless">ENDLESS_MODE</option>
+                    <option value="blitz">BLITZ_MODE</option>
                 </select>
                 <button id="resume-btn" class="option-btn battle-btn" style="display:none;" onclick="resumeProtocol()">RESUME_PROTOCOL</button>
                 <button id="start-btn" class="option-btn start-btn" onclick="initGame(false)" aria-label="Spiel starten">INIT_PROTOCOL</button>
@@ -72,9 +74,10 @@
                 <div id="timeline-bar"></div>
             </div>
             <div id="score-hud" aria-live="polite" aria-atomic="true" style="position:absolute;top:16vh;right:20px;text-align:right;z-index:50;font-size:0.75rem;font-weight:900;line-height:1.6;">
-              <span id="hud-score" style="color:var(--neon);">0_PTS</span><br>
-              <span id="hud-streak" style="color:var(--warning);display:none;">STREAK_<span id="hud-streak-count">0</span>X</span>
-            </div>
+	              <span id="hud-mode" style="color:var(--cyber-blue); font-size:0.6rem;">CLASSIC</span><br>
+	              <span id="hud-score" style="color:var(--neon);">0_PTS</span><br>
+	              <span id="hud-streak" style="color:var(--warning);display:none;">STREAK_<span id="hud-streak-count">0</span>X</span>
+	            </div>
             <div id="question-box" role="status" aria-live="polite" aria-atomic="true">INITIALIZING...</div>
             <div id="options-container" role="group" aria-label="Antwortoptionen"></div>
             <button id="pause-btn" onclick="pauseProtocol()" aria-label="Spiel pausieren">PAUSE</button>
