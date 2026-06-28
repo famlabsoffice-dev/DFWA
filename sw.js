@@ -1,4 +1,4 @@
-const SW_VERSION = 'v1.0.2';
+const SW_VERSION = 'v1.0.3'; // Version erhöht, um Cache-Update zu erzwingen
 const CACHE_NAME = `dfwa-cache-${SW_VERSION}`;
 
 const ASSETS = [
@@ -46,7 +46,6 @@ self.addEventListener('activate', event => {
             );
         }).then(() => {
             self.clients.claim();
-            // Informiere alle Clients über das erfolgreiche Update
             return self.clients.matchAll().then(clients => {
                 clients.forEach(client => client.postMessage({ type: 'SW_UPDATED', version: SW_VERSION }));
             });
@@ -55,6 +54,14 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
+    // Network-first Strategie für JSON-Daten, damit diese nicht im alten Cache stecken bleiben
+    if (event.request.url.endsWith('.json')) {
+        event.respondWith(
+            fetch(event.request).catch(() => caches.match(event.request))
+        );
+        return;
+    }
+
     event.respondWith(
         caches.match(event.request).then(cachedResponse => {
             if (cachedResponse) return cachedResponse;
@@ -63,9 +70,6 @@ self.addEventListener('fetch', event => {
                 const responseClone = response.clone();
                 caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseClone));
                 return response;
-            }).catch(() => {
-                if (event.request.mode === 'navigate') return caches.match('./index.html');
-                return caches.match(event.request);
             });
         })
     );
