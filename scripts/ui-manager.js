@@ -32,12 +32,19 @@ export const UIManager = {
         data.forEach((entry, index) => {
             const row = document.createElement('div');
             row.className = 'leaderboard-entry';
-            row.innerHTML = `
-                <span>#${index + 1}</span>
-                <span>${entry.playerName}</span>
-                <span>${entry.score}</span>
-                <span>${entry.wins}/${entry.losses}</span>
-            `;
+            const rankSpan = document.createElement('span');
+            rankSpan.textContent = `#${index + 1}`;
+            const nameSpan = document.createElement('span');
+            nameSpan.textContent = entry.playerName;
+            const scoreSpan = document.createElement('span');
+            scoreSpan.textContent = entry.score;
+            const statsSpan = document.createElement('span');
+            statsSpan.textContent = `${entry.wins}/${entry.losses}`;
+
+            row.appendChild(rankSpan);
+            row.appendChild(nameSpan);
+            row.appendChild(scoreSpan);
+            row.appendChild(statsSpan);
             entriesDiv.appendChild(row);
         });
     }
