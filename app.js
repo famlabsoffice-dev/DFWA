@@ -116,10 +116,23 @@ async function initGame(createChallenge) {
     UIManager.toggleClass('battle-lobby', 'active', false);
     UIManager.toggleClass('game-screen', 'active', true);
     
-    const qRes = await fetch("questions_i18n.json");
-    state.allQuestions = await qRes.json();
-    const cRes = await fetch("ack_comments.json");
-    state.comments = await cRes.json();
+    try {
+        const qRes = await fetch("questions_i18n.json");
+        state.allQuestions = await qRes.json();
+    } catch (error) {
+        console.error("Error fetching questions_i18n.json:", error);
+        UIManager.showModal("FEHLER", "Fragen konnten nicht geladen werden. Bitte versuchen Sie es später erneut.", "red");
+        return;
+    }
+
+    try {
+        const cRes = await fetch("ack_comments.json");
+        state.comments = await cRes.json();
+    } catch (error) {
+        console.error("Error fetching ack_comments.json:", error);
+        UIManager.showModal("FEHLER", "Kommentare konnten nicht geladen werden. Das Spiel wird ohne Kommentare fortgesetzt.", "orange");
+        state.comments = {}; // Fallback zu leerem Objekt
+    }
     
     state.questions = GameLogic.shuffle([...state.allQuestions], state.isChallenge ? state.challengeSeed : null);
     renderQuestion();
@@ -127,6 +140,11 @@ async function initGame(createChallenge) {
 }
 
 function renderQuestion() {
+    if (state.current >= state.questions.length || state.current < 0) {
+        console.error("Error: state.current is out of bounds.");
+        endGame(); // Oder eine andere geeignete Fehlerbehandlung
+        return;
+    }
     const q = state.questions[state.current];
     UIManager.updateElement('question-text', q.text[state.lang]);
     const container = document.getElementById('options-container');
