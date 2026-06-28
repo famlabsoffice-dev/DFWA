@@ -8,7 +8,7 @@ export const GameLogic = {
     shuffle(array, seed) {
         let m = array.length, t, i;
         while (m) {
-            i = Math.floor((seed ? (Math.sin(seed++) * 10000) % 1 : Math.random()) * m--);
+            i = Math.floor((seed ? (Math.abs(Math.sin(seed++)) * 10000) % 1 : Math.random()) * m--); // Sicherstellen, dass Math.sin einen positiven Wert liefert
             t = array[m]; array[m] = array[i]; array[i] = t;
         }
         return array;

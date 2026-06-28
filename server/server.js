@@ -34,7 +34,7 @@ const limiter = rateLimit({
         };
         db.run(`INSERT INTO ratelimit_logs (ip, path, timestamp, userAgent) VALUES (?, ?, ?, ?)`,
             [logEntry.ip, logEntry.path, logEntry.timestamp, logEntry.userAgent],
-            (err) => { if (err) console.error('Rate limit log error:', err.message); }
+            (err) => { if (err) console.error("Rate limit log error:", err); }
         );
         res.status(options.statusCode).send(options.message);
     }
@@ -54,7 +54,7 @@ const adminLimiter = rateLimit({
         };
         db.run(`INSERT INTO ratelimit_logs (ip, path, timestamp, userAgent) VALUES (?, ?, ?, ?)`, 
             [logEntry.ip, logEntry.path, logEntry.timestamp, logEntry.userAgent],
-            (err) => { if (err) console.error('Admin rate limit log error:', err.message); }
+            (err) => { if (err) console.error("Admin rate limit log error:", err); }
         );
         res.status(options.statusCode).send(options.message);
     }
@@ -65,7 +65,7 @@ app.use(express.static(join(__dirname, '..')));
 // Database setup
 const dbPath = join(__dirname, 'leaderboard.db');
 const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) console.error('Database connection error:', err.message);
+    if (err) console.error("Database connection error:", err);
     else console.log('Connected to SQLite database.');
 });
 
@@ -145,7 +145,7 @@ app.post('/api/leaderboard', (req, res) => {
 
     db.run(query, [playerId, playerName, score, wins, losses, variant, accuracy], function(err) {
         if (err) {
-            console.error(err.message);
+            console.error("Leaderboard update error:", err);
             res.status(500).json({ error: 'Failed to update leaderboard' });
         } else {
             res.json({ success: true });
@@ -196,7 +196,7 @@ app.get('/api/admin/ratelimit-logs', (req, res) => {
 app.post('/api/errors/client', (req, res) => {
     const { message, stack, userAgent } = req.body;
     db.run(`INSERT INTO error_logs (type, message, stack, ip, userAgent) VALUES (?, ?, ?, ?, ?)`,
-        ['CLIENT', message, stack, req.ip, userAgent || req.get('User-Agent')],
+        ["CLIENT", message, stack, req.ip, userAgent || req.get("User-Agent")], // TODO: Detailliertere Protokollierung für Debugging implementieren
         (err) => {
             if (err) return res.status(500).json({ error: 'Failed to log error' });
             res.json({ success: true });
@@ -238,10 +238,10 @@ app.listen(PORT, () => {
         const retentionDate = new Date();
         retentionDate.setDate(retentionDate.getDate() - 7); // Behalte Logs für 7 Tage
         db.run(`DELETE FROM ratelimit_logs WHERE timestamp < ?`, [retentionDate.toISOString()], (err) => {
-            if (err) console.error('Rate limit log cleanup error:', err.message);
+            if (err) console.error("Rate limit log cleanup error:", err);
         });
         db.run(`DELETE FROM error_logs WHERE timestamp < ?`, [retentionDate.toISOString()], (err) => {
-            if (err) console.error('Error log cleanup error:', err.message);
+            if (err) console.error("Error log cleanup error:", err);
         });
     }, 24 * 60 * 60 * 1000);
 });
