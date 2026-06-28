@@ -8,7 +8,7 @@
   "launch_handler": {
     "client_mode": "focus-existing"
   },
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#000000",
   "background_color": "#000000",
