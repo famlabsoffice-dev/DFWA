@@ -264,4 +264,9 @@ function hideLeaderboard() {
     UIManager.toggleClass('battle-lobby', 'active', true);
 }
 
-initApp().then(setupEventListeners);
+// Korrigierte Initialisierung: Event-Listener werden nun garantiert registriert[span_1](start_span)[span_1](end_span)
+initApp().catch(err => {
+    console.error("Initialisierung teilweise fehlgeschlagen:", err);
+}).finally(() => {
+    setupEventListeners();
+});
