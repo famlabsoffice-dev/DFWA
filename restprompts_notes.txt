@@ -1,0 +1,30 @@
+Quelle: /home/ubuntu/upload/DFWA_v10.1_Restprompts.pdf (bisher visuell erfasste Seiten 1-5)
+
+Offene Punkte laut Dokument:
+- P0-C: In scripts/add_ids.js IDs fuer alle Fragen ohne q.id generieren; Slug aus Kategorie, Format `${slug}_${catCount[slug]++}`; danach questions_i18n.json ueberschreiben; QA: alle Fragen haben id.
+- P1-A: In app.js in initGame() nach `state.streak = 0;` einfuegen:
+  state.streakMax = 0;
+  state.correctAnswers = 0;
+  state.isPaused = false;
+  state.cheatAttempted = false;
+  state.pausedTimer = null;
+- P1-B: In app.js alle 3 console.error()-Calls durch Server-Error-Reporting via ApiClient.reportError(...) ersetzen:
+  1) FETCH_QUESTIONS mit error.message
+  2) FETCH_COMMENTS mit error.message
+  3) STATE_OOB mit current und total
+  QA: console.error nicht mehr in app.js
+- P2-A: In sw.js fehlende Bilder im ASSETS-Array ergaenzen:
+  ./assets/images/ack_brow_only.png
+  ./assets/images/ack_eye_wink.png
+  ./assets/images/ack_eye_base_only.png
+  ./assets/images/ack_eye_skeptical.png
+  ./assets/images/acker_core.png
+  ./assets/images/dystopian_monitor.png
+  QA: alle 10 PNG-Dateien aus assets/images im ASSETS-Array
+- P2-B: Unvollstaendige Kategorien auffuellen; priorisierte Fehlmengen:
+  Literatur +99, Wissenschaft +97, Musik +77, Film & Fernsehen +76, Fussball +39, Erdkunde +28.
+  Prompt verlangt JSON-Array mit Schema {id, cat, text:{de,en}, options:{de,en}, correct}; Regel correct=0..3, Verteilung 25±2, keine Duplikate.
+- P3: manifest.json display von "standalone" auf "fullscreen" umstellen.
+- Gesamt-QA nach allen Fixes: mindestens pruefen, dass questions_i18n.json fuer alle Fragen id-Feld hat und keine Duplikat-IDs.
+
+Hinweis: Seiten 6-7 des PDFs wurden noch nicht gesichtet.

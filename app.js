@@ -109,6 +109,11 @@ async function startChallenge() {
 async function initGame(createChallenge) {
     state.lives = 3; state.current = 0; state.score = 0; state.questionCount = 0; state.streak = 0;
     state.isCreatingChallenge = createChallenge; state.sessionActive = true;
+    state.streakMax = 0;
+    state.correctAnswers = 0;
+    state.isPaused = false;
+    state.cheatAttempted = false;
+    state.pausedTimer = null;
     state.mode = document.getElementById("mode-selector").value;
     
     UIManager.updateElement('lives-display', state.lives);
@@ -120,7 +125,7 @@ async function initGame(createChallenge) {
         const qRes = await fetch("questions_i18n.json");
         state.allQuestions = await qRes.json();
     } catch (error) {
-        console.error("Error fetching questions_i18n.json:", error);
+        if (window.APIClient) APIClient.reportError(API_BASE_URL, { type: 'FETCH_QUESTIONS', msg: error.message });
         UIManager.showModal("FEHLER", "Fragen konnten nicht geladen werden. Bitte versuchen Sie es später erneut.", "red");
         return;
     }
@@ -129,7 +134,7 @@ async function initGame(createChallenge) {
         const cRes = await fetch("ack_comments.json");
         state.comments = await cRes.json();
     } catch (error) {
-        console.error("Error fetching ack_comments.json:", error);
+        if (window.APIClient) APIClient.reportError(API_BASE_URL, { type: 'FETCH_COMMENTS', msg: error.message });
         UIManager.showModal("FEHLER", "Kommentare konnten nicht geladen werden. Das Spiel wird ohne Kommentare fortgesetzt.", "orange");
         state.comments = {}; // Fallback zu leerem Objekt
     }
@@ -141,8 +146,8 @@ async function initGame(createChallenge) {
 
 function renderQuestion() {
     if (state.current >= state.questions.length || state.current < 0) {
-        console.error("Error: state.current is out of bounds.");
-        endGame(); // Oder eine andere geeignete Fehlerbehandlung
+        if (window.APIClient) APIClient.reportError(API_BASE_URL, { type: 'STATE_OOB', current: state.current, total: state.questions.length });
+        endGame(); 
         return;
     }
     const q = state.questions[state.current];
