@@ -179,4 +179,5 @@ function closeSystem() { UIManager.toggleClass('modal-overlay', 'active', false)
 async function showLeaderboard() { UIManager.toggleClass('battle-lobby', 'active', false); UIManager.toggleClass('leaderboard-screen', 'active', true); const data = await APIClient.fetchLeaderboard(API_BASE_URL); UIManager.renderLeaderboard(document.getElementById('leaderboard-entries'), data); }
 function hideLeaderboard() { UIManager.toggleClass('leaderboard-screen', 'active', false); UIManager.toggleClass('battle-lobby', 'active', true); }
 
-initApp().catch(err => console.error(err)).finally(() => setupEventListeners());
+// Garantierte Initialisierung
+initApp().catch(err => console.error("Init failed", err)).finally(() => setupEventListeners());
