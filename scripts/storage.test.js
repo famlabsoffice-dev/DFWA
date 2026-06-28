@@ -77,12 +77,9 @@ describe('StorageManager', () => {
             expect(signature1).not.toBe(signature2);
         });
 
-        test('should use LOCAL_ONLY_UNTRUSTED if no secret is provided', async () => {
+        test('should throw error if no secret is provided', async () => {
             const data = 'test_data';
-            const signature = await StorageManager.getSignature(data);
-            const expectedMockSignature = Array.from(new TextEncoder().encode(`mock_signature_for_test_data_HMAC_SHA-256`))
-                                            .map(b => b.toString(16).padStart(2, '0')).join('');
-            expect(signature).toBe(expectedMockSignature);
+            await expect(StorageManager.getSignature(data)).rejects.toThrow('SYSTEM_SECRET not provided for StorageManager');
         });
     });
 

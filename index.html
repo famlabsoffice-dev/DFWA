@@ -28,7 +28,8 @@
             </div>
             <div class="ui-content-wrapper">
                 <p style="color:var(--cyber-blue); letter-spacing:3px; font-weight:900; font-size:0.8rem; margin-bottom:2.5vh; white-space: nowrap;">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
-                <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12" aria-label="Spieler-Codename eingeben" autocomplete="off">
+                <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12" aria-label="Spieler-Codename eingeben" aria-describedby="player-name-desc" autocomplete="off">
+                <span id="player-name-desc" class="sr-only">Geben Sie Ihren Codenamen ein, um Ihre Highscores im System zu sichern.</span>
                 <select id="mode-selector" class="cyber-select" aria-label="Modus auswählen">
                     <option value="classic">CLASSIC_MODE</option>
                     <option value="endless">ENDLESS_MODE</option>

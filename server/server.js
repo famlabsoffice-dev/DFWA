@@ -182,11 +182,15 @@ app.post('/api/challenge/verify', (req, res) => {
     }
 });
 
-app.get('/api/admin/ratelimit-logs', (req, res) => {
-    const { auth } = req.query;
-    // if (auth !== SYSTEM_SECRET) return res.status(403).json({ error: 'Unauthorized' }); // Unsichere Authentifizierung entfernt
-    console.warn('WARNING: Admin endpoint accessed without robust authentication. Implement proper auth.');
+const adminAuth = (req, res, next) => {
+    const authHeader = req.headers.authorization;
+    if (!SYSTEM_SECRET || !authHeader || authHeader !== `Bearer ${SYSTEM_SECRET}`) {
+        return res.status(403).json({ error: 'Unauthorized' });
+    }
+    next();
+};
 
+app.get('/api/admin/ratelimit-logs', adminAuth, (req, res) => {
     db.all(`SELECT * FROM ratelimit_logs ORDER BY timestamp DESC LIMIT 100`, [], (err, rows) => {
         if (err) return res.status(500).json({ error: 'Database error' });
         res.json(rows);
@@ -204,11 +208,7 @@ app.post('/api/errors/client', (req, res) => {
     );
 });
 
-app.get('/api/admin/error-logs', (req, res) => {
-    const { auth } = req.query;
-    // if (auth !== SYSTEM_SECRET) return res.status(403).json({ error: 'Unauthorized' }); // Unsichere Authentifizierung entfernt
-    console.warn('WARNING: Admin endpoint accessed without robust authentication. Implement proper auth.');
-
+app.get('/api/admin/error-logs', adminAuth, (req, res) => {
     db.all(`SELECT * FROM error_logs ORDER BY timestamp DESC LIMIT 100`, [], (err, rows) => {
         if (err) return res.status(500).json({ error: 'Database error' });
         res.json(rows);

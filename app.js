@@ -2,6 +2,7 @@ import { StorageManager } from './scripts/storage.js';
 import { GameLogic } from './scripts/game-logic.js';
 import { UIManager } from './scripts/ui-manager.js';
 import { APIClient } from './scripts/api-client.js';
+import { STORAGE_KEYS, SYSTEM_MESSAGES, GAME_MODES } from './scripts/constants.js';
 
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
@@ -10,16 +11,16 @@ const API_BASE_URL = window.location.hostname === 'localhost' || window.location
 let state = { 
     lang: 'de', questions: [], allQuestions: [], current: 0, score: 0, lives: 3,
     streak: 0, streakMax: 0, correctAnswers: 0,
-    playerName: localStorage.getItem('dfwa_name') || 'GUEST',
-    playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
-    best: parseInt(localStorage.getItem('dfwa_best') || 0),
+    playerName: localStorage.getItem(STORAGE_KEYS.PLAYER_NAME) || 'GUEST',
+    playerId: localStorage.getItem(STORAGE_KEYS.PLAYER_ID) || Math.floor(1000 + Math.random() * 9000).toString(),
+    best: parseInt(localStorage.getItem(STORAGE_KEYS.HIGH_SCORE) || 0),
     wins: parseInt(localStorage.getItem('dfwa_wins') || 0),
     losses: parseInt(localStorage.getItem('dfwa_losses') || 0),
     comments: {}, usedComments: { correct: [], incorrect: [] },
     isPaused: false, isProcessing: false, timer: 15, timerInterval: null, questionCount: 0,
     isChallenge: false, isCreatingChallenge: false, challengeSeed: null, opponentScore: 0,
-    systemSecret: null, sessionActive: false, mode: 'classic',
-    variant: localStorage.getItem('dfwa_variant') || (Math.random() < 0.5 ? 'A' : 'B')
+    systemSecret: null, sessionActive: false, mode: GAME_MODES.CLASSIC,
+    variant: localStorage.getItem(STORAGE_KEYS.LAST_VARIANT) || (Math.random() < 0.5 ? 'A' : 'B')
 };
 
 // Event Listener Setup
@@ -30,7 +31,7 @@ function setupEventListeners() {
     addClick('resume-btn', resumeProtocol);
     addClick('lobby-btn', () => {
         state.playerName = document.getElementById('player-name').value.trim() || 'GUEST';
-        StorageManager.saveSecure('dfwa_name', state.playerName, state.systemSecret);
+        StorageManager.saveSecure(STORAGE_KEYS.PLAYER_NAME, state.playerName, state.systemSecret);
         UIManager.toggleClass('start-screen', 'active', false);
         UIManager.toggleClass('battle-lobby', 'active', true);
     });
@@ -64,8 +65,8 @@ window.onunhandledrejection = (event) => {
 
 async function initApp() {
     state.systemSecret = await APIClient.fetchSecret(API_BASE_URL);
-    await StorageManager.validateIntegrity(['dfwa_best', 'dfwa_wins', 'dfwa_losses'], state.systemSecret, (key) => {
-        if (key === 'dfwa_best') state.best = 0;
+    await StorageManager.validateIntegrity([STORAGE_KEYS.HIGH_SCORE, 'dfwa_wins', 'dfwa_losses'], state.systemSecret, (key) => {
+        if (key === STORAGE_KEYS.HIGH_SCORE) state.best = 0;
         if (key === 'dfwa_wins') state.wins = 0;
         if (key === 'dfwa_losses') state.losses = 0;
     });
@@ -74,7 +75,7 @@ async function initApp() {
 
 function detectLanguage() {
     state.lang = localStorage.getItem('dfwa_lang') || (navigator.language.startsWith('de') ? 'de' : 'en');
-    if (!localStorage.getItem('dfwa_id')) StorageManager.saveSecure('dfwa_id', state.playerId, state.systemSecret);
+    if (!localStorage.getItem(STORAGE_KEYS.PLAYER_ID)) StorageManager.saveSecure(STORAGE_KEYS.PLAYER_ID, state.playerId, state.systemSecret);
     updateUIForLanguage();
 }
 
@@ -126,7 +127,7 @@ async function initGame(createChallenge) {
         state.allQuestions = await qRes.json();
     } catch (error) {
         if (window.APIClient) APIClient.reportError(API_BASE_URL, { type: 'FETCH_QUESTIONS', msg: error.message });
-        UIManager.showModal("FEHLER", "Fragen konnten nicht geladen werden. Bitte versuchen Sie es später erneut.", "red");
+        UIManager.showModal("FEHLER", SYSTEM_MESSAGES.FETCH_QUESTIONS_ERROR, "red");
         return;
     }
 
@@ -135,7 +136,7 @@ async function initGame(createChallenge) {
         state.comments = await cRes.json();
     } catch (error) {
         if (window.APIClient) APIClient.reportError(API_BASE_URL, { type: 'FETCH_COMMENTS', msg: error.message });
-        UIManager.showModal("FEHLER", "Kommentare konnten nicht geladen werden. Das Spiel wird ohne Kommentare fortgesetzt.", "orange");
+        UIManager.showModal("FEHLER", SYSTEM_MESSAGES.FETCH_COMMENTS_ERROR, "orange");
         state.comments = {}; // Fallback zu leerem Objekt
     }
     
@@ -147,6 +148,7 @@ async function initGame(createChallenge) {
 function renderQuestion() {
     if (state.current >= state.questions.length || state.current < 0) {
         if (window.APIClient) APIClient.reportError(API_BASE_URL, { type: 'STATE_OOB', current: state.current, total: state.questions.length });
+        UIManager.showModal("ERROR", SYSTEM_MESSAGES.STATE_OOB_ERROR, "red");
         endGame(); 
         return;
     }
@@ -198,7 +200,7 @@ async function endGame() {
     UIManager.showModal(state.score > state.best ? "NEW_BEST" : "GAME_OVER", `SCORE: ${state.score}`);
     if (state.score > state.best) {
         state.best = state.score;
-        await StorageManager.saveSecure('dfwa_best', state.best, state.systemSecret);
+        await StorageManager.saveSecure(STORAGE_KEYS.HIGH_SCORE, state.best, state.systemSecret);
     }
     await APIClient.updateLeaderboard(API_BASE_URL, {
         playerId: state.playerId, playerName: state.playerName, score: state.score, auth: state.systemSecret
