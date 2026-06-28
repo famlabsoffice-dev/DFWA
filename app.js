@@ -371,33 +371,7 @@ async function initGame(createChallenge, isRestoring = false) {
     }
 }
 
-function populateCategories(questions) {
-    const cats = [...new Set(questions.map(q => q.cat))].sort();
-    const filter = document.getElementById('category-filter');
-    const currentVal = filter.value;
-    filter.innerHTML = `<option value="all">${state.lang === 'de' ? 'ALLE_SEKTOREN' : 'ALL_SECTORS'}</option>`;
-    cats.forEach(cat => {
-        const opt = document.createElement('option');
-        opt.value = cat;
-        opt.innerText = cat.toUpperCase();
-        filter.appendChild(opt);
-    });
-    if ([...filter.options].some(o => o.value === currentVal)) {
-        filter.value = currentVal;
-    }
-}
-
-async function loadCategories() {
-    try {
-        if (!window._dfwaQCache) {
-            const res = await fetch('questions_i18n.json');
-            if (!res.ok) return;
-            window._dfwaQCache = await res.json();
-        }
-        populateCategories(window._dfwaQCache);
-    } catch(e) {}
-}
-loadCategories();
+// Sektor-Filter Funktionen entfernt.
 
 function startTimer() {
     clearInterval(state.timerInterval);
@@ -444,18 +418,14 @@ function startTimer() {
 function renderQuestion(isRestoring = false) {
     const q = state.questions[state.current];
     if (!q) {
-        const selectedCat = document.getElementById('category-filter').value;
         let pool = state.allQuestions;
-        if (selectedCat !== 'all') {
-            pool = state.allQuestions.filter(q => q.cat === selectedCat);
-        }
-        if (pool.length === 0) pool = state.allQuestions;
-        state.questions = shuffle([...pool], null);
-        state.current = 0;
-        if (state.questions.length === 0) {
+        if (pool.length === 0) {
             endGame();
             return;
         }
+        state.questions = shuffle([...pool], null);
+        if (state.mode === 'blitz') state.questions = state.questions.slice(0, 20);
+        state.current = 0;
         renderQuestion(isRestoring);
         return;
     }
