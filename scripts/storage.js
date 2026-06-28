@@ -1,7 +1,7 @@
 export const StorageManager = {
     async getSignature(data, secret) {
         const key = await crypto.subtle.importKey(
-            'raw', new TextEncoder().encode(secret || 'LOCAL_ONLY_UNTRUSTED'),
+            'raw', new TextEncoder().encode(secret || (()=>{throw new Error('SYSTEM_SECRET not provided for StorageManager');})()),
             { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
         );
         const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(data));

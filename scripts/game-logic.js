@@ -18,7 +18,7 @@ export const GameLogic = {
         const payload = { seed, score, ts: Date.now() };
         const msg = JSON.stringify(payload);
         const key = await crypto.subtle.importKey(
-            'raw', new TextEncoder().encode(secret || 'DFWA_SECRET_ACK'),
+            'raw', new TextEncoder().encode(secret || (()=>{throw new Error('SYSTEM_SECRET not provided for GameLogic');})()),
             { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
         );
         const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(msg));
