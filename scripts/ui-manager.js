@@ -1,10 +1,10 @@
 export const UIManager = {
-  updateElement(id, text) {
+  setText(id, text) {
     const el = document.getElementById(id);
-    if (el) el.innerText = text;
+    if (el) el.textContent = text;
   },
 
-  updateHTML(id, html) {
+  setHTML(id, html) {
     const el = document.getElementById(id);
     if (el) el.innerHTML = html;
   },
@@ -21,30 +21,33 @@ export const UIManager = {
 
     if (overlay) overlay.style.display = 'flex';
     if (titleEl) {
-      titleEl.innerText = title;
+      titleEl.textContent = title;
       titleEl.style.color = color;
     }
-    if (textEl) textEl.innerText = text;
+    if (textEl) textEl.textContent = text;
   },
 
   renderLeaderboard(entriesDiv, data) {
-    entriesDiv.innerHTML = '';
+    if (!entriesDiv) return;
+    entriesDiv.replaceChildren();
+
     data.forEach((entry, index) => {
       const row = document.createElement('div');
       row.className = 'leaderboard-entry';
+
       const rankSpan = document.createElement('span');
       rankSpan.textContent = `#${index + 1}`;
+
       const nameSpan = document.createElement('span');
       nameSpan.textContent = entry.playerName;
+
       const scoreSpan = document.createElement('span');
-      scoreSpan.textContent = entry.score;
+      scoreSpan.textContent = String(entry.score);
+
       const statsSpan = document.createElement('span');
       statsSpan.textContent = `${entry.wins}/${entry.losses}`;
 
-      row.appendChild(rankSpan);
-      row.appendChild(nameSpan);
-      row.appendChild(scoreSpan);
-      row.appendChild(statsSpan);
+      row.append(rankSpan, nameSpan, scoreSpan, statsSpan);
       entriesDiv.appendChild(row);
     });
   }
