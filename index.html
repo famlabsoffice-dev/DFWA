@@ -100,5 +100,14 @@
     </div>
 
     <script type="module" src="./app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('SW_LINK_ESTABLISHED:', reg.scope))
+                    .catch(err => console.error('SW_LINK_FAILURE:', err));
+            });
+        }
+    </script>
 </body>
 </html>
