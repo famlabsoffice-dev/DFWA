@@ -11,7 +11,10 @@ import { dirname, join } from 'path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SYSTEM_SECRET = process.env.SYSTEM_SECRET || 'DFWA_SECRET_ACK_2026';
+const SYSTEM_SECRET = process.env.SYSTEM_SECRET;
+if (!SYSTEM_SECRET) {
+    console.warn('WARNING: SYSTEM_SECRET is not set. Using a default secret is insecure. Please set the SYSTEM_SECRET environment variable.');
+}
 
 // Middleware
 app.use(helmet());
@@ -36,7 +39,27 @@ const limiter = rateLimit({
         res.status(options.statusCode).send(options.message);
     }
 });
-app.use('/api/', limiter);
+app.use("/api/", limiter);
+
+const adminLimiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 Stunde
+    max: 10, // Max. 10 Anfragen pro Stunde pro IP für Admin-Endpunkte
+    message: "Too many requests from this IP, please try again after an hour",
+    handler: (req, res, next, options) => {
+        const logEntry = {
+            ip: req.ip,
+            path: req.originalUrl,
+            timestamp: new Date().toISOString(),
+            userAgent: req.get('User-Agent')
+        };
+        db.run(`INSERT INTO ratelimit_logs (ip, path, timestamp, userAgent) VALUES (?, ?, ?, ?)`, 
+            [logEntry.ip, logEntry.path, logEntry.timestamp, logEntry.userAgent],
+            (err) => { if (err) console.error('Admin rate limit log error:', err.message); }
+        );
+        res.status(options.statusCode).send(options.message);
+    }
+});
+app.use("/api/admin/", adminLimiter);
 app.use(express.static(join(__dirname, '..')));
 
 // Database setup
