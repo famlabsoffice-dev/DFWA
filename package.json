@@ -9,7 +9,11 @@
     "@babel/preset-env": "^7.29.7",
     "ajv": "^8.20.0",
     "babel-jest": "^30.4.1",
+    "glob": "^13.0.6",
+    "http-server": "^14.1.1",
     "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
+    "lru-cache": "^11.5.1",
     "openai": "^6.45.0"
   }
 }
