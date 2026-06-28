@@ -155,8 +155,10 @@ function checkAnswer(correct) {
     if (correct) {
         state.streak++; state.correctAnswers++;
         state.score += GameLogic.calculateScore(state.timer, state.streak);
+        if ('vibrate' in navigator) navigator.vibrate(50);
     } else {
         state.lives--; state.streak = 0;
+        if ('vibrate' in navigator) navigator.vibrate([100, 50, 100]);
     }
     
     UIManager.updateElement('hud-score', `${state.score}_PTS`);
