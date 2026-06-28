@@ -116,6 +116,7 @@ async function initGame(createChallenge) {
     state.cheatAttempted = false;
     state.pausedTimer = null;
     state.mode = document.getElementById("mode-selector").value;
+    UIManager.updateElement('hud-mode', state.mode.toUpperCase());
     
     UIManager.updateElement('lives-display', state.lives);
     UIManager.toggleClass('start-screen', 'active', false);
@@ -146,6 +147,16 @@ async function initGame(createChallenge) {
 }
 
 function renderQuestion() {
+    if (state.mode === GAME_MODES.ENDLESS && state.current >= state.questions.length) {
+        state.questions = GameLogic.shuffle([...state.allQuestions]);
+        state.current = 0;
+    }
+    
+    if (state.mode === GAME_MODES.BLITZ && state.questionCount >= 20) {
+        endGame();
+        return;
+    }
+
     if (state.current >= state.questions.length || state.current < 0) {
         if (window.APIClient) APIClient.reportError(API_BASE_URL, { type: 'STATE_OOB', current: state.current, total: state.questions.length });
         UIManager.showModal("ERROR", SYSTEM_MESSAGES.STATE_OOB_ERROR, "red");
@@ -166,17 +177,30 @@ function renderQuestion() {
 }
 
 function startTimer() {
-    state.timer = 15;
+    if (state.mode === GAME_MODES.BLITZ) {
+        state.timer = 5;
+    } else if (state.mode === GAME_MODES.ENDLESS) {
+        const reduction = Math.floor(state.questionCount / 5);
+        state.timer = Math.max(3, 15 - reduction);
+    } else {
+        state.timer = 15;
+    }
+    
     clearInterval(state.timerInterval);
     state.timerInterval = setInterval(() => {
         state.timer -= 0.1;
-        UIManager.updateElement('timer-display', Math.ceil(state.timer));
+        const timerDisplay = document.getElementById('timeline-bar');
+        if (timerDisplay) {
+            const max = state.mode === GAME_MODES.BLITZ ? 5 : (state.mode === GAME_MODES.ENDLESS ? Math.max(3, 15 - Math.floor(state.questionCount / 5)) : 15);
+            timerDisplay.style.width = `${(state.timer / max) * 100}%`;
+        }
         if (state.timer <= 0) checkAnswer(null);
     }, 100);
 }
 
 function checkAnswer(correct) {
     clearInterval(state.timerInterval);
+    state.questionCount++;
     if (correct) {
         state.streak++; state.correctAnswers++;
         state.score += GameLogic.calculateScore(state.timer, state.streak);
