@@ -33,6 +33,10 @@ Object.defineProperty(global, 'crypto', {
     writable: true
 });
 
+import { TextEncoder, TextDecoder } from 'util';
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
+
 // Mock localStorage
 const localStorageMock = (() => {
     let store = {};
