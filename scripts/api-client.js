@@ -5,19 +5,21 @@ export const APIClient = {
   async updateLeaderboard(baseUrl, payload, secret) {
     try {
       const mode = payload.mode || 'classic';
+      const ts = Date.now();
       const msg = JSON.stringify({
         playerId: payload.playerId,
         score: payload.score,
         wins: payload.wins,
         losses: payload.losses,
-        mode: mode
+        mode: mode,
+        ts: ts
       });
       const auth = await this.generateHMAC(msg, secret);
 
       const res = await fetch(`${baseUrl}${API_ENDPOINTS.LEADERBOARD}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...payload, auth }),
+        body: JSON.stringify({ ...payload, ts, auth }),
       });
       if (!res.ok) throw new Error(`HTTP_${res.status}`);
     } catch (e) {

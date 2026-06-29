@@ -36,7 +36,7 @@ let state = {
   pausedQuestion: null,
   pausedTimer: null,
   cheatsAttempted: false,
-  systemSecret: null,
+  systemSecret: 'LOCAL_ONLY_UNTRUSTED',
   sessionActive: false,
   lastUpdateTime: null,
   timerEndTimestamp: null,

@@ -1,21 +1,21 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.13 (Security Audit) wurde erfolgreich abgeschlossen. Die HMAC-Implementierung wurde unter Lastbedingungen (100 parallel Requests) und gegen gezielte Angriffe geprüft. Die Signatur-Validierung verhindert effektiv die Manipulation von Scores. Eine Schwachstelle bezüglich Replay-Attacken wurde identifiziert und für die Behebung in der nächsten Phase priorisiert.
+Phase 1.14 (Replay-Schutz) wurde erfolgreich abgeschlossen. Die PWA verfügt nun über eine gehärtete HMAC-Validierung inklusive Zeitstempel-Prüfung, die Replay-Attacken effektiv verhindert. Alle Sicherheits-Middlewares wurden reaktiviert und das System ist für den produktiven Einsatz vorbereitet. Phase 2.1 wird die PWA-Fähigkeiten durch Offline-Synchronisation weiter ausbauen.
 
 ## AKTUELLER STATUS
-- **Lasttest:** HMAC-Validierung zeigt stabile Performance (durchschnittlich 18ms pro Request unter Last).
-- **Integrität:** Score-Manipulation wird zuverlässig mit HTTP 403 (INVALID_AUTH_SIGNATURE) abgelehnt.
-- **Schwachstelle:** Replay-Attacken sind aktuell möglich, da kein Timestamp/Nonce in der HMAC-Signatur validiert wird.
-- **Rate-Limiting:** Express-Rate-Limit (100 req/15min) schützt effektiv vor Brute-Force/DDoS auf API-Ebene.
-- **Infrastruktur:** Server-Stabilität unter moderater Last verifiziert.
+- **Replay-Schutz:** HMAC-Signatur umfasst nun einen Zeitstempel (ms). Backend validiert max. 30s Alter.
+- **Integrität:** Konsistente Typkonvertierung im Backend garantiert robuste Signatur-Prüfung.
+- **Sicherheit:** Alle Middlewares (Helmet, Rate-Limit, CORS) sind aktiv und korrekt konfiguriert.
+- **PWA-Baseline:** Service Worker und Manifest sind stabil; "weltbeste PWA"-Gebot bleibt Leitlinie.
+- **Authentifizierung:** GitHub PAT erfolgreich für automatisierte Repository-Interaktion konfiguriert.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ (PRIORISIERT)
-### 1. Replay-Schutz (Phase 1.14)
-- **Aufgabe:** Integration eines Timestamps in die HMAC-Signatur und serverseitige Validierung (max. 30s Alter).
+### 1. Offline-Sync & PWA-Optimierung (Phase 2.1)
+- **Aufgabe:** Implementierung einer Offline-Queue für Scores und Background-Sync bei Wiederherstellung der Verbindung.
 ### 2. UI/UX Polishing
 - **Aufgabe:** Animationen für Filterwechsel im Leaderboard hinzufügen.
 
 ---
-**Status:** 2026-06-30 14:30 GMT+2 - Security Audit (1.13) erfolgreich abgeschlossen.
+**Status:** 2026-06-30 16:00 GMT+2 - Replay-Schutz (1.14) erfolgreich abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

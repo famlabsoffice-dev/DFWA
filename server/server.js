@@ -52,6 +52,8 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
+console.error('SERVER_STARTING_UP');
+
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 Minuten
   max: 100, // Limit pro IP
@@ -100,13 +102,8 @@ app.use('/api/admin/', adminLimiter);
 // Fallback auf Root-Verzeichnis falls dist/ nicht existiert (Entwicklung)
 const distPath = join(__dirname, '..', 'dist');
 const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
-app.use(express.static(staticPath));
-// SPA-Fallback: Alle nicht-API-Routen auf index.html weiterleiten
-app.get(/^\/(?!api).*/, (req, res, next) => {
-  if (req.path.startsWith('/api/')) return next();
-  const indexPath = join(staticPath, 'index.html');
-  res.sendFile(indexPath);
-});
+// app.use(express.static(staticPath));
+
 
 // Database setup
 const dbPath = join(__dirname, 'leaderboard.db');
@@ -179,10 +176,30 @@ app.get('/api/leaderboard', (req, res) => {
 });
 
 app.post('/api/leaderboard', (req, res) => {
-  const { playerId, playerName, score, wins, losses, variant, accuracy, mode, auth } = req.body;
+  const { playerId, playerName, score, wins, losses, variant, accuracy, mode, ts, auth } = req.body;
   const modeVal = mode || 'classic';
+  
+  // Ensure types are consistent for HMAC calculation
+  const scoreNum = Number(score);
+  const winsNum = Number(wins);
+  const lossesNum = Number(losses);
+  const tsNum = Number(ts);
 
-  const msg = JSON.stringify({ playerId, score, wins, losses, mode: modeVal });
+  // 1. Replay Protection: Validate timestamp (max 30s old)
+  const now = Date.now();
+  if (!tsNum || Math.abs(now - tsNum) > 30000) {
+    return res.status(403).json({ error: 'TIMESTAMP_EXPIRED_OR_INVALID' });
+  }
+
+  // 2. Integrity: Validate HMAC signature including timestamp
+  const msg = JSON.stringify({ 
+    playerId, 
+    score: scoreNum, 
+    wins: winsNum, 
+    losses: lossesNum, 
+    mode: modeVal, 
+    ts: tsNum 
+  });
   const expectedAuth = crypto
     .createHmac('sha256', SYSTEM_SECRET)
     .update(msg)
@@ -218,12 +235,17 @@ app.post('/api/leaderboard', (req, res) => {
   db.run(query, [playerId, playerName, score, wins, losses, variant, accuracy, modeVal], function (err) {
     if (err) {
       console.error('Leaderboard update error:', err);
-      res.status(500).json({ error: 'Failed to update leaderboard' });
+      res.status(500).json({ error: 'Database error' });
     } else {
       res.json({ success: true });
     }
   });
 });
+
+// Statische Dateien und SPA-Fallback erst NACH den API-Routen
+const distPathForStatic = join(__dirname, '..', 'dist');
+const staticPathForStatic = existsSync(distPathForStatic) ? distPathForStatic : join(__dirname, '..');
+app.use(express.static(staticPathForStatic));
 
 app.post('/api/challenge/verify', (req, res) => {
   const { code } = req.body;
@@ -343,6 +365,12 @@ app.get('/api/analytics', (req, res) => {
       }
     }
   );
+});
+
+// SPA-Fallback: Alle nicht-API-Routen auf index.html weiterleiten
+app.get(/^\/(?!api).*/, (req, res, next) => {
+  const indexPath = join(staticPathForStatic, 'index.html');
+  res.sendFile(indexPath);
 });
 
 app.listen(PORT, () => {
