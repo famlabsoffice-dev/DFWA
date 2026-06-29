@@ -1,30 +1,33 @@
-# PROJECT STATUS: DFWA
+# PROJECT STATUS: DFWA (Stand: 2026-06-29)
 
 ## EXECUTIVE SUMMARY
-Das DFWA-Repository wurde umfassend optimiert. Zentrale Meilensteine: PWA-Architektur (ESM, SW v1.1.0), Session-Persistenz, Timestamp-basierte Timer-Logik und haptisches Feedback. Die Qualitätssicherungsphasen 1.1–1.7 wurden vollständig abgeschlossen. Am 2026-06-29 wurde ein Funktionalitäts-Audit mit kritischen Fixes sowie die **WebP-Performance-Optimierung (C1)** durchgeführt. Das Hauptbild wurde von 1.5 MB auf 100 KB reduziert (**-93%**). Die PWA ist voll funktionsfähig und für Core Web Vitals optimiert.
+Das DFWA-Repository ist in einem stabilen, hochperformanten Zustand (Bewertung: 8.7/10). Die Phasen 1.1 bis 1.7 sind abgeschlossen. Am 2026-06-29 wurden kritische ESM-Scope-Probleme behoben und die WebP-Optimierung (C1) erfolgreich umgesetzt (1.5 MB -> 100 KB). Die PWA ist voll funktionsfähig.
 
-## DURCHGEFÜHRTE OPTIMIERUNGEN
-1. **PWA-Architektur:** Umstellung auf ES-Module; SW v1.1.0 mit ESM-Support.
-2. **Session-Persistenz:** Vollständige Speicherung/Wiederherstellung des Spielzustands via `localStorage`.
-3. **Timer-System:** Throttling-resistente Logik basierend auf Systemzeit-Differenz.
-4. **Haptik:** Vibrations-Feedback bei Erfolg/Fehler für mobile Endgeräte.
-5. **Build-Pipeline (Vite):** JS 34.7 KB → 16.0 KB (-54%), CSS 8.5 KB → 7.0 KB (-18%).
-6. **WebP-Optimierung (C1):** `ack_core_clean.png` (1.5 MB) → `ack_core_clean.webp` (100 KB). Reduktion der Asset-Größe um **93%**. Alle Referenzen in `app.js`, `index.html` und `sw.js` wurden aktualisiert.
-7. **Funktionalitäts-Audit (2026-06-29):**
-   - **ESM-Fix:** Umstellung auf JS-Event-Listener.
-   - **API-Integration:** Korrekte Modul-Imports für `APIClient` und `UIManager`.
-   - **Auth-Fix:** `SYSTEM_SECRET` Fallback im Backend.
-   - **Leaderboard:** Automatisches Senden von Scores am Spielende.
+## AKTUELLER STATUS
+- **Build:** Vite 8.1 + esbuild (Minifizierung & Bundling aktiv).
+- **Assets:** Hauptbild zu WebP konvertiert (-93% Größe).
+- **Backend:** Express 5 Server mit SQLite-Leaderboard und HMAC-Validierung.
+- **Fixes:** Event-Listener im JS (statt Inline-HTML), API-Client-Imports korrigiert, Auth-Fallback implementiert.
 
-## MÄNGELLISTE (OFFEN)
-- **F1 (PWA):** `sw.js` precached keine gehashten Vite-Assets (Offline-Support unvollständig).
-- **F2 (Backend):** `trust proxy` Warnung in `server.js` (beeinträchtigt Rate-Limiting).
-- **F3 (UI):** Fehlende Media Queries für extreme Bildschirmformate.
+## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ (PRIORISIERT)
 
-## NÄCHSTER SCHRITT FÜR NACHFOLGE-INSTANZ
-**Ziel:** Abschluss von **Punkt 1.8 des Qualitätssicherungsplans: Lighthouse-Audit & Core Web Vitals**.
-- **Aufgabe:** Implementierung von Lazy-Loading für Bilder und Preload für kritische Fonts.
-- **Infrastruktur:** `trust proxy` in `server.js` setzen und Service Worker Asset-Caching automatisieren.
+### 1. Infrastruktur-Härtung (Quick Win)
+- **Problem:** `express-rate-limit` Warnung bezüglich `trust proxy`.
+- **Aufgabe:** In `server/server.js` die Zeile `app.set('trust proxy', 1);` ergänzen, um korrektes Rate-Limiting hinter Proxies zu ermöglichen.
+
+### 2. PWA & Offline-Robustheit (QS 1.8)
+- **Problem:** `sw.js` nutzt eine manuelle Liste für `STATIC_ASSETS`, die keine gehashten Vite-Dateien enthält.
+- **Aufgabe:** Umstellung auf `vite-plugin-pwa` oder Implementierung eines Scripts, das die `dist/manifest.json` liest und die gehashten Assets automatisch in den Service Worker injiziert.
+
+### 3. UI/UX Refinement
+- **Problem:** Fehlende Media Queries für extreme Formate (Foldables/Ultra-Wide).
+- **Aufgabe:** `style.css` um spezifische Breakpoints ergänzen, um das HUD auf allen Geräten konsistent zu halten.
+
+### 4. Sicherheits-Härtung
+- **Problem:** `SYSTEM_SECRET` Fallback auf `LOCAL_ONLY_UNTRUSTED`.
+- **Aufgabe:** Logik implementieren, die den Server-Start in `NODE_ENV=production` verweigert, wenn kein echtes Secret gesetzt ist.
 
 ---
-*Status: 2026-06-29 18:05 GMT+2 - C1 abgeschlossen, PWA hochperformant.*
+**WICHTIG:** Alle Änderungen müssen gemäß den Arbeitsrichtlinien (siehe `performance_rating.md`) durchgeführt und dokumentiert werden.
+
+*Status: 2026-06-29 18:15 GMT+2 - Übergabe bereit für Phase 1.8.*
