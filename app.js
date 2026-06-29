@@ -1,5 +1,6 @@
 import { APIClient } from './scripts/api-client.js';
 import { UIManager } from './scripts/ui-manager.js';
+import { GameModes, ModeConfig, getGameModeConfig, calculateModeScore } from './scripts/game-modes.js';
 
 const API_BASE_URL =
   window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -42,7 +43,7 @@ let state = {
   baseDate: Date.now(),
   basePerf: performance.now(),
   timeDesyncDetected: false,
-  mode: 'classic',
+  mode: localStorage.getItem('dfwa_mode') || 'classic',
   variant: localStorage.getItem('dfwa_variant') || (Math.random() < 0.5 ? 'A' : 'B'),
 };
 if (!localStorage.getItem('dfwa_variant')) localStorage.setItem('dfwa_variant', state.variant);
@@ -307,7 +308,44 @@ function setLanguage(lang) {
     console.error('Set language failed', e);
   }
 }
+
+function setGameMode(mode) {
+  try {
+    if (!Object.values(GameModes).includes(mode)) {
+      console.warn('Invalid game mode: ' + mode + '. Defaulting to classic.');
+      mode = GameModes.CLASSIC;
+    }
+    state.mode = mode;
+    localStorage.setItem('dfwa_mode', mode);
+    const config = getGameModeConfig(mode);
+    state.lives = config.initialLives;
+    state.timer = config.initialTimer;
+  } catch (e) {
+    console.error('Set game mode failed', e);
+  }
+}
+
 detectLanguage();
+
+function renderModeSelector() {
+  try {
+    const container = document.getElementById('mode-selector');
+    if (!container) return;
+    container.innerHTML = '';
+    Object.entries(ModeConfig).forEach(([key, config]) => {
+      const btn = document.createElement('button');
+      btn.className = 'mode-btn' + (state.mode === key ? ' active' : '');
+      btn.innerHTML = '<strong>' + config.name + '</strong><small>' + config.description + '</small>';
+      btn.onclick = () => {
+        setGameMode(key);
+        renderModeSelector();
+      };
+      container.appendChild(btn);
+    });
+  } catch (e) {
+    console.error('Render mode selector failed', e);
+  }
+}
 
 function showLobby() {
   try {
@@ -318,6 +356,7 @@ function showLobby() {
     const battleLobby = document.getElementById('battle-lobby');
     if (startScreen) startScreen.classList.remove('active');
     if (battleLobby) battleLobby.classList.add('active');
+    renderModeSelector();
   } catch (e) {
     console.error('Show lobby failed', e);
   }

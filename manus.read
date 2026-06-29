@@ -1,20 +1,23 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-29)
 
 ## EXECUTIVE SUMMARY
-Das Repository wurde vollständig bereinigt. Alle redundanten, veralteten oder unnötigen Dateien (Backups, Logs, veraltete Bildformate, Präsentationsmaterial) wurden entfernt. Das Projekt konzentriert sich nun ausschließlich auf den funktionalen Kern der aktuellen Version.
+Phase 1.10 (Feature-Entwicklung) wurde erfolgreich gestartet. Ein neues modulares System für Spielmodi wurde implementiert, das die Modi **Classic**, **Time Attack** und **Hardcore** unterstützt. Die UI wurde um einen interaktiven Modus-Selector erweitert.
 
 ## AKTUELLER STATUS
-- **Struktur:** Nur notwendige Quellcodes, Assets und Konfigurationen verbleiben.
-- **Bereinigung:** >30 Dateien entfernt (Backups, veraltete HTML/PNG/Log-Dateien).
-- **Integrität:** Build- und Kompatibilitätstests bestätigen 100% Funktionalität nach der Bereinigung.
-- **Git:** Bereinigter Zustand committet und gepusht.
+- **Features:** Neues Modul `scripts/game-modes.js` integriert.
+- **UI:** Dynamischer Modus-Selector in der Lobby hinzugefügt.
+- **Modi:**
+  - *Classic:* 3 Leben, 15s Timer.
+  - *Time Attack:* 60s Timer, 1.5x Score.
+  - *Hardcore:* 1 Leben, 10s Timer, 2x Score.
+- **Git:** Feature-Branch-Änderungen committet und gepusht.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ (PRIORISIERT)
-### 1. Feature-Entwicklung (Phase 1.10)
-- **Aufgabe:** Implementierung neuer Spielmodi auf der nun sauberen Codebasis.
-### 2. Code-Review
-- **Aufgabe:** Tiefgehende Analyse der verbleibenden Scripte zur weiteren Modularisierung.
+### 1. Game-Logic Integration (Phase 1.11)
+- **Aufgabe:** Vollständige Verknüpfung der neuen Modus-Parameter mit der `calculateScore`-Logik in `game-logic.js`.
+### 2. UI-Feedback
+- **Aufgabe:** Visuelle Indikatoren im HUD für den aktuell aktiven Modus verbessern.
 
 ---
-**Status:** 2026-06-29 20:15 GMT+2 - Repository-Bereinigung abgeschlossen.
+**Status:** 2026-06-29 20:30 GMT+2 - Spielmodi-System (1.10) erfolgreich implementiert.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

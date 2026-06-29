@@ -708,3 +708,49 @@ h1 {
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 }
+
+
+.mode-selector-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.mode-btn {
+  padding: 12px 10px;
+  background: transparent;
+  border: 2px solid var(--cyber-blue);
+  color: var(--cyber-blue);
+  font-family: 'Inter', monospace;
+  font-size: 0.7rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mode-btn:hover {
+  background: rgba(0, 210, 255, 0.1);
+  box-shadow: 0 0 10px var(--cyber-blue);
+}
+
+.mode-btn.active {
+  background: var(--cyber-blue);
+  color: #000;
+  box-shadow: 0 0 20px var(--cyber-blue);
+}
+
+.mode-btn strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+}
+
+.mode-btn small {
+  display: block;
+  font-size: 0.6rem;
+  opacity: 0.8;
+}
