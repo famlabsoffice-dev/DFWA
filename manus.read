@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA
 
 ## EXECUTIVE SUMMARY
-Das DFWA-Repository wurde umfassend optimiert. Zentrale Meilensteine: PWA-Architektur (ESM, SW v1.0.2), Session-Persistenz, Timestamp-basierte Timer-Logik und haptisches Feedback. Phase 1 des Qualitätssicherungsplans (Punkt 1.1) wurde durch die Implementierung von Unit-Tests für `storage.js` und `ui-manager.js` erfolgreich abgeschlossen.
+Das DFWA-Repository wurde umfassend optimiert. Zentrale Meilensteine: PWA-Architektur (ESM, SW v1.1.0), Session-Persistenz, Timestamp-basierte Timer-Logik und haptisches Feedback. Die Qualitätssicherungsphasen 1.1–1.7 wurden vollständig abgeschlossen. Mit Phase 1.7 wurde eine vollständige Vite-Build-Pipeline eingeführt: JS wurde von 34.7 KB auf 16.0 KB (-54%) und CSS von 8.5 KB auf 7.0 KB (-18%) reduziert. Der Gzip-Transfer-Overhead sank um 33% (JS) bzw. 9% (CSS).
 
 ## DURCHGEFÜHRTE OPTIMIERUNGEN
 1. **PWA-Architektur:** Umstellung auf ES-Module; SW v1.0.2 mit ESM-Support.
@@ -29,10 +29,23 @@ Das DFWA-Repository wurde umfassend optimiert. Zentrale Meilensteine: PWA-Archit
     - Härtung des Leaderboard-Uploads durch HMAC-SHA256 Signaturen (Client-Server-Integrität).
     - Bereinigung von Inline-Skripten und API-Endpunkten zur Minimierung der Angriffsfläche.
 
+11. **QS (Punkt 1.7): Performance-Optimierung & Asset-Bundling.**
+    - **Vite 8.1 + esbuild** als Build-Stack eingeführt (`vite.config.js`).
+    - **JS-Minifizierung:** `app.js` 34.7 KB → `dist/assets/main-[hash].js` 16.0 KB (**-54%**).
+    - **CSS-Minifizierung:** `style.css` 8.5 KB → `dist/assets/main-[hash].css` 7.0 KB (**-18%**).
+    - **Gzip-Transfer:** JS 7.8 KB → 5.2 KB (-33%), CSS 2.3 KB → 2.1 KB (-9%).
+    - **Cache-Busting** via Hash-basierte Dateinamen in `dist/assets/`.
+    - **Console/Debugger-Drop** im Prod-Build via `esbuild.drop`.
+    - `server/server.js`: Static-Serving auf `dist/` umgestellt (Fallback auf Root für Entwicklung).
+    - `sw.js` → v1.1.0: API-Routen vom Cache ausgeschlossen, `STATIC_ASSETS` aktualisiert.
+    - `package.json`: Skripte `build`, `build:watch`, `preview`, `dev`, `start` ergänzt.
+    - `public/` als Vite-`publicDir` für statische Assets (JSON, Bilder, Fonts, SW).
+    - Commit: `f10f395` – gepusht auf `main`.
+
 ## NÄCHSTER SCHRITT FÜR NACHFOLGE-INSTANZ
-**Ziel:** Umsetzung von **Punkt 1.7 des Qualitätssicherungsplans: Performance-Optimierung & Asset-Bundling**.
-- **Aufgabe:** Einführung eines Build-Schritts (z. B. Vite oder esbuild) zur Minimierung von JS/CSS und Optimierung der Asset-Ladezeiten.
-- **Kontext:** Die Sicherheit und Überwachung stehen, nun soll die Benutzererfahrung durch schnellere Ladezeiten (insb. für mobile Nutzer) verbessert werden.
+**Ziel:** Umsetzung von **Punkt 1.8 des Qualitätssicherungsplans: Lighthouse-Audit & Core Web Vitals Optimierung**.
+- **Aufgabe:** Automatisierten Lighthouse-CI-Check einrichten (z. B. via `@lhci/cli`) und Core Web Vitals (LCP, CLS, FID/INP) auf Zielwerte bringen. Insbesondere: Lazy-Loading für Bilder, Preload für kritische Fonts, Image-Optimierung (WebP-Konvertierung für die großen PNG-Assets, insb. `ack_core_clean.png` mit 1.5 MB).
+- **Kontext:** Die Build-Pipeline steht. Nächster logischer Schritt ist die messbare Verifikation der Performance-Verbesserungen und die Optimierung der größten verbleibenden Bottlenecks (Bild-Assets).
 
 ---
-*Status: 2026-06-29 04:45 GMT+2 - Bereit für Phase 1.7.*
+*Status: 2026-06-29 17:00 GMT+2 - Bereit für Phase 1.8.*
