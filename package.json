@@ -4,6 +4,11 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "preview": "vite preview",
+    "dev": "vite",
+    "start": "node server/server.js",
     "test": "jest",
     "lint": "eslint .",
     "format": "prettier --write ."
@@ -30,11 +35,13 @@
     "@babel/preset-env": "^7.29.7",
     "@eslint/js": "^10.0.1",
     "babel-jest": "^30.4.1",
+    "esbuild": "^0.28.1",
     "eslint": "^10.6.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.7.0",
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
-    "prettier": "^3.9.1"
+    "prettier": "^3.9.1",
+    "vite": "^8.1.0"
   }
 }

@@ -1,11 +1,10 @@
-const SW_VERSION = 'v1.0.1';
+const SW_VERSION = 'v1.1.0';
 const CACHE_NAME = `dfwa-cache-${SW_VERSION}`;
 
-const ASSETS = [
+// Statische Assets ohne Hash-Dateinamen (Vite-Build-kompatibel)
+const STATIC_ASSETS = [
   './',
   './index.html',
-  './app.js',
-  './style.css',
   './manifest.json',
   './questions_i18n.json',
   './ack_comments.json',
@@ -22,7 +21,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
       .open(CACHE_NAME)
-      .then((cache) => cache.addAll(ASSETS))
+      .then((cache) => cache.addAll(STATIC_ASSETS))
       .then(() => self.skipWaiting())
   );
 });
@@ -51,6 +50,10 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+  // API-Anfragen nicht cachen
+  if (url.pathname.startsWith('/api/')) return;
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) return cachedResponse;

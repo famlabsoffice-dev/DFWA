@@ -7,6 +7,7 @@ import sqlite3 from 'sqlite3';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { existsSync } from 'fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -83,7 +84,17 @@ const adminLimiter = rateLimit({
   },
 });
 app.use('/api/admin/', adminLimiter);
-app.use(express.static(join(__dirname, '..')));
+// Statische Dateien aus dem Vite-Build-Output (dist/) servieren
+// Fallback auf Root-Verzeichnis falls dist/ nicht existiert (Entwicklung)
+const distPath = join(__dirname, '..', 'dist');
+const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
+app.use(express.static(staticPath));
+// SPA-Fallback: Alle nicht-API-Routen auf index.html weiterleiten
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api/')) return next();
+  const indexPath = join(staticPath, 'index.html');
+  res.sendFile(indexPath);
+});
 
 // Database setup
 const dbPath = join(__dirname, 'leaderboard.db');
