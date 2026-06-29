@@ -10,10 +10,13 @@ Das DFWA-Repository wurde umfassend optimiert. Zentrale Meilensteine: PWA-Archit
 4. **Haptik:** Vibrations-Feedback bei Erfolg/Fehler für mobile Endgeräte.
 5. **QS (Punkt 1.1):** 19 Unit-Tests (Jest/JSDOM) decken Logik, Storage und UI ab.
 
+## DURCHGEFÜHRTE OPTIMIERUNGEN (Fortsetzung)
+6. **QS (Punkt 1.2):** Vollständige Integration von ESLint und Prettier. Konfigurationsdateien (`eslint.config.js`, `.prettierrc`) sind aktiv, der gesamte Code wurde formatiert und der Linter läuft fehlerfrei (nur Warnungen für ungenutzte Variablen).
+
 ## NÄCHSTER SCHRITT FÜR NACHFOLGE-INSTANZ
-**Ziel:** Umsetzung von **Punkt 1.2 des Qualitätssicherungsplans: Linter & Formatter Integration**.
-- **Aufgabe:** Vollständige Integration von ESLint und Prettier in den Entwicklungs-Workflow.
-- **Kontext:** Die Abhängigkeiten sind bereits in der `package.json` vorhanden. Es müssen die Konfigurationsdateien (`.eslintrc.json`, `.prettierrc`) finalisiert und ein Pre-Commit-Hook (z.B. via `husky`) in Betracht gezogen werden.
+**Ziel:** Umsetzung von **Punkt 1.3 des Qualitätssicherungsplans: Verbesserte Fehlerbehandlung (Frontend)**.
+- **Aufgabe:** Implementierung von robusten Try-Catch-Blöcken und Fallback-Mechanismen in kritischen Frontend-Modulen (`api-client.js`, `storage.js`).
+- **Kontext:** Obwohl bereits grundlegende Fehlerbehandlung existiert, sollte diese gemäß dem QS-Plan systematisch über alle Module hinweg vereinheitlicht und durch benutzerfreundliche Fehlermeldungen (via `UIManager`) ergänzt werden.
 
 ---
-*Status: 2026-06-29 03:09 GMT+2 - Bereit für Phase 1.2.*
+*Status: 2026-06-29 03:12 GMT+2 - Bereit für Phase 1.3.*

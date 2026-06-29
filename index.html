@@ -1,104 +1,225 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="ACK ATTACK">
-    <meta name="theme-color" content="#000000">
-    <link rel="manifest" href="./manifest.json">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ACK ATTACK" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./style.css" />
     <title>ACK ATTACK - SYSTEM OVERRIDE</title>
-    <meta name="description" content="Das ultimative Dystopie-Quiz als PWA.">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 192 192%22><rect width=%22192%22 height=%22192%22 fill=%22black%22/><text x=%2296%22 y=%22120%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%22100%22 fill=%22%2339ff14%22 font-family=%22monospace%22 font-weight=%22bold%22>ACK</text></svg>">
-</head>
-<body>
-    <noscript><div style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;color:#39ff14;display:flex;align-items:center;justify-content:center;z-index:9999;font-family:monospace;text-align:center;padding:20px;">SYSTEM_FAILURE: JAVASCRIPT_REQUIRED_FOR_CORE_LINK</div></noscript>
+    <meta name="description" content="Das ultimative Dystopie-Quiz als PWA." />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 192 192%22><rect width=%22192%22 height=%22192%22 fill=%22black%22/><text x=%2296%22 y=%22120%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%22100%22 fill=%22%2339ff14%22 font-family=%22monospace%22 font-weight=%22bold%22>ACK</text></svg>"
+    />
+  </head>
+  <body>
+    <noscript
+      ><div
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #000;
+          color: #39ff14;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+          font-family: monospace;
+          text-align: center;
+          padding: 20px;
+        "
+      >
+        SYSTEM_FAILURE: JAVASCRIPT_REQUIRED_FOR_CORE_LINK
+      </div></noscript
+    >
     <div class="overlay"></div>
     <div id="game-container">
-        <h1>A.C.K.</h1>
-        <div id="start-screen" class="screen active">
-            <div id="eye-bg-container">
-                <img id="core-eye" src="./assets/images/ack_core_clean.png">
-                <div id="stat-player" class="stat-overlay">USER_IDENT//<br><span id="player-display">GUEST</span></div>
-                <div id="stat-lives" class="stat-overlay">VITAL_SIGNS//<br><span id="lives-display">3</span>_UNITS</div>
-                <div id="stat-id" class="stat-overlay">CORE_LINK//<br>#<span id="id-display">0000</span></div>
-                <div id="stat-best" class="stat-overlay">PEAK_DATA//<br><span id="high-score">0</span>_PTS<br><span id="battle-stats" style="color:var(--warning); font-size:0.65rem;">W:0 / L:0</span></div>
-            </div>
-            <div class="ui-content-wrapper">
-                <p style="color:var(--cyber-blue); letter-spacing:3px; font-weight:900; font-size:0.8rem; margin-bottom:2.5vh; white-space: nowrap;">AUTONOMOUS CYBERNETIC KNOWLEDGE</p>
-                <input type="text" id="player-name" class="cyber-input" placeholder="ENTER_CODENAME" maxlength="12" aria-label="Spieler-Codename eingeben" autocomplete="off">
-                <select id="mode-selector" class="cyber-select" aria-label="Modus auswählen">
-                    <option value="classic">CLASSIC_MODE</option>
-                    <option value="endless">ENDLESS_MODE</option>
-                    <option value="blitz">BLITZ_MODE</option>
-                </select>
-                <button id="resume-btn" class="option-btn battle-btn" style="display:none;" onclick="resumeProtocol()">RESUME_PROTOCOL</button>
-                <button id="start-btn" class="option-btn start-btn" onclick="initGame(false)" aria-label="Spiel starten">INIT_PROTOCOL</button>
-                <button class="option-btn battle-btn" onclick="showLobby()" aria-label="Battle Lobby öffnen">BATTLE_LOBBY</button>
-            </div>
+      <h1>A.C.K.</h1>
+      <div id="start-screen" class="screen active">
+        <div id="eye-bg-container">
+          <img id="core-eye" src="./assets/images/ack_core_clean.png" />
+          <div id="stat-player" class="stat-overlay">
+            USER_IDENT//<br /><span id="player-display">GUEST</span>
+          </div>
+          <div id="stat-lives" class="stat-overlay">
+            VITAL_SIGNS//<br /><span id="lives-display">3</span>_UNITS
+          </div>
+          <div id="stat-id" class="stat-overlay">
+            CORE_LINK//<br />#<span id="id-display">0000</span>
+          </div>
+          <div id="stat-best" class="stat-overlay">
+            PEAK_DATA//<br /><span id="high-score">0</span>_PTS<br /><span
+              id="battle-stats"
+              style="color: var(--warning); font-size: 0.65rem"
+              >W:0 / L:0</span
+            >
+          </div>
         </div>
+        <div class="ui-content-wrapper">
+          <p
+            style="
+              color: var(--cyber-blue);
+              letter-spacing: 3px;
+              font-weight: 900;
+              font-size: 0.8rem;
+              margin-bottom: 2.5vh;
+              white-space: nowrap;
+            "
+          >
+            AUTONOMOUS CYBERNETIC KNOWLEDGE
+          </p>
+          <input
+            type="text"
+            id="player-name"
+            class="cyber-input"
+            placeholder="ENTER_CODENAME"
+            maxlength="12"
+            aria-label="Spieler-Codename eingeben"
+            autocomplete="off"
+          />
+          <select id="mode-selector" class="cyber-select" aria-label="Modus auswählen">
+            <option value="classic">CLASSIC_MODE</option>
+            <option value="endless">ENDLESS_MODE</option>
+            <option value="blitz">BLITZ_MODE</option>
+          </select>
+          <button
+            id="resume-btn"
+            class="option-btn battle-btn"
+            style="display: none"
+            onclick="resumeProtocol()"
+          >
+            RESUME_PROTOCOL
+          </button>
+          <button
+            id="start-btn"
+            class="option-btn start-btn"
+            onclick="initGame(false)"
+            aria-label="Spiel starten"
+          >
+            INIT_PROTOCOL
+          </button>
+          <button
+            class="option-btn battle-btn"
+            onclick="showLobby()"
+            aria-label="Battle Lobby öffnen"
+          >
+            BATTLE_LOBBY
+          </button>
+        </div>
+      </div>
 
-        <div id="battle-lobby" class="screen">
-            <div class="ui-content-wrapper" style="margin-top: 20vh;">
-                <h2 style="color:var(--warning); margin-bottom: 20px;">BATTLE_OVERRIDE</h2>
-                <input type="text" id="challenge-code-input" class="cyber-input" style="border-color: var(--warning); color: var(--warning);" placeholder="ENTER_CHALLENGE_CODE">
-                <button class="option-btn battle-btn" onclick="startChallenge()">START_CHALLENGE</button>
-                <button class="option-btn" onclick="showLeaderboard()" style="border-color: var(--neon); color: var(--neon);">SERVER_ROOM</button>
-                <button class="option-btn" onclick="hideLobby()">BACK_TO_CORE</button>
-            </div>
+      <div id="battle-lobby" class="screen">
+        <div class="ui-content-wrapper" style="margin-top: 20vh">
+          <h2 style="color: var(--warning); margin-bottom: 20px">BATTLE_OVERRIDE</h2>
+          <input
+            type="text"
+            id="challenge-code-input"
+            class="cyber-input"
+            style="border-color: var(--warning); color: var(--warning)"
+            placeholder="ENTER_CHALLENGE_CODE"
+          />
+          <button class="option-btn battle-btn" onclick="startChallenge()">START_CHALLENGE</button>
+          <button
+            class="option-btn"
+            onclick="showLeaderboard()"
+            style="border-color: var(--neon); color: var(--neon)"
+          >
+            SERVER_ROOM
+          </button>
+          <button class="option-btn" onclick="hideLobby()">BACK_TO_CORE</button>
         </div>
+      </div>
 
-        <div id="leaderboard-screen" class="screen">
-            <div class="server-room-bg"></div>
-            <div class="ui-content-wrapper" style="z-index: 10;">
-                <h2 class="glitch-text" data-text="SERVER_ROOM_DATA">SERVER_ROOM_DATA</h2>
-                <div id="leaderboard-list" class="cyber-list">
-                    <div class="list-header">
-                        <span>RANK</span>
-                        <span>CODENAME</span>
-                        <span>SCORE</span>
-                        <span>W/L</span>
-                    </div>
-                    <div id="leaderboard-entries">
-                        <!-- Einträge werden dynamisch geladen -->
-                    </div>
-                </div>
-                <button class="option-btn" onclick="hideLeaderboard()">EXIT_SERVER_ROOM</button>
+      <div id="leaderboard-screen" class="screen">
+        <div class="server-room-bg"></div>
+        <div class="ui-content-wrapper" style="z-index: 10">
+          <h2 class="glitch-text" data-text="SERVER_ROOM_DATA">SERVER_ROOM_DATA</h2>
+          <div id="leaderboard-list" class="cyber-list">
+            <div class="list-header">
+              <span>RANK</span>
+              <span>CODENAME</span>
+              <span>SCORE</span>
+              <span>W/L</span>
             </div>
+            <div id="leaderboard-entries">
+              <!-- Einträge werden dynamisch geladen -->
+            </div>
+          </div>
+          <button class="option-btn" onclick="hideLeaderboard()">EXIT_SERVER_ROOM</button>
         </div>
+      </div>
 
-        <div id="game-screen" class="screen">
-            <div id="timeline-container" role="progressbar" aria-valuemin="0" aria-valuemax="15" aria-valuenow="15" aria-label="Verbleibende Zeit">
-                <div id="timeline-bar"></div>
-            </div>
-            <div id="score-hud" aria-live="polite" aria-atomic="true" style="position:absolute;top:16vh;right:20px;text-align:right;z-index:50;font-size:0.75rem;font-weight:900;line-height:1.6;">
-	              <span id="hud-mode" style="color:var(--cyber-blue); font-size:0.6rem;">CLASSIC</span><br>
-	              <span id="hud-score" style="color:var(--neon);">0_PTS</span><br>
-	              <span id="hud-streak" style="color:var(--warning);display:none;">STREAK_<span id="hud-streak-count">0</span>X</span>
-	            </div>
-            <div id="question-box" role="status" aria-live="polite" aria-atomic="true">INITIALIZING...</div>
-            <div id="options-container" role="group" aria-label="Antwortoptionen"></div>
-            <button id="pause-btn" onclick="pauseProtocol()" aria-label="Spiel pausieren">PAUSE</button>
+      <div id="game-screen" class="screen">
+        <div
+          id="timeline-container"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="15"
+          aria-valuenow="15"
+          aria-label="Verbleibende Zeit"
+        >
+          <div id="timeline-bar"></div>
         </div>
+        <div
+          id="score-hud"
+          aria-live="polite"
+          aria-atomic="true"
+          style="
+            position: absolute;
+            top: 16vh;
+            right: 20px;
+            text-align: right;
+            z-index: 50;
+            font-size: 0.75rem;
+            font-weight: 900;
+            line-height: 1.6;
+          "
+        >
+          <span id="hud-mode" style="color: var(--cyber-blue); font-size: 0.6rem">CLASSIC</span
+          ><br />
+          <span id="hud-score" style="color: var(--neon)">0_PTS</span><br />
+          <span id="hud-streak" style="color: var(--warning); display: none"
+            >STREAK_<span id="hud-streak-count">0</span>X</span
+          >
+        </div>
+        <div id="question-box" role="status" aria-live="polite" aria-atomic="true">
+          INITIALIZING...
+        </div>
+        <div id="options-container" role="group" aria-label="Antwortoptionen"></div>
+        <button id="pause-btn" onclick="pauseProtocol()" aria-label="Spiel pausieren">PAUSE</button>
+      </div>
     </div>
 
     <div id="feedback-screen" role="dialog" aria-modal="true" aria-labelledby="feedback-msg">
-        <div id="feedback-eye-container">
-            <img id="feedback-eye-base" src="./assets/images/ack_core_clean.png">
-        </div>
-        <div id="feedback-msg"></div>
+      <div id="feedback-eye-container">
+        <img id="feedback-eye-base" src="./assets/images/ack_core_clean.png" />
+      </div>
+      <div id="feedback-msg"></div>
     </div>
 
     <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div id="modal-content">
-            <h2 id="modal-title" style="color: var(--warning); margin-bottom: 20px;">CHALLENGE_COMPLETE</h2>
-            <p id="modal-text" style="color: #fff; margin-bottom: 20px; font-family: monospace; word-break: break-all;"></p>
-            <button class="option-btn" onclick="closeSystem()">CLOSE_SYSTEM</button>
-        </div>
+      <div id="modal-content">
+        <h2 id="modal-title" style="color: var(--warning); margin-bottom: 20px">
+          CHALLENGE_COMPLETE
+        </h2>
+        <p
+          id="modal-text"
+          style="color: #fff; margin-bottom: 20px; font-family: monospace; word-break: break-all"
+        ></p>
+        <button class="option-btn" onclick="closeSystem()">CLOSE_SYSTEM</button>
+      </div>
     </div>
 
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>

@@ -50,5 +50,5 @@ export const UIManager = {
       row.append(rankSpan, nameSpan, scoreSpan, statsSpan);
       entriesDiv.appendChild(row);
     });
-  }
+  },
 };

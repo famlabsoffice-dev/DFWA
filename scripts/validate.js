@@ -12,25 +12,25 @@ const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 const valid = validate(data);
 
 if (!valid) {
-    console.error('JSON-Validierung fehlgeschlagen:');
-    validate.errors.forEach(err => {
-        console.error(`- ${err.instancePath}: ${err.message}`);
-    });
-    process.exit(1);
+  console.error('JSON-Validierung fehlgeschlagen:');
+  validate.errors.forEach((err) => {
+    console.error(`- ${err.instancePath}: ${err.message}`);
+  });
+  process.exit(1);
 } else {
-    // Zusätzliche Prüfungen für Platzhalter
-    let hasPlaceholders = false;
-    data.forEach((q, index) => {
-        const check = (str) => /TBD|Folgt|Platzhalter/i.test(str);
-        if (check(q.cat) || check(q.text.de) || check(q.text.en)) {
-            console.error(`Platzhalter in Frage ${index} gefunden.`);
-            hasPlaceholders = true;
-        }
-    });
-
-    if (hasPlaceholders) {
-        process.exit(1);
+  // Zusätzliche Prüfungen für Platzhalter
+  let hasPlaceholders = false;
+  data.forEach((q, index) => {
+    const check = (str) => /TBD|Folgt|Platzhalter/i.test(str);
+    if (check(q.cat) || check(q.text.de) || check(q.text.en)) {
+      console.error(`Platzhalter in Frage ${index} gefunden.`);
+      hasPlaceholders = true;
     }
+  });
 
-    console.log('JSON-Validierung erfolgreich.');
+  if (hasPlaceholders) {
+    process.exit(1);
+  }
+
+  console.log('JSON-Validierung erfolgreich.');
 }

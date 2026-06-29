@@ -20,15 +20,15 @@ Die folgende Checkliste bewertet die Implementierung der angeforderten Features:
 
 **Erläuterungen zu den Features:**
 
-*   **PWA-Offline**: Die `manifest.json` definiert die PWA-Eigenschaften, und `sw.js` (Service Worker) implementiert Caching-Strategien (`caches.match`, `cache.addAll`), um die Anwendung offline verfügbar zu machen.
-*   **Session-Persistence**: Die `app.js` verwendet `localStorage.getItem("dfwa_session")` und `saveSession()`/`restoreSession()` Funktionen, um den Spielzustand (Score, Lives, Streak, etc.) über Browsersitzungen hinweg zu speichern und wiederherzustellen.
-*   **Timer**: Ein Timer (`state.timer`, `timerInterval`) ist in `app.js` implementiert, der die verbleibende Zeit für die Beantwortung von Fragen verwaltet und bei Ablauf Aktionen auslöst.
-*   **Lives**: Das Spiel verfolgt die Anzahl der Leben (`state.lives`), die bei falschen Antworten reduziert werden und zum Spielende führen, wenn sie Null erreichen.
-*   **Streak**: Eine Streak-Funktion (`state.streak`, `state.streakMax`) ist vorhanden, die aufeinanderfolgende richtige Antworten zählt und Boni vergibt.
-*   **Challenge-Code**: Die `app.js` enthält Logik zum Generieren (`generateChallengeCode()`) und Starten (`startChallenge()`) von Herausforderungen mittels Base64-kodierter JSON-Objekte, die einen Seed und eine Signatur enthalten.
-*   **Leaderboard**: Das Leaderboard wird sowohl clientseitig (`fetchLeaderboard()`, `displayLeaderboard()`) als auch serverseitig (`server.js` mit SQLite-Datenbank) verwaltet, um Spielergebnisse zu speichern und anzuzeigen.
-*   **Sarkasmus-Engine**: Die `ack_comments.json` enthält bilinguale sarkastische Kommentare, die von der `getComment()` Funktion in `app.js` basierend auf der Sprache und einer Variante (A/B) ausgewählt werden.
-*   **Bilingualität**: Die Anwendung unterstützt Deutsch und Englisch, was durch die `questions_i18n.json` (Fragen in beiden Sprachen) und die Sprachauswahl (`state.lang`, `setLanguage()`, `updateUIForLanguage()`) in `app.js` belegt wird.
+- **PWA-Offline**: Die `manifest.json` definiert die PWA-Eigenschaften, und `sw.js` (Service Worker) implementiert Caching-Strategien (`caches.match`, `cache.addAll`), um die Anwendung offline verfügbar zu machen.
+- **Session-Persistence**: Die `app.js` verwendet `localStorage.getItem("dfwa_session")` und `saveSession()`/`restoreSession()` Funktionen, um den Spielzustand (Score, Lives, Streak, etc.) über Browsersitzungen hinweg zu speichern und wiederherzustellen.
+- **Timer**: Ein Timer (`state.timer`, `timerInterval`) ist in `app.js` implementiert, der die verbleibende Zeit für die Beantwortung von Fragen verwaltet und bei Ablauf Aktionen auslöst.
+- **Lives**: Das Spiel verfolgt die Anzahl der Leben (`state.lives`), die bei falschen Antworten reduziert werden und zum Spielende führen, wenn sie Null erreichen.
+- **Streak**: Eine Streak-Funktion (`state.streak`, `state.streakMax`) ist vorhanden, die aufeinanderfolgende richtige Antworten zählt und Boni vergibt.
+- **Challenge-Code**: Die `app.js` enthält Logik zum Generieren (`generateChallengeCode()`) und Starten (`startChallenge()`) von Herausforderungen mittels Base64-kodierter JSON-Objekte, die einen Seed und eine Signatur enthalten.
+- **Leaderboard**: Das Leaderboard wird sowohl clientseitig (`fetchLeaderboard()`, `displayLeaderboard()`) als auch serverseitig (`server.js` mit SQLite-Datenbank) verwaltet, um Spielergebnisse zu speichern und anzuzeigen.
+- **Sarkasmus-Engine**: Die `ack_comments.json` enthält bilinguale sarkastische Kommentare, die von der `getComment()` Funktion in `app.js` basierend auf der Sprache und einer Variante (A/B) ausgewählt werden.
+- **Bilingualität**: Die Anwendung unterstützt Deutsch und Englisch, was durch die `questions_i18n.json` (Fragen in beiden Sprachen) und die Sprachauswahl (`state.lang`, `setLanguage()`, `updateUIForLanguage()`) in `app.js` belegt wird.
 
 ### Dystopischer Server-Monitor
 
