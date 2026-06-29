@@ -1,21 +1,28 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.14 (Replay-Schutz) wurde erfolgreich abgeschlossen. Die PWA verfügt nun über eine gehärtete HMAC-Validierung inklusive Zeitstempel-Prüfung, die Replay-Attacken effektiv verhindert. Alle Sicherheits-Middlewares wurden reaktiviert und das System ist für den produktiven Einsatz vorbereitet. Phase 2.1 wird die PWA-Fähigkeiten durch Offline-Synchronisation weiter ausbauen.
+Phase 1.14 (Replay-Schutz) abgeschlossen. Eine externe Code-Analyse (Claude) identifizierte 12 Schwachstellen, die die PWA-Funktionalität und Spielmechanik beeinträchtigen. Phase 2.0 fokussiert sich auf die Behebung dieser Blocker zur Erreichung der "weltbesten PWA"-Qualität.
+
+## OPTIMIERUNGSLISTE (PHASE 2.0 - PWA HÄRTUNG)
+
+| ID | Task | Status | Ziel |
+| :--- | :--- | :--- | :--- |
+| **2.1** | **DOM-Synchronisation** | ✅ Erledigt | Fix von Mismatches: `question-text`, `cat-display`, `timer-text` in HTML ergänzen. |
+| **2.2** | **Mode-Selector Fix** | Geplant | `mode-selector` als `select` oder Button-Logic fixen (aktuell `undefined`). |
+| **2.3** | **Game-Logic Sync** | Geplant | Blitz-Modus definieren; Timer-Werte aus `ModeConfig` statt Hardcoding nutzen. |
+| **2.4** | **Payload & Race-Condition** | Geplant | `mode` in Leaderboard-Payload aufnehmen; doppelten API-Aufruf in `endGame` entfernen. |
+| **2.5** | **PWA & SW Optimierung** | Geplant | `vite.config.js` Icon-Pfade fixen; Umstellung auf `injectManifest` (Vermeidung SW-Kollision). |
+| **2.6** | **Security & Events** | Geplant | `closeSystem` Event-Listener fixen; `/config/secret` Architektur-Review. |
 
 ## AKTUELLER STATUS
-- **Replay-Schutz:** HMAC-Signatur umfasst nun einen Zeitstempel (ms). Backend validiert max. 30s Alter.
-- **Integrität:** Konsistente Typkonvertierung im Backend garantiert robuste Signatur-Prüfung.
-- **Sicherheit:** Alle Middlewares (Helmet, Rate-Limit, CORS) sind aktiv und korrekt konfiguriert.
-- **PWA-Baseline:** Service Worker und Manifest sind stabil; "weltbeste PWA"-Gebot bleibt Leitlinie.
-- **Authentifizierung:** GitHub PAT erfolgreich für automatisierte Repository-Interaktion konfiguriert.
+- **Sicherheit:** HMAC + Replay-Schutz (30s) aktiv.
+- **Integrität:** Backend-Typkonvertierung stabil.
+- **Blocker:** DOM-IDs und Mode-Selection verhindern aktuell korrekten Spielablauf in bestimmten Modi.
 
-## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ (PRIORISIERT)
-### 1. Offline-Sync & PWA-Optimierung (Phase 2.1)
-- **Aufgabe:** Implementierung einer Offline-Queue für Scores und Background-Sync bei Wiederherstellung der Verbindung.
-### 2. UI/UX Polishing
-- **Aufgabe:** Animationen für Filterwechsel im Leaderboard hinzufügen.
+## NÄCHSTE SCHRITTE
+1. Ausführung Task 2.2: Mode-Selector Fix.
+2. Integration der Blitz-Modus-Logik.
 
 ---
-**Status:** 2026-06-30 16:00 GMT+2 - Replay-Schutz (1.14) erfolgreich abgeschlossen.
+**Status:** 2026-06-30 17:00 GMT+2 - Task 2.1 (DOM-Sync) abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
