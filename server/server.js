@@ -13,11 +13,23 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
 const SYSTEM_SECRET = process.env.SYSTEM_SECRET || 'LOCAL_ONLY_UNTRUSTED';
+
+// Security: Prevent production startup without a real secret
+if (process.env.NODE_ENV === 'production' && SYSTEM_SECRET === 'LOCAL_ONLY_UNTRUSTED') {
+  console.error(
+    'FATAL: SYSTEM_SECRET is not set in production. Server will not start. Please set the SYSTEM_SECRET environment variable.'
+  );
+  process.exit(1);
+}
+
 if (SYSTEM_SECRET === 'LOCAL_ONLY_UNTRUSTED') {
   console.warn(
     'WARNING: SYSTEM_SECRET is not set. Using a default secret is insecure. Please set the SYSTEM_SECRET environment variable.'
   );
 }
+
+// Security: Trust proxy for correct IP resolution in rate limiting
+app.set('trust proxy', 1);
 
 // Middleware
 app.use(
