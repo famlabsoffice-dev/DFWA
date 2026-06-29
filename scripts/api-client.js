@@ -4,12 +4,13 @@ import { UIManager } from './ui-manager.js';
 export const APIClient = {
   async updateLeaderboard(baseUrl, payload, secret) {
     try {
-      // Erzeuge kryptografische Signatur für den Upload
+      const mode = payload.mode || 'classic';
       const msg = JSON.stringify({
         playerId: payload.playerId,
         score: payload.score,
         wins: payload.wins,
-        losses: payload.losses
+        losses: payload.losses,
+        mode: mode
       });
       const auth = await this.generateHMAC(msg, secret);
 

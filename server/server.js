@@ -125,6 +125,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
           losses INTEGER,
           variant TEXT,
           accuracy INTEGER,
+          mode TEXT DEFAULT 'classic',
           timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
       )`);
       db.run(`CREATE TABLE IF NOT EXISTS ratelimit_logs (
@@ -151,9 +152,9 @@ const db = new sqlite3.Database(dbPath, (err) => {
           ip TEXT,
           timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
       )`);
-  // Migration: Spalten hinzufügen falls sie fehlen
   db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, (err) => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN accuracy INTEGER`, (err) => {});
+  db.run(`ALTER TABLE leaderboard ADD COLUMN mode TEXT DEFAULT 'classic'`, (err) => {});
 });
 
 // Routes
@@ -177,10 +178,10 @@ app.get('/api/leaderboard', (req, res) => {
 });
 
 app.post('/api/leaderboard', (req, res) => {
-  const { playerId, playerName, score, wins, losses, variant, accuracy, auth } = req.body;
+  const { playerId, playerName, score, wins, losses, variant, accuracy, mode, auth } = req.body;
+  const modeVal = mode || 'classic';
 
-  // Kryptografische Validierung des Leaderboard-Uploads
-  const msg = JSON.stringify({ playerId, score, wins, losses });
+  const msg = JSON.stringify({ playerId, score, wins, losses, mode: modeVal });
   const expectedAuth = crypto
     .createHmac('sha256', SYSTEM_SECRET)
     .update(msg)
@@ -194,9 +195,14 @@ app.post('/api/leaderboard', (req, res) => {
     return res.status(400).json({ error: 'Missing playerId or playerName' });
   }
 
+  const validModes = ['classic', 'timeAttack', 'hardcore'];
+  if (!validModes.includes(modeVal)) {
+    return res.status(400).json({ error: 'INVALID_MODE' });
+  }
+
   const query = `
-        INSERT INTO leaderboard (playerId, playerName, score, wins, losses, variant, accuracy, timestamp)
-        VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+        INSERT INTO leaderboard (playerId, playerName, score, wins, losses, variant, accuracy, mode, timestamp)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
         ON CONFLICT(playerId) DO UPDATE SET
             playerName = excluded.playerName,
             score = MAX(leaderboard.score, excluded.score),
@@ -204,10 +210,11 @@ app.post('/api/leaderboard', (req, res) => {
             losses = excluded.losses,
             variant = excluded.variant,
             accuracy = excluded.accuracy,
+            mode = excluded.mode,
             timestamp = CURRENT_TIMESTAMP
     `;
 
-  db.run(query, [playerId, playerName, score, wins, losses, variant, accuracy], function (err) {
+  db.run(query, [playerId, playerName, score, wins, losses, variant, accuracy, modeVal], function (err) {
     if (err) {
       console.error('Leaderboard update error:', err);
       res.status(500).json({ error: 'Failed to update leaderboard' });
