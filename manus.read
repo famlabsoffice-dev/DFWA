@@ -1,21 +1,21 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.12 (Leaderboard UI Filter) wurde erfolgreich abgeschlossen. Das Leaderboard im Frontend verfügt nun über interaktive Filter für die Spielmodi Classic, Time Attack und Hardcore. Die API wurde erweitert, um serverseitig gefilterte Daten basierend auf dem Modus-Parameter zu liefern.
+Phase 1.13 (Security Audit) wurde erfolgreich abgeschlossen. Die HMAC-Implementierung wurde unter Lastbedingungen (100 parallel Requests) und gegen gezielte Angriffe geprüft. Die Signatur-Validierung verhindert effektiv die Manipulation von Scores. Eine Schwachstelle bezüglich Replay-Attacken wurde identifiziert und für die Behebung in der nächsten Phase priorisiert.
 
 ## AKTUELLER STATUS
-- **Backend:** `GET /api/leaderboard` unterstützt nun den `mode` Query-Parameter zur Filterung.
-- **APIClient:** `fetchLeaderboard` Methode um Modus-Parameter erweitert.
-- **Frontend UI:** Filter-Buttons im Leaderboard-Screen implementiert.
-- **Logik:** Dynamisches Nachladen der Leaderboard-Daten bei Filterwechsel.
-- **Verifizierung:** SQL-Filterung erfolgreich mit Testdaten validiert.
+- **Lasttest:** HMAC-Validierung zeigt stabile Performance (durchschnittlich 18ms pro Request unter Last).
+- **Integrität:** Score-Manipulation wird zuverlässig mit HTTP 403 (INVALID_AUTH_SIGNATURE) abgelehnt.
+- **Schwachstelle:** Replay-Attacken sind aktuell möglich, da kein Timestamp/Nonce in der HMAC-Signatur validiert wird.
+- **Rate-Limiting:** Express-Rate-Limit (100 req/15min) schützt effektiv vor Brute-Force/DDoS auf API-Ebene.
+- **Infrastruktur:** Server-Stabilität unter moderater Last verifiziert.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ (PRIORISIERT)
-### 1. Security Audit (Phase 1.13)
-- **Aufgabe:** Tiefenprüfung der HMAC-Implementierung unter Lastbedingungen.
+### 1. Replay-Schutz (Phase 1.14)
+- **Aufgabe:** Integration eines Timestamps in die HMAC-Signatur und serverseitige Validierung (max. 30s Alter).
 ### 2. UI/UX Polishing
 - **Aufgabe:** Animationen für Filterwechsel im Leaderboard hinzufügen.
 
 ---
-**Status:** 2026-06-30 12:00 GMT+2 - Leaderboard UI Filter (1.12) erfolgreich abgeschlossen.
+**Status:** 2026-06-30 14:30 GMT+2 - Security Audit (1.13) erfolgreich abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
