@@ -19,7 +19,22 @@ if (!SYSTEM_SECRET) {
 }
 
 // Middleware
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+        fontSrc: ["'self'", "https://fonts.gstatic.com"],
+        imgSrc: ["'self'", "data:", "https://*"],
+        connectSrc: ["'self'"],
+        upgradeInsecureRequests: [],
+      },
+    },
+    crossOriginEmbedderPolicy: false,
+  })
+);
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
@@ -141,9 +156,15 @@ app.get('/api/leaderboard', (req, res) => {
 app.post('/api/leaderboard', (req, res) => {
   const { playerId, playerName, score, wins, losses, variant, accuracy, auth } = req.body;
 
-  // Einfache Integritätsprüfung (Secret-basiert)
-  if (auth !== SYSTEM_SECRET) {
-    return res.status(403).json({ error: 'Unauthorized' });
+  // Kryptografische Validierung des Leaderboard-Uploads
+  const msg = JSON.stringify({ playerId, score, wins, losses });
+  const expectedAuth = crypto
+    .createHmac('sha256', SYSTEM_SECRET)
+    .update(msg)
+    .digest('hex');
+
+  if (auth !== expectedAuth && auth !== SYSTEM_SECRET) {
+    return res.status(403).json({ error: 'INVALID_AUTH_SIGNATURE' });
   }
 
   if (!playerId || !playerName) {

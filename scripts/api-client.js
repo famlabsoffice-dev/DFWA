@@ -2,12 +2,21 @@ import { API_ENDPOINTS } from './constants.js';
 import { UIManager } from './ui-manager.js';
 
 export const APIClient = {
-  async updateLeaderboard(baseUrl, payload) {
+  async updateLeaderboard(baseUrl, payload, secret) {
     try {
+      // Erzeuge kryptografische Signatur für den Upload
+      const msg = JSON.stringify({
+        playerId: payload.playerId,
+        score: payload.score,
+        wins: payload.wins,
+        losses: payload.losses
+      });
+      const auth = await this.generateHMAC(msg, secret);
+
       const res = await fetch(`${baseUrl}${API_ENDPOINTS.LEADERBOARD}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ ...payload, auth }),
       });
       if (!res.ok) throw new Error(`HTTP_${res.status}`);
     } catch (e) {
@@ -59,6 +68,21 @@ export const APIClient = {
       console.error('Failed to report error to server:', e);
     }
   },
+  async generateHMAC(message, secret) {
+    const encoder = new TextEncoder();
+    const key = await crypto.subtle.importKey(
+      'raw',
+      encoder.encode(secret),
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['sign']
+    );
+    const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(message));
+    return Array.from(new Uint8Array(signature))
+      .map((b) => b.toString(16).padStart(2, '0'))
+      .join('');
+  },
+
   async reportMetric(baseUrl, metricName, value) {
     try {
       await fetch(`${baseUrl}${API_ENDPOINTS.METRICS}`, {

@@ -24,10 +24,15 @@ Das DFWA-Repository wurde umfassend optimiert. Zentrale Meilensteine: PWA-Archit
    - Backend-Infrastruktur für Webhook-Alerts via `ERROR_WEBHOOK_URL` implementiert.
    - Echtzeit-Alerting bei kritischen Client-Fehlern aktiviert.
 
+10. **QS (Punkt 1.6): Sicherheits-Audit & CSP-Härtung.**
+    - Implementierung einer strikten Content Security Policy (CSP) via Helmet im Backend.
+    - Härtung des Leaderboard-Uploads durch HMAC-SHA256 Signaturen (Client-Server-Integrität).
+    - Bereinigung von Inline-Skripten und API-Endpunkten zur Minimierung der Angriffsfläche.
+
 ## NÄCHSTER SCHRITT FÜR NACHFOLGE-INSTANZ
-**Ziel:** Umsetzung von **Punkt 1.6 des Qualitätssicherungsplans: Sicherheits-Audit & CSP-Härtung**.
-- **Aufgabe:** Implementierung einer strikten Content Security Policy (CSP) und Überprüfung der kryptografischen Integrität aller Client-Server-Schnittstellen.
-- **Kontext:** Das System ist funktional und überwacht, nun muss die Angriffsfläche minimiert werden.
+**Ziel:** Umsetzung von **Punkt 1.7 des Qualitätssicherungsplans: Performance-Optimierung & Asset-Bundling**.
+- **Aufgabe:** Einführung eines Build-Schritts (z. B. Vite oder esbuild) zur Minimierung von JS/CSS und Optimierung der Asset-Ladezeiten.
+- **Kontext:** Die Sicherheit und Überwachung stehen, nun soll die Benutzererfahrung durch schnellere Ladezeiten (insb. für mobile Nutzer) verbessert werden.
 
 ---
-*Status: 2026-06-29 04:15 GMT+2 - Bereit für Phase 1.6.*
+*Status: 2026-06-29 04:45 GMT+2 - Bereit für Phase 1.7.*

@@ -635,12 +635,8 @@ async function updateLeaderboard() {
       variant: state.variant,
       accuracy: accuracy,
     };
-    const res = await fetch(`${API_BASE_URL}/api/leaderboard`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-    if (res.ok) console.log('Score submitted');
+    await APIClient.updateLeaderboard(API_BASE_URL, payload, state.systemSecret);
+    console.log('Score submitted');
   } catch (e) {
     console.warn('Leaderboard update failed (offline mode)');
   }
