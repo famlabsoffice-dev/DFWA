@@ -465,3 +465,246 @@ h1 {
     clip: rect(50px, 9999px, 80px, 0);
   }
 }
+
+
+/* ===== RESPONSIVE DESIGN: FOLDABLES & EXTREME FORMATS ===== */
+
+/* Foldable Devices: Vertical Fold (e.g., Samsung Galaxy Z Fold) */
+@media (max-height: 600px) and (min-width: 600px) {
+  h1 {
+    font-size: clamp(2rem, 12vw, 3rem);
+    top: 1vh;
+  }
+  #eye-bg-container {
+    top: 35%;
+    width: 120vw;
+    max-width: 800px;
+  }
+  .stat-overlay {
+    font-size: 0.7rem;
+  }
+  #stat-player {
+    top: 20%;
+  }
+  #stat-lives {
+    top: 20%;
+  }
+  #stat-id {
+    bottom: 25%;
+  }
+  #stat-best {
+    bottom: 25%;
+  }
+  #question-box {
+    height: 15vh;
+    font-size: 1rem;
+    margin-top: 10vh;
+  }
+  .ui-content-wrapper {
+    margin-top: 35vh;
+  }
+  .option-btn {
+    padding: 12px;
+    font-size: 0.8rem;
+    max-width: 350px;
+    margin-bottom: 8px;
+  }
+  #timeline-container {
+    top: 8vh;
+    max-width: 500px;
+  }
+}
+
+/* Ultra-Wide Monitors (Aspect Ratio > 21:9) */
+@media (min-width: 2560px) {
+  h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    top: 3vh;
+    letter-spacing: 25px;
+  }
+  #eye-bg-container {
+    width: 150vw;
+    max-width: 1600px;
+    top: 40%;
+  }
+  .stat-overlay {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  #stat-player {
+    top: 25%;
+    left: 10%;
+  }
+  #stat-lives {
+    top: 25%;
+    right: 10%;
+  }
+  #stat-id {
+    bottom: 30%;
+    left: 10%;
+  }
+  #stat-best {
+    bottom: 30%;
+    right: 10%;
+  }
+  #question-box {
+    height: 30vh;
+    font-size: 2.5rem;
+    margin-top: 20vh;
+    padding: 40px;
+  }
+  .ui-content-wrapper {
+    margin-top: 55vh;
+    padding: 0 50px;
+  }
+  .option-btn {
+    padding: 25px;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 18px;
+  }
+  .cyber-input,
+  .cyber-select {
+    padding: 20px;
+    max-width: 600px;
+    font-size: 1.1rem;
+  }
+  #feedback-msg {
+    font-size: 1.8rem;
+    padding: 50px;
+    max-width: 800px;
+  }
+  #modal-content {
+    max-width: 700px;
+    padding: 50px;
+  }
+  .cyber-list {
+    max-width: 800px;
+    font-size: 1rem;
+  }
+  .list-header {
+    font-size: 1rem;
+  }
+  .leaderboard-entry {
+    font-size: 1.1rem;
+  }
+  #pause-btn {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Foldable Horizontal (Landscape Fold) */
+@media (max-height: 500px) and (min-width: 1000px) {
+  h1 {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+    top: 0.5vh;
+  }
+  #eye-bg-container {
+    top: 30%;
+    width: 100vw;
+    max-width: 600px;
+    height: 100vw;
+  }
+  .stat-overlay {
+    font-size: 0.65rem;
+  }
+  #stat-player {
+    top: 15%;
+    left: 8%;
+  }
+  #stat-lives {
+    top: 15%;
+    right: 8%;
+  }
+  #stat-id {
+    bottom: 20%;
+    left: 8%;
+  }
+  #stat-best {
+    bottom: 20%;
+    right: 8%;
+  }
+  #question-box {
+    height: 12vh;
+    font-size: 0.9rem;
+    margin-top: 5vh;
+    padding: 15px;
+  }
+  .ui-content-wrapper {
+    margin-top: 25vh;
+    padding: 0 15px;
+  }
+  .option-btn {
+    padding: 10px;
+    font-size: 0.75rem;
+    max-width: 300px;
+    margin-bottom: 6px;
+  }
+  #feedback-eye-container {
+    height: 30vh;
+    max-width: 400px;
+  }
+  #feedback-msg {
+    font-size: 0.95rem;
+    padding: 20px;
+    margin-bottom: 5vh;
+  }
+}
+
+/* Aspect Ratio Media Queries (Modern Approach) */
+@media (aspect-ratio: 9/16) {
+  /* Tall Phones */
+  h1 {
+    font-size: clamp(2.5rem, 14vw, 4rem);
+  }
+  #eye-bg-container {
+    width: 130vw;
+    max-width: 900px;
+  }
+}
+
+@media (aspect-ratio: 16/9) {
+  /* Widescreen Monitors */
+  #eye-bg-container {
+    width: 150vw;
+    max-width: 1200px;
+  }
+  .ui-content-wrapper {
+    margin-top: 50vh;
+  }
+}
+
+@media (aspect-ratio: 21/9) {
+  /* Ultra-Wide Monitors */
+  #eye-bg-container {
+    width: 160vw;
+    max-width: 1400px;
+  }
+  .ui-content-wrapper {
+    margin-top: 48vh;
+  }
+  .option-btn {
+    max-width: 500px;
+  }
+}
+
+/* Fold-Specific Media Features (CSS Containment) */
+@supports (padding: max(0px)) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* Smooth transitions for devices that support it */
+    #eye-bg-container,
+    .stat-overlay,
+    .ui-content-wrapper {
+      transition: all 0.3s ease-out;
+    }
+  }
+}
+
+/* Prevent layout shift on notched/bezel devices */
+@media (viewport-fit: cover) {
+  body,
+  html {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+}
