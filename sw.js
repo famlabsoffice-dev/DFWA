@@ -9,7 +9,7 @@ const STATIC_ASSETS = [
   './questions_i18n.json',
   './ack_comments.json',
   './assets/fonts/inter-900.woff2',
-  './assets/images/ack_core_clean.png',
+  './assets/images/ack_core_clean.webp',
   './assets/images/ack_core_closed_clean.png',
   './assets/icons/icon-192.png',
   './assets/icons/icon-512.png',

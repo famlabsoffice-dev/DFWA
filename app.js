@@ -767,7 +767,7 @@ function checkAnswer(correct) {
           hudStreak.style.display = 'none';
         }
       }
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_clean.png';
+      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_clean.webp';
       if (fMsg) {
         fMsg.style.borderColor = 'var(--neon)';
         fMsg.style.color = 'var(--neon)';
@@ -781,7 +781,7 @@ function checkAnswer(correct) {
       if (hudStreak) hudStreak.style.display = 'none';
       const livesDisplay = document.getElementById('lives-display');
       if (livesDisplay) livesDisplay.innerText = state.lives;
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_clean.png';
+      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_clean.webp';
       if (fContainer) fContainer.classList.add('zoom-anim');
       if (fMsg) {
         fMsg.style.borderColor = 'var(--error)';
@@ -792,7 +792,7 @@ function checkAnswer(correct) {
       state.lives = Math.max(0, state.lives - 1);
       state.streak = 0;
       saveSession();
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_clean.png';
+      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_clean.webp';
       if (fMsg) {
         fMsg.style.borderColor = 'var(--warning)';
         fMsg.style.color = 'var(--warning)';
@@ -830,7 +830,7 @@ setInterval(() => {
       if (eye) {
         eye.src = './assets/images/ack_core_closed_clean.png';
         setTimeout(() => {
-          if (eye) eye.src = './assets/images/ack_core_clean.png';
+          if (eye) eye.src = './assets/images/ack_core_clean.webp';
         }, 150);
       }
     }
