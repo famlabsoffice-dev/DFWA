@@ -146,6 +146,35 @@ async function restoreSession() {
   }
 }
 
+// Globaler Error Handler
+window.onerror = (message, source, lineno, colno, error) => {
+  APIClient.reportError(API_BASE_URL, {
+    message: message,
+    stack: error ? error.stack : `at ${source}:${lineno}:${colno}`,
+    stateSnapshot: {
+      current: state.current,
+      score: state.score,
+      lives: state.lives,
+      mode: state.mode,
+      sessionActive: state.sessionActive
+    }
+  });
+};
+
+window.onunhandledrejection = (event) => {
+  APIClient.reportError(API_BASE_URL, {
+    message: `Unhandled Rejection: ${event.reason}`,
+    stack: event.reason ? event.reason.stack : null,
+    stateSnapshot: {
+      current: state.current,
+      score: state.score,
+      lives: state.lives,
+      mode: state.mode,
+      sessionActive: state.sessionActive
+    }
+  });
+};
+
 async function fetchSystemSecret() {
   try {
     const res = await fetch(`${API_BASE_URL}/config/secret`);

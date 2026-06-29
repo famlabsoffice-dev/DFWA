@@ -96,15 +96,16 @@ const db = new sqlite3.Database(dbPath, (err) => {
           timestamp DATETIME,
           userAgent TEXT
       )`);
-      db.run(`CREATE TABLE IF NOT EXISTS error_logs (
-          id INTEGER PRIMARY KEY AUTOINCREMENT,
-          type TEXT, -- 'CLIENT' oder 'SERVER'
-          message TEXT,
-          stack TEXT,
-          ip TEXT,
-          userAgent TEXT,
-          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-      )`);
+        db.run(`CREATE TABLE IF NOT EXISTS error_logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            type TEXT, -- 'CLIENT' oder 'SERVER'
+            message TEXT,
+            stack TEXT,
+            stateSnapshot TEXT, -- JSON-Snapshot des Client-States
+            ip TEXT,
+            userAgent TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )`);
       db.run(`CREATE TABLE IF NOT EXISTS performance_metrics (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           metricName TEXT,
@@ -228,13 +229,40 @@ app.post('/api/metrics', (req, res) => {
   );
 });
 
+const WEBHOOK_URL = process.env.ERROR_WEBHOOK_URL;
+
+async function sendAlert(errorData) {
+  if (!WEBHOOK_URL) return;
+  try {
+    await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text: `🚨 *DFWA Error Alert*\n*Type:* ${errorData.type}\n*Message:* ${errorData.message}\n*IP:* ${errorData.ip}\n*Time:* ${new Date().toISOString()}`
+      })
+    });
+  } catch (e) {
+    console.error('Failed to send alert webhook:', e);
+  }
+}
+
 app.post('/api/errors/client', (req, res) => {
-  const { message, stack, userAgent } = req.body;
+  const { message, stack, userAgent, stateSnapshot } = req.body;
+  const logData = {
+    type: 'CLIENT',
+    message,
+    stack,
+    stateSnapshot: stateSnapshot ? JSON.stringify(stateSnapshot) : null,
+    ip: req.ip,
+    userAgent: userAgent || req.get('User-Agent')
+  };
+
   db.run(
-    `INSERT INTO error_logs (type, message, stack, ip, userAgent) VALUES (?, ?, ?, ?, ?)`,
-    ['CLIENT', message, stack, req.ip, userAgent || req.get('User-Agent')], // TODO: Detailliertere Protokollierung für Debugging implementieren
-    (err) => {
+    `INSERT INTO error_logs (type, message, stack, stateSnapshot, ip, userAgent) VALUES (?, ?, ?, ?, ?, ?)`,
+    [logData.type, logData.message, logData.stack, logData.stateSnapshot, logData.ip, logData.userAgent],
+    async (err) => {
       if (err) return res.status(500).json({ error: 'Failed to log error' });
+      await sendAlert(logData);
       res.json({ success: true });
     }
   );

@@ -19,10 +19,15 @@ Das DFWA-Repository wurde umfassend optimiert. Zentrale Meilensteine: PWA-Archit
    - Erfassung von Ladezeiten (`game_init_load_time`) im Frontend und Übermittlung via `APIClient.reportMetric`.
    - Automatisierte Log-Bereinigung (7 Tage Retention) für Metriken integriert.
 
+9. **QS (Punkt 1.5): Erweitertes Error-Reporting & Alerting.**
+   - Client-Fehlerberichte enthalten nun einen `stateSnapshot` (Score, Leben, Modus etc.) zur besseren Diagnose.
+   - Backend-Infrastruktur für Webhook-Alerts via `ERROR_WEBHOOK_URL` implementiert.
+   - Echtzeit-Alerting bei kritischen Client-Fehlern aktiviert.
+
 ## NÄCHSTER SCHRITT FÜR NACHFOLGE-INSTANZ
-**Ziel:** Umsetzung von **Punkt 1.5 des Qualitätssicherungsplans: Erweitertes Error-Reporting & Alerting**.
-- **Aufgabe:** Integration von detaillierteren Fehlerkontexten (z. B. State-Snapshot bei Absturz) und Vorbereitung einer Webhook-Schnittstelle für Echtzeit-Alerts.
-- **Kontext:** Das Monitoring ist aktiv, nun muss die Aussagekraft der Fehlerlogs für das Debugging erhöht werden.
+**Ziel:** Umsetzung von **Punkt 1.6 des Qualitätssicherungsplans: Sicherheits-Audit & CSP-Härtung**.
+- **Aufgabe:** Implementierung einer strikten Content Security Policy (CSP) und Überprüfung der kryptografischen Integrität aller Client-Server-Schnittstellen.
+- **Kontext:** Das System ist funktional und überwacht, nun muss die Angriffsfläche minimiert werden.
 
 ---
-*Status: 2026-06-29 03:45 GMT+2 - Bereit für Phase 1.5.*
+*Status: 2026-06-29 04:15 GMT+2 - Bereit für Phase 1.6.*
