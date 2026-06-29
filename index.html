@@ -96,21 +96,19 @@
             id="resume-btn"
             class="option-btn battle-btn"
             style="display: none"
-            onclick="resumeProtocol()"
           >
             RESUME_PROTOCOL
           </button>
           <button
             id="start-btn"
             class="option-btn start-btn"
-            onclick="initGame(false)"
             aria-label="Spiel starten"
           >
             INIT_PROTOCOL
           </button>
           <button
             class="option-btn battle-btn"
-            onclick="showLobby()"
+            id="show-lobby-btn"
             aria-label="Battle Lobby öffnen"
           >
             BATTLE_LOBBY
@@ -128,15 +126,15 @@
             style="border-color: var(--warning); color: var(--warning)"
             placeholder="ENTER_CHALLENGE_CODE"
           />
-          <button class="option-btn battle-btn" onclick="startChallenge()">START_CHALLENGE</button>
+          <button class="option-btn battle-btn" id="start-challenge-btn">START_CHALLENGE</button>
           <button
             class="option-btn"
-            onclick="showLeaderboard()"
+            id="show-leaderboard-btn"
             style="border-color: var(--neon); color: var(--neon)"
           >
             SERVER_ROOM
           </button>
-          <button class="option-btn" onclick="hideLobby()">BACK_TO_CORE</button>
+          <button class="option-btn" id="hide-lobby-btn">BACK_TO_CORE</button>
         </div>
       </div>
 
@@ -155,7 +153,7 @@
               <!-- Einträge werden dynamisch geladen -->
             </div>
           </div>
-          <button class="option-btn" onclick="hideLeaderboard()">EXIT_SERVER_ROOM</button>
+          <button class="option-btn" id="hide-leaderboard-btn">EXIT_SERVER_ROOM</button>
         </div>
       </div>
 
@@ -196,7 +194,7 @@
           INITIALIZING...
         </div>
         <div id="options-container" role="group" aria-label="Antwortoptionen"></div>
-        <button id="pause-btn" onclick="pauseProtocol()" aria-label="Spiel pausieren">PAUSE</button>
+        <button id="pause-btn" aria-label="Spiel pausieren">PAUSE</button>
       </div>
     </div>
 
@@ -216,7 +214,7 @@
           id="modal-text"
           style="color: #fff; margin-bottom: 20px; font-family: monospace; word-break: break-all"
         ></p>
-        <button class="option-btn" onclick="closeSystem()">CLOSE_SYSTEM</button>
+        <button class="option-btn" id="close-system-btn">CLOSE_SYSTEM</button>
       </div>
     </div>
 

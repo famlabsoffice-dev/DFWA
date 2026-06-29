@@ -12,8 +12,8 @@ import { existsSync } from 'fs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 3000;
-const SYSTEM_SECRET = process.env.SYSTEM_SECRET;
-if (!SYSTEM_SECRET) {
+const SYSTEM_SECRET = process.env.SYSTEM_SECRET || 'LOCAL_ONLY_UNTRUSTED';
+if (SYSTEM_SECRET === 'LOCAL_ONLY_UNTRUSTED') {
   console.warn(
     'WARNING: SYSTEM_SECRET is not set. Using a default secret is insecure. Please set the SYSTEM_SECRET environment variable.'
   );
@@ -90,7 +90,7 @@ const distPath = join(__dirname, '..', 'dist');
 const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
 app.use(express.static(staticPath));
 // SPA-Fallback: Alle nicht-API-Routen auf index.html weiterleiten
-app.get('*', (req, res, next) => {
+app.get(/^\/(?!api).*/, (req, res, next) => {
   if (req.path.startsWith('/api/')) return next();
   const indexPath = join(staticPath, 'index.html');
   res.sendFile(indexPath);

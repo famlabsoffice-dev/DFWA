@@ -1,3 +1,6 @@
+import { APIClient } from './scripts/api-client.js';
+import { UIManager } from './scripts/ui-manager.js';
+
 const API_BASE_URL =
   window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
@@ -384,7 +387,7 @@ async function generateChallengeCode() {
     const msg = JSON.stringify(payload);
     const key = await crypto.subtle.importKey(
       'raw',
-      new TextEncoder().encode(state.systemSecret || 'DFWA_SECRET_ACK'),
+      new TextEncoder().encode(state.systemSecret || 'LOCAL_ONLY_UNTRUSTED'),
       { name: 'HMAC', hash: 'SHA-256' },
       false,
       ['sign']
@@ -580,7 +583,7 @@ function renderQuestion(isRestoring = false) {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
         btn.innerText = opt;
-        btn.onclick = () => checkAnswer(idx === q.correct);
+        btn.addEventListener('click', () => checkAnswer(idx === q.correct));
         container.appendChild(btn);
       });
     }
@@ -644,6 +647,7 @@ async function updateLeaderboard() {
 
 async function endGame() {
   try {
+    updateLeaderboard();
     clearSession();
     clearInterval(state.timerInterval);
     const overlay = document.getElementById('modal-overlay');
@@ -1028,34 +1032,16 @@ if ('serviceWorker' in navigator) {
 
 async function showLeaderboard() {
   try {
-    const lobby = document.getElementById('battle-lobby');
-    const screen = document.getElementById('leaderboard-screen');
-    if (lobby) lobby.classList.remove('active');
-    if (screen) screen.classList.add('active');
+    UIManager.toggleClass('battle-lobby', 'active', false);
+    UIManager.toggleClass('leaderboard-screen', 'active', true);
 
     const entriesDiv = document.getElementById('leaderboard-entries');
     if (entriesDiv)
       entriesDiv.innerHTML = '<div style="padding:20px;text-align:center;">CONNECTING...</div>';
 
     try {
-      const res = await fetch(`${API_BASE_URL}/api/leaderboard?limit=20`);
-      if (!res.ok) throw new Error();
-      const data = await res.json();
-
-      if (entriesDiv) {
-        entriesDiv.innerHTML = '';
-        data.forEach((entry, index) => {
-          const row = document.createElement('div');
-          row.className = 'leaderboard-entry';
-          row.innerHTML = `
-                        <span>#${index + 1}</span>
-                        <span>${entry.playerName}</span>
-                        <span>${entry.score}</span>
-                        <span>${entry.wins}/${entry.losses}</span>
-                    `;
-          entriesDiv.appendChild(row);
-        });
-      }
+      const data = await APIClient.fetchLeaderboard(API_BASE_URL, 20);
+      UIManager.renderLeaderboard(entriesDiv, data);
     } catch (e) {
       if (entriesDiv)
         entriesDiv.innerHTML =
@@ -1074,3 +1060,27 @@ function hideLeaderboard() {
     if (lobby) lobby.classList.add('active');
   } catch (e) {}
 }
+
+// Event Listener Registration
+document.addEventListener('DOMContentLoaded', () => {
+  const addClick = (id, fn) => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('click', fn);
+  };
+
+  addClick('start-btn', () => initGame(false));
+  addClick('resume-btn', resumeProtocol);
+  addClick('pause-btn', pauseProtocol);
+  addClick('show-lobby-btn', showLobby);
+  addClick('hide-lobby-btn', hideLobby);
+  addClick('show-leaderboard-btn', showLeaderboard);
+  addClick('hide-leaderboard-btn', hideLeaderboard);
+  addClick('start-challenge-btn', startChallenge);
+  addClick('close-system-btn', () => window.location.reload());
+});
+
+// Debug Exports for Functionality Testing
+window.__STATE__ = state;
+window.__END_GAME__ = endGame;
+
+window.generateChallengeCode = generateChallengeCode;
