@@ -77,34 +77,41 @@ const db = new sqlite3.Database(dbPath, (err) => {
   else console.log('Connected to SQLite database.');
 });
 
-db.serialize(() => {
-  db.run(`CREATE TABLE IF NOT EXISTS leaderboard (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            playerId TEXT UNIQUE,
-            playerName TEXT,
-            score INTEGER,
-            wins INTEGER,
-            losses INTEGER,
-            variant TEXT,
-            accuracy INTEGER,
-            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-        )`);
-  db.run(`CREATE TABLE IF NOT EXISTS ratelimit_logs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            ip TEXT,
-            path TEXT,
-            timestamp DATETIME,
-            userAgent TEXT
-        )`);
-  db.run(`CREATE TABLE IF NOT EXISTS error_logs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            type TEXT, -- 'CLIENT' oder 'SERVER'
-            message TEXT,
-            stack TEXT,
-            ip TEXT,
-            userAgent TEXT,
-            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-        )`);
+    db.serialize(() => {
+      db.run(`CREATE TABLE IF NOT EXISTS leaderboard (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          playerId TEXT UNIQUE,
+          playerName TEXT,
+          score INTEGER,
+          wins INTEGER,
+          losses INTEGER,
+          variant TEXT,
+          accuracy INTEGER,
+          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+      )`);
+      db.run(`CREATE TABLE IF NOT EXISTS ratelimit_logs (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          ip TEXT,
+          path TEXT,
+          timestamp DATETIME,
+          userAgent TEXT
+      )`);
+      db.run(`CREATE TABLE IF NOT EXISTS error_logs (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          type TEXT, -- 'CLIENT' oder 'SERVER'
+          message TEXT,
+          stack TEXT,
+          ip TEXT,
+          userAgent TEXT,
+          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+      )`);
+      db.run(`CREATE TABLE IF NOT EXISTS performance_metrics (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          metricName TEXT,
+          value REAL,
+          ip TEXT,
+          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+      )`);
   // Migration: Spalten hinzufügen falls sie fehlen
   db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, (err) => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN accuracy INTEGER`, (err) => {});
@@ -209,6 +216,18 @@ app.get('/api/admin/ratelimit-logs', adminAuth, (req, res) => {
   });
 });
 
+app.post('/api/metrics', (req, res) => {
+  const { metricName, value } = req.body;
+  db.run(
+    `INSERT INTO performance_metrics (metricName, value, ip) VALUES (?, ?, ?)`,
+    [metricName, value, req.ip],
+    (err) => {
+      if (err) return res.status(500).json({ error: 'Failed to log metric' });
+      res.json({ success: true });
+    }
+  );
+});
+
 app.post('/api/errors/client', (req, res) => {
   const { message, stack, userAgent } = req.body;
   db.run(
@@ -263,6 +282,9 @@ app.listen(PORT, () => {
       );
       db.run(`DELETE FROM error_logs WHERE timestamp < ?`, [retentionDate.toISOString()], (err) => {
         if (err) console.error('Error log cleanup error:', err);
+      });
+      db.run(`DELETE FROM performance_metrics WHERE timestamp < ?`, [retentionDate.toISOString()], (err) => {
+        if (err) console.error('Metrics cleanup error:', err);
       });
     },
     24 * 60 * 60 * 1000

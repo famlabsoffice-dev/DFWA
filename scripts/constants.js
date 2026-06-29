@@ -5,6 +5,7 @@ export const API_ENDPOINTS = {
   ADMIN_RATELIMIT_LOGS: '/api/admin/ratelimit-logs',
   ADMIN_ERROR_LOGS: '/api/admin/error-logs',
   ANALYTICS: '/api/analytics',
+  METRICS: '/api/metrics',
 };
 
 export const STORAGE_KEYS = {

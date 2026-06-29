@@ -59,4 +59,15 @@ export const APIClient = {
       console.error('Failed to report error to server:', e);
     }
   },
+  async reportMetric(baseUrl, metricName, value) {
+    try {
+      await fetch(`${baseUrl}${API_ENDPOINTS.METRICS}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ metricName, value }),
+      });
+    } catch (e) {
+      console.error('Failed to report metric to server:', e);
+    }
+  },
 };
