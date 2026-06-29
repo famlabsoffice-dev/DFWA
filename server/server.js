@@ -164,9 +164,10 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
 app.get('/api/leaderboard', (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
+  const mode = req.query.mode || 'classic';
   db.all(
-    `SELECT playerName, score, wins, losses FROM leaderboard ORDER BY score DESC LIMIT ?`,
-    [limit],
+    `SELECT playerName, score, wins, losses FROM leaderboard WHERE mode = ? ORDER BY score DESC LIMIT ?`,
+    [mode, limit],
     (err, rows) => {
       if (err) {
         res.status(500).json({ error: 'Database error' });

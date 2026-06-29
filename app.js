@@ -1069,23 +1069,36 @@ if ('serviceWorker' in navigator) {
   }
 }
 
+let currentLeaderboardMode = 'classic';
+
+async function loadLeaderboardData(mode) {
+  const entriesDiv = document.getElementById('leaderboard-entries');
+  if (entriesDiv)
+    entriesDiv.innerHTML = '<div style="padding:20px;text-align:center;">CONNECTING...</div>';
+
+  try {
+    const data = await APIClient.fetchLeaderboard(API_BASE_URL, 20, mode);
+    UIManager.renderLeaderboard(entriesDiv, data);
+  } catch (e) {
+    if (entriesDiv)
+      entriesDiv.innerHTML =
+        '<div style="padding:20px;text-align:center;color:var(--error);">SERVER_UNAVAILABLE</div>';
+  }
+}
+
 async function showLeaderboard() {
   try {
     UIManager.toggleClass('battle-lobby', 'active', false);
     UIManager.toggleClass('leaderboard-screen', 'active', true);
 
-    const entriesDiv = document.getElementById('leaderboard-entries');
-    if (entriesDiv)
-      entriesDiv.innerHTML = '<div style="padding:20px;text-align:center;">CONNECTING...</div>';
+    // Reset filter UI
+    const filters = document.querySelectorAll('#leaderboard-filters .mode-btn');
+    filters.forEach((btn) => {
+      btn.classList.toggle('active', btn.dataset.mode === 'classic');
+    });
+    currentLeaderboardMode = 'classic';
 
-    try {
-      const data = await APIClient.fetchLeaderboard(API_BASE_URL, 20);
-      UIManager.renderLeaderboard(entriesDiv, data);
-    } catch (e) {
-      if (entriesDiv)
-        entriesDiv.innerHTML =
-          '<div style="padding:20px;text-align:center;color:var(--error);">SERVER_UNAVAILABLE</div>';
-    }
+    await loadLeaderboardData('classic');
   } catch (e) {
     console.error('Show leaderboard failed', e);
   }
@@ -1114,6 +1127,21 @@ document.addEventListener('DOMContentLoaded', () => {
   addClick('hide-lobby-btn', hideLobby);
   addClick('show-leaderboard-btn', showLeaderboard);
   addClick('hide-leaderboard-btn', hideLeaderboard);
+
+  // Leaderboard filter event listeners
+  const filterBtns = document.querySelectorAll('#leaderboard-filters .mode-btn');
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const mode = btn.dataset.mode;
+      if (mode === currentLeaderboardMode) return;
+
+      filterBtns.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentLeaderboardMode = mode;
+
+      await loadLeaderboardData(mode);
+    });
+  });
   addClick('start-challenge-btn', startChallenge);
   addClick('close-system-btn', () => window.location.reload());
 });

@@ -26,9 +26,9 @@ export const APIClient = {
     }
   },
 
-  async fetchLeaderboard(baseUrl, limit = 20) {
+  async fetchLeaderboard(baseUrl, limit = 20, mode = 'classic') {
     try {
-      const res = await fetch(`${baseUrl}${API_ENDPOINTS.LEADERBOARD}?limit=${limit}`);
+      const res = await fetch(`${baseUrl}${API_ENDPOINTS.LEADERBOARD}?limit=${limit}&mode=${mode}`);
       if (res.ok) return await res.json();
       throw new Error(`HTTP_${res.status}`);
     } catch (e) {
