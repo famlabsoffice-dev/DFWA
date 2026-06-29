@@ -1,28 +1,32 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.14 (Replay-Schutz) abgeschlossen. Eine externe Code-Analyse (Claude) identifizierte 12 Schwachstellen, die die PWA-Funktionalität und Spielmechanik beeinträchtigen. Phase 2.0 fokussiert sich auf die Behebung dieser Blocker zur Erreichung der "weltbesten PWA"-Qualität.
+Phase 1.14 (Replay-Schutz) abgeschlossen. Die aktuelle PWA-Härtung (Phase 2.0) fokussiert sich auf akute Code-Fixes aus der Claude-Analyse. Parallel wurde eine langfristige Qualitätssicherungsstrategie (QS) etabliert, die in drei Phasen (Wochen 1-13+) unterteilt ist und automatisierte Tests, CI/CD sowie Monitoring umfasst.
 
-## OPTIMIERUNGSLISTE (PHASE 2.0 - PWA HÄRTUNG)
+## AKTUELLE ROADMAP (PHASE 2.0 - PWA HÄRTUNG)
 
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
-| **2.1** | **DOM-Synchronisation** | ✅ Erledigt | Fix von Mismatches: `question-text`, `cat-display`, `timer-text` in HTML ergänzen. |
-| **2.2** | **Mode-Selector Fix** | Geplant | `mode-selector` als `select` oder Button-Logic fixen (aktuell `undefined`). |
-| **2.3** | **Game-Logic Sync** | Geplant | Blitz-Modus definieren; Timer-Werte aus `ModeConfig` statt Hardcoding nutzen. |
-| **2.4** | **Payload & Race-Condition** | Geplant | `mode` in Leaderboard-Payload aufnehmen; doppelten API-Aufruf in `endGame` entfernen. |
-| **2.5** | **PWA & SW Optimierung** | Geplant | `vite.config.js` Icon-Pfade fixen; Umstellung auf `injectManifest` (Vermeidung SW-Kollision). |
-| **2.6** | **Security & Events** | Geplant | `closeSystem` Event-Listener fixen; `/config/secret` Architektur-Review. |
+| **2.1** | **DOM-Synchronisation** | ✅ Erledigt | Fix von Mismatches: `question-text`, `cat-display`, `timer-text` ergänzt. |
+| **2.2** | **Mode-Selector Fix** | ✅ Erledigt | Behebung des `undefined`-Bugs bei der Modus-Auswahl in `app.js`. |
+| **2.3** | **Game-Logic Sync** | Geplant | Blitz-Modus Definition; Timer-Werte aus `ModeConfig` statt Hardcoding. |
+| **2.4** | **Payload & Race-Condition** | Geplant | `mode` in Leaderboard-Payload; doppelten API-Aufruf entfernen. |
+| **2.5** | **PWA & SW Optimierung** | Geplant | Icon-Pfade fixen; Umstellung auf `injectManifest`. |
+| **2.6** | **Security & Events** | Geplant | `closeSystem` Event-Listener fixen; `/config/secret` Review. |
 
-## AKTUELLER STATUS
-- **Sicherheit:** HMAC + Replay-Schutz (30s) aktiv.
-- **Integrität:** Backend-Typkonvertierung stabil.
-- **Blocker:** DOM-IDs und Mode-Selection verhindern aktuell korrekten Spielablauf in bestimmten Modi.
+## LANGFRISTIGER QS-ZEITPLAN (PHASE 3.0+)
+
+| Phase | Zeitraum | Fokus | Meilenstein |
+| :--- | :--- | :--- | :--- |
+| **Phase 1** | Wochen 1-4 | Unit-Tests (Frontend), Linter, Fehlerbehandlung, Monitoring. | Stabile Kern-Frontend-Logik (Tag 20). |
+| **Phase 2** | Wochen 5-12 | Integrationstests (Backend), E2E-Tests, Code-Reviews, Staging. | Umfassende Testabdeckung (Tag 60). |
+| **Phase 3** | Wochen 13+ | CI/CD Pipeline, Rollback-Strategien, Security Audits. | Robuster Release-Zyklus (Tag 95). |
 
 ## NÄCHSTE SCHRITTE
-1. Ausführung Task 2.2: Mode-Selector Fix.
+1. Ausführung Task 2.3: Game-Logic Sync.
 2. Integration der Blitz-Modus-Logik.
+3. Start von QS-Phase 1: Vorbereitung Unit-Tests für `game-logic.js`.
 
 ---
-**Status:** 2026-06-30 17:00 GMT+2 - Task 2.1 (DOM-Sync) abgeschlossen.
+**Status:** 2026-06-30 17:30 GMT+2 - Task 2.2 (Mode-Selector) abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

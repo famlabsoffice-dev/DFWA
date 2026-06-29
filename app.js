@@ -335,6 +335,7 @@ function renderModeSelector() {
     Object.entries(ModeConfig).forEach(([key, config]) => {
       const btn = document.createElement('button');
       btn.className = 'mode-btn' + (state.mode === key ? ' active' : '');
+      btn.dataset.mode = key;
       btn.innerHTML = '<strong>' + config.name + '</strong><small>' + config.description + '</small>';
       btn.onclick = () => {
         setGameMode(key);
@@ -533,8 +534,8 @@ async function initGame(createChallenge, isRestoring = false) {
       state.cheatsAttempted = false;
       state.pausedTimer = null;
       state.sessionActive = true;
-      const modeSelector = document.getElementById('mode-selector');
-      state.mode = modeSelector ? modeSelector.value : 'classic';
+      const activeModeBtn = document.querySelector('#mode-selector .mode-btn.active');
+      state.mode = activeModeBtn ? activeModeBtn.dataset.mode : 'classic';
     }
 
     const livesDisplay = document.getElementById('lives-display');
