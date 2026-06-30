@@ -26,7 +26,7 @@ let state = {
   usedComments: { correct: [], incorrect: [] },
   isPaused: false,
   isProcessing: false,
-  timer: 15,
+  timer: 15, // Default initial value, will be synced from ModeConfig
   timerInterval: null,
   questionCount: 0,
   isChallenge: false,
@@ -503,7 +503,8 @@ function resumeProtocol() {
     if (gameScreen) gameScreen.classList.add('active');
     if (resumeBtn) resumeBtn.style.display = 'none';
 
-    state.timer = state.pausedTimer !== null && state.pausedTimer > 0 ? state.pausedTimer : 15;
+    const config = getGameModeConfig(state.mode);
+    state.timer = state.pausedTimer !== null && state.pausedTimer > 0 ? state.pausedTimer : config.initialTimer;
     state.pausedTimer = null;
     state.timerEndTimestamp = Date.now() + state.timer * 1000;
 
