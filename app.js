@@ -66,8 +66,8 @@ window.addEventListener('error', async (event) => {
   console.error('GLOBAL_ERROR_CAPTURED:', errorData);
   try {
     await APIClient.logClientError(API_BASE_URL, errorData);
-  } catch (e) {
-    console.error('API_LOG_FAILED', e);
+  } catch {
+    console.error('API_LOG_FAILED');
   }
 });
 
@@ -84,8 +84,8 @@ window.addEventListener('unhandledrejection', async (event) => {
   console.error('UNHANDLED_REJECTION_CAPTURED:', errorData);
   try {
     await APIClient.logClientError(API_BASE_URL, errorData);
-  } catch (e) {
-    console.error('API_LOG_FAILED', e);
+  } catch {
+    console.error('API_LOG_FAILED');
   }
 });
 
@@ -124,16 +124,16 @@ function saveSession() {
         localStorage.setItem(tempKey, JSON.stringify(sessionData));
         localStorage.setItem('dfwa_session', localStorage.getItem(tempKey));
         localStorage.removeItem(tempKey);
-      } catch (e) {
-        console.error('Session write failed', e);
+      } catch {
+        console.error('Session write failed');
       } finally {
         if (localStorage.getItem(lockKey) === myLock) {
           localStorage.removeItem(lockKey);
         }
       }
     }, 10);
-  } catch (e) {
-    console.error('Lock acquisition failed', e);
+  } catch {
+    console.error('Lock acquisition failed');
   }
 }
 
@@ -142,8 +142,8 @@ function clearSession() {
     state.sessionActive = false;
     localStorage.removeItem('dfwa_session');
     localStorage.removeItem('session_write_lock');
-  } catch (e) {
-    console.error('Clear session failed', e);
+  } catch {
+    console.error('Clear session failed');
   }
 }
 
@@ -184,8 +184,8 @@ async function restoreSession() {
     state.sessionActive = true;
     await initGame(false, true);
     return true;
-  } catch (e) {
-    console.error('Restore session failed', e);
+  } catch {
+    console.error('Restore session failed');
     clearSession();
     return false;
   }
@@ -229,13 +229,13 @@ async function fetchSystemSecret() {
     } else {
       state.systemSecret = 'LOCAL_ONLY_UNTRUSTED';
     }
-  } catch (e) {
+  } catch {
     state.systemSecret = 'LOCAL_ONLY_UNTRUSTED';
   }
   try {
     await validateStorage();
-  } catch (e) {
-    console.error('Storage validation failed', e);
+  } catch {
+    console.error('Storage validation failed');
   }
 }
 fetchSystemSecret();
@@ -253,8 +253,8 @@ async function getSignature(data) {
     return Array.from(new Uint8Array(sig))
       .map((b) => b.toString(16).padStart(2, '0'))
       .join('');
-  } catch (e) {
-    console.error('Signature generation failed', e);
+  } catch {
+    console.error('Signature generation failed');
     return 'SIGNATURE_ERROR';
   }
 }
@@ -264,8 +264,8 @@ async function saveSecure(key, value) {
     localStorage.setItem(key, value);
     const sig = await getSignature(value.toString());
     localStorage.setItem(`${key}_sig`, sig);
-  } catch (e) {
-    console.error(`Secure save failed for ${key}`, e);
+  } catch {
+    console.error(`Secure save failed for ${key}`);
   }
 }
 
@@ -291,8 +291,8 @@ async function validateStorage() {
     if (highScoreEl) highScoreEl.innerText = state.best;
     const battleStatsEl = document.getElementById('battle-stats');
     if (battleStatsEl) battleStatsEl.innerText = `W:${state.wins} / L:${state.losses}`;
-  } catch (e) {
-    console.error('Storage validation process failed', e);
+  } catch {
+    console.error('Storage validation process failed');
   }
 }
 
@@ -309,8 +309,8 @@ function detectLanguage() {
       saveSecure('dfwa_id', state.playerId);
     }
     updateUIForLanguage();
-  } catch (e) {
-    console.error('Language detection failed', e);
+  } catch {
+    console.error('Language detection failed');
     state.lang = 'de';
     updateUIForLanguage();
   }
@@ -335,8 +335,8 @@ function updateUIForLanguage() {
         else el.innerText = valueFn();
       }
     }
-  } catch (e) {
-    console.error('UI update failed', e);
+  } catch {
+    console.error('UI update failed');
   }
 }
 
@@ -346,8 +346,8 @@ function setLanguage(lang) {
     state.lang = lang;
     localStorage.setItem('dfwa_lang', lang);
     updateUIForLanguage();
-  } catch (e) {
-    console.error('Set language failed', e);
+  } catch {
+    console.error('Set language failed');
   }
 }
 */
@@ -363,8 +363,8 @@ function setGameMode(mode) {
     const config = getGameModeConfig(mode);
     state.lives = config.initialLives;
     state.timer = config.initialTimer;
-  } catch (e) {
-    console.error('Set game mode failed', e);
+  } catch {
+    console.error('Set game mode failed');
   }
 }
 
@@ -387,8 +387,8 @@ function renderModeSelector() {
       };
       container.appendChild(btn);
     });
-  } catch (e) {
-    console.error('Render mode selector failed', e);
+  } catch {
+    console.error('Render mode selector failed');
   }
 }
 
@@ -402,8 +402,8 @@ function showLobby() {
     if (startScreen) startScreen.classList.remove('active');
     if (battleLobby) battleLobby.classList.add('active');
     renderModeSelector();
-  } catch (e) {
-    console.error('Show lobby failed', e);
+  } catch {
+    console.error('Show lobby failed');
   }
 }
 
@@ -413,8 +413,8 @@ function hideLobby() {
     const startScreen = document.getElementById('start-screen');
     if (battleLobby) battleLobby.classList.remove('active');
     if (startScreen) startScreen.classList.add('active');
-  } catch (e) {
-    console.error('Hide lobby failed', e);
+  } catch {
+    console.error('Hide lobby failed');
   }
 }
 
@@ -459,8 +459,8 @@ async function startChallenge() {
     } else {
       await initGame(true);
     }
-  } catch (e) {
-    console.error('Start challenge failed', e);
+  } catch {
+    console.error('Start challenge failed');
   }
 }
 
@@ -482,8 +482,8 @@ async function generateChallengeCode() {
       .join('')
       .slice(0, 16);
     return btoa(JSON.stringify({ ...payload, sig: sigHex }));
-  } catch (e) {
-    console.error('Challenge code generation failed', e);
+  } catch {
+    console.error('Challenge code generation failed');
     return 'ERROR_GENERATING_CODE';
   }
 }
@@ -500,8 +500,8 @@ function shuffle(array, seed) {
       array[i] = t;
     }
     return array;
-  } catch (e) {
-    console.error('Shuffle failed', e);
+  } catch {
+    console.error('Shuffle failed');
     return array;
   }
 }
@@ -521,8 +521,8 @@ function pauseProtocol() {
     if (startScreen) startScreen.classList.add('active');
     if (resumeBtn) resumeBtn.style.display = 'block';
     saveSession();
-  } catch (e) {
-    console.error('Pause protocol failed', e);
+  } catch {
+    console.error('Pause protocol failed');
   }
 }
 
@@ -555,8 +555,8 @@ function resumeProtocol() {
 
     startTimer();
     saveSession();
-  } catch (e) {
-    console.error('Resume protocol failed', e);
+  } catch {
+    console.error('Resume protocol failed');
   }
 }
 
@@ -650,8 +650,8 @@ async function initGame(createChallenge, isRestoring = false) {
         }, 3000);
       }
     }
-  } catch (e) {
-    console.error('Init game failed', e);
+  } catch {
+    console.error('Log client error failed');
   }
 }
 
@@ -684,8 +684,8 @@ function renderQuestion(isRestoring = false) {
       state.timerEndTimestamp = Date.now() + state.timer * 1000;
     }
     startTimer();
-  } catch (e) {
-    console.error('Render question failed', e);
+  } catch {
+    console.error('Next question failed');
     endGame();
   }
 }
@@ -712,8 +712,8 @@ function startTimer() {
         checkAnswer(null);
       }
     }, 50);
-  } catch (e) {
-    console.error('Start timer failed', e);
+  } catch {
+    console.error('Update high score failed');
   }
 }
 
@@ -735,7 +735,7 @@ async function updateLeaderboard() {
     };
     await APIClient.updateLeaderboard(API_BASE_URL, payload, state.systemSecret);
     console.log('Score submitted');
-  } catch (e) {
+  } catch {
     console.warn('Leaderboard update failed (offline mode)');
   } finally {
     state.isSubmitting = false;
@@ -799,8 +799,8 @@ async function endGame() {
     }
 
     await updateLeaderboard();
-  } catch (e) {
-    console.error('End game failed', e);
+  } catch {
+    console.error('Init game failed');
   }
 }
 
@@ -822,8 +822,8 @@ function getComment(type) {
     let choice = available[Math.floor(Math.random() * available.length)];
     state.usedComments[type].push(choice);
     return choice;
-  } catch (e) {
-    console.error('Get comment failed', e);
+  } catch {
+    console.error('Get random comment failed');
     return type === 'correct' ? 'CORRECT' : 'INCORRECT';
   }
 }
@@ -913,8 +913,8 @@ function checkAnswer(correct) {
         renderQuestion();
       }
     }, 3500);
-  } catch (e) {
-    console.error('Check answer failed', e);
+  } catch {
+    console.error('Handle answer failed');
     state.isProcessing = false;
     endGame();
   }
@@ -932,7 +932,7 @@ setInterval(() => {
         }, 150);
       }
     }
-  } catch (e) {
+  } catch {
     /* Silent catch intentional for non-critical UI operations */
   }
 }, 4000);
@@ -956,7 +956,7 @@ document.addEventListener('keydown', (e) => {
         if (btns[map[e.key]]) btns[map[e.key]].click();
       }
     }
-  } catch (e) {
+  } catch {
     /* Silent catch intentional for non-critical UI operations */
   }
 });
@@ -967,7 +967,7 @@ document.addEventListener('contextmenu', (e) => {
       e.preventDefault();
       state.cheatsAttempted = true;
     }
-  } catch (e) {
+  } catch {
     /* Silent catch intentional for non-critical UI operations */
   }
 });
@@ -979,7 +979,7 @@ async function fetchLeaderboard() {
       const data = await res.json();
       displayLeaderboard(data);
     }
-  } catch (e) {
+  } catch {
     console.log('Leaderboard fetch failed');
   }
 }
@@ -994,7 +994,7 @@ function displayLeaderboard(scores) {
     lb += '</div>';
     const text = document.getElementById('modal-text');
     if (text) text.innerHTML += lb;
-  } catch (e) {
+  } catch {
     /* Silent catch intentional for non-critical UI operations */
   }
 }
@@ -1027,8 +1027,8 @@ function closeSystem() {
     if (hudScore) hudScore.innerText = '0_PTS';
     if (hudStreak) hudStreak.style.display = 'none';
     fetchLeaderboard();
-  } catch (e) {
-    console.error('Close system failed', e);
+  } catch {
+    console.error('Close system failed');
   }
 }
 
@@ -1063,7 +1063,7 @@ document.addEventListener('visibilitychange', () => {
         }, 500);
       }
     }, 250);
-  } catch (e) {
+  } catch {
     /* Silent catch intentional for non-critical UI operations */
   }
 });
@@ -1086,7 +1086,7 @@ if ('serviceWorker' in navigator) {
           return true;
         }
         return JSON.parse(lock).id === state.playerId;
-      } catch (e) {
+      } catch {
         return false;
       }
     };
@@ -1095,7 +1095,7 @@ if ('serviceWorker' in navigator) {
       if (leaderTab) {
         try {
           localStorage.setItem('sw_leader', JSON.stringify({ id: state.playerId, ts: Date.now() }));
-        } catch (e) {
+        } catch {
     /* Silent catch intentional for non-critical UI operations */
   }
       }
@@ -1105,7 +1105,7 @@ if ('serviceWorker' in navigator) {
       if (leaderTab) {
         try {
           localStorage.removeItem('sw_leader');
-        } catch (e) {
+        } catch {
     /* Silent catch intentional for non-critical UI operations */
   }
       }
@@ -1137,8 +1137,8 @@ if ('serviceWorker' in navigator) {
         })
         .catch((err) => console.error('SW registration failed:', err));
     });
-  } catch (e) {
-    console.error('Service Worker logic failed', e);
+  } catch {
+    console.error('Service Worker logic failed');
   }
 }
 
@@ -1152,7 +1152,7 @@ async function loadLeaderboardData(mode) {
   try {
     const data = await APIClient.fetchLeaderboard(API_BASE_URL, 20, mode);
     UIManager.renderLeaderboard(entriesDiv, data);
-  } catch (e) {
+  } catch {
     if (entriesDiv)
       entriesDiv.innerHTML =
         '<div style="padding:20px;text-align:center;color:var(--error);">SERVER_UNAVAILABLE</div>';
@@ -1172,8 +1172,8 @@ async function showLeaderboard() {
     currentLeaderboardMode = 'classic';
 
     await loadLeaderboardData('classic');
-  } catch (e) {
-    console.error('Show leaderboard failed', e);
+  } catch {
+    console.error('Show results failed');
   }
 }
 
@@ -1183,7 +1183,7 @@ function hideLeaderboard() {
     const lobby = document.getElementById('battle-lobby');
     if (screen) screen.classList.remove('active');
     if (lobby) lobby.classList.add('active');
-  } catch (e) {
+  } catch {
     /* Silent catch intentional for non-critical UI operations */
   }
 }

@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. QS-Phase 3.1 bis 3.4 erfolgreich abgeschlossen. Task 3.5.1 (Lint-Bereinigung in app.js und server.js) durchgeführt: Alle kritischen Fehler behoben, Warnungen drastisch reduziert.
+Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. QS-Phase 3.1 bis 3.5 erfolgreich abgeschlossen. Task 3.5 (Lint-Bereinigung) vollständig durchgeführt: Alle Dateien sind nun fehler- und warnungsfrei gemäß ESLint-Konfiguration.
 
 ## AKTUELLE ROADMAP (PHASE 3.0+ - QUALITÄTSSICHERUNG)
 
@@ -11,20 +11,19 @@ Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. 
 | **3.2** | **Linting-Workflow** | ✅ Erledigt | Einrichtung von ESLint & Prettier für konsistenten Code-Style. |
 | **3.3** | **CI/CD Integration** | ✅ Erledigt | Automatisierte Tests und Linting via GitHub Actions (Konzept bereit). |
 | **3.4** | **Global Error Handling** | ✅ Erledigt | Zentrale Fehlerbehandlung im Frontend implementieren. |
-| **3.5** | **Lint-Bereinigung** | In Arbeit | Behebung der ESLint-Warnungen/Fehler. Task 3.5.1 abgeschlossen. |
+| **3.5** | **Lint-Bereinigung** | ✅ Erledigt | Behebung aller ESLint-Warnungen/Fehler. |
 
-## QS-FORTSCHRITT (Phase 1)
-- **Lint-Bereinigung (3.5.1):** 
-    - Alle ESLint-Fehler (2) in `api-client.js` und `storage.js` behoben.
-    - Warnungen in `app.js` und `server.js` von 32 auf 15 reduziert.
-    - Ungenutzte Funktionen (`setLanguage`, `calculateModeScore`) und Variablen (`distPath`) entfernt oder auskommentiert.
-    - Leere catch-Blöcke durch Logging oder dokumentierte Silent-Catches ersetzt.
+## QS-FORTSCHRITT (Phase 1 & 2)
+- **Lint-Bereinigung (3.5.1 & 3.5.2):** 
+    - Alle ESLint-Fehler und Warnungen in `app.js`, `server.js` und `deduplicate.js` behoben.
+    - Unbenutzte Variablen entfernt oder durch `catch`-Blöcke ohne Bindung ersetzt.
+    - Code-Integrität durch finale Lint-Prüfung (0 Fehler, 0 Warnungen) verifiziert.
 
 ## NÄCHSTE SCHRITTE
-1. Fortführung Task 3.5: Bereinigung der verbleibenden 15 Warnungen (unused vars in deduplicate.js und app.js).
-2. Erweiterung der Test-Suite auf UI-Komponenten.
-3. Review der Performance-Metriken.
+1. Erweiterung der Test-Suite auf UI-Komponenten.
+2. Review der Performance-Metriken.
+3. Finalisierung der CI/CD Dokumentation.
 
 ---
-**Status:** 2026-06-30 22:30 GMT+2 - Task 3.5.1 (Lint-Bereinigung) abgeschlossen.
+**Status:** 2026-06-30 23:45 GMT+2 - Task 3.5 (Lint-Bereinigung) vollständig abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

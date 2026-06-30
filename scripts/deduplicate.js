@@ -22,7 +22,7 @@ function deduplicate() {
   const initialCount = questions.length;
 
   const uniqueQuestions = [];
-  const removedCount = 0;
+
 
   for (let i = 0; i < questions.length; i++) {
     let isDuplicate = false;

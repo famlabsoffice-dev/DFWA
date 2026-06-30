@@ -273,7 +273,7 @@ app.post('/api/challenge/verify', (req, res) => {
     }
 
     res.json({ valid: true, data: { seed, score } });
-  } catch (e) {
+  } catch {
     res.status(400).json({ valid: false, error: 'MALFORMED_CODE' });
   }
 });
