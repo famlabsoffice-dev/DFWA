@@ -11,6 +11,7 @@ import { existsSync } from 'fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
 const SYSTEM_SECRET = process.env.SYSTEM_SECRET || 'LOCAL_ONLY_UNTRUSTED';
 
