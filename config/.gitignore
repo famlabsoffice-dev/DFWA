@@ -1,0 +1,6 @@
+# Ignore all files in this directory
+*
+# Except this .gitignore
+!.gitignore
+# And the secret directory structure
+!secret/

@@ -1156,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   addClick('start-challenge-btn', startChallenge);
-  addClick('close-system-btn', () => window.location.reload());
+  addClick('close-system-btn', closeSystem);
 });
 
 // Debug Exports for Functionality Testing
