@@ -53,6 +53,43 @@ let state = {
 };
 if (!localStorage.getItem('dfwa_variant')) localStorage.setItem('dfwa_variant', state.variant);
 
+// Global Error Handler
+window.addEventListener('error', async (event) => {
+  const errorData = {
+    message: event.message,
+    stack: event.error ? event.error.stack : null,
+    stateSnapshot: {
+      mode: state.mode,
+      current: state.current,
+      score: state.score,
+    },
+  };
+  console.error('GLOBAL_ERROR_CAPTURED:', errorData);
+  try {
+    await APIClient.logClientError(API_BASE_URL, errorData);
+  } catch (e) {
+    // Fallback if API fails
+  }
+});
+
+window.addEventListener('unhandledrejection', async (event) => {
+  const errorData = {
+    message: event.reason ? event.reason.message || event.reason : 'Unhandled Rejection',
+    stack: event.reason && event.reason.stack ? event.reason.stack : null,
+    stateSnapshot: {
+      mode: state.mode,
+      current: state.current,
+      score: state.score,
+    },
+  };
+  console.error('UNHANDLED_REJECTION_CAPTURED:', errorData);
+  try {
+    await APIClient.logClientError(API_BASE_URL, errorData);
+  } catch (e) {
+    // Fallback if API fails
+  }
+});
+
 const SESSION_VERSION = 1;
 
 function saveSession() {
