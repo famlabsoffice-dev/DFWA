@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Das DFWA-Repository befindet sich in Phase 4.0 (Feature-Expansion). Meilensteine wie Achievements, Advanced Caching, Themes und die Audio Engine (Task 4.4) wurden erfolgreich implementiert. Parallel dazu wurde die Infrastruktur-Härtung (trust proxy) und die WebP-Asset-Optimierung (C1) abgeschlossen. Das System ist hochperformant (Bewertung: 8.7/10) und funktional stabil.
+Das DFWA-Repository hat signifikante Fortschritte in Phase 4.0 (Feature-Expansion) gemacht. Alle Kern-Features (Achievements, Caching, Themes, Audio Engine) sind implementiert. Die Infrastruktur wurde durch `trust proxy` Konfiguration gehärtet und die Performance durch WebP-Optimierung (C1) maximiert. Das System ist stabil, hochperformant (Bewertung: 8.7/10) und bereit für die finale Härtung der Phase 4.0.
 
 ## ROADMAP OVERVIEW
 
@@ -14,7 +14,7 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 | **4.2** | **Advanced Caching** | ✅ Erledigt | Optimierung der Service Worker Strategie (Stale-While-Revalidate). |
 | **4.3** | **Custom Themes** | ✅ Erledigt | Dynamische UI-Skins (Neon, Dark-Cyber, Terminal-Classic, Blood). |
 | **4.4** | **Audio Engine** | ✅ Erledigt | Zentrale Sound-Logik (SFX) mit Mute-Funktion. |
-| **4.5** | **Offline Battle Mode** | Offen | Lokale Challenge-Verifikation ohne Server-Link. |
+| **4.5** | **Offline Battle Mode** | In Arbeit | Lokale Challenge-Verifikation ohne Server-Link. |
 
 ### PHASE 5.0 - SOCIAL & COMPETITIVE
 Fokus: Community-Interaktion und globale Wettbewerbe.
@@ -26,18 +26,18 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 | **5.3** | **Live Battle Sync** | Geplant | Real-time Multiplayer via WebSockets. |
 | **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
 
-## QS-HISTORIE & OPTIMIERUNGEN
-- **Infrastruktur-Härtung:** `app.set('trust proxy', 1)` in `server/server.js` ergänzt (Korrekte IP-Erkennung für Rate-Limiting).
+## QS-HISTORIE & OPTIMIERUNGEN (ABGESCHLOSSEN)
+- **Infrastruktur-Härtung:** `app.set('trust proxy', 1)` in `server/server.js` (Korrekte IP-Erkennung für Rate-Limiting).
 - **WebP-Optimierung (C1):** `ack_core_clean.png` (1.5 MB) → `ack_core_clean.webp` (100 KB) konvertiert (-93%).
 - **Audio Engine (Task 4.4):** Implementierung des `AudioManager` zur Verwaltung von SFX (click, correct, error, achievement).
 - **ESM-Fix:** Umstellung auf JS-Event-Listener zur Sicherstellung der Scope-Kompatibilität.
 
-## NÄCHSTE SCHRITTE
-1. **Task 4.5:** Implementierung des Offline Battle Modes.
-2. **PWA-Härtung (QS 1.8):** Automatisierung des Service Worker Caching für gehashte Vite-Assets.
+## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
+1. **Task 4.5 abschließen:** Implementierung der lokalen Challenge-Verifikation für den Offline Battle Mode.
+2. **PWA-Härtung (QS 1.8):** Automatisierung des Service Worker Caching für gehashte Vite-Assets via `vite-plugin-pwa`.
 3. **UI/UX Refinement:** Breakpoints für extreme Bildschirmformate in `style.css` ergänzen.
-4. **Sicherheits-Audit:** Review der Sicherheits-Header und Absicherung des `SYSTEM_SECRET`.
+4. **Sicherheits-Audit:** Review der Sicherheits-Header (Helmet CSP) und Absicherung des `SYSTEM_SECRET` für Produktion.
 
 ---
-**Status:** 2026-06-30 23:59 GMT+2 - Infrastruktur-Härtung & Audio Engine abgeschlossen.
+**Status:** 2026-06-30 23:59 GMT+2 - Übergabe bereit für Task 4.5 & QS 1.8.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
