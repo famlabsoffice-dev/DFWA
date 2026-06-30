@@ -1,31 +1,48 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. QS-Phase 3.1 bis 3.8 erfolgreich abgeschlossen. Die CI/CD Dokumentation wurde finalisiert und in einer dedizierten Datei (`CICD.md`) zusammengefasst.
+Phase 1.0 (Core), Phase 2.0 (PWA) und Phase 3.0 (QS) erfolgreich abgeschlossen. DFWA ist nun eine gehärtete, getestete und performante PWA. Der Fokus verschiebt sich nun auf Phase 4.0 (Feature-Expansion) und Phase 5.0 (Hyper-Scale & Social).
 
-## AKTUELLE ROADMAP (PHASE 3.0+ - QUALITÄTSSICHERUNG)
+## ROADMAP OVERVIEW
+
+### PHASE 4.0 - FEATURE EXPANSION (AKTUELL)
+Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
-| **3.1** | **Unit-Tests game-logic.js** | ✅ Erledigt | Abdeckung von Score-Berechnung, Shuffle und Challenge-Generierung. |
-| **3.2** | **Linting-Workflow** | ✅ Erledigt | Einrichtung von ESLint & Prettier für konsistenten Code-Style. |
-| **3.3** | **CI/CD Integration** | ✅ Erledigt | Automatisierte Tests und Linting via GitHub Actions (Konzept bereit). |
-| **3.4** | **Global Error Handling** | ✅ Erledigt | Zentrale Fehlerbehandlung im Frontend implementieren. |
-| **3.5** | **Lint-Bereinigung** | ✅ Erledigt | Behebung aller ESLint-Warnungen/Fehler. |
-| **3.6** | **UI-Komponenten Tests** | ✅ Erledigt | Unit-Tests für UIManager und DOM-Interaktionen. |
-| **3.7** | **Performance Review** | ✅ Erledigt | Review und Implementierung von Core Web Vitals Reporting. |
-| **3.8** | **CI/CD Dokumentation** | ✅ Erledigt | Finalisierung der `CICD.md` Dokumentation. |
+| **4.1** | **Achievement System** | Offen | Lokale und serverseitige Erfolge für Langzeitmotivation. |
+| **4.2** | **Advanced Caching** | Offen | Optimierung der Service Worker Strategie (Stale-While-Revalidate). |
+| **4.3** | **Custom Themes** | Offen | Dynamische UI-Skins (Neon, Dark-Cyber, Terminal-Classic). |
+| **4.4** | **Audio Engine** | Offen | Implementierung von SFX und Ambient Cyber-Atmosphäre. |
+| **4.5** | **Offline Battle Mode** | Offen | Lokale Challenge-Verifikation ohne Server-Link. |
 
-## QS-FORTSCHRITT (Phase 1, 2 & 3)
-- **CI/CD Dokumentation (3.8):**
-    - Erstellung der `CICD.md` mit detaillierter Beschreibung der Workflows (`ci.yml`, `qa.yml`, `deploy-pages.yml`).
-    - Anleitung für die lokale Test- und Build-Ausführung hinzugefügt.
+### PHASE 5.0 - SOCIAL & COMPETITIVE
+Fokus: Community-Interaktion und globale Wettbewerbe.
+
+| ID | Task | Status | Ziel |
+| :--- | :--- | :--- | :--- |
+| **5.1** | **Global Leagues** | Geplant | Saisonale Leaderboards mit Belohnungssystem. |
+| **5.2** | **Friend System** | Geplant | Direkte Challenges an Kontakte senden. |
+| **5.3** | **Live Battle Sync** | Geplant | Real-time Multiplayer via WebSockets. |
+| **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
+
+### PHASE 6.0 - ECOSYSTEM & AI
+Fokus: Plattform-Erweiterung und intelligente Inhalte.
+
+| ID | Task | Status | Ziel |
+| :--- | :--- | :--- | :--- |
+| **6.1** | **AI Question Gen** | Geplant | Dynamische Generierung von Fragen basierend auf Spielerniveau. |
+| **6.2** | **API Marketplace** | Geplant | Öffentliche API für Drittentwickler (Bots, Dashboards). |
+| **6.3** | **Native Wrappers** | Geplant | Bereitstellung als native Apps via Capacitor/Cordova. |
+
+## QS-HISTORIE (ABGESCHLOSSEN)
+- **Phase 3.0 (QS):** Unit-Tests (game-logic, UIManager), Linting (ESLint/Prettier), CI/CD (GitHub Actions), Performance Reporting (FCP/LCP) und Dokumentation (`CICD.md`) abgeschlossen.
 
 ## NÄCHSTE SCHRITTE
-1. Vorbereitung für Phase 4.0 (Feature-Erweiterung).
-2. Audit der Service Worker Caching-Strategie.
+1. Start Task 4.2: Audit und Optimierung der Service Worker Caching-Strategie.
+2. Design-Entwurf für Task 4.1 (Achievement System).
 3. Review der Sicherheits-Header im Backend.
 
 ---
-**Status:** 2026-06-30 23:59 GMT+2 - Task 3.8 (CI/CD Dokumentation) abgeschlossen.
+**Status:** 2026-06-30 23:59 GMT+2 - Phase 3.0 abgeschlossen, Phase 4.0 Roadmap initiiert.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
