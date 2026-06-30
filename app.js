@@ -390,6 +390,15 @@ document.querySelectorAll('.theme-dot').forEach((dot) => {
   });
 });
 
+const muteBtn = document.getElementById('mute-btn');
+if (muteBtn) {
+  muteBtn.innerText = AudioManager.isMuted ? 'SOUND: OFF' : 'SOUND: ON';
+  muteBtn.addEventListener('click', () => {
+    const muted = AudioManager.toggleMute();
+    muteBtn.innerText = muted ? 'SOUND: OFF' : 'SOUND: ON';
+  });
+}
+
 function unlockAchievement(achievementId) {
   if (state.achievements.includes(achievementId)) return;
 
@@ -717,7 +726,10 @@ function renderQuestion(isRestoring = false) {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
         btn.innerText = opt;
-        btn.addEventListener('click', () => checkAnswer(idx === q.correct));
+        btn.addEventListener('click', () => {
+          AudioManager.play('click');
+          checkAnswer(idx === q.correct);
+        });
         container.appendChild(btn);
       });
     }
