@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.0 (Core), Phase 2.0 (PWA) und Phase 3.0 (QS) erfolgreich abgeschlossen. Phase 4.0 (Feature-Expansion) wurde mit der Implementierung des Achievement Systems (4.1) gestartet.
+Phase 1.0 bis 3.0 abgeschlossen. Phase 4.0 (Feature-Expansion) schreitet voran. Task 4.1 (Achievements) und Task 4.2 (Advanced Caching) erfolgreich implementiert.
 
 ## ROADMAP OVERVIEW
 
@@ -11,7 +11,7 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
 | **4.1** | **Achievement System** | ✅ Erledigt | Lokale Erfolge (First Win, Streaks, Perfect Game) mit Toast-UI. |
-| **4.2** | **Advanced Caching** | Offen | Optimierung der Service Worker Strategie (Stale-While-Revalidate). |
+| **4.2** | **Advanced Caching** | ✅ Erledigt | Optimierung der Service Worker Strategie (Stale-While-Revalidate). |
 | **4.3** | **Custom Themes** | Offen | Dynamische UI-Skins (Neon, Dark-Cyber, Terminal-Classic). |
 | **4.4** | **Audio Engine** | Offen | Implementierung von SFX und Ambient Cyber-Atmosphäre. |
 | **4.5** | **Offline Battle Mode** | Offen | Lokale Challenge-Verifikation ohne Server-Link. |
@@ -27,17 +27,17 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 | **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
 
 ## QS-HISTORIE (ABGESCHLOSSEN)
-- **Phase 3.0 (QS):** Unit-Tests, Linting, CI/CD, Performance Reporting und Dokumentation abgeschlossen.
-- **Phase 4.1 (Achievements):** 
-    - Definition der Achievement-Struktur in `constants.js`.
-    - Integration der Tracking-Logik in `app.js`.
-    - Implementierung einer non-intrusiven Toast-UI für Freischaltungen.
+- **Phase 4.2 (Advanced Caching):** 
+    - Implementierung der `Stale-While-Revalidate` Strategie für API-Requests.
+    - Trennung der Caches in `STATIC`, `API` und `NAV` zur besseren Verwaltung.
+    - Automatisierte Cache-Bereinigung (Cleanup alter Caches) bei Aktivierung.
+    - Optimiertes Offline-Fallback für Navigation.
 
 ## NÄCHSTE SCHRITTE
-1. Start Task 4.2: Audit und Optimierung der Service Worker Caching-Strategie.
-2. Design-Entwurf für Task 4.3 (Custom Themes).
-3. Review der Sicherheits-Header im Backend.
+1. Start Task 4.3: Design-Entwurf und Implementierung der Custom Themes.
+2. Review der Sicherheits-Header im Backend.
+3. Vorbereitung der Asset-Pipeline für die Audio Engine (4.4).
 
 ---
-**Status:** 2026-06-30 23:59 GMT+2 - Task 4.1 (Achievement System) abgeschlossen.
+**Status:** 2026-06-30 23:59 GMT+2 - Task 4.2 (Advanced Caching) abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
