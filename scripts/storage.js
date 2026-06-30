@@ -19,7 +19,7 @@ export const StorageManager = {
         .join('');
     } catch (e) {
       console.error('Signature generation failed:', e);
-      throw new Error('CRYPTO_ERROR');
+      throw new Error('CRYPTO_ERROR', { cause: e });
     }
   },
 

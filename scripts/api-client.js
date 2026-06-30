@@ -35,7 +35,7 @@ export const APIClient = {
       throw new Error(`HTTP_${res.status}`);
     } catch (e) {
       this.reportError(baseUrl, { context: 'fetchLeaderboard', message: e.message });
-      throw new Error('SERVER_UNAVAILABLE');
+      throw new Error('SERVER_UNAVAILABLE', { cause: e });
     }
   },
 

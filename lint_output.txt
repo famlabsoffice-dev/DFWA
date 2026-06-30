@@ -1,0 +1,52 @@
+
+> dfwa-frontend@1.0.0 lint /home/ubuntu/DFWA
+> eslint .
+
+
+/home/ubuntu/DFWA/app.js
+     7:3   warning  'calculateModeScore' is defined but never used  no-unused-vars
+    70:12  warning  'e' is defined but never used                   no-unused-vars
+    88:12  warning  'e' is defined but never used                   no-unused-vars
+   233:12  warning  'e' is defined but never used                   no-unused-vars
+   344:10  warning  'setLanguage' is defined but never used         no-unused-vars
+   737:12  warning  'e' is defined but never used                   no-unused-vars
+   934:12  warning  'e' is defined but never used                   no-unused-vars
+   934:15  warning  Empty block statement                           no-empty
+   956:12  warning  'e' is defined but never used                   no-unused-vars
+   956:15  warning  Empty block statement                           no-empty
+   965:12  warning  'e' is defined but never used                   no-unused-vars
+   965:15  warning  Empty block statement                           no-empty
+   975:12  warning  'e' is defined but never used                   no-unused-vars
+   990:12  warning  'e' is defined but never used                   no-unused-vars
+   990:15  warning  Empty block statement                           no-empty
+  1057:12  warning  'e' is defined but never used                   no-unused-vars
+  1057:15  warning  Empty block statement                           no-empty
+  1078:16  warning  'e' is defined but never used                   no-unused-vars
+  1087:18  warning  'e' is defined but never used                   no-unused-vars
+  1087:21  warning  Empty block statement                           no-empty
+  1095:18  warning  'e' is defined but never used                   no-unused-vars
+  1095:21  warning  Empty block statement                           no-empty
+  1140:12  warning  'e' is defined but never used                   no-unused-vars
+  1171:12  warning  'e' is defined but never used                   no-unused-vars
+  1171:15  warning  Empty block statement                           no-empty
+
+/home/ubuntu/DFWA/scripts/api-client.js
+  38:7  error  There is no `cause` attached to the symptom error being thrown  preserve-caught-error
+
+/home/ubuntu/DFWA/scripts/deduplicate.js
+  25:9  warning  'removedCount' is assigned a value but never used  no-unused-vars
+
+/home/ubuntu/DFWA/scripts/storage.js
+  22:7  error  There is no `cause` attached to the symptom error being thrown  preserve-caught-error
+
+/home/ubuntu/DFWA/server/server.js
+  104:7   warning  'staticPath' is assigned a value but never used  no-unused-vars
+  151:62  warning  'err' is defined but never used                  no-unused-vars
+  152:66  warning  'err' is defined but never used                  no-unused-vars
+  153:77  warning  'err' is defined but never used                  no-unused-vars
+  276:12  warning  'e' is defined but never used                    no-unused-vars
+  380:36  warning  'next' is defined but never used                 no-unused-vars
+
+✖ 34 problems (2 errors, 32 warnings)
+
+ ELIFECYCLE  Command failed with exit code 1.

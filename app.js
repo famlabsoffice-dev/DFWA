@@ -4,7 +4,6 @@ import {
   GameModes,
   ModeConfig,
   getGameModeConfig,
-  calculateModeScore,
 } from './scripts/game-modes.js';
 
 const API_BASE_URL =
@@ -68,7 +67,7 @@ window.addEventListener('error', async (event) => {
   try {
     await APIClient.logClientError(API_BASE_URL, errorData);
   } catch (e) {
-    // Fallback if API fails
+    console.error('API_LOG_FAILED', e);
   }
 });
 
@@ -86,7 +85,7 @@ window.addEventListener('unhandledrejection', async (event) => {
   try {
     await APIClient.logClientError(API_BASE_URL, errorData);
   } catch (e) {
-    // Fallback if API fails
+    console.error('API_LOG_FAILED', e);
   }
 });
 
@@ -341,6 +340,7 @@ function updateUIForLanguage() {
   }
 }
 
+/*
 function setLanguage(lang) {
   try {
     state.lang = lang;
@@ -350,6 +350,7 @@ function setLanguage(lang) {
     console.error('Set language failed', e);
   }
 }
+*/
 
 function setGameMode(mode) {
   try {
@@ -931,7 +932,9 @@ setInterval(() => {
         }, 150);
       }
     }
-  } catch (e) {}
+  } catch (e) {
+    /* Silent catch intentional for non-critical UI operations */
+  }
 }, 4000);
 
 document.addEventListener('keydown', (e) => {
@@ -953,7 +956,9 @@ document.addEventListener('keydown', (e) => {
         if (btns[map[e.key]]) btns[map[e.key]].click();
       }
     }
-  } catch (e) {}
+  } catch (e) {
+    /* Silent catch intentional for non-critical UI operations */
+  }
 });
 
 document.addEventListener('contextmenu', (e) => {
@@ -962,7 +967,9 @@ document.addEventListener('contextmenu', (e) => {
       e.preventDefault();
       state.cheatsAttempted = true;
     }
-  } catch (e) {}
+  } catch (e) {
+    /* Silent catch intentional for non-critical UI operations */
+  }
 });
 
 async function fetchLeaderboard() {
@@ -987,7 +994,9 @@ function displayLeaderboard(scores) {
     lb += '</div>';
     const text = document.getElementById('modal-text');
     if (text) text.innerHTML += lb;
-  } catch (e) {}
+  } catch (e) {
+    /* Silent catch intentional for non-critical UI operations */
+  }
 }
 
 function closeSystem() {
@@ -1054,7 +1063,9 @@ document.addEventListener('visibilitychange', () => {
         }, 500);
       }
     }, 250);
-  } catch (e) {}
+  } catch (e) {
+    /* Silent catch intentional for non-critical UI operations */
+  }
 });
 
 window.addEventListener('beforeunload', saveSession);
@@ -1084,7 +1095,9 @@ if ('serviceWorker' in navigator) {
       if (leaderTab) {
         try {
           localStorage.setItem('sw_leader', JSON.stringify({ id: state.playerId, ts: Date.now() }));
-        } catch (e) {}
+        } catch (e) {
+    /* Silent catch intentional for non-critical UI operations */
+  }
       }
     }, 2000);
 
@@ -1092,7 +1105,9 @@ if ('serviceWorker' in navigator) {
       if (leaderTab) {
         try {
           localStorage.removeItem('sw_leader');
-        } catch (e) {}
+        } catch (e) {
+    /* Silent catch intentional for non-critical UI operations */
+  }
       }
     });
 
@@ -1168,7 +1183,9 @@ function hideLeaderboard() {
     const lobby = document.getElementById('battle-lobby');
     if (screen) screen.classList.remove('active');
     if (lobby) lobby.classList.add('active');
-  } catch (e) {}
+  } catch (e) {
+    /* Silent catch intentional for non-critical UI operations */
+  }
 }
 
 // Event Listener Registration

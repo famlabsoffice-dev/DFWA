@@ -1,0 +1,30 @@
+
+> dfwa-frontend@1.0.0 lint /home/ubuntu/DFWA
+> eslint .
+
+
+/home/ubuntu/DFWA/app.js
+   232:12  warning  'e' is defined but never used            no-unused-vars
+   343:10  warning  'setLanguage' is defined but never used  no-unused-vars
+   736:12  warning  'e' is defined but never used            no-unused-vars
+   933:12  warning  'e' is defined but never used            no-unused-vars
+   957:12  warning  'e' is defined but never used            no-unused-vars
+   968:12  warning  'e' is defined but never used            no-unused-vars
+   980:12  warning  'e' is defined but never used            no-unused-vars
+   995:12  warning  'e' is defined but never used            no-unused-vars
+  1064:12  warning  'e' is defined but never used            no-unused-vars
+  1087:16  warning  'e' is defined but never used            no-unused-vars
+  1096:18  warning  'e' is defined but never used            no-unused-vars
+  1106:18  warning  'e' is defined but never used            no-unused-vars
+  1153:12  warning  'e' is defined but never used            no-unused-vars
+  1184:12  warning  'e' is defined but never used            no-unused-vars
+
+/home/ubuntu/DFWA/scripts/deduplicate.js
+  25:9  warning  'removedCount' is assigned a value but never used  no-unused-vars
+
+/home/ubuntu/DFWA/server/server.js
+  103:7   warning  'distPath' is assigned a value but never used  no-unused-vars
+  276:12  warning  'e' is defined but never used                  no-unused-vars
+
+✖ 17 problems (0 errors, 17 warnings)
+

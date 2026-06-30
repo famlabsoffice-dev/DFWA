@@ -100,9 +100,9 @@ const adminLimiter = rateLimit({
 app.use('/api/admin/', adminLimiter);
 // Statische Dateien aus dem Vite-Build-Output (dist/) servieren
 // Fallback auf Root-Verzeichnis falls dist/ nicht existiert (Entwicklung)
-const distPath = join(__dirname, '..', 'dist');
-const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
-// app.use(express.static(staticPath));
+// const distPath = join(__dirname, '..', 'dist');
+// const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
+  // app.use(express.static(staticPath));
 
 // Database setup
 const dbPath = join(__dirname, 'leaderboard.db');
@@ -148,9 +148,9 @@ db.serialize(() => {
           ip TEXT,
           timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
       )`);
-  db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, (err) => {});
-  db.run(`ALTER TABLE leaderboard ADD COLUMN accuracy INTEGER`, (err) => {});
-  db.run(`ALTER TABLE leaderboard ADD COLUMN mode TEXT DEFAULT 'classic'`, (err) => {});
+  db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, () => {});
+  db.run(`ALTER TABLE leaderboard ADD COLUMN accuracy INTEGER`, () => {});
+  db.run(`ALTER TABLE leaderboard ADD COLUMN mode TEXT DEFAULT 'classic'`, () => {});
 });
 
 // Routes
@@ -377,7 +377,7 @@ app.get('/api/analytics', (req, res) => {
 });
 
 // SPA-Fallback: Alle nicht-API-Routen auf index.html weiterleiten
-app.get(/^\/(?!api).*/, (req, res, next) => {
+app.get(/^\/(?!api).*/, (req, res) => {
   const indexPath = join(staticPathForStatic, 'index.html');
   res.sendFile(indexPath);
 });

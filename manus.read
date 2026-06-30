@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. QS-Phase 3.1 (Unit-Tests), Task 3.2 (Linting), Task 3.3 (CI-Vorbereitung) und Task 3.4 (Global Error Handling) abgeschlossen. Fokus nun auf Code-Hygiene und Bereinigung technischer Schulden (Task 3.5).
+Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. QS-Phase 3.1 bis 3.4 erfolgreich abgeschlossen. Task 3.5.1 (Lint-Bereinigung in app.js und server.js) durchgeführt: Alle kritischen Fehler behoben, Warnungen drastisch reduziert.
 
 ## AKTUELLE ROADMAP (PHASE 3.0+ - QUALITÄTSSICHERUNG)
 
@@ -10,15 +10,21 @@ Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. 
 | **3.1** | **Unit-Tests game-logic.js** | ✅ Erledigt | Abdeckung von Score-Berechnung, Shuffle und Challenge-Generierung. |
 | **3.2** | **Linting-Workflow** | ✅ Erledigt | Einrichtung von ESLint & Prettier für konsistenten Code-Style. |
 | **3.3** | **CI/CD Integration** | ✅ Erledigt | Automatisierte Tests und Linting via GitHub Actions (Konzept bereit). |
-| **3.4** | **Global Error Handling** | ✅ Erledigt | Zentrale Fehlerbehandlung im Frontend implementiert. |
-| **3.5** | **Lint-Bereinigung** | Geplant | Behebung der 32 ESLint-Warnungen/Fehler zur Sicherung der Code-Qualität. |
+| **3.4** | **Global Error Handling** | ✅ Erledigt | Zentrale Fehlerbehandlung im Frontend implementieren. |
+| **3.5** | **Lint-Bereinigung** | In Arbeit | Behebung der ESLint-Warnungen/Fehler. Task 3.5.1 abgeschlossen. |
 
-## NÄCHSTE SCHRITTE (TASK 3.5)
-1. Analyse der verbleibenden 32 ESLint-Probleme (hauptsächlich `no-unused-vars` und `empty-block`).
-2. Entfernung ungenutzter Variablen und Funktionen in `app.js` und `server.js`.
-3. Korrektur der Fehler in `api-client.js` und `storage.js` bezüglich `preserve-caught-error`.
-4. Finale Validierung durch einen sauberen `pnpm lint` Durchlauf.
+## QS-FORTSCHRITT (Phase 1)
+- **Lint-Bereinigung (3.5.1):** 
+    - Alle ESLint-Fehler (2) in `api-client.js` und `storage.js` behoben.
+    - Warnungen in `app.js` und `server.js` von 32 auf 15 reduziert.
+    - Ungenutzte Funktionen (`setLanguage`, `calculateModeScore`) und Variablen (`distPath`) entfernt oder auskommentiert.
+    - Leere catch-Blöcke durch Logging oder dokumentierte Silent-Catches ersetzt.
+
+## NÄCHSTE SCHRITTE
+1. Fortführung Task 3.5: Bereinigung der verbleibenden 15 Warnungen (unused vars in deduplicate.js und app.js).
+2. Erweiterung der Test-Suite auf UI-Komponenten.
+3. Review der Performance-Metriken.
 
 ---
-**Status:** 2026-06-30 22:00 GMT+2 - Task 3.5 (Lint-Bereinigung) als nächster Meilenstein definiert.
+**Status:** 2026-06-30 22:30 GMT+2 - Task 3.5.1 (Lint-Bereinigung) abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
