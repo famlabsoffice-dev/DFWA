@@ -1203,6 +1203,29 @@ document.addEventListener('DOMContentLoaded', () => {
   addClick('show-leaderboard-btn', showLeaderboard);
   addClick('hide-leaderboard-btn', hideLeaderboard);
 
+  // Performance Reporting
+  if ('performance' in window && 'PerformanceObserver' in window) {
+    try {
+      const observer = new PerformanceObserver((list) => {
+        list.getEntries().forEach((entry) => {
+          if (entry.name === 'first-contentful-paint') {
+            APIClient.reportMetric(API_BASE_URL, 'FCP', entry.startTime);
+          }
+        });
+      });
+      observer.observe({ type: 'paint', buffered: true });
+
+      const lcpObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const lastEntry = entries[entries.length - 1];
+        APIClient.reportMetric(API_BASE_URL, 'LCP', lastEntry.startTime);
+      });
+      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch {
+      /* Performance monitoring non-critical */
+    }
+  }
+
   // Leaderboard filter event listeners
   const filterBtns = document.querySelectorAll('#leaderboard-filters .mode-btn');
   filterBtns.forEach((btn) => {
