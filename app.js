@@ -672,6 +672,8 @@ function startTimer() {
 }
 
 async function updateLeaderboard() {
+  if (state.isSubmitting) return;
+  state.isSubmitting = true;
   try {
     const accuracy =
       state.questionCount > 0 ? Math.round((state.correctAnswers / state.questionCount) * 100) : 0;
@@ -683,17 +685,19 @@ async function updateLeaderboard() {
       losses: state.losses,
       variant: state.variant,
       accuracy: accuracy,
+      mode: state.mode,
     };
     await APIClient.updateLeaderboard(API_BASE_URL, payload, state.systemSecret);
     console.log('Score submitted');
   } catch (e) {
     console.warn('Leaderboard update failed (offline mode)');
+  } finally {
+    state.isSubmitting = false;
   }
 }
 
 async function endGame() {
   try {
-    updateLeaderboard();
     clearSession();
     clearInterval(state.timerInterval);
     const overlay = document.getElementById('modal-overlay');
