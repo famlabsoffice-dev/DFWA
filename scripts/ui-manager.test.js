@@ -46,4 +46,22 @@ describe('UIManager', () => {
     expect(entries[0].innerHTML).toContain('Alice');
     expect(entries[0].innerHTML).toContain('100');
   });
+
+  test('setHTML updates innerHTML', () => {
+    UIManager.setHTML('test-el', '<strong>bold</strong>');
+    expect(document.getElementById('test-el').innerHTML).toBe('<strong>bold</strong>');
+  });
+
+  test('renderLeaderboard handles empty data', () => {
+    const container = document.getElementById('leaderboard-entries');
+    UIManager.renderLeaderboard(container, []);
+    expect(container.querySelectorAll('.leaderboard-entry').length).toBe(0);
+  });
+
+  test('UIManager methods handle non-existent elements gracefully', () => {
+    // Should not throw
+    expect(() => UIManager.setText('non-existent', 'text')).not.toThrow();
+    expect(() => UIManager.setHTML('non-existent', 'html')).not.toThrow();
+    expect(() => UIManager.toggleClass('non-existent', 'class')).not.toThrow();
+  });
 });
