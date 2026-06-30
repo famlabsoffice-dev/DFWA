@@ -15,6 +15,14 @@ export const STORAGE_KEYS = {
   BATTLE_STATS: 'battleStats',
   GAME_STATE: 'dfwa_state',
   LAST_VARIANT: 'lastVariant',
+  ACHIEVEMENTS: 'dfwa_achievements',
+};
+
+export const ACHIEVEMENTS = {
+  FIRST_WIN: { id: 'first_win', name: 'FIRST_LINK', desc: 'Erster Sieg im System.' },
+  STREAK_5: { id: 'streak_5', name: 'DATA_FLOW', desc: '5 korrekte Antworten in Folge.' },
+  STREAK_10: { id: 'streak_10', name: 'OVERRIDE', desc: '10 korrekte Antworten in Folge.' },
+  PERFECT_GAME: { id: 'perfect_game', name: 'SYSTEM_SYNC', desc: 'Keine Fehler in einer Session.' },
 };
 
 export const SYSTEM_MESSAGES = {

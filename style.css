@@ -753,3 +753,23 @@ h1 {
   font-size: 0.6rem;
   opacity: 0.8;
 }
+
+/* Achievement Notification */
+.achievement-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid var(--cyber-blue);
+  color: var(--cyber-blue);
+  padding: 15px 25px;
+  z-index: 5000;
+  font-family: monospace;
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

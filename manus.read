@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.0 (Core), Phase 2.0 (PWA) und Phase 3.0 (QS) erfolgreich abgeschlossen. DFWA ist nun eine gehärtete, getestete und performante PWA. Der Fokus verschiebt sich nun auf Phase 4.0 (Feature-Expansion) und Phase 5.0 (Hyper-Scale & Social).
+Phase 1.0 (Core), Phase 2.0 (PWA) und Phase 3.0 (QS) erfolgreich abgeschlossen. Phase 4.0 (Feature-Expansion) wurde mit der Implementierung des Achievement Systems (4.1) gestartet.
 
 ## ROADMAP OVERVIEW
 
@@ -10,7 +10,7 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
-| **4.1** | **Achievement System** | Offen | Lokale und serverseitige Erfolge für Langzeitmotivation. |
+| **4.1** | **Achievement System** | ✅ Erledigt | Lokale Erfolge (First Win, Streaks, Perfect Game) mit Toast-UI. |
 | **4.2** | **Advanced Caching** | Offen | Optimierung der Service Worker Strategie (Stale-While-Revalidate). |
 | **4.3** | **Custom Themes** | Offen | Dynamische UI-Skins (Neon, Dark-Cyber, Terminal-Classic). |
 | **4.4** | **Audio Engine** | Offen | Implementierung von SFX und Ambient Cyber-Atmosphäre. |
@@ -26,23 +26,18 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 | **5.3** | **Live Battle Sync** | Geplant | Real-time Multiplayer via WebSockets. |
 | **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
 
-### PHASE 6.0 - ECOSYSTEM & AI
-Fokus: Plattform-Erweiterung und intelligente Inhalte.
-
-| ID | Task | Status | Ziel |
-| :--- | :--- | :--- | :--- |
-| **6.1** | **AI Question Gen** | Geplant | Dynamische Generierung von Fragen basierend auf Spielerniveau. |
-| **6.2** | **API Marketplace** | Geplant | Öffentliche API für Drittentwickler (Bots, Dashboards). |
-| **6.3** | **Native Wrappers** | Geplant | Bereitstellung als native Apps via Capacitor/Cordova. |
-
 ## QS-HISTORIE (ABGESCHLOSSEN)
-- **Phase 3.0 (QS):** Unit-Tests (game-logic, UIManager), Linting (ESLint/Prettier), CI/CD (GitHub Actions), Performance Reporting (FCP/LCP) und Dokumentation (`CICD.md`) abgeschlossen.
+- **Phase 3.0 (QS):** Unit-Tests, Linting, CI/CD, Performance Reporting und Dokumentation abgeschlossen.
+- **Phase 4.1 (Achievements):** 
+    - Definition der Achievement-Struktur in `constants.js`.
+    - Integration der Tracking-Logik in `app.js`.
+    - Implementierung einer non-intrusiven Toast-UI für Freischaltungen.
 
 ## NÄCHSTE SCHRITTE
 1. Start Task 4.2: Audit und Optimierung der Service Worker Caching-Strategie.
-2. Design-Entwurf für Task 4.1 (Achievement System).
+2. Design-Entwurf für Task 4.3 (Custom Themes).
 3. Review der Sicherheits-Header im Backend.
 
 ---
-**Status:** 2026-06-30 23:59 GMT+2 - Phase 3.0 abgeschlossen, Phase 4.0 Roadmap initiiert.
+**Status:** 2026-06-30 23:59 GMT+2 - Task 4.1 (Achievement System) abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

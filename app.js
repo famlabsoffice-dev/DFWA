@@ -5,6 +5,7 @@ import {
   ModeConfig,
   getGameModeConfig,
 } from './scripts/game-modes.js';
+import { ACHIEVEMENTS as ACHIEV_CONST, STORAGE_KEYS } from './scripts/constants.js';
 
 const API_BASE_URL =
   window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -49,6 +50,7 @@ let state = {
   timeDesyncDetected: false,
   mode: localStorage.getItem('dfwa_mode') || 'classic',
   variant: localStorage.getItem('dfwa_variant') || (Math.random() < 0.5 ? 'A' : 'B'),
+  achievements: JSON.parse(localStorage.getItem(STORAGE_KEYS.ACHIEVEMENTS) || '[]'),
 };
 if (!localStorage.getItem('dfwa_variant')) localStorage.setItem('dfwa_variant', state.variant);
 
@@ -369,6 +371,30 @@ function setGameMode(mode) {
 }
 
 detectLanguage();
+
+function unlockAchievement(achievementId) {
+  if (state.achievements.includes(achievementId)) return;
+
+  const achievement = Object.values(ACHIEV_CONST).find((a) => a.id === achievementId);
+  if (!achievement) return;
+
+  state.achievements.push(achievementId);
+  localStorage.setItem(STORAGE_KEYS.ACHIEVEMENTS, JSON.stringify(state.achievements));
+
+  const toast = document.createElement('div');
+  toast.className = 'achievement-toast';
+  toast.innerHTML = `<strong>ACHIEVEMENT_UNLOCKED</strong><br>${achievement.name}`;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 4000);
+}
+
+function checkAchievements() {
+  if (state.wins > 0) unlockAchievement(ACHIEV_CONST.FIRST_WIN.id);
+  if (state.streak >= 5) unlockAchievement(ACHIEV_CONST.STREAK_5.id);
+  if (state.streak >= 10) unlockAchievement(ACHIEV_CONST.STREAK_10.id);
+  if (state.lives === 3 && state.correctAnswers >= 10)
+    unlockAchievement(ACHIEV_CONST.PERFECT_GAME.id);
+}
 
 function renderModeSelector() {
   try {
@@ -785,6 +811,7 @@ async function endGame() {
       }
       const battleStatsEl = document.getElementById('battle-stats');
       if (battleStatsEl) battleStatsEl.innerText = `W:${state.wins} / L:${state.losses}`;
+      checkAchievements();
     } else {
       if (title) {
         title.style.color = isNewBest ? 'var(--warning)' : 'var(--neon)';
@@ -869,6 +896,7 @@ function checkAnswer(correct) {
         fMsg.style.color = 'var(--neon)';
         fMsg.innerText = getComment('correct');
       }
+      checkAchievements();
     } else if (correct === false) {
       state.lives = Math.max(0, state.lives - 1);
       state.streak = 0;
