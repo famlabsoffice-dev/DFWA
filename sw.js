@@ -16,7 +16,7 @@ self.addEventListener('message', (event) => {
 // Fallback für offline Navigation
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
-  
+
   // API-Anfragen: Network-First mit 3s Timeout
   if (url.pathname.startsWith('/api/')) {
     event.respondWith(

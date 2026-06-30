@@ -11,14 +11,17 @@
 7. **ack_system_shutdown.png**: Beenden-Screen. Schließender Iris-Verschluss, finaler grüner Pixel.
 
 ## Event-Visuals
+
 - **ack_victory.png**: Wird angezeigt, wenn der Spieler verliert (ACK siegt).
 - **ack_player_win_angry.png**: Wird angezeigt, wenn der Spieler siegt (ACK ist wütend).
 - **ack_pause.png**: Wird angezeigt, wenn das Spiel pausiert wird (ACK gelangweilt).
 - **ack_override_alien.png**: Start einer Runde/Challenge (INIT Button).
 
 ## Referenzen
+
 - ref_*.jpg/png: Ursprüngliche Stil-Referenzen.
 
 ## Design-Richtlinien
+
 - **Palette:** 85% Schwarz, 14% Neon-Grün (#39FF14), 1% Warn-Rot (#FF3131).
 - **Stil:** AAA Cyberpunk Dystopie, A.C.K. Identität, hochimmersiv.

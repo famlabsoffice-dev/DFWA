@@ -38,9 +38,9 @@ app.use(
       directives: {
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'", "'unsafe-inline'"],
-        styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
-        fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        imgSrc: ["'self'", "data:", "https://*"],
+        styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+        fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+        imgSrc: ["'self'", 'data:', 'https://*'],
         connectSrc: ["'self'"],
         upgradeInsecureRequests: [],
       },
@@ -104,7 +104,6 @@ const distPath = join(__dirname, '..', 'dist');
 const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
 // app.use(express.static(staticPath));
 
-
 // Database setup
 const dbPath = join(__dirname, 'leaderboard.db');
 const db = new sqlite3.Database(dbPath, (err) => {
@@ -112,8 +111,8 @@ const db = new sqlite3.Database(dbPath, (err) => {
   else console.log('Connected to SQLite database.');
 });
 
-    db.serialize(() => {
-      db.run(`CREATE TABLE IF NOT EXISTS leaderboard (
+db.serialize(() => {
+  db.run(`CREATE TABLE IF NOT EXISTS leaderboard (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           playerId TEXT UNIQUE,
           playerName TEXT,
@@ -125,14 +124,14 @@ const db = new sqlite3.Database(dbPath, (err) => {
           mode TEXT DEFAULT 'classic',
           timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
       )`);
-      db.run(`CREATE TABLE IF NOT EXISTS ratelimit_logs (
+  db.run(`CREATE TABLE IF NOT EXISTS ratelimit_logs (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           ip TEXT,
           path TEXT,
           timestamp DATETIME,
           userAgent TEXT
       )`);
-        db.run(`CREATE TABLE IF NOT EXISTS error_logs (
+  db.run(`CREATE TABLE IF NOT EXISTS error_logs (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             type TEXT, -- 'CLIENT' oder 'SERVER'
             message TEXT,
@@ -142,7 +141,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
             userAgent TEXT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )`);
-      db.run(`CREATE TABLE IF NOT EXISTS performance_metrics (
+  db.run(`CREATE TABLE IF NOT EXISTS performance_metrics (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           metricName TEXT,
           value REAL,
@@ -178,7 +177,7 @@ app.get('/api/leaderboard', (req, res) => {
 app.post('/api/leaderboard', (req, res) => {
   const { playerId, playerName, score, wins, losses, variant, accuracy, mode, ts, auth } = req.body;
   const modeVal = mode || 'classic';
-  
+
   // Ensure types are consistent for HMAC calculation
   const scoreNum = Number(score);
   const winsNum = Number(wins);
@@ -192,18 +191,15 @@ app.post('/api/leaderboard', (req, res) => {
   }
 
   // 2. Integrity: Validate HMAC signature including timestamp
-  const msg = JSON.stringify({ 
-    playerId, 
-    score: scoreNum, 
-    wins: winsNum, 
-    losses: lossesNum, 
-    mode: modeVal, 
-    ts: tsNum 
+  const msg = JSON.stringify({
+    playerId,
+    score: scoreNum,
+    wins: winsNum,
+    losses: lossesNum,
+    mode: modeVal,
+    ts: tsNum,
   });
-  const expectedAuth = crypto
-    .createHmac('sha256', SYSTEM_SECRET)
-    .update(msg)
-    .digest('hex');
+  const expectedAuth = crypto.createHmac('sha256', SYSTEM_SECRET).update(msg).digest('hex');
 
   if (auth !== expectedAuth && auth !== SYSTEM_SECRET) {
     return res.status(403).json({ error: 'INVALID_AUTH_SIGNATURE' });
@@ -232,19 +228,25 @@ app.post('/api/leaderboard', (req, res) => {
             timestamp = CURRENT_TIMESTAMP
     `;
 
-  db.run(query, [playerId, playerName, score, wins, losses, variant, accuracy, modeVal], function (err) {
-    if (err) {
-      console.error('Leaderboard update error:', err);
-      res.status(500).json({ error: 'Database error' });
-    } else {
-      res.json({ success: true });
+  db.run(
+    query,
+    [playerId, playerName, score, wins, losses, variant, accuracy, modeVal],
+    function (err) {
+      if (err) {
+        console.error('Leaderboard update error:', err);
+        res.status(500).json({ error: 'Database error' });
+      } else {
+        res.json({ success: true });
+      }
     }
-  });
+  );
 });
 
 // Statische Dateien und SPA-Fallback erst NACH den API-Routen
 const distPathForStatic = join(__dirname, '..', 'dist');
-const staticPathForStatic = existsSync(distPathForStatic) ? distPathForStatic : join(__dirname, '..');
+const staticPathForStatic = existsSync(distPathForStatic)
+  ? distPathForStatic
+  : join(__dirname, '..');
 app.use(express.static(staticPathForStatic));
 
 app.post('/api/challenge/verify', (req, res) => {
@@ -312,8 +314,8 @@ async function sendAlert(errorData) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        text: `🚨 *DFWA Error Alert*\n*Type:* ${errorData.type}\n*Message:* ${errorData.message}\n*IP:* ${errorData.ip}\n*Time:* ${new Date().toISOString()}`
-      })
+        text: `🚨 *DFWA Error Alert*\n*Type:* ${errorData.type}\n*Message:* ${errorData.message}\n*IP:* ${errorData.ip}\n*Time:* ${new Date().toISOString()}`,
+      }),
     });
   } catch (e) {
     console.error('Failed to send alert webhook:', e);
@@ -328,12 +330,19 @@ app.post('/api/errors/client', (req, res) => {
     stack,
     stateSnapshot: stateSnapshot ? JSON.stringify(stateSnapshot) : null,
     ip: req.ip,
-    userAgent: userAgent || req.get('User-Agent')
+    userAgent: userAgent || req.get('User-Agent'),
   };
 
   db.run(
     `INSERT INTO error_logs (type, message, stack, stateSnapshot, ip, userAgent) VALUES (?, ?, ?, ?, ?, ?)`,
-    [logData.type, logData.message, logData.stack, logData.stateSnapshot, logData.ip, logData.userAgent],
+    [
+      logData.type,
+      logData.message,
+      logData.stack,
+      logData.stateSnapshot,
+      logData.ip,
+      logData.userAgent,
+    ],
     async (err) => {
       if (err) return res.status(500).json({ error: 'Failed to log error' });
       await sendAlert(logData);
@@ -391,9 +400,13 @@ app.listen(PORT, () => {
       db.run(`DELETE FROM error_logs WHERE timestamp < ?`, [retentionDate.toISOString()], (err) => {
         if (err) console.error('Error log cleanup error:', err);
       });
-      db.run(`DELETE FROM performance_metrics WHERE timestamp < ?`, [retentionDate.toISOString()], (err) => {
-        if (err) console.error('Metrics cleanup error:', err);
-      });
+      db.run(
+        `DELETE FROM performance_metrics WHERE timestamp < ?`,
+        [retentionDate.toISOString()],
+        (err) => {
+          if (err) console.error('Metrics cleanup error:', err);
+        }
+      );
     },
     24 * 60 * 60 * 1000
   );

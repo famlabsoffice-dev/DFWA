@@ -466,7 +466,6 @@ h1 {
   }
 }
 
-
 /* ===== RESPONSIVE DESIGN: FOLDABLES & EXTREME FORMATS ===== */
 
 /* Foldable Devices: Vertical Fold (e.g., Samsung Galaxy Z Fold) */
@@ -705,10 +704,10 @@ h1 {
 @media (viewport-fit: cover) {
   body,
   html {
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+      env(safe-area-inset-left);
   }
 }
-
 
 .mode-selector-container {
   display: grid;

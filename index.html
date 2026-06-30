@@ -87,19 +87,15 @@
             aria-label="Spieler-Codename eingeben"
             autocomplete="off"
           />
-          <div id="mode-selector" class="mode-selector-container" aria-label="Modus auswählen"></div>
-          <button
-            id="resume-btn"
-            class="option-btn battle-btn"
-            style="display: none"
-          >
+          <div
+            id="mode-selector"
+            class="mode-selector-container"
+            aria-label="Modus auswählen"
+          ></div>
+          <button id="resume-btn" class="option-btn battle-btn" style="display: none">
             RESUME_PROTOCOL
           </button>
-          <button
-            id="start-btn"
-            class="option-btn start-btn"
-            aria-label="Spiel starten"
-          >
+          <button id="start-btn" class="option-btn start-btn" aria-label="Spiel starten">
             INIT_PROTOCOL
           </button>
           <button
@@ -138,7 +134,7 @@
         <div class="server-room-bg"></div>
         <div class="ui-content-wrapper" style="z-index: 10">
           <h2 class="glitch-text" data-text="SERVER_ROOM_DATA">SERVER_ROOM_DATA</h2>
-          <div id="leaderboard-filters" class="mode-selector-container" style="margin-bottom: 20px;">
+          <div id="leaderboard-filters" class="mode-selector-container" style="margin-bottom: 20px">
             <button class="mode-btn active" data-mode="classic">CLASSIC</button>
             <button class="mode-btn" data-mode="timeAttack">TIME_ATTACK</button>
             <button class="mode-btn" data-mode="hardcore">HARDCORE</button>
@@ -158,47 +154,74 @@
         </div>
       </div>
 
-        <div id="game-screen" class="screen">
-          <div
-            id="timeline-container"
-            role="progressbar"
-            aria-valuemin="0"
-            aria-valuemax="15"
-            aria-valuenow="15"
-            aria-label="Verbleibende Zeit"
-          >
-            <div id="timer-bar"></div>
-          </div>
-          <span id="timer-text" style="position: absolute; top: 10vh; left: 20px; font-size: 0.75rem; font-weight: 900; color: var(--warning); z-index: 50;">15S</span>
-          <div
-            id="score-hud"
-            aria-live="polite"
-            aria-atomic="true"
-            style="
-              position: absolute;
-              top: 16vh;
-              right: 20px;
-              text-align: right;
-              z-index: 50;
-              font-size: 0.75rem;
-              font-weight: 900;
-              line-height: 1.6;
-            "
-          >
-            <span id="hud-mode" style="color: var(--cyber-blue); font-size: 0.6rem">CLASSIC</span
-            ><br />
-            <span id="hud-score" style="color: var(--neon)">0_PTS</span><br />
-            <span id="hud-streak" style="color: var(--warning); display: none"
-              >STREAK_<span id="hud-streak-count">0</span>X</span
-            >
-          </div>
-          <div id="cat-display" style="color: var(--cyber-blue); font-size: 0.7rem; letter-spacing: 2px; text-align: center; margin-top: 18vh;"></div>
-          <div id="question-text" role="status" aria-live="polite" aria-atomic="true" style="margin-top: 2vh;">
-            INITIALIZING...
-          </div>
-          <div id="options-container" role="group" aria-label="Antwortoptionen"></div>
-          <button id="pause-btn" aria-label="Spiel pausieren">PAUSE</button>
+      <div id="game-screen" class="screen">
+        <div
+          id="timeline-container"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="15"
+          aria-valuenow="15"
+          aria-label="Verbleibende Zeit"
+        >
+          <div id="timer-bar"></div>
         </div>
+        <span
+          id="timer-text"
+          style="
+            position: absolute;
+            top: 10vh;
+            left: 20px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            color: var(--warning);
+            z-index: 50;
+          "
+          >15S</span
+        >
+        <div
+          id="score-hud"
+          aria-live="polite"
+          aria-atomic="true"
+          style="
+            position: absolute;
+            top: 16vh;
+            right: 20px;
+            text-align: right;
+            z-index: 50;
+            font-size: 0.75rem;
+            font-weight: 900;
+            line-height: 1.6;
+          "
+        >
+          <span id="hud-mode" style="color: var(--cyber-blue); font-size: 0.6rem">CLASSIC</span
+          ><br />
+          <span id="hud-score" style="color: var(--neon)">0_PTS</span><br />
+          <span id="hud-streak" style="color: var(--warning); display: none"
+            >STREAK_<span id="hud-streak-count">0</span>X</span
+          >
+        </div>
+        <div
+          id="cat-display"
+          style="
+            color: var(--cyber-blue);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-top: 18vh;
+          "
+        ></div>
+        <div
+          id="question-text"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          style="margin-top: 2vh"
+        >
+          INITIALIZING...
+        </div>
+        <div id="options-container" role="group" aria-label="Antwortoptionen"></div>
+        <button id="pause-btn" aria-label="Spiel pausieren">PAUSE</button>
+      </div>
     </div>
 
     <div id="feedback-screen" role="dialog" aria-modal="true" aria-labelledby="feedback-msg">

@@ -1,6 +1,11 @@
 import { APIClient } from './scripts/api-client.js';
 import { UIManager } from './scripts/ui-manager.js';
-import { GameModes, ModeConfig, getGameModeConfig, calculateModeScore } from './scripts/game-modes.js';
+import {
+  GameModes,
+  ModeConfig,
+  getGameModeConfig,
+  calculateModeScore,
+} from './scripts/game-modes.js';
 
 const API_BASE_URL =
   window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -160,8 +165,8 @@ window.onerror = (message, source, lineno, colno, error) => {
       score: state.score,
       lives: state.lives,
       mode: state.mode,
-      sessionActive: state.sessionActive
-    }
+      sessionActive: state.sessionActive,
+    },
   });
 };
 
@@ -174,8 +179,8 @@ window.onunhandledrejection = (event) => {
       score: state.score,
       lives: state.lives,
       mode: state.mode,
-      sessionActive: state.sessionActive
-    }
+      sessionActive: state.sessionActive,
+    },
   });
 };
 
@@ -336,7 +341,8 @@ function renderModeSelector() {
       const btn = document.createElement('button');
       btn.className = 'mode-btn' + (state.mode === key ? ' active' : '');
       btn.dataset.mode = key;
-      btn.innerHTML = '<strong>' + config.name + '</strong><small>' + config.description + '</small>';
+      btn.innerHTML =
+        '<strong>' + config.name + '</strong><small>' + config.description + '</small>';
       btn.onclick = () => {
         setGameMode(key);
         renderModeSelector();
@@ -504,7 +510,8 @@ function resumeProtocol() {
     if (resumeBtn) resumeBtn.style.display = 'none';
 
     const config = getGameModeConfig(state.mode);
-    state.timer = state.pausedTimer !== null && state.pausedTimer > 0 ? state.pausedTimer : config.initialTimer;
+    state.timer =
+      state.pausedTimer !== null && state.pausedTimer > 0 ? state.pausedTimer : config.initialTimer;
     state.pausedTimer = null;
     state.timerEndTimestamp = Date.now() + state.timer * 1000;
 
@@ -1166,15 +1173,16 @@ window.__END_GAME__ = endGame;
 
 window.generateChallengeCode = generateChallengeCode;
 
-1156	  // Service Worker Registration
-1157	  if ('serviceWorker' in navigator) {
-1158	    window.addEventListener('load', () => {
-1159	      navigator.serviceWorker.register('./sw.js').then(reg => {
-1160	        console.log('SW registered:', reg);
-1161	      }).catch(err => {
-1162	        console.warn('SW registration failed:', err);
-1163	      });
-1164	    });
-1165	  }
-1166	});
-1167	
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('./sw.js')
+      .then((reg) => {
+        console.log('SW registered:', reg);
+      })
+      .catch((err) => {
+        console.warn('SW registration failed:', err);
+      });
+  });
+}

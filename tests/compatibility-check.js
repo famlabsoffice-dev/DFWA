@@ -70,7 +70,7 @@ checkFileContent('style.css', 'min-width: 2560px', 'Ultra-Wide Breakpoint');
 console.log('\n⚙️ Backend Configuration:');
 checkFile('server/server.js', 'Express Server');
 checkFileContent('server/server.js', "app.set('trust proxy', 1)", 'Proxy Configuration');
-checkFileContent('server/server.js', 'NODE_ENV === \'production\'', 'Production Security Check');
+checkFileContent('server/server.js', "NODE_ENV === 'production'", 'Production Security Check');
 
 console.log('\n🔧 Build Configuration:');
 checkFile('vite.config.js', 'Vite Configuration');
@@ -111,7 +111,8 @@ if (checks.warnings.length > 0) {
 
 const totalChecks = checks.passed.length + checks.failed.length + checks.warnings.length;
 const passRate = totalChecks > 0 ? ((checks.passed.length / totalChecks) * 100).toFixed(2) : '0';
-console.log(`\n📈 Overall Pass Rate: ${passRate}% (${checks.passed.length}/${checks.passed.length + checks.failed.length})`);
+console.log(
+  `\n📈 Overall Pass Rate: ${passRate}% (${checks.passed.length}/${checks.passed.length + checks.failed.length})`
+);
 
 process.exit(checks.failed.length > 0 ? 1 : 0);
-

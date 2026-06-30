@@ -73,7 +73,9 @@ describe('DFWA Integration Tests', () => {
     test('Offline fallback should work', async () => {
       await page.goto('http://localhost:3000', { waitUntil: 'networkidle2' });
       await page.context().setOfflineMode(true);
-      const response = await page.goto('http://localhost:3000', { waitUntil: 'networkidle0' }).catch(() => null);
+      const response = await page
+        .goto('http://localhost:3000', { waitUntil: 'networkidle0' })
+        .catch(() => null);
       expect(response).toBeTruthy();
       await page.context().setOfflineMode(false);
     });

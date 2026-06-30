@@ -65,7 +65,9 @@ describe('GameLogic', () => {
     });
 
     test('should throw error if secret is missing', async () => {
-      await expect(GameLogic.generateChallengeCode(1, 100)).rejects.toThrow('SYSTEM_SECRET not provided for GameLogic');
+      await expect(GameLogic.generateChallengeCode(1, 100)).rejects.toThrow(
+        'SYSTEM_SECRET not provided for GameLogic'
+      );
     });
   });
 });

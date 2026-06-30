@@ -12,7 +12,7 @@ export const APIClient = {
         wins: payload.wins,
         losses: payload.losses,
         mode: mode,
-        ts: ts
+        ts: ts,
       });
       const auth = await this.generateHMAC(msg, secret);
 
@@ -51,7 +51,11 @@ export const APIClient = {
       return data.data;
     } catch (e) {
       this.reportError(baseUrl, { context: 'verifyChallenge', message: e.message });
-      UIManager.showModal('Error', 'Challenge verification failed. Please check your code or connection.', 'var(--error)');
+      UIManager.showModal(
+        'Error',
+        'Challenge verification failed. Please check your code or connection.',
+        'var(--error)'
+      );
       throw e;
     }
   },
