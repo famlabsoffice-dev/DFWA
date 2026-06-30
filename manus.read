@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.0 bis 3.0 abgeschlossen. Phase 4.0 (Feature-Expansion) schreitet voran. Task 4.1 (Achievements) und Task 4.2 (Advanced Caching) erfolgreich implementiert.
+Phase 1.0 bis 3.0 abgeschlossen. Phase 4.0 (Feature-Expansion) schreitet zügig voran. Task 4.1 (Achievements), Task 4.2 (Advanced Caching) und Task 4.3 (Custom Themes) erfolgreich implementiert.
 
 ## ROADMAP OVERVIEW
 
@@ -12,7 +12,7 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 | :--- | :--- | :--- | :--- |
 | **4.1** | **Achievement System** | ✅ Erledigt | Lokale Erfolge (First Win, Streaks, Perfect Game) mit Toast-UI. |
 | **4.2** | **Advanced Caching** | ✅ Erledigt | Optimierung der Service Worker Strategie (Stale-While-Revalidate). |
-| **4.3** | **Custom Themes** | Offen | Dynamische UI-Skins (Neon, Dark-Cyber, Terminal-Classic). |
+| **4.3** | **Custom Themes** | ✅ Erledigt | Dynamische UI-Skins (Neon, Dark-Cyber, Terminal-Classic, Blood). |
 | **4.4** | **Audio Engine** | Offen | Implementierung von SFX und Ambient Cyber-Atmosphäre. |
 | **4.5** | **Offline Battle Mode** | Offen | Lokale Challenge-Verifikation ohne Server-Link. |
 
@@ -27,17 +27,16 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 | **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
 
 ## QS-HISTORIE (ABGESCHLOSSEN)
-- **Phase 4.2 (Advanced Caching):** 
-    - Implementierung der `Stale-While-Revalidate` Strategie für API-Requests.
-    - Trennung der Caches in `STATIC`, `API` und `NAV` zur besseren Verwaltung.
-    - Automatisierte Cache-Bereinigung (Cleanup alter Caches) bei Aktivierung.
-    - Optimiertes Offline-Fallback für Navigation.
+- **Phase 4.3 (Custom Themes):** 
+    - Definition von CSS-Variablen für verschiedene Themes (`Dark-Cyber`, `Terminal`, `Blood`).
+    - Implementierung eines persistenten Theme-Switchers in `app.js`.
+    - Integration einer interaktiven Theme-Auswahl (Dots) im Startbildschirm.
 
 ## NÄCHSTE SCHRITTE
-1. Start Task 4.3: Design-Entwurf und Implementierung der Custom Themes.
+1. Start Task 4.4: Implementierung der Audio Engine (SFX & Ambient).
 2. Review der Sicherheits-Header im Backend.
-3. Vorbereitung der Asset-Pipeline für die Audio Engine (4.4).
+3. Vorbereitung der Asset-Pipeline für Phase 5.0.
 
 ---
-**Status:** 2026-06-30 23:59 GMT+2 - Task 4.2 (Advanced Caching) abgeschlossen.
+**Status:** 2026-06-30 23:59 GMT+2 - Task 4.3 (Custom Themes) abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

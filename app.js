@@ -51,6 +51,7 @@ let state = {
   mode: localStorage.getItem('dfwa_mode') || 'classic',
   variant: localStorage.getItem('dfwa_variant') || (Math.random() < 0.5 ? 'A' : 'B'),
   achievements: JSON.parse(localStorage.getItem(STORAGE_KEYS.ACHIEVEMENTS) || '[]'),
+  theme: localStorage.getItem(STORAGE_KEYS.THEME) || 'default',
 };
 if (!localStorage.getItem('dfwa_variant')) localStorage.setItem('dfwa_variant', state.variant);
 
@@ -371,6 +372,23 @@ function setGameMode(mode) {
 }
 
 detectLanguage();
+
+function applyTheme(themeName) {
+  state.theme = themeName;
+  localStorage.setItem(STORAGE_KEYS.THEME, themeName);
+  document.body.className = themeName === 'default' ? '' : `theme-${themeName}`;
+}
+
+// Apply initial theme
+applyTheme(state.theme);
+
+document.querySelectorAll('.theme-dot').forEach((dot) => {
+  dot.addEventListener('click', () => {
+    applyTheme(dot.dataset.theme);
+    document.querySelectorAll('.theme-dot').forEach((d) => (d.style.borderWidth = '1px'));
+    dot.style.borderWidth = '2px';
+  });
+});
 
 function unlockAchievement(achievementId) {
   if (state.achievements.includes(achievementId)) return;

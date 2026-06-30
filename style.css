@@ -14,6 +14,27 @@
   --black: #000000;
 }
 
+body.theme-dark-cyber {
+  --neon: #ff00ff;
+  --neon-bg: rgba(255, 0, 255, 0.1);
+  --cyber-blue: #7000ff;
+  --warning: #00ffff;
+}
+
+body.theme-terminal {
+  --neon: #00ff41;
+  --neon-bg: rgba(0, 255, 65, 0.05);
+  --cyber-blue: #008f11;
+  --warning: #d4d4d4;
+}
+
+body.theme-blood {
+  --neon: #ff0000;
+  --neon-bg: rgba(255, 0, 0, 0.1);
+  --cyber-blue: #800000;
+  --warning: #ffcc00;
+}
+
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;

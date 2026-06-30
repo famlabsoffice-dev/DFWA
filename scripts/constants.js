@@ -16,6 +16,7 @@ export const STORAGE_KEYS = {
   GAME_STATE: 'dfwa_state',
   LAST_VARIANT: 'lastVariant',
   ACHIEVEMENTS: 'dfwa_achievements',
+  THEME: 'dfwa_theme',
 };
 
 export const ACHIEVEMENTS = {
