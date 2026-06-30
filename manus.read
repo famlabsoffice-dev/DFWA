@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-06-30)
 
 ## EXECUTIVE SUMMARY
-Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. QS-Phase 3.1 bis 3.7 erfolgreich abgeschlossen. Performance-Metriken wurden reviewt und durch automatisiertes Core Web Vitals Reporting (FCP, LCP) erweitert.
+Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. QS-Phase 3.1 bis 3.8 erfolgreich abgeschlossen. Die CI/CD Dokumentation wurde finalisiert und in einer dedizierten Datei (`CICD.md`) zusammengefasst.
 
 ## AKTUELLE ROADMAP (PHASE 3.0+ - QUALITÄTSSICHERUNG)
 
@@ -14,18 +14,18 @@ Phase 1.14 (Replay-Schutz) abgeschlossen. Phase 2.0 (PWA-Härtung) finalisiert. 
 | **3.5** | **Lint-Bereinigung** | ✅ Erledigt | Behebung aller ESLint-Warnungen/Fehler. |
 | **3.6** | **UI-Komponenten Tests** | ✅ Erledigt | Unit-Tests für UIManager und DOM-Interaktionen. |
 | **3.7** | **Performance Review** | ✅ Erledigt | Review und Implementierung von Core Web Vitals Reporting. |
+| **3.8** | **CI/CD Dokumentation** | ✅ Erledigt | Finalisierung der `CICD.md` Dokumentation. |
 
 ## QS-FORTSCHRITT (Phase 1, 2 & 3)
-- **Performance Review (3.7):**
-    - Analyse der bestehenden `/api/metrics` Infrastruktur.
-    - Implementierung von `PerformanceObserver` in `app.js` zur Erfassung von `First Contentful Paint (FCP)` und `Largest Contentful Paint (LCP)`.
-    - Automatisierte Übermittlung der Metriken an das Backend zur Langzeitanalyse.
+- **CI/CD Dokumentation (3.8):**
+    - Erstellung der `CICD.md` mit detaillierter Beschreibung der Workflows (`ci.yml`, `qa.yml`, `deploy-pages.yml`).
+    - Anleitung für die lokale Test- und Build-Ausführung hinzugefügt.
 
 ## NÄCHSTE SCHRITTE
-1. Finalisierung der CI/CD Dokumentation.
-2. Vorbereitung für Phase 4.0 (Feature-Erweiterung).
-3. Audit der Service Worker Caching-Strategie.
+1. Vorbereitung für Phase 4.0 (Feature-Erweiterung).
+2. Audit der Service Worker Caching-Strategie.
+3. Review der Sicherheits-Header im Backend.
 
 ---
-**Status:** 2026-06-30 23:59 GMT+2 - Task 3.7 (Performance Review) abgeschlossen.
+**Status:** 2026-06-30 23:59 GMT+2 - Task 3.8 (CI/CD Dokumentation) abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
