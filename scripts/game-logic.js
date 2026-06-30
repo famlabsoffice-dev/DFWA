@@ -1,4 +1,5 @@
 export const GameLogic = {
+  _crypto: typeof window !== 'undefined' ? window.crypto : null,
   calculateScore(timer, streak) {
     const streakBonus = Math.min((streak - 1) * 10, 100);
     const timeBonus = Math.min(Math.floor(timer * 2), 30);
@@ -21,7 +22,8 @@ export const GameLogic = {
   async generateChallengeCode(seed, score, secret) {
     const payload = { seed, score, ts: Date.now() };
     const msg = JSON.stringify(payload);
-    const key = await crypto.subtle.importKey(
+    const cryptoObj = this._crypto || globalThis.crypto;
+    const key = await cryptoObj.subtle.importKey(
       'raw',
       new TextEncoder().encode(
         secret ||
@@ -33,7 +35,7 @@ export const GameLogic = {
       false,
       ['sign']
     );
-    const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(msg));
+    const sig = await cryptoObj.subtle.sign('HMAC', key, new TextEncoder().encode(msg));
     const sigHex = Array.from(new Uint8Array(sig))
       .map((b) => b.toString(16).padStart(2, '0'))
       .join('')
