@@ -1164,3 +1164,16 @@ window.__STATE__ = state;
 window.__END_GAME__ = endGame;
 
 window.generateChallengeCode = generateChallengeCode;
+
+1156	  // Service Worker Registration
+1157	  if ('serviceWorker' in navigator) {
+1158	    window.addEventListener('load', () => {
+1159	      navigator.serviceWorker.register('./sw.js').then(reg => {
+1160	        console.log('SW registered:', reg);
+1161	      }).catch(err => {
+1162	        console.warn('SW registration failed:', err);
+1163	      });
+1164	    });
+1165	  }
+1166	});
+1167	
