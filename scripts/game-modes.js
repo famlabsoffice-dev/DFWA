@@ -2,6 +2,7 @@ export const GameModes = {
   CLASSIC: 'classic',
   TIME_ATTACK: 'timeAttack',
   HARDCORE: 'hardcore',
+  BLITZ: 'blitz',
 };
 
 export const ModeConfig = {
@@ -35,6 +36,17 @@ export const ModeConfig = {
     scoreMultiplier: 2,
     streakBonus: true,
     timeBonus: true,
+  },
+  blitz: {
+    name: 'Blitz',
+    description: '20 rapid-fire questions, 10s each',
+    initialLives: 3,
+    initialTimer: 10,
+    timerDecrement: 1,
+    scoreMultiplier: 1.2,
+    streakBonus: true,
+    timeBonus: true,
+    maxQuestions: 20,
   },
 };
 

@@ -521,7 +521,11 @@ async function initGame(createChallenge, isRestoring = false) {
     saveSecure('dfwa_name', state.playerName);
 
     if (!isRestoring) {
-      state.lives = 3;
+      const activeModeBtn = document.querySelector('#mode-selector .mode-btn.active');
+      state.mode = activeModeBtn ? activeModeBtn.dataset.mode : 'classic';
+      const config = getGameModeConfig(state.mode);
+
+      state.lives = config.initialLives;
       state.current = 0;
       state.score = 0;
       state.questionCount = 0;
@@ -534,8 +538,7 @@ async function initGame(createChallenge, isRestoring = false) {
       state.cheatsAttempted = false;
       state.pausedTimer = null;
       state.sessionActive = true;
-      const activeModeBtn = document.querySelector('#mode-selector .mode-btn.active');
-      state.mode = activeModeBtn ? activeModeBtn.dataset.mode : 'classic';
+      state.timer = config.initialTimer;
     }
 
     const livesDisplay = document.getElementById('lives-display');
@@ -561,7 +564,8 @@ async function initGame(createChallenge, isRestoring = false) {
       if (allQuestions.length === 0) throw new Error('NO_QUESTIONS');
 
       state.questions = shuffle([...allQuestions], state.isChallenge ? state.challengeSeed : null);
-      if (state.mode === 'blitz') state.questions = state.questions.slice(0, 20);
+      const config = getGameModeConfig(state.mode);
+      if (config.maxQuestions) state.questions = state.questions.slice(0, config.maxQuestions);
 
       const startScreen = document.getElementById('start-screen');
       const battleLobby = document.getElementById('battle-lobby');
@@ -629,7 +633,8 @@ function renderQuestion(isRestoring = false) {
     }
 
     if (!isRestoring) {
-      state.timer = state.mode === 'blitz' ? 10 : 15;
+      const config = getGameModeConfig(state.mode);
+      state.timer = config.initialTimer;
       state.timerEndTimestamp = Date.now() + state.timer * 1000;
     }
     startTimer();
@@ -652,7 +657,8 @@ function startTimer() {
       const remaining = Math.max(0, (state.timerEndTimestamp - now) / 1000);
       state.timer = remaining;
 
-      if (bar) bar.style.width = `${(state.timer / (state.mode === 'blitz' ? 10 : 15)) * 100}%`;
+      const config = getGameModeConfig(state.mode);
+      if (bar) bar.style.width = `${(state.timer / config.initialTimer) * 100}%`;
       if (timerText) timerText.innerText = `${Math.ceil(state.timer)}S`;
 
       if (state.timer <= 0) {
@@ -844,7 +850,9 @@ function checkAnswer(correct) {
     setTimeout(() => {
       if (fScreen) fScreen.classList.remove('active');
       state.isProcessing = false;
-      if (state.lives <= 0 || (state.mode === 'blitz' && state.current >= 19)) {
+      const config = getGameModeConfig(state.mode);
+      const isMaxQuestionsReached = config.maxQuestions && state.current >= config.maxQuestions - 1;
+      if (state.lives <= 0 || isMaxQuestionsReached) {
         const startScreen = document.getElementById('start-screen');
         const gameScreen = document.getElementById('game-screen');
         if (startScreen) startScreen.classList.add('active');

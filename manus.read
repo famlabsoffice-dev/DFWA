@@ -9,7 +9,7 @@ Phase 1.14 (Replay-Schutz) abgeschlossen. Die aktuelle PWA-Härtung (Phase 2.0) 
 | :--- | :--- | :--- | :--- |
 | **2.1** | **DOM-Synchronisation** | ✅ Erledigt | Fix von Mismatches: `question-text`, `cat-display`, `timer-text` ergänzt. |
 | **2.2** | **Mode-Selector Fix** | ✅ Erledigt | Behebung des `undefined`-Bugs bei der Modus-Auswahl in `app.js`. |
-| **2.3** | **Game-Logic Sync** | Geplant | Blitz-Modus Definition; Timer-Werte aus `ModeConfig` statt Hardcoding. |
+| **2.3** | **Game-Logic Sync** | ✅ Erledigt | Blitz-Modus Definition; Timer-Werte aus `ModeConfig` statt Hardcoding. |
 | **2.4** | **Payload & Race-Condition** | Geplant | `mode` in Leaderboard-Payload; doppelten API-Aufruf entfernen. |
 | **2.5** | **PWA & SW Optimierung** | Geplant | Icon-Pfade fixen; Umstellung auf `injectManifest`. |
 | **2.6** | **Security & Events** | Geplant | `closeSystem` Event-Listener fixen; `/config/secret` Review. |
@@ -23,10 +23,10 @@ Phase 1.14 (Replay-Schutz) abgeschlossen. Die aktuelle PWA-Härtung (Phase 2.0) 
 | **Phase 3** | Wochen 13+ | CI/CD Pipeline, Rollback-Strategien, Security Audits. | Robuster Release-Zyklus (Tag 95). |
 
 ## NÄCHSTE SCHRITTE
-1. Ausführung Task 2.3: Game-Logic Sync.
-2. Integration der Blitz-Modus-Logik.
+1. Ausführung Task 2.4: Payload & Race-Condition.
+2. `mode` in Leaderboard-Payload integrieren.
 3. Start von QS-Phase 1: Vorbereitung Unit-Tests für `game-logic.js`.
 
 ---
-**Status:** 2026-06-30 17:30 GMT+2 - Task 2.2 (Mode-Selector) abgeschlossen.
+**Status:** 2026-06-30 18:00 GMT+2 - Task 2.3 (Game-Logic Sync) abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

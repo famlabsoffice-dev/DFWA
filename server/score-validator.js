@@ -14,6 +14,11 @@ const ModeConfig = {
     minScore: 200,
     maxScore: 100000,
   },
+  blitz: {
+    scoreMultiplier: 1.2,
+    minScore: 120,
+    maxScore: 60000,
+  },
 };
 
 export function validateScore(score, mode, baseScore) {
