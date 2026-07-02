@@ -14,7 +14,9 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 | **4.2** | **Advanced Caching** | ✅ Erledigt | Optimierung der Service Worker Strategie (Stale-While-Revalidate). |
 | **4.3** | **Custom Themes** | ✅ Erledigt | Dynamische UI-Skins (Neon, Dark-Cyber, Terminal-Classic, Blood). |
 | **4.4** | **Audio Engine** | ✅ Erledigt | Zentrale Sound-Logik (SFX) mit Mute-Funktion. |
-| **4.5** | **Offline Battle Mode** | In Arbeit | Lokale Challenge-Verifikation ohne Server-Link. |
+| **4.5** | **Offline Battle Mode** | ⏳ In Arbeit | Lokale Challenge-Verifikation ohne Server-Link. |
+| **4.6** | **Visual Asset Sync** | ✅ Erledigt | High-End AAA Visuals (A.C.K. Stil) in \`manus.visuals\` integriert. |
+| **4.7** | **Leaderboard Fixes** | ✅ Erledigt | \`mode\` in Payload integriert & Race-Condition in \`endGame\` behoben. |
 
 ### PHASE 5.0 - SOCIAL & COMPETITIVE
 Fokus: Community-Interaktion und globale Wettbewerbe.
@@ -34,10 +36,10 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
 1. **Task 4.5 abschließen:** Implementierung der lokalen Challenge-Verifikation für den Offline Battle Mode.
-2. **PWA-Härtung (QS 1.8):** Automatisierung des Service Worker Caching für gehashte Vite-Assets via `vite-plugin-pwa`.
-3. **UI/UX Refinement:** Breakpoints für extreme Bildschirmformate in `style.css` ergänzen.
-4. **Sicherheits-Audit:** Review der Sicherheits-Header (Helmet CSP) und Absicherung des `SYSTEM_SECRET` für Produktion.
+2. **Visual Integration:** Einbindung der neuen Assets aus \`manus.visuals\` in die PWA-Screens (Splash, Feedback, Leaderboard).
+3. **PWA-Härtung (QS 1.8):** Automatisierung des Service Worker Caching für gehashte Vite-Assets via \`vite-plugin-pwa\`.
+4. **Sicherheits-Audit:** Review der Sicherheits-Header (Helmet CSP) und Absicherung des \`SYSTEM_SECRET\` für Produktion.
 
 ---
-**Status:** 2026-06-30 23:59 GMT+2 - Übergabe bereit für Task 4.5 & QS 1.8.
+**Status:** 2026-07-02 18:45 GMT+2 - Visual Assets (AAA-Stil) & Leaderboard-Fixes (Task 4.7) abgeschlossen. Übergabe bereit für Task 4.5 & Visual Integration.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
