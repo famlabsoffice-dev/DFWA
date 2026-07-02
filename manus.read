@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-07-02)
 
 ## EXECUTIVE SUMMARY
-Das DFWA-Repository hat Phase 4.0 (Feature-Expansion) erfolgreich abgeschlossen. Phase 5.0 (Social & Competitive) wurde initiiert. Die League-Logik (`server/social/leagues.js`) wurde vollständig implementiert und verifiziert (Elo, Ligen, Seasonal Resets, Boni). Die Datenbank-Migration für das Leaderboard-Schema wurde gestartet.
+Das DFWA-Repository hat Phase 4.0 (Feature-Expansion) erfolgreich abgeschlossen. Phase 5.0 (Social & Competitive) wurde initiiert. Die League-Logik (`server/social/leagues.js`) ist implementiert und verifiziert. Die Datenbank-Migration für das Leaderboard-Schema (Elo, League, Season Points) sowie die neue `season_metadata` Tabelle wurden erfolgreich durchgeführt.
 
 ## ROADMAP OVERVIEW
 
@@ -22,14 +22,14 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 
 ## QS-HISTORIE & OPTIMIERUNGEN (ABGESCHLOSSEN)
 - **Sicherheits-Audit (2026-07-02):** Helmet CSP gehärtet.
-- **League-Logik (2026-07-02):** Implementierung von `leagues.js` inkl. Unit-Tests (`tests/test_leagues.js`). Alle Tests bestanden.
-- **Secret-Management:** Fail-Safe Logik für `SYSTEM_SECRET` bestätigt.
+- **League-Logik (2026-07-02):** Implementierung von `leagues.js` inkl. Unit-Tests.
+- **DB-Migration (2026-07-02):** Schema-Erweiterung für Ligen und Season-Metadaten erfolgreich abgeschlossen.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Datenbank-Erweiterung:** Migration des Leaderboard-Schemas für Liga-Zuordnungen (AKTUELL).
-2. **Friend System:** Entwicklung der Einladungs-Logik in `friends.js`.
-3. **WebSocket-Setup:** Initialisierung von `socket.io` für Live-Interaktionen.
+1. **Friend System:** Entwicklung der Einladungs-Logik in `friends.js` (AKTUELL).
+2. **WebSocket-Setup:** Initialisierung von `socket.io` für Live-Interaktionen.
+3. **League-API-Härtung:** Integration der neuen Season-Metadaten in die Leaderboard-API.
 
 ---
-**Status:** 2026-07-02 22:00 GMT+2 - League-Logik implementiert & verifiziert. DB-Migration in Arbeit.
+**Status:** 2026-07-02 22:30 GMT+2 - League-Logik & DB-Migration abgeschlossen. Bereit für Friend System.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

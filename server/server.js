@@ -157,6 +157,18 @@ db.serialize(() => {
   db.run(`ALTER TABLE leaderboard ADD COLUMN elo INTEGER DEFAULT 1000`, () => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN league TEXT DEFAULT 'BRONZE'`, () => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN season_points INTEGER DEFAULT 0`, () => {});
+  db.run(`CREATE TABLE IF NOT EXISTS season_metadata (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          last_reset_ts DATETIME DEFAULT CURRENT_TIMESTAMP,
+          season_number INTEGER DEFAULT 1
+      )`, () => {
+        // Initialize if empty
+        db.get(`SELECT COUNT(*) as count FROM season_metadata`, (err, row) => {
+          if (!err && row.count === 0) {
+            db.run(`INSERT INTO season_metadata (season_number) VALUES (1)`);
+          }
+        });
+      });
 });
 
 // Routes
