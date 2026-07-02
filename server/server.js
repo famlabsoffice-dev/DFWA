@@ -7,12 +7,22 @@ import sqlite3 from 'sqlite3';
 import { sendFriendRequest, acceptFriendRequest, listFriends, validateFriendAuth } from './social/friends.js';
 import crypto from 'crypto';
 import { calculateNewRating, getLeagueFromRating } from './social/leagues.js';
+import { Server } from 'socket.io';
+import { createServer } from 'http';
+import { setupBattleSync } from './social/battleSync.js';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { existsSync } from 'fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
+const httpServer = createServer(app);
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
 app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
 const SYSTEM_SECRET = process.env.SYSTEM_SECRET || 'LOCAL_ONLY_UNTRUSTED';
@@ -463,7 +473,9 @@ app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(indexPath);
 });
 
-app.listen(PORT, () => {
+setupBattleSync(io, db);
+
+httpServer.listen(PORT, () => {
   console.log(`Leaderboard server running on port ${PORT}`);
 
   // Automatisierte Log-Bereinigung alle 24 Stunden
