@@ -1,20 +1,18 @@
 # PROJECT STATUS: DFWA (Stand: 2026-07-02)
 
 ## EXECUTIVE SUMMARY
-Das DFWA-Repository hat Phase 4.0 (Feature-Expansion) erfolgreich abgeschlossen und das Sicherheits-Audit (CSP-Härtung, Secret-Management) erfolgreich bestanden. Phase 5.0 (Social & Competitive) wurde initiiert. Die Grundstruktur für Global Leagues und Friend System ist angelegt. Das Repository wurde mit allen Sicherheits-Fixes und Phase 5.0 Scaffolding auf den Main-Branch gepusht.
+Das DFWA-Repository hat Phase 4.0 (Feature-Expansion) erfolgreich abgeschlossen. Phase 5.0 (Social & Competitive) wurde initiiert. Die League-Logik (`server/social/leagues.js`) wurde vollständig implementiert und verifiziert (Elo, Ligen, Seasonal Resets, Boni). Die Datenbank-Migration für das Leaderboard-Schema wurde gestartet.
 
 ## ROADMAP OVERVIEW
 
 ### PHASE 4.0 - FEATURE EXPANSION (ABGESCHLOSSEN)
 Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
-
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
 | **4.1-4.8** | **Core Features & PWA** | ✅ Erledigt | Achievement System, Custom Themes, Audio Engine, PWA-Härtung abgeschlossen. |
 
 ### PHASE 5.0 - SOCIAL & COMPETITIVE (AKTUELL)
 Fokus: Community-Interaktion und globale Wettbewerbe.
-
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
 | **5.1** | **Global Leagues** | ✅ Erledigt | Elo-Berechnung, Liga-Logik, DB-Schema-Erweiterung und API-Integration abgeschlossen. |
@@ -23,16 +21,15 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 | **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
 
 ## QS-HISTORIE & OPTIMIERUNGEN (ABGESCHLOSSEN)
-- **Sicherheits-Audit (2026-07-02):** Helmet CSP gehärtet (Entfernung von `'unsafe-inline'`, Hinzufügen von `frameAncestors: ["'none'"]`).
-- **Secret-Management:** `.gitignore` um `.env`-Muster erweitert; Fail-Safe Logik für `SYSTEM_SECRET` in `server.js` bestätigt.
-- **Phase 5.0 Init:** Verzeichnisstruktur (`server/social`, `client/social`) und initiale Logik-Scaffolds angelegt.
+- **Sicherheits-Audit (2026-07-02):** Helmet CSP gehärtet.
+- **League-Logik (2026-07-02):** Implementierung von `leagues.js` inkl. Unit-Tests (`tests/test_leagues.js`). Alle Tests bestanden.
+- **Secret-Management:** Fail-Safe Logik für `SYSTEM_SECRET` bestätigt.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Implementierung der League-Logik:** Ausarbeitung von `server/social/leagues.js` (Elo-Berechnung, Seasonal Resets).
-2. **Datenbank-Erweiterung:** Migration des Leaderboard-Schemas für Liga-Zuordnungen.
-3. **Friend System:** Entwicklung der Einladungs-Logik in `friends.js`.
-4. **WebSocket-Setup:** Initialisierung von `socket.io` für Live-Interaktionen.
+1. **Datenbank-Erweiterung:** Migration des Leaderboard-Schemas für Liga-Zuordnungen (AKTUELL).
+2. **Friend System:** Entwicklung der Einladungs-Logik in `friends.js`.
+3. **WebSocket-Setup:** Initialisierung von `socket.io` für Live-Interaktionen.
 
 ---
-**Status:** 2026-07-02 21:00 GMT+2 - Phase 5.0 gestartet. Alle Änderungen gepusht. Bereit für Feature-Implementierung.
+**Status:** 2026-07-02 22:00 GMT+2 - League-Logik implementiert & verifiziert. DB-Migration in Arbeit.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

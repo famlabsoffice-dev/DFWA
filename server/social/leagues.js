@@ -70,3 +70,32 @@ export function performSoftReset(currentRating) {
   const baseline = 1000;
   return Math.round(baseline + (currentRating - baseline) / 2);
 }
+
+/**
+ * Validates if a season should reset based on the last reset timestamp
+ * @param {string} lastResetTs ISO String
+ * @returns {boolean}
+ */
+export function shouldResetSeason(lastResetTs) {
+  const lastReset = new Date(lastResetTs);
+  const now = new Date();
+  const diffTime = Math.abs(now - lastReset);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  return diffDays >= SEASON_CONFIG.DURATION_DAYS;
+}
+
+/**
+ * Calculates seasonal points bonus based on final league
+ * @param {string} league 
+ * @returns {number}
+ */
+export function getSeasonEndBonus(league) {
+  const bonuses = {
+    [LEAGUE_TYPES.BRONZE]: 100,
+    [LEAGUE_TYPES.SILVER]: 250,
+    [LEAGUE_TYPES.GOLD]: 500,
+    [LEAGUE_TYPES.PLATINUM]: 1000,
+    [LEAGUE_TYPES.DIAMOND]: 2500
+  };
+  return bonuses[league] || 0;
+}
