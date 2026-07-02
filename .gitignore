@@ -3,3 +3,6 @@ server/leaderboard.db
 server/server.log
 dist/
 public/
+.env
+.env.local
+.env.*.local

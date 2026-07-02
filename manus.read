@@ -1,11 +1,11 @@
 # PROJECT STATUS: DFWA (Stand: 2026-07-02)
 
 ## EXECUTIVE SUMMARY
-Das DFWA-Repository hat signifikante Fortschritte in Phase 4.0 (Feature-Expansion) gemacht. Die PWA-Härtung (Task 1) wurde erfolgreich abgeschlossen. Die Integration von `vite-plugin-pwa` automatisiert das Caching für gehashte Assets und optimiert die Offline-Verfügbarkeit durch Workbox. Die Infrastruktur ist stabil und bereit für das Sicherheits-Audit.
+Das DFWA-Repository hat Phase 4.0 (Feature-Expansion) erfolgreich abgeschlossen. Das Sicherheits-Audit (Task 1 der nächsten Schritte) wurde durchgeführt: Die Helmet CSP wurde gehärtet (`unsafe-inline` entfernt, `frameAncestors` auf `none` gesetzt) und die Absicherung des `SYSTEM_SECRET` wurde durch `.gitignore`-Erweiterungen und Fail-Safe-Logik in der Produktion verifiziert. Die Infrastruktur ist nun produktionsbereit.
 
 ## ROADMAP OVERVIEW
 
-### PHASE 4.0 - FEATURE EXPANSION (AKTUELL)
+### PHASE 4.0 - FEATURE EXPANSION (ABGESCHLOSSEN)
 Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 
 | ID | Task | Status | Ziel |
@@ -19,7 +19,7 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 | **4.7** | **Leaderboard Fixes** | ✅ Erledigt | `mode` in Payload integriert & Race-Condition in `endGame` behoben. |
 | **4.8** | **PWA-Härtung (QS 1.8)** | ✅ Erledigt | Automatisierung des Service Worker Caching via `vite-plugin-pwa`. |
 
-### PHASE 5.0 - SOCIAL & COMPETITIVE
+### PHASE 5.0 - SOCIAL & COMPETITIVE (NÄCHSTE PHASE)
 Fokus: Community-Interaktion und globale Wettbewerbe.
 
 | ID | Task | Status | Ziel |
@@ -30,15 +30,16 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 | **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
 
 ## QS-HISTORIE & OPTIMIERUNGEN (ABGESCHLOSSEN)
-- **Infrastruktur-Härtung:** `app.set('trust proxy', 1)` in `server/server.js` (Korrekte IP-Erkennung für Rate-Limiting).
-- **WebP-Optimierung (C1):** `ack_core_clean.png` (1.5 MB) → `ack_core_clean.webp` (100 KB) konvertiert (-93%).
-- **Audio Engine (Task 4.4):** Implementierung des `AudioManager` zur Verwaltung von SFX (click, correct, error, achievement).
-- **PWA-Härtung (Task 4.8):** `vite-plugin-pwa` integriert, Caching-Limit auf 10MB erhöht, doppelte SW-Registrierungen in `app.js` entfernt, `public/` Icons erstellt.
+- **Infrastruktur-Härtung:** `app.set('trust proxy', 1)` in `server/server.js`.
+- **Sicherheits-Audit (2026-07-02):** Helmet CSP optimiert (Entfernung von `'unsafe-inline'`, Hinzufügen von `frameAncestors: ["'none'"]`).
+- **Secret-Management:** `.gitignore` um `.env`-Dateien erweitert; Fail-Safe Logik für `SYSTEM_SECRET` in `server.js` bestätigt.
+- **WebP-Optimierung (C1):** Reduktion der Asset-Größe um 93%.
+- **Audio Engine (Task 4.4):** Implementierung des `AudioManager`.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Sicherheits-Audit:** Review der Sicherheits-Header (Helmet CSP) und Absicherung des `SYSTEM_SECRET` für Produktion.
-2. **Global Leagues (Phase 5.0):** Vorbereitung der saisonalen Leaderboards.
+1. **Global Leagues (Phase 5.0):** Implementierung der saisonalen Leaderboards.
+2. **Multiplayer-Architektur:** Design der WebSocket-Struktur für Live-Battles.
 
 ---
-**Status:** 2026-07-02 20:00 GMT+2 - Task 4.8 (PWA-Härtung) vollständig umgesetzt. Build-Prozess verifiziert. Übergabe bereit für Security Audit.
+**Status:** 2026-07-02 20:30 GMT+2 - Sicherheits-Audit abgeschlossen. System bereit für Phase 5.0.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
