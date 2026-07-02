@@ -14,8 +14,8 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 | **4.2** | **Advanced Caching** | ✅ Erledigt | Optimierung der Service Worker Strategie (Stale-While-Revalidate). |
 | **4.3** | **Custom Themes** | ✅ Erledigt | Dynamische UI-Skins (Neon, Dark-Cyber, Terminal-Classic, Blood). |
 | **4.4** | **Audio Engine** | ✅ Erledigt | Zentrale Sound-Logik (SFX) mit Mute-Funktion. |
-| **4.5** | **Offline Battle Mode** | ⏳ In Arbeit | Lokale Challenge-Verifikation ohne Server-Link. |
-| **4.6** | **Visual Asset Sync** | ✅ Erledigt | High-End AAA Visuals (A.C.K. Stil) in \`manus.visuals\` integriert. |
+| **4.5** | **Offline Battle Mode** | ✅ Erledigt | Lokale Challenge-Verifikation ohne Server-Link. |
+| **4.6** | **Visual Asset Sync** | ✅ Erledigt | High-End AAA Visuals (A.C.K. Stil) integriert & in PWA-Screens eingebunden. |
 | **4.7** | **Leaderboard Fixes** | ✅ Erledigt | \`mode\` in Payload integriert & Race-Condition in \`endGame\` behoben. |
 
 ### PHASE 5.0 - SOCIAL & COMPETITIVE
@@ -35,11 +35,10 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **ESM-Fix:** Umstellung auf JS-Event-Listener zur Sicherstellung der Scope-Kompatibilität.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Task 4.5 abschließen:** Implementierung der lokalen Challenge-Verifikation für den Offline Battle Mode.
-2. **Visual Integration:** Einbindung der neuen Assets aus \`manus.visuals\` in die PWA-Screens (Splash, Feedback, Leaderboard).
-3. **PWA-Härtung (QS 1.8):** Automatisierung des Service Worker Caching für gehashte Vite-Assets via \`vite-plugin-pwa\`.
-4. **Sicherheits-Audit:** Review der Sicherheits-Header (Helmet CSP) und Absicherung des \`SYSTEM_SECRET\` für Produktion.
+1. **PWA-Härtung (QS 1.8):** Automatisierung des Service Worker Caching für gehashte Vite-Assets via \`vite-plugin-pwa\`.
+2. **Sicherheits-Audit:** Review der Sicherheits-Header (Helmet CSP) und Absicherung des \`SYSTEM_SECRET\` für Produktion.
+3. **Global Leagues (Phase 5.0):** Vorbereitung der saisonalen Leaderboards.
 
 ---
-**Status:** 2026-07-02 18:45 GMT+2 - Visual Assets (AAA-Stil) & Leaderboard-Fixes (Task 4.7) abgeschlossen. Übergabe bereit für Task 4.5 & Visual Integration.
+**Status:** 2026-07-02 19:30 GMT+2 - Task 4.5 (Offline Battle Mode) & Visual Integration (Splash, Feedback, Leaderboard, Modal) vollständig umgesetzt. Assets aus `manus.visuals` in `assets/images` integriert. Übergabe bereit für PWA-Härtung & Security Audit.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

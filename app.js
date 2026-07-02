@@ -822,11 +822,19 @@ async function endGame() {
     if (state.isCreatingChallenge) {
       if (title) title.innerText = 'CHALLENGE_CREATED';
       if (text) text.innerText = 'GENERATING...';
+      const modalContent = document.querySelector('.modal-content');
+      if (modalContent) modalContent.style.backgroundImage = "url('./assets/images/ack_override_alien.png')";
       generateChallengeCode().then((code) => {
         if (text) text.innerText = code;
       });
     } else if (state.isChallenge) {
       const win = state.score > state.opponentScore;
+      const modalContent = document.querySelector('.modal-content');
+      if (modalContent) {
+        modalContent.style.backgroundImage = win ? "url('./assets/images/ack_player_win_angry.png')" : "url('./assets/images/ack_victory.png')";
+        modalContent.style.backgroundSize = 'cover';
+        modalContent.style.backgroundPosition = 'center';
+      }
       if (title) {
         title.style.color = win ? 'var(--neon)' : 'var(--error)';
         title.innerText = win ? 'VICTORY' : 'DEFEAT';
@@ -920,7 +928,7 @@ function checkAnswer(correct) {
           hudStreak.style.display = 'none';
         }
       }
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_clean.webp';
+      if (fEyeBase) fEyeBase.src = './assets/images/ack_reaction_set.png';
       if (fMsg) {
         fMsg.style.borderColor = 'var(--neon)';
         fMsg.style.color = 'var(--neon)';
@@ -935,7 +943,7 @@ function checkAnswer(correct) {
       if (hudStreak) hudStreak.style.display = 'none';
       const livesDisplay = document.getElementById('lives-display');
       if (livesDisplay) livesDisplay.innerText = state.lives;
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_clean.webp';
+      if (fEyeBase) fEyeBase.src = './assets/images/ack_interference_glitch.png';
       if (fContainer) fContainer.classList.add('zoom-anim');
       if (fMsg) {
         fMsg.style.borderColor = 'var(--error)';
@@ -984,9 +992,9 @@ setInterval(() => {
     if (startScreen && startScreen.classList.contains('active')) {
       const eye = document.getElementById('core-eye');
       if (eye) {
-        eye.src = './assets/images/ack_core_closed_clean.png';
+        eye.src = './assets/images/ack_splash_void.png';
         setTimeout(() => {
-          if (eye) eye.src = './assets/images/ack_core_clean.webp';
+          if (eye) eye.src = './assets/images/ack_core_brain.png';
         }, 150);
       }
     }

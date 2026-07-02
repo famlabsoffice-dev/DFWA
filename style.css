@@ -80,6 +80,21 @@ html {
   background: #000;
 }
 
+#start-screen {
+  background: url('./assets/images/ack_splash_void.png') no-repeat center center;
+  background-size: cover;
+}
+
+#game-screen {
+  background: url('./assets/images/ack_category_realm.png') no-repeat center center;
+  background-size: cover;
+}
+
+.leaderboard-screen {
+  background: url('./assets/images/ack_hall_of_infamy.png') no-repeat center center;
+  background-size: cover;
+}
+
 .screen {
   display: none;
   flex-direction: column;
