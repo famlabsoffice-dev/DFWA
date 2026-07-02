@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import sqlite3 from 'sqlite3';
 import crypto from 'crypto';
+import { calculateNewRating, getLeagueFromRating } from './social/leagues.js';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { existsSync } from 'fs';
@@ -153,6 +154,9 @@ db.serialize(() => {
   db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, () => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN accuracy INTEGER`, () => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN mode TEXT DEFAULT 'classic'`, () => {});
+  db.run(`ALTER TABLE leaderboard ADD COLUMN elo INTEGER DEFAULT 1000`, () => {});
+  db.run(`ALTER TABLE leaderboard ADD COLUMN league TEXT DEFAULT 'BRONZE'`, () => {});
+  db.run(`ALTER TABLE leaderboard ADD COLUMN season_points INTEGER DEFAULT 0`, () => {});
 });
 
 // Routes
@@ -164,7 +168,7 @@ app.get('/api/leaderboard', (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
   const mode = req.query.mode || 'classic';
   db.all(
-    `SELECT playerName, score, wins, losses FROM leaderboard WHERE mode = ? ORDER BY score DESC LIMIT ?`,
+    `SELECT playerName, score, wins, losses, elo, league FROM leaderboard WHERE mode = ? ORDER BY score DESC LIMIT ?`,
     [mode, limit],
     (err, rows) => {
       if (err) {
@@ -230,18 +234,43 @@ app.post('/api/leaderboard', (req, res) => {
             timestamp = CURRENT_TIMESTAMP
     `;
 
-  db.run(
-    query,
-    [playerId, playerName, score, wins, losses, variant, accuracy, modeVal],
-    function (err) {
-      if (err) {
-        console.error('Leaderboard update error:', err);
-        res.status(500).json({ error: 'Database error' });
-      } else {
-        res.json({ success: true });
+  // 3. League Logic: Update Elo and League
+  db.get(`SELECT elo FROM leaderboard WHERE playerId = ?`, [playerId], (err, row) => {
+    let currentElo = row ? row.elo : 1000;
+    // For now, we assume a win if score is submitted, in a real scenario we'd need opponent data
+    // This is a simplified integration for Phase 5.1
+    const newElo = calculateNewRating(currentElo, 1000, 1); 
+    const newLeague = getLeagueFromRating(newElo);
+
+    const query = `
+          INSERT INTO leaderboard (playerId, playerName, score, wins, losses, variant, accuracy, mode, elo, league, timestamp)
+          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+          ON CONFLICT(playerId) DO UPDATE SET
+              playerName = excluded.playerName,
+              score = MAX(leaderboard.score, excluded.score),
+              wins = excluded.wins,
+              losses = excluded.losses,
+              variant = excluded.variant,
+              accuracy = excluded.accuracy,
+              mode = excluded.mode,
+              elo = excluded.elo,
+              league = excluded.league,
+              timestamp = CURRENT_TIMESTAMP
+      `;
+
+    db.run(
+      query,
+      [playerId, playerName, score, wins, losses, variant, accuracy, modeVal, newElo, newLeague],
+      function (err) {
+        if (err) {
+          console.error('Leaderboard update error:', err);
+          res.status(500).json({ error: 'Database error' });
+        } else {
+          res.json({ success: true, newElo, newLeague });
+        }
       }
-    }
-  );
+    );
+  });
 });
 
 // Statische Dateien und SPA-Fallback erst NACH den API-Routen

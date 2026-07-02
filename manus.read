@@ -17,7 +17,7 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
-| **5.1** | **Global Leagues** | 🏗️ In Arbeit | Scaffold erstellt (`server/social/leagues.js`). Definition von Rängen & Saisons. |
+| **5.1** | **Global Leagues** | ✅ Erledigt | Elo-Berechnung, Liga-Logik, DB-Schema-Erweiterung und API-Integration abgeschlossen. |
 | **5.2** | **Friend System** | 🏗️ In Arbeit | Scaffold erstellt (`server/social/friends.js`). |
 | **5.3** | **Live Battle Sync** | Geplant | Real-time Multiplayer via WebSockets. |
 | **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
