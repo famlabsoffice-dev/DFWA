@@ -9,14 +9,16 @@ export default defineConfig({
   plugins: [
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
+      injectRegister: 'auto',
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'assets/fonts/*.woff2', 'assets/images/*.webp'],
       manifest: {
         name: 'DFWA Game',
         short_name: 'DFWA',
         description: 'Dynamic Fast Web Application',
-        theme_color: '#ffffff',
-        background_color: '#ffffff',
+        theme_color: '#000000',
+        background_color: '#000000',
         display: 'standalone',
+        orientation: 'portrait',
         scope: '/',
         start_url: '/',
         icons: [
@@ -48,6 +50,10 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot}'],
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // Erhöht auf 10MB für große Assets
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
@@ -57,6 +63,9 @@ export default defineConfig({
               expiration: {
                 maxEntries: 20,
                 maxAgeSeconds: 60 * 60 * 24 * 365,
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
               },
             },
           },
@@ -69,6 +78,20 @@ export default defineConfig({
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 60 * 5,
+              },
+              cacheableResponse: {
+                statuses: [0, 200],
+              },
+            },
+          },
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'images-cache',
+              expiration: {
+                maxEntries: 60,
+                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Tage
               },
             },
           },
@@ -92,7 +115,7 @@ export default defineConfig({
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
           const name = assetInfo.names?.[0] || assetInfo.name || '';
-          if (name === 'manifest.json') {
+          if (name === 'manifest.json' || name === 'manifest.webmanifest') {
             return '[name][extname]';
           }
           if (/\.(woff2?|ttf|eot)$/.test(name)) {
@@ -110,7 +133,7 @@ export default defineConfig({
     },
     sourcemap: false,
     cssMinify: true,
-    chunkSizeWarningLimit: 500,
+    chunkSizeWarningLimit: 1000,
     assetsInlineLimit: 4096,
     reportCompressedSize: true,
   },

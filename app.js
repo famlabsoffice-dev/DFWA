@@ -1138,74 +1138,7 @@ window.addEventListener('beforeunload', saveSession);
 window.addEventListener('load', restoreSession);
 
 if ('serviceWorker' in navigator) {
-  try {
-    const swChannel = new BroadcastChannel('sw_channel');
-    let leaderTab = false;
-
-    const acquireLeaderLock = () => {
-      try {
-        const now = Date.now();
-        const lock = localStorage.getItem('sw_leader');
-        if (!lock || now - JSON.parse(lock).ts > 5000) {
-          localStorage.setItem('sw_leader', JSON.stringify({ id: state.playerId, ts: now }));
-          leaderTab = true;
-          return true;
-        }
-        return JSON.parse(lock).id === state.playerId;
-      } catch {
-        return false;
-      }
-    };
-
-    setInterval(() => {
-      if (leaderTab) {
-        try {
-          localStorage.setItem('sw_leader', JSON.stringify({ id: state.playerId, ts: Date.now() }));
-        } catch {
-    /* Silent catch intentional for non-critical UI operations */
-  }
-      }
-    }, 2000);
-
-    window.addEventListener('beforeunload', () => {
-      if (leaderTab) {
-        try {
-          localStorage.removeItem('sw_leader');
-        } catch {
-    /* Silent catch intentional for non-critical UI operations */
-  }
-      }
-    });
-
-    swChannel.onmessage = (event) => {
-      if (event.data.type === 'SW_RELOAD') {
-        window.location.reload();
-      }
-    };
-
-    window.addEventListener('load', () => {
-      navigator.serviceWorker
-        .register('./sw.js')
-        .then((reg) => {
-          reg.addEventListener('updatefound', () => {
-            const newWorker = reg.installing;
-            swChannel.postMessage({ type: 'SW_UPDATING' });
-            newWorker.addEventListener('statechange', () => {
-              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                swChannel.postMessage({ type: 'SW_READY' });
-                if (acquireLeaderLock()) {
-                  swChannel.postMessage({ type: 'SW_RELOAD' });
-                  setTimeout(() => window.location.reload(), 100);
-                }
-              }
-            });
-          });
-        })
-        .catch((err) => console.error('SW registration failed:', err));
-    });
-  } catch {
-    console.error('Service Worker logic failed');
-  }
+  // Service Worker registration handled by vite-plugin-pwa (injectRegister: 'auto')
 }
 
 let currentLeaderboardMode = 'classic';
@@ -1316,16 +1249,4 @@ window.__END_GAME__ = endGame;
 
 window.generateChallengeCode = generateChallengeCode;
 
-// Service Worker Registration
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('./sw.js')
-      .then((reg) => {
-        console.log('SW registered:', reg);
-      })
-      .catch((err) => {
-        console.warn('SW registration failed:', err);
-      });
-  });
-}
+// Service Worker registration handled by vite-plugin-pwa (injectRegister: 'auto')

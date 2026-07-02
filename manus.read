@@ -1,7 +1,7 @@
-# PROJECT STATUS: DFWA (Stand: 2026-06-30)
+# PROJECT STATUS: DFWA (Stand: 2026-07-02)
 
 ## EXECUTIVE SUMMARY
-Das DFWA-Repository hat signifikante Fortschritte in Phase 4.0 (Feature-Expansion) gemacht. Alle Kern-Features (Achievements, Caching, Themes, Audio Engine) sind implementiert. Die Infrastruktur wurde durch `trust proxy` Konfiguration gehärtet und die Performance durch WebP-Optimierung (C1) maximiert. Das System ist stabil, hochperformant (Bewertung: 8.7/10) und bereit für die finale Härtung der Phase 4.0.
+Das DFWA-Repository hat signifikante Fortschritte in Phase 4.0 (Feature-Expansion) gemacht. Die PWA-Härtung (Task 1) wurde erfolgreich abgeschlossen. Die Integration von `vite-plugin-pwa` automatisiert das Caching für gehashte Assets und optimiert die Offline-Verfügbarkeit durch Workbox. Die Infrastruktur ist stabil und bereit für das Sicherheits-Audit.
 
 ## ROADMAP OVERVIEW
 
@@ -16,7 +16,8 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 | **4.4** | **Audio Engine** | ✅ Erledigt | Zentrale Sound-Logik (SFX) mit Mute-Funktion. |
 | **4.5** | **Offline Battle Mode** | ✅ Erledigt | Lokale Challenge-Verifikation ohne Server-Link. |
 | **4.6** | **Visual Asset Sync** | ✅ Erledigt | High-End AAA Visuals (A.C.K. Stil) integriert & in PWA-Screens eingebunden. |
-| **4.7** | **Leaderboard Fixes** | ✅ Erledigt | \`mode\` in Payload integriert & Race-Condition in \`endGame\` behoben. |
+| **4.7** | **Leaderboard Fixes** | ✅ Erledigt | `mode` in Payload integriert & Race-Condition in `endGame` behoben. |
+| **4.8** | **PWA-Härtung (QS 1.8)** | ✅ Erledigt | Automatisierung des Service Worker Caching via `vite-plugin-pwa`. |
 
 ### PHASE 5.0 - SOCIAL & COMPETITIVE
 Fokus: Community-Interaktion und globale Wettbewerbe.
@@ -32,13 +33,12 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **Infrastruktur-Härtung:** `app.set('trust proxy', 1)` in `server/server.js` (Korrekte IP-Erkennung für Rate-Limiting).
 - **WebP-Optimierung (C1):** `ack_core_clean.png` (1.5 MB) → `ack_core_clean.webp` (100 KB) konvertiert (-93%).
 - **Audio Engine (Task 4.4):** Implementierung des `AudioManager` zur Verwaltung von SFX (click, correct, error, achievement).
-- **ESM-Fix:** Umstellung auf JS-Event-Listener zur Sicherstellung der Scope-Kompatibilität.
+- **PWA-Härtung (Task 4.8):** `vite-plugin-pwa` integriert, Caching-Limit auf 10MB erhöht, doppelte SW-Registrierungen in `app.js` entfernt, `public/` Icons erstellt.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **PWA-Härtung (QS 1.8):** Automatisierung des Service Worker Caching für gehashte Vite-Assets via \`vite-plugin-pwa\`.
-2. **Sicherheits-Audit:** Review der Sicherheits-Header (Helmet CSP) und Absicherung des \`SYSTEM_SECRET\` für Produktion.
-3. **Global Leagues (Phase 5.0):** Vorbereitung der saisonalen Leaderboards.
+1. **Sicherheits-Audit:** Review der Sicherheits-Header (Helmet CSP) und Absicherung des `SYSTEM_SECRET` für Produktion.
+2. **Global Leagues (Phase 5.0):** Vorbereitung der saisonalen Leaderboards.
 
 ---
-**Status:** 2026-07-02 19:30 GMT+2 - Task 4.5 (Offline Battle Mode) & Visual Integration (Splash, Feedback, Leaderboard, Modal) vollständig umgesetzt. Assets aus `manus.visuals` in `assets/images` integriert. Übergabe bereit für PWA-Härtung & Security Audit.
+**Status:** 2026-07-02 20:00 GMT+2 - Task 4.8 (PWA-Härtung) vollständig umgesetzt. Build-Prozess verifiziert. Übergabe bereit für Security Audit.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
