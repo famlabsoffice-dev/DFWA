@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import sqlite3 from 'sqlite3';
+import { sendFriendRequest, acceptFriendRequest, listFriends, validateFriendAuth } from './social/friends.js';
 import crypto from 'crypto';
 import { calculateNewRating, getLeagueFromRating } from './social/leagues.js';
 import { fileURLToPath } from 'url';
@@ -417,6 +418,43 @@ app.get('/api/analytics', (req, res) => {
       }
     }
   );
+});
+
+// --- Friend System API ---
+app.post('/api/social/friend-request', async (req, res) => {
+  const { senderId, receiverId, auth } = req.body;
+  if (!validateFriendAuth({ senderId, receiverId }, auth, SYSTEM_SECRET)) {
+    return res.status(403).json({ error: 'INVALID_AUTH' });
+  }
+  try {
+    const result = await sendFriendRequest(db, senderId, receiverId);
+    res.json(result);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.post('/api/social/friend-accept', async (req, res) => {
+  const { requestId, receiverId, auth } = req.body;
+  if (!validateFriendAuth({ requestId, receiverId }, auth, SYSTEM_SECRET)) {
+    return res.status(403).json({ error: 'INVALID_AUTH' });
+  }
+  try {
+    const result = await acceptFriendRequest(db, requestId, receiverId);
+    res.json(result);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.get('/api/social/friends/:userId', async (req, res) => {
+  const { userId } = req.params;
+  try {
+    const friends = await listFriends(db, userId);
+    res.json(friends);
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
 });
 
 // SPA-Fallback: Alle nicht-API-Routen auf index.html weiterleiten

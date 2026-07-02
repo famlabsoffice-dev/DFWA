@@ -16,7 +16,7 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
 | **5.1** | **Global Leagues** | ✅ Erledigt | Elo-Berechnung, Liga-Logik, DB-Schema-Erweiterung und API-Integration abgeschlossen. |
-| **5.2** | **Friend System** | 🏗️ In Arbeit | Scaffold erstellt (`server/social/friends.js`). |
+| **5.2** | **Friend System** | ✅ Erledigt | Einladungs-Logik, DB-Schema und API-Endpunkte implementiert. |
 | **5.3** | **Live Battle Sync** | Geplant | Real-time Multiplayer via WebSockets. |
 | **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
 
@@ -26,10 +26,9 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **DB-Migration (2026-07-02):** Schema-Erweiterung für Ligen und Season-Metadaten erfolgreich abgeschlossen.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Friend System:** Entwicklung der Einladungs-Logik in `friends.js` (AKTUELL).
-2. **WebSocket-Setup:** Initialisierung von `socket.io` für Live-Interaktionen.
+1. **WebSocket-Setup:** Initialisierung von `socket.io` für Live-Interaktionen (NÄCHSTER SCHRITT).
 3. **League-API-Härtung:** Integration der neuen Season-Metadaten in die Leaderboard-API.
 
 ---
-**Status:** 2026-07-02 22:30 GMT+2 - League-Logik & DB-Migration abgeschlossen. Bereit für Friend System.
+**Status:** 2026-07-02 23:15 GMT+2 - Friend System (5.2) vollständig implementiert. Bereit für WebSocket-Setup.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
