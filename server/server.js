@@ -10,6 +10,7 @@ import { calculateNewRating, getLeagueFromRating } from './social/leagues.js';
 import { Server } from 'socket.io';
 import { createServer } from 'http';
 import { setupBattleSync } from './social/battleSync.js';
+import { generateShareCard } from './social/sharing.js';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { existsSync } from 'fs';
@@ -425,6 +426,33 @@ app.get('/api/analytics', (req, res) => {
         res.status(500).json({ error: 'Database error' });
       } else {
         res.json(rows || []);
+      }
+    }
+  );
+});
+
+app.post('/api/social/share-card', async (req, res) => {
+  const { playerId } = req.body;
+  if (!playerId) return res.status(400).json({ error: 'Missing playerId' });
+
+  db.get(
+    `SELECT playerName, score, league FROM leaderboard WHERE playerId = ?`,
+    [playerId],
+    async (err, row) => {
+      if (err || !row) return res.status(404).json({ error: 'Player not found' });
+      
+      try {
+        const buffer = await generateShareCard({
+          playerName: row.playerName,
+          score: row.score,
+          league: row.league,
+          achievements: ['First Win', 'Top 10'] // Mock für Phase 5.4
+        });
+        
+        res.set('Content-Type', 'image/png');
+        res.send(buffer);
+      } catch (e) {
+        res.status(500).json({ error: 'Failed to generate card' });
       }
     }
   );
