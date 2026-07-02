@@ -1,7 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-07-02)
 
 ## EXECUTIVE SUMMARY
-Das DFWA-Repository hat Phase 4.0 (Feature-Expansion) erfolgreich abgeschlossen. Das Sicherheits-Audit (Task 1 der nächsten Schritte) wurde durchgeführt: Die Helmet CSP wurde gehärtet (`unsafe-inline` entfernt, `frameAncestors` auf `none` gesetzt) und die Absicherung des `SYSTEM_SECRET` wurde durch `.gitignore`-Erweiterungen und Fail-Safe-Logik in der Produktion verifiziert. Die Infrastruktur ist nun produktionsbereit.
+Das DFWA-Repository hat Phase 4.0 (Feature-Expansion) erfolgreich abgeschlossen und das Sicherheits-Audit (CSP-Härtung, Secret-Management) erfolgreich bestanden. Phase 5.0 (Social & Competitive) wurde initiiert. Die Grundstruktur für Global Leagues und Friend System ist angelegt. Das Repository wurde mit allen Sicherheits-Fixes und Phase 5.0 Scaffolding auf den Main-Branch gepusht.
 
 ## ROADMAP OVERVIEW
 
@@ -10,36 +10,29 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
-| **4.1** | **Achievement System** | ✅ Erledigt | Lokale Erfolge (First Win, Streaks, Perfect Game) mit Toast-UI. |
-| **4.2** | **Advanced Caching** | ✅ Erledigt | Optimierung der Service Worker Strategie (Stale-While-Revalidate). |
-| **4.3** | **Custom Themes** | ✅ Erledigt | Dynamische UI-Skins (Neon, Dark-Cyber, Terminal-Classic, Blood). |
-| **4.4** | **Audio Engine** | ✅ Erledigt | Zentrale Sound-Logik (SFX) mit Mute-Funktion. |
-| **4.5** | **Offline Battle Mode** | ✅ Erledigt | Lokale Challenge-Verifikation ohne Server-Link. |
-| **4.6** | **Visual Asset Sync** | ✅ Erledigt | High-End AAA Visuals (A.C.K. Stil) integriert & in PWA-Screens eingebunden. |
-| **4.7** | **Leaderboard Fixes** | ✅ Erledigt | `mode` in Payload integriert & Race-Condition in `endGame` behoben. |
-| **4.8** | **PWA-Härtung (QS 1.8)** | ✅ Erledigt | Automatisierung des Service Worker Caching via `vite-plugin-pwa`. |
+| **4.1-4.8** | **Core Features & PWA** | ✅ Erledigt | Achievement System, Custom Themes, Audio Engine, PWA-Härtung abgeschlossen. |
 
-### PHASE 5.0 - SOCIAL & COMPETITIVE (NÄCHSTE PHASE)
+### PHASE 5.0 - SOCIAL & COMPETITIVE (AKTUELL)
 Fokus: Community-Interaktion und globale Wettbewerbe.
 
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
-| **5.1** | **Global Leagues** | Geplant | Saisonale Leaderboards mit Belohnungssystem. |
-| **5.2** | **Friend System** | Geplant | Direkte Challenges an Kontakte senden. |
+| **5.1** | **Global Leagues** | 🏗️ In Arbeit | Scaffold erstellt (`server/social/leagues.js`). Definition von Rängen & Saisons. |
+| **5.2** | **Friend System** | 🏗️ In Arbeit | Scaffold erstellt (`server/social/friends.js`). |
 | **5.3** | **Live Battle Sync** | Geplant | Real-time Multiplayer via WebSockets. |
 | **5.4** | **Social Sharing** | Geplant | Generierung von Share-Cards für Achievements. |
 
 ## QS-HISTORIE & OPTIMIERUNGEN (ABGESCHLOSSEN)
-- **Infrastruktur-Härtung:** `app.set('trust proxy', 1)` in `server/server.js`.
-- **Sicherheits-Audit (2026-07-02):** Helmet CSP optimiert (Entfernung von `'unsafe-inline'`, Hinzufügen von `frameAncestors: ["'none'"]`).
-- **Secret-Management:** `.gitignore` um `.env`-Dateien erweitert; Fail-Safe Logik für `SYSTEM_SECRET` in `server.js` bestätigt.
-- **WebP-Optimierung (C1):** Reduktion der Asset-Größe um 93%.
-- **Audio Engine (Task 4.4):** Implementierung des `AudioManager`.
+- **Sicherheits-Audit (2026-07-02):** Helmet CSP gehärtet (Entfernung von `'unsafe-inline'`, Hinzufügen von `frameAncestors: ["'none'"]`).
+- **Secret-Management:** `.gitignore` um `.env`-Muster erweitert; Fail-Safe Logik für `SYSTEM_SECRET` in `server.js` bestätigt.
+- **Phase 5.0 Init:** Verzeichnisstruktur (`server/social`, `client/social`) und initiale Logik-Scaffolds angelegt.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Global Leagues (Phase 5.0):** Implementierung der saisonalen Leaderboards.
-2. **Multiplayer-Architektur:** Design der WebSocket-Struktur für Live-Battles.
+1. **Implementierung der League-Logik:** Ausarbeitung von `server/social/leagues.js` (Elo-Berechnung, Seasonal Resets).
+2. **Datenbank-Erweiterung:** Migration des Leaderboard-Schemas für Liga-Zuordnungen.
+3. **Friend System:** Entwicklung der Einladungs-Logik in `friends.js`.
+4. **WebSocket-Setup:** Initialisierung von `socket.io` für Live-Interaktionen.
 
 ---
-**Status:** 2026-07-02 20:30 GMT+2 - Sicherheits-Audit abgeschlossen. System bereit für Phase 5.0.
+**Status:** 2026-07-02 21:00 GMT+2 - Phase 5.0 gestartet. Alle Änderungen gepusht. Bereit für Feature-Implementierung.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
