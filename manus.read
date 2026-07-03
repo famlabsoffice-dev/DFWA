@@ -1,5 +1,7 @@
 # PROJECT STATUS: DFWA (Stand: 2026-07-03)
 
+> **CORE PRINCIPLE:** DFWA ist und bleibt eine **reine PWA**. Alle Erweiterungen müssen strikt webbasiert, plattformunabhängig und Offline-First-kompatibel implementiert werden. Native Abhängigkeiten sind untersagt.
+
 ## EXECUTIVE SUMMARY
 Phase 5.0 (Social & Competitive) ist nun vollständig abgeschlossen. Task 5.1 (League-API-Härtung) wurde implementiert, wodurch die Leaderboard-API nun Season-Metadaten unterstützt und automatisierte Season-Resets inklusive Bonus-Zuweisung durchführt. Die Abwärtskompatibilität im `api-client.js` wurde sichergestellt.
 
