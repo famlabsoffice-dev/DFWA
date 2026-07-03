@@ -1,5 +1,6 @@
 import { APIClient } from './scripts/api-client.js';
 import { UIManager } from './scripts/ui-manager.js';
+import { BattleManager } from './scripts/battle-manager.js';
 import {
   GameModes,
   ModeConfig,
@@ -914,6 +915,7 @@ function checkAnswer(correct) {
     if (correct) {
       state.streak++;
       state.correctAnswers++;
+      BattleManager.sendAction({ type: 'CORRECT_ANSWER', streak: state.streak }, state.playerId);
       if (state.streak > state.streakMax) state.streakMax = state.streak;
       const streakBonus = Math.min((state.streak - 1) * 10, 100);
       const timeBonus = Math.min(Math.floor(state.timer * 2), 30);
@@ -1275,6 +1277,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   addClick('live-battle-btn', () => {
     UIManager.showModal('LIVE_BATTLE', 'CONNECTING_TO_BATTLE_SYNC...', 'var(--cyber-blue)');
+    BattleManager.init(API_BASE_URL, state.playerId, state.playerName);
+    const battleId = 'global_lobby'; // Vereinfacht für die erste Version
+    BattleManager.joinBattle(battleId, state.playerId);
   });
 });
 
