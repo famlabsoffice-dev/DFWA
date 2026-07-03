@@ -861,11 +861,14 @@ async function endGame() {
           : 0;
       if (text)
         text.innerText = `FINAL_SCORE: ${state.score}\nPEAK_DATA: ${state.best}\nACCURACY: ${accuracy}%`;
+      
+      const shareBtn = document.getElementById('share-btn');
+      if (shareBtn) shareBtn.style.display = 'block';
     }
 
     await updateLeaderboard();
   } catch {
-    console.error('Init game failed');
+    console.error('End game failed');
   }
 }
 
@@ -1241,6 +1244,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   addClick('start-challenge-btn', startChallenge);
   addClick('close-system-btn', closeSystem);
+
+  addClick('share-btn', async () => {
+    const shareBtn = document.getElementById('share-btn');
+    const originalText = shareBtn.innerText;
+    shareBtn.innerText = 'GENERATING...';
+    try {
+      const blob = await APIClient.getShareCard(API_BASE_URL, state.playerId);
+      const file = new File([blob], 'dfwa_achievement.png', { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: 'DFWA ACHIEVEMENT',
+          text: `Check out my score: ${state.score} in DFWA!`,
+        });
+      } else {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'dfwa_achievement.png';
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+    } catch (e) {
+      console.error('Sharing failed', e);
+    } finally {
+      shareBtn.innerText = originalText;
+    }
+  });
+
+  addClick('live-battle-btn', () => {
+    UIManager.showModal('LIVE_BATTLE', 'CONNECTING_TO_BATTLE_SYNC...', 'var(--cyber-blue)');
+  });
 });
 
 // Debug Exports for Functionality Testing

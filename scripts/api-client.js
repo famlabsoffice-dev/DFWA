@@ -118,4 +118,14 @@ export const APIClient = {
       console.error('Failed to report metric to server:', e);
     }
   },
+
+  async getShareCard(baseUrl, playerId) {
+    const res = await fetch(`${baseUrl}/api/social/share-card`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ playerId }),
+    });
+    if (!res.ok) throw new Error('SHARE_CARD_FAILED');
+    return await res.blob();
+  },
 };

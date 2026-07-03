@@ -28,10 +28,15 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **Social Sharing (2026-07-02):** Implementierung von `sharing.js` zur PNG-Generierung von Status-Karten.
 - **API-Härtung (2026-07-03):** Integration der Season-Metadaten in `server.js` und `api-client.js`.
 
+## QS-HISTORIE & OPTIMIERUNGEN (ABGESCHLOSSEN)
+...
+- **API-Härtung (2026-07-03):** Integration der Season-Metadaten in `server.js` und `api-client.js`.
+- **Frontend-Integration (2026-07-03):** UI-Anbindung für Social Sharing und Live-Battle Vorbereitung in `index.html`, `app.js` und `api-client.js`.
+
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Frontend-Integration:** Anbindung der neuen WebSocket- und Sharing-Endpunkte im UI.
-2. **Season Dashboard:** Visualisierung der Season-Metadaten und verbleibenden Zeit im Frontend.
+1. **Season Dashboard:** Visualisierung der Season-Metadaten und verbleibenden Zeit im Frontend.
+2. **Socket.io Client:** Integration der `socket.io-client` Bibliothek zur Aktivierung der Live-Battle Funktionalität.
 
 ---
-**Status:** 2026-07-03 10:15 GMT+2 - Phase 5.0 vollständig implementiert.
+**Status:** 2026-07-03 10:30 GMT+2 - Frontend-Integration (Schritt 1) abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
