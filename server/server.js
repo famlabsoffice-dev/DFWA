@@ -188,21 +188,80 @@ db.serialize(() => {
 //     res.json({ secret: SYSTEM_SECRET });
 // }); // Entfernt, da SYSTEM_SECRET nicht an den Client ausgeliefert werden darf.
 
-app.get('/api/leaderboard', (req, res) => {
+app.get('/api/leaderboard', async (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
   const mode = req.query.mode || 'classic';
+
+  // Import league logic (ESM)
+  const { shouldResetSeason, performSoftReset, getSeasonEndBonus, getLeagueFromRating } = await import(
+    './social/leagues.js'
+  );
+
+  // 1. Season Management: Check and perform reset if needed
+  db.get(`SELECT last_reset_ts, season_number FROM season_metadata ORDER BY id DESC LIMIT 1`, (err, season) => {
+    if (err || !season) {
+      return fetchLeaderboardData(res, mode, limit, { season_number: 1 });
+    }
+
+    const { last_reset_ts, season_number } = season;
+
+    if (shouldResetSeason(last_reset_ts)) {
+      console.log(`[SEASON] Resetting season ${season_number}...`);
+
+      db.serialize(() => {
+        // A. Award season end bonuses and reset Elo
+        db.all(`SELECT playerId, league, elo FROM leaderboard`, (err, players) => {
+          if (!err && players) {
+            players.forEach((player) => {
+              const bonus = getSeasonEndBonus(player.league);
+              const newElo = performSoftReset(player.elo);
+              const newLeague = getLeagueFromRating(newElo);
+
+              db.run(
+                `UPDATE leaderboard SET season_points = season_points + ?, elo = ?, league = ? WHERE playerId = ?`,
+                [bonus, newElo, newLeague, player.playerId]
+              );
+            });
+          }
+        });
+
+        // B. Update Season Metadata
+        db.run(
+          `INSERT INTO season_metadata (season_number, last_reset_ts) VALUES (?, CURRENT_TIMESTAMP)`,
+          [season_number + 1],
+          (err) => {
+            if (!err) {
+              fetchLeaderboardData(res, mode, limit, { season_number: season_number + 1 });
+            } else {
+              res.status(500).json({ error: 'Season reset failed' });
+            }
+          }
+        );
+      });
+    } else {
+      fetchLeaderboardData(res, mode, limit, season);
+    }
+  });
+});
+
+function fetchLeaderboardData(res, mode, limit, seasonInfo) {
   db.all(
-    `SELECT playerName, score, wins, losses, elo, league FROM leaderboard WHERE mode = ? ORDER BY score DESC LIMIT ?`,
+    `SELECT playerName, score, wins, losses, elo, league, season_points FROM leaderboard WHERE mode = ? ORDER BY score DESC LIMIT ?`,
     [mode, limit],
     (err, rows) => {
       if (err) {
         res.status(500).json({ error: 'Database error' });
       } else {
-        res.json(rows);
+        // Return object with entries and season metadata for hardening
+        res.json({
+          entries: rows,
+          season: seasonInfo,
+          timestamp: new Date().toISOString()
+        });
       }
     }
   );
-});
+}
 
 app.post('/api/leaderboard', (req, res) => {
   const { playerId, playerName, score, wins, losses, variant, accuracy, mode, ts, auth } = req.body;

@@ -1,7 +1,7 @@
-# PROJECT STATUS: DFWA (Stand: 2026-07-02)
+# PROJECT STATUS: DFWA (Stand: 2026-07-03)
 
 ## EXECUTIVE SUMMARY
-Das DFWA-Repository hat Phase 4.0 (Feature-Expansion) erfolgreich abgeschlossen. Phase 5.0 (Social & Competitive) ist nun nahezu vollständig. Task 5.4 (Social Sharing) wurde implementiert, inklusive einer dynamischen Share-Card Generierung (`sharing.js`) unter Verwendung von `node-canvas`. Nutzer können nun visuelle Status-Karten mit ihren Scores, Ligen und Achievements generieren.
+Phase 5.0 (Social & Competitive) ist nun vollständig abgeschlossen. Task 5.1 (League-API-Härtung) wurde implementiert, wodurch die Leaderboard-API nun Season-Metadaten unterstützt und automatisierte Season-Resets inklusive Bonus-Zuweisung durchführt. Die Abwärtskompatibilität im `api-client.js` wurde sichergestellt.
 
 ## ROADMAP OVERVIEW
 
@@ -11,7 +11,7 @@ Fokus: Spieltiefe, Personalisierung und Offline-First Optimierung.
 | :--- | :--- | :--- | :--- |
 | **4.1-4.8** | **Core Features & PWA** | ✅ Erledigt | Achievement System, Custom Themes, Audio Engine, PWA-Härtung abgeschlossen. |
 
-### PHASE 5.0 - SOCIAL & COMPETITIVE (AKTUELL)
+### PHASE 5.0 - SOCIAL & COMPETITIVE (ABGESCHLOSSEN)
 Fokus: Community-Interaktion und globale Wettbewerbe.
 | ID | Task | Status | Ziel |
 | :--- | :--- | :--- | :--- |
@@ -26,11 +26,12 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **DB-Migration (2026-07-02):** Schema-Erweiterung für Ligen und Season-Metadaten erfolgreich abgeschlossen.
 - **WebSocket-Integration (2026-07-02):** Implementierung von `battleSync.js` und Integration in `server.js`.
 - **Social Sharing (2026-07-02):** Implementierung von `sharing.js` zur PNG-Generierung von Status-Karten.
+- **API-Härtung (2026-07-03):** Integration der Season-Metadaten in `server.js` und `api-client.js`.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **League-API-Härtung:** Integration der neuen Season-Metadaten in die Leaderboard-API.
-2. **Frontend-Integration:** Anbindung der neuen WebSocket- und Sharing-Endpunkte im UI.
+1. **Frontend-Integration:** Anbindung der neuen WebSocket- und Sharing-Endpunkte im UI.
+2. **Season Dashboard:** Visualisierung der Season-Metadaten und verbleibenden Zeit im Frontend.
 
 ---
-**Status:** 2026-07-02 23:55 GMT+2 - Phase 5.0 Meilensteine (5.1-5.4) vollständig implementiert.
+**Status:** 2026-07-03 10:15 GMT+2 - Phase 5.0 vollständig implementiert.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

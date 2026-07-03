@@ -31,11 +31,28 @@ export const APIClient = {
   async fetchLeaderboard(baseUrl, limit = 20, mode = 'classic') {
     try {
       const res = await fetch(`${baseUrl}${API_ENDPOINTS.LEADERBOARD}?limit=${limit}&mode=${mode}`);
-      if (res.ok) return await res.json();
+      if (res.ok) {
+        const data = await res.json();
+        // Support both old array format and new object format for backward compatibility
+        return Array.isArray(data) ? data : data.entries;
+      }
       throw new Error(`HTTP_${res.status}`);
     } catch (e) {
       this.reportError(baseUrl, { context: 'fetchLeaderboard', message: e.message });
       throw new Error('SERVER_UNAVAILABLE', { cause: e });
+    }
+  },
+  
+  async fetchSeasonInfo(baseUrl) {
+    try {
+      const res = await fetch(`${baseUrl}${API_ENDPOINTS.LEADERBOARD}`);
+      if (res.ok) {
+        const data = await res.json();
+        return data.season || { season_number: 1 };
+      }
+      return { season_number: 1 };
+    } catch (e) {
+      return { season_number: 1 };
     }
   },
 
