@@ -40,8 +40,8 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **Season Dashboard (2026-07-03):** Visualisierung der Season-Metadaten und Countdown-Logik im Leaderboard-Screen implementiert.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Battle UI Enhancement:** Detaillierte visuelle Darstellung von Gegner-Aktionen während eines Live-Battles.
-2. **Performance Audit:** Optimierung der WebSocket-Latenz und UI-Rendering-Performance.
+1. **Live-Battle Feedback:** Visuelle Indikatoren für korrekte/falsche Antworten des Gegners in Echtzeit.
+2. **Performance Audit:** Optimierung der WebSocket-Latenz für stabilere Live-Verbindungen.
 
 ---
 **Status:** 2026-07-03 11:00 GMT+2 - Season Dashboard abgeschlossen.
