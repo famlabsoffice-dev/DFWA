@@ -144,6 +144,15 @@
             <button class="mode-btn" data-mode="timeAttack">TIME_ATTACK</button>
             <button class="mode-btn" data-mode="hardcore">HARDCORE</button>
           </div>
+          <div id="season-dashboard" class="cyber-card" style="margin-bottom: 20px; border: 1px solid var(--cyber-blue); padding: 10px; font-size: 0.7rem; display: none;">
+            <div style="display: flex; justify-content: space-between; color: var(--cyber-blue); margin-bottom: 5px;">
+              <span>SEASON_ACTIVE: <span id="season-number">1</span></span>
+              <span>RESET_IN: <span id="season-countdown">--:--:--</span></span>
+            </div>
+            <div id="season-progress-container" style="width: 100%; height: 4px; background: rgba(0,255,255,0.1); border-radius: 2px;">
+              <div id="season-progress-bar" style="width: 0%; height: 100%; background: var(--cyber-blue); box-shadow: 0 0 5px var(--cyber-blue);"></div>
+            </div>
+          </div>
           <div id="leaderboard-list" class="cyber-list">
             <div class="list-header">
               <span>RANK</span>

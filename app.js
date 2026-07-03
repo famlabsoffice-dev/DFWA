@@ -1154,8 +1154,20 @@ async function loadLeaderboardData(mode) {
     entriesDiv.innerHTML = '<div style="padding:20px;text-align:center;">CONNECTING...</div>';
 
   try {
-    const data = await APIClient.fetchLeaderboard(API_BASE_URL, 20, mode);
-    UIManager.renderLeaderboard(entriesDiv, data);
+    const res = await fetch(`${API_BASE_URL}/api/leaderboard?limit=20&mode=${mode}`);
+    const data = await res.json();
+    
+    UIManager.renderLeaderboard(entriesDiv, data.entries || data);
+
+    if (data.season) {
+      const dashboard = document.getElementById('season-dashboard');
+      if (dashboard) dashboard.style.display = 'block';
+      
+      const seasonNum = document.getElementById('season-number');
+      if (seasonNum) seasonNum.innerText = data.season.season_number;
+
+      updateSeasonCountdown(data.season.last_reset_ts);
+    }
   } catch {
     if (entriesDiv)
       entriesDiv.innerHTML =
@@ -1187,9 +1199,43 @@ function hideLeaderboard() {
     const lobby = document.getElementById('battle-lobby');
     if (screen) screen.classList.remove('active');
     if (lobby) lobby.classList.add('active');
+    clearInterval(window._seasonInterval);
   } catch {
     /* Silent catch intentional for non-critical UI operations */
   }
+}
+
+function updateSeasonCountdown(lastResetTs) {
+  clearInterval(window._seasonInterval);
+  const countdownEl = document.getElementById('season-countdown');
+  const progressEl = document.getElementById('season-progress-bar');
+  if (!countdownEl) return;
+
+  const duration = 7 * 24 * 60 * 60 * 1000; // 7 Tage Season
+  const end = new Date(lastResetTs).getTime() + duration;
+
+  window._seasonInterval = setInterval(() => {
+    const now = Date.now();
+    const diff = end - now;
+
+    if (diff <= 0) {
+      countdownEl.innerText = 'RESET_PENDING';
+      if (progressEl) progressEl.style.width = '100%';
+      clearInterval(window._seasonInterval);
+      return;
+    }
+
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdownEl.innerText = `${d}D ${h}H ${m}M ${s}S`;
+    if (progressEl) {
+      const percent = 100 - (diff / duration) * 100;
+      progressEl.style.width = `${percent}%`;
+    }
+  }, 1000);
 }
 
 // Event Listener Registration
