@@ -3,7 +3,7 @@
 ## Zielsetzung
 Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung eines reibungslosen Spielablaufs.
 
-## Status Quo (Schritt 1-3 abgeschlossen)
+## Status Quo (Schritt 1-4 abgeschlossen)
 1. **Spielernamen Eingabe:** [ERLEDIGT]
    - State Management für `players` implementiert.
    - UI für Eingabe und Tag-Liste (mit Löschfunktion) in `index.html` und `style.css` integriert.
@@ -16,9 +16,13 @@ Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung ein
 3. **Challenge Button:** [ERLEDIGT]
    - `updateStartButtonState()` prüft nun `players.length > 0 && state.selectedCategory`.
    - Start-Logik in `initGame` nutzt gefilterte Fragen.
+4. **Live-Test der Startseite:** [ERLEDIGT]
+   - Spielereingabe (Codename) erfolgreich getestet.
+   - Kategorienauswahl (z.B. "WISSENSCHAFT & TECHNIK") erfolgreich getestet.
+   - `INIT_PROTOCOL` (Start-Button) leitet korrekt zum Spielbildschirm mit den gefilterten Fragen weiter.
 
 ## Nächste Schritte (Anweisung für folgende Instanz)
-4. **Multiplayer & Sync:** [IN ARBEIT]
+5. **Multiplayer & Sync:** [IN ARBEIT]
    - Prüfung der `BattleManager` Integration für Echtzeit-Duelle.
    - Validierung der Leaderboard-Anbindung.
 5. **QA & Polish:**
@@ -35,4 +39,4 @@ Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung ein
 
 ---
 **Anweisung für die nächste Instanz:**
-Alle Kernschritte des Wiederherstellungsplans für die Startseiten-Logik sind abgeschlossen. Das System ist bereit für weiterführende Features wie Multiplayer-Synchronisation oder erweiterte Statistiken. Führe bei Bedarf eine abschließende QA-Prüfung der gesamten Start-Flow-Logik durch.
+Die Kernschritte für die Startseiten-Logik und der Live-Test wurden erfolgreich abgeschlossen. Das System ist bereit für die Integration von Multiplayer-Funktionen über den `BattleManager` und die Anbindung des Leaderboards. Führe als Nächstes die Prüfung der `BattleManager`-Integration durch.
