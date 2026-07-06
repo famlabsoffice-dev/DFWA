@@ -41,3 +41,8 @@ Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung ein
 ---
 **Anweisung für die nächste Instanz:**
 Die Startseiten-Logik ist vollständig funktionsfähig und im Live-Betrieb validiert. Die Kategorienauswahl und Spielerregistrierung arbeiten fehlerfrei mit dem Game-Loop zusammen. Der Fokus liegt nun auf der Multiplayer-Synchronisation via `BattleManager`.
+
+## Nachtrag: Umfassender System-Test (06.07.2026)
+- **Vollständige Validierung:** Alle Buttons und Logik-Pfade des Startbildschirms wurden erfolgreich getestet.
+- **Features bestätigt:** Spieler-Management, Kategorien, Spielmodi (Hardcore-Test), Themenwechsel und Audio-Toggles sind zu 100% funktionsfähig.
+- **Bericht erstellt:** Detaillierte Testergebnisse finden sich in `start_screen_test_report.md`.
