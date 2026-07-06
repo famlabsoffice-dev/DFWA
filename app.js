@@ -496,10 +496,15 @@ async function renderCategorySelector() {
     const categories = [...new Set(allQuestions.map(q => q.cat))];
     container.innerHTML = '';
     
+    if (categories.length === 0) {
+      container.innerHTML = '<p style="color: var(--error); font-size: 0.7rem;">SYSTEM_ERROR: NO_CATEGORIES_FOUND</p>';
+      return;
+    }
+    
     categories.forEach(cat => {
       const btn = document.createElement('button');
       btn.className = 'mode-btn' + (state.selectedCategory === cat ? ' active' : '');
-      btn.innerText = cat.toUpperCase();
+      btn.innerText = (cat || 'UNKNOWN').toUpperCase();
       btn.onclick = () => {
         state.selectedCategory = cat;
         renderCategorySelector();

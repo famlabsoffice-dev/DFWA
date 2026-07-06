@@ -51,3 +51,13 @@ Die Startseiten-Logik ist vollständig funktionsfähig und im Live-Betrieb valid
 - **Status:** Datei gelesen und Systemstatus verifiziert.
 - **Aktion:** Repository-Synchronisation durchgeführt. Keine neuen logischen Änderungen in dieser Instanz vorgenommen.
 - **Bereit für:** Fokus auf Multiplayer-Synchronisation (BattleManager).
+
+## Fix (06.07.2026 - 19:12)
+- **Problem:** Live-Seite (GitHub Pages) war inaktiv, keine Kategorien sichtbar, Buttons ohne Funktion.
+- **Ursache:** 
+  1. Die Seite wurde direkt aus dem Repository-Root statt aus dem `dist/` Ordner (Vite-Build) serviert.
+  2. Der Browser konnte `socket.io-client` (Bare Import in `battle-manager.js`) nicht auflösen, was die gesamte JS-Initialisierung blockierte.
+- **Lösung:** 
+  - `deploy-pages.yml` aktualisiert, um automatisch den Vite-Build (`dist/`) nach GitHub Pages zu pushen.
+  - Fehlerbehandlung in `renderCategorySelector` verbessert.
+- **Status:** Fix gepusht. GitHub Actions baut und deployt nun die korrekte Version.
