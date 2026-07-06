@@ -32,7 +32,7 @@ let state = {
   usedComments: { correct: [], incorrect: [] },
   isPaused: false,
   isProcessing: false,
-  timer: 15, // Default initial value, will be synced from ModeConfig
+  timer: 15,
   timerInterval: null,
   questionCount: 0,
   isChallenge: false,
@@ -56,7 +56,6 @@ let state = {
 };
 if (!localStorage.getItem('dfwa_variant')) localStorage.setItem('dfwa_variant', state.variant);
 
-// Global Error Handler
 window.addEventListener('error', async (event) => {
   const errorData = {
     message: event.message,
@@ -195,7 +194,6 @@ async function restoreSession() {
   }
 }
 
-// Globaler Error Handler
 window.onerror = (message, source, lineno, colno, error) => {
   APIClient.reportError(API_BASE_URL, {
     message: message,
@@ -344,18 +342,6 @@ function updateUIForLanguage() {
   }
 }
 
-/*
-function setLanguage(lang) {
-  try {
-    state.lang = lang;
-    localStorage.setItem('dfwa_lang', lang);
-    updateUIForLanguage();
-  } catch {
-    console.error('Set language failed');
-  }
-}
-*/
-
 function setGameMode(mode) {
   try {
     if (!Object.values(GameModes).includes(mode)) {
@@ -380,7 +366,6 @@ function applyTheme(themeName) {
   document.body.className = themeName === 'default' ? '' : `theme-${themeName}`;
 }
 
-// Apply initial theme
 applyTheme(state.theme);
 
 document.querySelectorAll('.theme-dot').forEach((dot) => {
@@ -1005,7 +990,6 @@ setInterval(() => {
       }
     }
   } catch {
-    /* Silent catch intentional for non-critical UI operations */
   }
 }, 4000);
 
@@ -1029,7 +1013,6 @@ document.addEventListener('keydown', (e) => {
       }
     }
   } catch {
-    /* Silent catch intentional for non-critical UI operations */
   }
 });
 
@@ -1040,7 +1023,6 @@ document.addEventListener('contextmenu', (e) => {
       state.cheatsAttempted = true;
     }
   } catch {
-    /* Silent catch intentional for non-critical UI operations */
   }
 });
 
@@ -1067,7 +1049,6 @@ function displayLeaderboard(scores) {
     const text = document.getElementById('modal-text');
     if (text) text.innerHTML += lb;
   } catch {
-    /* Silent catch intentional for non-critical UI operations */
   }
 }
 
@@ -1093,6 +1074,10 @@ function closeSystem() {
     state.correctAnswers = 0;
     state.lives = 3;
 
+    const livesDisplay = document.getElementById('lives-display');
+    const highScore = document.getElementById('high-score');
+    const hudScore = document.getElementById('hud-score');
+    const hudStreak = document.getElementById('hud-streak');
     if (livesDisplay) livesDisplay.innerText = state.lives;
     if (highScore) highScore.innerText = state.best;
     if (hudScore) hudScore.innerText = '0_PTS';
@@ -1135,7 +1120,6 @@ document.addEventListener('visibilitychange', () => {
       }
     }, 250);
   } catch {
-    /* Silent catch intentional for non-critical UI operations */
   }
 });
 
@@ -1143,7 +1127,6 @@ window.addEventListener('beforeunload', saveSession);
 window.addEventListener('load', restoreSession);
 
 if ('serviceWorker' in navigator) {
-  // Service Worker registration handled by vite-plugin-pwa (injectRegister: 'auto')
 }
 
 let currentLeaderboardMode = 'classic';
@@ -1180,7 +1163,6 @@ async function showLeaderboard() {
     UIManager.toggleClass('battle-lobby', 'active', false);
     UIManager.toggleClass('leaderboard-screen', 'active', true);
 
-    // Reset filter UI
     const filters = document.querySelectorAll('#leaderboard-filters .mode-btn');
     filters.forEach((btn) => {
       btn.classList.toggle('active', btn.dataset.mode === 'classic');
@@ -1201,7 +1183,6 @@ function hideLeaderboard() {
     if (lobby) lobby.classList.add('active');
     clearInterval(window._seasonInterval);
   } catch {
-    /* Silent catch intentional for non-critical UI operations */
   }
 }
 
@@ -1211,7 +1192,7 @@ function updateSeasonCountdown(lastResetTs) {
   const progressEl = document.getElementById('season-progress-bar');
   if (!countdownEl) return;
 
-  const duration = 7 * 24 * 60 * 60 * 1000; // 7 Tage Season
+  const duration = 7 * 24 * 60 * 60 * 1000;
   const end = new Date(lastResetTs).getTime() + duration;
 
   window._seasonInterval = setInterval(() => {
@@ -1238,7 +1219,6 @@ function updateSeasonCountdown(lastResetTs) {
   }, 1000);
 }
 
-// Event Listener Registration
 document.addEventListener('DOMContentLoaded', () => {
   const addClick = (id, fn) => {
     const el = document.getElementById(id);
@@ -1253,7 +1233,6 @@ document.addEventListener('DOMContentLoaded', () => {
   addClick('show-leaderboard-btn', showLeaderboard);
   addClick('hide-leaderboard-btn', hideLeaderboard);
 
-  // Performance Reporting
   if ('performance' in window && 'PerformanceObserver' in window) {
     try {
       const observer = new PerformanceObserver((list) => {
@@ -1272,11 +1251,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
     } catch {
-      /* Performance monitoring non-critical */
     }
   }
 
-  // Leaderboard filter event listeners
   const filterBtns = document.querySelectorAll('#leaderboard-filters .mode-btn');
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', async () => {
@@ -1314,8 +1291,8 @@ document.addEventListener('DOMContentLoaded', () => {
         a.click();
         URL.revokeObjectURL(url);
       }
-    } catch (e) {
-      console.error('Sharing failed', e);
+    } catch {
+      console.error('Sharing failed');
     } finally {
       shareBtn.innerText = originalText;
     }
@@ -1327,7 +1304,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const battleId = 'global_lobby';
     BattleManager.joinBattle(battleId, state.playerId);
     
-    // Kurze Verzögerung für den Verbindungsaufbau, dann Spielstart
     setTimeout(async () => {
       state.isChallenge = true;
       state.opponentScore = 0;
@@ -1338,12 +1314,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Debug Exports for Functionality Testing
 window.__STATE__ = state;
 window.__END_GAME__ = endGame;
 
 window.generateChallengeCode = generateChallengeCode;
-
-
-
-// Service Worker registration handled by vite-plugin-pwa (injectRegister: 'auto')
