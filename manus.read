@@ -3,22 +3,27 @@
 ## Zielsetzung
 Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung eines reibungslosen Spielablaufs.
 
-## Status Quo (Schritt 1 abgeschlossen)
+## Status Quo (Schritt 1-3 abgeschlossen)
 1. **Spielernamen Eingabe:** [ERLEDIGT]
    - State Management für `players` implementiert.
    - UI für Eingabe und Tag-Liste (mit Löschfunktion) in `index.html` und `style.css` integriert.
    - Validierung und Start-Button-Sperre aktiv.
+2. **Kategorien Auswahl:** [ERLEDIGT]
+   - Dynamisches Rendering der Kategorien aus `questions_i18n.json` implementiert.
+   - `renderCategorySelector()` hinzugefügt und in `DOMContentLoaded` initialisiert.
+   - `state.selectedCategory` filtert nun den Fragenpool in `initGame`.
+   - Bugfix: Fehlender `AudioManager` Import behoben, der den Start-Flow blockierte.
+3. **Challenge Button:** [ERLEDIGT]
+   - `updateStartButtonState()` prüft nun `players.length > 0 && state.selectedCategory`.
+   - Start-Logik in `initGame` nutzt gefilterte Fragen.
 
 ## Nächste Schritte (Anweisung für folgende Instanz)
-2. **Kategorien Auswahl:** [ERLEDIGT]
-   - Grid/Liste der verfügbaren Spielkategorien basierend auf `questions_i18n.json` implementiert.
-   - Visuelle Auswahlmöglichkeit mit Highlighting des gewählten Elements (`.active` Klasse) umgesetzt.
-   - `state.selectedCategory` wird korrekt gesetzt und filtert den Fragenpool in `initGame`.
-   - UI-Synchronisation mit dem Start-Button (`INIT_PROTOCOL`) ist aktiv.
-3. **Challenge Button:** [ERLEDIGT]
-   - Übergang in den Spielmodus finalisiert.
-   - Spieler-Setup in `initGame` optimiert: Der erste Spieler aus der `players`-Liste wird nun automatisch als aktiver Spieler übernommen und im HUD angezeigt.
-   - Start-Button Logik (`INIT_PROTOCOL`) ist vollständig mit der Kategorien-Auswahl und Spieler-Validierung verknüpft.
+4. **Multiplayer & Sync:** [IN ARBEIT]
+   - Prüfung der `BattleManager` Integration für Echtzeit-Duelle.
+   - Validierung der Leaderboard-Anbindung.
+5. **QA & Polish:**
+   - Testen der Kategorien-Filterung unter verschiedenen Modi.
+   - Überprüfung der UI-Responisvness bei vielen Kategorien.
 
 ## Umsetzungslogik
 - **State Management:** `players` (Array) und `selectedCategory` (String/Object) sind initialisiert.

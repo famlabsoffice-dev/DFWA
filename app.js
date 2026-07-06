@@ -1,6 +1,7 @@
 import { APIClient } from './scripts/api-client.js';
 import { UIManager } from './scripts/ui-manager.js';
 import { BattleManager } from './scripts/battle-manager.js';
+import { AudioManager } from './scripts/audio-manager.js';
 import {
   GameModes,
   ModeConfig,
@@ -479,6 +480,38 @@ function renderModeSelector() {
   }
 }
 
+async function renderCategorySelector() {
+  try {
+    const container = document.getElementById('category-selector');
+    if (!container) return;
+    
+    let allQuestions = window._dfwaQCache;
+    if (!allQuestions) {
+      const qRes = await fetch('questions_i18n.json');
+      if (!qRes.ok) throw new Error('FETCH_FAILED');
+      allQuestions = await qRes.json();
+      window._dfwaQCache = allQuestions;
+    }
+    
+    const categories = [...new Set(allQuestions.map(q => q.cat))];
+    container.innerHTML = '';
+    
+    categories.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'mode-btn' + (state.selectedCategory === cat ? ' active' : '');
+      btn.innerText = cat.toUpperCase();
+      btn.onclick = () => {
+        state.selectedCategory = cat;
+        renderCategorySelector();
+        updateStartButtonState();
+      };
+      container.appendChild(btn);
+    });
+  } catch (e) {
+    console.error('Render category selector failed:', e);
+  }
+}
+
 function handleAddPlayer() {
   try {
     const nameInput = document.getElementById('player-name');
@@ -748,7 +781,12 @@ async function initGame(createChallenge, isRestoring = false) {
 
       if (allQuestions.length === 0) throw new Error('NO_QUESTIONS');
 
-      state.questions = shuffle([...allQuestions], state.isChallenge ? state.challengeSeed : null);
+      let filteredQuestions = allQuestions;
+      if (state.selectedCategory) {
+        filteredQuestions = allQuestions.filter(q => q.cat === state.selectedCategory);
+      }
+      
+      state.questions = shuffle([...filteredQuestions], state.isChallenge ? state.challengeSeed : null);
       const config = getGameModeConfig(state.mode);
       if (config.maxQuestions) state.questions = state.questions.slice(0, config.maxQuestions);
 
@@ -1333,7 +1371,11 @@ document.addEventListener('DOMContentLoaded', () => {
   addClick('show-leaderboard-btn', showLeaderboard);
   addClick('hide-leaderboard-btn', hideLeaderboard);
   addClick('add-player-btn', handleAddPlayer);
+  
+  // Initialisierung
   updateStartButtonState();
+  renderCategorySelector();
+  
   const nameInput = document.getElementById('player-name');
   if (nameInput) {
     nameInput.addEventListener('keypress', (e) => {
