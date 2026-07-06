@@ -3,7 +3,7 @@
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 06.07.2026)
+## Status Quo (Stand 06.07.2026 - 20:15 GMT+2)
 
 ### 1. Live-System & Deployment [VALIDIERT]
 - **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
@@ -13,27 +13,32 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 - **Status:** Visuelle Indikatoren für Gegner-Aktionen hinzugefügt.
 - **Lösung:** 
   - `scripts/battle-manager.js`: `opponent_action` Handler implementiert Glitch-Effekt und rote Score-Hervorhebung bei Fehlern des Gegners.
-  - Sync-Logik (Score vor Emit) bleibt stabil.
 
-### 3. PWA & Offline-Funktionalität [REPARIERT]
-- **Status:** Manifest und Scope für GitHub Pages korrigiert.
+### 3. PWA & Offline-Funktionalität [OPTIMIERT]
+- **Status:** Service Worker auf Workbox 7.0 umgestellt für robustes Caching.
 - **Lösung:** 
-  - `manifest.webmanifest`: `start_url` und `scope` auf `./` gesetzt, um Repository-Unterpfade zu unterstützen.
-  - `vite.config.js`: Dynamische Korrektur der Manifest-Referenz in der `index.html` via Plugin.
+  - `sw.js`: Implementierung von `CacheFirst` für WebP-Bilder und `StaleWhileRevalidate` für statische Assets (JS/CSS/Fonts).
+  - Volle Offline-Fähigkeit durch Pre-Caching der Kernkomponenten (`index.html`, `manifest.webmanifest`).
+
+### 4. Leaderboard UI & UX [VERBESSERT]
+- **Status:** "Server Room" mit Animationen und funktionaler Filter-Logik ausgestattet.
+- **Lösung:**
+  - `style.css`: `slideInRight` Animation für Leaderboard-Einträge hinzugefügt.
+  - `scripts/ui-manager.js`: Staggered-Animation (verzögertes Einblenden) beim Rendern der Einträge implementiert.
+  - `app.js`: Filter-Logik für Classic, Time Attack und Hardcore Modi finalisiert.
 
 ## Nächste Schritte
 
-### 4. Service Worker Optimierung
-- **Ziel:** Volle Offline-Fähigkeit sicherstellen.
+### 5. Audio-System Refactoring
+- **Ziel:** Reduzierung der Ladezeiten und bessere Synchronisation.
 - **Aufgaben:**
-  - `sw.js`: Überprüfung der Caching-Strategien für die großen WebP-Assets (`ack_core_brain.webp` etc.).
-  - Sicherstellen, dass alle gehashten Assets aus dem `assets/` Ordner korrekt geprecached werden.
+  - `scripts/audio-manager.js`: Überprüfung der Audio-Sprites für schnellere Reaktionszeiten.
+  - Integration von Sound-Feedback für Leaderboard-Interaktionen.
 
-### 5. Leaderboard UI Enhancement
-- **Ziel:** Bessere Lesbarkeit im "Server Room".
+### 6. Achievement System Deep-Link
+- **Ziel:** Achievements direkt teilbar machen.
 - **Aufgaben:**
-  - Animationen für das Laden der Einträge hinzufügen.
-  - Filter-Logik für verschiedene Spielmodi (Classic, Time Attack, Hardcore) im Frontend finalisieren.
+  - Implementierung von Web Share API für spezifische Achievement-Unlocks.
 
 ---
 
@@ -42,16 +47,15 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 > **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
 > 
 > **DEIN AUFTRAG:**
-> Optimiere den Service Worker für volle Offline-Fähigkeit und verbessere die Leaderboard-UI.
+> Refactore das Audio-System für bessere Performance und implementiere Deep-Links für das Achievement-System.
 > 
 > **Zwingende Regeln:**
 > 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
 > 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
-> 3. **Live-Fokus:** Sync zu Root nach Build zwingend erforderlich.
-> 4. **SW-Audit:** Prüfe, ob `sw.js` alle neuen gehashten Assets aus `assets/` erkennt.
+> 3. **Audio-Check:** Prüfe die Dateigrößen der Audio-Assets in `assets/audio/`.
 > 
-> **Startpunkt:** Analysiere die generierte `index.html` auf korrekte Asset-Pfade und die `sw.js` auf Caching-Logik.
+> **Startpunkt:** Analysiere `scripts/audio-manager.js` und die aktuelle Achievement-Logik in `app.js`.
 
 ---
-**Status:** PWA-Fixes und Multiplayer-Feedback implementiert. Build & Sync erfolgreich.
-**Zuletzt aktualisiert:** 06.07.2026 - 20:00 GMT+2
+**Status:** Service Worker optimiert, Leaderboard-UI verbessert. Build & Sync erfolgreich abgeschlossen.
+**Zuletzt aktualisiert:** 06.07.2026 - 20:15 GMT+2
