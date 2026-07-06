@@ -959,7 +959,7 @@ function checkAnswer(correct) {
       state.lives = Math.max(0, state.lives - 1);
       state.streak = 0;
       saveSession();
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_clean.webp';
+      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_brain.png';
       if (fMsg) {
         fMsg.style.borderColor = 'var(--warning)';
         fMsg.style.color = 'var(--warning)';

@@ -43,10 +43,12 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 
 - **Funktionstest & Bugfix (2026-07-03):** Fehlende `closeSystem` Funktion implementiert, Backend-Dependencies korrigiert und WebSocket-Feedback-Logik im `BattleManager` verfeinert.
 
+- **Asset-Audit (2026-07-03):** Alle Bildpfade und Icons geprüft. Fehlerhafter Verweis auf `ack_core_clean.webp` in `app.js` korrigiert (auf `ack_core_brain.png` umgestellt). PWA-Asset-Konsistenz sichergestellt.
+
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
 1. **Live-Battle UI:** Implementierung eines dedizierten Battle-HUDs zur Anzeige des Gegner-Status (Score/Streak) ohne Modal-Interruption.
-2. **Asset-Audit:** Prüfung aller Bildpfade und Icons auf PWA-Konformität und Ladeperformance.
+2. **Offline-Storage Härtung:** Erweiterte Validierung der lokalen Speicherintegrität für den Offline-Betrieb.
 
 ---
-**Status:** 2026-07-03 11:15 GMT+2 - Funktionstest und initiale Fehlerbehebung abgeschlossen.
+**Status:** 2026-07-03 11:20 GMT+2 - Asset-Audit abgeschlossen.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
