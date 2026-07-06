@@ -831,7 +831,7 @@ async function endGame() {
       if (title) title.innerText = 'CHALLENGE_CREATED';
       if (text) text.innerText = 'GENERATING...';
       const modalContent = document.querySelector('.modal-content');
-      if (modalContent) modalContent.style.backgroundImage = "url('./assets/images/ack_override_alien.png')";
+      if (modalContent) modalContent.style.backgroundImage = "url('./assets/images/ack_override_alien.webp')";
       generateChallengeCode().then((code) => {
         if (text) text.innerText = code;
       });
@@ -839,7 +839,7 @@ async function endGame() {
       const win = state.score > state.opponentScore;
       const modalContent = document.querySelector('.modal-content');
       if (modalContent) {
-        modalContent.style.backgroundImage = win ? "url('./assets/images/ack_player_win_angry.png')" : "url('./assets/images/ack_victory.png')";
+        modalContent.style.backgroundImage = win ? "url('./assets/images/ack_player_win_angry.webp')" : "url('./assets/images/ack_victory.webp')";
         modalContent.style.backgroundSize = 'cover';
         modalContent.style.backgroundPosition = 'center';
       }
@@ -941,7 +941,7 @@ function checkAnswer(correct) {
           hudStreak.style.display = 'none';
         }
       }
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_reaction_set.png';
+      if (fEyeBase) fEyeBase.src = './assets/images/ack_reaction_set.webp';
       if (fMsg) {
         fMsg.style.borderColor = 'var(--neon)';
         fMsg.style.color = 'var(--neon)';
@@ -956,7 +956,7 @@ function checkAnswer(correct) {
       if (hudStreak) hudStreak.style.display = 'none';
       const livesDisplay = document.getElementById('lives-display');
       if (livesDisplay) livesDisplay.innerText = state.lives;
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_interference_glitch.png';
+      if (fEyeBase) fEyeBase.src = './assets/images/ack_interference_glitch.webp';
       if (fContainer) fContainer.classList.add('zoom-anim');
       if (fMsg) {
         fMsg.style.borderColor = 'var(--error)';
@@ -967,7 +967,7 @@ function checkAnswer(correct) {
       state.lives = Math.max(0, state.lives - 1);
       state.streak = 0;
       saveSession();
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_brain.png';
+      if (fEyeBase) fEyeBase.src = './assets/images/ack_core_brain.webp';
       if (fMsg) {
         fMsg.style.borderColor = 'var(--warning)';
         fMsg.style.color = 'var(--warning)';
@@ -1005,9 +1005,9 @@ setInterval(() => {
     if (startScreen && startScreen.classList.contains('active')) {
       const eye = document.getElementById('core-eye');
       if (eye) {
-        eye.src = './assets/images/ack_splash_void.png';
+        eye.src = './assets/images/ack_splash_void.webp';
         setTimeout(() => {
-          if (eye) eye.src = './assets/images/ack_core_brain.png';
+          if (eye) eye.src = './assets/images/ack_core_brain.webp';
         }, 150);
       }
     }
