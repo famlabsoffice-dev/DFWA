@@ -16,7 +16,10 @@ export const BattleManager = {
 
     this.socket.on('player_joined', ({ playerId: joinedPlayerId, activePlayers }) => {
       console.log(`Player joined: ${joinedPlayerId}`);
-      UIManager.showModal('BATTLE_SYNC', `PLAYER_${joinedPlayerId}_CONNECTED\nACTIVE_UNITS: ${activePlayers.length}`, 'var(--cyber-blue)');
+      if (activePlayers.length > 1) {
+        const oppHud = document.getElementById('opponent-hud');
+        if (oppHud) oppHud.style.display = 'block';
+      }
     });
 
     this.socket.on('opponent_action', ({ playerId: opponentId, action }) => {
@@ -26,9 +29,19 @@ export const BattleManager = {
 
     this.socket.on('opponent_sync', ({ playerId: opponentId, state: opponentState }) => {
       console.log(`Opponent ${opponentId} state:`, opponentState);
-      const hudStreak = document.getElementById('hud-streak');
-      if (hudStreak && opponentState.streak > 5) {
-        UIManager.showModal('OPPONENT_STREAK', `PLAYER_${opponentId}_STREAK: ${opponentState.streak}`, 'var(--error)');
+      
+      const oppScore = document.getElementById('opp-score');
+      if (oppScore) oppScore.innerText = `${opponentState.score}_PTS`;
+
+      const oppStreak = document.getElementById('opp-streak');
+      const oppStreakCount = document.getElementById('opp-streak-count');
+      if (oppStreak && oppStreakCount) {
+        if (opponentState.streak >= 3) {
+          oppStreak.style.display = 'inline';
+          oppStreakCount.innerText = opponentState.streak;
+        } else {
+          oppStreak.style.display = 'none';
+        }
       }
     });
 

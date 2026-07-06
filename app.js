@@ -916,6 +916,7 @@ function checkAnswer(correct) {
       state.streak++;
       state.correctAnswers++;
       BattleManager.sendAction({ type: 'CORRECT_ANSWER', streak: state.streak }, state.playerId);
+      BattleManager.syncState({ score: state.score, streak: state.streak }, state.playerId);
       if (state.streak > state.streakMax) state.streakMax = state.streak;
       const streakBonus = Math.min((state.streak - 1) * 10, 100);
       const timeBonus = Math.min(Math.floor(state.timer * 2), 30);

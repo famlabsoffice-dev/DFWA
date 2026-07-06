@@ -215,6 +215,27 @@
           >
         </div>
         <div
+          id="opponent-hud"
+          style="
+            position: absolute;
+            top: 16vh;
+            left: 20px;
+            text-align: left;
+            z-index: 50;
+            font-size: 0.75rem;
+            font-weight: 900;
+            line-height: 1.6;
+            display: none;
+          "
+        >
+          <span style="color: var(--error); font-size: 0.6rem">OPPONENT_LINK</span
+          ><br />
+          <span id="opp-score" style="color: var(--error)">0_PTS</span><br />
+          <span id="opp-streak" style="color: var(--warning); display: none"
+            >STREAK_<span id="opp-streak-count">0</span>X</span
+          >
+        </div>
+        <div
           id="cat-display"
           style="
             color: var(--cyber-blue);
