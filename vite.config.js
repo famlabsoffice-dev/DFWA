@@ -8,6 +8,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   plugins: [
     VitePWA({
+      strategies: 'injectManifest',
+      srcDir: './',
+      filename: 'sw.js',
       registerType: 'autoUpdate',
       injectRegister: 'auto',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'assets/fonts/*.woff2', 'assets/images/*.webp'],
