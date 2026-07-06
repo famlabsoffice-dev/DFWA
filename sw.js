@@ -18,6 +18,25 @@ self.addEventListener('message', (event) => {
   }
 });
 
+self.addEventListener('push', (event) => {
+  const data = event.data ? event.data.json() : { title: 'DFWA', body: 'New notification' };
+  const options = {
+    body: data.body,
+    icon: '/pwa-192x192.png',
+    badge: '/pwa-192x192.png',
+    vibrate: [100, 50, 100],
+    data: {
+      url: self.registration.scope,
+    },
+  };
+  event.waitUntil(self.registration.showNotification(data.title, options));
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  event.waitUntil(clients.openWindow(event.notification.data.url));
+});
+
 self.addEventListener('install', (event) => {
   event.waitUntil(self.skipWaiting());
 });

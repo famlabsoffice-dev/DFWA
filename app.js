@@ -421,6 +421,30 @@ function unlockAchievement(achievementId) {
   toast.innerHTML = `<strong>ACHIEVEMENT_UNLOCKED</strong><br>${achievement.name}`;
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 4000);
+
+  sendLocalNotification('ACHIEVEMENT_UNLOCKED', achievement.name);
+}
+
+async function requestNotificationPermission() {
+  if (!('Notification' in window)) return;
+  if (Notification.permission === 'default') {
+    await Notification.requestPermission();
+  }
+}
+
+function sendLocalNotification(title, body) {
+  if (!('Notification' in window) || Notification.permission !== 'granted') return;
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready.then((registration) => {
+      registration.showNotification(title, {
+        body: body,
+        icon: './pwa-192x192.png',
+        badge: './pwa-192x192.png',
+        vibrate: [100, 50, 100],
+      });
+    });
+  }
 }
 
 function checkAchievements() {
@@ -1334,6 +1358,7 @@ document.addEventListener('DOMContentLoaded', () => {
       await initGame(false);
     }, 1500);
   });
+  requestNotificationPermission();
 });
 
 window.__STATE__ = state;

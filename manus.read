@@ -3,7 +3,7 @@
 > **CORE PRINCIPLE:** DFWA ist und bleibt eine **reine PWA**. Alle Erweiterungen müssen strikt webbasiert, plattformunabhängig und Offline-First-kompatibel implementiert werden. Native Abhängigkeiten sind untersagt.
 
 ## EXECUTIVE SUMMARY
-Phase 5.0 (Social & Competitive) ist vollständig abgeschlossen. Die PWA wurde umfassend gehärtet, performant optimiert und für den produktiven Einsatz vorbereitet. Aktuell wird die Integration von Web-Push-Notifications zur Steigerung der User-Retention implementiert.
+Phase 5.0 (Social & Competitive) ist vollständig abgeschlossen. Die PWA wurde umfassend gehärtet, performant optimiert und für den produktiven Einsatz vorbereitet. Mit der erfolgreichen Integration von Web-Push-Notifications ist das Projekt nun feature-complete für den initialen Launch.
 
 ## ROADMAP OVERVIEW
 
@@ -40,11 +40,12 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **Performance Audit & Optimierung (2026-07-06):** Manuelles Chunk-Splitting in Vite und Optimierung der Service-Worker Caching-Strategien.
 - **Asset-Kompression (2026-07-06):** Konvertierung aller PNGs in WebP. Reduzierung der Asset-Größe von **107MB auf 11MB**.
 - **UI-Refinement & UX-Optimierung (2026-07-06):** Hardware-beschleunigte Transitions, interaktive Button-States und optimiertes Feedback-Timing.
+- **Push-Notifications (2026-07-06):** Implementierung von Web-Push für Achievement-Benachrichtigungen. Integration der Berechtigungsanfrage beim App-Start und lokaler Notifications via Service Worker.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Push-Notifications (IN PROGRESS):** Evaluierung und Integration von Web-Push für Achievement-Benachrichtigungen.
-2. **Advanced Shaders:** Untersuchung von WebGL-Post-Processing-Effekten für den Dystopie-Look.
+1. **Advanced Shaders:** Untersuchung von WebGL-Post-Processing-Effekten für den Dystopie-Look.
+2. **Multi-Language Expansion:** Hinzufügen weiterer Sprachen (ES, FR, JP) basierend auf dem `questions_i18n.json` Schema.
 
 ---
-**Status:** 2026-07-06 17:25 GMT+2 - Dokumentation bereinigt und bereit für Push-Notification Integration.
+**Status:** 2026-07-06 17:40 GMT+2 - Projekt feature-complete. Alle geplanten Optimierungen und Härtungen erfolgreich umgesetzt.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
