@@ -263,6 +263,36 @@ h1 {
   text-align: center;
 }
 
+.player-tag {
+  background: var(--neon-bg);
+  border: 1px solid var(--neon);
+  color: var(--neon);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 2px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.player-tag button {
+  background: none;
+  border: none;
+  color: var(--error);
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 2px;
+  line-height: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 #timeline-container {
   width: 100%;
   max-width: 600px;

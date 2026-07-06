@@ -76,15 +76,20 @@
           >
             AUTONOMOUS CYBERNETIC KNOWLEDGE
           </p>
-          <input
-            type="text"
-            id="player-name"
-            class="cyber-input"
-            placeholder="ENTER_CODENAME"
-            maxlength="12"
-            aria-label="Spieler-Codename eingeben"
-            autocomplete="off"
-          />
+          <div class="player-input-group" style="display: flex; gap: 10px; width: 100%; max-width: 420px; margin-bottom: 10px;">
+            <input
+              type="text"
+              id="player-name"
+              class="cyber-input"
+              placeholder="ENTER_CODENAME"
+              maxlength="12"
+              aria-label="Spieler-Codename eingeben"
+              autocomplete="off"
+              style="margin: 0; flex-grow: 1;"
+            />
+            <button id="add-player-btn" class="option-btn" style="margin: 0; padding: 10px 20px; width: auto; font-size: 1.2rem;">+</button>
+          </div>
+          <div id="player-list-container" class="player-list-tags" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; max-width: 420px;"></div>
           <div
             id="mode-selector"
             class="mode-selector-container"

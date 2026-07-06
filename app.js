@@ -24,6 +24,8 @@ let state = {
   streakMax: 0,
   correctAnswers: 0,
   playerName: localStorage.getItem('dfwa_name') || 'GUEST',
+  players: JSON.parse(localStorage.getItem('dfwa_players') || '[]'),
+  selectedCategory: null,
   playerId: localStorage.getItem('dfwa_id') || Math.floor(1000 + Math.random() * 9000).toString(),
   best: parseInt(localStorage.getItem('dfwa_best') || 0),
   wins: parseInt(localStorage.getItem('dfwa_wins') || 0),
@@ -477,11 +479,56 @@ function renderModeSelector() {
   }
 }
 
-function showLobby() {
+function handleAddPlayer() {
   try {
     const nameInput = document.getElementById('player-name');
-    state.playerName = nameInput ? nameInput.value.trim() || 'GUEST' : 'GUEST';
-    saveSecure('dfwa_name', state.playerName);
+    const name = nameInput ? nameInput.value.trim() : '';
+    if (!name) return;
+
+    if (!state.players.includes(name)) {
+      state.players.push(name);
+      localStorage.setItem('dfwa_players', JSON.stringify(state.players));
+      updatePlayerListUI();
+    }
+    if (nameInput) nameInput.value = '';
+    updateStartButtonState();
+  } catch {
+    console.error('Add player failed');
+  }
+}
+
+function updatePlayerListUI() {
+  const container = document.getElementById('player-list-container');
+  if (!container) return;
+  container.innerHTML = state.players
+    .map(
+      (p) => `
+    <div class="player-tag">
+      <span>${p}</span>
+      <button onclick="handleRemovePlayer('${p}')">×</button>
+    </div>`
+    )
+    .join('');
+}
+
+window.handleRemovePlayer = (name) => {
+  state.players = state.players.filter((p) => p !== name);
+  localStorage.setItem('dfwa_players', JSON.stringify(state.players));
+  updatePlayerListUI();
+  updateStartButtonState();
+};
+
+function updateStartButtonState() {
+  const startBtn = document.getElementById('start-btn');
+  if (startBtn) {
+    const isValid = state.players.length > 0 && state.selectedCategory;
+    startBtn.disabled = !isValid;
+    startBtn.style.opacity = isValid ? '1' : '0.5';
+  }
+}
+
+function showLobby() {
+  try {
     const startScreen = document.getElementById('start-screen');
     const battleLobby = document.getElementById('battle-lobby');
     if (startScreen) startScreen.classList.remove('active');
@@ -1278,6 +1325,15 @@ document.addEventListener('DOMContentLoaded', () => {
   addClick('hide-lobby-btn', hideLobby);
   addClick('show-leaderboard-btn', showLeaderboard);
   addClick('hide-leaderboard-btn', hideLeaderboard);
+  addClick('add-player-btn', handleAddPlayer);
+  const nameInput = document.getElementById('player-name');
+  if (nameInput) {
+    nameInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleAddPlayer();
+    });
+  }
+  updatePlayerListUI();
+  updateStartButtonState();
 
   if ('performance' in window && 'PerformanceObserver' in window) {
     try {
