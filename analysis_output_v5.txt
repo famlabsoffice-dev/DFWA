@@ -1,0 +1,21 @@
+Warning: True color (24-bit) support not detected. Using a terminal with true color enabled will result in a better visual experience.
+Ripgrep is not available. Falling back to GrepTool.
+[STARTUP] Phase 'cleanup_ops' was started but never ended. Skipping metrics.
+[STARTUP] Cannot measure phase 'cleanup_ops': start mark 'startup:cleanup_ops:start' not found (likely cleared by reset).
+Attempt 1 failed with status 503. Retrying with backoff... _ApiError: {"error":{"message":"{\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"The service is currently unavailable.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n","code":503,"status":"Service Unavailable"}}
+    at throwErrorIfNotOK (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-VLV2BYPM.js:258424:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-VLV2BYPM.js:258187:7
+    at async Models.generateContentStream (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-VLV2BYPM.js:259283:16)
+    at async file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-VLV2BYPM.js:301279:19
+    at async file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-VLV2BYPM.js:278341:23
+    at async retryWithBackoff (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-VLV2BYPM.js:298287:23)
+    at async GeminiChat.makeApiCallAndProcessStream (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-VLV2BYPM.js:321564:28)
+    at async GeminiChat.streamWithRetries (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-VLV2BYPM.js:321382:29)
+    at async Turn.run (file:///usr/local/lib/node_modules/@google/gemini-cli/bundle/chunk-VLV2BYPM.js:322128:24) {
+  status: 503
+}
+Attempt 2 failed: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash
+Please retry in 18.223279389s.
+Suggested retry after 18s.. Retrying after 19318ms...
