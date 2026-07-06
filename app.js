@@ -480,7 +480,10 @@ function renderModeSelector() {
   }
 }
 
+
 async function renderCategorySelector() {
+  console.log("Rendering category selector...");
+
   try {
     const container = document.getElementById('category-selector');
     if (!container) return;
@@ -517,7 +520,10 @@ async function renderCategorySelector() {
   }
 }
 
+
 function handleAddPlayer() {
+  console.log("Add player clicked");
+
   try {
     const nameInput = document.getElementById('player-name');
     const name = nameInput ? nameInput.value.trim() : '';
