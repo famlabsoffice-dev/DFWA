@@ -357,11 +357,8 @@ app.post('/api/leaderboard', (req, res) => {
 });
 
 // Statische Dateien und SPA-Fallback erst NACH den API-Routen
-const distPathForStatic = join(__dirname, '..', 'dist');
-const staticPathForStatic = existsSync(distPathForStatic)
-  ? distPathForStatic
-  : join(__dirname, '..');
-app.use(express.static(staticPathForStatic));
+  const distPathForStatic = join(__dirname, '..', 'dist');
+  app.use(express.static(distPathForStatic));
 
 app.post('/api/challenge/verify', (req, res) => {
   const { code } = req.body;

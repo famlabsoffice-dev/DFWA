@@ -1077,17 +1077,16 @@ function closeSystem() {
     const modalTitle = document.getElementById('modal-title');
     const gameScreen = document.getElementById('game-screen');
     const startScreen = document.getElementById('start-screen');
-    const livesDisplay = document.getElementById('lives-display');
-    const highScore = document.getElementById('high-score');
-    const hudScore = document.getElementById('hud-score');
-    const hudStreak = document.getElementById('hud-streak');
+    const shareBtn = document.getElementById('share-btn');
 
     if (modalOverlay) modalOverlay.style.display = 'none';
     if (modalTitle) modalTitle.style.color = 'var(--warning)';
     if (gameScreen) gameScreen.classList.remove('active');
     if (startScreen) startScreen.classList.add('active');
+    if (shareBtn) shareBtn.style.display = 'none';
 
     state.isChallenge = false;
+    hideLobby();
     state.isCreatingChallenge = false;
     state.streak = 0;
     state.streakMax = 0;
@@ -1345,12 +1344,6 @@ window.__END_GAME__ = endGame;
 
 window.generateChallengeCode = generateChallengeCode;
 
-function closeSystem() {
-  const overlay = document.getElementById('modal-overlay');
-  if (overlay) overlay.style.display = 'none';
-  const shareBtn = document.getElementById('share-btn');
-  if (shareBtn) shareBtn.style.display = 'none';
-  hideLobby();
-}
+
 
 // Service Worker registration handled by vite-plugin-pwa (injectRegister: 'auto')
