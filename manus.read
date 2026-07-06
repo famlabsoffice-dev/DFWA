@@ -3,24 +3,29 @@
 ## Zielsetzung
 Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung eines reibungslosen Spielablaufs.
 
-## Funktionsliste / Anforderungen
-1. **Spielernamen Eingabe:**
-   - Textfeld für die Eingabe von Namen.
-   - Hinzufügen-Button zur Aufnahme in die aktive Spielerliste.
-   - Validierung (keine leeren Namen).
-2. **Kategorien Auswahl:**
-   - Grid/Liste der verfügbaren Spielkategorien.
-   - Visuelle Auswahlmöglichkeit (Highlighting).
-   - Speicherung der getroffenen Auswahl für die Spielrunde.
-3. **Challenge Button:**
-   - Zentraler Action-Button zum Starten der Challenge.
-   - Aktivierung erst nach Spielereingabe und Kategorie-Wahl.
-   - Trigger für den Übergang in den Spielmodus.
+## Status Quo (Schritt 1 abgeschlossen)
+1. **Spielernamen Eingabe:** [ERLEDIGT]
+   - State Management für `players` implementiert.
+   - UI für Eingabe und Tag-Liste (mit Löschfunktion) in `index.html` und `style.css` integriert.
+   - Validierung und Start-Button-Sperre aktiv.
+
+## Nächste Schritte (Anweisung für folgende Instanz)
+2. **Kategorien Auswahl:** [PENDING]
+   - Grid/Liste der verfügbaren Spielkategorien (basierend auf `questions_i18n.json` oder vordefinierten Sets).
+   - Visuelle Auswahlmöglichkeit (Highlighting des gewählten Elements).
+   - `state.selectedCategory` setzen und UI-Synchronisation (Start-Button freigeben).
+3. **Challenge Button:** [PENDING]
+   - Übergang in den Spielmodus finalisieren.
+   - Sicherstellen, dass alle Spieler aus der Liste korrekt in das Spiel-Setup übernommen werden.
 
 ## Umsetzungslogik
-- **State Management:** Initialisierung der Zustände `players` (Array) und `selectedCategory` (String/Object).
+- **State Management:** `players` (Array) und `selectedCategory` (String/Object) sind initialisiert.
 - **Event Handling:** 
-  - `handleAddPlayer()`: Pusht Namen in `players`.
-  - `handleSelectCategory(id)`: Setzt `selectedCategory`.
-  - `handleStartChallenge()`: Prüft Voraussetzungen und leitet weiter.
-- **UI-Synchronisation:** Dynamische Aktivierung des Challenge-Buttons basierend auf dem State.
+  - `handleAddPlayer()`: [ERLEDIGT]
+  - `handleSelectCategory(id)`: [NÄCHSTER SCHRITT]
+  - `handleStartChallenge()`: [ÜBERNÄCHSTER SCHRITT]
+- **UI-Synchronisation:** Start-Button `disabled`-Status hängt von `players.length > 0 && selectedCategory` ab.
+
+---
+**Anweisung für die nächste Instanz:**
+Setze direkt mit **Schritt 2: Kategorien Auswahl** fort. Implementiere ein Grid unter der Spielerliste, das die Kategorien anzeigt. Nutze den bestehenden `cyber-blue` Style. Sobald eine Kategorie gewählt ist, muss der Start-Button (`INIT_PROTOCOL`) aktiviert werden.
