@@ -3,40 +3,41 @@
 ## Zielsetzung
 Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung eines reibungslosen Spielablaufs.
 
-## Status Quo (Schritt 1-4 abgeschlossen)
-1. **Spielernamen Eingabe:** [ERLEDIGT]
-   - State Management für `players` implementiert.
-   - UI für Eingabe und Tag-Liste (mit Löschfunktion) in `index.html` und `style.css` integriert.
-   - Validierung und Start-Button-Sperre aktiv.
-2. **Kategorien Auswahl:** [ERLEDIGT]
-   - Dynamisches Rendering der Kategorien aus `questions_i18n.json` implementiert.
-   - `renderCategorySelector()` hinzugefügt und in `DOMContentLoaded` initialisiert.
-   - `state.selectedCategory` filtert nun den Fragenpool in `initGame`.
-   - Bugfix: Fehlender `AudioManager` Import behoben, der den Start-Flow blockierte.
-3. **Challenge Button:** [ERLEDIGT]
-   - `updateStartButtonState()` prüft nun `players.length > 0 && state.selectedCategory`.
-   - Start-Logik in `initGame` nutzt gefilterte Fragen.
-4. **Live-Test der Startseite:** [ERLEDIGT]
-   - Spielereingabe (Codename) erfolgreich getestet.
-   - Kategorienauswahl (z.B. "WISSENSCHAFT & TECHNIK") erfolgreich getestet.
-   - `INIT_PROTOCOL` (Start-Button) leitet korrekt zum Spielbildschirm mit den gefilterten Fragen weiter.
+## Status Quo (Schritt 1-4 vollständig validiert)
+1. **Spielernamen Eingabe:** [ERLEDIGT & VALIDIERT]
+   - State Management für `players` funktioniert.
+   - UI für Eingabe und Tag-Liste (mit Löschfunktion) erfolgreich im Browser getestet.
+   - Validierung (Start-Button bleibt ohne Spieler gesperrt) bestätigt.
+2. **Kategorien Auswahl:** [ERLEDIGT & VALIDIERT]
+   - Dynamisches Rendering der Kategorien aus `questions_i18n.json` im Browser verifiziert.
+   - Selektions-Logik setzt `state.selectedCategory` korrekt und triggert UI-Update.
+   - Filterung des Fragenpools beim Spielstart bestätigt.
+3. **Challenge Button:** [ERLEDIGT & VALIDIERT]
+   - `updateStartButtonState()` aktiviert den Button erst bei vollständiger Eingabe (Spieler + Kategorie).
+   - `initGame` startet den Flow mit den korrekten Parametern.
+4. **Live-Test der Startseite:** [ERLEDIGT & VALIDIERT]
+   - Vollständiger End-to-End Test im Browser durchgeführt:
+     - Codename-Eingabe ("ManusTest") erfolgreich.
+     - Kategorie-Selektion ("GEGENTEIL") erfolgreich.
+     - `INIT_PROTOCOL` startet Spiel mit Fragen aus der gewählten Kategorie.
+     - Rückkehr zum Startbildschirm über `CLOSE_SYSTEM` nach Spielende funktioniert.
 
-## Nächste Schritte (Anweisung für folgende Instanz)
-5. **Multiplayer & Sync:** [IN ARBEIT]
+## Nächste Schritte
+5. **Multiplayer & Sync:** [NÄCHSTER FOKUS]
    - Prüfung der `BattleManager` Integration für Echtzeit-Duelle.
    - Validierung der Leaderboard-Anbindung.
 5. **QA & Polish:**
-   - Testen der Kategorien-Filterung unter verschiedenen Modi.
-   - Überprüfung der UI-Responisvness bei vielen Kategorien.
+   - Testen der Kategorien-Filterung unter verschiedenen Modi (Time Attack, Hardcore).
+   - Überprüfung der UI-Responisvness bei extrem vielen Kategorien.
 
 ## Umsetzungslogik
-- **State Management:** `players` (Array) und `selectedCategory` (String/Object) sind initialisiert.
+- **State Management:** `players` (Array) und `selectedCategory` (String) sind stabil.
 - **Event Handling:** 
   - `handleAddPlayer()`: [ERLEDIGT]
-  - `handleSelectCategory(id)`: [NÄCHSTER SCHRITT]
-  - `handleStartChallenge()`: [ÜBERNÄCHSTER SCHRITT]
-- **UI-Synchronisation:** Start-Button `disabled`-Status hängt von `players.length > 0 && selectedCategory` ab.
+  - `renderCategorySelector()`: [ERLEDIGT]
+  - `initGame()`: [ERLEDIGT]
+- **UI-Synchronisation:** Start-Button `disabled`-Status korrekt an State gekoppelt.
 
 ---
 **Anweisung für die nächste Instanz:**
-Die Kernschritte für die Startseiten-Logik und der Live-Test wurden erfolgreich abgeschlossen. Das System ist bereit für die Integration von Multiplayer-Funktionen über den `BattleManager` und die Anbindung des Leaderboards. Führe als Nächstes die Prüfung der `BattleManager`-Integration durch.
+Die Startseiten-Logik ist vollständig funktionsfähig und im Live-Betrieb validiert. Die Kategorienauswahl und Spielerregistrierung arbeiten fehlerfrei mit dem Game-Loop zusammen. Der Fokus liegt nun auf der Multiplayer-Synchronisation via `BattleManager`.
