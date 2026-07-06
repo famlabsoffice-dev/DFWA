@@ -1322,11 +1322,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  addClick('live-battle-btn', () => {
+  addClick('live-battle-btn', async () => {
     UIManager.showModal('LIVE_BATTLE', 'CONNECTING_TO_BATTLE_SYNC...', 'var(--cyber-blue)');
     BattleManager.init(API_BASE_URL, state.playerId, state.playerName);
-    const battleId = 'global_lobby'; // Vereinfacht für die erste Version
+    const battleId = 'global_lobby';
     BattleManager.joinBattle(battleId, state.playerId);
+    
+    // Kurze Verzögerung für den Verbindungsaufbau, dann Spielstart
+    setTimeout(async () => {
+      state.isChallenge = true;
+      state.opponentScore = 0;
+      const modal = document.getElementById('modal-overlay');
+      if (modal) modal.style.display = 'none';
+      await initGame(false);
+    }, 1500);
   });
 });
 

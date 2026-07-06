@@ -16,9 +16,10 @@ export const BattleManager = {
 
     this.socket.on('player_joined', ({ playerId: joinedPlayerId, activePlayers }) => {
       console.log(`Player joined: ${joinedPlayerId}`);
-      if (activePlayers.length > 1) {
-        const oppHud = document.getElementById('opponent-hud');
-        if (oppHud) oppHud.style.display = 'block';
+      const oppHud = document.getElementById('opponent-hud');
+      if (oppHud) {
+        // Zeige HUD nur, wenn mehr als ein Spieler in der Lobby ist
+        oppHud.style.display = activePlayers.length > 1 ? 'block' : 'none';
       }
     });
 
