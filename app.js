@@ -103,7 +103,7 @@ function saveSession() {
   try {
     localStorage.setItem(lockKey, myLock);
 
-    setTimeout(() => {
+    setTimeout(async () => {
       try {
         if (localStorage.getItem(lockKey) !== myLock) return;
 
@@ -124,8 +124,10 @@ function saveSession() {
         };
 
         const tempKey = 'dfwa_session_temp';
-        localStorage.setItem(tempKey, JSON.stringify(sessionData));
-        localStorage.setItem('dfwa_session', localStorage.getItem(tempKey));
+        const sessionString = JSON.stringify(sessionData);
+        localStorage.setItem(tempKey, sessionString);
+        localStorage.setItem('dfwa_session', sessionString);
+        await saveSecure('dfwa_session', sessionString);
         localStorage.removeItem(tempKey);
       } catch {
         console.error('Session write failed');
@@ -154,6 +156,17 @@ async function restoreSession() {
   try {
     const data = localStorage.getItem('dfwa_session');
     if (!data) return false;
+
+    const sig = localStorage.getItem('dfwa_session_sig');
+    if (sig) {
+      const expected = await getSignature(data);
+      if (sig !== expected) {
+        console.warn('SESSION_INTEGRITY_FAILURE: Session tampered. Resetting.');
+        clearSession();
+        return false;
+      }
+    }
+
     const session = JSON.parse(data);
 
     if (!session.version || session.version !== SESSION_VERSION) {
@@ -273,7 +286,14 @@ async function saveSecure(key, value) {
 
 async function validateStorage() {
   try {
-    const keys = ['dfwa_best', 'dfwa_wins', 'dfwa_losses'];
+    const keys = [
+      'dfwa_best',
+      'dfwa_wins',
+      'dfwa_losses',
+      'dfwa_name',
+      'dfwa_id',
+      STORAGE_KEYS.ACHIEVEMENTS,
+    ];
     for (const key of keys) {
       const val = localStorage.getItem(key);
       const sig = localStorage.getItem(`${key}_sig`);
@@ -286,6 +306,8 @@ async function validateStorage() {
           if (key === 'dfwa_best') state.best = 0;
           if (key === 'dfwa_wins') state.wins = 0;
           if (key === 'dfwa_losses') state.losses = 0;
+          if (key === 'dfwa_name') state.playerName = 'GUEST';
+          if (key === STORAGE_KEYS.ACHIEVEMENTS) state.achievements = [];
         }
       }
     }

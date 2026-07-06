@@ -50,10 +50,12 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **Fehlerbehebung (2026-07-06):** Kritische Duplikation von `closeSystem` behoben, die den Build-Prozess blockierte. Vite-Produktions-Build erfolgreich erstellt und Server-Pfad für statische Dateien auf `dist/` umgestellt.
 - **PWA-Audit & Härtung (2026-07-06):** Vollständige Prüfung der PWA-Funktionalität. `public/` Verzeichnis mit allen erforderlichen Icons (192, 512, maskable, apple-touch) erstellt. `vite.config.js` auf `injectManifest` umgestellt und `sw.js` für korrekte Workbox-Einbindung via CDN optimiert. `index.html` Meta-Tags für Manifest und Apple-Touch-Icon korrigiert. Der Produktions-Build generiert nun ein valides Service-Worker-Bundle inklusive Pre-Caching aller Assets.
 
+- **Offline-Storage Härtung (2026-07-06):** Implementierung einer HMAC-basierten Integritätsprüfung für alle kritischen Storage-Keys (`dfwa_session`, `dfwa_name`, `dfwa_id`, `achievements`). Automatischer Reset bei Manipulationsverdacht integriert.
+
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
-1. **Offline-Storage Härtung:** Erweiterte Validierung der lokalen Speicherintegrität für den Offline-Betrieb.
-2. **Push-Notifications:** Evaluierung der Integration von Web-Push für Achievement-Benachrichtigungen.
+1. **Push-Notifications:** Evaluierung der Integration von Web-Push für Achievement-Benachrichtigungen.
+2. **Performance Audit:** Analyse der Ladezeiten und Asset-Caching-Strategie für Low-End-Geräte.
 
 ---
-**Status:** 2026-07-06 15:55 GMT+2 - PWA-Konformität vollständig hergestellt und Build-Prozess validiert.
+**Status:** 2026-07-06 16:15 GMT+2 - Offline-Storage Härtung abgeschlossen und Integritätsprüfung für kritische Daten implementiert.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*
