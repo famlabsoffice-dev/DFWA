@@ -3,7 +3,7 @@
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 06.07.2026 - 20:15 GMT+2)
+## Status Quo (Stand 06.07.2026 - 20:20 GMT+2)
 
 ### 1. Live-System & Deployment [VALIDIERT]
 - **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
@@ -17,28 +17,31 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 ### 3. PWA & Offline-Funktionalität [OPTIMIERT]
 - **Status:** Service Worker auf Workbox 7.0 umgestellt für robustes Caching.
 - **Lösung:** 
-  - `sw.js`: Implementierung von `CacheFirst` für WebP-Bilder und `StaleWhileRevalidate` für statische Assets (JS/CSS/Fonts).
-  - Volle Offline-Fähigkeit durch Pre-Caching der Kernkomponenten (`index.html`, `manifest.webmanifest`).
+  - `sw.js`: Implementierung von `CacheFirst` für WebP-Bilder und `StaleWhileRevalidate` für statische Assets.
 
-### 4. Leaderboard UI & UX [VERBESSERT]
+### 4. Audio-System & Feedback [REFACTORED]
+- **Status:** Performance-optimiertes Audio-Handling und systemweites Feedback integriert.
+- **Lösung:**
+  - `scripts/audio-manager.js`: Umstellung von `cloneNode()` auf Wiederverwendung des Audio-Objekts mit `currentTime = 0` zur Reduzierung von Latenz und Memory-Footprint.
+  - `app.js`: Audio-Feedback für korrekte/falsche Antworten und Achievements integriert.
+
+### 5. Leaderboard UI & UX [VERBESSERT]
 - **Status:** "Server Room" mit Animationen und funktionaler Filter-Logik ausgestattet.
 - **Lösung:**
-  - `style.css`: `slideInRight` Animation für Leaderboard-Einträge hinzugefügt.
-  - `scripts/ui-manager.js`: Staggered-Animation (verzögertes Einblenden) beim Rendern der Einträge implementiert.
-  - `app.js`: Filter-Logik für Classic, Time Attack und Hardcore Modi finalisiert.
+  - `style.css` & `scripts/ui-manager.js`: Staggered-Animationen für Leaderboard-Einträge implementiert.
 
 ## Nächste Schritte
-
-### 5. Audio-System Refactoring
-- **Ziel:** Reduzierung der Ladezeiten und bessere Synchronisation.
-- **Aufgaben:**
-  - `scripts/audio-manager.js`: Überprüfung der Audio-Sprites für schnellere Reaktionszeiten.
-  - Integration von Sound-Feedback für Leaderboard-Interaktionen.
 
 ### 6. Achievement System Deep-Link
 - **Ziel:** Achievements direkt teilbar machen.
 - **Aufgaben:**
   - Implementierung von Web Share API für spezifische Achievement-Unlocks.
+  - Generierung von dynamischen Meta-Tags für bessere Social-Preview.
+
+### 7. Multiplayer Lobby UX
+- **Ziel:** Bessere Sichtbarkeit von offenen Herausforderungen.
+- **Aufgaben:**
+  - Real-time Status für Challenge-Codes im UI.
 
 ---
 
@@ -47,15 +50,14 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 > **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
 > 
 > **DEIN AUFTRAG:**
-> Refactore das Audio-System für bessere Performance und implementiere Deep-Links für das Achievement-System.
+> Implementiere die Web Share API für Achievements und optimiere die Multiplayer-Lobby UX.
 > 
 > **Zwingende Regeln:**
 > 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
 > 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
-> 3. **Audio-Check:** Prüfe die Dateigrößen der Audio-Assets in `assets/audio/`.
 > 
-> **Startpunkt:** Analysiere `scripts/audio-manager.js` und die aktuelle Achievement-Logik in `app.js`.
+> **Startpunkt:** Analysiere die Achievement-Logik in `app.js` und die Lobby-Struktur in `index.html`.
 
 ---
-**Status:** Service Worker optimiert, Leaderboard-UI verbessert. Build & Sync erfolgreich abgeschlossen.
-**Zuletzt aktualisiert:** 06.07.2026 - 20:15 GMT+2
+**Status:** Audio-System optimiert, Feedback-Sounds integriert. Build & Sync erfolgreich.
+**Zuletzt aktualisiert:** 06.07.2026 - 20:20 GMT+2
