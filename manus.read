@@ -1,1 +1,1 @@
-Status: Gemini CLI Analyse gestartet. Quota-Limit erreicht, Retries laufen. Fortschritt gepusht.
+Status: Gemini CLI Analyse aufgrund von Quota-Limits (503/429) abgebrochen. Ergebnisse bis zum Abbruch in analysis_output_v5.txt gesichert und gepusht.
