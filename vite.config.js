@@ -7,7 +7,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
-    
+    {
+      name: 'pwa-config-fix',
+      transformIndexHtml(html) {
+        return html.replace(/href="\.\/manifest\.json"/, 'href="./manifest.webmanifest"');
+      }
+    }
   ],
 
   publicDir: 'public',

@@ -25,7 +25,21 @@ export const BattleManager = {
 
     this.socket.on('opponent_action', ({ playerId: opponentId, action }) => {
       console.log(`Opponent ${opponentId} action:`, action);
-      // Hier können visuelle Feedbacks für Gegner-Aktionen implementiert werden
+      
+      const oppHud = document.getElementById('opponent-hud');
+      if (oppHud && action.type === 'error') {
+        // Glitch-Effekt bei Fehlern des Gegners
+        oppHud.classList.add('glitch-active');
+        setTimeout(() => oppHud.classList.remove('glitch-active'), 500);
+        
+        // Visueller Indikator im HUD
+        const oppScore = document.getElementById('opp-score');
+        if (oppScore) {
+          const originalColor = oppScore.style.color;
+          oppScore.style.color = 'var(--error)';
+          setTimeout(() => oppScore.style.color = originalColor, 500);
+        }
+      }
     });
 
     this.socket.on('opponent_sync', ({ playerId: opponentId, state: opponentState }) => {

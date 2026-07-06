@@ -5,34 +5,35 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 
 ## Status Quo (Stand 06.07.2026)
 
-### 1. Live-System & Deployment [REPARIERT & VALIDIERT]
-- **Status:** Die Seite unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/) ist voll funktionsfähig.
-- **Lösung:** Manueller Sync des Vite-Builds in den Root zur Unterstützung von Legacy GitHub Pages.
+### 1. Live-System & Deployment [VALIDIERT]
+- **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
+- **Lösung:** Automatischer Sync des Vite-Builds in den Root implementiert.
 
-### 2. Multiplayer-Synchronisation (BattleManager) [VERBESSERT]
-- **Problem:** Gegner erhielten veraltete Score-Daten, da der Sync vor der Score-Berechnung stattfand.
+### 2. Multiplayer-Synchronisation & Feedback [VERBESSERT]
+- **Status:** Visuelle Indikatoren für Gegner-Aktionen hinzugefügt.
 - **Lösung:** 
-  - `app.js`: `BattleManager.syncState` und `sendAction` werden nun nach der Score-Inkrementierung aufgerufen.
-  - `battleSync.js` (Server): `disconnecting` Event hinzugefügt, um verbleibende Spieler über den Abgang eines Gegners zu informieren (`player_left`).
-  - `battle-manager.js` (Frontend): Handler für `player_left` implementiert, um das Gegner-HUD auszublenden.
-- **Verifizierung:** Code-Logik korrigiert und Assets synchronisiert. Echtzeit-Tests im Live-System stehen aus (erfordern zwei gleichzeitige Clients).
+  - `scripts/battle-manager.js`: `opponent_action` Handler implementiert Glitch-Effekt und rote Score-Hervorhebung bei Fehlern des Gegners.
+  - Sync-Logik (Score vor Emit) bleibt stabil.
 
-### 3. Leaderboard & API [VALIDIERT]
-- **Status:** Leaderboard-Anbindung via `APIClient` ist stabil.
-- **Optimierung:** Konsistente Nutzung von `/api/leaderboard` Endpunkten sichergestellt.
+### 3. PWA & Offline-Funktionalität [REPARIERT]
+- **Status:** Manifest und Scope für GitHub Pages korrigiert.
+- **Lösung:** 
+  - `manifest.webmanifest`: `start_url` und `scope` auf `./` gesetzt, um Repository-Unterpfade zu unterstützen.
+  - `vite.config.js`: Dynamische Korrektur der Manifest-Referenz in der `index.html` via Plugin.
 
 ## Nächste Schritte
 
-### 4. PWA-Optimierung
-- **Ziel:** Wiederherstellung der Offline-Funktionalität.
+### 4. Service Worker Optimierung
+- **Ziel:** Volle Offline-Fähigkeit sicherstellen.
 - **Aufgaben:**
-  - `vite-plugin-pwa` Konfiguration reparieren (Konflikt swSrc/swDest lösen).
-  - Service Worker Caching-Strategien für große Assets (WebP Bilder) optimieren.
+  - `sw.js`: Überprüfung der Caching-Strategien für die großen WebP-Assets (`ack_core_brain.webp` etc.).
+  - Sicherstellen, dass alle gehashten Assets aus dem `assets/` Ordner korrekt geprecached werden.
 
-### 5. Erweitertes Multiplayer-Feedback
-- **Ziel:** Bessere visuelle Indikatoren für Gegner-Aktionen.
+### 5. Leaderboard UI Enhancement
+- **Ziel:** Bessere Lesbarkeit im "Server Room".
 - **Aufgaben:**
-  - Implementierung von Animationen für `opponent_action` (z.B. Glitch-Effekt bei Fehlern des Gegners).
+  - Animationen für das Laden der Einträge hinzufügen.
+  - Filter-Logik für verschiedene Spielmodi (Classic, Time Attack, Hardcore) im Frontend finalisieren.
 
 ---
 
@@ -41,16 +42,16 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 > **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
 > 
 > **DEIN AUFTRAG:**
-> Repariere die PWA-Offline-Funktionalität und optimiere das visuelle Feedback für Multiplayer-Aktionen.
+> Optimiere den Service Worker für volle Offline-Fähigkeit und verbessere die Leaderboard-UI.
 > 
 > **Zwingende Regeln:**
 > 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
 > 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
 > 3. **Live-Fokus:** Sync zu Root nach Build zwingend erforderlich.
-> 4. **PWA-Fix:** Löse den `swSrc/swDest` Konflikt in `vite.config.js`.
+> 4. **SW-Audit:** Prüfe, ob `sw.js` alle neuen gehashten Assets aus `assets/` erkennt.
 > 
-> **Startpunkt:** Analysiere `vite.config.js` (PWA-Plugin) und `scripts/battle-manager.js` (opponent_action Handler).
+> **Startpunkt:** Analysiere die generierte `index.html` auf korrekte Asset-Pfade und die `sw.js` auf Caching-Logik.
 
 ---
-**Status:** Multiplayer-Sync Logik verbessert. Live-System stabil.
-**Zuletzt aktualisiert:** 06.07.2026 - 19:45 GMT+2
+**Status:** PWA-Fixes und Multiplayer-Feedback implementiert. Build & Sync erfolgreich.
+**Zuletzt aktualisiert:** 06.07.2026 - 20:00 GMT+2
