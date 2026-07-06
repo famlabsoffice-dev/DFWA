@@ -694,11 +694,18 @@ function resumeProtocol() {
 
 async function initGame(createChallenge, isRestoring = false) {
   try {
-    const nameInput = document.getElementById('player-name');
-    state.playerName = nameInput ? nameInput.value.trim() || 'GUEST' : 'GUEST';
-    saveSecure('dfwa_name', state.playerName);
-
     if (!isRestoring) {
+      if (state.players.length > 0) {
+        state.playerName = state.players[0];
+      } else {
+        const nameInput = document.getElementById('player-name');
+        state.playerName = nameInput ? nameInput.value.trim() || 'GUEST' : 'GUEST';
+      }
+      saveSecure('dfwa_name', state.playerName);
+
+      const playerDisplay = document.getElementById('player-display');
+      if (playerDisplay) playerDisplay.innerText = state.playerName;
+      
       const activeModeBtn = document.querySelector('#mode-selector .mode-btn.active');
       state.mode = activeModeBtn ? activeModeBtn.dataset.mode : 'classic';
       const config = getGameModeConfig(state.mode);
@@ -1326,6 +1333,7 @@ document.addEventListener('DOMContentLoaded', () => {
   addClick('show-leaderboard-btn', showLeaderboard);
   addClick('hide-leaderboard-btn', hideLeaderboard);
   addClick('add-player-btn', handleAddPlayer);
+  updateStartButtonState();
   const nameInput = document.getElementById('player-name');
   if (nameInput) {
     nameInput.addEventListener('keypress', (e) => {

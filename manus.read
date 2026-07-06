@@ -10,13 +10,15 @@ Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung ein
    - Validierung und Start-Button-Sperre aktiv.
 
 ## Nächste Schritte (Anweisung für folgende Instanz)
-2. **Kategorien Auswahl:** [PENDING]
-   - Grid/Liste der verfügbaren Spielkategorien (basierend auf `questions_i18n.json` oder vordefinierten Sets).
-   - Visuelle Auswahlmöglichkeit (Highlighting des gewählten Elements).
-   - `state.selectedCategory` setzen und UI-Synchronisation (Start-Button freigeben).
-3. **Challenge Button:** [PENDING]
-   - Übergang in den Spielmodus finalisieren.
-   - Sicherstellen, dass alle Spieler aus der Liste korrekt in das Spiel-Setup übernommen werden.
+2. **Kategorien Auswahl:** [ERLEDIGT]
+   - Grid/Liste der verfügbaren Spielkategorien basierend auf `questions_i18n.json` implementiert.
+   - Visuelle Auswahlmöglichkeit mit Highlighting des gewählten Elements (`.active` Klasse) umgesetzt.
+   - `state.selectedCategory` wird korrekt gesetzt und filtert den Fragenpool in `initGame`.
+   - UI-Synchronisation mit dem Start-Button (`INIT_PROTOCOL`) ist aktiv.
+3. **Challenge Button:** [ERLEDIGT]
+   - Übergang in den Spielmodus finalisiert.
+   - Spieler-Setup in `initGame` optimiert: Der erste Spieler aus der `players`-Liste wird nun automatisch als aktiver Spieler übernommen und im HUD angezeigt.
+   - Start-Button Logik (`INIT_PROTOCOL`) ist vollständig mit der Kategorien-Auswahl und Spieler-Validierung verknüpft.
 
 ## Umsetzungslogik
 - **State Management:** `players` (Array) und `selectedCategory` (String/Object) sind initialisiert.
@@ -28,4 +30,4 @@ Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung ein
 
 ---
 **Anweisung für die nächste Instanz:**
-Setze direkt mit **Schritt 2: Kategorien Auswahl** fort. Implementiere ein Grid unter der Spielerliste, das die Kategorien anzeigt. Nutze den bestehenden `cyber-blue` Style. Sobald eine Kategorie gewählt ist, muss der Start-Button (`INIT_PROTOCOL`) aktiviert werden.
+Alle Kernschritte des Wiederherstellungsplans für die Startseiten-Logik sind abgeschlossen. Das System ist bereit für weiterführende Features wie Multiplayer-Synchronisation oder erweiterte Statistiken. Führe bei Bedarf eine abschließende QA-Prüfung der gesamten Start-Flow-Logik durch.
