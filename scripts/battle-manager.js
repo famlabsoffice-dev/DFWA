@@ -24,9 +24,12 @@ export const BattleManager = {
       // Hier können visuelle Feedbacks für Gegner-Aktionen implementiert werden
     });
 
-    this.socket.on('opponent_sync', ({ playerId: opponentId, state }) => {
-      console.log(`Opponent ${opponentId} state:`, state);
-      // Synchronisation des Gegner-Punktestands etc.
+    this.socket.on('opponent_sync', ({ playerId: opponentId, state: opponentState }) => {
+      console.log(`Opponent ${opponentId} state:`, opponentState);
+      const hudStreak = document.getElementById('hud-streak');
+      if (hudStreak && opponentState.streak > 5) {
+        UIManager.showModal('OPPONENT_STREAK', `PLAYER_${opponentId}_STREAK: ${opponentState.streak}`, 'var(--error)');
+      }
     });
 
     this.socket.on('disconnect', () => {

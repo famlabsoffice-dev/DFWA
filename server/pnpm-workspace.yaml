@@ -1,2 +1,3 @@
 allowBuilds:
-  sqlite3: set this to true or false
+  canvas: false
+  sqlite3: false

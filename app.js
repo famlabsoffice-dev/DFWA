@@ -1335,4 +1335,12 @@ window.__END_GAME__ = endGame;
 
 window.generateChallengeCode = generateChallengeCode;
 
+function closeSystem() {
+  const overlay = document.getElementById('modal-overlay');
+  if (overlay) overlay.style.display = 'none';
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn) shareBtn.style.display = 'none';
+  hideLobby();
+}
+
 // Service Worker registration handled by vite-plugin-pwa (injectRegister: 'auto')
