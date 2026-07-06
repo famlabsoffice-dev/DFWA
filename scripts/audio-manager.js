@@ -19,8 +19,9 @@ export const AudioManager = {
 
   play(soundKey) {
     if (this.isMuted || !this.sounds[soundKey]) return;
-    const sound = this.sounds[soundKey].cloneNode();
-    sound.play().catch(() => {}); // Browser Autoplay Policy Schutz
+    const sound = this.sounds[soundKey];
+    sound.currentTime = 0;
+    sound.play().catch(() => {});
   },
 
   toggleMute() {

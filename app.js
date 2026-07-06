@@ -423,6 +423,7 @@ function unlockAchievement(achievementId) {
   toast.className = 'achievement-toast';
   toast.innerHTML = `<strong>ACHIEVEMENT_UNLOCKED</strong><br>${achievement.name}`;
   document.body.appendChild(toast);
+  AudioManager.play('achievement');
   setTimeout(() => toast.remove(), 4000);
 
   sendLocalNotification('ACHIEVEMENT_UNLOCKED', achievement.name);
@@ -1075,6 +1076,7 @@ function checkAnswer(correct) {
         fMsg.style.color = 'var(--neon)';
         fMsg.innerText = getComment('correct');
       }
+      AudioManager.play('correct');
       checkAchievements();
     } else if (correct === false) {
       state.lives = Math.max(0, state.lives - 1);
@@ -1091,6 +1093,7 @@ function checkAnswer(correct) {
         fMsg.style.color = 'var(--error)';
         fMsg.innerText = getComment('incorrect');
       }
+      AudioManager.play('error');
     } else {
       state.lives = Math.max(0, state.lives - 1);
       state.streak = 0;
