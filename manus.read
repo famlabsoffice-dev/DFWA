@@ -51,11 +51,12 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **PWA-Audit & Härtung (2026-07-06):** Vollständige Prüfung der PWA-Funktionalität. `public/` Verzeichnis mit allen erforderlichen Icons (192, 512, maskable, apple-touch) erstellt. `vite.config.js` auf `injectManifest` umgestellt und `sw.js` für korrekte Workbox-Einbindung via CDN optimiert. `index.html` Meta-Tags für Manifest und Apple-Touch-Icon korrigiert. Der Produktions-Build generiert nun ein valides Service-Worker-Bundle inklusive Pre-Caching aller Assets.
 
 - **Offline-Storage Härtung (2026-07-06):** Implementierung einer HMAC-basierten Integritätsprüfung für alle kritischen Storage-Keys (`dfwa_session`, `dfwa_name`, `dfwa_id`, `achievements`). Automatischer Reset bei Manipulationsverdacht integriert.
+- **Performance Audit & Optimierung (2026-07-06):** Analyse der Asset-Größen (viele PNGs > 5MB). Implementierung von manuellem Chunk-Splitting (Vendor, UI, Game) in Vite zur Reduzierung der Initial-Bundle-Größe. Optimierung der `sw.js` Caching-Strategie: Cache-First für Bilder, Stale-While-Revalidate für JS/CSS. Erhöhung des Workbox `maximumFileSizeToCacheInBytes` auf 15MB zur Unterstützung der großen Dystopie-Assets.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
 1. **Push-Notifications:** Evaluierung der Integration von Web-Push für Achievement-Benachrichtigungen.
-2. **Performance Audit:** Analyse der Ladezeiten und Asset-Caching-Strategie für Low-End-Geräte.
+2. **Asset-Kompression:** Umwandlung der >5MB PNGs in WebP oder AVIF zur drastischen Reduzierung der Download-Last.
 
 ---
-**Status:** 2026-07-06 16:15 GMT+2 - Offline-Storage Härtung abgeschlossen und Integritätsprüfung für kritische Daten implementiert.
+**Status:** 2026-07-06 16:35 GMT+2 - Performance-Optimierungen (Caching & Chunking) implementiert. Asset-Kompression als nächster kritischer Schritt identifiziert.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

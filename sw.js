@@ -6,9 +6,10 @@ if (self.workbox) {
 }
 
 const CACHE_NAMES = {
-  STATIC: 'static-v1',
-  API: 'api-v1',
-  NAV: 'nav-v1',
+  STATIC: 'static-v2',
+  API: 'api-v2',
+  NAV: 'nav-v2',
+  IMAGES: 'images-v2',
 };
 
 self.addEventListener('message', (event) => {
@@ -59,20 +60,37 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Statische Assets: Cache-First mit Network-Fallback & Update
-  if (
-    /\.(js|css|woff2?|ttf|eot|png|jpg|jpeg|svg|webp|ico)$/i.test(url.pathname) ||
-    url.pathname.includes('/assets/')
-  ) {
+  // Bilder: Cache-First mit Fallback (für Low-End-Geräte optimiert)
+  if (/\.(png|jpg|jpeg|svg|webp|ico)$/i.test(url.pathname)) {
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {
-        if (cachedResponse) return cachedResponse;
-        return fetch(event.request).then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const cacheClone = networkResponse.clone();
-            caches.open(CACHE_NAMES.STATIC).then((cache) => cache.put(event.request, cacheClone));
-          }
-          return networkResponse;
+        return (
+          cachedResponse ||
+          fetch(event.request).then((networkResponse) => {
+            if (networkResponse && networkResponse.status === 200) {
+              const cacheClone = networkResponse.clone();
+              caches.open(CACHE_NAMES.IMAGES).then((cache) => cache.put(event.request, cacheClone));
+            }
+            return networkResponse;
+          })
+        );
+      })
+    );
+    return;
+  }
+
+  // JS/CSS/Fonts: Stale-While-Revalidate für schnelle Updates
+  if (/\.(js|css|woff2?|ttf|eot)$/i.test(url.pathname) || url.pathname.includes('/assets/')) {
+    event.respondWith(
+      caches.open(CACHE_NAMES.STATIC).then((cache) => {
+        return cache.match(event.request).then((cachedResponse) => {
+          const fetchPromise = fetch(event.request).then((networkResponse) => {
+            if (networkResponse && networkResponse.status === 200) {
+              cache.put(event.request, networkResponse.clone());
+            }
+            return networkResponse;
+          });
+          return cachedResponse || fetchPromise;
         });
       })
     );

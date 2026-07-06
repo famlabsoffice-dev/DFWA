@@ -53,7 +53,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot}'],
-        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // Erhöht auf 10MB für große Assets
+        maximumFileSizeToCacheInBytes: 15 * 1024 * 1024, // Erhöht auf 15MB für extrem große PNGs
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         skipWaiting: true,
@@ -107,13 +107,31 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    minify: 'esbuild',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
+      },
+    },
     target: 'es2020',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
       },
       output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+          if (id.includes('ui-manager.js')) {
+            return 'ui';
+          }
+          if (id.includes('game-modes.js') || id.includes('battle-manager.js')) {
+            return 'game';
+          }
+        },
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
