@@ -1,1 +1,61 @@
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js"),self.workbox&&self.workbox.precaching.precacheAndRoute([{"revision":"402b66900e731ca748771b6fc5e7a068","url":"registerSW.js"},{"revision":"0ffc642bac0e9aeff9f6feeb6e32a1e9","url":"index.html"},{"revision":"4831ad2c45f2e547b896b0b60e02b74c","url":"manifest.webmanifest"}]||[]);var e={STATIC:"static-v2",API:"api-v2",NAV:"nav-v2",IMAGES:"images-v2"};self.addEventListener("message",e=>{e.data&&"SKIP_WAITING"===e.data.type&&self.skipWaiting()}),self.addEventListener("push",e=>{const t=e.data?e.data.json():{title:"DFWA",body:"New notification"},s={body:t.body,icon:"/pwa-192x192.png",badge:"/pwa-192x192.png",vibrate:[100,50,100],data:{url:self.registration.scope}};e.waitUntil(self.registration.showNotification(t.title,s))}),self.addEventListener("notificationclick",e=>{e.notification.close(),e.waitUntil(clients.openWindow(e.notification.data.url))}),self.addEventListener("install",e=>{e.waitUntil(self.skipWaiting())}),self.addEventListener("activate",t=>{t.waitUntil(caches.keys().then(t=>Promise.all(t.map(t=>{if(!Object.values(e).includes(t))return caches.delete(t)}))))}),self.addEventListener("fetch",t=>{const s=new URL(t.request.url);if(s.pathname.startsWith("/api/")){if("GET"!==t.request.method)return;t.respondWith(self.caches.open(e.API).then(e=>e.match(t.request).then(s=>{const n=fetch(t.request).then(s=>(s&&200===s.status&&e.put(t.request,s.clone()),s));return s||n})))}else/\.(png|jpg|jpeg|svg|webp|ico)$/i.test(s.pathname)?t.respondWith(caches.match(t.request).then(s=>s||fetch(t.request).then(s=>{if(s&&200===s.status){const n=s.clone();caches.open(e.IMAGES).then(e=>e.put(t.request,n))}return s}))):/\.(js|css|woff2?|ttf|eot)$/i.test(s.pathname)||s.pathname.includes("/assets/")?t.respondWith(caches.open(e.STATIC).then(e=>e.match(t.request).then(s=>{const n=fetch(t.request).then(s=>(s&&200===s.status&&e.put(t.request,s.clone()),s));return s||n}))):"navigate"===t.request.mode&&t.respondWith(fetch(t.request).then(s=>{if(s&&200===s.status){const n=s.clone();return caches.open(e.NAV).then(e=>e.put(t.request,n)),s}return caches.match("./index.html")}).catch(()=>caches.match("./index.html")||caches.match(t.request)))});
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/7.0.0/workbox-sw.js");
+
+if (self.workbox) {
+  const { precaching, routing, strategies, expiration, cacheableResponse } = self.workbox;
+
+  // Precache core files
+  precaching.precacheAndRoute([
+    { url: 'index.html', revision: '0ffc642bac0e9aeff9f6feeb6e32a1e9' },
+    { url: 'registerSW.js', revision: '402b66900e731ca748771b6fc5e7a068' },
+    { url: 'manifest.webmanifest', revision: '4831ad2c45f2e547b896b0b60e02b74c' }
+  ]);
+
+  // Cache images (WebP) with CacheFirst strategy
+  routing.registerRoute(
+    ({ request }) => request.destination === 'image',
+    new strategies.CacheFirst({
+      cacheName: 'images-cache',
+      plugins: [
+        new expiration.ExpirationPlugin({
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        }),
+        new cacheableResponse.CacheableResponsePlugin({
+          statuses: [0, 200],
+        }),
+      ],
+    })
+  );
+
+  // Cache static assets (JS, CSS, Fonts) with StaleWhileRevalidate
+  routing.registerRoute(
+    ({ request }) => 
+      request.destination === 'script' || 
+      request.destination === 'style' || 
+      request.destination === 'font' ||
+      request.url.includes('/assets/'),
+    new strategies.StaleWhileRevalidate({
+      cacheName: 'static-resources',
+    })
+  );
+
+  // Navigation route: NetworkFirst with fallback to index.html
+  routing.registerRoute(
+    ({ request }) => request.mode === 'navigate',
+    new strategies.NetworkFirst({
+      cacheName: 'navigation',
+      networkTimeoutSeconds: 3,
+      plugins: [
+        new cacheableResponse.CacheableResponsePlugin({
+          statuses: [0, 200],
+        }),
+      ],
+    })
+  );
+
+  self.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+      self.skipWaiting();
+    }
+  });
+}

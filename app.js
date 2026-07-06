@@ -1427,7 +1427,6 @@ document.addEventListener('DOMContentLoaded', () => {
       filterBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       currentLeaderboardMode = mode;
-
       await loadLeaderboardData(mode);
     });
   });

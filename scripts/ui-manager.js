@@ -33,7 +33,8 @@ export const UIManager = {
 
     data.forEach((entry, index) => {
       const row = document.createElement('div');
-      row.className = 'leaderboard-entry';
+      row.className = 'leaderboard-entry animate';
+      row.style.animationDelay = `${index * 0.05}s`;
 
       const rankSpan = document.createElement('span');
       rankSpan.textContent = `#${index + 1}`;
