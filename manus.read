@@ -53,11 +53,12 @@ Fokus: Community-Interaktion und globale Wettbewerbe.
 - **Offline-Storage Härtung (2026-07-06):** Implementierung einer HMAC-basierten Integritätsprüfung für alle kritischen Storage-Keys (`dfwa_session`, `dfwa_name`, `dfwa_id`, `achievements`). Automatischer Reset bei Manipulationsverdacht integriert.
 - **Performance Audit & Optimierung (2026-07-06):** Analyse der Asset-Größen (viele PNGs > 5MB). Implementierung von manuellem Chunk-Splitting (Vendor, UI, Game) in Vite zur Reduzierung der Initial-Bundle-Größe. Optimierung der `sw.js` Caching-Strategie: Cache-First für Bilder, Stale-While-Revalidate für JS/CSS. Erhöhung des Workbox `maximumFileSizeToCacheInBytes` auf 15MB zur Unterstützung der großen Dystopie-Assets.
 - **Asset-Kompression (2026-07-06):** Vollständige Konvertierung aller PNG-Assets in das WebP-Format. Reduzierung des `assets/images` Verzeichnisses von **107MB auf 11MB** (ca. 90% Einsparung). Alle Referenzen in `index.html`, `app.js` und `style.css` wurden auf `.webp` aktualisiert.
+- **UI-Refinement & UX-Optimierung (2026-07-06):** Umstellung der Screen-Transitions auf Hardware-beschleunigte CSS-Übergänge (`opacity`, `visibility`) statt `display: none` für flüssigere Wechsel. Implementierung von Hover- und Active-States für Buttons (`transform`, `scale`). Optimierung des Feedback-Timings (Verkürzung der Anzeigezeit von 3.5s auf 2.2s) für einen schnelleren Spielfluss. Einführung von `backdrop-filter: blur` für das Feedback-Overlay zur Erhöhung der Immersion.
 
 ## NÄCHSTE SCHRITTE FÜR DIE FOLGENDE INSTANZ
 1. **Push-Notifications:** Evaluierung der Integration von Web-Push für Achievement-Benachrichtigungen.
-2. **UI-Refinement:** Feinabstimmung der Animationen und Übergänge für eine flüssigere Benutzererfahrung.
+2. **Advanced Shaders:** Untersuchung von WebGL-Post-Processing-Effekten für den Dystopie-Look.
 
 ---
-**Status:** 2026-07-06 16:50 GMT+2 - Asset-Kompression abgeschlossen. Massive Reduzierung der Download-Größe bei gleichbleibender visueller Qualität.
+**Status:** 2026-07-06 17:10 GMT+2 - UI-Refinement abgeschlossen. Flüssigere Animationen und optimiertes Feedback-Timing implementiert.
 *Verantwortlich: Manus AI (manus-work-rules aktiv)*

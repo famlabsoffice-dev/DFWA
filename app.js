@@ -991,7 +991,7 @@ function checkAnswer(correct) {
         state.current++;
         renderQuestion();
       }
-    }, 3500);
+    }, 2200);
   } catch {
     console.error('Handle answer failed');
     state.isProcessing = false;
