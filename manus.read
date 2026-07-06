@@ -1,1 +1,26 @@
-Status: Gemini CLI Analyse aufgrund von Quota-Limits (503/429) abgebrochen. Ergebnisse bis zum Abbruch in analysis_output_v5.txt gesichert und gepusht.
+# Wiederherstellungsplan: Vollständige reale Logik Funktion
+
+## Zielsetzung
+Wiederherstellung der Kernfunktionalität der Startseite zur Gewährleistung eines reibungslosen Spielablaufs.
+
+## Funktionsliste / Anforderungen
+1. **Spielernamen Eingabe:**
+   - Textfeld für die Eingabe von Namen.
+   - Hinzufügen-Button zur Aufnahme in die aktive Spielerliste.
+   - Validierung (keine leeren Namen).
+2. **Kategorien Auswahl:**
+   - Grid/Liste der verfügbaren Spielkategorien.
+   - Visuelle Auswahlmöglichkeit (Highlighting).
+   - Speicherung der getroffenen Auswahl für die Spielrunde.
+3. **Challenge Button:**
+   - Zentraler Action-Button zum Starten der Challenge.
+   - Aktivierung erst nach Spielereingabe und Kategorie-Wahl.
+   - Trigger für den Übergang in den Spielmodus.
+
+## Umsetzungslogik
+- **State Management:** Initialisierung der Zustände `players` (Array) und `selectedCategory` (String/Object).
+- **Event Handling:** 
+  - `handleAddPlayer()`: Pusht Namen in `players`.
+  - `handleSelectCategory(id)`: Setzt `selectedCategory`.
+  - `handleStartChallenge()`: Prüft Voraussetzungen und leitet weiter.
+- **UI-Synchronisation:** Dynamische Aktivierung des Challenge-Buttons basierend auf dem State.
