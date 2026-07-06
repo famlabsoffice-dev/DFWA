@@ -46,6 +46,12 @@ export const BattleManager = {
       }
     });
 
+    this.socket.on('player_left', ({ socketId }) => {
+      console.log(`Opponent left: ${socketId}`);
+      const oppHud = document.getElementById('opponent-hud');
+      if (oppHud) oppHud.style.display = 'none';
+    });
+
     this.socket.on('disconnect', () => {
       console.log('Disconnected from Battle Server');
     });

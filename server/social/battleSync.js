@@ -28,9 +28,19 @@ export function setupBattleSync(io, db) {
       socket.to(battleId).emit('opponent_sync', { playerId, state });
     });
 
+    socket.on('disconnecting', () => {
+      const rooms = Array.from(socket.rooms);
+      rooms.forEach(battleId => {
+        if (activeBattles.has(battleId)) {
+          const battle = activeBattles.get(battleId);
+          // Hier müsste man eigentlich playerId tracken, aber wir nutzen socket.id für den Broadcast
+          socket.to(battleId).emit('player_left', { socketId: socket.id });
+        }
+      });
+    });
+
     socket.on('disconnect', () => {
       console.log(`User disconnected: ${socket.id}`);
-      // In a real scenario, we would track which battle the user was in and notify others
     });
   });
 }
