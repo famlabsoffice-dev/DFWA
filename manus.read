@@ -212,3 +212,8 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ### Schritt 2: Kategorien-Auswahl (In Vorbereitung)
 - Modal-Steuerung auf globale Delegation umstellen.
 - Dynamische Button-Erstellung in der Kategorien-Liste absichern.
+
+### Schritt 1.2 Revision: UI-Erzwingung (Abgeschlossen)
+✓ **Header-Sync**: Direkte Manipulation von `#player-display` und `#stat-player` eingeführt, um Reaktivitäts-Verzögerungen zu eliminieren.
+✓ **Visuelles Feedback**: Der Name wird bei erfolgreicher Registrierung in Neon-Grün (`--neon`) hervorgehoben.
+✓ **Build & Push**: [Commit 06450f7](https://github.com/famlabsoffice-dev/DFWA/commit/06450f7).

@@ -677,20 +677,27 @@ function handleAddPlayer() {
       localStorage.setItem('dfwa_players', JSON.stringify(state.players));
       saveSecure('dfwa_name', name);
       
-      // RADIKALE UI ERZWUNGUNG
+      // RADIKALE UI ERZWUNGUNG (Revision 2)
       console.log('FORCING_UI_UPDATE_FOR:', name);
       
-      // Direkter Zugriff auf alle möglichen Namens-Anzeigen
-      const playerDisplay = document.getElementById('player-display');
-      if (playerDisplay) {
-        playerDisplay.innerText = name;
-        playerDisplay.style.color = 'var(--neon)'; // Visuelles Feedback
-      }
-      
+      // 1. Suche ALLE Elemente mit der ID player-display (falls Duplikate existieren)
+      const allDisplays = document.querySelectorAll('#player-display');
+      allDisplays.forEach(el => {
+        el.innerText = name;
+        el.style.color = 'var(--neon)';
+        el.style.fontWeight = 'bold';
+      });
+
+      // 2. Suche das stat-player Container Element
       const statPlayer = document.getElementById('stat-player');
       if (statPlayer) {
-        statPlayer.innerHTML = `USER_IDENT//<br><span id="player-display" style="color: var(--neon)">${name}</span>`;
+        // Ersetze den gesamten Inhalt, um sicherzugehen
+        statPlayer.innerHTML = `USER_IDENT//<br><span id="player-display" style="color: var(--neon); font-weight: bold;">${name}</span>`;
       }
+      
+      // 3. Update globalen Header (falls vorhanden)
+      const globalHeader = document.querySelector('header #player-display');
+      if (globalHeader) globalHeader.innerText = name;
       
       MobileDebug.logEvent('SAVE', `Player added: ${name}`);
       updatePlayerListUI();
