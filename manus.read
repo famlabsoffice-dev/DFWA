@@ -152,3 +152,8 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ✓ Visuelles Update-Prompt statt Browser-Confirm
 ✓ Commits gepusht
 ⏳ Wartet auf Benutzer-Feedback vom Redmi Note 8 Pro
+
+## Update 2026-07-07
+✓ Schritt 1 (Lokales Testen/Build) erfolgreich ausgeführt.
+✓ `pnpm install` und `pnpm build` ohne Fehler abgeschlossen.
+✓ `dist/` Ordner erfolgreich generiert.
