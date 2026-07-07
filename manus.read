@@ -296,3 +296,16 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ✓ **Build-Validierung**:
   - `pnpm build` erfolgreich abgeschlossen.
   - Generierte Dateien: `dist/sw.js`, `dist/workbox-*.js`, `dist/manifest.webmanifest`.
+
+## Update 2026-07-07 (Mobile UX Optimierung)
+✓ **Gesten-Sperre implementiert**:
+  - `overscroll-behavior: none` auf `body` und `html` angewendet, um das "Pull-to-Refresh" im Browser zu deaktivieren.
+  - `touch-action: none` global gesetzt, um versehentliches Zoomen und Browser-Gesten zu unterbinden.
+✓ **Reaktivität gesteigert**:
+  - `user-select: none` verhindert ungewolltes Markieren von Text bei schnellen Klicks/Taps.
+  - `-webkit-tap-highlight-color: transparent` entfernt den grauen Kasten beim Tippen auf Buttons unter iOS/Android.
+✓ **Gezielte Interaktion**:
+  - `touch-action: pan-y` für Scroll-Container (`.ui-content-wrapper`) aktiviert, damit Listen weiterhin flüssig gescrollt werden können.
+  - Eingabefelder (`.cyber-input`) explizit von der Gesten-Sperre ausgenommen, um Tastatur-Fokus und Textauswahl zu ermöglichen.
+✓ **Build-Validierung**:
+  - CSS erfolgreich minifiziert und im Build verifiziert.

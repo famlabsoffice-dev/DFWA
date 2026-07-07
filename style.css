@@ -40,6 +40,8 @@ body.theme-blood {
   -webkit-tap-highlight-color: transparent;
   margin: 0;
   padding: 0;
+  /* Prevent default browser behavior on long press */
+  -webkit-touch-callout: none;
 }
 body,
 html {
@@ -54,6 +56,12 @@ html {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Mobile UX Optimization */
+  touch-action: none;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .overlay {
@@ -216,6 +224,9 @@ h1 {
   overflow-y: auto;
   max-height: 45vh;
   scrollbar-width: none;
+  /* Allow scrolling only here */
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 .ui-content-wrapper::-webkit-scrollbar {
   display: none;
@@ -284,6 +295,10 @@ h1 {
   font-weight: 900;
   color: var(--cyber-blue);
   text-align: center;
+  /* Allow interaction on inputs */
+  touch-action: auto;
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .player-tag {
