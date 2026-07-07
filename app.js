@@ -592,10 +592,9 @@ function renderModeSelector() {
 
 
 async function renderCategorySelector() {
-  console.log("Rendering category selector...");
-
   try {
-    const container = document.getElementById('category-selector');
+    const container = document.getElementById('category-modal-list');
+    const displayEl = document.getElementById('current-category-display');
     if (!container) return;
     
     let allQuestions = window._dfwaQCache;
@@ -620,7 +619,8 @@ async function renderCategorySelector() {
       btn.innerText = (cat || 'UNKNOWN').toUpperCase();
       btn.onclick = () => {
         state.selectedCategory = cat;
-        renderCategorySelector();
+        if (displayEl) displayEl.innerText = cat.toUpperCase();
+        closeModal();
         updateStartButtonState();
       };
       container.appendChild(btn);
@@ -628,6 +628,33 @@ async function renderCategorySelector() {
   } catch (e) {
     console.error('Render category selector failed:', e);
   }
+}
+
+function showCategoryModal() {
+  const overlay = document.getElementById('modal-overlay');
+  const title = document.getElementById('modal-title');
+  const text = document.getElementById('modal-text');
+  const list = document.getElementById('category-modal-list');
+  const closeBtn = document.getElementById('close-system-btn');
+  
+  if (overlay) overlay.style.display = 'flex';
+  if (title) title.innerText = state.lang === 'de' ? 'KATEGORIE_WÄHLEN' : 'SELECT_CATEGORY';
+  if (text) text.style.display = 'none';
+  if (list) {
+    list.style.display = 'grid';
+    renderCategorySelector();
+  }
+  if (closeBtn) closeBtn.innerText = state.lang === 'de' ? 'ABBRECHEN' : 'CANCEL';
+}
+
+function closeModal() {
+  const overlay = document.getElementById('modal-overlay');
+  const list = document.getElementById('category-modal-list');
+  const text = document.getElementById('modal-text');
+  
+  if (overlay) overlay.style.display = 'none';
+  if (list) list.style.display = 'none';
+  if (text) text.style.display = 'block';
 }
 
 
@@ -1265,15 +1292,17 @@ async function syncLeaderboard() {
   }
 }
 
-// Initialisierung
-document.getElementById('start-btn')?.addEventListener('click', () => initGame(false));
-document.getElementById('add-player-btn')?.addEventListener('click', handleAddPlayer);
-document.getElementById('pause-btn')?.addEventListener('click', pauseProtocol);
-document.getElementById('resume-btn')?.addEventListener('click', resumeProtocol);
-document.getElementById('battle-btn')?.addEventListener('click', showLobby);
-document.getElementById('back-to-menu')?.addEventListener('click', hideLobby);
-
-renderCategorySelector();
+	// Initialisierung
+	document.getElementById('start-btn')?.addEventListener('click', () => initGame(false));
+	document.getElementById('add-player-btn')?.addEventListener('click', handleAddPlayer);
+	document.getElementById('pause-btn')?.addEventListener('click', pauseProtocol);
+	document.getElementById('resume-btn')?.addEventListener('click', resumeProtocol);
+	document.getElementById('battle-btn')?.addEventListener('click', showLobby);
+	document.getElementById('back-to-menu')?.addEventListener('click', hideLobby);
+	document.getElementById('category-modal-btn')?.addEventListener('click', showCategoryModal);
+	document.getElementById('close-system-btn')?.addEventListener('click', closeModal);
+	
+	renderCategorySelector();
 updatePlayerListUI();
 updateStartButtonState();
 restoreSession();

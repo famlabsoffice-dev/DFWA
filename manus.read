@@ -144,10 +144,9 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 - [x] Optimierung der Ladezeiten für das neue Startbildschirm-Bild (`new_start_screen.webp`). (Größe reduziert von 688 KB auf 394 KB, -42.7%)
 - [x] **Deployment-Validierung:** Build-Artefakte synchronisiert und für Deployment vorbereitet. Build-Prozess mit Vite 8.1.0 verifiziert.
 - [x] **Fragenkatalog-Audit:** Alle 150 Platzhalter erfolgreich durch reale, hochwertige dystopische Fragen (Cyberpunk, Sci-Fi, Industrial Musik) ersetzt. System-Konsistenz verifiziert.
-- [ ] **UI Refactoring - Kategorien:** Kategorien-Auswahl wieder über einen dedizierten "Kategorien"-Button auf dem Startbildschirm mit anschließendem Auswahl-Fenster (Modal/Overlay) realisieren.
-- [ ] **UI Bereinigung - Startbildschirm:** 
-    - Entfernung der Farb-Theme-Auswahl (`#theme-selector`).
-    - Entfernung des Sound On/Off Buttons (`#mute-btn`) vom Startbildschirm.
+- [x] **UI Refactoring - Kategorien:** Dedizierter "SELECT_CATEGORY"-Button implementiert. Kategorien-Auswahl erfolgt nun über ein immersives Modal-Overlay.
+- [x] **UI Bereinigung - Startbildschirm:** 
+    - Theme-Selector (`#theme-selector`) und Mute-Button (`#mute-btn`) für ein cleaneres Cyberpunk-Look-and-Feel entfernt.
 - [ ] Implementierung von zusätzlichen Animationen für das zentrale Augen-Motiv auf dem Startbildschirm.
 - [ ] Überprüfung der PWA-Funktionalität auf verschiedenen mobilen Endgeräten.
 - [ ] Finalisierung des Dystopie-Quiz-Contents und der Kategorien.
