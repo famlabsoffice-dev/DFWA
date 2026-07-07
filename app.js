@@ -305,11 +305,43 @@ function handleAnswer(isCorrect) {
 function showFeedback(isCorrect) {
     const screen = document.getElementById('feedback-screen');
     const msg = document.getElementById('feedback-msg');
-    if (screen && msg) {
+    const eyeBase = document.getElementById('feedback-eye-base');
+    
+    if (screen && msg && eyeBase) {
+        // Dynamische Bildauswahl basierend auf Korrektheit
+        const correctImages = [
+            './assets/images/ack_victory.webp',
+            './assets/images/ack_eye_wink.webp',
+            './assets/images/ack_hypnotic_opening.webp'
+        ];
+        const wrongImages = [
+            './assets/images/ack_defeat.webp',
+            './assets/images/ack_eye_skeptical.webp',
+            './assets/images/ack_interference_glitch.webp',
+            './assets/images/ack_panic_hamster.webp'
+        ];
+
+        const selectedImage = isCorrect 
+            ? correctImages[Math.floor(Math.random() * correctImages.length)]
+            : wrongImages[Math.floor(Math.random() * wrongImages.length)];
+
+        eyeBase.src = selectedImage;
         msg.textContent = isCorrect ? "ACCESS_GRANTED" : "CONNECTION_LOST";
         msg.style.color = isCorrect ? "var(--neon)" : "var(--error)";
+        
         screen.classList.add('active');
-        setTimeout(() => screen.classList.remove('active'), 800);
+        
+        if (isCorrect) {
+            eyeBase.classList.add('zoom-anim');
+            if (navigator.vibrate) navigator.vibrate(50);
+        } else {
+            if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+        }
+
+        setTimeout(() => {
+            screen.classList.remove('active');
+            eyeBase.classList.remove('zoom-anim');
+        }, 1200);
     }
 }
 

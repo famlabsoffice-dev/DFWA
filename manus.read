@@ -84,3 +84,9 @@
 - [x] **Button-Härtung**: `.option-btn` auf weiße Schrift auf dunkelgrünem/schwarzem Grund umgestellt. Kontrastverhältnis massiv erhöht. `letter-spacing` und `font-size` für exklusiven Look angepasst.
 - [x] **Dashboard-Look (Mobile)**: `.stat-overlay` Elemente mit semi-transparentem Hintergrund, Rahmen und Glow-Effekt versehen. Sie wirken nun wie echte Dashboard-Module, wie in der Desktop-Ansicht gewünscht.
 - [x] **Build-Validierung**: Erfolgreicher Build bestätigt die Integration des neuen exklusiven Designs.
+
+### Instanz 2026-07-07 (Feedback-Bilder Update)
+- [x] **Dynamische Bild-Logik**: `showFeedback` in `app.js` umgestellt. Nutzt nun ein Set von spezifischen Bildern für richtige (`ack_victory`, `ack_eye_wink`, etc.) und falsche Antworten (`ack_defeat`, `ack_panic_hamster`, etc.).
+- [x] **Asset-Bereinigung**: Das veraltete "Vierer-Set" Bild (`ack_reaction_set.webp`) wurde physisch aus dem Repository gelöscht, um Platz zu sparen und die Code-Sauberkeit zu erhöhen.
+- [x] **Feedback-Härtung**: Die Anzeigezeit des Feedbacks wurde auf 1.2s optimiert, um den Spielfluss dynamisch zu halten.
+- [x] **Build-Validierung**: Erfolgreicher Build bestätigt die Entfernung des Alt-Assets und die Integration der neuen dynamischen Logik.
