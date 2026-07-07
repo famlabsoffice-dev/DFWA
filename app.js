@@ -673,13 +673,20 @@ function handleAddPlayer() {
 
     if (!state.players.includes(name)) {
       state.players.push(name);
-      state.playerName = name; // Sofort im State setzen
+      state.playerName = name;
       localStorage.setItem('dfwa_players', JSON.stringify(state.players));
-      saveSecure('dfwa_name', name); // Sicher speichern
+      saveSecure('dfwa_name', name);
       
-      // Header UI sofort aktualisieren
-      const playerDisplay = document.getElementById('player-display');
-      if (playerDisplay) playerDisplay.innerText = name;
+      // RADIKALE UI ERZWUNGUNG
+      console.log('FORCING_UI_UPDATE_FOR:', name);
+      const displays = ['player-display', 'stat-player'];
+      displays.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          if (id === 'stat-player') el.innerHTML = `USER_IDENT//<br><span>${name}</span>`;
+          else el.innerText = name;
+        }
+      });
       
       MobileDebug.logEvent('SAVE', `Player added: ${name}`);
       updatePlayerListUI();
@@ -1356,25 +1363,27 @@ async function syncLeaderboard() {
 					startBtn.addEventListener('pointerdown', handleStart);
 					startBtn.addEventListener('click', handleStart);
 				}
-				const addPlayerBtn = document.getElementById('add-player-btn');
-				if (addPlayerBtn) {
-					// Robuste Event-Registrierung für Mobile (Redmi Fokus)
-					const triggerAddPlayer = (e) => {
-						if (e) {
+					// RADIKALER REBUILD: Globale Event-Delegation am Body
+					// Dies umgeht Probleme mit verschwundenen/neu gerenderten Buttons
+					document.body.addEventListener('click', (e) => {
+						const target = e.target.closest('#add-player-btn');
+						if (target) {
 							e.preventDefault();
 							e.stopPropagation();
+							MobileDebug.logEvent('DELEGATION', 'Add Player Clicked');
+							handleAddPlayer();
 						}
-						MobileDebug.logEvent('TOUCH', 'Add Player Triggered');
-						handleAddPlayer();
-					};
-					
-					// Nutze pointerup für besseres Feedback auf Touch-Geräten
-					addPlayerBtn.addEventListener('pointerup', triggerAddPlayer);
-					// Fallback für Browser ohne PointerEvents
-					if (!window.PointerEvent) {
-						addPlayerBtn.addEventListener('click', triggerAddPlayer);
-					}
-				}
+					}, true);
+
+					document.body.addEventListener('pointerup', (e) => {
+						const target = e.target.closest('#add-player-btn');
+						if (target) {
+							e.preventDefault();
+							e.stopPropagation();
+							MobileDebug.logEvent('DELEGATION', 'Add Player PointerUp');
+							handleAddPlayer();
+						}
+					}, true);
 		document.getElementById('pause-btn')?.addEventListener('pointerdown', (e) => {
 			e.preventDefault();
 			pauseProtocol();
