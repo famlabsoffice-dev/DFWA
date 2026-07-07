@@ -3,7 +3,7 @@
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 07.07.2026 - 17:15 GMT+2)
+## Status Quo (Stand 07.07.2026 - 18:30 GMT+2)
 
 ### 1. System-Integrität & Security [OPTIMIERT]
 - **Status:** HMAC-Validierung und Client-Sicherheit stabilisiert.
@@ -31,7 +31,7 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 ## Zukünftige Schritte (Aufgabenliste)
 
 ### Option A: Feature-Expansion (In-Game)
-- [ ] **Global Leaderboard UI:** Implementierung einer dedizierten Ansicht für globale Highscores im Hauptmenü.
+- [x] **Global Leaderboard UI:** Implementierung einer dedizierten Ansicht für globale Highscores im Hauptmenü. Referenzen in `index.html` und `main-B4VhbFAM.js` aktualisiert.
 - [ ] **New Game Mode "Survival":** Entwicklung eines Modus mit degressiver Zeit pro korrekter Antwort.
 - [ ] **Advanced Sabotage:** Integration von "Screen Flip" oder "Input Scramble" Effekten für High-Streak Battles.
 
@@ -44,7 +44,7 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 ---
 
 **Status:** Bugfix-Zyklus abgeschlossen. System bereinigt und bereit für Expansion.
-**Zuletzt aktualisiert:** 07.07.2026 - 17:15 GMT+2
+**Zuletzt aktualisiert:** 07.07.2026 - 18:30 GMT+2
 
 ---
 
@@ -90,7 +90,7 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
   - `checkStandaloneMode` Funktion implementiert: Erkennt, ob die App als PWA gestartet wurde, und fügt die CSS-Klasse `.pwa-standalone` zum Body hinzu (ermöglicht spezifisches UI-Styling für den installierten Zustand).
 - **Verifikation:** Standalone-Erkennung deckt sowohl Android (Chrome) als auch iOS (Safari "Add to Home Screen") ab.
 
-**Zuletzt aktualisiert:** 07.07.2026 - 18:15 GMT+2
+**Zuletzt aktualisiert:** 07.07.2026 - 18:00 GMT+2
 
 ---
 
@@ -103,3 +103,14 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 - **Verifikation:** Pfade und Dateiexistenz bestätigt.
 
 **Zuletzt aktualisiert:** 07.07.2026 - 18:15 GMT+2
+
+---
+
+## 25. Feature Expansion - Global Leaderboard UI [IMPLEMENTIERT]
+- **Status:** Direkter Zugang zum Leaderboard ("SERVER_ROOM") vom Startbildschirm aus integriert.
+- **Lösung:**
+  - `index.html`: Neuer Button `start-show-leaderboard-btn` im Hauptmenü hinzugefügt.
+  - `assets/main-B4VhbFAM.js`: Event-Listener für den neuen Button implementiert und die `ft` (Close Leaderboard) Funktion angepasst, um korrekt zum Startbildschirm zurückzukehren.
+- **Verifikation:** UI-Navigation zwischen Startbildschirm, Battle Lobby und Leaderboard validiert.
+
+**Zuletzt aktualisiert:** 07.07.2026 - 18:30 GMT+2
