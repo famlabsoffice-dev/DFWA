@@ -171,3 +171,14 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ✓ **PWA-Konformität**:
   - Standalone-Erkennung verbessert.
   - Haptisches Feedback (Vibration) für Buttons optimiert.
+
+## Update 2026-07-07 (Live-Funktionstest)
+✓ **DOM-Logik-Validierung**:
+  - Alle kritischen IDs (`start-btn`, `add-player-btn`, `player-name`, `category-modal-btn`, `timer-bar`, `question-text`) sind korrekt in der Logik referenziert.
+  - Event-Listener für alle Haupt-Buttons werden beim Initialisieren registriert.
+✓ **PWA-Update-Mechanismus**:
+  - `reg.update()` Aufruf und periodischer Check (setInterval) in `registerSW.js` verifiziert.
+  - Visuelles Update-Banner-Logik (`pwa-update-banner`) bestätigt.
+✓ **Code-Integrität**:
+  - Die Implementierung entspricht strikt den PWA-Anforderungen und den zuvor definierten Fixes.
+  - Build-Prozess (`pnpm build`) erfolgreich abgeschlossen.
