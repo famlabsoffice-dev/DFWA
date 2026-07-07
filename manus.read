@@ -56,14 +56,21 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
   - `app.js`: Sabotage-Trigger bei 5er Streaks implementiert, der dem Gegner 3 Sekunden Zeit abzieht.
   - `server/social/battleSync.js`: Server-seitiges Routing für Sabotage-Aktionen hinzugefügt.
 
+### 10. Mobile UI Optimization [OPTIMIERT]
+- **Status:** Startbildschirm für kleine mobile Geräte optimiert.
+- **Lösung:**
+  - `style.css`: Umstellung auf `100dvh` (Dynamic Viewport Height) zur Vermeidung von Layout-Fehlern durch Browser-Toolbars.
+  - `style.css`: `ui-content-wrapper` erhielt `overflow-y: auto` und eine `max-height`, um Scrollbarkeit auf kleinen Screens zu gewährleisten.
+  - `style.css`: Spezifische Media-Queries für Geräte unter 480px Breite zur Skalierung von Eye-BG, Stats und Buttons.
+
 ## Nächste Schritte
 
-### 10. Visual Sabotage Effects
+### 11. Visual Sabotage Effects
 - **Ziel:** Stärkere visuelle Immersion bei Sabotage.
 - **Aufgaben:**
   - Implementierung von Overlay-Effekten (z.B. statisches Rauschen oder verdunkelter Screen) während eines Sabotage-Angriffs.
 
-### 11. Persistent Player Profiles
+### 12. Persistent Player Profiles
 - **Ziel:** Speicherung von Statistiken über Sessions hinweg.
 - **Aufgaben:**
   - Erweiterung des Backends um persistente User-Accounts (optional) oder verbesserte LocalStorage-Synchronisation.
@@ -82,6 +89,15 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 > 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
 > 
 > **Startpunkt:** Analysiere `style.css` für Glitch-Animationen und `app.js` für den Sabotage-Event-Listener.
+
+---
+
+## Optimierungsliste Mobile Ansicht
+- [x] **Viewport Fix:** Nutzung von `100dvh` statt `100%` für Screens, um Abschneiden durch Mobile-Browser-UI zu verhindern.
+- [x] **Scrollable Content:** `ui-content-wrapper` ist nun scrollbar, falls der Inhalt die Bildschirmhöhe übersteigt.
+- [x] **Eye-BG Scaling:** Das zentrale Auge und die Stat-Overlays skalieren nun aggressiver auf kleinen Geräten.
+- [x] **Button & Input Scaling:** Reduzierte Paddings und Font-Sizes für Mobile unter 480px.
+- [x] **Grid Layout:** Kategorien und Modi nutzen auf Mobile ein 2-Spalten-Grid zur Platzersparnis.
 
 ---
 **Status:** Dynamic Meta Tags & Sabotage Mechanik integriert.
