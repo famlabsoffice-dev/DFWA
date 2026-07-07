@@ -679,14 +679,18 @@ function handleAddPlayer() {
       
       // RADIKALE UI ERZWUNGUNG
       console.log('FORCING_UI_UPDATE_FOR:', name);
-      const displays = ['player-display', 'stat-player'];
-      displays.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-          if (id === 'stat-player') el.innerHTML = `USER_IDENT//<br><span>${name}</span>`;
-          else el.innerText = name;
-        }
-      });
+      
+      // Direkter Zugriff auf alle möglichen Namens-Anzeigen
+      const playerDisplay = document.getElementById('player-display');
+      if (playerDisplay) {
+        playerDisplay.innerText = name;
+        playerDisplay.style.color = 'var(--neon)'; // Visuelles Feedback
+      }
+      
+      const statPlayer = document.getElementById('stat-player');
+      if (statPlayer) {
+        statPlayer.innerHTML = `USER_IDENT//<br><span id="player-display" style="color: var(--neon)">${name}</span>`;
+      }
       
       MobileDebug.logEvent('SAVE', `Player added: ${name}`);
       updatePlayerListUI();

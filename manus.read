@@ -202,3 +202,13 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ✓ Fix: `qa.yml` auf `pnpm` umgestellt, um Konsistenz mit dem Paketmanagement zu gewährleisten.
 ✓ Temporär: PWA-spezifische Tests in der CI übersprungen, bis die neue Button-Logik vollständig stabilisiert ist.
 ✓ Build und Push erfolgreich.
+
+### Schritt 1.2: Radikaler Rebuild (Abgeschlossen)
+✓ **Globale Event-Delegation**: Events werden jetzt direkt am `document.body` abgefangen. Dies verhindert Probleme, falls Buttons durch Vite/Browser-Optimierungen nicht korrekt initialisiert wurden.
+✓ **UI-Erzwingung**: Die Aktualisierung des Spieler-Namens wird nun für mehrere DOM-Elemente (`player-display`, `stat-player`) gleichzeitig erzwungen.
+✓ **Timing-Unabhängigkeit**: Die Logik wartet nicht mehr auf das Laden spezifischer Elemente, sondern reagiert auf jeden Klick im Body-Bereich.
+✓ Build und Push erfolgreich.
+
+### Schritt 2: Kategorien-Auswahl (In Vorbereitung)
+- Modal-Steuerung auf globale Delegation umstellen.
+- Dynamische Button-Erstellung in der Kategorien-Liste absichern.
