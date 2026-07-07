@@ -27,6 +27,8 @@ export function setupBattleSync(io, db) {
           duration: action.duration,
           attackerId: playerId 
         });
+        // Return early to prevent double broadcast (sabotage + opponent_action)
+        return;
       }
       // Broadcast action to all other players in the battle
       socket.to(battleId).emit('opponent_action', { playerId, action });

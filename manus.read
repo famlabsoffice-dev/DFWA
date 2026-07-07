@@ -98,20 +98,28 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 
 ---
 
+### 16. Socket & Latency Optimization [VALIDIERT]
+- **Status:** Reduktion von redundantem Traffic und Implementierung von Throttling für State-Syncs.
+- **Lösung:**
+  - `server/social/battleSync.js`: Double-Broadcast bei Sabotage-Events durch `return` nach Sabotage-Emit unterbunden.
+  - `scripts/battle-manager.js`: Throttling für `syncState` implementiert (max. 5 Syncs/Sekunde bzw. 200ms Intervall), um Network-Overhead bei schnellen Eingaben zu minimieren.
+
+---
+
 ## Anweisungen für die folgende Instanz (Arbeitsanweisungs-Prompt)
 
 > **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
 > 
 > **DEIN AUFTRAG:**
-> Führe eine abschließende Validierung der Multiplayer-Latenz durch. Optimiere das Socket-Handling in `scripts/battle-manager.js`, um unnötigen Traffic bei Sabotage-Events zu reduzieren.
+> Implementiere ein "Visual Latency Dashboard" in der Admin-View (oder als Overlay im Server Room), das die Round-Trip-Time (RTT) der Socket-Verbindung in Echtzeit anzeigt. Nutze `socket.emit('ping')` und `socket.on('pong')` zur Messung.
 > 
 > **Zwingende Regeln:**
 > 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
-> 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
+> 2. **Ressourcenschonung:** Bestehende UI-Elemente erweitern statt neue Seiten zu erstellen.
 > 
-> **Startpunkt:** Analysiere `scripts/battle-manager.js` und den `sabotage` Event-Flow.
+> **Startpunkt:** Erweitere `scripts/battle-manager.js` um die Ping-Logik.
 
 ---
 
-**Status:** Performance-Optimierung abgeschlossen. Alle Recovery-Ziele erreicht.
-**Zuletzt aktualisiert:** 07.07.2026 - 14:45 GMT+2
+**Status:** Multiplayer-Latenz-Optimierung abgeschlossen. System bereit für Visual Dashboard Integration.
+**Zuletzt aktualisiert:** 07.07.2026 - 15:15 GMT+2

@@ -113,8 +113,15 @@ export const BattleManager = {
     });
   },
 
+  lastSync: 0,
   syncState(state, playerId) {
     if (!this.socket || !this.currentBattleId) return;
+    
+    // Throttling: Max 5 syncs per second (200ms interval) to reduce traffic
+    const now = Date.now();
+    if (now - this.lastSync < 200) return;
+    this.lastSync = now;
+
     this.socket.emit('sync_state', { 
       battleId: this.currentBattleId, 
       playerId, 
