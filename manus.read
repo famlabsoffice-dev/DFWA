@@ -46,3 +46,9 @@
 - [x] **Manifest-Validierung**: Verknüpfung in der `index.html` geprüft. Vite injiziert das Manifest und das Registrierungs-Script nun automatisch und korrekt am Ende des `<head>`.
 - [x] **Offline-Infrastruktur**: Workbox-Pre-Caching umfasst nun alle 19 Kern-Entries (HTML, JS, CSS, WebP, Fonts), was eine vollständige Offline-Nutzung ermöglicht.
 - [x] **Vollständigkeits-Check**: Alle PWA-Kriterien (Installierbarkeit, Offline-Fähigkeit, HTTPS-Bereitschaft) sind durch die automatisierte Konfiguration erfüllt.
+
+### Instanz 2026-07-07 (Asset-Optimierung)
+- [x] **iOS-Metadaten Härtung**: `apple-mobile-web-app-capable`, `apple-touch-fullscreen` und `mobile-web-app-capable` in `index.html` ergänzt für maximale native Integration auf Apple-Geräten.
+- [x] **Apple Splash Screens**: Konfiguration für gängige iPhone-Größen (Pro Max, Pro, Standard) mittels `apple-touch-startup-image` und `media queries` in `index.html` hinterlegt. Nutzt `ack_splash_void.webp` als einheitlichen, atmosphärischen Startbildschirm.
+- [x] **PWA Manifest Erweiterung**: `categories` und `shortcuts` ("Start Game") in `vite.config.js` hinzugefügt, um die Integration in das Betriebssystem (Long-Press auf App-Icon) zu verbessern.
+- [x] **Build-Validierung**: Erfolgreicher Build bestätigt die korrekte Injektion der neuen Metadaten und Manifest-Erweiterungen.

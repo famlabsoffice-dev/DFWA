@@ -42,6 +42,16 @@ export default defineConfig({
         display: 'standalone',
         orientation: 'portrait',
         lang: 'de',
+        categories: ['games', 'education'],
+        shortcuts: [
+          {
+            name: 'Start Game',
+            short_name: 'Start',
+            description: 'Beginne sofort eine neue Quiz-Session',
+            url: '/?start=true',
+            icons: [{ src: 'assets/icons/icon-192.png', sizes: '192x192' }]
+          }
+        ],
         icons: [
           {
             src: 'assets/icons/icon-192.png',
