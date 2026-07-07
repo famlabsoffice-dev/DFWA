@@ -190,3 +190,9 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ✓ `stopPropagation()` hinzugefügt, um Event-Bubbling-Probleme zu vermeiden.
 ✓ Fallback für Non-Pointer-Browser implementiert.
 ✓ Build und Push erfolgreich.
+
+### Schritt 1.1: Namens-Synchronisation (Abgeschlossen)
+✓ Fix: `state.playerName` wird jetzt sofort beim Hinzufügen aktualisiert.
+✓ Fix: Header-UI (`#player-display`) wird direkt nach dem Klick auf "+" aktualisiert.
+✓ Fix: Sicherer Speicher-Aufruf (`saveSecure`) für den Namen integriert.
+✓ Build und Push erfolgreich.
