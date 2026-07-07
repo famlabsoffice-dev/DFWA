@@ -3,154 +3,44 @@
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 07.07.2026 - 14:45 GMT+2)
+## Status Quo (Stand 07.07.2026 - 17:15 GMT+2)
 
-### 1. Live-System & Deployment [VALIDIERT]
+### 1. System-Integrität & Security [OPTIMIERT]
+- **Status:** HMAC-Validierung und Client-Sicherheit stabilisiert.
+- **Lösung:** 
+  - `app.js`: Veralteter `/config/secret` Fetch entfernt. Nutzung von `LOCAL_ONLY_UNTRUSTED` für konsistente clientseitige Signaturen.
+  - `server/server.js`: Validierung des Blitz-Modus verifiziert.
+
+### 2. Code-Bereinigung [ABGESCHLOSSEN]
+- **Status:** Redundante Altlasten entfernt.
+- **Lösung:** 
+  - `scripts/constants.js`: Inkonsistentes `GAME_MODES` Objekt gelöscht.
+
+### 3. Live-System & Deployment [VALIDIERT]
 - **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
 - **Lösung:** Automatischer Sync des Vite-Builds in den Root implementiert.
 
-### 2. Multiplayer-Synchronisation & Feedback [VERBESSERT]
-- **Status:** Visuelle Indikatoren für Gegner-Aktionen hinzugefügt.
+### 4. Multiplayer & Latenz [IMPLEMENTIERT]
+- **Status:** Echtzeit-Monitoring und optimierter State-Sync.
 - **Lösung:** 
-  - `scripts/battle-manager.js`: `opponent_action` Handler implementiert Glitch-Effekt und rote Score-Hervorhebung bei Fehlern des Gegners.
-
-### 3. PWA & Offline-Funktionalität [OPTIMIERT]
-- **Status:** Service Worker auf Workbox 7.0 umgestellt für robustes Caching.
-- **Lösung:** 
-  - `sw.js`: Implementierung von `CacheFirst` für WebP-Bilder und `StaleWhileRevalidate` für statische Assets.
-
-### 4. Audio-System & Feedback [REFACTORED]
-- **Status:** Performance-optimiertes Audio-Handling und systemweites Feedback integriert.
-- **Lösung:**
-  - `scripts/audio-manager.js`: Umstellung von `cloneNode()` auf Wiederverwendung des Audio-Objekts mit `currentTime = 0` zur Reduzierung von Latenz und Memory-Footprint.
-  - `app.js`: Audio-Feedback für korrekte/falsche Antworten und Achievements integriert.
-
-### 5. Leaderboard UI & UX [VERBESSERT]
-- **Status:** "Server Room" mit Animationen und funktionaler Filter-Logik ausgestattet.
-- **Lösung:**
-  - `style.css` & `scripts/ui-manager.js`: Staggered-Animationen für Leaderboard-Einträge implementiert.
-
-### 6. Achievement System & Web Share API [NEU]
-- **Status:** Achievements können nun direkt über die Web Share API geteilt werden.
-- **Lösung:**
-  - `app.js`: `shareAchievement` Funktion implementiert. Achievement-Toasts enthalten nun einen "SHARE"-Button.
-  - `app.js`: Der finale Share-Button im Modal nutzt nun ebenfalls die Web Share API mit dynamischen Achievements in der Share-Card.
-
-### 7. Multiplayer Lobby UX [OPTIMIERT]
-- **Status:** Real-time Status für Challenge-Codes und aktive Nutzer im UI.
-- **Lösung:**
-  - `index.html`: Status-Container für Link-Status und Nutzeranzahl hinzugefügt.
-  - `scripts/battle-manager.js`: Socket-Events aktualisieren nun den Lobby-Status in Echtzeit.
-  - `app.js`: Automatischer Verbindungsaufbau beim Betreten der Lobby und Refresh-Funktion implementiert.
-
-### 8. Dynamic Meta Tags & Social Preview [NEU]
-- **Status:** Dynamische Generierung von Meta-Tags für Social Media Previews implementiert.
-- **Lösung:**
-  - `server/server.js`: `/share/:playerId` Route hinzugefügt, die `index.html` lädt und OpenGraph/Twitter Meta-Tags basierend auf Spielerdaten injiziert.
-  - `server/server.js`: `shareImageUrl` zeigt nun auf den dynamischen Share-Card Generator.
-
-### 9. Advanced Battle Mechanics: Sabotage [NEU]
-- **Status:** Erste Sabotage-Mechanik (Timer Drain) integriert.
-- **Lösung:**
-  - `scripts/battle-manager.js`: Sabotage-Event-Listener und `CustomEvent` für die App-Logik hinzugefügt.
-  - `app.js`: Sabotage-Trigger bei 5er Streaks implementiert, der dem Gegner 3 Sekunden Zeit abzieht.
-  - `server/social/battleSync.js`: Server-seitiges Routing für Sabotage-Aktionen hinzugefügt.
-
-### 10. Mobile UI Optimization [OPTIMIERT]
-- **Status:** Startbildschirm für kleine mobile Geräte optimiert.
-- **Lösung:**
-  - `style.css`: Umstellung auf `100dvh` (Dynamic Viewport Height) zur Vermeidung von Layout-Fehlern durch Browser-Toolbars.
-  - `style.css`: `ui-content-wrapper` erhielt `overflow-y: auto` und eine `max-height`, um Scrollbarkeit auf kleinen Screens zu gewährleisten.
-  - `style.css`: Spezifische Media-Queries für Geräte unter 480px Breite zur Skalierung von Eye-BG, Stats und Buttons.
-
-### 11. Visual Sabotage Effects [IMPLEMENTIERT]
-- **Status:** Visuelle Immersion bei Sabotage-Angriffen durch Glitch-Overlays verstärkt.
-- **Lösung:**
-  - `index.html`: `#sabotage-overlay` als dedizierte Effekt-Ebene hinzugefügt.
-  - `style.css`: `.sabotage-layer` und `sabotageGlitch` Animation implementiert (Nutzung von `ack_interference_glitch.webp`).
-  - `app.js`: Event-Listener für `sabotage_timer` triggert nun die visuelle Animation für 1.5s.
-
-### 12. Category Realm Visuals [IMPLEMENTIERT]
-- **Status:** Dynamische Hintergründe je nach gewählter Kategorie im Spiel-Bildschirm integriert.
-- **Lösung:**
-  - `style.css`: Klassen `.realm-hardware`, `.realm-ai` und `.realm-security` mit entsprechenden Assets aus `manus.visuals` hinzugefügt.
-  - `app.js`: Logik in `initGame` implementiert, die basierend auf dem Kategorienamen die passende CSS-Klasse auf das `#game-screen` anwendet.
-
-### 13. ACK Emotes Integration [IMPLEMENTIERT]
-- **Status:** Situatives Feedback durch ACK-Charakter-Visuals im Feedback-Screen integriert.
-- **Lösung:**
-  - `app.js`: `checkAnswer` Funktion erweitert, um situative Emotes anzuzeigen:
-    - `ack_eye_wink.webp` bei Streak >= 10.
-    - `ack_player_win_angry.webp` bei Streak >= 5.
-    - `ack_eye_skeptical.webp` wenn nur noch 1 Leben übrig ist.
-
-### 14. Persistent Player Profiles [IMPLEMENTIERT]
-- **Status:** Spielerstatistiken und Achievements werden nun robust zwischen LocalStorage und Backend synchronisiert.
-- **Lösung:**
-  - `scripts/api-client.js`: `syncProfile` und `fetchProfile` Endpunkte für Backend-Synchronisation hinzugefügt.
-  - `app.js`: `validateStorage` erweitert, um beim Start Profile vom Server zu laden und lokale Daten zu aktualisieren. `syncProfileToServer` triggert Updates bei neuen Highscores.
-
-### 15. Performance Optimization: Asset Preloading [NEU]
-- **Status:** Ladezeiten für kritische visuelle Assets optimiert.
-- **Lösung:**
-  - `index.html`: `link rel="preload"` für Splash- und Realm-Hintergründe hinzugefügt.
-  - `app.js`: `preloadGameAssets` Funktion implementiert, die alle situativen Emotes und Overlays beim App-Start im Hintergrund lädt, um Verzögerungen im Gameplay zu vermeiden.
+  - Visual Latency Dashboard integriert (RTT-Messung).
+  - Throttling für Socket-Syncs zur Traffic-Reduktion.
 
 ---
 
-### 16. Socket & Latency Optimization [VALIDIERT]
-- **Status:** Reduktion von redundantem Traffic und Implementierung von Throttling für State-Syncs.
-- **Lösung:**
-  - `server/social/battleSync.js`: Double-Broadcast bei Sabotage-Events durch `return` nach Sabotage-Emit unterbunden.
-  - `scripts/battle-manager.js`: Throttling für `syncState` implementiert (max. 5 Syncs/Sekunde bzw. 200ms Intervall), um Network-Overhead bei schnellen Eingaben zu minimieren.
+## Zukünftige Schritte (Aufgabenliste)
+
+### Option A: Feature-Expansion (In-Game)
+- [ ] **Global Leaderboard UI:** Implementierung einer dedizierten Ansicht für globale Highscores im Hauptmenü.
+- [ ] **New Game Mode "Survival":** Entwicklung eines Modus mit degressiver Zeit pro korrekter Antwort.
+- [ ] **Advanced Sabotage:** Integration von "Screen Flip" oder "Input Scramble" Effekten für High-Streak Battles.
+
+### Option B: Infrastructure & Maintenance
+- [ ] **Automated CI/CD:** Einrichtung von GitHub Actions für automatische Builds und Tests bei jedem Push.
+- [ ] **Analytics Dashboard:** Implementierung einer Admin-Schnittstelle zur Visualisierung von Spieler-Metriken (Retention, Average Score).
+- [ ] **Asset CDN:** Migration der schweren Bild-Assets auf ein dediziertes CDN zur Reduktion der Initial Load Time.
 
 ---
 
-## Anweisungen für die folgende Instanz (Arbeitsanweisungs-Prompt)
-
-> **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
-> 
-> **DEIN AUFTRAG:**
-> Implementiere ein "Visual Latency Dashboard" in der Admin-View (oder als Overlay im Server Room), das die Round-Trip-Time (RTT) der Socket-Verbindung in Echtzeit anzeigt. Nutze `socket.emit('ping')` und `socket.on('pong')` zur Messung.
-> 
-> **Zwingende Regeln:**
-> 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
-> 2. **Ressourcenschonung:** Bestehende UI-Elemente erweitern statt neue Seiten zu erstellen.
-> 
-> **Startpunkt:** Erweitere `scripts/battle-manager.js` um die Ping-Logik.
-
----
-
-**Status:** Multiplayer-Latenz-Optimierung abgeschlossen. System bereit für Visual Dashboard Integration.
-**Zuletzt aktualisiert:** 07.07.2026 - 15:15 GMT+2
-
-17. Visual Latency Dashboard [IMPLEMENTIERT]
-- **Status:** Echtzeit-Überwachung der Socket-Latenz (RTT) integriert.
-- **Lösung:**
-  - `server/social/battleSync.js`: Ping-Pong-Handler für Socket.IO hinzugefügt.
-  - `scripts/battle-manager.js`: Implementierung der Ping-Logik (Intervall 2s) und RTT-Berechnung.
-  - `index.html`: `#latency-display` im Battle Lobby Status-Container hinzugefügt.
-  - Dynamische Farbindikatoren für Latenzqualität (Grün < 50ms, Gelb < 150ms, Rot > 150ms).
-
----
-
-## 18. Start Screen Visual Update [IMPLEMENTIERT]
-- **Status:** Neues, hochauflösendes Startbildschirm-Bild basierend auf dem Cyberpunk-Stil der PWA integriert.
-- **Lösung:**
-  - `assets/images/new_start_screen.png`: Neues 9:16-Bild mit Fokus auf ein glühendes neon-grünes Auge und digitale Schaltkreise generiert.
-  - `style.css`: Hintergrund für `#start-screen` auf das neue Bild aktualisiert.
-
-## Zukünftige Schritte
-- [x] Optimierung der Ladezeiten für das neue Startbildschirm-Bild (`new_start_screen.webp`). (Größe reduziert von 688 KB auf 394 KB, -42.7%)
-- [x] **Deployment-Validierung:** Build-Artefakte synchronisiert und für Deployment vorbereitet. Build-Prozess mit Vite 8.1.0 verifiziert.
-- [x] **Fragenkatalog-Audit:** Alle 150 Platzhalter erfolgreich durch reale, hochwertige dystopische Fragen (Cyberpunk, Sci-Fi, Industrial Musik) ersetzt. System-Konsistenz verifiziert.
-- [x] **UI Refactoring - Kategorien:** Dedizierter "SELECT_CATEGORY"-Button implementiert. Kategorien-Auswahl erfolgt nun über ein immersives Modal-Overlay.
-- [x] **UI Bereinigung - Startbildschirm:** 
-    - Theme-Selector (`#theme-selector`) und Mute-Button (`#mute-btn`) für ein cleaneres Cyberpunk-Look-and-Feel entfernt.
-- [x] Implementierung von zusätzlichen Animationen für das zentrale Augen-Motiv auf dem Startbildschirm (Pulsieren, Schweben und Farb-Scanning integriert).
-- [x] PWA-Funktionalität validiert: Manifest-Dateien konsolidiert, Icons korrigiert und Service Worker Caching-Strategien optimiert. Offline-Support sichergestellt.
-- [x] Finalisierung des Dystopie-Quiz-Contents und der Kategorien: Alle 137 verbliebenen System-Abfragen durch reale, hochwertige dystopische Fragen ersetzt. 100% Content-Abdeckung erreicht.
-- [x] Testen der Leaderboard-Integration und der Social-Sharing-Features: API-Endpunkte validiert, HMAC-Authentifizierung für Leaderboard-Updates verifiziert und Social-Sharing-Logik mit robustem Fallback (Clipboard) optimiert. UIManager um Toast-Benachrichtigungen erweitert.
-- [x] Vorbereitung für das Deployment der PWA: Finaler Build generiert, PWA-Metadaten in index.html bereinigt, manifest.webmanifest als Standard gesetzt und Assets für GitHub Pages synchronisiert. Projekt bereit für Übergabe.
-
-**Zuletzt aktualisiert:** 07.07.2026 - 16:15 GMT+2
+**Status:** Bugfix-Zyklus abgeschlossen. System bereinigt und bereit für Expansion.
+**Zuletzt aktualisiert:** 07.07.2026 - 17:15 GMT+2

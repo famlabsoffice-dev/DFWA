@@ -259,25 +259,18 @@ window.onunhandledrejection = (event) => {
   });
 };
 
-async function fetchSystemSecret() {
-  try {
-    const res = await fetch(`${API_BASE_URL}/config/secret`);
-    if (res.ok) {
-      const data = await res.json();
-      state.systemSecret = data.secret;
-    } else {
-      state.systemSecret = 'LOCAL_ONLY_UNTRUSTED';
-    }
-  } catch {
-    state.systemSecret = 'LOCAL_ONLY_UNTRUSTED';
-  }
+async function initializeClientSecurity() {
+  // Hinweis: Das System-Secret wird nicht mehr vom Server geladen (Sicherheitsrisiko).
+  // Für clientseitige Integrität (LocalStorage-Schutz) wird ein lokaler Fallback genutzt.
+  state.systemSecret = 'LOCAL_ONLY_UNTRUSTED';
+  
   try {
     await validateStorage();
   } catch {
     console.error('Storage validation failed');
   }
 }
-fetchSystemSecret();
+initializeClientSecurity();
 
 async function getSignature(data) {
   try {

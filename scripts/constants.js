@@ -34,8 +34,4 @@ export const SYSTEM_MESSAGES = {
   STATE_OOB_ERROR: 'SYSTEM_ERROR: STATE_OUT_OF_BOUNDS',
 };
 
-export const GAME_MODES = {
-  CLASSIC: 'classic',
-  ENDLESS: 'endless',
-  BLITZ: 'blitz',
-};
+// Hinweis: GAME_MODES wurde entfernt, da es redundant und inkonsistent zu scripts/game-modes.js war.
