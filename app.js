@@ -2,12 +2,15 @@ import { APIClient } from './scripts/api-client.js';
 import { UIManager } from './ui-manager.js';
 import { BattleManager } from './scripts/battle-manager.js';
 import { AudioManager } from './scripts/audio-manager.js';
+import { MobileDebug } from './scripts/mobile-debug.js';
 import {
   GameModes,
   ModeConfig,
   getGameModeConfig,
 } from './scripts/game-modes.js';
 import { ACHIEVEMENTS as ACHIEV_CONST, STORAGE_KEYS } from './scripts/constants.js';
+
+MobileDebug.init();
 
 const API_BASE_URL =
   window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -612,6 +615,7 @@ async function renderCategorySelector() {
       btn.innerText = (cat || 'UNKNOWN').toUpperCase();
       const selectCat = (e) => {
         if (e) e.preventDefault();
+        MobileDebug.logEvent('SELECT', `Category: ${cat}`);
         state.selectedCategory = cat;
         if (displayEl) displayEl.innerText = cat.toUpperCase();
         closeModal();
@@ -627,14 +631,14 @@ async function renderCategorySelector() {
 }
 
 function showCategoryModal() {
-  console.log('showCategoryModal called');
+  MobileDebug.logEvent('BUTTON', 'Category modal clicked');
   const overlay = document.getElementById('modal-overlay');
   const title = document.getElementById('modal-title');
   const text = document.getElementById('modal-text');
   const list = document.getElementById('category-modal-list');
   const closeBtn = document.getElementById('close-system-btn');
   
-  console.log('Elements found:', { overlay: !!overlay, title: !!title, text: !!text, list: !!list, closeBtn: !!closeBtn });
+  MobileDebug.logEvent('MODAL', `Elements: overlay=${!!overlay} list=${!!list}`);
   
   if (overlay) overlay.style.display = 'flex';
   if (title) title.innerText = state.lang === 'de' ? 'KATEGORIE_WÄHLEN' : 'SELECT_CATEGORY';
@@ -644,7 +648,7 @@ function showCategoryModal() {
     renderCategorySelector();
   }
   if (closeBtn) closeBtn.innerText = state.lang === 'de' ? 'ABBRECHEN' : 'CANCEL';
-  console.log('showCategoryModal completed');
+  MobileDebug.logEvent('MODAL', 'Category modal opened');
 }
 
 function closeModal() {
@@ -659,17 +663,18 @@ function closeModal() {
 
 
 function handleAddPlayer() {
-  console.log("Add player clicked");
+  MobileDebug.logEvent('BUTTON', 'Add player clicked');
 
   try {
     const nameInput = document.getElementById('player-name');
     const name = nameInput ? nameInput.value.trim() : '';
-    console.log("Player name:", name);
+    MobileDebug.logEvent('INPUT', `Player: ${name}`);
     if (!name) return;
 
     if (!state.players.includes(name)) {
       state.players.push(name);
       localStorage.setItem('dfwa_players', JSON.stringify(state.players));
+      MobileDebug.logEvent('SAVE', `Player added: ${name}`);
       updatePlayerListUI();
     }
     if (nameInput) nameInput.value = '';
@@ -1310,6 +1315,7 @@ async function syncLeaderboard() {
 
 			const handleStart = (e) => {
 				if (e) e.preventDefault();
+				MobileDebug.logEvent('BUTTON', 'Start clicked');
 				if (state.isProcessing) return;
 				initGame(false);
 			};
