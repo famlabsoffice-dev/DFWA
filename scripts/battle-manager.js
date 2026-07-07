@@ -12,14 +12,22 @@ export const BattleManager = {
 
     this.socket.on('connect', () => {
       console.log('Connected to Battle Server');
+      const statusEl = document.getElementById('lobby-connection-status');
+      if (statusEl) {
+        statusEl.innerText = 'LINK_STATUS: ONLINE';
+        statusEl.style.color = 'var(--neon)';
+      }
     });
 
     this.socket.on('player_joined', ({ playerId: joinedPlayerId, activePlayers }) => {
       console.log(`Player joined: ${joinedPlayerId}`);
       const oppHud = document.getElementById('opponent-hud');
       if (oppHud) {
-        // Zeige HUD nur, wenn mehr als ein Spieler in der Lobby ist
         oppHud.style.display = activePlayers.length > 1 ? 'block' : 'none';
+      }
+      const countEl = document.getElementById('lobby-player-count');
+      if (countEl) {
+        countEl.innerText = `ACTIVE_USERS: ${activePlayers.length}`;
       }
     });
 
@@ -60,14 +68,24 @@ export const BattleManager = {
       }
     });
 
-    this.socket.on('player_left', ({ socketId }) => {
+    this.socket.on('player_left', ({ socketId, activePlayers }) => {
       console.log(`Opponent left: ${socketId}`);
       const oppHud = document.getElementById('opponent-hud');
-      if (oppHud) oppHud.style.display = 'none';
+      if (oppHud) oppHud.style.display = (activePlayers && activePlayers.length > 1) ? 'block' : 'none';
+      
+      const countEl = document.getElementById('lobby-player-count');
+      if (countEl && activePlayers) {
+        countEl.innerText = `ACTIVE_USERS: ${activePlayers.length}`;
+      }
     });
 
     this.socket.on('disconnect', () => {
       console.log('Disconnected from Battle Server');
+      const statusEl = document.getElementById('lobby-connection-status');
+      if (statusEl) {
+        statusEl.innerText = 'LINK_STATUS: OFFLINE';
+        statusEl.style.color = 'var(--error)';
+      }
     });
   },
 

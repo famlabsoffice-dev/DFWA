@@ -3,7 +3,7 @@
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 06.07.2026 - 20:20 GMT+2)
+## Status Quo (Stand 07.07.2026 - 12:45 GMT+2)
 
 ### 1. Live-System & Deployment [VALIDIERT]
 - **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
@@ -30,18 +30,30 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 - **Lösung:**
   - `style.css` & `scripts/ui-manager.js`: Staggered-Animationen für Leaderboard-Einträge implementiert.
 
+### 6. Achievement System & Web Share API [NEU]
+- **Status:** Achievements können nun direkt über die Web Share API geteilt werden.
+- **Lösung:**
+  - `app.js`: `shareAchievement` Funktion implementiert. Achievement-Toasts enthalten nun einen "SHARE"-Button.
+  - `app.js`: Der finale Share-Button im Modal nutzt nun ebenfalls die Web Share API mit dynamischen Achievements in der Share-Card.
+
+### 7. Multiplayer Lobby UX [OPTIMIERT]
+- **Status:** Real-time Status für Challenge-Codes und aktive Nutzer im UI.
+- **Lösung:**
+  - `index.html`: Status-Container für Link-Status und Nutzeranzahl hinzugefügt.
+  - `scripts/battle-manager.js`: Socket-Events aktualisieren nun den Lobby-Status in Echtzeit.
+  - `app.js`: Automatischer Verbindungsaufbau beim Betreten der Lobby und Refresh-Funktion implementiert.
+
 ## Nächste Schritte
 
-### 6. Achievement System Deep-Link
-- **Ziel:** Achievements direkt teilbar machen.
+### 8. Dynamic Meta Tags & SEO
+- **Ziel:** Bessere Social-Preview für geteilte Inhalte.
 - **Aufgaben:**
-  - Implementierung von Web Share API für spezifische Achievement-Unlocks.
-  - Generierung von dynamischen Meta-Tags für bessere Social-Preview.
+  - Implementierung von serverseitiger Generierung von Meta-Tags basierend auf Achievement-IDs.
 
-### 7. Multiplayer Lobby UX
-- **Ziel:** Bessere Sichtbarkeit von offenen Herausforderungen.
+### 9. Advanced Battle Mechanics
+- **Ziel:** Mehr Interaktion im Multiplayer.
 - **Aufgaben:**
-  - Real-time Status für Challenge-Codes im UI.
+  - Implementierung von "Sabotage"-Aktionen (z.B. Timer-Verkürzung für Gegner).
 
 ---
 
@@ -50,14 +62,14 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 > **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
 > 
 > **DEIN AUFTRAG:**
-> Implementiere die Web Share API für Achievements und optimiere die Multiplayer-Lobby UX.
+> Implementiere dynamische Meta-Tags für Social-Previews und füge erste Sabotage-Mechaniken im Multiplayer hinzu.
 > 
 > **Zwingende Regeln:**
 > 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
 > 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
 > 
-> **Startpunkt:** Analysiere die Achievement-Logik in `app.js` und die Lobby-Struktur in `index.html`.
+> **Startpunkt:** Analysiere `server/server.js` für die Meta-Tag-Logik und `scripts/battle-manager.js` für die Sabotage-Events.
 
 ---
-**Status:** Audio-System optimiert, Feedback-Sounds integriert. Build & Sync erfolgreich.
-**Zuletzt aktualisiert:** 06.07.2026 - 20:20 GMT+2
+**Status:** Web Share API integriert, Lobby UX optimiert.
+**Zuletzt aktualisiert:** 07.07.2026 - 12:45 GMT+2

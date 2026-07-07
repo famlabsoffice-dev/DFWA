@@ -422,11 +422,44 @@ function unlockAchievement(achievementId) {
   const toast = document.createElement('div');
   toast.className = 'achievement-toast';
   toast.innerHTML = `<strong>ACHIEVEMENT_UNLOCKED</strong><br>${achievement.name}`;
+  const shareBtn = document.createElement('button');
+  shareBtn.className = 'option-btn';
+  shareBtn.style.fontSize = '0.6rem';
+  shareBtn.style.padding = '2px 5px';
+  shareBtn.style.marginTop = '5px';
+  shareBtn.innerText = 'SHARE';
+  shareBtn.onclick = (e) => {
+    e.stopPropagation();
+    shareAchievement(achievement);
+  };
+  toast.appendChild(shareBtn);
+  
   document.body.appendChild(toast);
   AudioManager.play('achievement');
-  setTimeout(() => toast.remove(), 4000);
+  setTimeout(() => toast.remove(), 5000);
 
   sendLocalNotification('ACHIEVEMENT_UNLOCKED', achievement.name);
+}
+
+async function shareAchievement(achievement) {
+  try {
+    const text = state.lang === 'de' 
+      ? `Ich habe das Achievement "${achievement.name}" in ACK ATTACK freigeschaltet! Systemstatus: Synchronisiert.` 
+      : `I unlocked the "${achievement.name}" achievement in ACK ATTACK! System status: Synced.`;
+    
+    if (navigator.share) {
+      await navigator.share({
+        title: 'ACK ATTACK ACHIEVEMENT',
+        text: text,
+        url: window.location.origin + window.location.pathname
+      });
+    } else {
+      await navigator.clipboard.writeText(text);
+      alert(state.lang === 'de' ? 'In Zwischenablage kopiert!' : 'Copied to clipboard!');
+    }
+  } catch (err) {
+    console.error('Sharing achievement failed', err);
+  }
 }
 
 async function requestNotificationPermission() {
@@ -579,6 +612,10 @@ function showLobby() {
     if (startScreen) startScreen.classList.remove('active');
     if (battleLobby) battleLobby.classList.add('active');
     renderModeSelector();
+    
+    // Automatische Initialisierung der Battle-Verbindung für Status-Anzeige
+    BattleManager.init(API_BASE_URL, state.playerId, state.playerName);
+    BattleManager.joinBattle('global_lobby', state.playerId);
   } catch {
     console.error('Show lobby failed');
   }
@@ -1386,6 +1423,13 @@ document.addEventListener('DOMContentLoaded', () => {
   addClick('show-leaderboard-btn', showLeaderboard);
   addClick('hide-leaderboard-btn', hideLeaderboard);
   addClick('add-player-btn', handleAddPlayer);
+  addClick('refresh-lobby-btn', () => {
+    if (BattleManager.socket) {
+      BattleManager.socket.disconnect();
+      BattleManager.socket = null;
+    }
+    showLobby();
+  });
   
   // Initialisierung
   updateStartButtonState();
@@ -1441,14 +1485,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const originalText = shareBtn.innerText;
     shareBtn.innerText = 'GENERATING...';
     try {
-      const blob = await APIClient.getShareCard(API_BASE_URL, state.playerId);
+      // Hole aktuelle Achievements für die Share-Card
+      const currentAchievements = state.achievements.map(id => {
+        const a = Object.values(ACHIEV_CONST).find(ac => ac.id === id);
+        return a ? a.name : id;
+      }).slice(-3);
+
+      const blob = await APIClient.getShareCard(API_BASE_URL, state.playerId, currentAchievements);
       const file = new File([blob], 'dfwa_achievement.png', { type: 'image/png' });
+      
+      const shareData = {
+        title: 'ACK ATTACK - SYSTEM_OVERRIDE',
+        text: state.lang === 'de' 
+          ? `System-Status: ${state.score} Punkte erreicht. Achievements: ${currentAchievements.join(', ')}.` 
+          : `System status: ${state.score} points reached. Achievements: ${currentAchievements.join(', ')}.`,
+        url: window.location.origin + window.location.pathname
+      };
+
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({
-          files: [file],
-          title: 'DFWA ACHIEVEMENT',
-          text: `Check out my score: ${state.score} in DFWA!`,
-        });
+        await navigator.share({ ...shareData, files: [file] });
+      } else if (navigator.share) {
+        await navigator.share(shareData);
+        // Fallback für Datei-Download
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'dfwa_achievement.png';
+        a.click();
+        URL.revokeObjectURL(url);
       } else {
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
@@ -1457,8 +1521,8 @@ document.addEventListener('DOMContentLoaded', () => {
         a.click();
         URL.revokeObjectURL(url);
       }
-    } catch {
-      console.error('Sharing failed');
+    } catch (err) {
+      console.error('Sharing failed', err);
     } finally {
       shareBtn.innerText = originalText;
     }

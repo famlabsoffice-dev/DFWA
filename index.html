@@ -130,6 +130,10 @@
       <div id="battle-lobby" class="screen">
         <div class="ui-content-wrapper" style="margin-top: 20vh">
           <h2 style="color: var(--warning); margin-bottom: 20px">BATTLE_OVERRIDE</h2>
+          <div id="lobby-status-container" style="margin-bottom: 20px; font-family: monospace; font-size: 0.7rem; color: var(--cyber-blue); text-align: center;">
+            <span id="lobby-connection-status">LINK_STATUS: OFFLINE</span> | 
+            <span id="lobby-player-count">ACTIVE_USERS: 0</span>
+          </div>
           <input
             type="text"
             id="challenge-code-input"
@@ -138,7 +142,10 @@
             placeholder="ENTER_CHALLENGE_CODE"
           />
           <button class="option-btn battle-btn" id="start-challenge-btn">START_CHALLENGE</button>
-          <button class="option-btn battle-btn" id="live-battle-btn" style="border-color: var(--cyber-blue); color: var(--cyber-blue)">LIVE_BATTLE</button>
+          <div style="display: flex; gap: 10px; width: 100%; max-width: 420px; margin: 0 auto;">
+            <button class="option-btn battle-btn" id="live-battle-btn" style="border-color: var(--cyber-blue); color: var(--cyber-blue); flex: 1;">LIVE_BATTLE</button>
+            <button class="option-btn battle-btn" id="refresh-lobby-btn" style="border-color: var(--neon); color: var(--neon); width: auto; padding: 10px 15px;">⟳</button>
+          </div>
           <button
             class="option-btn"
             id="show-leaderboard-btn"
