@@ -151,6 +151,6 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 - [x] PWA-Funktionalität validiert: Manifest-Dateien konsolidiert, Icons korrigiert und Service Worker Caching-Strategien optimiert. Offline-Support sichergestellt.
 - [x] Finalisierung des Dystopie-Quiz-Contents und der Kategorien: Alle 137 verbliebenen System-Abfragen durch reale, hochwertige dystopische Fragen ersetzt. 100% Content-Abdeckung erreicht.
 - [x] Testen der Leaderboard-Integration und der Social-Sharing-Features: API-Endpunkte validiert, HMAC-Authentifizierung für Leaderboard-Updates verifiziert und Social-Sharing-Logik mit robustem Fallback (Clipboard) optimiert. UIManager um Toast-Benachrichtigungen erweitert.
-- [ ] Vorbereitung für das Deployment der PWA.
+- [x] Vorbereitung für das Deployment der PWA: Finaler Build generiert, PWA-Metadaten in index.html bereinigt, manifest.webmanifest als Standard gesetzt und Assets für GitHub Pages synchronisiert. Projekt bereit für Übergabe.
 
 **Zuletzt aktualisiert:** 07.07.2026 - 16:15 GMT+2
