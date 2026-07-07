@@ -1,88 +1,30 @@
-# DFWA - Project Status (manus.read)
+# DFWA - Core Status (manus.read)
 
 ## Zielsetzung
-Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
+Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live-Betrieb.
 
-## Status Quo (Stand 07.07.2026 - 19:00 GMT+2)
+## Aktueller Fokus (Stand 07.07.2026 - 19:15 GMT+2)
 
-### 1. System-Integrität & Security [OPTIMIERT]
-- **Status:** HMAC-Validierung und Client-Sicherheit stabilisiert.
-- **Lösung:** 
-  - `app.js`: Veralteter `/config/secret` Fetch entfernt. Nutzung von `LOCAL_ONLY_UNTRUSTED` für konsistente clientseitige Signaturen.
-  - `server/server.js`: Validierung des Blitz-Modus verifiziert.
+### 1. PWA & Mobile Integrity [STABIL]
+- **Viewport:** Nutzung von `100dvh` und `safe-area-insets` für volle Abdeckung auf allen Mobilgeräten (Notch-Support).
+- **Caching:** Workbox 7.0 Service Worker aktiv. `CacheFirst` für Medien, `StaleWhileRevalidate` für Core-Logik.
+- **Assets:** Alle Icons (192/512/Maskable) und Splash-Screens validiert und lokal vorhanden.
 
-### 2. Code-Bereinigung [ABGESCHLOSSEN]
-- **Status:** Redundante Altlasten entfernt.
-- **Lösung:** 
-  - `scripts/constants.js`: Inkonsistentes `GAME_MODES` Objekt gelöscht.
+### 2. Gameplay & UX [OPTIMIERT]
+- **Performance:** Audio-Handling ohne `cloneNode()`, Throttling für Socket-Syncs (max. 5/s) zur Latenzminimierung.
+- **Visuals:** Cyber-Eye Startbildschirm, Category Realms und situative ACK Emotes integriert.
+- **Mechanics:** Sabotage-System (Timer Drain) und visuelle Glitch-Effekte bei Angriffen aktiv.
 
-### 3. Live-System & Deployment [VALIDIERT]
-- **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
-- **Lösung:** Automatischer Sync des Vite-Builds in den Root implementiert.
-
-### 4. Multiplayer & Latenz [IMPLEMENTIERT]
-- **Status:** Echtzeit-Monitoring und optimierter State-Sync.
-- **Lösung:** 
-  - Visual Latency Dashboard integriert (RTT-Messung).
-  - Throttling für Socket-Syncs zur Traffic-Reduktion.
-  - `scripts/battle-manager.js`: `opponent_action` Handler implementiert Glitch-Effekt und rote Score-Hervorhebung bei Fehlern des Gegners.
-
-### 5. PWA & Offline-Funktionalität [OPTIMIERT]
-- **Status:** Service Worker auf Workbox 7.0 umgestellt für robustes Caching.
-- **Lösung:** 
-  - `sw.js`: Implementierung von `CacheFirst` für WebP-Bilder und `StaleWhileRevalidate` für statische Assets.
-  - PWA Hardening: Icons, Metadata und Safe-Area UI optimiert.
-
-### 6. Audio-System & Feedback [REFACTORED]
-- **Status:** Performance-optimiertes Audio-Handling und systemweites Feedback integriert.
-- **Lösung:**
-  - `scripts/audio-manager.js`: Umstellung von `cloneNode()` auf Wiederverwendung des Audio-Objekts.
-  - `app.js`: Audio-Feedback für korrekte/falsche Antworten und Achievements integriert.
-
-### 7. Leaderboard UI & UX [VERBESSERT]
-- **Status:** "Server Room" mit Animationen und funktionaler Filter-Logik ausgestattet.
-- **Lösung:**
-  - `style.css` & `scripts/ui-manager.js`: Staggered-Animationen für Leaderboard-Einträge implementiert.
-  - Direkter Zugang zum Leaderboard vom Startbildschirm aus integriert.
-
-### 8. Achievement System & Web Share API [NEU]
-- **Status:** Achievements können nun direkt über die Web Share API geteilt werden.
-- **Lösung:**
-  - `app.js`: `shareAchievement` Funktion implementiert.
-  - Dynamische Meta Tags & Social Preview für Spieler-Profile.
-
-### 9. Advanced Battle Mechanics: Sabotage [IMPLEMENTIERT]
-- **Status:** Erste Sabotage-Mechanik (Timer Drain) und visuelle Effekte integriert.
-- **Lösung:**
-  - `app.js`: Sabotage-Trigger bei 5er Streaks implementiert.
-  - Visuelle Immersion durch Glitch-Overlays bei Sabotage-Angriffen.
-
-### 10. Mobile UI & Visuals [OPTIMIERT]
-- **Status:** Startbildschirm und Layout für mobile Geräte perfektioniert.
-- **Lösung:**
-  - Umstellung auf `100dvh` und Safe-Area-Handling.
-  - Startbildschirm-Visual auf hochauflösendes Cyber-Eye aktualisiert.
-  - Category Realm Visuals und ACK Emotes Integration für situatives Feedback.
+### 3. Infrastruktur [VALIDIERT]
+- **Security:** HMAC-Validierung via `LOCAL_ONLY_UNTRUSTED` stabilisiert.
+- **Deployment:** [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/) ist die primäre Live-Instanz.
 
 ---
 
-## Historie & Bug-Analyse (07.07.2026)
+## Nächste Schritte
+- [ ] Implementierung "Survival Mode" (degressive Zeit).
+- [ ] Erweiterung der Sabotage-Effekte (Input Scramble).
+- [ ] Monitoring der Live-Latenz via Dashboard.
 
-### Kritische Fixes (Alle Erledigt)
-- [x] **Bug #1:** Doppelte `const`-Deklaration von `modalContent` in `endGame()`.
-- [x] **Bug #2:** `await` außerhalb einer `async`-Funktion im `/share/:playerId` Callback.
-- [x] **Bug #3:** Entfernung des `/config/secret` Fetch (HMAC Fix).
-- [x] **Bug #4:** `blitz` Modus in `validModes` ergänzt.
-- [x] **Bug #5:** Totes `GAME_MODES`-Objekt entfernt.
-
----
-
-## Zukünftige Schritte (Aufgabenliste)
-- [ ] **New Game Mode "Survival":** Entwicklung eines Modus mit degressiver Zeit pro korrekter Antwort.
-- [ ] **Advanced Sabotage:** Integration von "Screen Flip" oder "Input Scramble" Effekten.
-- [ ] **Automated CI/CD:** Einrichtung von GitHub Actions für automatische Builds.
-- [ ] **Analytics Dashboard:** Admin-Schnittstelle zur Visualisierung von Spieler-Metriken.
-- [ ] **Asset CDN:** Migration der schweren Bild-Assets auf ein dediziertes CDN.
-
-**Status:** System stabilisiert, alle kritischen Bugs behoben. Bereit für Feature-Expansion.
-**Zuletzt aktualisiert:** 07.07.2026 - 19:00 GMT+2
+**Status:** PWA Ready. Mobile Gameplay validiert.
+**Zuletzt aktualisiert:** 07.07.2026 - 19:15 GMT+2
