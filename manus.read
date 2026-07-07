@@ -39,6 +39,7 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 - [ ] **Automated CI/CD:** Einrichtung von GitHub Actions für automatische Builds und Tests bei jedem Push.
 - [ ] **Analytics Dashboard:** Implementierung einer Admin-Schnittstelle zur Visualisierung von Spieler-Metriken (Retention, Average Score).
 - [ ] **Asset CDN:** Migration der schweren Bild-Assets auf ein dediziertes CDN zur Reduktion der Initial Load Time.
+- [x] **Startbildschirm-Update:** Altes "Ack Core Brain" Bild gelöscht und durch neues, hochauflösendes Cyber-Eye Visual (Upload) ersetzt.
 
 ---
 
