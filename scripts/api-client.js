@@ -128,4 +128,32 @@ export const APIClient = {
     if (!res.ok) throw new Error('SHARE_CARD_FAILED');
     return await res.blob();
   },
+  async syncProfile(baseUrl, profileData, secret) {
+    try {
+      const msg = JSON.stringify({
+        playerId: profileData.playerId,
+        ts: Date.now(),
+        data: profileData
+      });
+      const auth = await this.generateHMAC(msg, secret);
+      const res = await fetch(`${baseUrl}/api/profile/sync`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...profileData, auth, ts: Date.now() }),
+      });
+      return res.ok;
+    } catch (e) {
+      console.warn('Profile sync failed');
+      return false;
+    }
+  },
+  async fetchProfile(baseUrl, playerId) {
+    try {
+      const res = await fetch(`${baseUrl}/api/profile/${playerId}`);
+      if (res.ok) return await res.json();
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
 };

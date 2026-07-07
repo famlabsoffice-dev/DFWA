@@ -1,5 +1,5 @@
 import { APIClient } from './scripts/api-client.js';
-import { UIManager } from './scripts/ui-manager.js';
+import { UIManager } from './ui-manager.js';
 import { BattleManager } from './scripts/battle-manager.js';
 import { AudioManager } from './scripts/audio-manager.js';
 import {
@@ -335,6 +335,30 @@ async function validateStorage() {
         }
       }
     }
+
+    // Server Sync Attempt
+    if (state.playerId && state.playerId !== '0000') {
+      const remoteProfile = await APIClient.fetchProfile(API_BASE_URL, state.playerId);
+      if (remoteProfile) {
+        if (remoteProfile.best > state.best) {
+          state.best = remoteProfile.best;
+          saveSecure('dfwa_best', state.best);
+        }
+        if (remoteProfile.wins > state.wins) {
+          state.wins = remoteProfile.wins;
+          saveSecure('dfwa_wins', state.wins);
+        }
+        if (remoteProfile.losses > state.losses) {
+          state.losses = remoteProfile.losses;
+          saveSecure('dfwa_losses', state.losses);
+        }
+        if (remoteProfile.achievements && remoteProfile.achievements.length > state.achievements.length) {
+          state.achievements = remoteProfile.achievements;
+          saveSecure(STORAGE_KEYS.ACHIEVEMENTS, JSON.stringify(state.achievements));
+        }
+      }
+    }
+
     const highScoreEl = document.getElementById('high-score');
     if (highScoreEl) highScoreEl.innerText = state.best;
     const battleStatsEl = document.getElementById('battle-stats');
@@ -342,6 +366,19 @@ async function validateStorage() {
   } catch {
     console.error('Storage validation process failed');
   }
+}
+
+async function syncProfileToServer() {
+  if (!state.playerId || state.playerId === '0000') return;
+  const profileData = {
+    playerId: state.playerId,
+    name: state.playerName,
+    best: state.best,
+    wins: state.wins,
+    losses: state.losses,
+    achievements: state.achievements
+  };
+  await APIClient.syncProfile(API_BASE_URL, profileData, state.systemSecret);
 }
 
 function detectLanguage() {
@@ -485,15 +522,13 @@ async function shareAchievement(achievement) {
 
 async function requestNotificationPermission() {
   if (!('Notification' in window)) return;
-  if (Notification.permission === 'default') {
+  if (Notification.permission !== 'granted' && Notification.permission !== 'denied') {
     await Notification.requestPermission();
   }
 }
 
 function sendLocalNotification(title, body) {
-  if (!('Notification' in window) || Notification.permission !== 'granted') return;
-
-  if ('serviceWorker' in navigator) {
+  if (Notification.permission === 'granted') {
     navigator.serviceWorker.ready.then((registration) => {
       registration.showNotification(title, {
         body: body,
@@ -912,64 +947,35 @@ async function initGame(createChallenge, isRestoring = false) {
       }
     }
   } catch {
-    console.error('Log client error failed');
-  }
-}
-
-function renderQuestion(isRestoring = false) {
-  try {
-    if (state.lives <= 0) return endGame();
-    const q = state.questions[state.current];
-    if (!q) return endGame();
-
-    const catDisplay = document.getElementById('cat-display');
-    if (catDisplay) catDisplay.innerText = `[${q.cat.toUpperCase()}]`;
-    const questionText = document.getElementById('question-text');
-    if (questionText) questionText.innerText = q.text[state.lang];
-
-    const container = document.getElementById('options-container');
-    if (container) {
-      container.innerHTML = '';
-      q.options[state.lang].forEach((opt, idx) => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerText = opt;
-        btn.addEventListener('click', () => {
-          AudioManager.play('click');
-          checkAnswer(idx === q.correct);
-        });
-        container.appendChild(btn);
-      });
-    }
-
-    if (!isRestoring) {
-      const config = getGameModeConfig(state.mode);
-      state.timer = config.initialTimer;
-      state.timerEndTimestamp = Date.now() + state.timer * 1000;
-    }
-    startTimer();
-  } catch {
-    console.error('Next question failed');
-    endGame();
+    console.error('Init game failed');
   }
 }
 
 function startTimer() {
   try {
     clearInterval(state.timerInterval);
-    const bar = document.getElementById('timer-bar');
-    const timerText = document.getElementById('timer-text');
-
+    const bar = document.getElementById('timeline-bar');
+    if (!bar) return;
+    
+    state.timerEndTimestamp = Date.now() + state.timer * 1000;
+    
     state.timerInterval = setInterval(() => {
       if (state.isPaused) return;
-
+      
       const now = Date.now();
-      const remaining = Math.max(0, (state.timerEndTimestamp - now) / 1000);
-      state.timer = remaining;
-
+      const remaining = (state.timerEndTimestamp - now) / 1000;
+      state.timer = Math.max(0, remaining);
+      
       const config = getGameModeConfig(state.mode);
-      if (bar) bar.style.width = `${(state.timer / config.initialTimer) * 100}%`;
-      if (timerText) timerText.innerText = `${Math.ceil(state.timer)}S`;
+      const total = config.initialTimer;
+      const pct = (state.timer / total) * 100;
+      bar.style.width = pct + '%';
+
+      if (state.timer <= 3) {
+        bar.style.background = 'var(--error)';
+      } else {
+        bar.style.background = 'var(--neon)';
+      }
 
       if (state.timer <= 0) {
         clearInterval(state.timerInterval);
@@ -977,127 +983,58 @@ function startTimer() {
       }
     }, 50);
   } catch {
-    console.error('Update high score failed');
+    console.error('Start timer failed');
   }
 }
 
-async function updateLeaderboard() {
-  if (state.isSubmitting) return;
-  state.isSubmitting = true;
+function renderQuestion(isRestoring = false) {
   try {
-    const accuracy =
-      state.questionCount > 0 ? Math.round((state.correctAnswers / state.questionCount) * 100) : 0;
-    const payload = {
-      playerId: state.playerId,
-      playerName: state.playerName,
-      score: state.score,
-      wins: state.wins,
-      losses: state.losses,
-      variant: state.variant,
-      accuracy: accuracy,
-      mode: state.mode,
-    };
-    await APIClient.updateLeaderboard(API_BASE_URL, payload, state.systemSecret);
-    console.log('Score submitted');
-  } catch {
-    console.warn('Leaderboard update failed (offline mode)');
-  } finally {
-    state.isSubmitting = false;
-  }
-}
-
-async function endGame() {
-  try {
-    clearSession();
-    clearInterval(state.timerInterval);
-    const overlay = document.getElementById('modal-overlay');
-    const text = document.getElementById('modal-text');
-    const title = document.getElementById('modal-title');
-
-    const isNewBest = state.score > state.best;
-    const livesDisplay = document.getElementById('lives-display');
-    if (livesDisplay) livesDisplay.innerText = state.lives;
-
-    if (isNewBest) {
-      state.best = state.score;
-      await saveSecure('dfwa_best', state.best);
-      const highScoreEl = document.getElementById('high-score');
-      if (highScoreEl) highScoreEl.innerText = state.best;
+    if (!isRestoring) state.current++;
+    
+    if (state.current >= state.questions.length) {
+      endGame();
+      return;
     }
 
-    if (overlay) overlay.style.display = 'flex';
+    const q = state.questions[state.current];
+    const qBox = document.getElementById('question-box');
+    if (qBox) qBox.innerText = q.text[state.lang] || q.text['de'];
 
-    if (state.isCreatingChallenge) {
-      if (title) title.innerText = 'CHALLENGE_CREATED';
-      if (text) text.innerText = 'GENERATING...';
-      const modalContent = document.querySelector('.modal-content');
-      if (modalContent) modalContent.style.backgroundImage = "url('./assets/images/ack_override_alien.webp')";
-      generateChallengeCode().then((code) => {
-        if (text) text.innerText = code;
+    const optContainer = document.getElementById('options-container');
+    if (optContainer) {
+      optContainer.innerHTML = '';
+      const opts = q.options[state.lang] || q.options['de'];
+      opts.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(idx === q.correct);
+        optContainer.appendChild(btn);
       });
-    } else if (state.isChallenge) {
-      const win = state.score > state.opponentScore;
-      const modalContent = document.querySelector('.modal-content');
-      if (modalContent) {
-        modalContent.style.backgroundImage = win ? "url('./assets/images/ack_player_win_angry.webp')" : "url('./assets/images/ack_victory.webp')";
-        modalContent.style.backgroundSize = 'cover';
-        modalContent.style.backgroundPosition = 'center';
-      }
-      if (title) {
-        title.style.color = win ? 'var(--neon)' : 'var(--error)';
-        title.innerText = win ? 'VICTORY' : 'DEFEAT';
-      }
-      if (text) text.innerText = `YOUR_SCORE: ${state.score}\nOPPONENT: ${state.opponentScore}`;
-      if (win) {
-        state.wins++;
-        await saveSecure('dfwa_wins', state.wins);
-      } else {
-        state.losses++;
-        await saveSecure('dfwa_losses', state.losses);
-      }
-      const battleStatsEl = document.getElementById('battle-stats');
-      if (battleStatsEl) battleStatsEl.innerText = `W:${state.wins} / L:${state.losses}`;
-      checkAchievements();
-    } else {
-      if (title) {
-        title.style.color = isNewBest ? 'var(--warning)' : 'var(--neon)';
-        title.innerText = isNewBest ? 'NEW_PEAK_DATA' : 'PROTOCOL_COMPLETE';
-      }
-      const accuracy =
-        state.questionCount > 0
-          ? Math.round((state.correctAnswers / state.questionCount) * 100)
-          : 0;
-      if (text)
-        text.innerText = `FINAL_SCORE: ${state.score}\nPEAK_DATA: ${state.best}\nACCURACY: ${accuracy}%`;
-      
-      const shareBtn = document.getElementById('share-btn');
-      if (shareBtn) shareBtn.style.display = 'block';
     }
-
-    await updateLeaderboard();
+    
+    state.isProcessing = false;
+    const config = getGameModeConfig(state.mode);
+    state.timer = config.initialTimer;
+    startTimer();
   } catch {
-    console.error('End game failed');
+    console.error('Render question failed');
   }
 }
 
 function getComment(type) {
   try {
-    let pool = state.comments[state.lang][type];
-    if (state.variant === 'A') {
-      pool = pool.filter((c) => c.includes('?') || c.length > 40);
-    } else {
-      pool = pool.filter((c) => !c.includes('?') && c.length <= 40);
-    }
-    if (pool.length === 0) pool = state.comments[state.lang][type];
-
-    let available = pool.filter((c) => !state.usedComments[type].includes(c));
-    if (available.length === 0) {
-      state.usedComments[type] = [];
-      available = pool;
-    }
-    let choice = available[Math.floor(Math.random() * available.length)];
-    state.usedComments[type].push(choice);
-    return choice;
+    const list = state.comments[type] || [];
+    if (list.length === 0) return type === 'correct' ? 'CORRECT' : 'INCORRECT';
+    
+    const unused = list.filter(c => !state.usedComments[type].includes(c));
+    const finalPool = unused.length > 0 ? unused : list;
+    
+    const comment = finalPool[Math.floor(Math.random() * finalPool.length)];
+    state.usedComments[type].push(comment);
+    if (state.usedComments[type].length > 5) state.usedComments[type].shift();
+    
+    return comment[state.lang] || comment['de'];
   } catch {
     console.error('Get random comment failed');
     return type === 'correct' ? 'CORRECT' : 'INCORRECT';
@@ -1212,397 +1149,96 @@ function checkAnswer(correct) {
         if (gameScreen) gameScreen.classList.remove('active');
         endGame();
       } else {
-        state.current++;
         renderQuestion();
       }
-    }, 2200);
-  } catch {
-    console.error('Handle answer failed');
-    state.isProcessing = false;
-    endGame();
-  }
-}
-
-setInterval(() => {
-  try {
-    const startScreen = document.getElementById('start-screen');
-    if (startScreen && startScreen.classList.contains('active')) {
-      const eye = document.getElementById('core-eye');
-      if (eye) {
-        eye.src = './assets/images/ack_splash_void.webp';
-        setTimeout(() => {
-          if (eye) eye.src = './assets/images/ack_core_brain.webp';
-        }, 150);
-      }
-    }
-  } catch {
-  }
-}, 4000);
-
-document.addEventListener('keydown', (e) => {
-  try {
-    if (state.isPaused) {
-      if (!['Enter', ' ', 'Tab', 'Escape'].includes(e.key)) {
-        state.cheatsAttempted = true;
-        return;
-      }
-    }
-    if (state.isProcessing) return;
-    const gameScreen = document.getElementById('game-screen');
-    if (gameScreen && !gameScreen.classList.contains('active')) return;
-    const map = { 1: 0, 2: 1, 3: 2, 4: 3 };
-    if (map[e.key] !== undefined) {
-      const container = document.getElementById('options-container');
-      if (container) {
-        const btns = container.querySelectorAll('.option-btn');
-        if (btns[map[e.key]]) btns[map[e.key]].click();
-      }
-    }
-  } catch {
-  }
-});
-
-document.addEventListener('contextmenu', (e) => {
-  try {
-    if (state.isPaused) {
-      e.preventDefault();
-      state.cheatsAttempted = true;
-    }
-  } catch {
-  }
-});
-
-async function fetchLeaderboard() {
-  try {
-    const res = await fetch(`${API_BASE_URL}/leaderboard/top?limit=10`);
-    if (res.ok) {
-      const data = await res.json();
-      displayLeaderboard(data);
-    }
-  } catch {
-    console.log('Leaderboard fetch failed');
-  }
-}
-
-function displayLeaderboard(scores) {
-  try {
-    let lb =
-      '<div style="font-size: 0.8rem; text-align: left; margin-top: 10px; max-height: 200px; overflow-y: auto;">';
-    scores.forEach((entry, idx) => {
-      lb += `<div>${idx + 1}. ${entry.playerName}: ${entry.score}pts</div>`;
-    });
-    lb += '</div>';
-    const text = document.getElementById('modal-text');
-    if (text) text.innerHTML += lb;
-  } catch {
-  }
-}
-
-function closeSystem() {
-  try {
-    const modalOverlay = document.getElementById('modal-overlay');
-    const modalTitle = document.getElementById('modal-title');
-    const gameScreen = document.getElementById('game-screen');
-    const startScreen = document.getElementById('start-screen');
-    const shareBtn = document.getElementById('share-btn');
-
-    if (modalOverlay) modalOverlay.style.display = 'none';
-    if (modalTitle) modalTitle.style.color = 'var(--warning)';
-    if (gameScreen) gameScreen.classList.remove('active');
-    if (startScreen) startScreen.classList.add('active');
-    if (shareBtn) shareBtn.style.display = 'none';
-
-    state.isChallenge = false;
-    hideLobby();
-    state.isCreatingChallenge = false;
-    state.streak = 0;
-    state.streakMax = 0;
-    state.correctAnswers = 0;
-    state.lives = 3;
-
-    const livesDisplay = document.getElementById('lives-display');
-    const highScore = document.getElementById('high-score');
-    const hudScore = document.getElementById('hud-score');
-    const hudStreak = document.getElementById('hud-streak');
-    if (livesDisplay) livesDisplay.innerText = state.lives;
-    if (highScore) highScore.innerText = state.best;
-    if (hudScore) hudScore.innerText = '0_PTS';
-    if (hudStreak) hudStreak.style.display = 'none';
-    fetchLeaderboard();
-  } catch {
-    console.error('Close system failed');
-  }
-}
-
-let resumeInProgress = false;
-let visibilityTimeout = null;
-
-document.addEventListener('visibilitychange', () => {
-  try {
-    if (visibilityTimeout) clearTimeout(visibilityTimeout);
-
-    visibilityTimeout = setTimeout(() => {
-      if (document.hidden) {
-        const gameScreen = document.getElementById('game-screen');
-        if (gameScreen && gameScreen.classList.contains('active') && !state.isPaused) {
-          pauseProtocol();
-        }
-        saveSession();
-      } else {
-        if (resumeInProgress) return;
-        resumeInProgress = true;
-        const gameScreen = document.getElementById('game-screen');
-        if (
-          state.sessionActive &&
-          !state.isPaused &&
-          gameScreen &&
-          gameScreen.classList.contains('active')
-        ) {
-          if (!state.timerInterval) startTimer();
-        }
-        setTimeout(() => {
-          resumeInProgress = false;
-        }, 500);
-      }
-    }, 250);
-  } catch {
-  }
-});
-
-window.addEventListener('beforeunload', saveSession);
-window.addEventListener('load', restoreSession);
-
-if ('serviceWorker' in navigator) {
-}
-
-let currentLeaderboardMode = 'classic';
-
-async function loadLeaderboardData(mode) {
-  const entriesDiv = document.getElementById('leaderboard-entries');
-  if (entriesDiv)
-    entriesDiv.innerHTML = '<div style="padding:20px;text-align:center;">CONNECTING...</div>';
-
-  try {
-    const res = await fetch(`${API_BASE_URL}/api/leaderboard?limit=20&mode=${mode}`);
-    const data = await res.json();
-    
-    UIManager.renderLeaderboard(entriesDiv, data.entries || data);
-
-    if (data.season) {
-      const dashboard = document.getElementById('season-dashboard');
-      if (dashboard) dashboard.style.display = 'block';
-      
-      const seasonNum = document.getElementById('season-number');
-      if (seasonNum) seasonNum.innerText = data.season.season_number;
-
-      updateSeasonCountdown(data.season.last_reset_ts);
-    }
-  } catch {
-    if (entriesDiv)
-      entriesDiv.innerHTML =
-        '<div style="padding:20px;text-align:center;color:var(--error);">SERVER_UNAVAILABLE</div>';
-  }
-}
-
-async function showLeaderboard() {
-  try {
-    UIManager.toggleClass('battle-lobby', 'active', false);
-    UIManager.toggleClass('leaderboard-screen', 'active', true);
-
-    const filters = document.querySelectorAll('#leaderboard-filters .mode-btn');
-    filters.forEach((btn) => {
-      btn.classList.toggle('active', btn.dataset.mode === 'classic');
-    });
-    currentLeaderboardMode = 'classic';
-
-    await loadLeaderboardData('classic');
-  } catch {
-    console.error('Show results failed');
-  }
-}
-
-function hideLeaderboard() {
-  try {
-    const screen = document.getElementById('leaderboard-screen');
-    const lobby = document.getElementById('battle-lobby');
-    if (screen) screen.classList.remove('active');
-    if (lobby) lobby.classList.add('active');
-    clearInterval(window._seasonInterval);
-  } catch {
-  }
-}
-
-function updateSeasonCountdown(lastResetTs) {
-  clearInterval(window._seasonInterval);
-  const countdownEl = document.getElementById('season-countdown');
-  const progressEl = document.getElementById('season-progress-bar');
-  if (!countdownEl) return;
-
-  const duration = 7 * 24 * 60 * 60 * 1000;
-  const end = new Date(lastResetTs).getTime() + duration;
-
-  window._seasonInterval = setInterval(() => {
-    const now = Date.now();
-    const diff = end - now;
-
-    if (diff <= 0) {
-      countdownEl.innerText = 'RESET_PENDING';
-      if (progressEl) progressEl.style.width = '100%';
-      clearInterval(window._seasonInterval);
-      return;
-    }
-
-    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-    countdownEl.innerText = `${d}D ${h}H ${m}M ${s}S`;
-    if (progressEl) {
-      const percent = 100 - (diff / duration) * 100;
-      progressEl.style.width = `${percent}%`;
-    }
-  }, 1000);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const addClick = (id, fn) => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('click', fn);
-  };
-
-  addClick('start-btn', () => initGame(false));
-  addClick('resume-btn', resumeProtocol);
-  addClick('pause-btn', pauseProtocol);
-  addClick('show-lobby-btn', showLobby);
-  addClick('hide-lobby-btn', hideLobby);
-  addClick('show-leaderboard-btn', showLeaderboard);
-  addClick('hide-leaderboard-btn', hideLeaderboard);
-  addClick('add-player-btn', handleAddPlayer);
-  addClick('refresh-lobby-btn', () => {
-    if (BattleManager.socket) {
-      BattleManager.socket.disconnect();
-      BattleManager.socket = null;
-    }
-    showLobby();
-  });
-  
-  // Initialisierung
-  updateStartButtonState();
-  renderCategorySelector();
-  
-  const nameInput = document.getElementById('player-name');
-  if (nameInput) {
-    nameInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') handleAddPlayer();
-    });
-  }
-  updatePlayerListUI();
-  updateStartButtonState();
-
-  if ('performance' in window && 'PerformanceObserver' in window) {
-    try {
-      const observer = new PerformanceObserver((list) => {
-        list.getEntries().forEach((entry) => {
-          if (entry.name === 'first-contentful-paint') {
-            APIClient.reportMetric(API_BASE_URL, 'FCP', entry.startTime);
-          }
-        });
-      });
-      observer.observe({ type: 'paint', buffered: true });
-
-      const lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        APIClient.reportMetric(API_BASE_URL, 'LCP', lastEntry.startTime);
-      });
-      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
-    } catch {
-    }
-  }
-
-  const filterBtns = document.querySelectorAll('#leaderboard-filters .mode-btn');
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', async () => {
-      const mode = btn.dataset.mode;
-      if (mode === currentLeaderboardMode) return;
-
-      filterBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentLeaderboardMode = mode;
-      await loadLeaderboardData(mode);
-    });
-  });
-  addClick('start-challenge-btn', startChallenge);
-  addClick('close-system-btn', closeSystem);
-
-  addClick('share-btn', async () => {
-    const shareBtn = document.getElementById('share-btn');
-    const originalText = shareBtn.innerText;
-    shareBtn.innerText = 'GENERATING...';
-    try {
-      // Hole aktuelle Achievements für die Share-Card
-      const currentAchievements = state.achievements.map(id => {
-        const a = Object.values(ACHIEV_CONST).find(ac => ac.id === id);
-        return a ? a.name : id;
-      }).slice(-3);
-
-      const blob = await APIClient.getShareCard(API_BASE_URL, state.playerId, currentAchievements);
-      const file = new File([blob], 'dfwa_achievement.png', { type: 'image/png' });
-      
-      const shareData = {
-        title: 'ACK ATTACK - SYSTEM_OVERRIDE',
-        text: state.lang === 'de' 
-          ? `System-Status: ${state.score} Punkte erreicht. Achievements: ${currentAchievements.join(', ')}.` 
-          : `System status: ${state.score} points reached. Achievements: ${currentAchievements.join(', ')}.`,
-        url: window.location.origin + window.location.pathname
-      };
-
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        await navigator.share({ ...shareData, files: [file] });
-      } else if (navigator.share) {
-        await navigator.share(shareData);
-        // Fallback für Datei-Download
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'dfwa_achievement.png';
-        a.click();
-        URL.revokeObjectURL(url);
-      } else {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'dfwa_achievement.png';
-        a.click();
-        URL.revokeObjectURL(url);
-      }
-    } catch (err) {
-      console.error('Sharing failed', err);
-    } finally {
-      shareBtn.innerText = originalText;
-    }
-  });
-
-  addClick('live-battle-btn', async () => {
-    UIManager.showModal('LIVE_BATTLE', 'CONNECTING_TO_BATTLE_SYNC...', 'var(--cyber-blue)');
-    BattleManager.init(API_BASE_URL, state.playerId, state.playerName);
-    const battleId = 'global_lobby';
-    BattleManager.joinBattle(battleId, state.playerId);
-    
-    setTimeout(async () => {
-      state.isChallenge = true;
-      state.opponentScore = 0;
-      const modal = document.getElementById('modal-overlay');
-      if (modal) modal.style.display = 'none';
-      await initGame(false);
     }, 1500);
-  });
-  requestNotificationPermission();
-});
+  } catch {
+    console.error('Check answer failed');
+  }
+}
 
-window.__STATE__ = state;
-window.__END_GAME__ = endGame;
+async function endGame() {
+  try {
+    state.sessionActive = false;
+    clearInterval(state.timerInterval);
+    
+    if (state.score > state.best) {
+      state.best = state.score;
+      saveSecure('dfwa_best', state.best);
+      syncProfileToServer();
+      syncLeaderboard();
+    }
+    
+    const res = await generateChallengeCode();
+    UIManager.showModal(
+      state.lang === 'de' ? 'SYSTEM_ABSCHLUSS' : 'SYSTEM_TERMINATED',
+      (state.lang === 'de' ? 'DEIN_SCORE: ' : 'YOUR_SCORE: ') + state.score + 
+      '<br><br>' + (state.lang === 'de' ? 'CHALLENGE_CODE:' : 'CHALLENGE_CODE:') + 
+      '<br><input type="text" class="cyber-input" value="' + res + '" readonly style="font-size: 0.6rem;">',
+      'var(--warning)'
+    );
+    
+    const shareBtn = document.createElement('button');
+    shareBtn.className = 'option-btn start-btn';
+    shareBtn.style.marginTop = '15px';
+    shareBtn.innerText = state.lang === 'de' ? 'ERGEBNIS_TEILEN' : 'SHARE_RESULT';
+    shareBtn.onclick = () => shareResult(res);
+    
+    const modalContent = document.getElementById('modal-content');
+    if (modalContent) modalContent.appendChild(shareBtn);
+    
+    clearSession();
+    updateUIForLanguage();
+  } catch {
+    console.error('End game failed');
+  }
+}
 
-window.generateChallengeCode = generateChallengeCode;
-// Triggering deployment fix
+async function shareResult(challengeCode) {
+  try {
+    const text = state.lang === 'de' 
+      ? `Ich habe ${state.score} Punkte in ACK ATTACK erreicht! Kannst du mich schlagen? Code: ${challengeCode}` 
+      : `I scored ${state.score} points in ACK ATTACK! Can you beat me? Code: ${challengeCode}`;
+    
+    if (navigator.share) {
+      await navigator.share({
+        title: 'ACK ATTACK SCORE',
+        text: text,
+        url: window.location.origin + window.location.pathname
+      });
+    } else {
+      await navigator.clipboard.writeText(text);
+      alert(state.lang === 'de' ? 'In Zwischenablage kopiert!' : 'Copied to clipboard!');
+    }
+  } catch (err) {
+    console.error('Sharing failed', err);
+  }
+}
+
+async function syncLeaderboard() {
+  try {
+    await APIClient.updateLeaderboard(API_BASE_URL, {
+      playerId: state.playerId,
+      playerName: state.playerName,
+      score: state.score,
+      wins: state.wins,
+      losses: state.losses,
+      mode: state.mode
+    }, state.systemSecret);
+  } catch {
+    console.error('Sync leaderboard failed');
+  }
+}
+
+// Initialisierung
+document.getElementById('start-btn')?.addEventListener('click', () => initGame(false));
+document.getElementById('add-player-btn')?.addEventListener('click', handleAddPlayer);
+document.getElementById('pause-btn')?.addEventListener('click', pauseProtocol);
+document.getElementById('resume-btn')?.addEventListener('click', resumeProtocol);
+document.getElementById('battle-btn')?.addEventListener('click', showLobby);
+document.getElementById('back-to-menu')?.addEventListener('click', hideLobby);
+
+renderCategorySelector();
+updatePlayerListUI();
+updateStartButtonState();
+restoreSession();
