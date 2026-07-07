@@ -16,10 +16,10 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 - **Mechanics:** Sabotage-System (Timer Drain) und visuelle Glitch-Effekte bei Angriffen aktiv.
 
 ### 3. Button-Handling & Interaktion [IN ARBEIT]
-- **Real-Time Feedback:** Implementierung von Scale-Effekten und haptischem Feedback gestartet.
-- **Event-Listener:** Umstellung von `click` auf `pointerdown` zur Latenzminimierung eingeleitet.
-- **Fehlerbehebung:** ID-Mismatches (`battle-btn` vs `show-lobby-btn`) identifiziert und in Korrektur.
-- **Status:** Schritt 1 (ID-Korrektur & Event-Typ Wechsel) wird ausgeführt.
+- **Real-Time Feedback:** Scale-Effekte für `pointerdown` und `active` State in CSS optimiert.
+- **Event-Listener:** Umstellung auf `pointerdown` abgeschlossen (Schritt 1).
+- **Fehlerbehebung:** ID-Mismatches behoben; Leaderboard-Navigation in `app.js` integriert.
+- **Status:** Schritt 2 (Visuelles Feedback & CSS-Optimierung) wird ausgeführt.
 
 ### 4. Infrastruktur [VALIDIERT]
 - **Security:** HMAC-Validierung via `LOCAL_ONLY_UNTRUSTED` stabilisiert.
@@ -28,10 +28,11 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 ---
 
 ## Nächste Schritte
-- [>] Fix Startbildschirm-Buttons (ID-Mismatches & pointerdown).
+- [x] Fix Startbildschirm-Buttons (ID-Mismatches & pointerdown).
+- [>] Visuelles Feedback für Buttons (Scale & Active-State CSS).
 - [ ] Implementierung "Survival Mode" (degressive Zeit).
 - [ ] Erweiterung der Sabotage-Effekte (Input Scramble).
 - [ ] Monitoring der Live-Latenz via Dashboard.
 
 **Status:** PWA Ready. Mobile Gameplay validiert. Button-Handling Anweisungen integriert.
-**Zuletzt aktualisiert:** 07.07.2026 - 19:35 GMT+2
+**Zuletzt aktualisiert:** 07.07.2026 - 19:45 GMT+2

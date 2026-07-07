@@ -246,8 +246,12 @@ h1 {
   box-shadow: 0 0 30px var(--neon);
   transform: translateY(-2px) scale(1.02);
 }
-.option-btn:active {
-  transform: translateY(1px) scale(0.98);
+.option-btn:active, .option-btn.touch-active {
+  transform: translateY(2px) scale(0.95);
+  background: var(--neon);
+  color: #000;
+  box-shadow: 0 0 40px var(--neon);
+  transition: transform 0.05s ease-out;
 }
 .option-btn:focus-visible,
 .cyber-input:focus-visible,

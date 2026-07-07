@@ -1323,15 +1323,25 @@ async function syncLeaderboard() {
 			e.preventDefault();
 			closeModal();
 		});
-		// Leaderboard Button
-		document.getElementById('start-show-leaderboard-btn')?.addEventListener('pointerdown', (e) => {
-			e.preventDefault();
-			// showLeaderboard Logik hier oder Aufruf
-			const startScreen = document.getElementById('start-screen');
-			const leaderboardScreen = document.getElementById('leaderboard-screen');
-			if (startScreen) startScreen.classList.remove('active');
-			if (leaderboardScreen) leaderboardScreen.classList.add('active');
-		});
+			// Leaderboard Button
+			document.getElementById('start-show-leaderboard-btn')?.addEventListener('pointerdown', (e) => {
+				e.preventDefault();
+				const startScreen = document.getElementById('start-screen');
+				const leaderboardScreen = document.getElementById('leaderboard-screen');
+				if (startScreen) startScreen.classList.remove('active');
+				if (leaderboardScreen) leaderboardScreen.classList.add('active');
+			});
+			
+			// Globales Feedback für alle Buttons
+			document.querySelectorAll('.option-btn').forEach(btn => {
+				btn.addEventListener('pointerdown', () => {
+					btn.classList.add('touch-active');
+					if ('vibrate' in navigator) navigator.vibrate(10);
+				});
+				btn.addEventListener('pointerup', () => btn.classList.remove('touch-active'));
+				btn.addEventListener('pointerleave', () => btn.classList.remove('touch-active'));
+				btn.addEventListener('pointercancel', () => btn.classList.remove('touch-active'));
+			});
 		document.getElementById('hide-leaderboard-btn')?.addEventListener('pointerdown', (e) => {
 			e.preventDefault();
 			const startScreen = document.getElementById('start-screen');
