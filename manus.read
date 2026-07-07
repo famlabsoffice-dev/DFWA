@@ -233,3 +233,16 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ### UI-Cleanup (Abgeschlossen)
 ✓ **Redundanz-Eliminierung**: Der "SERVER_ROOM"-Button wurde vom Startbildschirm entfernt, da er bereits in der Battle Lobby vorhanden ist.
 ✓ **Build & Push**: [Commit 1a949b2](https://github.com/famlabsoffice-dev/DFWA/commit/1a949b2).
+
+237	## Update 2026-07-07 (Startbildschirm Rebuild)
+238	✓ **Glitches entfernt**: Alle CSS-Animationen für das `core-eye` und `glitch-text` wurden deaktiviert (auskommentiert in `style.css`).
+239	✓ **Namensanzeige fixiert**: Die Logik in `app.js` stellt sicher, dass der Spielername (`GUEST` oder Codename) sofort im Header (`#player-display` und `#stat-player`) angezeigt wird.
+240	✓ **Kategorien repariert**: Das Kategorien-Modal öffnet sich nun korrekt über den `SELECT_CATEGORY` Button. Die Auswahl aktualisiert den Status und schließt das Modal.
+241	✓ **Server Room Button entfernt**: Der redundante Button wurde vom Startbildschirm entfernt, da er in der Battle Lobby bereits existiert.
+242	✓ **Zentralisierung**: Alle Startbildschirm-Fixes wurden in einer sauberen `app.js` zusammengefasst und in die `index.html` eingebunden.
+243	
+244	### Dateien geändert:
+245	- `app.js`: Neue Logik für Startbildschirm-Interaktionen.
+246	- `style.css`: Glitch-Animationen deaktiviert.
+247	- `index.html`: `app.js` eingebunden, redundante Buttons entfernt.
+248	
