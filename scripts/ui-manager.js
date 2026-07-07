@@ -27,6 +27,19 @@ export const UIManager = {
     if (textEl) textEl.textContent = text;
   },
 
+  showToast(message, type = 'info') {
+    const toast = document.createElement('div');
+    toast.className = `achievement-toast toast-${type}`;
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.zIndex = '9999';
+    toast.innerText = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  },
+
   renderLeaderboard(entriesDiv, data) {
     if (!entriesDiv) return;
     entriesDiv.replaceChildren();

@@ -1258,22 +1258,27 @@ async function endGame() {
 
 async function shareResult(challengeCode) {
   try {
-    const text = state.lang === 'de' 
-      ? `Ich habe ${state.score} Punkte in ACK ATTACK erreicht! Kannst du mich schlagen? Code: ${challengeCode}` 
-      : `I scored ${state.score} points in ACK ATTACK! Can you beat me? Code: ${challengeCode}`;
+    const shareData = {
+      title: 'ACK ATTACK SCORE',
+      text: state.lang === 'de' 
+        ? `Ich habe ${state.score} Punkte in ACK ATTACK erreicht! Kannst du mich schlagen? Code: ${challengeCode}` 
+        : `I scored ${state.score} points in ACK ATTACK! Can you beat me? Code: ${challengeCode}`,
+      url: window.location.origin + window.location.pathname
+    };
     
-    if (navigator.share) {
-      await navigator.share({
-        title: 'ACK ATTACK SCORE',
-        text: text,
-        url: window.location.origin + window.location.pathname
-      });
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      await navigator.share(shareData);
     } else {
-      await navigator.clipboard.writeText(text);
-      alert(state.lang === 'de' ? 'In Zwischenablage kopiert!' : 'Copied to clipboard!');
+      await navigator.clipboard.writeText(`${shareData.text} ${shareData.url}`);
+      UIManager.showToast(state.lang === 'de' ? 'SYSTEM_SYNC: IN_ZWISCHENABLAGE' : 'SYSTEM_SYNC: COPIED_TO_CLIPBOARD', 'success');
     }
   } catch (err) {
     console.error('Sharing failed', err);
+    // Fallback for failed share
+    const text = state.lang === 'de' 
+      ? `Ich habe ${state.score} Punkte in ACK ATTACK erreicht! Code: ${challengeCode}` 
+      : `I scored ${state.score} points in ACK ATTACK! Code: ${challengeCode}`;
+    await navigator.clipboard.writeText(text);
   }
 }
 
