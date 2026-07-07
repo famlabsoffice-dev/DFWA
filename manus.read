@@ -39,7 +39,7 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 - [ ] **Automated CI/CD:** Einrichtung von GitHub Actions für automatische Builds und Tests bei jedem Push.
 - [ ] **Analytics Dashboard:** Implementierung einer Admin-Schnittstelle zur Visualisierung von Spieler-Metriken (Retention, Average Score).
 - [ ] **Asset CDN:** Migration der schweren Bild-Assets auf ein dediziertes CDN zur Reduktion der Initial Load Time.
-- [x] **Startbildschirm-Update:** Altes "Ack Core Brain" Bild gelöscht und durch neues, hochauflösendes Cyber-Eye Visual (Upload) ersetzt.
+- [x] **Startbildschirm-Update:** Altes "Ack Core Brain" Bild durch neues Cyber-Eye Visual ersetzt. Referenzen in `index.html` auf `ack_cyber_eye.webp` aktualisiert.
 
 ---
 
@@ -90,4 +90,16 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
   - `checkStandaloneMode` Funktion implementiert: Erkennt, ob die App als PWA gestartet wurde, und fügt die CSS-Klasse `.pwa-standalone` zum Body hinzu (ermöglicht spezifisches UI-Styling für den installierten Zustand).
 - **Verifikation:** Standalone-Erkennung deckt sowohl Android (Chrome) als auch iOS (Safari "Add to Home Screen") ab.
 
-**Zuletzt aktualisiert:** 07.07.2026 - 18:00 GMT+2
+**Zuletzt aktualisiert:** 07.07.2026 - 18:15 GMT+2
+
+---
+
+## 24. Visual Update - Start Screen [IMPLEMENTIERT]
+- **Status:** Startbildschirm-Visual auf hochauflösendes Cyber-Eye aktualisiert.
+- **Lösung:**
+  - `assets/images/ack_cyber_eye.webp`: Neues Visual hinzugefügt.
+  - `assets/images/ack_splash_void.webp`: Mit neuem Visual überschrieben (Fallback-Kompatibilität).
+  - `index.html`: Preload-Links und `img#core-eye` Quelle auf `ack_cyber_eye.webp` umgestellt.
+- **Verifikation:** Pfade und Dateiexistenz bestätigt.
+
+**Zuletzt aktualisiert:** 07.07.2026 - 18:15 GMT+2
