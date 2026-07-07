@@ -443,6 +443,26 @@ function setGameMode(mode) {
 
 detectLanguage();
 
+function preloadGameAssets() {
+  const assets = [
+    './assets/images/ack_splash_void.webp',
+    './assets/images/ack_category_realm.webp',
+    './assets/images/ack_hall_of_infamy.webp',
+    './assets/images/ack_core_brain.webp',
+    './assets/images/ack_override_alien.webp',
+    './assets/images/ack_interference_glitch.webp',
+    './assets/images/ack_eye_wink.webp',
+    './assets/images/ack_player_win_angry.webp',
+    './assets/images/ack_eye_skeptical.webp',
+    './assets/images/ack_reaction_set.webp'
+  ];
+  assets.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+preloadGameAssets();
+
 function applyTheme(themeName) {
   state.theme = themeName;
   localStorage.setItem(STORAGE_KEYS.THEME, themeName);

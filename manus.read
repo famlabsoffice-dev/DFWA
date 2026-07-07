@@ -3,7 +3,7 @@
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 07.07.2026 - 14:30 GMT+2)
+## Status Quo (Stand 07.07.2026 - 14:45 GMT+2)
 
 ### 1. Live-System & Deployment [VALIDIERT]
 - **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
@@ -90,6 +90,12 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
   - `scripts/api-client.js`: `syncProfile` und `fetchProfile` Endpunkte für Backend-Synchronisation hinzugefügt.
   - `app.js`: `validateStorage` erweitert, um beim Start Profile vom Server zu laden und lokale Daten zu aktualisieren. `syncProfileToServer` triggert Updates bei neuen Highscores.
 
+### 15. Performance Optimization: Asset Preloading [NEU]
+- **Status:** Ladezeiten für kritische visuelle Assets optimiert.
+- **Lösung:**
+  - `index.html`: `link rel="preload"` für Splash- und Realm-Hintergründe hinzugefügt.
+  - `app.js`: `preloadGameAssets` Funktion implementiert, die alle situativen Emotes und Overlays beim App-Start im Hintergrund lädt, um Verzögerungen im Gameplay zu vermeiden.
+
 ---
 
 ## Anweisungen für die folgende Instanz (Arbeitsanweisungs-Prompt)
@@ -97,15 +103,15 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 > **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
 > 
 > **DEIN AUFTRAG:**
-> Führe eine finale QA-Prüfung aller implementierten visuellen Features (Schritte 11-13) und der Profil-Synchronisation (Schritt 14) durch. Optimiere die Performance des Asset-Ladens (Lazy Loading für Realm-Bilder).
+> Führe eine abschließende Validierung der Multiplayer-Latenz durch. Optimiere das Socket-Handling in `scripts/battle-manager.js`, um unnötigen Traffic bei Sabotage-Events zu reduzieren.
 > 
 > **Zwingende Regeln:**
 > 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
 > 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
 > 
-> **Startpunkt:** Analysiere `app.js` und `style.css` auf Optimierungspotenzial.
+> **Startpunkt:** Analysiere `scripts/battle-manager.js` und den `sabotage` Event-Flow.
 
 ---
 
-**Status:** Alle aktuellen Recovery-Schritte abgeschlossen.
-**Zuletzt aktualisiert:** 07.07.2026 - 14:30 GMT+2
+**Status:** Performance-Optimierung abgeschlossen. Alle Recovery-Ziele erreicht.
+**Zuletzt aktualisiert:** 07.07.2026 - 14:45 GMT+2
