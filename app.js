@@ -1246,7 +1246,6 @@ async function endGame() {
     shareBtn.innerText = state.lang === 'de' ? 'ERGEBNIS_TEILEN' : 'SHARE_RESULT';
     shareBtn.onclick = () => shareResult(res);
     
-    const modalContent = document.getElementById('modal-content');
     if (modalContent) modalContent.appendChild(shareBtn);
     
     clearSession();
