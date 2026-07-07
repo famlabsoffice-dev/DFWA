@@ -1289,15 +1289,56 @@ async function syncLeaderboard() {
   }
 }
 
-	// Initialisierung
-	document.getElementById('start-btn')?.addEventListener('click', () => initGame(false));
-	document.getElementById('add-player-btn')?.addEventListener('click', handleAddPlayer);
-	document.getElementById('pause-btn')?.addEventListener('click', pauseProtocol);
-	document.getElementById('resume-btn')?.addEventListener('click', resumeProtocol);
-	document.getElementById('battle-btn')?.addEventListener('click', showLobby);
-	document.getElementById('back-to-menu')?.addEventListener('click', hideLobby);
-	document.getElementById('category-modal-btn')?.addEventListener('click', showCategoryModal);
-	document.getElementById('close-system-btn')?.addEventListener('click', closeModal);
+		// Initialisierung - Umstellung auf pointerdown für schnellere Reaktion auf Mobilgeräten
+		document.getElementById('start-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			initGame(false);
+		});
+		document.getElementById('add-player-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			handleAddPlayer();
+		});
+		document.getElementById('pause-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			pauseProtocol();
+		});
+		document.getElementById('resume-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			resumeProtocol();
+		});
+		// Korrektur der Button-IDs für Lobby-Steuerung
+		document.getElementById('show-lobby-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			showLobby();
+		});
+		document.getElementById('hide-lobby-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			hideLobby();
+		});
+		document.getElementById('category-modal-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			showCategoryModal();
+		});
+		document.getElementById('close-system-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			closeModal();
+		});
+		// Leaderboard Button
+		document.getElementById('start-show-leaderboard-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			// showLeaderboard Logik hier oder Aufruf
+			const startScreen = document.getElementById('start-screen');
+			const leaderboardScreen = document.getElementById('leaderboard-screen');
+			if (startScreen) startScreen.classList.remove('active');
+			if (leaderboardScreen) leaderboardScreen.classList.add('active');
+		});
+		document.getElementById('hide-leaderboard-btn')?.addEventListener('pointerdown', (e) => {
+			e.preventDefault();
+			const startScreen = document.getElementById('start-screen');
+			const leaderboardScreen = document.getElementById('leaderboard-screen');
+			if (leaderboardScreen) leaderboardScreen.classList.remove('active');
+			if (startScreen) startScreen.classList.add('active');
+		});
 	
 	renderCategorySelector();
 updatePlayerListUI();

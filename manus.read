@@ -15,10 +15,11 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 - **Visuals:** Cyber-Eye Startbildschirm, Category Realms und situative ACK Emotes integriert.
 - **Mechanics:** Sabotage-System (Timer Drain) und visuelle Glitch-Effekte bei Angriffen aktiv.
 
-### 3. Button-Handling & Interaktion [NEU]
-- **Real-Time Feedback:** Alle Startbildschirm-Buttons (`INIT_PROTOCOL`, `BATTLE_LOBBY`, `SERVER_ROOM`) müssen haptisches oder visuelles Feedback (Scale-Effekt) bei Touch-Events geben.
-- **Event-Listener:** Nutzung von `pointerdown` statt `click` zur Minimierung der Latenz auf mobilen Geräten.
-- **State-Management:** Buttons werden während laufender Protokoll-Initialisierung (`INIT_PROTOCOL`) deaktiviert, um Mehrfach-Trigger zu verhindern.
+### 3. Button-Handling & Interaktion [IN ARBEIT]
+- **Real-Time Feedback:** Implementierung von Scale-Effekten und haptischem Feedback gestartet.
+- **Event-Listener:** Umstellung von `click` auf `pointerdown` zur Latenzminimierung eingeleitet.
+- **Fehlerbehebung:** ID-Mismatches (`battle-btn` vs `show-lobby-btn`) identifiziert und in Korrektur.
+- **Status:** Schritt 1 (ID-Korrektur & Event-Typ Wechsel) wird ausgeführt.
 
 ### 4. Infrastruktur [VALIDIERT]
 - **Security:** HMAC-Validierung via `LOCAL_ONLY_UNTRUSTED` stabilisiert.
@@ -27,9 +28,10 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 ---
 
 ## Nächste Schritte
+- [>] Fix Startbildschirm-Buttons (ID-Mismatches & pointerdown).
 - [ ] Implementierung "Survival Mode" (degressive Zeit).
 - [ ] Erweiterung der Sabotage-Effekte (Input Scramble).
 - [ ] Monitoring der Live-Latenz via Dashboard.
 
 **Status:** PWA Ready. Mobile Gameplay validiert. Button-Handling Anweisungen integriert.
-**Zuletzt aktualisiert:** 07.07.2026 - 19:20 GMT+2
+**Zuletzt aktualisiert:** 07.07.2026 - 19:35 GMT+2
