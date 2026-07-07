@@ -123,3 +123,11 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 
 **Status:** Multiplayer-Latenz-Optimierung abgeschlossen. System bereit für Visual Dashboard Integration.
 **Zuletzt aktualisiert:** 07.07.2026 - 15:15 GMT+2
+
+17. Visual Latency Dashboard [IMPLEMENTIERT]
+- **Status:** Echtzeit-Überwachung der Socket-Latenz (RTT) integriert.
+- **Lösung:**
+  - `server/social/battleSync.js`: Ping-Pong-Handler für Socket.IO hinzugefügt.
+  - `scripts/battle-manager.js`: Implementierung der Ping-Logik (Intervall 2s) und RTT-Berechnung.
+  - `index.html`: `#latency-display` im Battle Lobby Status-Container hinzugefügt.
+  - Dynamische Farbindikatoren für Latenzqualität (Grün < 50ms, Gelb < 150ms, Rot > 150ms).

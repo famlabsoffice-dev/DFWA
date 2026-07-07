@@ -38,6 +38,10 @@ export function setupBattleSync(io, db) {
       socket.to(battleId).emit('opponent_sync', { playerId, state });
     });
 
+    socket.on('ping', () => {
+      socket.emit('pong');
+    });
+
     socket.on('disconnecting', () => {
       const rooms = Array.from(socket.rooms);
       rooms.forEach(battleId => {

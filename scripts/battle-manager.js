@@ -4,6 +4,8 @@ import { UIManager } from './ui-manager.js';
 export const BattleManager = {
   socket: null,
   currentBattleId: null,
+  pingInterval: null,
+  rtt: 0,
 
   init(baseUrl, playerId, playerName) {
     if (this.socket) return;
@@ -17,6 +19,7 @@ export const BattleManager = {
         statusEl.innerText = 'LINK_STATUS: ONLINE';
         statusEl.style.color = 'var(--neon)';
       }
+      this.startPing();
     });
 
     this.socket.on('player_joined', ({ playerId: joinedPlayerId, activePlayers }) => {
@@ -95,7 +98,38 @@ export const BattleManager = {
         statusEl.innerText = 'LINK_STATUS: OFFLINE';
         statusEl.style.color = 'var(--error)';
       }
+      this.stopPing();
     });
+
+    this.socket.on('pong', () => {
+      this.rtt = Date.now() - this.lastPingTime;
+      this.updateLatencyUI();
+    });
+  },
+
+  startPing() {
+    this.stopPing();
+    this.pingInterval = setInterval(() => {
+      this.lastPingTime = Date.now();
+      this.socket.emit('ping');
+    }, 2000);
+  },
+
+  stopPing() {
+    if (this.pingInterval) {
+      clearInterval(this.pingInterval);
+      this.pingInterval = null;
+    }
+  },
+
+  updateLatencyUI() {
+    const latencyEl = document.getElementById('latency-display');
+    if (latencyEl) {
+      latencyEl.innerText = `RTT: ${this.rtt}MS`;
+      if (this.rtt < 50) latencyEl.style.color = 'var(--neon)';
+      else if (this.rtt < 150) latencyEl.style.color = 'var(--warning)';
+      else latencyEl.style.color = 'var(--error)';
+    }
   },
 
   joinBattle(battleId, playerId) {
