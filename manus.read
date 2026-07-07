@@ -87,8 +87,15 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 > **Zwingende Regeln:**
 > 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
 > 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
+> 3. **Visuelle Identität:** Beachte stets die Vorgaben in `manus.visuals` für alle UI- und Asset-Änderungen.
 > 
 > **Startpunkt:** Analysiere `style.css` für Glitch-Animationen und `app.js` für den Sabotage-Event-Listener.
+
+---
+
+## Visuelle Richtlinien (manus.visuals)
+- **Status:** Konsistente Nutzung der Cyberpunk-Dystopie-Ästhetik sicherstellen.
+- **Erinnerung:** Vor der Generierung oder Anpassung von UI-Assets (Bilder, Icons, Animationen) muss `manus.visuals` konsultiert werden, um den "ACK ATTACK"-Stil beizubehalten.
 
 ---
 
