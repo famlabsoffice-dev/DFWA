@@ -125,8 +125,30 @@ pnpm build
 - sw.js: Cache-Versioning, Cleanup
 - dist/: Neue registerSW.js und sw.js
 
+## Mobile Debug Panel (Redmi Note 8 Pro)
+
+### Neue Funktion
+Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klick-Ereignisse in Echtzeit anzeigt:
+- `[Zeit] BUTTON: Add player clicked`
+- `[Zeit] INPUT: Player: TestName`
+- `[Zeit] SELECT: Category: Technik`
+- `[Zeit] ERROR: [Fehlermeldung]`
+
+### Was Sie sehen werden
+1. Wenn Sie auf einen Button tippen → `TOUCH: [Button-ID]` erscheint
+2. Wenn Sie einen Spieler hinzufügen → `SAVE: Player added: [Name]` erscheint
+3. Wenn Sie eine Kategorie wählen → `SELECT: Category: [Name]` erscheint
+4. Falls Fehler → `ERROR: [Nachricht]` erscheint
+
+### Wenn das Panel NICHT erscheint
+- Seite komplett neu laden (F5 oder Reload-Button)
+- App-Cache löschen: Einstellungen > Apps > Chrome > Speicher > Cache leeren
+- PWA deinstallieren und neu installieren
+
 ## Status
 ✓ Fixes implementiert
-✓ Tests durchgeführt
+✓ Mobile Debug Panel hinzugefügt
+✓ Touch-Optimierung für Xiaomi/Redmi
+✓ Visuelles Update-Prompt statt Browser-Confirm
 ✓ Commits gepusht
-⏳ Wartet auf Benutzer-Feedback
+⏳ Wartet auf Benutzer-Feedback vom Redmi Note 8 Pro
