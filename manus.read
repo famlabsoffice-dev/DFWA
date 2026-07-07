@@ -309,3 +309,14 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
   - Eingabefelder (`.cyber-input`) explizit von der Gesten-Sperre ausgenommen, um Tastatur-Fokus und Textauswahl zu ermöglichen.
 ✓ **Build-Validierung**:
   - CSS erfolgreich minifiziert und im Build verifiziert.
+
+## Update 2026-07-07 (Update-Logik & Haptik)
+✓ **Update-Flow optimiert**:
+  - `initPWAUpdate` in `app.js` integriert, um den `controllerchange`-Event abzufangen.
+  - Automatischer Reload bei neuen Versionen mit visuellem Banner ("UPDATING_CORE_SYSTEM...").
+  - Dies stellt sicher, dass Benutzer ohne manuelles Zutun immer die neueste Version der PWA nutzen.
+✓ **Haptisches Feedback**:
+  - `Vibration API` für Antworten integriert: Kurze Vibration (50ms) bei Erfolg, SOS-Muster bei Fehlern.
+  - Erhöht das native App-Gefühl auf Android-Geräten massiv.
+✓ **Build-Validierung**:
+  - JavaScript erfolgreich gebündelt und Logik verifiziert.

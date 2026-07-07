@@ -34,6 +34,7 @@ async function loadQuestions() {
 
 function initStartScreen() {
     console.log("Initializing DFWA Core...");
+    initPWAUpdate();
     
     // Disable glitches as requested
     const eyeContainer = document.getElementById('eye-bg-container');
@@ -240,10 +241,12 @@ function handleAnswer(isCorrect) {
     if (isCorrect) {
         state.score += 100 + (state.streak * 10);
         state.streak++;
+        if ('vibrate' in navigator) navigator.vibrate(50);
         showFeedback(true);
     } else {
         state.lives--;
         state.streak = 0;
+        if ('vibrate' in navigator) navigator.vibrate([100, 50, 100]);
         showFeedback(false);
     }
     
@@ -276,6 +279,25 @@ function endGame() {
         text.textContent = `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}`;
         if (list) list.style.display = "none";
         overlay.style.display = 'flex';
+    }
+}
+
+function initPWAUpdate() {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            console.log("SYSTEM: NEW_VERSION_DETECTED_RELOADING");
+            // Optionale Benachrichtigung vor dem Reload
+            const banner = document.createElement('div');
+            banner.style.cssText = `
+                position: fixed; top: 0; left: 0; width: 100%; 
+                background: var(--neon); color: #000; 
+                padding: 10px; text-align: center; font-weight: bold; z-index: 9999;
+            `;
+            banner.textContent = "UPDATING_CORE_SYSTEM...";
+            document.body.appendChild(banner);
+            
+            setTimeout(() => window.location.reload(), 1500);
+        });
     }
 }
 
