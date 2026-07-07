@@ -684,19 +684,28 @@ function handleAddPlayer() {
   }
 }
 
-function updatePlayerListUI() {
-  const container = document.getElementById('player-list-container');
-  if (!container) return;
-  container.innerHTML = state.players
-    .map(
-      (p) => `
-    <div class="player-tag">
-      <span>${p}</span>
-      <button onclick="handleRemovePlayer('${p}')">×</button>
-    </div>`
-    )
-    .join('');
-}
+	function updatePlayerListUI() {
+	  const container = document.getElementById('player-list-container');
+	  if (!container) return;
+	  container.innerHTML = state.players
+	    .map(
+	      (p) => `
+	    <div class="player-tag">
+	      <span>${p}</span>
+	      <button class="remove-player-btn" data-player="${p}">×</button>
+	    </div>`
+	    )
+	    .join('');
+	  
+	  // Event Listener für Remove-Buttons hinzufügen (PWA konform)
+	  container.querySelectorAll('.remove-player-btn').forEach(btn => {
+	    btn.addEventListener('click', (e) => {
+	      e.preventDefault();
+	      const name = btn.getAttribute('data-player');
+	      window.handleRemovePlayer(name);
+	    });
+	  });
+	}
 
 window.handleRemovePlayer = (name) => {
   state.players = state.players.filter((p) => p !== name);
@@ -1018,7 +1027,7 @@ async function initGame(createChallenge, isRestoring = false) {
 function startTimer() {
   try {
     clearInterval(state.timerInterval);
-    const bar = document.getElementById('timeline-bar');
+    const bar = document.getElementById('timer-bar');
     if (!bar) return;
     
     state.timerEndTimestamp = Date.now() + state.timer * 1000;
@@ -1061,7 +1070,7 @@ function renderQuestion(isRestoring = false) {
     }
 
     const q = state.questions[state.current];
-    const qBox = document.getElementById('question-box');
+    const qBox = document.getElementById('question-text');
     if (qBox) qBox.innerText = q.text[state.lang] || q.text['de'];
 
     const optContainer = document.getElementById('options-container');
@@ -1313,17 +1322,33 @@ async function syncLeaderboard() {
   }
 }
 
-			const handleStart = (e) => {
-				if (e) e.preventDefault();
-				MobileDebug.logEvent('BUTTON', 'Start clicked');
-				if (state.isProcessing) return;
-				initGame(false);
-			};
-			const startBtn = document.getElementById('start-btn');
-			if (startBtn) {
-				startBtn.addEventListener('pointerdown', handleStart);
-				startBtn.addEventListener('click', handleStart);
-			}
+				const handleStart = (e) => {
+					if (e) e.preventDefault();
+					MobileDebug.logEvent('BUTTON', 'Start clicked');
+					if (state.isProcessing) return;
+					
+					// Validierung vor Start
+					if (state.players.length === 0) {
+						const nameInput = document.getElementById('player-name');
+						if (nameInput && nameInput.value.trim()) {
+							handleAddPlayer();
+						} else {
+							MobileDebug.logEvent('ERROR', 'No player name');
+							return;
+						}
+					}
+					if (!state.selectedCategory) {
+						showCategoryModal();
+						return;
+					}
+					
+					initGame(false);
+				};
+				const startBtn = document.getElementById('start-btn');
+				if (startBtn) {
+					startBtn.addEventListener('pointerdown', handleStart);
+					startBtn.addEventListener('click', handleStart);
+				}
 			const addPlayerBtn = document.getElementById('add-player-btn');
 			if (addPlayerBtn) {
 				addPlayerBtn.addEventListener('pointerdown', (e) => {
@@ -1397,9 +1422,10 @@ async function syncLeaderboard() {
 		});
 	
 	renderCategorySelector();
-updatePlayerListUI();
-updateStartButtonState();
-restoreSession();
+	updatePlayerListUI();
+	updateStartButtonState();
+	renderModeSelector();
+	restoreSession();
 
 // PWA Install Lifecycle & Standalone Detection
 let deferredPrompt;

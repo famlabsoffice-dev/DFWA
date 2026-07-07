@@ -157,3 +157,17 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ✓ Schritt 1 (Lokales Testen/Build) erfolgreich ausgeführt.
 ✓ `pnpm install` und `pnpm build` ohne Fehler abgeschlossen.
 ✓ `dist/` Ordner erfolgreich generiert.
+
+## Update 2026-07-07 (PWA & Button-Fixes)
+✓ **Button-Funktionalität wiederhergestellt**:
+  - DOM ID Mismatches korrigiert (`timeline-bar` -> `timer-bar`, `question-box` -> `question-text`).
+  - `updateStartButtonState` und `renderModeSelector` in den Initialisierungsflow integriert.
+  - `handleStart` Logik gehärtet: Automatische Spieler-Erstellung und Kategorie-Aufforderung falls nicht gesetzt.
+  - Spieler-Entfernung PWA-konform umgesetzt (Event Listener statt Inline-onclick).
+✓ **Automatische App-Aktualisierung**:
+  - `registerSW.js` aktualisiert: Führt beim Start `reg.update()` aus.
+  - Periodischer Update-Check (alle 60 Min) implementiert.
+  - Visuelles Update-Banner mit "RELOAD"-Option für sofortige Aktivierung des neuen Service Workers.
+✓ **PWA-Konformität**:
+  - Standalone-Erkennung verbessert.
+  - Haptisches Feedback (Vibration) für Buttons optimiert.

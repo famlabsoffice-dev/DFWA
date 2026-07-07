@@ -1,11 +1,19 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js', { scope: './' }).then((reg) => {
+      console.log('SYSTEM: SERVICE_WORKER_REGISTERED');
+      
+      // Automatische Prüfung auf Updates beim Start
+      reg.update();
+
       reg.onupdatefound = () => {
         const installingWorker = reg.installing;
+        if (!installingWorker) return;
+        
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
+              console.log('SYSTEM: NEW_UPDATE_FOUND');
               showUpdateNotification();
             }
           }
@@ -13,53 +21,86 @@ if ('serviceWorker' in navigator) {
       };
     });
   });
+
+  // Periodische Prüfung alle 60 Minuten
+  setInterval(() => {
+    navigator.serviceWorker.ready.then(reg => reg.update());
+  }, 60 * 60 * 1000);
 }
 
 function showUpdateNotification() {
+  // Verhindere mehrfache Notifications
+  if (document.getElementById('pwa-update-banner')) return;
+
   const notification = document.createElement('div');
+  notification.id = 'pwa-update-banner';
   notification.style.cssText = `
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.95);
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(0, 20, 0, 0.95);
     border: 2px solid #39ff14;
     color: #39ff14;
     padding: 20px;
     border-radius: 8px;
-    z-index: 99998;
+    z-index: 10000;
     text-align: center;
     font-family: monospace;
-    font-size: 14px;
-    max-width: 80vw;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
   `;
   
   const title = document.createElement('div');
-  title.textContent = 'NEUE VERSION VERFUEGBAR';
-  title.style.marginBottom = '15px';
+  title.textContent = 'SYSTEM_UPDATE_READY';
   title.style.fontWeight = 'bold';
+  title.style.marginBottom = '10px';
   
   const message = document.createElement('div');
-  message.textContent = 'Tippe AKTUALISIEREN um die neue Version zu laden.';
-  message.style.marginBottom = '20px';
+  message.textContent = 'Neue Protokolle verfügbar. System-Reload erforderlich.';
   message.style.fontSize = '12px';
+  message.style.marginBottom = '15px';
   
-  const button = document.createElement('button');
-  button.textContent = 'AKTUALISIEREN';
-  button.style.cssText = `
+  const btnContainer = document.createElement('div');
+  btnContainer.style.display = 'flex';
+  btnContainer.style.gap = '10px';
+  btnContainer.style.justifyContent = 'center';
+
+  const updateBtn = document.createElement('button');
+  updateBtn.textContent = 'RELOAD';
+  updateBtn.style.cssText = `
     background: #39ff14;
     color: #000;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 8px 16px;
     font-weight: bold;
     cursor: pointer;
-    font-size: 14px;
+    font-family: monospace;
   `;
-  button.onclick = () => window.location.reload();
-  
+  updateBtn.onclick = () => {
+    navigator.serviceWorker.ready.then(reg => {
+      if (reg.waiting) {
+        reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+      }
+      window.location.reload();
+    });
+  };
+
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = 'LATER';
+  closeBtn.style.cssText = `
+    background: transparent;
+    color: #39ff14;
+    border: 1px solid #39ff14;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: monospace;
+  `;
+  closeBtn.onclick = () => notification.remove();
+
+  btnContainer.appendChild(updateBtn);
+  btnContainer.appendChild(closeBtn);
   notification.appendChild(title);
   notification.appendChild(message);
-  notification.appendChild(button);
+  notification.appendChild(btnContainer);
   document.body.appendChild(notification);
 }
