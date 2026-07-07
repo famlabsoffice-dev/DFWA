@@ -3,7 +3,7 @@
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 07.07.2026 - 13:15 GMT+2)
+## Status Quo (Stand 07.07.2026 - 13:45 GMT+2)
 
 ### 1. Live-System & Deployment [VALIDIERT]
 - **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
@@ -63,14 +63,26 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
   - `style.css`: `ui-content-wrapper` erhielt `overflow-y: auto` und eine `max-height`, um Scrollbarkeit auf kleinen Screens zu gewährleisten.
   - `style.css`: Spezifische Media-Queries für Geräte unter 480px Breite zur Skalierung von Eye-BG, Stats und Buttons.
 
+### 11. Visual Sabotage Effects [IMPLEMENTIERT]
+- **Status:** Visuelle Immersion bei Sabotage-Angriffen durch Glitch-Overlays verstärkt.
+- **Lösung:**
+  - `index.html`: `#sabotage-overlay` als dedizierte Effekt-Ebene hinzugefügt.
+  - `style.css`: `.sabotage-layer` und `sabotageGlitch` Animation implementiert (Nutzung von `ack_interference_glitch.webp`).
+  - `app.js`: Event-Listener für `sabotage_timer` triggert nun die visuelle Animation für 1.5s.
+
 ## Nächste Schritte
 
-### 11. Visual Sabotage Effects
-- **Ziel:** Stärkere visuelle Immersion bei Sabotage.
+### 12. Category Realm Visuals
+- **Ziel:** Dynamische Hintergründe je nach gewählter Kategorie.
 - **Aufgaben:**
-  - Implementierung von Overlay-Effekten (z.B. statisches Rauschen oder verdunkelter Screen) während eines Sabotage-Angriffs.
+  - Implementierung der in `manus.visuals` definierten Realm-Bilder (Hardware, AI, Security) als dynamische Hintergründe im `game-screen`.
 
-### 12. Persistent Player Profiles
+### 13. ACK Emotes Integration
+- **Ziel:** Situatives Feedback durch ACK-Charakter-Visuals.
+- **Aufgaben:**
+  - Integration von `ack_eye_skeptical.webp`, `ack_eye_wink.webp` etc. in das Feedback-System bei Meilensteinen oder Fehlern.
+
+### 14. Persistent Player Profiles
 - **Ziel:** Speicherung von Statistiken über Sessions hinweg.
 - **Aufgaben:**
   - Erweiterung des Backends um persistente User-Accounts (optional) oder verbesserte LocalStorage-Synchronisation.
@@ -82,30 +94,16 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 > **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
 > 
 > **DEIN AUFTRAG:**
-> Implementiere visuelle Sabotage-Effekte (Screen Glitch/Static) im UI, wenn ein `sabotage_timer` Event eintrifft.
+> Implementiere dynamische Kategorie-Hintergründe (Category Realms) gemäß `manus.visuals`.
 > 
 > **Zwingende Regeln:**
 > 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
 > 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
-> 3. **Visuelle Identität:** Beachte stets die Vorgaben in `manus.visuals` für alle UI- und Asset-Änderungen.
+> 3. **Visuelle Identität:** Nutze die vorhandenen Assets in `assets/images/`.
 > 
-> **Startpunkt:** Analysiere `style.css` für Glitch-Animationen und `app.js` für den Sabotage-Event-Listener.
+> **Startpunkt:** Analysiere `app.js` (Funktion `initGame` oder `renderQuestion`) und `style.css`.
 
 ---
 
-## Visuelle Richtlinien (manus.visuals)
-- **Status:** Konsistente Nutzung der Cyberpunk-Dystopie-Ästhetik sicherstellen.
-- **Erinnerung:** Vor der Generierung oder Anpassung von UI-Assets (Bilder, Icons, Animationen) muss `manus.visuals` konsultiert werden, um den "ACK ATTACK"-Stil beizubehalten.
-
----
-
-## Optimierungsliste Mobile Ansicht
-- [x] **Viewport Fix:** Nutzung von `100dvh` statt `100%` für Screens, um Abschneiden durch Mobile-Browser-UI zu verhindern.
-- [x] **Scrollable Content:** `ui-content-wrapper` ist nun scrollbar, falls der Inhalt die Bildschirmhöhe übersteigt.
-- [x] **Eye-BG Scaling:** Das zentrale Auge und die Stat-Overlays skalieren nun aggressiver auf kleinen Geräten.
-- [x] **Button & Input Scaling:** Reduzierte Paddings und Font-Sizes für Mobile unter 480px.
-- [x] **Grid Layout:** Kategorien und Modi nutzen auf Mobile ein 2-Spalten-Grid zur Platzersparnis.
-
----
-**Status:** Dynamic Meta Tags & Sabotage Mechanik integriert.
-**Zuletzt aktualisiert:** 07.07.2026 - 13:15 GMT+2
+**Status:** Visual Sabotage Effects implementiert.
+**Zuletzt aktualisiert:** 07.07.2026 - 13:45 GMT+2
