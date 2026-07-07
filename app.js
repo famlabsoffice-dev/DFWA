@@ -99,10 +99,20 @@ window.addEventListener('unhandledrejection', async (event) => {
 window.addEventListener('sabotage_timer', (e) => {
   const { duration } = e.detail;
   state.timer = Math.max(0, state.timer - duration);
+  
   const timerDisplay = document.getElementById('timer-display');
+  const sabotageOverlay = document.getElementById('sabotage-overlay');
+
   if (timerDisplay) {
     timerDisplay.style.color = 'var(--error)';
-    setTimeout(() => timerDisplay.style.color = 'var(--neon)', 1000);
+    setTimeout(() => (timerDisplay.style.color = 'var(--neon)'), 1000);
+  }
+
+  if (sabotageOverlay) {
+    sabotageOverlay.classList.add('sabotage-active');
+    setTimeout(() => {
+      sabotageOverlay.classList.remove('sabotage-active');
+    }, 1500);
   }
 });
 

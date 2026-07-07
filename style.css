@@ -927,3 +927,35 @@ h1 {
   animation: slideInRight 0.4s ease-out forwards;
   opacity: 0;
 }
+
+/* Sabotage Visual Effects */
+.sabotage-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/images/ack_interference_glitch.webp') center center;
+  background-size: cover;
+  z-index: 5000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  mix-blend-mode: exclusion;
+  filter: hue-rotate(90deg) contrast(2);
+}
+
+.sabotage-active {
+  animation: sabotageGlitch 0.2s infinite;
+  opacity: 0.8;
+  visibility: visible;
+}
+
+@keyframes sabotageGlitch {
+  0% { transform: translate(0); filter: hue-rotate(90deg) contrast(2) brightness(1.5); }
+  20% { transform: translate(-5px, 5px); filter: hue-rotate(180deg) contrast(3); }
+  40% { transform: translate(-10px, -5px); clip-path: inset(10% 0 30% 0); }
+  60% { transform: translate(15px, 10px); filter: sepia(1) saturate(5) hue-rotate(-90deg); }
+  80% { transform: translate(-5px, -15px); clip-path: inset(40% 0 10% 0); }
+  100% { transform: translate(0); }
+}
