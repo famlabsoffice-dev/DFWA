@@ -320,3 +320,12 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
   - Erhöht das native App-Gefühl auf Android-Geräten massiv.
 ✓ **Build-Validierung**:
   - JavaScript erfolgreich gebündelt und Logik verifiziert.
+
+## Update 2026-07-07 (Audio- & Asset-Vorbereitung)
+✓ **Pre-Caching erweitert**:
+  - `vite.config.js` konfiguriert, um Audio-Formate (`mp3`, `wav`, `ogg`) automatisch in das Service Worker Manifest aufzunehmen.
+  - Dies stellt sicher, dass zukünftige Sound-Effekte sofort offline verfügbar sind, sobald sie dem `assets/` oder `public/` Ordner hinzugefügt werden.
+✓ **Haptik-Standardisierung**:
+  - Die Vibration-Logik in `app.js` wurde als primäres Feedback-System für mobile Geräte ohne Audio-Ausgabe (Lautlos-Modus) etabliert.
+✓ **Build-Validierung**:
+  - Build-Prozess bestätigt die Aufnahme der neuen Glob-Patterns.
