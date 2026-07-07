@@ -1,9 +1,9 @@
-# DFWA - CORE RECOVERY LOG
+# DFWA - Project Status (manus.read)
 
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 07.07.2026 - 18:30 GMT+2)
+## Status Quo (Stand 07.07.2026 - 19:00 GMT+2)
 
 ### 1. System-Integrität & Security [OPTIMIERT]
 - **Status:** HMAC-Validierung und Client-Sicherheit stabilisiert.
@@ -25,92 +25,64 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 - **Lösung:** 
   - Visual Latency Dashboard integriert (RTT-Messung).
   - Throttling für Socket-Syncs zur Traffic-Reduktion.
+  - `scripts/battle-manager.js`: `opponent_action` Handler implementiert Glitch-Effekt und rote Score-Hervorhebung bei Fehlern des Gegners.
+
+### 5. PWA & Offline-Funktionalität [OPTIMIERT]
+- **Status:** Service Worker auf Workbox 7.0 umgestellt für robustes Caching.
+- **Lösung:** 
+  - `sw.js`: Implementierung von `CacheFirst` für WebP-Bilder und `StaleWhileRevalidate` für statische Assets.
+  - PWA Hardening: Icons, Metadata und Safe-Area UI optimiert.
+
+### 6. Audio-System & Feedback [REFACTORED]
+- **Status:** Performance-optimiertes Audio-Handling und systemweites Feedback integriert.
+- **Lösung:**
+  - `scripts/audio-manager.js`: Umstellung von `cloneNode()` auf Wiederverwendung des Audio-Objekts.
+  - `app.js`: Audio-Feedback für korrekte/falsche Antworten und Achievements integriert.
+
+### 7. Leaderboard UI & UX [VERBESSERT]
+- **Status:** "Server Room" mit Animationen und funktionaler Filter-Logik ausgestattet.
+- **Lösung:**
+  - `style.css` & `scripts/ui-manager.js`: Staggered-Animationen für Leaderboard-Einträge implementiert.
+  - Direkter Zugang zum Leaderboard vom Startbildschirm aus integriert.
+
+### 8. Achievement System & Web Share API [NEU]
+- **Status:** Achievements können nun direkt über die Web Share API geteilt werden.
+- **Lösung:**
+  - `app.js`: `shareAchievement` Funktion implementiert.
+  - Dynamische Meta Tags & Social Preview für Spieler-Profile.
+
+### 9. Advanced Battle Mechanics: Sabotage [IMPLEMENTIERT]
+- **Status:** Erste Sabotage-Mechanik (Timer Drain) und visuelle Effekte integriert.
+- **Lösung:**
+  - `app.js`: Sabotage-Trigger bei 5er Streaks implementiert.
+  - Visuelle Immersion durch Glitch-Overlays bei Sabotage-Angriffen.
+
+### 10. Mobile UI & Visuals [OPTIMIERT]
+- **Status:** Startbildschirm und Layout für mobile Geräte perfektioniert.
+- **Lösung:**
+  - Umstellung auf `100dvh` und Safe-Area-Handling.
+  - Startbildschirm-Visual auf hochauflösendes Cyber-Eye aktualisiert.
+  - Category Realm Visuals und ACK Emotes Integration für situatives Feedback.
+
+---
+
+## Historie & Bug-Analyse (07.07.2026)
+
+### Kritische Fixes (Alle Erledigt)
+- [x] **Bug #1:** Doppelte `const`-Deklaration von `modalContent` in `endGame()`.
+- [x] **Bug #2:** `await` außerhalb einer `async`-Funktion im `/share/:playerId` Callback.
+- [x] **Bug #3:** Entfernung des `/config/secret` Fetch (HMAC Fix).
+- [x] **Bug #4:** `blitz` Modus in `validModes` ergänzt.
+- [x] **Bug #5:** Totes `GAME_MODES`-Objekt entfernt.
 
 ---
 
 ## Zukünftige Schritte (Aufgabenliste)
-
-### Option A: Feature-Expansion (In-Game)
-- [x] **Global Leaderboard UI:** Implementierung einer dedizierten Ansicht für globale Highscores im Hauptmenü. Referenzen in `index.html` und `main-B4VhbFAM.js` aktualisiert.
 - [ ] **New Game Mode "Survival":** Entwicklung eines Modus mit degressiver Zeit pro korrekter Antwort.
-- [ ] **Advanced Sabotage:** Integration von "Screen Flip" oder "Input Scramble" Effekten für High-Streak Battles.
+- [ ] **Advanced Sabotage:** Integration von "Screen Flip" oder "Input Scramble" Effekten.
+- [ ] **Automated CI/CD:** Einrichtung von GitHub Actions für automatische Builds.
+- [ ] **Analytics Dashboard:** Admin-Schnittstelle zur Visualisierung von Spieler-Metriken.
+- [ ] **Asset CDN:** Migration der schweren Bild-Assets auf ein dediziertes CDN.
 
-### Option B: Infrastructure & Maintenance
-- [ ] **Automated CI/CD:** Einrichtung von GitHub Actions für automatische Builds und Tests bei jedem Push.
-- [ ] **Analytics Dashboard:** Implementierung einer Admin-Schnittstelle zur Visualisierung von Spieler-Metriken (Retention, Average Score).
-- [ ] **Asset CDN:** Migration der schweren Bild-Assets auf ein dediziertes CDN zur Reduktion der Initial Load Time.
-- [x] **Startbildschirm-Update:** Altes "Ack Core Brain" Bild durch neues Cyber-Eye Visual ersetzt. Referenzen in `index.html` auf `ack_cyber_eye.webp` aktualisiert.
-
----
-
-**Status:** Bugfix-Zyklus abgeschlossen. System bereinigt und bereit für Expansion.
-**Zuletzt aktualisiert:** 07.07.2026 - 18:30 GMT+2
-
----
-
-## 20. PWA Hardening - Phase 1: Assets & Metadata [IMPLEMENTIERT]
-- **Status:** Kritische Icon-Referenzen und iOS-Support validiert.
-- **Lösung:**
-  - `index.html`: `apple-touch-icon` Pfad von `./apple-touch-icon.png` (fehlend) auf `./assets/icons/icon-192.png` korrigiert.
-  - `app.js`: Notification-Icons in `showNotification` von `./pwa-192x192.png` (fehlend) auf existierende Assets umgebogen.
-  - `manifest.webmanifest`: Icons und Maskable-Icons auf Existenz geprüft und bestätigt.
-- **Verifikation:** Alle referenzierten Icons sind im Repository unter `/assets/icons/` vorhanden.
-
-**Zuletzt aktualisiert:** 07.07.2026 - 17:30 GMT+2
-
----
-
-## 21. PWA Hardening - Phase 2: Service Worker & Caching [IMPLEMENTIERT]
-- **Status:** Offline-Verfügbarkeit durch erweitertes Precaching gestärkt.
-- **Lösung:**
-  - `sw.js`: `style.css` und `app.js` zum Precaching-Array hinzugefügt, um sicherzustellen, dass die Kernlogik und das Design auch ohne initiale Netzwerkverbindung sofort geladen werden.
-  - Strategien für Bilder (`CacheFirst`) und statische Assets (`StaleWhileRevalidate`) verifiziert.
-- **Verifikation:** Workbox 7.0 Integration ist aktiv und deckt alle kritischen Asset-Typen ab.
-
-**Zuletzt aktualisiert:** 07.07.2026 - 17:40 GMT+2
-
----
-
-## 22. PWA Hardening - Phase 3: Mobile UI & Safe Areas [IMPLEMENTIERT]
-- **Status:** Viewport-Handling für moderne Mobilgeräte (Notch/Bezel) optimiert.
-- **Lösung:**
-  - `style.css`: Veraltete `@media (viewport-fit: cover)` Logik durch CSS-Variablen für `safe-area-insets` ersetzt.
-  - `body` erhält nun korrektes Padding basierend auf den Hardware-Gegebenheiten des Mobilgeräts, um Überlappungen mit System-UI (z.B. Home-Indicator) zu vermeiden.
-  - `min-height: 100dvh` sichergestellt für volle Bildschirmabdeckung.
-- **Verifikation:** Standard-konforme Umsetzung der Safe-Area-Variablen.
-
-**Zuletzt aktualisiert:** 07.07.2026 - 17:50 GMT+2
-
----
-
-## 23. PWA Hardening - Phase 4: Installation & Standalone Logic [IMPLEMENTIERT]
-- **Status:** Lifecycle-Handling für PWA-Installation und Standalone-Modus integriert.
-- **Lösung:**
-  - `app.js`: `beforeinstallprompt` und `appinstalled` Event-Listener hinzugefügt, um den Installationsstatus zu überwachen.
-  - `checkStandaloneMode` Funktion implementiert: Erkennt, ob die App als PWA gestartet wurde, und fügt die CSS-Klasse `.pwa-standalone` zum Body hinzu (ermöglicht spezifisches UI-Styling für den installierten Zustand).
-- **Verifikation:** Standalone-Erkennung deckt sowohl Android (Chrome) als auch iOS (Safari "Add to Home Screen") ab.
-
-**Zuletzt aktualisiert:** 07.07.2026 - 18:00 GMT+2
-
----
-
-## 24. Visual Update - Start Screen [IMPLEMENTIERT]
-- **Status:** Startbildschirm-Visual auf hochauflösendes Cyber-Eye aktualisiert.
-- **Lösung:**
-  - `assets/images/ack_cyber_eye.webp`: Neues Visual hinzugefügt.
-  - `assets/images/ack_splash_void.webp`: Mit neuem Visual überschrieben (Fallback-Kompatibilität).
-  - `index.html`: Preload-Links und `img#core-eye` Quelle auf `ack_cyber_eye.webp` umgestellt.
-- **Verifikation:** Pfade und Dateiexistenz bestätigt.
-
-**Zuletzt aktualisiert:** 07.07.2026 - 18:15 GMT+2
-
----
-
-## 25. Feature Expansion - Global Leaderboard UI [IMPLEMENTIERT]
-- **Status:** Direkter Zugang zum Leaderboard ("SERVER_ROOM") vom Startbildschirm aus integriert.
-- **Lösung:**
-  - `index.html`: Neuer Button `start-show-leaderboard-btn` im Hauptmenü hinzugefügt.
-  - `assets/main-B4VhbFAM.js`: Event-Listener für den neuen Button implementiert und die `ft` (Close Leaderboard) Funktion angepasst, um korrekt zum Startbildschirm zurückzukehren.
-- **Verifikation:** UI-Navigation zwischen Startbildschirm, Battle Lobby und Leaderboard validiert.
-
-**Zuletzt aktualisiert:** 07.07.2026 - 18:30 GMT+2
+**Status:** System stabilisiert, alle kritischen Bugs behoben. Bereit für Feature-Expansion.
+**Zuletzt aktualisiert:** 07.07.2026 - 19:00 GMT+2
