@@ -627,11 +627,14 @@ async function renderCategorySelector() {
 }
 
 function showCategoryModal() {
+  console.log('showCategoryModal called');
   const overlay = document.getElementById('modal-overlay');
   const title = document.getElementById('modal-title');
   const text = document.getElementById('modal-text');
   const list = document.getElementById('category-modal-list');
   const closeBtn = document.getElementById('close-system-btn');
+  
+  console.log('Elements found:', { overlay: !!overlay, title: !!title, text: !!text, list: !!list, closeBtn: !!closeBtn });
   
   if (overlay) overlay.style.display = 'flex';
   if (title) title.innerText = state.lang === 'de' ? 'KATEGORIE_WÄHLEN' : 'SELECT_CATEGORY';
@@ -641,6 +644,7 @@ function showCategoryModal() {
     renderCategorySelector();
   }
   if (closeBtn) closeBtn.innerText = state.lang === 'de' ? 'ABBRECHEN' : 'CANCEL';
+  console.log('showCategoryModal completed');
 }
 
 function closeModal() {
@@ -1304,18 +1308,27 @@ async function syncLeaderboard() {
   }
 }
 
-		// Initialisierung - Umstellung auf pointerdown für schnellere Reaktion auf Mobilgeräten
 			const handleStart = (e) => {
-				e.preventDefault();
+				if (e) e.preventDefault();
 				if (state.isProcessing) return;
 				initGame(false);
 			};
-			document.getElementById('start-btn')?.addEventListener('pointerdown', handleStart);
-			document.getElementById('start-btn')?.addEventListener('click', handleStart);
-		document.getElementById('add-player-btn')?.addEventListener('pointerdown', (e) => {
-			e.preventDefault();
-			handleAddPlayer();
-		});
+			const startBtn = document.getElementById('start-btn');
+			if (startBtn) {
+				startBtn.addEventListener('pointerdown', handleStart);
+				startBtn.addEventListener('click', handleStart);
+			}
+			const addPlayerBtn = document.getElementById('add-player-btn');
+			if (addPlayerBtn) {
+				addPlayerBtn.addEventListener('pointerdown', (e) => {
+					e.preventDefault();
+					handleAddPlayer();
+				});
+				addPlayerBtn.addEventListener('click', (e) => {
+					e.preventDefault();
+					handleAddPlayer();
+				});
+			}
 		document.getElementById('pause-btn')?.addEventListener('pointerdown', (e) => {
 			e.preventDefault();
 			pauseProtocol();
@@ -1335,10 +1348,17 @@ async function syncLeaderboard() {
 			e.preventDefault();
 			hideLobby();
 		});
-		document.getElementById('category-modal-btn')?.addEventListener('pointerdown', (e) => {
-			e.preventDefault();
-			showCategoryModal();
-		});
+			const categoryModalBtn = document.getElementById('category-modal-btn');
+			if (categoryModalBtn) {
+				categoryModalBtn.addEventListener('pointerdown', (e) => {
+					e.preventDefault();
+					showCategoryModal();
+				});
+				categoryModalBtn.addEventListener('click', (e) => {
+					e.preventDefault();
+					showCategoryModal();
+				});
+			}
 		document.getElementById('close-system-btn')?.addEventListener('pointerdown', (e) => {
 			e.preventDefault();
 			closeModal();
