@@ -610,12 +610,15 @@ async function renderCategorySelector() {
       const btn = document.createElement('button');
       btn.className = 'mode-btn' + (state.selectedCategory === cat ? ' active' : '');
       btn.innerText = (cat || 'UNKNOWN').toUpperCase();
-      btn.onclick = () => {
+      const selectCat = (e) => {
+        if (e) e.preventDefault();
         state.selectedCategory = cat;
         if (displayEl) displayEl.innerText = cat.toUpperCase();
         closeModal();
         updateStartButtonState();
       };
+      btn.addEventListener('pointerdown', selectCat);
+      btn.addEventListener('click', selectCat);
       container.appendChild(btn);
     });
   } catch (e) {
@@ -657,6 +660,7 @@ function handleAddPlayer() {
   try {
     const nameInput = document.getElementById('player-name');
     const name = nameInput ? nameInput.value.trim() : '';
+    console.log("Player name:", name);
     if (!name) return;
 
     if (!state.players.includes(name)) {
