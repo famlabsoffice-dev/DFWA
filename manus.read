@@ -37,4 +37,5 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 - [ ] Monitoring der Live-Latenz via Dashboard.
 
 **Status:** PWA Ready. Mobile Gameplay validiert. Button-Handling Anweisungen integriert.
-**Zuletzt aktualisiert:** 07.07.2026 - 20:15 GMT+2
+**Hotfix:** Service Worker Cache-Strategie auf `NetworkFirst` umgestellt und `skipWaiting` erzwungen, um Update-Probleme zu lösen. Click-Fallback für Buttons hinzugefügt.
+**Zuletzt aktualisiert:** 07.07.2026 - 20:50 GMT+2

@@ -29,15 +29,21 @@ if (self.workbox) {
     })
   );
 
-  // Cache static assets (JS, CSS, Fonts) with StaleWhileRevalidate
+  // Cache static assets (JS, CSS, Fonts) with NetworkFirst to ensure updates
   routing.registerRoute(
     ({ request }) => 
       request.destination === 'script' || 
       request.destination === 'style' || 
       request.destination === 'font' ||
       request.url.includes('/assets/'),
-    new strategies.StaleWhileRevalidate({
+    new strategies.NetworkFirst({
       cacheName: 'static-resources',
+      networkTimeoutSeconds: 5,
+      plugins: [
+        new cacheableResponse.CacheableResponsePlugin({
+          statuses: [0, 200],
+        }),
+      ],
     })
   );
 
@@ -54,6 +60,14 @@ if (self.workbox) {
       ],
     })
   );
+
+  self.addEventListener('install', () => {
+    self.skipWaiting();
+  });
+
+  self.addEventListener('activate', (event) => {
+    event.waitUntil(self.clients.claim());
+  });
 
   self.addEventListener('message', (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {

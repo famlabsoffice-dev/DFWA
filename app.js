@@ -1301,10 +1301,13 @@ async function syncLeaderboard() {
 }
 
 		// Initialisierung - Umstellung auf pointerdown für schnellere Reaktion auf Mobilgeräten
-		document.getElementById('start-btn')?.addEventListener('pointerdown', (e) => {
-			e.preventDefault();
-			initGame(false);
-		});
+			const handleStart = (e) => {
+				e.preventDefault();
+				if (state.isProcessing) return;
+				initGame(false);
+			};
+			document.getElementById('start-btn')?.addEventListener('pointerdown', handleStart);
+			document.getElementById('start-btn')?.addEventListener('click', handleStart);
 		document.getElementById('add-player-btn')?.addEventListener('pointerdown', (e) => {
 			e.preventDefault();
 			handleAddPlayer();
@@ -1318,10 +1321,12 @@ async function syncLeaderboard() {
 			resumeProtocol();
 		});
 		// Korrektur der Button-IDs für Lobby-Steuerung
-		document.getElementById('show-lobby-btn')?.addEventListener('pointerdown', (e) => {
-			e.preventDefault();
-			showLobby();
-		});
+			const handleLobby = (e) => {
+				e.preventDefault();
+				showLobby();
+			};
+			document.getElementById('show-lobby-btn')?.addEventListener('pointerdown', handleLobby);
+			document.getElementById('show-lobby-btn')?.addEventListener('click', handleLobby);
 		document.getElementById('hide-lobby-btn')?.addEventListener('pointerdown', (e) => {
 			e.preventDefault();
 			hideLobby();
