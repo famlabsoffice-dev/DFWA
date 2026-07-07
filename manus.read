@@ -77,3 +77,10 @@
 - [x] **Pre-Caching Härtung**: `vite.config.js` um das `json` Pattern erweitert. Verifiziert, dass der Service Worker den 438KB großen Fragenkatalog nun automatisch precached.
 - [x] **Offline-Spielbarkeit**: Durch das Pre-Caching des Katalogs ist das Spiel nun auch ohne Internetverbindung vollständig start- und spielbar.
 - [x] **Build-Validierung**: Erfolgreicher Build bestätigt 20 precached Entries (vorher 19), inklusive des Fragenkatalogs.
+
+### Instanz 2026-07-07 (Exklusives Schwarz-Grün Design)
+- [x] **Farb-Schema Update**: `--cyber-blue` durch `--neon` (Grün) ersetzt. Blauanteile im gesamten UI drastisch reduziert für einen exklusiven "Terminal"-Look.
+- [x] **Hintergrund-Optimierung**: Alle Bildschirme (`#start-screen`, `#game-screen`) nutzen nun einen dunkleren Gradient-Overlay (bis zu 90% Schwarz), um die Lesbarkeit der UI-Elemente zu maximieren und den Fokus auf die Buttons zu lenken.
+- [x] **Button-Härtung**: `.option-btn` auf weiße Schrift auf dunkelgrünem/schwarzem Grund umgestellt. Kontrastverhältnis massiv erhöht. `letter-spacing` und `font-size` für exklusiven Look angepasst.
+- [x] **Dashboard-Look (Mobile)**: `.stat-overlay` Elemente mit semi-transparentem Hintergrund, Rahmen und Glow-Effekt versehen. Sie wirken nun wie echte Dashboard-Module, wie in der Desktop-Ansicht gewünscht.
+- [x] **Build-Validierung**: Erfolgreicher Build bestätigt die Integration des neuen exklusiven Designs.
