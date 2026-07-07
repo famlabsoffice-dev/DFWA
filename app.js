@@ -545,8 +545,8 @@ function sendLocalNotification(title, body) {
     navigator.serviceWorker.ready.then((registration) => {
       registration.showNotification(title, {
         body: body,
-        icon: './pwa-192x192.png',
-        badge: './pwa-192x192.png',
+        icon: './assets/icons/icon-192.png',
+        badge: './assets/icons/icon-192.png',
         vibrate: [100, 50, 100],
       });
     });
@@ -1303,3 +1303,26 @@ async function syncLeaderboard() {
 updatePlayerListUI();
 updateStartButtonState();
 restoreSession();
+
+// PWA Install Lifecycle & Standalone Detection
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  console.log('SYSTEM: PWA_INSTALL_PROMPT_READY');
+  // Optional: Hier könnte ein UI-Button für die Installation eingeblendet werden
+});
+
+window.addEventListener('appinstalled', () => {
+  deferredPrompt = null;
+  console.log('SYSTEM: PWA_INSTALLED_SUCCESSFULLY');
+});
+
+function checkStandaloneMode() {
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+  if (isStandalone) {
+    document.body.classList.add('pwa-standalone');
+    console.log('SYSTEM: STANDALONE_MODE_ACTIVE');
+  }
+}
+checkStandaloneMode();

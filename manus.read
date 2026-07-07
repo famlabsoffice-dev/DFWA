@@ -44,3 +44,49 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 
 **Status:** Bugfix-Zyklus abgeschlossen. System bereinigt und bereit für Expansion.
 **Zuletzt aktualisiert:** 07.07.2026 - 17:15 GMT+2
+
+---
+
+## 20. PWA Hardening - Phase 1: Assets & Metadata [IMPLEMENTIERT]
+- **Status:** Kritische Icon-Referenzen und iOS-Support validiert.
+- **Lösung:**
+  - `index.html`: `apple-touch-icon` Pfad von `./apple-touch-icon.png` (fehlend) auf `./assets/icons/icon-192.png` korrigiert.
+  - `app.js`: Notification-Icons in `showNotification` von `./pwa-192x192.png` (fehlend) auf existierende Assets umgebogen.
+  - `manifest.webmanifest`: Icons und Maskable-Icons auf Existenz geprüft und bestätigt.
+- **Verifikation:** Alle referenzierten Icons sind im Repository unter `/assets/icons/` vorhanden.
+
+**Zuletzt aktualisiert:** 07.07.2026 - 17:30 GMT+2
+
+---
+
+## 21. PWA Hardening - Phase 2: Service Worker & Caching [IMPLEMENTIERT]
+- **Status:** Offline-Verfügbarkeit durch erweitertes Precaching gestärkt.
+- **Lösung:**
+  - `sw.js`: `style.css` und `app.js` zum Precaching-Array hinzugefügt, um sicherzustellen, dass die Kernlogik und das Design auch ohne initiale Netzwerkverbindung sofort geladen werden.
+  - Strategien für Bilder (`CacheFirst`) und statische Assets (`StaleWhileRevalidate`) verifiziert.
+- **Verifikation:** Workbox 7.0 Integration ist aktiv und deckt alle kritischen Asset-Typen ab.
+
+**Zuletzt aktualisiert:** 07.07.2026 - 17:40 GMT+2
+
+---
+
+## 22. PWA Hardening - Phase 3: Mobile UI & Safe Areas [IMPLEMENTIERT]
+- **Status:** Viewport-Handling für moderne Mobilgeräte (Notch/Bezel) optimiert.
+- **Lösung:**
+  - `style.css`: Veraltete `@media (viewport-fit: cover)` Logik durch CSS-Variablen für `safe-area-insets` ersetzt.
+  - `body` erhält nun korrektes Padding basierend auf den Hardware-Gegebenheiten des Mobilgeräts, um Überlappungen mit System-UI (z.B. Home-Indicator) zu vermeiden.
+  - `min-height: 100dvh` sichergestellt für volle Bildschirmabdeckung.
+- **Verifikation:** Standard-konforme Umsetzung der Safe-Area-Variablen.
+
+**Zuletzt aktualisiert:** 07.07.2026 - 17:50 GMT+2
+
+---
+
+## 23. PWA Hardening - Phase 4: Installation & Standalone Logic [IMPLEMENTIERT]
+- **Status:** Lifecycle-Handling für PWA-Installation und Standalone-Modus integriert.
+- **Lösung:**
+  - `app.js`: `beforeinstallprompt` und `appinstalled` Event-Listener hinzugefügt, um den Installationsstatus zu überwachen.
+  - `checkStandaloneMode` Funktion implementiert: Erkennt, ob die App als PWA gestartet wurde, und fügt die CSS-Klasse `.pwa-standalone` zum Body hinzu (ermöglicht spezifisches UI-Styling für den installierten Zustand).
+- **Verifikation:** Standalone-Erkennung deckt sowohl Android (Chrome) als auch iOS (Safari "Add to Home Screen") ab.
+
+**Zuletzt aktualisiert:** 07.07.2026 - 18:00 GMT+2

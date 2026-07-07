@@ -7,7 +7,9 @@ if (self.workbox) {
   precaching.precacheAndRoute([
     { url: 'index.html', revision: '0ffc642bac0e9aeff9f6feeb6e32a1e9' },
     { url: 'registerSW.js', revision: '402b66900e731ca748771b6fc5e7a068' },
-    { url: 'manifest.webmanifest', revision: '4831ad2c45f2e547b896b0b60e02b74c' }
+    { url: 'manifest.webmanifest', revision: '4831ad2c45f2e547b896b0b60e02b74c' },
+    { url: 'style.css', revision: 'pwa-style-v1' },
+    { url: 'app.js', revision: 'pwa-app-v1' }
   ]);
 
   // Cache images (WebP) with CacheFirst strategy
