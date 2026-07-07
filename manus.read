@@ -3,7 +3,7 @@
 ## Zielsetzung
 Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live-Betrieb.
 
-## Aktueller Fokus (Stand 07.07.2026 - 19:15 GMT+2)
+## Aktueller Fokus (Stand 07.07.2026 - 19:20 GMT+2)
 
 ### 1. PWA & Mobile Integrity [STABIL]
 - **Viewport:** Nutzung von `100dvh` und `safe-area-insets` für volle Abdeckung auf allen Mobilgeräten (Notch-Support).
@@ -15,7 +15,12 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 - **Visuals:** Cyber-Eye Startbildschirm, Category Realms und situative ACK Emotes integriert.
 - **Mechanics:** Sabotage-System (Timer Drain) und visuelle Glitch-Effekte bei Angriffen aktiv.
 
-### 3. Infrastruktur [VALIDIERT]
+### 3. Button-Handling & Interaktion [NEU]
+- **Real-Time Feedback:** Alle Startbildschirm-Buttons (`INIT_PROTOCOL`, `BATTLE_LOBBY`, `SERVER_ROOM`) müssen haptisches oder visuelles Feedback (Scale-Effekt) bei Touch-Events geben.
+- **Event-Listener:** Nutzung von `pointerdown` statt `click` zur Minimierung der Latenz auf mobilen Geräten.
+- **State-Management:** Buttons werden während laufender Protokoll-Initialisierung (`INIT_PROTOCOL`) deaktiviert, um Mehrfach-Trigger zu verhindern.
+
+### 4. Infrastruktur [VALIDIERT]
 - **Security:** HMAC-Validierung via `LOCAL_ONLY_UNTRUSTED` stabilisiert.
 - **Deployment:** [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/) ist die primäre Live-Instanz.
 
@@ -26,5 +31,5 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 - [ ] Erweiterung der Sabotage-Effekte (Input Scramble).
 - [ ] Monitoring der Live-Latenz via Dashboard.
 
-**Status:** PWA Ready. Mobile Gameplay validiert.
-**Zuletzt aktualisiert:** 07.07.2026 - 19:15 GMT+2
+**Status:** PWA Ready. Mobile Gameplay validiert. Button-Handling Anweisungen integriert.
+**Zuletzt aktualisiert:** 07.07.2026 - 19:20 GMT+2
