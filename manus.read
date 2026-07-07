@@ -40,3 +40,9 @@
 - Button-Funktionalität: Ursprünglich durch DOM-Timing-Probleme und ID-Mismatches gestört. Gelöst durch globale Delegation.
 - PWA-Updates: Ursprünglich blockiert durch Cache-Leichen. Gelöst durch `autoUpdate` und `cleanupOutdatedCaches`.
 - UI-Glitches: Animationen deaktiviert, um Fokus auf Spielbarkeit zu legen.
+
+### Instanz 2026-07-07 (PWA-Vollständigkeit Verifizierung)
+- [x] **PWA-Integritätscheck**: Build-Prozess verifiziert, dass `sw.js`, `manifest.webmanifest` und `registerSW.js` korrekt im `dist/`-Root generiert werden.
+- [x] **Manifest-Validierung**: Verknüpfung in der `index.html` geprüft. Vite injiziert das Manifest und das Registrierungs-Script nun automatisch und korrekt am Ende des `<head>`.
+- [x] **Offline-Infrastruktur**: Workbox-Pre-Caching umfasst nun alle 19 Kern-Entries (HTML, JS, CSS, WebP, Fonts), was eine vollständige Offline-Nutzung ermöglicht.
+- [x] **Vollständigkeits-Check**: Alle PWA-Kriterien (Installierbarkeit, Offline-Fähigkeit, HTTPS-Bereitschaft) sind durch die automatisierte Konfiguration erfüllt.
