@@ -246,3 +246,11 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 246	- `style.css`: Glitch-Animationen deaktiviert.
 247	- `index.html`: `app.js` eingebunden, redundante Buttons entfernt.
 248	
+
+249	## Update 2026-07-07 (Fragen-Katalog Integration)
+250	✓ **Echte Fragenkataloge integriert**: Die `questions_i18n.json` mit über 22.000 Zeilen wird nun dynamisch geladen.
+251	✓ **Dynamische Kategorien**: Alle Kategorien (Erdkunde, Film & Fernsehen, Fussball, Gegenteil, Geschichte, Kunst & Kultur, Literatur, Musik, Sport, Wissenschaft & Technik) werden automatisch aus dem Katalog extrahiert und im Modal zur Auswahl angeboten.
+252	✓ **Sprachunterstützung**: Die Logik bevorzugt deutsche Texte (`de`), falls vorhanden, und nutzt Fallbacks für die Katalog-Struktur.
+253	✓ **Spielmechanik**: Punktesystem mit Streak-Bonus und Timer-Logik (15s) wurde direkt mit den realen Fragen verknüpft.
+254	✓ **Fehlerbehandlung**: Fallback-Mechanismen für fehlende Fragen oder Ladefehler implementiert.
+255	
