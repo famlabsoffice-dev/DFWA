@@ -68,6 +68,15 @@ export const BattleManager = {
       }
     });
 
+    this.socket.on('sabotage', ({ type, duration }) => {
+      console.log(`SABOTAGE RECEIVED: ${type}`);
+      if (type === 'timer_drain') {
+        UIManager.showToast('SYSTEM BREACH: TIMER DRAINED!', 'error');
+        // Event für app.js auslösen
+        window.dispatchEvent(new CustomEvent('sabotage_timer', { detail: { duration } }));
+      }
+    });
+
     this.socket.on('player_left', ({ socketId, activePlayers }) => {
       console.log(`Opponent left: ${socketId}`);
       const oppHud = document.getElementById('opponent-hud');

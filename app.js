@@ -95,6 +95,17 @@ window.addEventListener('unhandledrejection', async (event) => {
   }
 });
 
+// Sabotage Event Listener
+window.addEventListener('sabotage_timer', (e) => {
+  const { duration } = e.detail;
+  state.timer = Math.max(0, state.timer - duration);
+  const timerDisplay = document.getElementById('timer-display');
+  if (timerDisplay) {
+    timerDisplay.style.color = 'var(--error)';
+    setTimeout(() => timerDisplay.style.color = 'var(--neon)', 1000);
+  }
+});
+
 const SESSION_VERSION = 1;
 
 function saveSession() {
@@ -1093,6 +1104,13 @@ function checkAnswer(correct) {
       state.score += 100 + streakBonus + timeBonus;
       
       BattleManager.sendAction({ type: 'CORRECT_ANSWER', streak: state.streak, score: state.score }, state.playerId);
+      
+      // Sabotage-Trigger: Alle 5er Streak
+      if (state.streak > 0 && state.streak % 5 === 0) {
+        BattleManager.sendAction({ type: 'sabotage', sabotageType: 'timer_drain', duration: 3 }, state.playerId);
+        UIManager.showToast('SABOTAGE DEPLOYED!', 'warning');
+      }
+
       BattleManager.syncState({ score: state.score, streak: state.streak }, state.playerId);
       saveSession();
       const hudScore = document.getElementById('hud-score');

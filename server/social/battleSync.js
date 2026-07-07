@@ -20,6 +20,14 @@ export function setupBattleSync(io, db) {
     });
 
     socket.on('battle_action', ({ battleId, playerId, action }) => {
+      // Special handling for sabotage
+      if (action.type === 'sabotage') {
+        socket.to(battleId).emit('sabotage', { 
+          type: action.sabotageType, 
+          duration: action.duration,
+          attackerId: playerId 
+        });
+      }
       // Broadcast action to all other players in the battle
       socket.to(battleId).emit('opponent_action', { playerId, action });
     });

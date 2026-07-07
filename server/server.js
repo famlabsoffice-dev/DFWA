@@ -551,9 +551,47 @@ app.get('/api/social/friends/:userId', async (req, res) => {
   }
 });
 
+// Dynamische Meta-Tags für Social Sharing
+app.get('/share/:playerId', (req, res) => {
+  const { playerId } = req.params;
+  const indexPath = join(distPathForStatic, 'index.html');
+  
+  db.get(
+    `SELECT playerName, score, league FROM leaderboard WHERE playerId = ?`,
+    [playerId],
+    (err, row) => {
+      if (err || !row) {
+        return res.sendFile(indexPath);
+      }
+
+      const fs = await import('fs/promises');
+      fs.readFile(indexPath, 'utf8').then(html => {
+        const title = `DFWA Battle: ${row.playerName}`;
+        const description = `Score: ${row.score} | League: ${row.league} - Kannst du mich schlagen?`;
+        const shareImageUrl = `${req.protocol}://${req.get('host')}/api/social/share-card?playerId=${playerId}`;
+
+        const dynamicHtml = html
+          .replace(/<title>.*<\/title>/, `<title>${title}</title>`)
+          .replace('</head>', `
+            <meta property="og:title" content="${title}">
+            <meta property="og:description" content="${description}">
+            <meta property="og:image" content="${shareImageUrl}">
+            <meta property="og:type" content="website">
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:title" content="${title}">
+            <meta name="twitter:description" content="${description}">
+            <meta name="twitter:image" content="${shareImageUrl}">
+          </head>`);
+        
+        res.send(dynamicHtml);
+      }).catch(() => res.sendFile(indexPath));
+    }
+  );
+});
+
 // SPA-Fallback: Alle nicht-API-Routen auf index.html weiterleiten
 app.get(/^\/(?!api).*/, (req, res) => {
-  const indexPath = join(staticPathForStatic, 'index.html');
+  const indexPath = join(distPathForStatic, 'index.html');
   res.sendFile(indexPath);
 });
 
