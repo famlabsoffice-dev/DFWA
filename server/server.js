@@ -559,7 +559,7 @@ app.get('/share/:playerId', (req, res) => {
   db.get(
     `SELECT playerName, score, league FROM leaderboard WHERE playerId = ?`,
     [playerId],
-    (err, row) => {
+    async (err, row) => {
       if (err || !row) {
         return res.sendFile(indexPath);
       }
