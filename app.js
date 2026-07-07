@@ -49,23 +49,24 @@ function initStartScreen() {
 
     updateNameDisplay();
 
-    // Category Button
-    const categoryBtn = document.getElementById('category-modal-btn');
-    if (categoryBtn) {
-        categoryBtn.addEventListener('click', showCategoryModal);
-    }
+    // Use Global Delegation for better reliability on touch devices
+    document.body.addEventListener('click', (e) => {
+        const target = e.target.closest('button');
+        if (!target) return;
 
-    // Add Player Button
-    const addPlayerBtn = document.getElementById('add-player-btn');
-    if (addPlayerBtn) {
-        addPlayerBtn.addEventListener('click', handleAddPlayer);
-    }
-
-    // Start Button
-    const startBtn = document.getElementById('start-btn');
-    if (startBtn) {
-        startBtn.addEventListener('click', startGame);
-    }
+        if (target.id === 'category-modal-btn') {
+            showCategoryModal();
+        } else if (target.id === 'add-player-btn') {
+            handleAddPlayer();
+        } else if (target.id === 'start-btn') {
+            startGame();
+        } else if (target.id === 'close-system-btn') {
+            const overlay = document.getElementById('modal-overlay');
+            if (overlay) overlay.style.display = 'none';
+            document.getElementById('game-screen').classList.remove('active');
+            document.getElementById('start-screen').classList.add('active');
+        }
+    });
 
     // Remove redundant Server Room button from start screen if it exists
     const startLeaderboardBtn = document.getElementById('start-show-leaderboard-btn');
@@ -78,9 +79,13 @@ function initStartScreen() {
         window.allQuestions = allQuestions; // Global cache
         if (state.availableCategories.length > 0 && !state.availableCategories.includes(state.selectedCategory)) {
             state.selectedCategory = state.availableCategories[0];
-            document.getElementById('current-category-display').textContent = state.selectedCategory.toUpperCase();
+            const display = document.getElementById('current-category-display');
+            if (display) display.textContent = state.selectedCategory.toUpperCase();
         }
     });
+
+    // UI Heartbeat for Name Sync
+    setInterval(updateNameDisplay, 500);
 }
 
 function updateNameDisplay() {
@@ -89,9 +94,18 @@ function updateNameDisplay() {
         const el = document.getElementById(id);
         if (el) {
             if (id === 'stat-player') {
-                el.innerHTML = `USER_IDENT//<br /><span id="player-display">${state.playerName}</span>`;
+                const nameSpan = el.querySelector('#player-display');
+                if (nameSpan) {
+                    if (nameSpan.textContent !== state.playerName) {
+                        nameSpan.textContent = state.playerName;
+                    }
+                } else {
+                    el.innerHTML = `USER_IDENT//<br /><span id="player-display">${state.playerName}</span>`;
+                }
             } else {
-                el.textContent = state.playerName;
+                if (el.textContent !== state.playerName) {
+                    el.textContent = state.playerName;
+                }
             }
         }
     });
@@ -124,7 +138,8 @@ function showCategoryModal() {
             btn.className = 'mode-btn';
             if (cat === state.selectedCategory) btn.classList.add('active');
             btn.innerHTML = `<strong>${cat.toUpperCase()}</strong><small>DATA_SECTOR_${cat.slice(0,3).toUpperCase()}</small>`;
-            btn.onclick = () => {
+            btn.onclick = (e) => {
+                e.stopPropagation();
                 state.selectedCategory = cat;
                 const display = document.getElementById('current-category-display');
                 if (display) display.textContent = cat.toUpperCase();
@@ -138,9 +153,22 @@ function showCategoryModal() {
 }
 
 function startGame() {
-    if (!window.allQuestions) return;
+    console.log("Attempting to start game...");
+    if (!window.allQuestions) {
+        console.warn("Questions not loaded yet. Retrying...");
+        loadQuestions().then(allQuestions => {
+            window.allQuestions = allQuestions;
+            if (window.allQuestions) startGame();
+        });
+        return;
+    }
     
     state.questions = window.allQuestions.filter(q => q.cat === state.selectedCategory);
+    if (state.questions.length === 0) {
+        console.error("No questions found for category:", state.selectedCategory);
+        state.questions = window.allQuestions.slice(0, 20); // Fallback
+    }
+
     // Shuffle questions
     state.questions.sort(() => Math.random() - 0.5);
     
@@ -248,15 +276,6 @@ function endGame() {
         text.textContent = `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}`;
         if (list) list.style.display = "none";
         overlay.style.display = 'flex';
-        
-        const closeBtn = document.getElementById('close-system-btn');
-        if (closeBtn) {
-            closeBtn.onclick = () => {
-                overlay.style.display = 'none';
-                document.getElementById('game-screen').classList.remove('active');
-                document.getElementById('start-screen').classList.add('active');
-            };
-        }
     }
 }
 

@@ -254,3 +254,19 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 253	✓ **Spielmechanik**: Punktesystem mit Streak-Bonus und Timer-Logik (15s) wurde direkt mit den realen Fragen verknüpft.
 254	✓ **Fehlerbehandlung**: Fallback-Mechanismen für fehlende Fragen oder Ladefehler implementiert.
 255	
+
+## Update 2026-07-07 (Start-Button Fix & Globale Delegation)
+✓ **Start-Button Funktionalität**: 
+  - Problem: Der `start-btn` reagierte auf einigen Geräten nicht zuverlässig.
+  - Lösung: Umstellung auf **globale Event-Delegation** am `document.body`. Dies stellt sicher, dass Klicks auf den Start-Button (ID: `start-btn`) immer abgefangen werden, unabhängig vom Rendering-Zeitpunkt.
+  - Integration: `initStartScreen` registriert nun einen zentralen Listener für `start-btn`, `add-player-btn` und `category-modal-btn`.
+✓ **Stabilität**: 
+  - `startGame` prüft nun explizit, ob Fragen geladen sind, und führt einen automatischen Retry durch.
+  - Fallback-Logik für Fragenkataloge hinzugefügt, falls eine Kategorie leer sein sollte.
+✓ **Code-Konsistenz**: 
+  - Alle anderen Funktionen (Name, Kategorien) wurden unverändert beibehalten und durch die globale Delegation sogar stabilisiert.
+✓ **Build & Push**: Änderungen wurden gebaut und ins Repository gepusht.
+
+### Nächste Schritte
+1. Verifizierung der Start-Button-Funktion auf dem Redmi Note 8 Pro.
+2. Überprüfung der Spielmechanik mit dem großen Fragenkatalog.
