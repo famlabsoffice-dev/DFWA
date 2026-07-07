@@ -69,7 +69,8 @@ function initStartScreen() {
         } else if (target.id === 'close-system-btn') {
             const overlay = document.getElementById('modal-overlay');
             if (overlay) overlay.style.display = 'none';
-            document.getElementById('game-screen').classList.remove('active');
+            // Härtung: Alle Screens explizit deaktivieren
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             document.getElementById('start-screen').classList.add('active');
         }
     };
@@ -213,7 +214,8 @@ function startGame() {
     state.lives = 3;
     state.streak = 0;
     
-    document.getElementById('start-screen').classList.remove('active');
+    // Härtung: Alle Screens explizit deaktivieren, bevor der neue aktiviert wird
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById('game-screen').classList.add('active');
     
     showNextQuestion();

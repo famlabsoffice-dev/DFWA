@@ -59,3 +59,9 @@
 - [x] **Vertical Spacing Fix**: `margin-top` der `.ui-content-wrapper` auf 40vh (Mobile) bzw. 48vh (Default) reduziert, um abgeschnittene Buttons ("HARDCORE", "BLITZ") am unteren Rand zu vermeiden.
 - [x] **Modal-Flexibilität**: `#modal-content` nutzt nun `flex` und `gap`, um Abstände zwischen Liste und Buttons sauber zu halten. `max-height: 90vh` und `overflow-y: auto` verhindern, dass das Modal den Bildschirm verlässt.
 - [x] **Build-Validierung**: Erfolgreicher Build bestätigt die Integration der Layout-Korrekturen.
+
+### Instanz 2026-07-07 (Screen-Ghosting Fix)
+- [x] **Display-Steuerung gehärtet**: `.screen` nutzt nun `display: none` statt nur `visibility: hidden`. Dies garantiert, dass inaktive Bildschirme weder Platz beanspruchen noch visuell überlagern (Ghosting).
+- [x] **Zustands-Management**: `app.js` deaktiviert nun bei jedem Screen-Wechsel explizit alle anderen Bildschirme via `document.querySelectorAll('.screen').forEach(...)`. Dies verhindert, dass mehrere Instanzen gleichzeitig "aktiv" sind.
+- [x] **Interaktions-Sicherheit**: Durch `display: none` werden auch alle Event-Listener und Pointer-Events inaktiver Bildschirme vom Browser ignoriert, was Fehlklicks verhindert.
+- [x] **Build-Validierung**: Erfolgreicher Build bestätigt die Integration der Härtungsmaßnahmen gegen Bildschirm-Überlagerungen.
