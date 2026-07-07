@@ -807,9 +807,13 @@ function pauseProtocol() {
     const gameScreen = document.getElementById('game-screen');
     const startScreen = document.getElementById('start-screen');
     const resumeBtn = document.getElementById('resume-btn');
+    const coreEye = document.getElementById('core-eye');
+    
     if (gameScreen) gameScreen.classList.remove('active');
     if (startScreen) startScreen.classList.add('active');
     if (resumeBtn) resumeBtn.style.display = 'block';
+    if (coreEye) coreEye.src = './assets/images/ack_pause.webp';
+    
     saveSession();
   } catch {
     console.error('Pause protocol failed');
@@ -833,9 +837,12 @@ function resumeProtocol() {
     const startScreen = document.getElementById('start-screen');
     const gameScreen = document.getElementById('game-screen');
     const resumeBtn = document.getElementById('resume-btn');
+    const coreEye = document.getElementById('core-eye');
+    
     if (startScreen) startScreen.classList.remove('active');
     if (gameScreen) gameScreen.classList.add('active');
     if (resumeBtn) resumeBtn.style.display = 'none';
+    if (coreEye) coreEye.src = './assets/images/ack_core_brain.webp';
 
     const config = getGameModeConfig(state.mode);
     state.timer =
