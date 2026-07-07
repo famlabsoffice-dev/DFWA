@@ -65,3 +65,9 @@
 - [x] **Zustands-Management**: `app.js` deaktiviert nun bei jedem Screen-Wechsel explizit alle anderen Bildschirme via `document.querySelectorAll('.screen').forEach(...)`. Dies verhindert, dass mehrere Instanzen gleichzeitig "aktiv" sind.
 - [x] **Interaktions-Sicherheit**: Durch `display: none` werden auch alle Event-Listener und Pointer-Events inaktiver Bildschirme vom Browser ignoriert, was Fehlklicks verhindert.
 - [x] **Build-Validierung**: Erfolgreicher Build bestätigt die Integration der Härtungsmaßnahmen gegen Bildschirm-Überlagerungen.
+
+### Instanz 2026-07-07 (Timer-Lesbarkeit)
+- [x] **Timer-Bar (Visuell)**: Höhe auf 12px verdoppelt, Glow-Effekt und Gradient (`var(--neon)` zu `#adff2f`) hinzugefügt. Rahmen auf 2px verstärkt für maximale Sichtbarkeit.
+- [x] **Timer-Text (Kontrast)**: Text auf die rechte Seite verschoben, mit schwarzer Schrift auf gelbem Grund (`var(--warning)`) in einer markanten Box hinterlegt. Glow-Effekt und Rahmen hinzugefügt, um sich vom dynamischen Hintergrund abzuheben.
+- [x] **Layout-Stabilität**: Timer-Elemente in der `index.html` bereinigt und Inline-Styles für bessere mobile Darstellung optimiert.
+- [x] **Build-Validierung**: Erfolgreicher Build bestätigt die Integration der verbesserten Timer-UI.
