@@ -298,7 +298,7 @@ app.post('/api/leaderboard', (req, res) => {
     return res.status(400).json({ error: 'Missing playerId or playerName' });
   }
 
-  const validModes = ['classic', 'timeAttack', 'hardcore'];
+  const validModes = ['classic', 'timeAttack', 'hardcore', 'blitz'];
   if (!validModes.includes(modeVal)) {
     return res.status(400).json({ error: 'INVALID_MODE' });
   }
