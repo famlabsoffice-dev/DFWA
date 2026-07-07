@@ -3,7 +3,7 @@
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 07.07.2026 - 14:00 GMT+2)
+## Status Quo (Stand 07.07.2026 - 14:15 GMT+2)
 
 ### 1. Live-System & Deployment [VALIDIERT]
 - **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
@@ -68,7 +68,7 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 - **Lösung:**
   - `index.html`: `#sabotage-overlay` als dedizierte Effekt-Ebene hinzugefügt.
   - `style.css`: `.sabotage-layer` und `sabotageGlitch` Animation implementiert (Nutzung von `ack_interference_glitch.webp`).
-  - `app.js`: Event-Listener für `sabotage_timer` triggert nun die visuelle Animation for 1.5s.
+  - `app.js`: Event-Listener für `sabotage_timer` triggert nun die visuelle Animation für 1.5s.
 
 ### 12. Category Realm Visuals [IMPLEMENTIERT]
 - **Status:** Dynamische Hintergründe je nach gewählter Kategorie im Spiel-Bildschirm integriert.
@@ -76,12 +76,15 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
   - `style.css`: Klassen `.realm-hardware`, `.realm-ai` und `.realm-security` mit entsprechenden Assets aus `manus.visuals` hinzugefügt.
   - `app.js`: Logik in `initGame` implementiert, die basierend auf dem Kategorienamen die passende CSS-Klasse auf das `#game-screen` anwendet.
 
-## Nächste Schritte
+### 13. ACK Emotes Integration [IMPLEMENTIERT]
+- **Status:** Situatives Feedback durch ACK-Charakter-Visuals im Feedback-Screen integriert.
+- **Lösung:**
+  - `app.js`: `checkAnswer` Funktion erweitert, um situative Emotes anzuzeigen:
+    - `ack_eye_wink.webp` bei Streak >= 10.
+    - `ack_player_win_angry.webp` bei Streak >= 5.
+    - `ack_eye_skeptical.webp` wenn nur noch 1 Leben übrig ist.
 
-### 13. ACK Emotes Integration
-- **Ziel:** Situatives Feedback durch ACK-Charakter-Visuals.
-- **Aufgaben:**
-  - Integration von `ack_eye_skeptical.webp`, `ack_eye_wink.webp` etc. in das Feedback-System bei Meilensteinen oder Fehlern.
+## Nächste Schritte
 
 ### 14. Persistent Player Profiles
 - **Ziel:** Speicherung von Statistiken über Sessions hinweg.
@@ -95,16 +98,15 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 > **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
 > 
 > **DEIN AUFTRAG:**
-> Integriere situative ACK Emotes (Reaktions-Visuals) in das Feedback-System gemäß `manus.visuals`.
+> Implementiere persistente Spielerprofile (Schritt 14). Fokus auf LocalStorage-Synchronisation und Vorbereitung für Backend-Accounts.
 > 
 > **Zwingende Regeln:**
 > 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
 > 2. **Ressourcenschonung:** Nur notwendige Dateien bearbeiten.
-> 3. **Visuelle Identität:** Nutze die Emote-Assets (Wink, Skeptical etc.) aus `assets/images/`.
 > 
-> **Startpunkt:** Analysiere `app.js` (Funktion `renderFeedback` oder ähnliche) und das `feedback-screen` UI.
+> **Startpunkt:** Analysiere `app.js` (Speicherlogik) und `scripts/api-client.js`.
 
 ---
 
-**Status:** Category Realm Visuals implementiert.
-**Zuletzt aktualisiert:** 07.07.2026 - 14:00 GMT+2
+**Status:** ACK Emotes integriert.
+**Zuletzt aktualisiert:** 07.07.2026 - 14:15 GMT+2

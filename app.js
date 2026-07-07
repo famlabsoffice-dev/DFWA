@@ -1149,7 +1149,15 @@ function checkAnswer(correct) {
           hudStreak.style.display = 'none';
         }
       }
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_reaction_set.webp';
+      if (fEyeBase) {
+        if (state.streak >= 10) {
+          fEyeBase.src = './assets/images/ack_eye_wink.webp';
+        } else if (state.streak >= 5) {
+          fEyeBase.src = './assets/images/ack_player_win_angry.webp';
+        } else {
+          fEyeBase.src = './assets/images/ack_reaction_set.webp';
+        }
+      }
       if (fMsg) {
         fMsg.style.borderColor = 'var(--neon)';
         fMsg.style.color = 'var(--neon)';
@@ -1165,7 +1173,13 @@ function checkAnswer(correct) {
       if (hudStreak) hudStreak.style.display = 'none';
       const livesDisplay = document.getElementById('lives-display');
       if (livesDisplay) livesDisplay.innerText = state.lives;
-      if (fEyeBase) fEyeBase.src = './assets/images/ack_interference_glitch.webp';
+      if (fEyeBase) {
+        if (state.lives === 1) {
+          fEyeBase.src = './assets/images/ack_eye_skeptical.webp';
+        } else {
+          fEyeBase.src = './assets/images/ack_interference_glitch.webp';
+        }
+      }
       if (fContainer) fContainer.classList.add('zoom-anim');
       if (fMsg) {
         fMsg.style.borderColor = 'var(--error)';
