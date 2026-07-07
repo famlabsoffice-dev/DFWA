@@ -81,7 +81,7 @@ html {
 }
 
 #start-screen {
-  background: url('./assets/images/ack_splash_void.webp') no-repeat center center;
+  background: url('./assets/images/new_start_screen.png') no-repeat center center;
   background-size: cover;
 }
 
