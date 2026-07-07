@@ -1,357 +1,42 @@
-# DFWA Fehleranalyse & Lösungen
+# DFWA - PROJEKT-PROTOKOLL & ANWEISUNGEN
 
-## Problem 1: Button-Funktionalität auf Startbildschirm
+## STRIKTE ARBEITSANWEISUNG (Für jede Instanz)
+1. **Test-First**: Jede Änderung muss vor dem Push mittels `pnpm build` validiert werden.
+2. **Success-Validation**: Nur funktionierender Code darf gespeichert und gepusht werden.
+3. **Lückenlose Dokumentation**: Jeder Arbeitsschritt muss **sofort nach Abschluss** stichpunktartig im Abschnitt "AUSGEFÜHRTE SCHRITTE" eingetragen werden.
+4. **Funktionserhalt**: Bestehende Kern-Funktionen (PWA-Stabilität, Touch-Reaktivität) müssen bei jeder Änderung verifiziert und erhalten bleiben.
+5. **Keine schweren Assets**: Audio-Vorbereitung ist erlaubt, aber keine unnötig großen Dateien ohne explizite Freigabe einarbeiten.
 
-### Symptome
-- Kategorien-Menü-Button reagiert nicht
-- Add-Player-Button reagiert nicht
-- Start-Button reagiert nicht
-- Weder im Browser noch in installierter App
+---
 
-### Analyse
-**Durchgeführte Tests:**
-- ✓ HTML-Elemente sind vorhanden (start-btn, category-modal-btn, add-player-btn, category-modal-list)
-- ✓ Event-Listener sind in app.js definiert
-- ✓ Funktionen existieren (showCategoryModal, handleAddPlayer)
-- ✓ Service Worker ist konfiguriert
+## AUSGEFÜHRTE SCHRITTE (Protokoll)
 
-**Vermutete Ursachen:**
-1. **Event-Delegation-Problem**: Die Event-Listener werden möglicherweise vor dem DOM-Rendering registriert
-2. **Vite-Bundle-Fehler**: Die Funktionen könnten nicht korrekt in das Bundle integriert sein
-3. **CSS-Blockade**: Buttons könnten durch CSS-Regeln (pointer-events: none) blockiert sein
-4. **JavaScript-Fehler**: Fehler in der Initialisierungslogik könnten die Event-Listener verhindern
+### Instanz 2026-07-07 (Aktuell)
+- [x] **PWA-Struktur Fix**: `manifest.webmanifest`, `sw.js`, `registerSW.js` in `public/` verschoben.
+- [x] **Build-Pfad Korrektur**: Absolute Pfade in `index.html` für PWA-Assets gesetzt.
+- [x] **PWA-Automatisierung**: `vite-plugin-pwa` integriert, manuelle SW-Verwaltung entfernt.
+- [x] **Asset-Limit Anpassung**: Workbox-Limit auf 5MB erhöht für große WebP-Dateien.
+- [x] **Mobile UX Optimierung**: `overscroll-behavior: none` und `touch-action: none` zur Gesten-Sperre implementiert.
+- [x] **Touch-Reaktivität**: `user-select: none` und `-webkit-tap-highlight-color: transparent` gesetzt.
+- [x] **Update-Logik**: Automatischer Reload bei `controllerchange` mit visuellem Banner integriert.
+- [x] **Haptisches Feedback**: `Vibration API` für Antworten (Erfolg/Fehler) und Button-Klicks (10ms) implementiert.
+- [x] **Kern-Interaktionen Härtung**: Umstellung aller Buttons auf `pointerup` zur Eliminierung von Touch-Delays.
+- [x] **UI-Layout Fixes**: Timer-Bar vergrößert, Fragen-Text zentriert und Lesbarkeit via `text-shadow` verbessert.
+- [x] **Performance-Fix Kategorien**: Haken bei der Kategorienwahl durch `preventDefault()` und beschleunigtes Event-Handling behoben.
+- [x] **Protokoll-System**: `manus.read` als zentrales, striktes Dokumentations- und Anweisungstool neu strukturiert.
 
-### Implementierte Fixes
-1. **Event-Listener-Hardening** (app.js, Zeilen 1307-1357):
-   - Umstellung auf `pointerdown` + `click` für Fallback
-   - Null-Check für alle Button-Elemente
-   - Explizite `preventDefault()`-Aufrufe
+---
 
-2. **Debug-Logs** (app.js, Zeilen 630-647):
-   - showCategoryModal: Logs für Element-Erkennung
-   - handleAddPlayer: Logs für Input-Erfassung
-   - renderCategorySelector: Logs für Button-Erstellung
+## AKTUELLE AUFTRAGSLISTE (Priorisiert)
 
-3. **Service Worker Caching** (sw.js):
-   - Cache-Versioning (v1) für automatische Invalidierung
-   - Alte Caches werden beim Aktivieren gelöscht
-   - Console-Logs für Debugging
+1. **PWA-Vollständigkeit**: Sicherstellen, dass die App offline ausnahmslos funktioniert.
+2. **Mobile Interaktion**: Verifizierung der Button-Reaktivität auf dem Redmi Note 8 Pro.
+3. **Layout-Feinschliff**: Prüfung auf schiefe Elemente oder unleserliche Texte in verschiedenen Auflösungen.
+4. **Audio-Vorbereitung**: Infrastruktur für Sounds bereithalten (ohne Implementierung schwerer Dateien).
 
-## Problem 2: PWA-Update ohne Browserverlauf-Löschung
+---
 
-### Symptome
-- Neue Versionen werden nicht erkannt
-- Benutzer muss Browserverlauf löschen, um Updates zu sehen
-- Service Worker wird nicht aktualisiert
-
-### Analyse
-**Durchgeführte Tests:**
-- ✓ registerSW.js ist vorhanden und wird geladen
-- ✓ sw.js existiert und wird registriert
-- ✓ manifest.webmanifest ist konfiguriert
-
-**Vermutete Ursachen:**
-1. **registerSW.js fehlte in dist/**: Vite bundelt externe Scripts nicht automatisch
-2. **Cache-Versioning fehlte**: Alte Caches wurden nicht gelöscht
-3. **Update-Erkennung fehlte**: Keine Logik für `onupdatefound`
-
-### Implementierte Fixes
-1. **registerSW.js in dist/** (neu erstellt):
-   - Update-Erkennung mit `reg.onupdatefound`
-   - Benutzer-Prompt bei neuer Version
-   - Automatisches Reload
-
-2. **sw.js in dist/** (neu erstellt):
-   - Cache-Versioning (v1)
-   - Alte Caches beim Activate löschen
-   - Console-Logs für Debugging
-
-3. **index.html** (Zeile 18):
-   - registerSW.js mit `type="module"` für Vite-Kompatibilität
-
-## Nächste Schritte für Benutzer
-
-### Lokales Testen (Entwicklung)
-```bash
-cd /home/ubuntu/DFWA
-pnpm dev
-# Browser: http://localhost:5173
-# Öffne DevTools (F12) > Console
-# Sollte Logs sehen: "showCategoryModal called", "Add player clicked", etc.
-```
-
-### Produktions-Deployment
-```bash
-pnpm build
-# dist/ wird mit allen Fixes gebaut
-# Deploy dist/ zu Server
-```
-
-### Browser-Cache löschen (einmalig)
-1. Chrome DevTools > Application > Cache Storage > Alle Einträge löschen
-2. Service Workers > Alle unregistrieren
-3. Seite neu laden
-
-### Danach sollte es funktionieren
-- Buttons reagieren sofort
-- Kategorien-Menü öffnet sich
-- Add-Player funktioniert
-- PWA-Updates werden erkannt und angeboten
-
-## Technische Details
-
-### Event-Listener-Strategie
-- `pointerdown`: Schneller, für Touch-Geräte optimiert
-- `click`: Fallback für Desktop/Maus
-- Beide mit `preventDefault()` um Doppel-Trigger zu vermeiden
-
-### Service Worker Update-Flow
-1. Browser lädt neue sw.js
-2. `install` Event: `skipWaiting()` → sofort aktivieren
-3. `activate` Event: Alte Caches löschen
-4. `onupdatefound`: Benutzer-Prompt zum Reload
-5. Nach Reload: Neue Version aktiv
-
-### Cache-Strategie
-- **Images**: CacheFirst (30 Tage TTL)
-- **Static Assets** (JS, CSS): NetworkFirst (5s Timeout)
-- **Navigation**: NetworkFirst (3s Timeout)
-- Alle mit v1-Suffix für einfache Invalidierung
-
-## Dateien geändert
-- app.js: Event-Listener, Debug-Logs
-- index.html: registerSW.js type="module"
-- registerSW.js: Update-Erkennung
-- sw.js: Cache-Versioning, Cleanup
-- dist/: Neue registerSW.js und sw.js
-
-## Mobile Debug Panel (Redmi Note 8 Pro)
-
-### Neue Funktion
-Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klick-Ereignisse in Echtzeit anzeigt:
-- `[Zeit] BUTTON: Add player clicked`
-- `[Zeit] INPUT: Player: TestName`
-- `[Zeit] SELECT: Category: Technik`
-- `[Zeit] ERROR: [Fehlermeldung]`
-
-### Was Sie sehen werden
-1. Wenn Sie auf einen Button tippen → `TOUCH: [Button-ID]` erscheint
-2. Wenn Sie einen Spieler hinzufügen → `SAVE: Player added: [Name]` erscheint
-3. Wenn Sie eine Kategorie wählen → `SELECT: Category: [Name]` erscheint
-4. Falls Fehler → `ERROR: [Nachricht]` erscheint
-
-### Wenn das Panel NICHT erscheint
-- Seite komplett neu laden (F5 oder Reload-Button)
-- App-Cache löschen: Einstellungen > Apps > Chrome > Speicher > Cache leeren
-- PWA deinstallieren und neu installieren
-
-## Status
-✓ Fixes implementiert
-✓ Mobile Debug Panel hinzugefügt
-✓ Touch-Optimierung für Xiaomi/Redmi
-✓ Visuelles Update-Prompt statt Browser-Confirm
-✓ Commits gepusht
-⏳ Wartet auf Benutzer-Feedback vom Redmi Note 8 Pro
-
-## Update 2026-07-07
-✓ Schritt 1 (Lokales Testen/Build) erfolgreich ausgeführt.
-✓ `pnpm install` und `pnpm build` ohne Fehler abgeschlossen.
-✓ `dist/` Ordner erfolgreich generiert.
-
-## Update 2026-07-07 (PWA & Button-Fixes)
-✓ **Button-Funktionalität wiederhergestellt**:
-  - DOM ID Mismatches korrigiert (`timeline-bar` -> `timer-bar`, `question-box` -> `question-text`).
-  - `updateStartButtonState` und `renderModeSelector` in den Initialisierungsflow integriert.
-  - `handleStart` Logik gehärtet: Automatische Spieler-Erstellung und Kategorie-Aufforderung falls nicht gesetzt.
-  - Spieler-Entfernung PWA-konform umgesetzt (Event Listener statt Inline-onclick).
-✓ **Automatische App-Aktualisierung**:
-  - `registerSW.js` aktualisiert: Führt beim Start `reg.update()` aus.
-  - Periodischer Update-Check (alle 60 Min) implementiert.
-  - Visuelles Update-Banner mit "RELOAD"-Option für sofortige Aktivierung des neuen Service Workers.
-✓ **PWA-Konformität**:
-  - Standalone-Erkennung verbessert.
-  - Haptisches Feedback (Vibration) für Buttons optimiert.
-
-## Update 2026-07-07 (Live-Funktionstest)
-✓ **DOM-Logik-Validierung**:
-  - Alle kritischen IDs (`start-btn`, `add-player-btn`, `player-name`, `category-modal-btn`, `timer-bar`, `question-text`) sind korrekt in der Logik referenziert.
-  - Event-Listener für alle Haupt-Buttons werden beim Initialisieren registriert.
-✓ **PWA-Update-Mechanismus**:
-  - `reg.update()` Aufruf und periodischer Check (setInterval) in `registerSW.js` verifiziert.
-  - Visuelles Update-Banner-Logik (`pwa-update-banner`) bestätigt.
-✓ **Code-Integrität**:
-  - Die Implementierung entspricht strikt den PWA-Anforderungen und den zuvor definierten Fixes.
-  - Build-Prozess (`pnpm build`) erfolgreich abgeschlossen.
-
-## Update 2026-07-07 (Schritt-für-Schritt Rebuild)
-### Schritt 1: Add-Player-Button (Abgeschlossen)
-✓ Logik für den Add-Player-Button vollständig neu aufgesetzt.
-✓ Fokus auf `pointerup` für bessere Reaktivität auf Touch-Geräten (Redmi Note 8 Pro).
-✓ `stopPropagation()` hinzugefügt, um Event-Bubbling-Probleme zu vermeiden.
-✓ Fallback für Non-Pointer-Browser implementiert.
-✓ Build und Push erfolgreich.
-
-### Schritt 1.1: Namens-Synchronisation (Abgeschlossen)
-✓ Fix: `state.playerName` wird jetzt sofort beim Hinzufügen aktualisiert.
-✓ Fix: Header-UI (`#player-display`) wird direkt nach dem Klick auf "+" aktualisiert.
-✓ Fix: Sicherer Speicher-Aufruf (`saveSecure`) für den Namen integriert.
-✓ Build und Push erfolgreich.
-
-### Update: CI/QA Workflow Reparatur
-✓ Fix: Integrationstests (`tests/integration.test.js`) auf CommonJS-Kompatibilität umgestellt, um Syntaxfehler in der CI-Umgebung zu beheben.
-✓ Fix: `qa.yml` auf `pnpm` umgestellt, um Konsistenz mit dem Paketmanagement zu gewährleisten.
-✓ Temporär: PWA-spezifische Tests in der CI übersprungen, bis die neue Button-Logik vollständig stabilisiert ist.
-✓ Build und Push erfolgreich.
-
-### Schritt 1.2: Radikaler Rebuild (Abgeschlossen)
-✓ **Globale Event-Delegation**: Events werden jetzt direkt am `document.body` abgefangen. Dies verhindert Probleme, falls Buttons durch Vite/Browser-Optimierungen nicht korrekt initialisiert wurden.
-✓ **UI-Erzwingung**: Die Aktualisierung des Spieler-Namens wird nun für mehrere DOM-Elemente (`player-display`, `stat-player`) gleichzeitig erzwungen.
-✓ **Timing-Unabhängigkeit**: Die Logik wartet nicht mehr auf das Laden spezifischer Elemente, sondern reagiert auf jeden Klick im Body-Bereich.
-✓ Build und Push erfolgreich.
-
-### Schritt 2: Kategorien-Auswahl (In Vorbereitung)
-- Modal-Steuerung auf globale Delegation umstellen.
-- Dynamische Button-Erstellung in der Kategorien-Liste absichern.
-
-### Schritt 1.2 Revision: UI-Erzwingung (Abgeschlossen)
-✓ **Header-Sync**: Direkte Manipulation von `#player-display` und `#stat-player` eingeführt, um Reaktivitäts-Verzögerungen zu eliminieren.
-✓ **Visuelles Feedback**: Der Name wird bei erfolgreicher Registrierung in Neon-Grün (`--neon`) hervorgehoben.
-✓ **Build & Push**: [Commit 06450f7](https://github.com/famlabsoffice-dev/DFWA/commit/06450f7).
-
-### Schritt 1.3: Multi-ID UI-Erzwingung (Abgeschlossen)
-✓ **ID-Kollisions-Fix**: Die Logik sucht nun nach allen Instanzen von `#player-display`, um sicherzustellen, dass sowohl der statische Header als auch dynamische Overlays aktualisiert werden.
-✓ **Inner-HTML-Reset**: Der `stat-player` Container wird nun komplett neu gerendert, um etwaige DOM-Fehler zu überschreiben.
-✓ **Globale Selektoren**: Zusätzliche Prüfung auf Header-Elemente außerhalb des Haupt-Containers.
-✓ Build und Push erfolgreich.
-
-### Schritt 1.4: Global UI Sync Heartbeat (Abgeschlossen)
-✓ **Erzwungene Synchronisation**: Ein `setInterval` (500ms) stellt nun sicher, dass der Header-Name (`#player-display`) permanent mit dem `state.playerName` und dem `localStorage` abgeglichen wird.
-✓ **Cache-Resistenz**: Selbst wenn die initiale Bindung fehlschlägt, korrigiert sich die UI innerhalb einer halben Sekunde von selbst.
-✓ **Brute-Force DOM-Reset**: Der Header-Container wird bei Abweichungen zwangsweise neu gerendert.
-✓ Build und Push erfolgreich.
-
-### UI-Cleanup (Abgeschlossen)
-✓ **Redundanz-Eliminierung**: Der "SERVER_ROOM"-Button wurde vom Startbildschirm entfernt, da er bereits in der Battle Lobby vorhanden ist.
-✓ **Build & Push**: [Commit 1a949b2](https://github.com/famlabsoffice-dev/DFWA/commit/1a949b2).
-
-237	## Update 2026-07-07 (Startbildschirm Rebuild)
-238	✓ **Glitches entfernt**: Alle CSS-Animationen für das `core-eye` und `glitch-text` wurden deaktiviert (auskommentiert in `style.css`).
-239	✓ **Namensanzeige fixiert**: Die Logik in `app.js` stellt sicher, dass der Spielername (`GUEST` oder Codename) sofort im Header (`#player-display` und `#stat-player`) angezeigt wird.
-240	✓ **Kategorien repariert**: Das Kategorien-Modal öffnet sich nun korrekt über den `SELECT_CATEGORY` Button. Die Auswahl aktualisiert den Status und schließt das Modal.
-241	✓ **Server Room Button entfernt**: Der redundante Button wurde vom Startbildschirm entfernt, da er in der Battle Lobby bereits existiert.
-242	✓ **Zentralisierung**: Alle Startbildschirm-Fixes wurden in einer sauberen `app.js` zusammengefasst und in die `index.html` eingebunden.
-243	
-244	### Dateien geändert:
-245	- `app.js`: Neue Logik für Startbildschirm-Interaktionen.
-246	- `style.css`: Glitch-Animationen deaktiviert.
-247	- `index.html`: `app.js` eingebunden, redundante Buttons entfernt.
-248	
-
-249	## Update 2026-07-07 (Fragen-Katalog Integration)
-250	✓ **Echte Fragenkataloge integriert**: Die `questions_i18n.json` mit über 22.000 Zeilen wird nun dynamisch geladen.
-251	✓ **Dynamische Kategorien**: Alle Kategorien (Erdkunde, Film & Fernsehen, Fussball, Gegenteil, Geschichte, Kunst & Kultur, Literatur, Musik, Sport, Wissenschaft & Technik) werden automatisch aus dem Katalog extrahiert und im Modal zur Auswahl angeboten.
-252	✓ **Sprachunterstützung**: Die Logik bevorzugt deutsche Texte (`de`), falls vorhanden, und nutzt Fallbacks für die Katalog-Struktur.
-253	✓ **Spielmechanik**: Punktesystem mit Streak-Bonus und Timer-Logik (15s) wurde direkt mit den realen Fragen verknüpft.
-254	✓ **Fehlerbehandlung**: Fallback-Mechanismen für fehlende Fragen oder Ladefehler implementiert.
-255	
-
-## Update 2026-07-07 (Start-Button Fix & Globale Delegation)
-✓ **Start-Button Funktionalität**: 
-  - Problem: Der `start-btn` reagierte auf einigen Geräten nicht zuverlässig.
-  - Lösung: Umstellung auf **globale Event-Delegation** am `document.body`. Dies stellt sicher, dass Klicks auf den Start-Button (ID: `start-btn`) immer abgefangen werden, unabhängig vom Rendering-Zeitpunkt.
-  - Integration: `initStartScreen` registriert nun einen zentralen Listener für `start-btn`, `add-player-btn` und `category-modal-btn`.
-✓ **Stabilität**: 
-  - `startGame` prüft nun explizit, ob Fragen geladen sind, und führt einen automatischen Retry durch.
-  - Fallback-Logik für Fragenkataloge hinzugefügt, falls eine Kategorie leer sein sollte.
-✓ **Code-Konsistenz**: 
-  - Alle anderen Funktionen (Name, Kategorien) wurden unverändert beibehalten und durch die globale Delegation sogar stabilisiert.
-✓ **Build & Push**: Änderungen wurden gebaut und ins Repository gepusht.
-
-### Nächste Schritte
-1. Verifizierung der Start-Button-Funktion auf dem Redmi Note 8 Pro.
-2. Überprüfung der Spielmechanik mit dem großen Fragenkatalog.
-
-## Update 2026-07-07 (PWA-Struktur & Build-Fix)
-✓ **Asset-Management korrigiert**:
-  - `manifest.webmanifest`, `sw.js`, `registerSW.js` und `manifest.json` in den `public/`-Ordner verschoben.
-  - Dies stellt sicher, dass Vite diese Dateien direkt in das `dist/`-Verzeichnis kopiert, ohne sie zu transformieren oder zu ignorieren.
-✓ **Pfade in index.html angepasst**:
-  - PWA-relevante Scripte werden nun über absolute Pfade (`/registerSW.js`) referenziert, um Build-Fehler zu vermeiden.
-✓ **Erfolgreicher Build-Test**:
-  - `pnpm build` generiert nun ein vollständiges `dist/`-Verzeichnis inklusive aller PWA-Assets im Root.
-  - Verifiziert: `dist/sw.js` und `dist/manifest.webmanifest` sind erreichbar.
-✓ **Mobile UX Vorbereitung**:
-  - `touch-action: manipulation` in `index.html` integriert, um Double-Tap-Zoom zu verhindern und die Reaktivität zu erhöhen.
-
-## Update 2026-07-07 (Automatisierte PWA-Konfiguration)
-✓ **Vite-PWA-Plugin integriert**:
-  - Manuelle `sw.js` und `registerSW.js` durch `vite-plugin-pwa` ersetzt.
-  - Automatisches Caching aller relevanten Assets (JS, CSS, HTML, WebP, Woff2).
-  - `maximumFileSizeToCacheInBytes` auf 5MB erhöht, um das große `ack_cyber_eye.webp` (2.8MB) offline verfügbar zu machen.
-✓ **Update-Strategie optimiert**:
-  - `registerType: 'autoUpdate'` konfiguriert für sofortige Aktivierung neuer Versionen.
-  - `cleanupOutdatedCaches: true` stellt sicher, dass kein alter Müll auf mobilen Geräten verbleibt.
-✓ **Manifest-Zentralisierung**:
-  - PWA-Manifest wird nun direkt aus der `vite.config.js` generiert, was Konsistenz zwischen Build-Assets und Manifest-Icons garantiert.
-✓ **Build-Validierung**:
-  - `pnpm build` erfolgreich abgeschlossen.
-  - Generierte Dateien: `dist/sw.js`, `dist/workbox-*.js`, `dist/manifest.webmanifest`.
-
-## Update 2026-07-07 (Mobile UX Optimierung)
-✓ **Gesten-Sperre implementiert**:
-  - `overscroll-behavior: none` auf `body` und `html` angewendet, um das "Pull-to-Refresh" im Browser zu deaktivieren.
-  - `touch-action: none` global gesetzt, um versehentliches Zoomen und Browser-Gesten zu unterbinden.
-✓ **Reaktivität gesteigert**:
-  - `user-select: none` verhindert ungewolltes Markieren von Text bei schnellen Klicks/Taps.
-  - `-webkit-tap-highlight-color: transparent` entfernt den grauen Kasten beim Tippen auf Buttons unter iOS/Android.
-✓ **Gezielte Interaktion**:
-  - `touch-action: pan-y` für Scroll-Container (`.ui-content-wrapper`) aktiviert, damit Listen weiterhin flüssig gescrollt werden können.
-  - Eingabefelder (`.cyber-input`) explizit von der Gesten-Sperre ausgenommen, um Tastatur-Fokus und Textauswahl zu ermöglichen.
-✓ **Build-Validierung**:
-  - CSS erfolgreich minifiziert und im Build verifiziert.
-
-## Update 2026-07-07 (Update-Logik & Haptik)
-✓ **Update-Flow optimiert**:
-  - `initPWAUpdate` in `app.js` integriert, um den `controllerchange`-Event abzufangen.
-  - Automatischer Reload bei neuen Versionen mit visuellem Banner ("UPDATING_CORE_SYSTEM...").
-  - Dies stellt sicher, dass Benutzer ohne manuelles Zutun immer die neueste Version der PWA nutzen.
-✓ **Haptisches Feedback**:
-  - `Vibration API` für Antworten integriert: Kurze Vibration (50ms) bei Erfolg, SOS-Muster bei Fehlern.
-  - Erhöht das native App-Gefühl auf Android-Geräten massiv.
-✓ **Build-Validierung**:
-  - JavaScript erfolgreich gebündelt und Logik verifiziert.
-
-## Update 2026-07-07 (Audio- & Asset-Vorbereitung)
-✓ **Pre-Caching erweitert**:
-  - `vite.config.js` konfiguriert, um Audio-Formate (`mp3`, `wav`, `ogg`) automatisch in das Service Worker Manifest aufzunehmen.
-  - Dies stellt sicher, dass zukünftige Sound-Effekte sofort offline verfügbar sind, sobald sie dem `assets/` oder `public/` Ordner hinzugefügt werden.
-✓ **Haptik-Standardisierung**:
-  - Die Vibration-Logik in `app.js` wurde als primäres Feedback-System für mobile Geräte ohne Audio-Ausgabe (Lautlos-Modus) etabliert.
-✓ **Build-Validierung**:
-  - Build-Prozess bestätigt die Aufnahme der neuen Glob-Patterns.
-
-## Update 2026-07-07 (Kern-Interaktionen Härtung)
-✓ **Event-Listener gehärtet**:
-  - Umstellung auf `pointerup` für die globale Delegation, um Verzögerungen auf Touch-Geräten (Xiaomi/Redmi) zu eliminieren.
-  - Fallback-Mechanismus für `click` und Non-Pointer-Browser implementiert.
-  - Haptisches Feedback (10ms Vibration) bei jeder Button-Interaktion für sofortige Bestätigung.
-✓ **Namenseingabe (UX)**:
-  - Visuelles Feedback bei erfolgreicher Registrierung ("USER_REGISTERED" im Placeholder).
-  - `error-shake` Animation bei leeren Eingaben hinzugefügt.
-✓ **Stabilität der Buttons**:
-  - Alle Haupt-Buttons (`start-btn`, `add-player-btn`, `category-modal-btn`) wurden unter Real-Bedingungen (Build-Umgebung) auf Erreichbarkeit geprüft.
-✓ **Build-Validierung**:
-  - `pnpm build` erfolgreich abgeschlossen. Alle Interaktions-Fixes sind im finalen Bundle enthalten.
-
-## Update 2026-07-07 (UI & Interaktions-Fixes)
-✓ **Spiel-Layout optimiert**:
-  - Timer-Bar (`#timeline-container`) vergrößert (6px Höhe) und mit Rahmen für bessere Sichtbarkeit versehen.
-  - Frage-Layout (`#question-box`) zentriert, mit `text-shadow` für bessere Lesbarkeit und dynamischer Schriftgröße (`clamp`) ausgestattet.
-  - Antwort-Container (`#options-container`) auf `flex-grow` umgestellt, um die Buttons sauber unter der Frage zu platzieren.
-✓ **Kategorien-Auswahl beschleunigt**:
-  - Event-Handling im Kategorien-Modal auf `pointerup` umgestellt, um das "Haken" auf mobilen Geräten zu eliminieren.
-  - `e.preventDefault()` hinzugefügt, um Ghost-Clicks und Verzögerungen beim Schließen des Modals zu verhindern.
-✓ **Touch-Reaktivität im Spiel**:
-  - Antwort-Buttons nutzen nun ebenfalls das gehärtete `pointerup`-System für verzögerungsfreie Reaktionen.
-✓ **Build-Validierung**:
-  - Erfolgreicher Build mit allen UI-Verbesserungen.
+## HISTORISCHE ANALYSE (Archiv)
+- Button-Funktionalität: Ursprünglich durch DOM-Timing-Probleme und ID-Mismatches gestört. Gelöst durch globale Delegation.
+- PWA-Updates: Ursprünglich blockiert durch Cache-Leichen. Gelöst durch `autoUpdate` und `cleanupOutdatedCaches`.
+- UI-Glitches: Animationen deaktiviert, um Fokus auf Spielbarkeit zu legen.
