@@ -3,7 +3,7 @@
 ## Zielsetzung
 Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen Live-Betrieb und nahtlose Multiplayer-Integration.
 
-## Status Quo (Stand 07.07.2026 - 14:45 GMT+2)
+## Status Quo (Stand 07.07.2026 - 16:15 GMT+2)
 
 ### 1. Live-System & Deployment [VALIDIERT]
 - **Status:** Voll funktionsfähig unter [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/).
@@ -96,35 +96,13 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
   - `index.html`: `link rel="preload"` für Splash- und Realm-Hintergründe hinzugefügt.
   - `app.js`: `preloadGameAssets` Funktion implementiert, die alle situativen Emotes und Overlays beim App-Start im Hintergrund lädt, um Verzögerungen im Gameplay zu vermeiden.
 
----
-
 ### 16. Socket & Latency Optimization [VALIDIERT]
 - **Status:** Reduktion von redundantem Traffic und Implementierung von Throttling für State-Syncs.
 - **Lösung:**
   - `server/social/battleSync.js`: Double-Broadcast bei Sabotage-Events durch `return` nach Sabotage-Emit unterbunden.
   - `scripts/battle-manager.js`: Throttling für `syncState` implementiert (max. 5 Syncs/Sekunde bzw. 200ms Intervall), um Network-Overhead bei schnellen Eingaben zu minimieren.
 
----
-
-## Anweisungen für die folgende Instanz (Arbeitsanweisungs-Prompt)
-
-> **DU BIST EIN EXTREM EFFIZIENTER AUTONOMOUS AGENT.**
-> 
-> **DEIN AUFTRAG:**
-> Implementiere ein "Visual Latency Dashboard" in der Admin-View (oder als Overlay im Server Room), das die Round-Trip-Time (RTT) der Socket-Verbindung in Echtzeit anzeigt. Nutze `socket.emit('ping')` und `socket.on('pong')` zur Messung.
-> 
-> **Zwingende Regeln:**
-> 1. **One-Shot-Ausführung:** Plane und führe alles in einem Durchlauf.
-> 2. **Ressourcenschonung:** Bestehende UI-Elemente erweitern statt neue Seiten zu erstellen.
-> 
-> **Startpunkt:** Erweitere `scripts/battle-manager.js` um die Ping-Logik.
-
----
-
-**Status:** Multiplayer-Latenz-Optimierung abgeschlossen. System bereit für Visual Dashboard Integration.
-**Zuletzt aktualisiert:** 07.07.2026 - 15:15 GMT+2
-
-17. Visual Latency Dashboard [IMPLEMENTIERT]
+### 17. Visual Latency Dashboard [IMPLEMENTIERT]
 - **Status:** Echtzeit-Überwachung der Socket-Latenz (RTT) integriert.
 - **Lösung:**
   - `server/social/battleSync.js`: Ping-Pong-Handler für Socket.IO hinzugefügt.
@@ -132,25 +110,36 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
   - `index.html`: `#latency-display` im Battle Lobby Status-Container hinzugefügt.
   - Dynamische Farbindikatoren für Latenzqualität (Grün < 50ms, Gelb < 150ms, Rot > 150ms).
 
----
-
-## 18. Start Screen Visual Update [IMPLEMENTIERT]
+### 18. Start Screen Visual Update [IMPLEMENTIERT]
 - **Status:** Neues, hochauflösendes Startbildschirm-Bild basierend auf dem Cyberpunk-Stil der PWA integriert.
 - **Lösung:**
   - `assets/images/new_start_screen.png`: Neues 9:16-Bild mit Fokus auf ein glühendes neon-grünes Auge und digitale Schaltkreise generiert.
   - `style.css`: Hintergrund für `#start-screen` auf das neue Bild aktualisiert.
 
-## Zukünftige Schritte
-- [x] Optimierung der Ladezeiten für das neue Startbildschirm-Bild (`new_start_screen.webp`). (Größe reduziert von 688 KB auf 394 KB, -42.7%)
-- [x] **Deployment-Validierung:** Build-Artefakte synchronisiert und für Deployment vorbereitet. Build-Prozess mit Vite 8.1.0 verifiziert.
-- [x] **Fragenkatalog-Audit:** Alle 150 Platzhalter erfolgreich durch reale, hochwertige dystopische Fragen (Cyberpunk, Sci-Fi, Industrial Musik) ersetzt. System-Konsistenz verifiziert.
-- [x] **UI Refactoring - Kategorien:** Dedizierter "SELECT_CATEGORY"-Button implementiert. Kategorien-Auswahl erfolgt nun über ein immersives Modal-Overlay.
-- [x] **UI Bereinigung - Startbildschirm:** 
-    - Theme-Selector (`#theme-selector`) und Mute-Button (`#mute-btn`) für ein cleaneres Cyberpunk-Look-and-Feel entfernt.
-- [x] Implementierung von zusätzlichen Animationen für das zentrale Augen-Motiv auf dem Startbildschirm (Pulsieren, Schweben und Farb-Scanning integriert).
-- [x] PWA-Funktionalität validiert: Manifest-Dateien konsolidiert, Icons korrigiert und Service Worker Caching-Strategien optimiert. Offline-Support sichergestellt.
-- [x] Finalisierung des Dystopie-Quiz-Contents und der Kategorien: Alle 137 verbliebenen System-Abfragen durch reale, hochwertige dystopische Fragen ersetzt. 100% Content-Abdeckung erreicht.
-- [x] Testen der Leaderboard-Integration und der Social-Sharing-Features: API-Endpunkte validiert, HMAC-Authentifizierung für Leaderboard-Updates verifiziert und Social-Sharing-Logik mit robustem Fallback (Clipboard) optimiert. UIManager um Toast-Benachrichtigungen erweitert.
-- [x] Vorbereitung für das Deployment der PWA: Finaler Build generiert, PWA-Metadaten in index.html bereinigt, manifest.webmanifest als Standard gesetzt und Assets für GitHub Pages synchronisiert. Projekt bereit für Übergabe.
+---
 
-**Zuletzt aktualisiert:** 07.07.2026 - 16:15 GMT+2
+## Offene Aufgaben (aus Fehleranalyse 07.07.2026)
+
+| Priorität | Komponente | Beschreibung | Status |
+| :--- | :--- | :--- | :--- |
+| **KRITISCH** | `app.js` | **Bug #1:** Doppelte `const`-Deklaration von `modalContent` in `endGame()`. Verhindert das Laden der gesamten App. | Offen |
+| **KRITISCH** | `server/server.js` | **Bug #2:** `await` außerhalb einer `async`-Funktion im `/share/:playerId` Callback. Verhindert den Serverstart. | Offen |
+| **HOCH** | `app.js` | **Bug #3:** Client versucht weiterhin `/config/secret` zu laden, obwohl der Endpunkt entfernt wurde. HMAC dauerhaft ungültig. | Offen |
+| **MITTEL** | `server/server.js` | **Bug #4:** `blitz` Modus fehlt in `validModes`. Blitz-Scores werden vom Server abgelehnt. | Offen |
+| **NIEDRIG** | `scripts/constants.js` | **Bug #5:** Totes/inkonsistentes `GAME_MODES`-Objekt entfernen oder konsolidieren. | Offen |
+
+---
+
+## Zukünftige Schritte
+- [x] Optimierung der Ladezeiten für das neue Startbildschirm-Bild (`new_start_screen.webp`).
+- [x] **Deployment-Validierung:** Build-Artefakte synchronisiert und für Deployment vorbereitet.
+- [x] **Fragenkatalog-Audit:** Alle 150 Platzhalter erfolgreich durch reale Fragen ersetzt.
+- [x] **UI Refactoring - Kategorien:** Dedizierter "SELECT_CATEGORY"-Button implementiert.
+- [x] **UI Bereinigung - Startbildschirm:** Theme-Selector und Mute-Button entfernt.
+- [x] Implementierung von zusätzlichen Animationen für das zentrale Augen-Motiv.
+- [x] PWA-Funktionalität validiert: Manifest-Dateien konsolidiert, Icons korrigiert.
+- [x] Finalisierung des Dystopie-Quiz-Contents und der Kategorien.
+- [x] Testen der Leaderboard-Integration und der Social-Sharing-Features.
+- [x] Vorbereitung für das Deployment der PWA.
+
+**Zuletzt aktualisiert:** 07.07.2026 - 16:30 GMT+2
