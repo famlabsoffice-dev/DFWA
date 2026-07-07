@@ -223,3 +223,9 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ✓ **Inner-HTML-Reset**: Der `stat-player` Container wird nun komplett neu gerendert, um etwaige DOM-Fehler zu überschreiben.
 ✓ **Globale Selektoren**: Zusätzliche Prüfung auf Header-Elemente außerhalb des Haupt-Containers.
 ✓ Build und Push erfolgreich.
+
+### Schritt 1.4: Global UI Sync Heartbeat (Abgeschlossen)
+✓ **Erzwungene Synchronisation**: Ein `setInterval` (500ms) stellt nun sicher, dass der Header-Name (`#player-display`) permanent mit dem `state.playerName` und dem `localStorage` abgeglichen wird.
+✓ **Cache-Resistenz**: Selbst wenn die initiale Bindung fehlschlägt, korrigiert sich die UI innerhalb einer halben Sekunde von selbst.
+✓ **Brute-Force DOM-Reset**: Der Header-Container wird bei Abweichungen zwangsweise neu gerendert.
+✓ Build und Push erfolgreich.
