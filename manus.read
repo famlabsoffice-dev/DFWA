@@ -270,3 +270,15 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ### Nächste Schritte
 1. Verifizierung der Start-Button-Funktion auf dem Redmi Note 8 Pro.
 2. Überprüfung der Spielmechanik mit dem großen Fragenkatalog.
+
+## Update 2026-07-07 (PWA-Struktur & Build-Fix)
+✓ **Asset-Management korrigiert**:
+  - `manifest.webmanifest`, `sw.js`, `registerSW.js` und `manifest.json` in den `public/`-Ordner verschoben.
+  - Dies stellt sicher, dass Vite diese Dateien direkt in das `dist/`-Verzeichnis kopiert, ohne sie zu transformieren oder zu ignorieren.
+✓ **Pfade in index.html angepasst**:
+  - PWA-relevante Scripte werden nun über absolute Pfade (`/registerSW.js`) referenziert, um Build-Fehler zu vermeiden.
+✓ **Erfolgreicher Build-Test**:
+  - `pnpm build` generiert nun ein vollständiges `dist/`-Verzeichnis inklusive aller PWA-Assets im Root.
+  - Verifiziert: `dist/sw.js` und `dist/manifest.webmanifest` sind erreichbar.
+✓ **Mobile UX Vorbereitung**:
+  - `touch-action: manipulation` in `index.html` integriert, um Double-Tap-Zoom zu verhindern und die Reaktivität zu erhöhen.
