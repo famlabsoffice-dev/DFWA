@@ -32,9 +32,9 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 - [x] Fix Startbildschirm-Buttons (ID-Mismatches & pointerdown).
 - [x] Visuelles Feedback für Buttons (Scale & Active-State CSS).
 - [x] State-Management & Double-Tap Protection.
-- [ ] Implementierung "Survival Mode" (degressive Zeit).
+- [x] Implementierung "Survival Mode" (degressive Zeit).
 - [ ] Erweiterung der Sabotage-Effekte (Input Scramble).
 - [ ] Monitoring der Live-Latenz via Dashboard.
 
 **Status:** PWA Ready. Mobile Gameplay validiert. Button-Handling Anweisungen integriert.
-**Zuletzt aktualisiert:** 07.07.2026 - 19:55 GMT+2
+**Zuletzt aktualisiert:** 07.07.2026 - 20:15 GMT+2

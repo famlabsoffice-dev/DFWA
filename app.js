@@ -1066,7 +1066,14 @@ function renderQuestion(isRestoring = false) {
     
     state.isProcessing = false;
     const config = getGameModeConfig(state.mode);
-    state.timer = config.initialTimer;
+    
+    if (config.isSurvival) {
+      const reduction = state.correctAnswers * config.timeReductionPerQuestion;
+      state.timer = Math.max(config.minTimer, config.initialTimer - reduction);
+    } else {
+      state.timer = config.initialTimer;
+    }
+    
     startTimer();
   } catch {
     console.error('Render question failed');

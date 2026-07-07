@@ -3,6 +3,7 @@ export const GameModes = {
   TIME_ATTACK: 'timeAttack',
   HARDCORE: 'hardcore',
   BLITZ: 'blitz',
+  SURVIVAL: 'survival',
 };
 
 export const ModeConfig = {
@@ -47,6 +48,19 @@ export const ModeConfig = {
     streakBonus: true,
     timeBonus: true,
     maxQuestions: 20,
+  },
+  survival: {
+    name: 'Survival',
+    description: 'Time limit decreases after each correct answer. 1 life.',
+    initialLives: 1,
+    initialTimer: 20,
+    timerDecrement: 1,
+    scoreMultiplier: 2.5,
+    streakBonus: true,
+    timeBonus: true,
+    isSurvival: true,
+    minTimer: 3,
+    timeReductionPerQuestion: 0.5,
   },
 };
 
