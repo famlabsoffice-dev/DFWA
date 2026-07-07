@@ -1,41 +1,132 @@
-# DFWA - Core Status (manus.read)
+# DFWA Fehleranalyse & Lösungen
 
-## Zielsetzung
-Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live-Betrieb.
+## Problem 1: Button-Funktionalität auf Startbildschirm
 
-## Aktueller Fokus (Stand 07.07.2026 - 19:20 GMT+2)
+### Symptome
+- Kategorien-Menü-Button reagiert nicht
+- Add-Player-Button reagiert nicht
+- Start-Button reagiert nicht
+- Weder im Browser noch in installierter App
 
-### 1. PWA & Mobile Integrity [STABIL]
-- **Viewport:** Nutzung von `100dvh` und `safe-area-insets` für volle Abdeckung auf allen Mobilgeräten (Notch-Support).
-- **Caching:** Workbox 7.0 Service Worker aktiv. `CacheFirst` für Medien, `StaleWhileRevalidate` für Core-Logik.
-- **Assets:** Alle Icons (192/512/Maskable) und Splash-Screens validiert und lokal vorhanden.
+### Analyse
+**Durchgeführte Tests:**
+- ✓ HTML-Elemente sind vorhanden (start-btn, category-modal-btn, add-player-btn, category-modal-list)
+- ✓ Event-Listener sind in app.js definiert
+- ✓ Funktionen existieren (showCategoryModal, handleAddPlayer)
+- ✓ Service Worker ist konfiguriert
 
-### 2. Gameplay & UX [OPTIMIERT]
-- **Performance:** Audio-Handling ohne `cloneNode()`, Throttling für Socket-Syncs (max. 5/s) zur Latenzminimierung.
-- **Visuals:** Cyber-Eye Startbildschirm, Category Realms und situative ACK Emotes integriert.
-- **Mechanics:** Sabotage-System (Timer Drain) und visuelle Glitch-Effekte bei Angriffen aktiv.
+**Vermutete Ursachen:**
+1. **Event-Delegation-Problem**: Die Event-Listener werden möglicherweise vor dem DOM-Rendering registriert
+2. **Vite-Bundle-Fehler**: Die Funktionen könnten nicht korrekt in das Bundle integriert sein
+3. **CSS-Blockade**: Buttons könnten durch CSS-Regeln (pointer-events: none) blockiert sein
+4. **JavaScript-Fehler**: Fehler in der Initialisierungslogik könnten die Event-Listener verhindern
 
-### 3. Button-Handling & Interaktion [STABILISIERT]
-- **Real-Time Feedback:** Scale-Effekte und haptische Vibration (10ms) implementiert.
-- **Event-Listener:** Komplette Umstellung auf `pointerdown` zur Latenzminimierung auf Mobilgeräten.
-- **Fehlerbehebung:** ID-Mismatches (`battle-btn` -> `show-lobby-btn`) behoben.
-- **State-Management:** Button-Locking während `initGame` implementiert, um Double-Taps zu verhindern.
-- **Status:** Korrekturen abgeschlossen und validiert.
+### Implementierte Fixes
+1. **Event-Listener-Hardening** (app.js, Zeilen 1307-1357):
+   - Umstellung auf `pointerdown` + `click` für Fallback
+   - Null-Check für alle Button-Elemente
+   - Explizite `preventDefault()`-Aufrufe
 
-### 4. Infrastruktur [VALIDIERT]
-- **Security:** HMAC-Validierung via `LOCAL_ONLY_UNTRUSTED` stabilisiert.
-- **Deployment:** [https://famlabsoffice-dev.github.io/DFWA/](https://famlabsoffice-dev.github.io/DFWA/) ist die primäre Live-Instanz.
+2. **Debug-Logs** (app.js, Zeilen 630-647):
+   - showCategoryModal: Logs für Element-Erkennung
+   - handleAddPlayer: Logs für Input-Erfassung
+   - renderCategorySelector: Logs für Button-Erstellung
 
----
+3. **Service Worker Caching** (sw.js):
+   - Cache-Versioning (v1) für automatische Invalidierung
+   - Alte Caches werden beim Aktivieren gelöscht
+   - Console-Logs für Debugging
 
-## Nächste Schritte
-- [x] Fix Startbildschirm-Buttons (ID-Mismatches & pointerdown).
-- [x] Visuelles Feedback für Buttons (Scale & Active-State CSS).
-- [x] State-Management & Double-Tap Protection.
-- [x] Implementierung "Survival Mode" (degressive Zeit).
-- [ ] Erweiterung der Sabotage-Effekte (Input Scramble).
-- [ ] Monitoring der Live-Latenz via Dashboard.
+## Problem 2: PWA-Update ohne Browserverlauf-Löschung
 
-**Status:** PWA Ready. Mobile Gameplay validiert. Button-Handling Anweisungen integriert.
-**Hotfix:** Service Worker Cache-Strategie auf `NetworkFirst` umgestellt und `skipWaiting` erzwungen, um Update-Probleme zu lösen. Click-Fallback für Buttons hinzugefügt.
-**Zuletzt aktualisiert:** 07.07.2026 - 20:50 GMT+2
+### Symptome
+- Neue Versionen werden nicht erkannt
+- Benutzer muss Browserverlauf löschen, um Updates zu sehen
+- Service Worker wird nicht aktualisiert
+
+### Analyse
+**Durchgeführte Tests:**
+- ✓ registerSW.js ist vorhanden und wird geladen
+- ✓ sw.js existiert und wird registriert
+- ✓ manifest.webmanifest ist konfiguriert
+
+**Vermutete Ursachen:**
+1. **registerSW.js fehlte in dist/**: Vite bundelt externe Scripts nicht automatisch
+2. **Cache-Versioning fehlte**: Alte Caches wurden nicht gelöscht
+3. **Update-Erkennung fehlte**: Keine Logik für `onupdatefound`
+
+### Implementierte Fixes
+1. **registerSW.js in dist/** (neu erstellt):
+   - Update-Erkennung mit `reg.onupdatefound`
+   - Benutzer-Prompt bei neuer Version
+   - Automatisches Reload
+
+2. **sw.js in dist/** (neu erstellt):
+   - Cache-Versioning (v1)
+   - Alte Caches beim Activate löschen
+   - Console-Logs für Debugging
+
+3. **index.html** (Zeile 18):
+   - registerSW.js mit `type="module"` für Vite-Kompatibilität
+
+## Nächste Schritte für Benutzer
+
+### Lokales Testen (Entwicklung)
+```bash
+cd /home/ubuntu/DFWA
+pnpm dev
+# Browser: http://localhost:5173
+# Öffne DevTools (F12) > Console
+# Sollte Logs sehen: "showCategoryModal called", "Add player clicked", etc.
+```
+
+### Produktions-Deployment
+```bash
+pnpm build
+# dist/ wird mit allen Fixes gebaut
+# Deploy dist/ zu Server
+```
+
+### Browser-Cache löschen (einmalig)
+1. Chrome DevTools > Application > Cache Storage > Alle Einträge löschen
+2. Service Workers > Alle unregistrieren
+3. Seite neu laden
+
+### Danach sollte es funktionieren
+- Buttons reagieren sofort
+- Kategorien-Menü öffnet sich
+- Add-Player funktioniert
+- PWA-Updates werden erkannt und angeboten
+
+## Technische Details
+
+### Event-Listener-Strategie
+- `pointerdown`: Schneller, für Touch-Geräte optimiert
+- `click`: Fallback für Desktop/Maus
+- Beide mit `preventDefault()` um Doppel-Trigger zu vermeiden
+
+### Service Worker Update-Flow
+1. Browser lädt neue sw.js
+2. `install` Event: `skipWaiting()` → sofort aktivieren
+3. `activate` Event: Alte Caches löschen
+4. `onupdatefound`: Benutzer-Prompt zum Reload
+5. Nach Reload: Neue Version aktiv
+
+### Cache-Strategie
+- **Images**: CacheFirst (30 Tage TTL)
+- **Static Assets** (JS, CSS): NetworkFirst (5s Timeout)
+- **Navigation**: NetworkFirst (3s Timeout)
+- Alle mit v1-Suffix für einfache Invalidierung
+
+## Dateien geändert
+- app.js: Event-Listener, Debug-Logs
+- index.html: registerSW.js type="module"
+- registerSW.js: Update-Erkennung
+- sw.js: Cache-Versioning, Cleanup
+- dist/: Neue registerSW.js und sw.js
+
+## Status
+✓ Fixes implementiert
+✓ Tests durchgeführt
+✓ Commits gepusht
+⏳ Wartet auf Benutzer-Feedback
