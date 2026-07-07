@@ -329,3 +329,16 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
   - Die Vibration-Logik in `app.js` wurde als primäres Feedback-System für mobile Geräte ohne Audio-Ausgabe (Lautlos-Modus) etabliert.
 ✓ **Build-Validierung**:
   - Build-Prozess bestätigt die Aufnahme der neuen Glob-Patterns.
+
+## Update 2026-07-07 (Kern-Interaktionen Härtung)
+✓ **Event-Listener gehärtet**:
+  - Umstellung auf `pointerup` für die globale Delegation, um Verzögerungen auf Touch-Geräten (Xiaomi/Redmi) zu eliminieren.
+  - Fallback-Mechanismus für `click` und Non-Pointer-Browser implementiert.
+  - Haptisches Feedback (10ms Vibration) bei jeder Button-Interaktion für sofortige Bestätigung.
+✓ **Namenseingabe (UX)**:
+  - Visuelles Feedback bei erfolgreicher Registrierung ("USER_REGISTERED" im Placeholder).
+  - `error-shake` Animation bei leeren Eingaben hinzugefügt.
+✓ **Stabilität der Buttons**:
+  - Alle Haupt-Buttons (`start-btn`, `add-player-btn`, `category-modal-btn`) wurden unter Real-Bedingungen (Build-Umgebung) auf Erreichbarkeit geprüft.
+✓ **Build-Validierung**:
+  - `pnpm build` erfolgreich abgeschlossen. Alle Interaktions-Fixes sind im finalen Bundle enthalten.

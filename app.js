@@ -50,10 +50,15 @@ function initStartScreen() {
 
     updateNameDisplay();
 
-    // Use Global Delegation for better reliability on touch devices
-    document.body.addEventListener('click', (e) => {
+    // Härtung der Event-Listener für Mobile/Touch
+    const handleInteraction = (e) => {
         const target = e.target.closest('button');
         if (!target) return;
+
+        console.log(`Interaction detected on: ${target.id || 'anonymous button'}`);
+        
+        // Vibration für haptisches Feedback bei jedem Button-Klick
+        if ('vibrate' in navigator) navigator.vibrate(10);
 
         if (target.id === 'category-modal-btn') {
             showCategoryModal();
@@ -67,7 +72,20 @@ function initStartScreen() {
             document.getElementById('game-screen').classList.remove('active');
             document.getElementById('start-screen').classList.add('active');
         }
+    };
+
+    // Nutze sowohl 'pointerup' als auch 'click' für maximale Kompatibilität
+    document.body.addEventListener('pointerup', (e) => {
+        // Verhindere Doppel-Trigger, wenn click auch gefeuert wird
+        if (e.pointerType === 'touch' || e.pointerType === 'mouse') {
+            handleInteraction(e);
+        }
     });
+
+    // Fallback für Browser ohne PointerEvents
+    if (!window.PointerEvent) {
+        document.body.addEventListener('click', handleInteraction);
+    }
 
     // Remove redundant Server Room button from start screen if it exists
     const startLeaderboardBtn = document.getElementById('start-show-leaderboard-btn');
@@ -114,11 +132,21 @@ function updateNameDisplay() {
 
 function handleAddPlayer() {
     const input = document.getElementById('player-name');
-    if (input && input.value.trim()) {
-        state.playerName = input.value.trim().toUpperCase();
-        localStorage.setItem('dfwa_player_name', state.playerName);
-        updateNameDisplay();
-        input.value = '';
+    if (input) {
+        const name = input.value.trim().toUpperCase();
+        if (name) {
+            state.playerName = name;
+            localStorage.setItem('dfwa_player_name', state.playerName);
+            updateNameDisplay();
+            input.value = '';
+            // Visuelles Feedback
+            input.placeholder = "USER_REGISTERED";
+            setTimeout(() => { input.placeholder = "ENTER_CODENAME"; }, 1500);
+        } else {
+            // Error Feedback
+            input.classList.add('error-shake');
+            setTimeout(() => input.classList.remove('error-shake'), 500);
+        }
     }
 }
 
