@@ -143,7 +143,7 @@ Wiederherstellung und Optimierung der DFWA PWA (ACK ATTACK) für einen stabilen 
 ## Zukünftige Schritte
 - [x] Optimierung der Ladezeiten für das neue Startbildschirm-Bild (`new_start_screen.webp`). (Größe reduziert von 688 KB auf 394 KB, -42.7%)
 - [x] **Deployment-Validierung:** Build-Artefakte synchronisiert und für Deployment vorbereitet. Build-Prozess mit Vite 8.1.0 verifiziert.
-- [x] **Fragenkatalog-Audit:** 150 Platzhalter identifiziert. Erste dystopische Kernfragen integriert und restliche Platzhalter für zukünftige KI-Injektion markiert (`[AUDIT]`).
+- [x] **Fragenkatalog-Audit:** Alle 150 Platzhalter erfolgreich durch reale, hochwertige dystopische Fragen (Cyberpunk, Sci-Fi, Industrial Musik) ersetzt. System-Konsistenz verifiziert.
 - [ ] **UI Refactoring - Kategorien:** Kategorien-Auswahl wieder über einen dedizierten "Kategorien"-Button auf dem Startbildschirm mit anschließendem Auswahl-Fenster (Modal/Overlay) realisieren.
 - [ ] **UI Bereinigung - Startbildschirm:** 
     - Entfernung der Farb-Theme-Auswahl (`#theme-selector`).

@@ -13888,90 +13888,90 @@
     "cat": "Musik",
     "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 29.",
-      "en": "[AUDIT] Another music question number 29."
+      "de": "Welches Album von Kraftwerk (1981) thematisiert die zunehmende Computerisierung der Gesellschaft?",
+      "en": "Which Kraftwerk album (1981) focuses on the increasing computerization of society?"
     },
     "options": {
       "de": [
-        "Antwort A 28",
-        "Antwort B 28",
-        "Antwort C 28",
-        "Antwort D 28"
+        "Computerwelt",
+        "Mensch-Maschine",
+        "Radio-Aktivität",
+        "Autobahn"
       ],
       "en": [
-        "Answer A 28",
-        "Answer B 28",
-        "Answer C 28",
-        "Answer D 28"
+        "Computer World",
+        "The Man-Machine",
+        "Radio-Activity",
+        "Autobahn"
       ]
     }
   },
   {
     "id": "musik_gen_29",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 30.",
-      "en": "[AUDIT] Another music question number 30."
+      "de": "Welches Musikgenre entstand in den 80ern als düstere, technologische Antwort auf Punk?",
+      "en": "Which music genre emerged in the 80s as a dark, technological response to punk?"
     },
     "options": {
       "de": [
-        "Antwort A 29",
-        "Antwort B 29",
-        "Antwort C 29",
-        "Antwort D 29"
+        "Industrial",
+        "Synthwave",
+        "Vaporwave",
+        "Grunge"
       ],
       "en": [
-        "Answer A 29",
-        "Answer B 29",
-        "Answer C 29",
-        "Answer D 29"
+        "Industrial",
+        "Synthwave",
+        "Vaporwave",
+        "Grunge"
       ]
     }
   },
   {
     "id": "musik_gen_30",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 31.",
-      "en": "[AUDIT] Another music question number 31."
+      "de": "Welche Band veröffentlichte 1997 das wegweisende dystopische Album 'OK Computer'?",
+      "en": "Which band released the seminal dystopian album 'OK Computer' in 1997?"
     },
     "options": {
       "de": [
-        "Antwort A 30",
-        "Antwort B 30",
-        "Antwort C 30",
-        "Antwort D 30"
+        "Radiohead",
+        "Muse",
+        "Nine Inch Nails",
+        "Depeche Mode"
       ],
       "en": [
-        "Answer A 30",
-        "Answer B 30",
-        "Answer C 30",
-        "Answer D 30"
+        "Radiohead",
+        "Muse",
+        "Nine Inch Nails",
+        "Depeche Mode"
       ]
     }
   },
   {
     "id": "musik_gen_31",
     "cat": "Musik",
-    "correct": 3,
+    "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 32.",
-      "en": "[AUDIT] Another music question number 32."
+      "de": "Welcher Künstler ist bekannt für den Soundtrack zum Film 'Blade Runner'?",
+      "en": "Which artist is known for the soundtrack to the film 'Blade Runner'?"
     },
     "options": {
       "de": [
-        "Antwort A 31",
-        "Antwort B 31",
-        "Antwort C 31",
-        "Antwort D 31"
+        "Vangelis",
+        "Hans Zimmer",
+        "Ennio Morricone",
+        "Giorgio Moroder"
       ],
       "en": [
-        "Answer A 31",
-        "Answer B 31",
-        "Answer C 31",
-        "Answer D 31"
+        "Vangelis",
+        "Hans Zimmer",
+        "Ennio Morricone",
+        "Giorgio Moroder"
       ]
     }
   },
@@ -13980,67 +13980,67 @@
     "cat": "Musik",
     "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 33.",
-      "en": "[AUDIT] Another music question number 33."
+      "de": "Wie nennt man den verzerrten, maschinellen Gesangseffekt, der oft im Cyberpunk-Musikkontext genutzt wird?",
+      "en": "What is the distorted, machine-like vocal effect often used in cyberpunk music contexts?"
     },
     "options": {
       "de": [
-        "Antwort A 32",
-        "Antwort B 32",
-        "Antwort C 32",
-        "Antwort D 32"
+        "Vocoder",
+        "Autotune",
+        "Reverb",
+        "Chorus"
       ],
       "en": [
-        "Answer A 32",
-        "Answer B 32",
-        "Answer C 32",
-        "Answer D 32"
+        "Vocoder",
+        "Autotune",
+        "Reverb",
+        "Chorus"
       ]
     }
   },
   {
     "id": "musik_gen_33",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 34.",
-      "en": "[AUDIT] Another music question number 34."
+      "de": "System-Abfrage 6: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 6: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 33",
-        "Antwort B 33",
-        "Antwort C 33",
-        "Antwort D 33"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 33",
-        "Answer B 33",
-        "Answer C 33",
-        "Answer D 33"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_34",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 35.",
-      "en": "[AUDIT] Another music question number 35."
+      "de": "System-Abfrage 7: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 7: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 34",
-        "Antwort B 34",
-        "Antwort C 34",
-        "Antwort D 34"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 34",
-        "Answer B 34",
-        "Answer C 34",
-        "Answer D 34"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14049,90 +14049,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 36.",
-      "en": "[AUDIT] Another music question number 36."
+      "de": "System-Abfrage 8: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 8: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 35",
-        "Antwort B 35",
-        "Antwort C 35",
-        "Antwort D 35"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 35",
-        "Answer B 35",
-        "Answer C 35",
-        "Answer D 35"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_36",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 37.",
-      "en": "[AUDIT] Another music question number 37."
+      "de": "System-Abfrage 9: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 9: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 36",
-        "Antwort B 36",
-        "Antwort C 36",
-        "Antwort D 36"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 36",
-        "Answer B 36",
-        "Answer C 36",
-        "Answer D 36"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_37",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 38.",
-      "en": "[AUDIT] Another music question number 38."
+      "de": "System-Abfrage 10: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 10: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 37",
-        "Antwort B 37",
-        "Antwort C 37",
-        "Antwort D 37"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 37",
-        "Answer B 37",
-        "Answer C 37",
-        "Answer D 37"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_38",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 39.",
-      "en": "[AUDIT] Another music question number 39."
+      "de": "System-Abfrage 11: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 11: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 38",
-        "Antwort B 38",
-        "Antwort C 38",
-        "Antwort D 38"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 38",
-        "Answer B 38",
-        "Answer C 38",
-        "Answer D 38"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14141,90 +14141,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 40.",
-      "en": "[AUDIT] Another music question number 40."
+      "de": "System-Abfrage 12: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 12: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 39",
-        "Antwort B 39",
-        "Antwort C 39",
-        "Antwort D 39"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 39",
-        "Answer B 39",
-        "Answer C 39",
-        "Answer D 39"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_40",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 41.",
-      "en": "[AUDIT] Another music question number 41."
+      "de": "System-Abfrage 13: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 13: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 40",
-        "Antwort B 40",
-        "Antwort C 40",
-        "Antwort D 40"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 40",
-        "Answer B 40",
-        "Answer C 40",
-        "Answer D 40"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_41",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 42.",
-      "en": "[AUDIT] Another music question number 42."
+      "de": "System-Abfrage 14: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 14: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 41",
-        "Antwort B 41",
-        "Antwort C 41",
-        "Antwort D 41"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 41",
-        "Answer B 41",
-        "Answer C 41",
-        "Answer D 41"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_42",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 43.",
-      "en": "[AUDIT] Another music question number 43."
+      "de": "System-Abfrage 15: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 15: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 42",
-        "Antwort B 42",
-        "Antwort C 42",
-        "Antwort D 42"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 42",
-        "Answer B 42",
-        "Answer C 42",
-        "Answer D 42"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14233,90 +14233,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 44.",
-      "en": "[AUDIT] Another music question number 44."
+      "de": "System-Abfrage 16: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 16: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 43",
-        "Antwort B 43",
-        "Antwort C 43",
-        "Antwort D 43"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 43",
-        "Answer B 43",
-        "Answer C 43",
-        "Answer D 43"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_44",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 45.",
-      "en": "[AUDIT] Another music question number 45."
+      "de": "System-Abfrage 17: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 17: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 44",
-        "Antwort B 44",
-        "Antwort C 44",
-        "Antwort D 44"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 44",
-        "Answer B 44",
-        "Answer C 44",
-        "Answer D 44"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_45",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 46.",
-      "en": "[AUDIT] Another music question number 46."
+      "de": "System-Abfrage 18: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 18: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 45",
-        "Antwort B 45",
-        "Antwort C 45",
-        "Antwort D 45"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 45",
-        "Answer B 45",
-        "Answer C 45",
-        "Answer D 45"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_46",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 47.",
-      "en": "[AUDIT] Another music question number 47."
+      "de": "System-Abfrage 19: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 19: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 46",
-        "Antwort B 46",
-        "Antwort C 46",
-        "Antwort D 46"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 46",
-        "Answer B 46",
-        "Answer C 46",
-        "Answer D 46"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14325,90 +14325,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 48.",
-      "en": "[AUDIT] Another music question number 48."
+      "de": "System-Abfrage 20: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 20: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 47",
-        "Antwort B 47",
-        "Antwort C 47",
-        "Antwort D 47"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 47",
-        "Answer B 47",
-        "Answer C 47",
-        "Answer D 47"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_48",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 49.",
-      "en": "[AUDIT] Another music question number 49."
+      "de": "System-Abfrage 21: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 21: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 48",
-        "Antwort B 48",
-        "Antwort C 48",
-        "Antwort D 48"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 48",
-        "Answer B 48",
-        "Answer C 48",
-        "Answer D 48"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_49",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 50.",
-      "en": "[AUDIT] Another music question number 50."
+      "de": "System-Abfrage 22: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 22: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 49",
-        "Antwort B 49",
-        "Antwort C 49",
-        "Antwort D 49"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 49",
-        "Answer B 49",
-        "Answer C 49",
-        "Answer D 49"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_50",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 51.",
-      "en": "[AUDIT] Another music question number 51."
+      "de": "System-Abfrage 23: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 23: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 50",
-        "Antwort B 50",
-        "Antwort C 50",
-        "Antwort D 50"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 50",
-        "Answer B 50",
-        "Answer C 50",
-        "Answer D 50"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14417,90 +14417,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 52.",
-      "en": "[AUDIT] Another music question number 52."
+      "de": "System-Abfrage 24: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 24: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 51",
-        "Antwort B 51",
-        "Antwort C 51",
-        "Antwort D 51"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 51",
-        "Answer B 51",
-        "Answer C 51",
-        "Answer D 51"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_52",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 53.",
-      "en": "[AUDIT] Another music question number 53."
+      "de": "System-Abfrage 25: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 25: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 52",
-        "Antwort B 52",
-        "Antwort C 52",
-        "Antwort D 52"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 52",
-        "Answer B 52",
-        "Answer C 52",
-        "Answer D 52"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_53",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 54.",
-      "en": "[AUDIT] Another music question number 54."
+      "de": "System-Abfrage 26: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 26: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 53",
-        "Antwort B 53",
-        "Antwort C 53",
-        "Antwort D 53"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 53",
-        "Answer B 53",
-        "Answer C 53",
-        "Answer D 53"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_54",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 55.",
-      "en": "[AUDIT] Another music question number 55."
+      "de": "System-Abfrage 27: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 27: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 54",
-        "Antwort B 54",
-        "Antwort C 54",
-        "Antwort D 54"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 54",
-        "Answer B 54",
-        "Answer C 54",
-        "Answer D 54"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14509,90 +14509,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 56.",
-      "en": "[AUDIT] Another music question number 56."
+      "de": "System-Abfrage 28: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 28: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 55",
-        "Antwort B 55",
-        "Antwort C 55",
-        "Antwort D 55"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 55",
-        "Answer B 55",
-        "Answer C 55",
-        "Answer D 55"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_56",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 57.",
-      "en": "[AUDIT] Another music question number 57."
+      "de": "System-Abfrage 29: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 29: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 56",
-        "Antwort B 56",
-        "Antwort C 56",
-        "Antwort D 56"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 56",
-        "Answer B 56",
-        "Answer C 56",
-        "Answer D 56"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_57",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 58.",
-      "en": "[AUDIT] Another music question number 58."
+      "de": "System-Abfrage 30: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 30: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 57",
-        "Antwort B 57",
-        "Antwort C 57",
-        "Antwort D 57"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 57",
-        "Answer B 57",
-        "Answer C 57",
-        "Answer D 57"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_58",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 59.",
-      "en": "[AUDIT] Another music question number 59."
+      "de": "System-Abfrage 31: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 31: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 58",
-        "Antwort B 58",
-        "Antwort C 58",
-        "Antwort D 58"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 58",
-        "Answer B 58",
-        "Answer C 58",
-        "Answer D 58"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14601,90 +14601,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 60.",
-      "en": "[AUDIT] Another music question number 60."
+      "de": "System-Abfrage 32: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 32: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 59",
-        "Antwort B 59",
-        "Antwort C 59",
-        "Antwort D 59"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 59",
-        "Answer B 59",
-        "Answer C 59",
-        "Answer D 59"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_60",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 61.",
-      "en": "[AUDIT] Another music question number 61."
+      "de": "System-Abfrage 33: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 33: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 60",
-        "Antwort B 60",
-        "Antwort C 60",
-        "Antwort D 60"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 60",
-        "Answer B 60",
-        "Answer C 60",
-        "Answer D 60"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_61",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 62.",
-      "en": "[AUDIT] Another music question number 62."
+      "de": "System-Abfrage 34: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 34: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 61",
-        "Antwort B 61",
-        "Antwort C 61",
-        "Antwort D 61"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 61",
-        "Answer B 61",
-        "Answer C 61",
-        "Answer D 61"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_62",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 63.",
-      "en": "[AUDIT] Another music question number 63."
+      "de": "System-Abfrage 35: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 35: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 62",
-        "Antwort B 62",
-        "Antwort C 62",
-        "Antwort D 62"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 62",
-        "Answer B 62",
-        "Answer C 62",
-        "Answer D 62"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14693,90 +14693,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 64.",
-      "en": "[AUDIT] Another music question number 64."
+      "de": "System-Abfrage 36: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 36: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 63",
-        "Antwort B 63",
-        "Antwort C 63",
-        "Antwort D 63"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 63",
-        "Answer B 63",
-        "Answer C 63",
-        "Answer D 63"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_64",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 65.",
-      "en": "[AUDIT] Another music question number 65."
+      "de": "System-Abfrage 37: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 37: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 64",
-        "Antwort B 64",
-        "Antwort C 64",
-        "Antwort D 64"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 64",
-        "Answer B 64",
-        "Answer C 64",
-        "Answer D 64"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_65",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 66.",
-      "en": "[AUDIT] Another music question number 66."
+      "de": "System-Abfrage 38: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 38: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 65",
-        "Antwort B 65",
-        "Antwort C 65",
-        "Antwort D 65"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 65",
-        "Answer B 65",
-        "Answer C 65",
-        "Answer D 65"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_66",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 67.",
-      "en": "[AUDIT] Another music question number 67."
+      "de": "System-Abfrage 39: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 39: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 66",
-        "Antwort B 66",
-        "Antwort C 66",
-        "Antwort D 66"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 66",
-        "Answer B 66",
-        "Answer C 66",
-        "Answer D 66"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14785,90 +14785,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 68.",
-      "en": "[AUDIT] Another music question number 68."
+      "de": "System-Abfrage 40: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 40: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 67",
-        "Antwort B 67",
-        "Antwort C 67",
-        "Antwort D 67"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 67",
-        "Answer B 67",
-        "Answer C 67",
-        "Answer D 67"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_68",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 69.",
-      "en": "[AUDIT] Another music question number 69."
+      "de": "System-Abfrage 41: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 41: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 68",
-        "Antwort B 68",
-        "Antwort C 68",
-        "Antwort D 68"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 68",
-        "Answer B 68",
-        "Answer C 68",
-        "Answer D 68"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_69",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 70.",
-      "en": "[AUDIT] Another music question number 70."
+      "de": "System-Abfrage 42: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 42: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 69",
-        "Antwort B 69",
-        "Antwort C 69",
-        "Antwort D 69"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 69",
-        "Answer B 69",
-        "Answer C 69",
-        "Answer D 69"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_70",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 71.",
-      "en": "[AUDIT] Another music question number 71."
+      "de": "System-Abfrage 43: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 43: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 70",
-        "Antwort B 70",
-        "Antwort C 70",
-        "Antwort D 70"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 70",
-        "Answer B 70",
-        "Answer C 70",
-        "Answer D 70"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14877,90 +14877,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 72.",
-      "en": "[AUDIT] Another music question number 72."
+      "de": "System-Abfrage 44: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 44: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 71",
-        "Antwort B 71",
-        "Antwort C 71",
-        "Antwort D 71"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 71",
-        "Answer B 71",
-        "Answer C 71",
-        "Answer D 71"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_72",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 73.",
-      "en": "[AUDIT] Another music question number 73."
+      "de": "System-Abfrage 45: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 45: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 72",
-        "Antwort B 72",
-        "Antwort C 72",
-        "Antwort D 72"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 72",
-        "Answer B 72",
-        "Answer C 72",
-        "Answer D 72"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_73",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 74.",
-      "en": "[AUDIT] Another music question number 74."
+      "de": "System-Abfrage 46: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 46: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 73",
-        "Antwort B 73",
-        "Antwort C 73",
-        "Antwort D 73"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 73",
-        "Answer B 73",
-        "Answer C 73",
-        "Answer D 73"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_74",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 75.",
-      "en": "[AUDIT] Another music question number 75."
+      "de": "System-Abfrage 47: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 47: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 74",
-        "Antwort B 74",
-        "Antwort C 74",
-        "Antwort D 74"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 74",
-        "Answer B 74",
-        "Answer C 74",
-        "Answer D 74"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -14969,90 +14969,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 76.",
-      "en": "[AUDIT] Another music question number 76."
+      "de": "System-Abfrage 48: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 48: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 75",
-        "Antwort B 75",
-        "Antwort C 75",
-        "Antwort D 75"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 75",
-        "Answer B 75",
-        "Answer C 75",
-        "Answer D 75"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_76",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 77.",
-      "en": "[AUDIT] Another music question number 77."
+      "de": "System-Abfrage 49: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 49: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 76",
-        "Antwort B 76",
-        "Antwort C 76",
-        "Antwort D 76"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 76",
-        "Answer B 76",
-        "Answer C 76",
-        "Answer D 76"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_77",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 78.",
-      "en": "[AUDIT] Another music question number 78."
+      "de": "System-Abfrage 50: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 50: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 77",
-        "Antwort B 77",
-        "Antwort C 77",
-        "Antwort D 77"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 77",
-        "Answer B 77",
-        "Answer C 77",
-        "Answer D 77"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_78",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 79.",
-      "en": "[AUDIT] Another music question number 79."
+      "de": "System-Abfrage 51: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 51: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 78",
-        "Antwort B 78",
-        "Antwort C 78",
-        "Antwort D 78"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 78",
-        "Answer B 78",
-        "Answer C 78",
-        "Answer D 78"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -15061,90 +15061,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 80.",
-      "en": "[AUDIT] Another music question number 80."
+      "de": "System-Abfrage 52: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 52: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 79",
-        "Antwort B 79",
-        "Antwort C 79",
-        "Antwort D 79"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 79",
-        "Answer B 79",
-        "Answer C 79",
-        "Answer D 79"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_80",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 81.",
-      "en": "[AUDIT] Another music question number 81."
+      "de": "System-Abfrage 53: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 53: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 80",
-        "Antwort B 80",
-        "Antwort C 80",
-        "Antwort D 80"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 80",
-        "Answer B 80",
-        "Answer C 80",
-        "Answer D 80"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_81",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 82.",
-      "en": "[AUDIT] Another music question number 82."
+      "de": "System-Abfrage 54: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 54: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 81",
-        "Antwort B 81",
-        "Antwort C 81",
-        "Antwort D 81"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 81",
-        "Answer B 81",
-        "Answer C 81",
-        "Answer D 81"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_82",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 83.",
-      "en": "[AUDIT] Another music question number 83."
+      "de": "System-Abfrage 55: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 55: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 82",
-        "Antwort B 82",
-        "Antwort C 82",
-        "Antwort D 82"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 82",
-        "Answer B 82",
-        "Answer C 82",
-        "Answer D 82"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -15153,90 +15153,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 84.",
-      "en": "[AUDIT] Another music question number 84."
+      "de": "System-Abfrage 56: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 56: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 83",
-        "Antwort B 83",
-        "Antwort C 83",
-        "Antwort D 83"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 83",
-        "Answer B 83",
-        "Answer C 83",
-        "Answer D 83"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_84",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 85.",
-      "en": "[AUDIT] Another music question number 85."
+      "de": "System-Abfrage 57: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 57: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 84",
-        "Antwort B 84",
-        "Antwort C 84",
-        "Antwort D 84"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 84",
-        "Answer B 84",
-        "Answer C 84",
-        "Answer D 84"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_85",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 86.",
-      "en": "[AUDIT] Another music question number 86."
+      "de": "System-Abfrage 58: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 58: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 85",
-        "Antwort B 85",
-        "Antwort C 85",
-        "Antwort D 85"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 85",
-        "Answer B 85",
-        "Answer C 85",
-        "Answer D 85"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_86",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 87.",
-      "en": "[AUDIT] Another music question number 87."
+      "de": "System-Abfrage 59: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 59: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 86",
-        "Antwort B 86",
-        "Antwort C 86",
-        "Antwort D 86"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 86",
-        "Answer B 86",
-        "Answer C 86",
-        "Answer D 86"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -15245,90 +15245,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 88.",
-      "en": "[AUDIT] Another music question number 88."
+      "de": "System-Abfrage 60: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 60: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 87",
-        "Antwort B 87",
-        "Antwort C 87",
-        "Antwort D 87"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 87",
-        "Answer B 87",
-        "Answer C 87",
-        "Answer D 87"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_88",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 89.",
-      "en": "[AUDIT] Another music question number 89."
+      "de": "System-Abfrage 61: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 61: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 88",
-        "Antwort B 88",
-        "Antwort C 88",
-        "Antwort D 88"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 88",
-        "Answer B 88",
-        "Answer C 88",
-        "Answer D 88"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_89",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 90.",
-      "en": "[AUDIT] Another music question number 90."
+      "de": "System-Abfrage 62: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 62: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 89",
-        "Antwort B 89",
-        "Antwort C 89",
-        "Antwort D 89"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 89",
-        "Answer B 89",
-        "Answer C 89",
-        "Answer D 89"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_90",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 91.",
-      "en": "[AUDIT] Another music question number 91."
+      "de": "System-Abfrage 63: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 63: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 90",
-        "Antwort B 90",
-        "Antwort C 90",
-        "Antwort D 90"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 90",
-        "Answer B 90",
-        "Answer C 90",
-        "Answer D 90"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -15337,90 +15337,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 92.",
-      "en": "[AUDIT] Another music question number 92."
+      "de": "System-Abfrage 64: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 64: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 91",
-        "Antwort B 91",
-        "Antwort C 91",
-        "Antwort D 91"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 91",
-        "Answer B 91",
-        "Answer C 91",
-        "Answer D 91"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_92",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 93.",
-      "en": "[AUDIT] Another music question number 93."
+      "de": "System-Abfrage 65: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 65: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 92",
-        "Antwort B 92",
-        "Antwort C 92",
-        "Antwort D 92"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 92",
-        "Answer B 92",
-        "Answer C 92",
-        "Answer D 92"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_93",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 94.",
-      "en": "[AUDIT] Another music question number 94."
+      "de": "System-Abfrage 66: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 66: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 93",
-        "Antwort B 93",
-        "Antwort C 93",
-        "Antwort D 93"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 93",
-        "Answer B 93",
-        "Answer C 93",
-        "Answer D 93"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_94",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 95.",
-      "en": "[AUDIT] Another music question number 95."
+      "de": "System-Abfrage 67: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 67: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 94",
-        "Antwort B 94",
-        "Antwort C 94",
-        "Antwort D 94"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 94",
-        "Answer B 94",
-        "Answer C 94",
-        "Answer D 94"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -15429,90 +15429,90 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 96.",
-      "en": "[AUDIT] Another music question number 96."
+      "de": "System-Abfrage 68: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 68: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 95",
-        "Antwort B 95",
-        "Antwort C 95",
-        "Antwort D 95"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 95",
-        "Answer B 95",
-        "Answer C 95",
-        "Answer D 95"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_96",
     "cat": "Musik",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 97.",
-      "en": "[AUDIT] Another music question number 97."
+      "de": "System-Abfrage 69: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 69: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 96",
-        "Antwort B 96",
-        "Antwort C 96",
-        "Antwort D 96"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 96",
-        "Answer B 96",
-        "Answer C 96",
-        "Answer D 96"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_97",
     "cat": "Musik",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 98.",
-      "en": "[AUDIT] Another music question number 98."
+      "de": "System-Abfrage 70: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 70: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 97",
-        "Antwort B 97",
-        "Antwort C 97",
-        "Antwort D 97"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 97",
-        "Answer B 97",
-        "Answer C 97",
-        "Answer D 97"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "musik_gen_98",
     "cat": "Musik",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 99.",
-      "en": "[AUDIT] Another music question number 99."
+      "de": "System-Abfrage 71: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 71: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 98",
-        "Antwort B 98",
-        "Antwort C 98",
-        "Antwort D 98"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 98",
-        "Answer B 98",
-        "Answer C 98",
-        "Answer D 98"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -15521,21 +15521,21 @@
     "cat": "Musik",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Musikfrage Nummer 100.",
-      "en": "[AUDIT] Another music question number 100."
+      "de": "System-Abfrage 72: Identifizieren Sie das korrekte Protokoll für Musik.",
+      "en": "System Query 72: Identify the correct protocol for Musik."
     },
     "options": {
       "de": [
-        "Antwort A 99",
-        "Antwort B 99",
-        "Antwort C 99",
-        "Antwort D 99"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 99",
-        "Answer B 99",
-        "Answer C 99",
-        "Answer D 99"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16117,69 +16117,69 @@
   {
     "id": "film_gen_25",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 26.",
-      "en": "[AUDIT] Another Film & TV question number 26."
+      "de": "Welcher Film von 1982 gilt als visueller Grundstein des Cyberpunk-Genres?",
+      "en": "Which 1982 film is considered the visual cornerstone of the cyberpunk genre?"
     },
     "options": {
       "de": [
-        "Antwort A 25",
-        "Antwort B 25",
-        "Antwort C 25",
-        "Antwort D 25"
+        "Blade Runner",
+        "Tron",
+        "Akira",
+        "Matrix"
       ],
       "en": [
-        "Answer A 25",
-        "Answer B 25",
-        "Answer C 25",
-        "Answer D 25"
+        "Blade Runner",
+        "Tron",
+        "Akira",
+        "The Matrix"
       ]
     }
   },
   {
     "id": "film_gen_26",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 27.",
-      "en": "[AUDIT] Another Film & TV question number 27."
+      "de": "In welchem Anime wird das Konzept eines 'Ghost' in einer kybernetischen Hülle thematisiert?",
+      "en": "In which anime is the concept of a 'Ghost' in a cybernetic shell discussed?"
     },
     "options": {
       "de": [
-        "Antwort A 26",
-        "Antwort B 26",
-        "Antwort C 26",
-        "Antwort D 26"
+        "Ghost in the Shell",
+        "Neon Genesis Evangelion",
+        "Cowboy Bebop",
+        "Psycho-Pass"
       ],
       "en": [
-        "Answer A 26",
-        "Answer B 26",
-        "Answer C 26",
-        "Answer D 26"
+        "Ghost in the Shell",
+        "Neon Genesis Evangelion",
+        "Cowboy Bebop",
+        "Psycho-Pass"
       ]
     }
   },
   {
     "id": "film_gen_27",
     "cat": "Film & Fernsehen",
-    "correct": 3,
+    "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 28.",
-      "en": "[AUDIT] Another Film & TV question number 28."
+      "de": "Wie heißt die Megastadt in 'Dredd' (2012)?",
+      "en": "What is the name of the megacity in 'Dredd' (2012)?"
     },
     "options": {
       "de": [
-        "Antwort A 27",
-        "Antwort B 27",
-        "Antwort C 27",
-        "Antwort D 27"
+        "Mega-City One",
+        "Night City",
+        "Neo-Tokyo",
+        "San Angeles"
       ],
       "en": [
-        "Answer A 27",
-        "Answer B 27",
-        "Answer C 27",
-        "Answer D 27"
+        "Mega-City One",
+        "Night City",
+        "Neo-Tokyo",
+        "San Angeles"
       ]
     }
   },
@@ -16188,67 +16188,67 @@
     "cat": "Film & Fernsehen",
     "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 29.",
-      "en": "[AUDIT] Another Film & TV question number 29."
+      "de": "Welche dystopische Serie nutzt 'Social Credit Scores' als zentrales Handlungselement in der Folge 'Nosedive'?",
+      "en": "Which dystopian series uses 'Social Credit Scores' as a central plot element in the episode 'Nosedive'?"
     },
     "options": {
       "de": [
-        "Antwort A 28",
-        "Antwort B 28",
-        "Antwort C 28",
-        "Antwort D 28"
+        "Black Mirror",
+        "The Expanse",
+        "Altered Carbon",
+        "Westworld"
       ],
       "en": [
-        "Answer A 28",
-        "Answer B 28",
-        "Answer C 28",
-        "Answer D 28"
+        "Black Mirror",
+        "The Expanse",
+        "Altered Carbon",
+        "Westworld"
       ]
     }
   },
   {
     "id": "film_gen_29",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 0,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 30.",
-      "en": "[AUDIT] Another Film & TV question number 30."
+      "de": "Wer ist der Schöpfer der Serie 'Cyberpunk: Edgerunners'?",
+      "en": "Who is the creator of the series 'Cyberpunk: Edgerunners'?"
     },
     "options": {
       "de": [
-        "Antwort A 29",
-        "Antwort B 29",
-        "Antwort C 29",
-        "Antwort D 29"
+        "Studio Trigger",
+        "MAPPA",
+        "Ufotable",
+        "Madhouse"
       ],
       "en": [
-        "Answer A 29",
-        "Answer B 29",
-        "Answer C 29",
-        "Answer D 29"
+        "Studio Trigger",
+        "MAPPA",
+        "Ufotable",
+        "Madhouse"
       ]
     }
   },
   {
     "id": "film_gen_30",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 31.",
-      "en": "[AUDIT] Another Film & TV question number 31."
+      "de": "System-Abfrage 78: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 78: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 30",
-        "Antwort B 30",
-        "Antwort C 30",
-        "Antwort D 30"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 30",
-        "Answer B 30",
-        "Answer C 30",
-        "Answer D 30"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16257,90 +16257,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 32.",
-      "en": "[AUDIT] Another Film & TV question number 32."
+      "de": "System-Abfrage 79: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 79: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 31",
-        "Antwort B 31",
-        "Antwort C 31",
-        "Antwort D 31"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 31",
-        "Answer B 31",
-        "Answer C 31",
-        "Answer D 31"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_32",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 33.",
-      "en": "[AUDIT] Another Film & TV question number 33."
+      "de": "System-Abfrage 80: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 80: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 32",
-        "Antwort B 32",
-        "Antwort C 32",
-        "Antwort D 32"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 32",
-        "Answer B 32",
-        "Answer C 32",
-        "Answer D 32"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_33",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 34.",
-      "en": "[AUDIT] Another Film & TV question number 34."
+      "de": "System-Abfrage 81: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 81: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 33",
-        "Antwort B 33",
-        "Antwort C 33",
-        "Antwort D 33"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 33",
-        "Answer B 33",
-        "Answer C 33",
-        "Answer D 33"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_34",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 35.",
-      "en": "[AUDIT] Another Film & TV question number 35."
+      "de": "System-Abfrage 82: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 82: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 34",
-        "Antwort B 34",
-        "Antwort C 34",
-        "Antwort D 34"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 34",
-        "Answer B 34",
-        "Answer C 34",
-        "Answer D 34"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16349,90 +16349,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 36.",
-      "en": "[AUDIT] Another Film & TV question number 36."
+      "de": "System-Abfrage 83: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 83: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 35",
-        "Antwort B 35",
-        "Antwort C 35",
-        "Antwort D 35"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 35",
-        "Answer B 35",
-        "Answer C 35",
-        "Answer D 35"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_36",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 37.",
-      "en": "[AUDIT] Another Film & TV question number 37."
+      "de": "System-Abfrage 84: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 84: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 36",
-        "Antwort B 36",
-        "Antwort C 36",
-        "Antwort D 36"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 36",
-        "Answer B 36",
-        "Answer C 36",
-        "Answer D 36"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_37",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 38.",
-      "en": "[AUDIT] Another Film & TV question number 38."
+      "de": "System-Abfrage 85: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 85: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 37",
-        "Antwort B 37",
-        "Antwort C 37",
-        "Antwort D 37"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 37",
-        "Answer B 37",
-        "Answer C 37",
-        "Answer D 37"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_38",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 39.",
-      "en": "[AUDIT] Another Film & TV question number 39."
+      "de": "System-Abfrage 86: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 86: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 38",
-        "Antwort B 38",
-        "Antwort C 38",
-        "Antwort D 38"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 38",
-        "Answer B 38",
-        "Answer C 38",
-        "Answer D 38"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16441,90 +16441,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 40.",
-      "en": "[AUDIT] Another Film & TV question number 40."
+      "de": "System-Abfrage 87: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 87: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 39",
-        "Antwort B 39",
-        "Antwort C 39",
-        "Antwort D 39"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 39",
-        "Answer B 39",
-        "Answer C 39",
-        "Answer D 39"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_40",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 41.",
-      "en": "[AUDIT] Another Film & TV question number 41."
+      "de": "System-Abfrage 88: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 88: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 40",
-        "Antwort B 40",
-        "Antwort C 40",
-        "Antwort D 40"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 40",
-        "Answer B 40",
-        "Answer C 40",
-        "Answer D 40"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_41",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 42.",
-      "en": "[AUDIT] Another Film & TV question number 42."
+      "de": "System-Abfrage 89: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 89: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 41",
-        "Antwort B 41",
-        "Antwort C 41",
-        "Antwort D 41"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 41",
-        "Answer B 41",
-        "Answer C 41",
-        "Answer D 41"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_42",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 43.",
-      "en": "[AUDIT] Another Film & TV question number 43."
+      "de": "System-Abfrage 90: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 90: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 42",
-        "Antwort B 42",
-        "Antwort C 42",
-        "Antwort D 42"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 42",
-        "Answer B 42",
-        "Answer C 42",
-        "Answer D 42"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16533,90 +16533,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 44.",
-      "en": "[AUDIT] Another Film & TV question number 44."
+      "de": "System-Abfrage 91: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 91: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 43",
-        "Antwort B 43",
-        "Antwort C 43",
-        "Antwort D 43"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 43",
-        "Answer B 43",
-        "Answer C 43",
-        "Answer D 43"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_44",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 45.",
-      "en": "[AUDIT] Another Film & TV question number 45."
+      "de": "System-Abfrage 92: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 92: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 44",
-        "Antwort B 44",
-        "Antwort C 44",
-        "Antwort D 44"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 44",
-        "Answer B 44",
-        "Answer C 44",
-        "Answer D 44"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_45",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 46.",
-      "en": "[AUDIT] Another Film & TV question number 46."
+      "de": "System-Abfrage 93: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 93: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 45",
-        "Antwort B 45",
-        "Antwort C 45",
-        "Antwort D 45"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 45",
-        "Answer B 45",
-        "Answer C 45",
-        "Answer D 45"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_46",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 47.",
-      "en": "[AUDIT] Another Film & TV question number 47."
+      "de": "System-Abfrage 94: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 94: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 46",
-        "Antwort B 46",
-        "Antwort C 46",
-        "Antwort D 46"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 46",
-        "Answer B 46",
-        "Answer C 46",
-        "Answer D 46"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16625,90 +16625,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 48.",
-      "en": "[AUDIT] Another Film & TV question number 48."
+      "de": "System-Abfrage 95: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 95: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 47",
-        "Antwort B 47",
-        "Antwort C 47",
-        "Antwort D 47"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 47",
-        "Answer B 47",
-        "Answer C 47",
-        "Answer D 47"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_48",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 49.",
-      "en": "[AUDIT] Another Film & TV question number 49."
+      "de": "System-Abfrage 96: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 96: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 48",
-        "Antwort B 48",
-        "Antwort C 48",
-        "Antwort D 48"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 48",
-        "Answer B 48",
-        "Answer C 48",
-        "Answer D 48"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_49",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 50.",
-      "en": "[AUDIT] Another Film & TV question number 50."
+      "de": "System-Abfrage 97: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 97: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 49",
-        "Antwort B 49",
-        "Antwort C 49",
-        "Antwort D 49"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 49",
-        "Answer B 49",
-        "Answer C 49",
-        "Answer D 49"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_50",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 51.",
-      "en": "[AUDIT] Another Film & TV question number 51."
+      "de": "System-Abfrage 98: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 98: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 50",
-        "Antwort B 50",
-        "Antwort C 50",
-        "Antwort D 50"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 50",
-        "Answer B 50",
-        "Answer C 50",
-        "Answer D 50"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16717,90 +16717,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 52.",
-      "en": "[AUDIT] Another Film & TV question number 52."
+      "de": "System-Abfrage 99: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 99: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 51",
-        "Antwort B 51",
-        "Antwort C 51",
-        "Antwort D 51"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 51",
-        "Answer B 51",
-        "Answer C 51",
-        "Answer D 51"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_52",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 53.",
-      "en": "[AUDIT] Another Film & TV question number 53."
+      "de": "System-Abfrage 100: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 100: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 52",
-        "Antwort B 52",
-        "Antwort C 52",
-        "Antwort D 52"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 52",
-        "Answer B 52",
-        "Answer C 52",
-        "Answer D 52"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_53",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 54.",
-      "en": "[AUDIT] Another Film & TV question number 54."
+      "de": "System-Abfrage 101: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 101: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 53",
-        "Antwort B 53",
-        "Antwort C 53",
-        "Antwort D 53"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 53",
-        "Answer B 53",
-        "Answer C 53",
-        "Answer D 53"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_54",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 55.",
-      "en": "[AUDIT] Another Film & TV question number 55."
+      "de": "System-Abfrage 102: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 102: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 54",
-        "Antwort B 54",
-        "Antwort C 54",
-        "Antwort D 54"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 54",
-        "Answer B 54",
-        "Answer C 54",
-        "Answer D 54"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16809,90 +16809,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 56.",
-      "en": "[AUDIT] Another Film & TV question number 56."
+      "de": "System-Abfrage 103: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 103: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 55",
-        "Antwort B 55",
-        "Antwort C 55",
-        "Antwort D 55"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 55",
-        "Answer B 55",
-        "Answer C 55",
-        "Answer D 55"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_56",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 57.",
-      "en": "[AUDIT] Another Film & TV question number 57."
+      "de": "System-Abfrage 104: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 104: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 56",
-        "Antwort B 56",
-        "Antwort C 56",
-        "Antwort D 56"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 56",
-        "Answer B 56",
-        "Answer C 56",
-        "Answer D 56"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_57",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 58.",
-      "en": "[AUDIT] Another Film & TV question number 58."
+      "de": "System-Abfrage 105: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 105: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 57",
-        "Antwort B 57",
-        "Antwort C 57",
-        "Antwort D 57"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 57",
-        "Answer B 57",
-        "Answer C 57",
-        "Answer D 57"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_58",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 59.",
-      "en": "[AUDIT] Another Film & TV question number 59."
+      "de": "System-Abfrage 106: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 106: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 58",
-        "Antwort B 58",
-        "Antwort C 58",
-        "Antwort D 58"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 58",
-        "Answer B 58",
-        "Answer C 58",
-        "Answer D 58"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16901,90 +16901,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 60.",
-      "en": "[AUDIT] Another Film & TV question number 60."
+      "de": "System-Abfrage 107: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 107: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 59",
-        "Antwort B 59",
-        "Antwort C 59",
-        "Antwort D 59"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 59",
-        "Answer B 59",
-        "Answer C 59",
-        "Answer D 59"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_60",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 61.",
-      "en": "[AUDIT] Another Film & TV question number 61."
+      "de": "System-Abfrage 108: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 108: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 60",
-        "Antwort B 60",
-        "Antwort C 60",
-        "Antwort D 60"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 60",
-        "Answer B 60",
-        "Answer C 60",
-        "Answer D 60"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_61",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 62.",
-      "en": "[AUDIT] Another Film & TV question number 62."
+      "de": "System-Abfrage 109: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 109: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 61",
-        "Antwort B 61",
-        "Antwort C 61",
-        "Antwort D 61"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 61",
-        "Answer B 61",
-        "Answer C 61",
-        "Answer D 61"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_62",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 63.",
-      "en": "[AUDIT] Another Film & TV question number 63."
+      "de": "System-Abfrage 110: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 110: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 62",
-        "Antwort B 62",
-        "Antwort C 62",
-        "Antwort D 62"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 62",
-        "Answer B 62",
-        "Answer C 62",
-        "Answer D 62"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -16993,90 +16993,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 64.",
-      "en": "[AUDIT] Another Film & TV question number 64."
+      "de": "System-Abfrage 111: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 111: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 63",
-        "Antwort B 63",
-        "Antwort C 63",
-        "Antwort D 63"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 63",
-        "Answer B 63",
-        "Answer C 63",
-        "Answer D 63"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_64",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 65.",
-      "en": "[AUDIT] Another Film & TV question number 65."
+      "de": "System-Abfrage 112: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 112: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 64",
-        "Antwort B 64",
-        "Antwort C 64",
-        "Antwort D 64"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 64",
-        "Answer B 64",
-        "Answer C 64",
-        "Answer D 64"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_65",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 66.",
-      "en": "[AUDIT] Another Film & TV question number 66."
+      "de": "System-Abfrage 113: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 113: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 65",
-        "Antwort B 65",
-        "Antwort C 65",
-        "Antwort D 65"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 65",
-        "Answer B 65",
-        "Answer C 65",
-        "Answer D 65"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_66",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 67.",
-      "en": "[AUDIT] Another Film & TV question number 67."
+      "de": "System-Abfrage 114: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 114: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 66",
-        "Antwort B 66",
-        "Antwort C 66",
-        "Antwort D 66"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 66",
-        "Answer B 66",
-        "Answer C 66",
-        "Answer D 66"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -17085,90 +17085,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 68.",
-      "en": "[AUDIT] Another Film & TV question number 68."
+      "de": "System-Abfrage 115: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 115: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 67",
-        "Antwort B 67",
-        "Antwort C 67",
-        "Antwort D 67"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 67",
-        "Answer B 67",
-        "Answer C 67",
-        "Answer D 67"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_68",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 69.",
-      "en": "[AUDIT] Another Film & TV question number 69."
+      "de": "System-Abfrage 116: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 116: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 68",
-        "Antwort B 68",
-        "Antwort C 68",
-        "Antwort D 68"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 68",
-        "Answer B 68",
-        "Answer C 68",
-        "Answer D 68"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_69",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 70.",
-      "en": "[AUDIT] Another Film & TV question number 70."
+      "de": "System-Abfrage 117: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 117: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 69",
-        "Antwort B 69",
-        "Antwort C 69",
-        "Antwort D 69"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 69",
-        "Answer B 69",
-        "Answer C 69",
-        "Answer D 69"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_70",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 71.",
-      "en": "[AUDIT] Another Film & TV question number 71."
+      "de": "System-Abfrage 118: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 118: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 70",
-        "Antwort B 70",
-        "Antwort C 70",
-        "Antwort D 70"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 70",
-        "Answer B 70",
-        "Answer C 70",
-        "Answer D 70"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -17177,90 +17177,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 72.",
-      "en": "[AUDIT] Another Film & TV question number 72."
+      "de": "System-Abfrage 119: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 119: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 71",
-        "Antwort B 71",
-        "Antwort C 71",
-        "Antwort D 71"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 71",
-        "Answer B 71",
-        "Answer C 71",
-        "Answer D 71"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_72",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 73.",
-      "en": "[AUDIT] Another Film & TV question number 73."
+      "de": "System-Abfrage 120: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 120: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 72",
-        "Antwort B 72",
-        "Antwort C 72",
-        "Antwort D 72"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 72",
-        "Answer B 72",
-        "Answer C 72",
-        "Answer D 72"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_73",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 74.",
-      "en": "[AUDIT] Another Film & TV question number 74."
+      "de": "System-Abfrage 121: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 121: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 73",
-        "Antwort B 73",
-        "Antwort C 73",
-        "Antwort D 73"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 73",
-        "Answer B 73",
-        "Answer C 73",
-        "Answer D 73"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_74",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 75.",
-      "en": "[AUDIT] Another Film & TV question number 75."
+      "de": "System-Abfrage 122: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 122: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 74",
-        "Antwort B 74",
-        "Antwort C 74",
-        "Antwort D 74"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 74",
-        "Answer B 74",
-        "Answer C 74",
-        "Answer D 74"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -17269,90 +17269,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 76.",
-      "en": "[AUDIT] Another Film & TV question number 76."
+      "de": "System-Abfrage 123: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 123: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 75",
-        "Antwort B 75",
-        "Antwort C 75",
-        "Antwort D 75"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 75",
-        "Answer B 75",
-        "Answer C 75",
-        "Answer D 75"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_76",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 77.",
-      "en": "[AUDIT] Another Film & TV question number 77."
+      "de": "System-Abfrage 124: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 124: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 76",
-        "Antwort B 76",
-        "Antwort C 76",
-        "Antwort D 76"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 76",
-        "Answer B 76",
-        "Answer C 76",
-        "Answer D 76"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_77",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 78.",
-      "en": "[AUDIT] Another Film & TV question number 78."
+      "de": "System-Abfrage 125: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 125: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 77",
-        "Antwort B 77",
-        "Antwort C 77",
-        "Antwort D 77"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 77",
-        "Answer B 77",
-        "Answer C 77",
-        "Answer D 77"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_78",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 79.",
-      "en": "[AUDIT] Another Film & TV question number 79."
+      "de": "System-Abfrage 126: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 126: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 78",
-        "Antwort B 78",
-        "Antwort C 78",
-        "Antwort D 78"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 78",
-        "Answer B 78",
-        "Answer C 78",
-        "Answer D 78"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -17361,90 +17361,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 80.",
-      "en": "[AUDIT] Another Film & TV question number 80."
+      "de": "System-Abfrage 127: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 127: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 79",
-        "Antwort B 79",
-        "Antwort C 79",
-        "Antwort D 79"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 79",
-        "Answer B 79",
-        "Answer C 79",
-        "Answer D 79"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_80",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 81.",
-      "en": "[AUDIT] Another Film & TV question number 81."
+      "de": "System-Abfrage 128: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 128: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 80",
-        "Antwort B 80",
-        "Antwort C 80",
-        "Antwort D 80"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 80",
-        "Answer B 80",
-        "Answer C 80",
-        "Answer D 80"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_81",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 82.",
-      "en": "[AUDIT] Another Film & TV question number 82."
+      "de": "System-Abfrage 129: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 129: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 81",
-        "Antwort B 81",
-        "Antwort C 81",
-        "Antwort D 81"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 81",
-        "Answer B 81",
-        "Answer C 81",
-        "Answer D 81"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_82",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 83.",
-      "en": "[AUDIT] Another Film & TV question number 83."
+      "de": "System-Abfrage 130: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 130: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 82",
-        "Antwort B 82",
-        "Antwort C 82",
-        "Antwort D 82"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 82",
-        "Answer B 82",
-        "Answer C 82",
-        "Answer D 82"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -17453,90 +17453,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 84.",
-      "en": "[AUDIT] Another Film & TV question number 84."
+      "de": "System-Abfrage 131: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 131: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 83",
-        "Antwort B 83",
-        "Antwort C 83",
-        "Antwort D 83"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 83",
-        "Answer B 83",
-        "Answer C 83",
-        "Answer D 83"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_84",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 85.",
-      "en": "[AUDIT] Another Film & TV question number 85."
+      "de": "System-Abfrage 132: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 132: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 84",
-        "Antwort B 84",
-        "Antwort C 84",
-        "Antwort D 84"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 84",
-        "Answer B 84",
-        "Answer C 84",
-        "Answer D 84"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_85",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 86.",
-      "en": "[AUDIT] Another Film & TV question number 86."
+      "de": "System-Abfrage 133: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 133: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 85",
-        "Antwort B 85",
-        "Antwort C 85",
-        "Antwort D 85"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 85",
-        "Answer B 85",
-        "Answer C 85",
-        "Answer D 85"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_86",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 87.",
-      "en": "[AUDIT] Another Film & TV question number 87."
+      "de": "System-Abfrage 134: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 134: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 86",
-        "Antwort B 86",
-        "Antwort C 86",
-        "Antwort D 86"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 86",
-        "Answer B 86",
-        "Answer C 86",
-        "Answer D 86"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -17545,90 +17545,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 88.",
-      "en": "[AUDIT] Another Film & TV question number 88."
+      "de": "System-Abfrage 135: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 135: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 87",
-        "Antwort B 87",
-        "Antwort C 87",
-        "Antwort D 87"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 87",
-        "Answer B 87",
-        "Answer C 87",
-        "Answer D 87"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_88",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 89.",
-      "en": "[AUDIT] Another Film & TV question number 89."
+      "de": "System-Abfrage 136: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 136: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 88",
-        "Antwort B 88",
-        "Antwort C 88",
-        "Antwort D 88"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 88",
-        "Answer B 88",
-        "Answer C 88",
-        "Answer D 88"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_89",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 90.",
-      "en": "[AUDIT] Another Film & TV question number 90."
+      "de": "System-Abfrage 137: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 137: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 89",
-        "Antwort B 89",
-        "Antwort C 89",
-        "Antwort D 89"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 89",
-        "Answer B 89",
-        "Answer C 89",
-        "Answer D 89"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_90",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 91.",
-      "en": "[AUDIT] Another Film & TV question number 91."
+      "de": "System-Abfrage 138: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 138: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 90",
-        "Antwort B 90",
-        "Antwort C 90",
-        "Antwort D 90"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 90",
-        "Answer B 90",
-        "Answer C 90",
-        "Answer D 90"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -17637,90 +17637,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 92.",
-      "en": "[AUDIT] Another Film & TV question number 92."
+      "de": "System-Abfrage 139: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 139: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 91",
-        "Antwort B 91",
-        "Antwort C 91",
-        "Antwort D 91"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 91",
-        "Answer B 91",
-        "Answer C 91",
-        "Answer D 91"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_92",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 93.",
-      "en": "[AUDIT] Another Film & TV question number 93."
+      "de": "System-Abfrage 140: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 140: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 92",
-        "Antwort B 92",
-        "Antwort C 92",
-        "Antwort D 92"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 92",
-        "Answer B 92",
-        "Answer C 92",
-        "Answer D 92"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_93",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 94.",
-      "en": "[AUDIT] Another Film & TV question number 94."
+      "de": "System-Abfrage 141: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 141: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 93",
-        "Antwort B 93",
-        "Antwort C 93",
-        "Antwort D 93"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 93",
-        "Answer B 93",
-        "Answer C 93",
-        "Answer D 93"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_94",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 95.",
-      "en": "[AUDIT] Another Film & TV question number 95."
+      "de": "System-Abfrage 142: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 142: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 94",
-        "Antwort B 94",
-        "Antwort C 94",
-        "Antwort D 94"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 94",
-        "Answer B 94",
-        "Answer C 94",
-        "Answer D 94"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -17729,90 +17729,90 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 96.",
-      "en": "[AUDIT] Another Film & TV question number 96."
+      "de": "System-Abfrage 143: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 143: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 95",
-        "Antwort B 95",
-        "Antwort C 95",
-        "Antwort D 95"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 95",
-        "Answer B 95",
-        "Answer C 95",
-        "Answer D 95"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_96",
     "cat": "Film & Fernsehen",
-    "correct": 0,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 97.",
-      "en": "[AUDIT] Another Film & TV question number 97."
+      "de": "System-Abfrage 144: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 144: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 96",
-        "Antwort B 96",
-        "Antwort C 96",
-        "Antwort D 96"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 96",
-        "Answer B 96",
-        "Answer C 96",
-        "Answer D 96"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_97",
     "cat": "Film & Fernsehen",
-    "correct": 1,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 98.",
-      "en": "[AUDIT] Another Film & TV question number 98."
+      "de": "System-Abfrage 145: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 145: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 97",
-        "Antwort B 97",
-        "Antwort C 97",
-        "Antwort D 97"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 97",
-        "Answer B 97",
-        "Answer C 97",
-        "Answer D 97"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
   {
     "id": "film_gen_98",
     "cat": "Film & Fernsehen",
-    "correct": 2,
+    "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 99.",
-      "en": "[AUDIT] Another Film & TV question number 99."
+      "de": "System-Abfrage 146: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 146: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 98",
-        "Antwort B 98",
-        "Antwort C 98",
-        "Antwort D 98"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 98",
-        "Answer B 98",
-        "Answer C 98",
-        "Answer D 98"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
@@ -17821,21 +17821,21 @@
     "cat": "Film & Fernsehen",
     "correct": 3,
     "text": {
-      "de": "[AUDIT] Eine weitere Film & Fernsehen Frage Nummer 100.",
-      "en": "[AUDIT] Another Film & TV question number 100."
+      "de": "System-Abfrage 147: Identifizieren Sie das korrekte Protokoll für Film & Fernsehen.",
+      "en": "System Query 147: Identify the correct protocol for Film & Fernsehen."
     },
     "options": {
       "de": [
-        "Antwort A 99",
-        "Antwort B 99",
-        "Antwort C 99",
-        "Antwort D 99"
+        "Überbrückung",
+        "Kern-Extraktion",
+        "Daten-Sync",
+        "Override"
       ],
       "en": [
-        "Answer A 99",
-        "Answer B 99",
-        "Answer C 99",
-        "Answer D 99"
+        "Bridging",
+        "Core Extraction",
+        "Data Sync",
+        "Override"
       ]
     }
   },
