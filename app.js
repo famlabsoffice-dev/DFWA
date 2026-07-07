@@ -878,6 +878,8 @@ function resumeProtocol() {
 }
 
 async function initGame(createChallenge, isRestoring = false) {
+  if (state.isProcessing) return;
+  state.isProcessing = true;
   try {
     if (!isRestoring) {
       if (state.players.length > 0) {
@@ -909,6 +911,8 @@ async function initGame(createChallenge, isRestoring = false) {
       state.pausedTimer = null;
       state.sessionActive = true;
       state.timer = config.initialTimer;
+    } else {
+      state.isProcessing = true; // Sicherstellen, dass bei Restore auch gelockt ist
     }
 
     const livesDisplay = document.getElementById('lives-display');
