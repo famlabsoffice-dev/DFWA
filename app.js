@@ -1196,6 +1196,14 @@ async function endGame() {
       syncLeaderboard();
     }
     
+    // Apply Game Over Visuals
+    const modalContent = document.getElementById('modal-content');
+    if (modalContent) {
+      modalContent.style.backgroundImage = "url('./assets/images/ack_system_shutdown.webp')";
+      modalContent.style.backgroundSize = "cover";
+      modalContent.style.backgroundPosition = "center";
+    }
+
     const res = await generateChallengeCode();
     UIManager.showModal(
       state.lang === 'de' ? 'SYSTEM_ABSCHLUSS' : 'SYSTEM_TERMINATED',
