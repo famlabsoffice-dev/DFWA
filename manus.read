@@ -71,3 +71,9 @@
 - [x] **Timer-Text (Kontrast)**: Text auf die rechte Seite verschoben, mit schwarzer Schrift auf gelbem Grund (`var(--warning)`) in einer markanten Box hinterlegt. Glow-Effekt und Rahmen hinzugefügt, um sich vom dynamischen Hintergrund abzuheben.
 - [x] **Layout-Stabilität**: Timer-Elemente in der `index.html` bereinigt und Inline-Styles für bessere mobile Darstellung optimiert.
 - [x] **Build-Validierung**: Erfolgreicher Build bestätigt die Integration der verbesserten Timer-UI.
+
+### Instanz 2026-07-07 (Fragenkatalog Offline-Check)
+- [x] **Offline-Datenverfügbarkeit**: `questions_i18n.json` in den `public/` Ordner verschoben, um sicherzustellen, dass Vite die Datei im Build-Prozess erfasst.
+- [x] **Pre-Caching Härtung**: `vite.config.js` um das `json` Pattern erweitert. Verifiziert, dass der Service Worker den 438KB großen Fragenkatalog nun automatisch precached.
+- [x] **Offline-Spielbarkeit**: Durch das Pre-Caching des Katalogs ist das Spiel nun auch ohne Internetverbindung vollständig start- und spielbar.
+- [x] **Build-Validierung**: Erfolgreicher Build bestätigt 20 precached Entries (vorher 19), inklusive des Fragenkatalogs.
