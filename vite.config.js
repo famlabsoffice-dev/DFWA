@@ -1,18 +1,75 @@
 import { defineConfig } from 'vite';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-
+import { VitePWA } from 'vite-plugin-pwa';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [
-    {
-      name: 'pwa-config-fix',
-      transformIndexHtml(html) {
-        return html.replace(/href="\.\/manifest\.json"/, 'href="./manifest.webmanifest"');
+    VitePWA({
+      registerType: 'autoUpdate',
+      injectRegister: 'auto',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2}'],
+        cleanupOutdatedCaches: true,
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        clientsClaim: true,
+        skipWaiting: true,
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/storage\.googleapis\.com\/workbox-cdn\/.*/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'workbox-cache',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          }
+        ]
+      },
+      manifest: {
+        name: 'ACK ATTACK',
+        short_name: 'ACK ATTACK',
+        description: 'Das ultimative Dystopie-Quiz als PWA.',
+        theme_color: '#000000',
+        background_color: '#000000',
+        display: 'standalone',
+        orientation: 'portrait',
+        lang: 'de',
+        icons: [
+          {
+            src: 'assets/icons/icon-192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any'
+          },
+          {
+            src: 'assets/icons/icon-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any'
+          },
+          {
+            src: 'assets/icons/icon-192-maskable.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'maskable'
+          },
+          {
+            src: 'assets/icons/icon-512-maskable.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
+          }
+        ]
       }
-    }
+    })
   ],
 
   publicDir: 'public',
@@ -24,7 +81,6 @@ export default defineConfig({
       compress: {
         drop_console: false,
         drop_debugger: true,
-        pure_funcs: [],
       },
     },
     target: 'es2020',
@@ -37,25 +93,13 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             return 'vendor';
           }
-          if (id.includes('ui-manager.js')) {
-            return 'ui';
-          }
-          if (id.includes('game-modes.js') || id.includes('battle-manager.js')) {
-            return 'game';
-          }
         },
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
           const name = assetInfo.names?.[0] || assetInfo.name || '';
-          if (name === 'manifest.json' || name === 'manifest.webmanifest') {
-            return '[name][extname]';
-          }
           if (/\.(woff2?|ttf|eot)$/.test(name)) {
             return 'assets/fonts/[name][extname]';
-          }
-          if (/icons\//.test(name)) {
-            return 'assets/icons/[name][extname]';
           }
           if (/\.(png|jpe?g|gif|svg|webp|ico)$/.test(name)) {
             return 'assets/images/[name][extname]';
@@ -66,9 +110,6 @@ export default defineConfig({
     },
     sourcemap: false,
     cssMinify: true,
-    chunkSizeWarningLimit: 1000,
-    assetsInlineLimit: 4096,
-    reportCompressedSize: true,
   },
   base: './',
   server: {
@@ -80,10 +121,5 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
-  },
-  esbuild: {
-    drop: ['debugger'],
-    legalComments: 'none',
-    minify: true,
   },
 });

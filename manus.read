@@ -282,3 +282,17 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
   - Verifiziert: `dist/sw.js` und `dist/manifest.webmanifest` sind erreichbar.
 ✓ **Mobile UX Vorbereitung**:
   - `touch-action: manipulation` in `index.html` integriert, um Double-Tap-Zoom zu verhindern und die Reaktivität zu erhöhen.
+
+## Update 2026-07-07 (Automatisierte PWA-Konfiguration)
+✓ **Vite-PWA-Plugin integriert**:
+  - Manuelle `sw.js` und `registerSW.js` durch `vite-plugin-pwa` ersetzt.
+  - Automatisches Caching aller relevanten Assets (JS, CSS, HTML, WebP, Woff2).
+  - `maximumFileSizeToCacheInBytes` auf 5MB erhöht, um das große `ack_cyber_eye.webp` (2.8MB) offline verfügbar zu machen.
+✓ **Update-Strategie optimiert**:
+  - `registerType: 'autoUpdate'` konfiguriert für sofortige Aktivierung neuer Versionen.
+  - `cleanupOutdatedCaches: true` stellt sicher, dass kein alter Müll auf mobilen Geräten verbleibt.
+✓ **Manifest-Zentralisierung**:
+  - PWA-Manifest wird nun direkt aus der `vite.config.js` generiert, was Konsistenz zwischen Build-Assets und Manifest-Icons garantiert.
+✓ **Build-Validierung**:
+  - `pnpm build` erfolgreich abgeschlossen.
+  - Generierte Dateien: `dist/sw.js`, `dist/workbox-*.js`, `dist/manifest.webmanifest`.
