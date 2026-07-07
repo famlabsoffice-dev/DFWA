@@ -52,3 +52,10 @@
 - [x] **Apple Splash Screens**: Konfiguration für gängige iPhone-Größen (Pro Max, Pro, Standard) mittels `apple-touch-startup-image` und `media queries` in `index.html` hinterlegt. Nutzt `ack_splash_void.webp` als einheitlichen, atmosphärischen Startbildschirm.
 - [x] **PWA Manifest Erweiterung**: `categories` und `shortcuts` ("Start Game") in `vite.config.js` hinzugefügt, um die Integration in das Betriebssystem (Long-Press auf App-Icon) zu verbessern.
 - [x] **Build-Validierung**: Erfolgreicher Build bestätigt die korrekte Injektion der neuen Metadaten und Manifest-Erweiterungen.
+
+### Instanz 2026-07-07 (Screenshot-Layout Fixes)
+- [x] **Modal-Titel Fix**: `clamp()` und `text-overflow: ellipsis` für `#modal-title` implementiert, um abgeschnittene Texte auf schmalen Bildschirmen zu verhindern.
+- [x] **Kontrast-Optimierung**: `#share-btn` auf schwarzen Text auf neongrünem Grund umgestellt für maximale Lesbarkeit.
+- [x] **Vertical Spacing Fix**: `margin-top` der `.ui-content-wrapper` auf 40vh (Mobile) bzw. 48vh (Default) reduziert, um abgeschnittene Buttons ("HARDCORE", "BLITZ") am unteren Rand zu vermeiden.
+- [x] **Modal-Flexibilität**: `#modal-content` nutzt nun `flex` und `gap`, um Abstände zwischen Liste und Buttons sauber zu halten. `max-height: 90vh` und `overflow-y: auto` verhindern, dass das Modal den Bildschirm verlässt.
+- [x] **Build-Validierung**: Erfolgreicher Build bestätigt die Integration der Layout-Korrekturen.
