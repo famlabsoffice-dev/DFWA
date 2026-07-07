@@ -673,7 +673,14 @@ function handleAddPlayer() {
 
     if (!state.players.includes(name)) {
       state.players.push(name);
+      state.playerName = name; // Sofort im State setzen
       localStorage.setItem('dfwa_players', JSON.stringify(state.players));
+      saveSecure('dfwa_name', name); // Sicher speichern
+      
+      // Header UI sofort aktualisieren
+      const playerDisplay = document.getElementById('player-display');
+      if (playerDisplay) playerDisplay.innerText = name;
+      
       MobileDebug.logEvent('SAVE', `Player added: ${name}`);
       updatePlayerListUI();
     }

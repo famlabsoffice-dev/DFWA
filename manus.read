@@ -182,3 +182,11 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ✓ **Code-Integrität**:
   - Die Implementierung entspricht strikt den PWA-Anforderungen und den zuvor definierten Fixes.
   - Build-Prozess (`pnpm build`) erfolgreich abgeschlossen.
+
+## Update 2026-07-07 (Schritt-für-Schritt Rebuild)
+### Schritt 1: Add-Player-Button (Abgeschlossen)
+✓ Logik für den Add-Player-Button vollständig neu aufgesetzt.
+✓ Fokus auf `pointerup` für bessere Reaktivität auf Touch-Geräten (Redmi Note 8 Pro).
+✓ `stopPropagation()` hinzugefügt, um Event-Bubbling-Probleme zu vermeiden.
+✓ Fallback für Non-Pointer-Browser implementiert.
+✓ Build und Push erfolgreich.
