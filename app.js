@@ -167,13 +167,20 @@ function showCategoryModal() {
             btn.className = 'mode-btn';
             if (cat === state.selectedCategory) btn.classList.add('active');
             btn.innerHTML = `<strong>${cat.toUpperCase()}</strong><small>DATA_SECTOR_${cat.slice(0,3).toUpperCase()}</small>`;
-            btn.onclick = (e) => {
+            
+            // Beschleunigte Auswahl für Mobile
+            const selectCat = (e) => {
+                e.preventDefault();
                 e.stopPropagation();
                 state.selectedCategory = cat;
                 const display = document.getElementById('current-category-display');
                 if (display) display.textContent = cat.toUpperCase();
                 overlay.style.display = 'none';
+                if ('vibrate' in navigator) navigator.vibrate(20);
             };
+            
+            btn.addEventListener('pointerup', selectCat);
+            btn.addEventListener('click', selectCat);
             list.appendChild(btn);
         });
         
@@ -219,12 +226,13 @@ function showNextQuestion() {
     }
     
     const q = state.questions[state.currentQuestionIndex];
-    const questionText = document.getElementById('question-text');
+    // Nutze sowohl question-text als auch question-box für maximale Kompatibilität
+    const questionBox = document.getElementById('question-box') || document.getElementById('question-text');
     const optionsContainer = document.getElementById('options-container');
     const catDisplay = document.getElementById('cat-display');
     
     if (catDisplay) catDisplay.textContent = `SECTOR: ${state.selectedCategory.toUpperCase()}`;
-    if (questionText) questionText.textContent = q.text.de || q.text;
+    if (questionBox) questionBox.textContent = q.text.de || q.text;
     
     if (optionsContainer) {
         optionsContainer.innerHTML = '';
@@ -233,7 +241,14 @@ function showNextQuestion() {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
             btn.textContent = opt;
-            btn.onclick = () => handleAnswer(index === q.correct);
+            
+            const submitAnswer = (e) => {
+                e.preventDefault();
+                handleAnswer(index === q.correct);
+            };
+            
+            btn.addEventListener('pointerup', submitAnswer);
+            btn.addEventListener('click', submitAnswer);
             optionsContainer.appendChild(btn);
         });
     }

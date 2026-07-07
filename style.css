@@ -342,15 +342,16 @@ h1 {
 }
 
 #timeline-container {
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 600px;
-  height: 4px;
+  height: 6px;
   background: rgba(255, 255, 255, 0.1);
   position: absolute;
-  top: 12vh;
+  top: 10vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
+  border: 1px solid rgba(57, 255, 20, 0.3);
 }
 #timeline-bar {
   width: 100%;
@@ -362,22 +363,31 @@ h1 {
 }
 
 #question-box {
-  height: 25vh;
+  height: auto;
+  min-height: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 1.5rem;
-  padding: 25px;
+  font-size: clamp(1.1rem, 5vw, 1.5rem);
+  padding: 20px;
   margin-top: 15vh;
+  width: 100%;
+  max-width: 600px;
+  color: #fff;
+  text-shadow: 0 0 10px var(--neon);
+  font-weight: 900;
   pointer-events: none;
 }
 #options-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   padding: 0 25px;
-  margin-bottom: 80px;
+  margin-top: auto;
+  margin-bottom: 100px;
+  gap: 10px;
 }
 
 #feedback-screen {

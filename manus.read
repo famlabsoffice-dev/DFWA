@@ -342,3 +342,16 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
   - Alle Haupt-Buttons (`start-btn`, `add-player-btn`, `category-modal-btn`) wurden unter Real-Bedingungen (Build-Umgebung) auf Erreichbarkeit geprüft.
 ✓ **Build-Validierung**:
   - `pnpm build` erfolgreich abgeschlossen. Alle Interaktions-Fixes sind im finalen Bundle enthalten.
+
+## Update 2026-07-07 (UI & Interaktions-Fixes)
+✓ **Spiel-Layout optimiert**:
+  - Timer-Bar (`#timeline-container`) vergrößert (6px Höhe) und mit Rahmen für bessere Sichtbarkeit versehen.
+  - Frage-Layout (`#question-box`) zentriert, mit `text-shadow` für bessere Lesbarkeit und dynamischer Schriftgröße (`clamp`) ausgestattet.
+  - Antwort-Container (`#options-container`) auf `flex-grow` umgestellt, um die Buttons sauber unter der Frage zu platzieren.
+✓ **Kategorien-Auswahl beschleunigt**:
+  - Event-Handling im Kategorien-Modal auf `pointerup` umgestellt, um das "Haken" auf mobilen Geräten zu eliminieren.
+  - `e.preventDefault()` hinzugefügt, um Ghost-Clicks und Verzögerungen beim Schließen des Modals zu verhindern.
+✓ **Touch-Reaktivität im Spiel**:
+  - Antwort-Buttons nutzen nun ebenfalls das gehärtete `pointerup`-System für verzögerungsfreie Reaktionen.
+✓ **Build-Validierung**:
+  - Erfolgreicher Build mit allen UI-Verbesserungen.
