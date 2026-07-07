@@ -12,21 +12,41 @@ import { ACHIEVEMENTS as ACHIEV_CONST, STORAGE_KEYS } from './scripts/constants.
 
 	MobileDebug.init();
 
-	// ULTIMATIVER UI HEARTBEAT: Erzwingt Header-Sync alle 500ms
-	setInterval(() => {
-		const name = state.playerName || localStorage.getItem('dfwa_name') || 'GUEST';
-		const allDisplays = document.querySelectorAll('#player-display');
-		allDisplays.forEach(el => {
-			if (el.innerText !== name) {
-				el.innerText = name;
-				el.style.color = 'var(--neon)';
+		// ULTIMATIVER UI HEARTBEAT (v2): Erzwingt Header-Sync und repariert DOM-Struktur
+		setInterval(() => {
+			try {
+				const name = state.playerName || localStorage.getItem('dfwa_name') || 'GUEST';
+				
+				// 1. Suche stat-player Container
+				const statPlayer = document.getElementById('stat-player');
+				if (statPlayer) {
+					// Prüfe ob der Name bereits korrekt drin steht (Regex für Robustheit)
+					const currentContent = statPlayer.innerText;
+					if (!currentContent.includes(name)) {
+						statPlayer.innerHTML = `USER_IDENT//<br><span id="player-display" style="color: var(--neon) !important; font-weight: 900 !important; display: inline !important; visibility: visible !important;">${name}</span>`;
+						MobileDebug.logEvent('UI_FIX', `Header forced to: ${name}`);
+					}
+				} else {
+					// FALLBACK: Wenn stat-player fehlt, erstelle ihn neu im eye-bg-container
+					const eyeContainer = document.getElementById('eye-bg-container');
+					if (eyeContainer) {
+						const newStat = document.createElement('div');
+						newStat.id = 'stat-player';
+						newStat.className = 'stat-overlay';
+						newStat.innerHTML = `USER_IDENT//<br><span id="player-display" style="color: var(--neon); font-weight: 900;">${name}</span>`;
+						eyeContainer.appendChild(newStat);
+						MobileDebug.logEvent('UI_REPAIR', 'stat-player recreated');
+					}
+				}
+
+				// 2. Alle anderen Instanzen von player-display synchronisieren
+				document.querySelectorAll('#player-display').forEach(el => {
+					if (el.innerText !== name) el.innerText = name;
+				});
+			} catch (e) {
+				console.error('HEARTBEAT_CRASH:', e);
 			}
-		});
-		const statPlayer = document.getElementById('stat-player');
-		if (statPlayer && !statPlayer.innerHTML.includes(name)) {
-			statPlayer.innerHTML = `USER_IDENT//<br><span id="player-display" style="color: var(--neon); font-weight: bold;">${name}</span>`;
-		}
-	}, 500);
+		}, 500);
 	
 	const API_BASE_URL =
   window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'

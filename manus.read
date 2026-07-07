@@ -229,3 +229,7 @@ Am unteren Bildschirmrand erscheint jetzt ein grünes Debug-Panel, das alle Klic
 ✓ **Cache-Resistenz**: Selbst wenn die initiale Bindung fehlschlägt, korrigiert sich die UI innerhalb einer halben Sekunde von selbst.
 ✓ **Brute-Force DOM-Reset**: Der Header-Container wird bei Abweichungen zwangsweise neu gerendert.
 ✓ Build und Push erfolgreich.
+
+### UI-Cleanup (Abgeschlossen)
+✓ **Redundanz-Eliminierung**: Der "SERVER_ROOM"-Button wurde vom Startbildschirm entfernt, da er bereits in der Battle Lobby vorhanden ist.
+✓ **Build & Push**: [Commit 1a949b2](https://github.com/famlabsoffice-dev/DFWA/commit/1a949b2).
