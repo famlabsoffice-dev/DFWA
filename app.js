@@ -10,9 +10,25 @@ import {
 } from './scripts/game-modes.js';
 import { ACHIEVEMENTS as ACHIEV_CONST, STORAGE_KEYS } from './scripts/constants.js';
 
-MobileDebug.init();
+	MobileDebug.init();
 
-const API_BASE_URL =
+	// ULTIMATIVER UI HEARTBEAT: Erzwingt Header-Sync alle 500ms
+	setInterval(() => {
+		const name = state.playerName || localStorage.getItem('dfwa_name') || 'GUEST';
+		const allDisplays = document.querySelectorAll('#player-display');
+		allDisplays.forEach(el => {
+			if (el.innerText !== name) {
+				el.innerText = name;
+				el.style.color = 'var(--neon)';
+			}
+		});
+		const statPlayer = document.getElementById('stat-player');
+		if (statPlayer && !statPlayer.innerHTML.includes(name)) {
+			statPlayer.innerHTML = `USER_IDENT//<br><span id="player-display" style="color: var(--neon); font-weight: bold;">${name}</span>`;
+		}
+	}, 500);
+	
+	const API_BASE_URL =
   window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
     : window.location.origin;
