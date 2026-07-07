@@ -959,3 +959,24 @@ h1 {
   80% { transform: translate(-5px, -15px); clip-path: inset(40% 0 10% 0); }
   100% { transform: translate(0); }
 }
+
+/* Category Realms */
+.realm-hardware {
+  background: url('./assets/images/ack_category_realm.webp') no-repeat center center !important;
+  background-size: cover !important;
+}
+
+.realm-ai {
+  background: url('./assets/images/ack_core_brain.webp') no-repeat center center !important;
+  background-size: cover !important;
+}
+
+.realm-security {
+  background: url('./assets/images/ack_override_alien.webp') no-repeat center center !important;
+  background-size: cover !important;
+}
+
+.realm-default {
+  background: url('./assets/images/ack_category_realm.webp') no-repeat center center !important;
+  background-size: cover !important;
+}

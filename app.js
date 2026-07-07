@@ -865,7 +865,21 @@ async function initGame(createChallenge, isRestoring = false) {
       const gameScreen = document.getElementById('game-screen');
       if (startScreen) startScreen.classList.remove('active');
       if (battleLobby) battleLobby.classList.remove('active');
-      if (gameScreen) gameScreen.classList.add('active');
+      if (gameScreen) {
+        gameScreen.classList.add('active');
+        // Apply Category Realm Visuals
+        gameScreen.classList.remove('realm-hardware', 'realm-ai', 'realm-security', 'realm-default');
+        const cat = state.selectedCategory ? state.selectedCategory.toLowerCase() : '';
+        if (cat.includes('technik') || cat.includes('wissenschaft')) {
+          gameScreen.classList.add('realm-hardware');
+        } else if (cat.includes('kunst') || cat.includes('literatur') || cat.includes('musik')) {
+          gameScreen.classList.add('realm-ai');
+        } else if (cat.includes('geschichte') || cat.includes('erdkunde') || cat.includes('gege')) {
+          gameScreen.classList.add('realm-security');
+        } else {
+          gameScreen.classList.add('realm-default');
+        }
+      }
 
       const hudScore = document.getElementById('hud-score');
       if (hudScore) hudScore.innerText = '0_PTS';
