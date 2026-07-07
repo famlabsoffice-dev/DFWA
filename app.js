@@ -1349,17 +1349,25 @@ async function syncLeaderboard() {
 					startBtn.addEventListener('pointerdown', handleStart);
 					startBtn.addEventListener('click', handleStart);
 				}
-			const addPlayerBtn = document.getElementById('add-player-btn');
-			if (addPlayerBtn) {
-				addPlayerBtn.addEventListener('pointerdown', (e) => {
-					e.preventDefault();
-					handleAddPlayer();
-				});
-				addPlayerBtn.addEventListener('click', (e) => {
-					e.preventDefault();
-					handleAddPlayer();
-				});
-			}
+				const addPlayerBtn = document.getElementById('add-player-btn');
+				if (addPlayerBtn) {
+					// Robuste Event-Registrierung für Mobile (Redmi Fokus)
+					const triggerAddPlayer = (e) => {
+						if (e) {
+							e.preventDefault();
+							e.stopPropagation();
+						}
+						MobileDebug.logEvent('TOUCH', 'Add Player Triggered');
+						handleAddPlayer();
+					};
+					
+					// Nutze pointerup für besseres Feedback auf Touch-Geräten
+					addPlayerBtn.addEventListener('pointerup', triggerAddPlayer);
+					// Fallback für Browser ohne PointerEvents
+					if (!window.PointerEvent) {
+						addPlayerBtn.addEventListener('click', triggerAddPlayer);
+					}
+				}
 		document.getElementById('pause-btn')?.addEventListener('pointerdown', (e) => {
 			e.preventDefault();
 			pauseProtocol();

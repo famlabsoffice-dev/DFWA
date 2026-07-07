@@ -1,0 +1,10 @@
+
+> dfwa-frontend@1.0.0 dev /home/ubuntu/DFWA
+> vite "--host" "0.0.0.0"
+
+
+  VITE v8.1.0  ready in 831 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://169.254.0.21:5173/
+  ➜  press h + enter to show help

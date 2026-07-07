@@ -1,0 +1,7 @@
+
+> dfwa-frontend@1.0.0 preview /home/ubuntu/DFWA
+> vite preview "--host" "0.0.0.0" "--port" "4173"
+
+Port 4173 is in use, trying another one...
+  ➜  Local:   http://localhost:4174/
+  ➜  Network: http://169.254.0.21:4174/
