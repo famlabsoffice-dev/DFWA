@@ -55,6 +55,10 @@
 - [x] **PWA-Test Reaktivierung**: Alle `test.skip` innerhalb der PWA-Suite in `tests/integration.test.js` entfernt für volle Testabdeckung.
 - [x] **Dependency-Check**: `pnpm install` ausgeführt, um lokale Testumgebung zu validieren.
 
+### Instanz 2026-07-08 (QA-Härtung Q1 - Teil 3)
+- [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt zur Sicherstellung der Produktionsreife.
+- [x] **QA-Härtung Finalisierung**: Q1-Meilenstein in der Auftragsliste als erledigt markiert.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
@@ -63,7 +67,7 @@
 - **Ziel**: Challenge-Code System finalisieren und Fehlerbehandlung verbessern.
 - **Aufgabe**: Implementierung der Challenge-Code Generierung in `battle-manager.js` und Anbindung an das UI. Härtung der Socket-Verbindung bei instabilem Netz.
 
-### 2. Test-Abdeckung & QA-Härtung (Q1)
+### 2. Test-Abdeckung & QA-Härtung (Q1) [ERLEDIGT]
 - **Ziel**: Reaktivierung der übersprungenen Integration-Tests.
 - **Aufgabe**: Behebung der Timeout-Probleme in `tests/integration.test.js` für die GitHub Action Umgebung. Sicherstellung einer 100% grünen Pipeline.
 
