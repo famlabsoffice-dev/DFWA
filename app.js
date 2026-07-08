@@ -92,7 +92,7 @@ function initStartScreen() {
     updateNameDisplay();
 
     // Global Interaction Handler
-    document.body.addEventListener('pointerup', (e) => {
+    document.body.addEventListener('click', (e) => {
         const target = e.target.closest('button');
         if (!target) return;
 
@@ -103,13 +103,16 @@ function initStartScreen() {
         } else if (target.id === 'add-player-btn') {
             handleAddPlayer();
         } else if (target.id === 'start-btn') {
-
             openCategoryModal();
         } else if (target.id === 'close-system-btn') {
             document.getElementById('modal-overlay').style.display = 'none';
         } else if (target.classList.contains('mode-btn') && target.dataset.mode) {
+            // Update active state visually
+            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+            target.classList.add('active');
+            
             state.selectedMode = GameModes[target.dataset.mode.toUpperCase()];
-            openCategoryModal();
+            console.log("Mode selected:", state.selectedMode);
         }
     });
 

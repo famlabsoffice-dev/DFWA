@@ -74,3 +74,9 @@
 
 - [x] **Build-Validierung**: `pnpm install` und `pnpm build` nach Modus-Korrektur erfolgreich durchgeführt.
 - [x] **Event-Handler Audit**: Alle Startbildschirm-Buttons auf korrekte Verknüpfung in `app.js` geprüft und verifiziert.
+
+### Instanz 2026-07-08 (Interaktions-Härtung)
+- [x] **Event-Fix**: `pointerup` durch `click` im globalen Handler ersetzt, um Kompatibilitätsprobleme bei schnellen Taps zu beheben.
+- [x] **Modus-UI-Sync**: Visuelles Feedback (Klasse `active`) für Modus-Buttons hinzugefügt, damit die Auswahl sofort erkennbar ist.
+- [x] **Overlay-Härtung**: `sabotage-layer` explizit auf `pointer-events: none` gesetzt, um Button-Blockaden zu verhindern.
+- [x] **Build-Validierung**: Erfolgreicher Re-Build nach CSS/JS-Anpassungen.
