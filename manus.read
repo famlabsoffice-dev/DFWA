@@ -179,3 +179,10 @@
 - [x] **Test-Audit**: Unit-Tests für `GameLogic`, `Storage` und `UIManager` (30 Tests) erfolgreich validiert.
 - [x] **Integration-Test Maintenance**: `tests/integration.test.js` vorübergehend auf `describe.skip` gesetzt, da Puppeteer/Server-Timeouts in der aktuellen Umgebung die Pipeline blockieren.
 - [x] **System-Integrität**: Erfolgreiche Validierung der PWA-Build-Artefakte und Service-Worker-Generierung.
+
+### Instanz 2026-07-09 (Integration-Test Stabilisierung)
+- [x] **Abhängigkeits-Fix**: Fehlende Server-Abhängigkeiten (`socket.io`, `canvas`, `jimp`) installiert.
+- [x] **Port-Management**: Integration-Tests auf dynamische Port-Zuweisung umgestellt, um `EADDRINUSE` Fehler zu vermeiden.
+- [x] **Test-Infrastruktur**: Statisches Hosting via Express in Tests integriert, um Vite-Preview-Timeouts zu umgehen.
+- [x] **Environment-Fix**: `jest-environment-node` für Integration-Tests explizit gesetzt, um `TextDecoder` Fehler zu beheben.
+- [x] **Erfolgs-Validierung**: Integration-Tests erfolgreich reaktiviert und validiert.
