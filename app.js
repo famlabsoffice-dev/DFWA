@@ -430,6 +430,7 @@ function handleAnswer(isCorrect) {
     const config = ModeConfig[state.selectedMode];
 
     if (isCorrect) {
+        if ('vibrate' in navigator) navigator.vibrate(20);
         const points = GameLogic.calculateScore(state.timer, state.streak + 1);
         state.score += Math.round(points * config.scoreMultiplier);
         state.streak++;
@@ -451,7 +452,7 @@ function handleAnswer(isCorrect) {
     } else {
         state.lives--;
         state.streak = 0;
-        if ('vibrate' in navigator) navigator.vibrate([100, 50, 100]);
+        if ('vibrate' in navigator) navigator.vibrate([200, 100, 200]);
         showFeedback(false);
         
         // Sync Battle State
@@ -561,6 +562,11 @@ async function endGame() {
         console.log("SECURE_AUTH_PAYLOAD_GENERATED", payload);
         
         // Save score securely
+        const oldHighScore = localStorage.getItem('dfwa_high_score') || 0;
+        if (state.score > oldHighScore) {
+            UIManager.launchConfetti();
+            if ('vibrate' in navigator) navigator.vibrate([50, 50, 50, 50, 100]);
+        }
         await StorageManager.saveSecure('dfwa_last_score', state.score, state.secret);
         
         // Attempt to submit score to backend

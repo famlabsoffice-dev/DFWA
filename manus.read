@@ -158,9 +158,10 @@
 - **Aufgabe**: Sicherstellen, dass alle Fragenkataloge und Assets im Service-Worker Cache liegen. Implementierung einer lokalen Leaderboard-Vorschau bei Offline-Status.
 - **Status**: Erfolgreich abgeschlossen am 2026-07-09. Caching-Strategien optimiert, Offline-Leaderboard-Cache implementiert und Build validiert.
 
-### 6. UI/UX Polishing (U4) [IN_PLANUNG]
+### 6. UI/UX Polishing (U4) [ERLEDIGT]
 - **Ziel**: Haptisches Feedback und visuelle Belohnungen.
 - **Aufgabe**: Erweiterung der `vibrate` Muster bei Fehlern und Integration von Partikel-Effekten (Konfetti) bei neuen Highscores oder Achievement-Freischaltungen.
+- **Status**: Erfolgreich abgeschlossen am 2026-07-09. Vibration-Feedback gehärtet, Konfetti-Effekte bei Highscores integriert und Build validiert.
 
 ---
 
@@ -232,3 +233,9 @@
 - [x] **Runtime Caching**: Dedizierte Caching-Strategien für `questions_i18n.json` (StaleWhileRevalidate) und Assets (CacheFirst) in `vite.config.js` implementiert.
 - [x] **Offline-Leaderboard**: `fetchLeaderboard` in `scripts/api-client.js` um lokalen Cache-Fallback erweitert, um Bestenlisten auch offline anzuzeigen.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` mit PWA-Manifest und Service-Worker Generierung.
+
+### Instanz 2026-07-09 (UI/UX Polishing U4)
+- [x] **Haptisches Feedback**: `navigator.vibrate` Muster für korrekte Antworten (20ms), Fehler (200ms/100ms/200ms) und Highscores (50ms Intervalle) integriert.
+- [x] **Visuelle Belohnung**: `canvas-confetti` Integration zur Feier von neuen Highscores.
+- [x] **UI-Manager Erweiterung**: `launchConfetti` Methode in `scripts/ui-manager.js` implementiert.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Integration der neuen Abhängigkeiten durchgeführt.

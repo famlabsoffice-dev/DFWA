@@ -1,3 +1,5 @@
+import confetti from 'canvas-confetti';
+
 export const UIManager = {
   setText(id, text) {
     const el = document.getElementById(id);
@@ -93,6 +95,32 @@ export const UIManager = {
     toast.innerText = message;
     document.body.appendChild(toast);
     setTimeout(() => toast.remove(), 3000);
+  },
+
+  launchConfetti() {
+    const duration = 2 * 1000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 2,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: ['#00f3ff', '#00ff9f', '#ff0055']
+      });
+      confetti({
+        particleCount: 2,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: ['#00f3ff', '#00ff9f', '#ff0055']
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    }());
   },
 
   renderLeaderboard(entriesDiv, data) {
