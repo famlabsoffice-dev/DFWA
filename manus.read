@@ -39,6 +39,7 @@
 - [x] **Sabotage-Mechanik**: Automatischer `timer_drain` Sabotage-Versand bei 5er Streak implementiert.
 - [x] **Lobby-Wiring**: Event-Handler für `BATTLE_LOBBY` und `LIVE_BATTLE` in `app.js` verdrahtet.
 - [x] **Build-Success**: Validierung via `pnpm build` erfolgreich abgeschlossen.
+- [x] **UI-Konsistenz**: Schriftgrößen und Button-Styles im Kategorie-Modal an das Gesamtdesign angepasst (min. 1.1rem Schrift, optimiertes Padding).
 
 ---
 

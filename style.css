@@ -1065,3 +1065,19 @@ body {
   background: url('./assets/images/ack_category_realm.webp') no-repeat center center !important;
   background-size: cover !important;
 }
+
+/* Specific styles for Category Modal buttons to match UI guidelines */
+#category-modal-list .option-btn {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  padding: 18px;
+  border-width: 2px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 480px) {
+  #category-modal-list .option-btn {
+    font-size: 1.1rem;
+    padding: 16px;
+  }
+}
