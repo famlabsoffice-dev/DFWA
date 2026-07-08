@@ -188,3 +188,8 @@
 - [x] **Erfolgs-Validierung**: Integration-Tests erfolgreich reaktiviert und validiert.
 - [x] **Handle-Cleanup**: Offene Handles in `tests/integration.test.js` durch verbessertes Server-Shutdown-Handling (SIGKILL & async close) behoben.
 - [x] **Build-Synchronisation**: Projekt via `pnpm build` synchronisiert, um 404-Fehler in Integration-Tests zu vermeiden.
+
+### Instanz 2026-07-09 (UI-Interaktion & Start-Flow Fix)
+- [x] **Category-Modal Fix**: Logik-Fehler in `openCategoryModal` (app.js) behoben. `UIManager.showModal` hat die Kategorieliste fälschlicherweise sofort wieder ausgeblendet. Die Liste wird nun nach dem Modal-Aufruf explizit auf `display: grid` gesetzt.
+- [x] **Button-Validierung**: Verifizierung, dass `INIT_PROTOCOL` und `SELECT_CATEGORY` nun korrekt das Kategorie-Auswahlmenü öffnen und das Spiel starten.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach UI-Fixes durchgeführt.

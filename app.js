@@ -286,9 +286,9 @@ function initStartScreen() {
 function openCategoryModal() {
     const overlay = document.getElementById('modal-overlay');
     const list = document.getElementById('category-modal-list');
-    const text = document.getElementById('modal-text');
     
     if (overlay && list) {
+        UIManager.showModal("SELECT_OPERATIONAL_REALM", "");
         list.style.display = 'grid';
         list.innerHTML = '';
         state.availableCategories.forEach(cat => {
@@ -298,7 +298,6 @@ function openCategoryModal() {
             btn.onclick = () => startGame(cat);
             list.appendChild(btn);
         });
-        UIManager.showModal("SELECT_OPERATIONAL_REALM", "CHOOSE_YOUR_SECTOR");
         overlay.style.display = 'flex';
     }
 }
