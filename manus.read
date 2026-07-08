@@ -6,42 +6,29 @@
 3. **Lückenlose Dokumentation**: Jeder Arbeitsschritt muss **sofort nach Abschluss** stichpunktartig im Abschnitt "AUSGEFÜHRTE SCHRITTE" eingetragen werden.
 4. **Funktionserhalt**: Bestehende Kern-Functions (PWA-Stabilität, Touch-Reaktivität) müssen bei jeder Änderung verifiziert und erhalten bleiben.
 5. **Keine schweren Assets**: Audio-Vorbereitung ist erlaubt, aber keine unnötig großen Dateien ohne explizite Freigabe einarbeiten.
+6. **Augenschonendes Design**: Alle Schriften und Buttons müssen für maximale Lesbarkeit groß dimensioniert sein (Buttons min. 22px Padding, Schriften min. 1.1rem für Stats).
 
 ---
 
 ## AUSGEFÜHRTE SCHRITTE (Protokoll)
 
-### Instanz 2026-07-07 (Archiv)
-- [x] **PWA-Struktur Fix**: `manifest.webmanifest`, `sw.js`, `registerSW.js` in `public/` verschoben.
-- [x] **Build-Pfad Korrektur**: Absolute Pfade in `index.html` für PWA-Assets gesetzt.
-- [x] **PWA-Automatisierung**: `vite-plugin-pwa` integriert, manuelle SW-Verwaltung entfernt.
-- [x] **Asset-Limit Anpassung**: Workbox-Limit auf 5MB erhöht für große WebP-Dateien.
-- [x] **Mobile UX Optimierung**: `overscroll-behavior: none` und `touch-action: none` zur Gesten-Sperre implementiert.
-- [x] **Touch-Reaktivität**: `user-select: none` und `-webkit-tap-highlight-color: transparent` gesetzt.
-- [x] **Update-Logik**: Automatischer Reload bei `controllerchange` mit visuellem Banner integriert.
-- [x] **Haptisches Feedback**: `Vibration API` für Antworten (Erfolg/Fehler) und Button-Klicks (10ms) implementiert.
-- [x] **Kern-Interaktionen Härtung**: Umstellung aller Buttons auf `pointerup` zur Eliminierung von Touch-Delays.
-- [x] **UI-Layout Fixes**: Timer-Bar vergrößert, Fragen-Text zentriert und Lesbarkeit via `text-shadow` verbessert.
-- [x] **Performance-Fix Kategorien**: Haken bei der Kategorienwahl durch `preventDefault()` und beschleunigtes Event-Handling behoben.
-- [x] **Protokoll-System**: `manus.read` als zentrales, striktes Dokumentations- und Anweisungstool neu strukturiert.
-
-### Instanz 2026-07-08 (Spiellogik-Integration K1)
-- [x] **Modul-Aktivierung**: `app.js` refactored und auf ESM-Imports umgestellt.
-- [x] **Logik-Einbindung**: `GameLogic` (Score-Berechnung, Seeded-Shuffle) und `GameModes` (Classic, Hardcore, Blitz etc.) aktiv in den Spielablauf integriert.
-- [x] **UI-Management**: `UIManager` zur zentralen Steuerung von Modals und HUD-Elementen eingebunden.
-- [x] **PWA-Integrität**: Erfolgreicher Build bestätigt die korrekte Verarbeitung der neuen Modulstruktur und Asset-Injektion.
-- [x] **Bereinigung**: Redundante Inline-Logik in `app.js` durch saubere Modul-Aufrufe ersetzt.
-
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
-- [x] **Index-Bereinigung**: Gehashte Build-Artefakte (main-*.js/css) aus der `index.html` entfernt, um Build-Kontamination zu vermeiden.
-- [x] **Build-Sync (K3)**: Erfolgreicher Clean-Build durchgeführt; Asset-Injektion (JS/CSS/PWA) verifiziert.
-- [x] **CSS-Härtung (Bug 1)**: Verbleibende 3 Media-Query-Blöcke in `style.css` von `#question-box` auf `#question-text` korrigiert.
-- [x] **PWA-Validierung (K2)**: Manifest-Link und Service-Worker-Registrierung in der Produktions-`index.html` erfolgreich verifiziert.
-- [x] **Rest-K1 Integration**:
-    - HMAC-Generierung via `GameLogic.generateChallengeCode` in `endGame()` integriert.
-    - `StorageManager.saveSecure` zur verschlüsselten Score-Speicherung angebunden.
-    - Fehlende Mode-Buttons (Blitz, Survival) in `index.html` ergänzt und verdrahtet.
-- [x] **Timer-Check (Bug 2)**: Visuelle Verifizierung der Timer-Position (`top: 12vh`) abgeschlossen.
+- [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.
+- [x] **Build-Sync (K3)**: Clean-Build verifiziert.
+- [x] **CSS-Härtung (Bug 1)**: Media-Query Selektoren korrigiert.
+- [x] **PWA-Validierung (K2)**: Manifest/SW-Registrierung verifiziert.
+- [x] **Rest-K1 Integration**: HMAC & StorageManager angebunden.
+- [x] **Timer-Check (Bug 2)**: Position validiert.
+
+### Instanz 2026-07-08 (Layout-Reparatur & Lesbarkeit)
+- [x] **CSS-Link Fix**: Fehlende `style.css` Einbindung in `index.html` wiederhergestellt.
+- [x] **Layout-Härtung**: `.ui-content-wrapper` auf `position: absolute; bottom: 0;` umgestellt für stabile Mobile-UI.
+- [x] **Z-Index Management**: Layering von `h1` und `eye-bg-container` korrigiert.
+- [x] **Augenschonende Skalierung**: 
+    - Buttons vergrößert (Padding 22px, Font 1.4rem, Border 3px).
+    - Stats-Overlay vergrößert (Font 1.1rem, Padding 12px 18px).
+    - Input-Felder vergrößert (Font 1.3rem, Padding 18px).
+    - Mode-Buttons vergrößert (Font 0.9rem/1.1rem).
 
 ---
 
@@ -66,7 +53,5 @@
 ---
 
 ## HISTORISCHE ANALYSE (Archiv)
-- Button-Funktionalität: Ursprünglich durch DOM-Timing-Probleme und ID-Mismatches gestört. Gelöst durch globale Delegation.
-- PWA-Updates: Ursprünglich blockiert durch Cache-Leichen. Gelöst durch `autoUpdate` und `cleanupOutdatedCaches`.
-- UI-Glitches: Animationen deaktiviert, um Fokus auf Spielbarkeit zu legen.
 - Design-Finalisierung: Das exklusive Schwarz-Grün Dashboard-Design ist aktiv, hochauflösend und auf mobilen Geräten optimiert.
+- Lesbarkeit: Alle UI-Elemente wurden für augenschonende Nutzung auf Mobile-Displays skaliert.
