@@ -143,9 +143,10 @@
 - **Ziel**: Reaktivierung der übersprungenen Integration-Tests.
 - **Aufgabe**: Behebung der Timeout-Probleme in `tests/integration.test.js` für die GitHub Action Umgebung. Sicherstellung einer 100% grünen Pipeline.
 
-### 3. Social-Features & Friend-System (S3) [IN_PLANUNG]
+### 3. Social-Features & Friend-System (S3) [ERLEDIGT]
 - **Ziel**: Implementierung der Friend-Request und Battle-Invite Logik im Frontend.
 - **Aufgabe**: UI für Freundesanfragen und eine Freundesliste im `BATTLE_LOBBY` Screen integrieren. Anbindung der `/api/social/` Endpunkte.
+- **Status**: Erfolgreich abgeschlossen am 2026-07-09. UI integriert, API angebunden und Build validiert.
 
 ### 4. Audio-System Verfeinerung (A3) [IN_PLANUNG]
 - **Ziel**: Dynamische Hintergrundmusik und adaptive Soundeffekte.
@@ -209,3 +210,11 @@
 - [x] **Category-Modal Fix**: Logik-Fehler in `openCategoryModal` (app.js) behoben. `UIManager.showModal` hat die Kategorieliste fälschlicherweise sofort wieder ausgeblendet. Die Liste wird nun nach dem Modal-Aufruf explizit auf `display: grid` gesetzt.
 - [x] **Button-Validierung**: Verifizierung, dass `INIT_PROTOCOL` und `SELECT_CATEGORY` nun korrekt das Kategorie-Auswahlmenü öffnen und das Spiel starten.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach UI-Fixes durchgeführt.
+
+### Instanz 2026-07-09 (Social-Features & Friend-System S3)
+- [x] **API-Endpunkte**: `FRIEND_REQUEST`, `FRIEND_ACCEPT` und `FRIENDS` zu `scripts/constants.js` hinzugefügt.
+- [x] **API-Client Erweiterung**: `sendFriendRequest`, `acceptFriendRequest` und `fetchFriends` in `scripts/api-client.js` implementiert (inkl. HMAC-Signierung).
+- [x] **Social-UI**: Friend-Request Input und Friends-List Container in `index.html` (Battle Lobby) integriert.
+- [x] **UI-Manager Update**: `renderFriendsList` Funktion zur dynamischen Anzeige der Freundesliste in `scripts/ui-manager.js` hinzugefügt.
+- [x] **Frontend-Integration**: `updateFriends` Logik und Event-Handler für Freundesanfragen in `app.js` verdrahtet. Automatische Aktualisierung beim Öffnen der Lobby.
+- [x] **Build-Validierung**: `pnpm install` und `pnpm build` erfolgreich durchgeführt.

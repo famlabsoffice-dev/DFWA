@@ -177,6 +177,23 @@
             SERVER_ROOM
           </button>
           <button class="option-btn" id="hide-lobby-btn">BACK_TO_CORE</button>
+          
+          <!-- SOCIAL_SYSTEM: FRIENDS & INVITES -->
+          <div id="social-container" style="margin-top: 30px; border-top: 1px solid var(--cyber-blue); padding-top: 20px;">
+            <h3 style="color: var(--cyber-blue); font-size: 0.9rem; margin-bottom: 15px;">SOCIAL_LINK_STATUS</h3>
+            
+            <div id="friend-request-box" style="margin-bottom: 15px;">
+              <input id="friend-id-input" class="cyber-input" style="font-size: 0.8rem; height: 40px;" placeholder="ENTER_PLAYER_ID_TO_LINK" />
+              <button class="option-btn" id="send-friend-request-btn" style="height: 40px; font-size: 0.8rem; margin-top: 5px;">LINK_PLAYER</button>
+            </div>
+
+            <div id="friends-list-container">
+              <div id="friends-list" style="display: grid; gap: 10px;">
+                <!-- Dynamically populated -->
+                <span style="font-size: 0.7rem; color: var(--dim-text);">NO_ACTIVE_SOCIAL_LINKS</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

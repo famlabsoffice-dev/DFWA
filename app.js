@@ -185,12 +185,44 @@ function initStartScreen() {
     }
     window.addEventListener('online', syncProfile);
 
+    // Social System Integration
+    const friendsListContainer = document.getElementById('friends-list');
+    const friendIdInput = document.getElementById('friend-id-input');
+    const sendFriendBtn = document.getElementById('send-friend-request-btn');
+
+    const updateFriends = async () => {
+        const friends = await APIClient.fetchFriends(window.location.origin, playerId);
+        UIManager.renderFriendsList(friendsListContainer, friends, (friendId) => {
+            const challengeCode = BattleManager.createChallenge();
+            UIManager.showToast(`INVITE_SENT_TO: ${friendId}`, "info");
+            // In a real scenario, we would send a socket message or notification here
+            // For now, we just populate the challenge code
+            if (friendIdInput) friendIdInput.value = challengeCode;
+        });
+    };
+
+    if (sendFriendBtn && friendIdInput) {
+        sendFriendBtn.onclick = async () => {
+            const receiverId = friendIdInput.value.trim();
+            if (receiverId) {
+                const result = await APIClient.sendFriendRequest(window.location.origin, playerId, receiverId, state.secret);
+                if (result.success) {
+                    UIManager.showToast("LINK_REQUEST_SENT", "success");
+                    friendIdInput.value = '';
+                } else {
+                    UIManager.showToast(`ERROR: ${result.error || 'LINK_FAILED'}`, "error");
+                }
+            }
+        };
+    }
+
     // Battle Lobby UI Handlers
     const showLobbyBtn = document.getElementById('show-lobby-btn');
     if (showLobbyBtn) {
         showLobbyBtn.onclick = () => {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             document.getElementById('battle-lobby').classList.add('active');
+            updateFriends();
         };
     }
 

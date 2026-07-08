@@ -135,4 +135,24 @@ export const UIManager = {
       entriesDiv.appendChild(row);
     });
   },
+
+  renderFriendsList(container, friends, onInvite) {
+    if (!container) return;
+    if (friends.length === 0) {
+      container.innerHTML = '<span style="font-size: 0.7rem; color: var(--dim-text);">NO_ACTIVE_SOCIAL_LINKS</span>';
+      return;
+    }
+    container.innerHTML = '';
+    friends.forEach(friend => {
+      const item = document.createElement('div');
+      item.style.cssText = 'display: flex; justify-content: space-between; align-items: center; padding: 10px; border: 1px solid var(--cyber-blue); background: rgba(0, 243, 255, 0.05); margin-bottom: 5px;';
+      item.innerHTML = `
+        <span style="color: var(--neon); font-family: monospace; font-size: 0.8rem;">${friend.playerName || friend.playerId}</span>
+        <button class="option-btn" style="width: auto; padding: 5px 10px; font-size: 0.7rem; margin: 0; border-color: var(--warning); color: var(--warning);">INVITE</button>
+      `;
+      const inviteBtn = item.querySelector('button');
+      inviteBtn.onclick = () => onInvite(friend.playerId);
+      container.appendChild(item);
+    });
+  }
 };
