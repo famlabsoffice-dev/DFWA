@@ -49,9 +49,14 @@ const startFrontendServer = (port) => {
   });
 };
 
-const stopServers = () => {
-  if (apiServer) apiServer.kill('SIGTERM');
-  if (frontendServer) frontendServer.close();
+const stopServers = async () => {
+  if (apiServer) {
+    apiServer.kill('SIGKILL');
+    await new Promise(resolve => apiServer.on('exit', resolve));
+  }
+  if (frontendServer) {
+    await new Promise(resolve => frontendServer.close(resolve));
+  }
 };
 
 jest.setTimeout(120000);
@@ -81,7 +86,7 @@ beforeAll(async () => {
 
 afterAll(async () => {
   if (browser) await browser.close();
-  stopServers();
+  await stopServers();
 });
 
 describe('DFWA Integration Tests', () => {
