@@ -277,13 +277,39 @@ function showFeedback(isCorrect) {
         const selectedImage = isCorrect 
             ? correctImages[Math.floor(Math.random() * correctImages.length)]
             : wrongImages[Math.floor(Math.random() * wrongImages.length)];
+        
         eyeBase.src = selectedImage;
         msg.textContent = isCorrect ? "ACCESS_GRANTED" : "CONNECTION_LOST";
         msg.style.color = isCorrect ? "var(--neon)" : "var(--error)";
+        
+        const sabotageLayer = document.getElementById('sabotage-overlay');
+        if (!isCorrect && sabotageLayer) {
+            sabotageLayer.classList.add('sabotage-active');
+            setTimeout(() => sabotageLayer.classList.remove('sabotage-active'), 500);
+        }
+
         screen.classList.add('active');
         setTimeout(() => screen.classList.remove('active'), 1200);
     }
 }
+
+// Preload feedback images for zero-latency response
+function preloadFeedbackAssets() {
+    const assets = [
+        './assets/images/ack_victory.webp',
+        './assets/images/ack_eye_wink.webp',
+        './assets/images/ack_hypnotic_opening.webp',
+        './assets/images/ack_defeat.webp',
+        './assets/images/ack_eye_skeptical.webp',
+        './assets/images/ack_interference_glitch.webp',
+        './assets/images/ack_panic_hamster.webp'
+    ];
+    assets.forEach(url => {
+        const img = new Image();
+        img.src = url;
+    });
+}
+preloadFeedbackAssets();
 
 async function endGame() {
     clearInterval(state.timerInterval);

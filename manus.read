@@ -31,19 +31,20 @@
 - [x] **EndGame-Wiring**: `endGame()` in `app.js` sendet nun automatisch einen `POST` an `/api/leaderboard` mit verifizierter Signatur.
 - [x] **Player-ID Management**: Automatische Generierung und Persistierung einer eindeutigen `dfwa_player_id` im LocalStorage implementiert.
 
+### Instanz 2026-07-08 (UI/UX Polishing U1)
+- [x] **Glitch-Feedback**: Sabotage-Glitch-Animation bei falscher Antwort integriert.
+- [x] **Asset-Optimierung**: `preloadFeedbackAssets()` implementiert, um Feedback-Bilder verzögerungsfrei zu laden.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Code-Änderungen durchgeführt.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
 
-### 1. UI/UX Polishing & Feedback-System (U1)
-- **Ziel**: Das visuelle Feedback-System (Ack-Reaktionen) weiter verfeinern.
-- **Aufgabe**: Integration von Animationen für richtige/falsche Antworten (z. B. Glitch-Effekte bei Fehlern). Prüfung der Bild-Ladezeiten für die Feedback-Screens.
-
-### 2. Multiplayer & Battle-Modus Vorbereitung (M1)
+### 1. Multiplayer & Battle-Modus Vorbereitung (M1)
 - **Ziel**: Die Infrastruktur für den Battle-Modus (Lobby, Challenge-Codes) stabilisieren.
 - **Aufgabe**: Refactoring des `battle-manager.js` zur Nutzung der neuen `GameLogic`-Struktur. Implementierung der Lobby-Synchronisation.
 
-### 3. Test-Abdeckung & QA-Härtung (Q1)
+### 2. Test-Abdeckung & QA-Härtung (Q1)
 - **Ziel**: Reaktivierung der übersprungenen Integration-Tests.
 - **Aufgabe**: Behebung der Timeout-Probleme in `tests/integration.test.js` für die GitHub Action Umgebung. Sicherstellung einer 100% grünen Pipeline.
 
@@ -53,3 +54,4 @@
 - Design-Finalisierung: Das exklusive Schwarz-Grün Dashboard-Design ist aktiv, hochauflösend und auf mobilen Geräten optimiert.
 - Lesbarkeit: Alle UI-Elemente wurden für augenschonende Nutzung auf Mobile-Displays skaliert.
 - Backend-Sync: HMAC-basierte Score-Übermittlung ist aktiv und mit dem Server-Protokoll synchronisiert.
+- UI/UX Feedback: Visuelles Feedback-System (U1) mit Glitch-Effekten und Preloading gehärtet.
