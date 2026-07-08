@@ -358,6 +358,7 @@ async function startGame(category) {
     
     updateHUD();
     BattleManager.syncState({ score: state.score, streak: state.streak });
+    AudioManager.startMusic();
     showNextQuestion();
 }
 
@@ -421,6 +422,7 @@ function updateTimerUI() {
     const text = document.getElementById('timer-text');
     if (bar) bar.style.width = `${(state.timer / config.initialTimer) * 100}%`;
     if (text) text.textContent = `${Math.ceil(state.timer)}S`;
+    AudioManager.updateMusicSpeed(state.timer, config.initialTimer);
 }
 
 function handleAnswer(isCorrect) {
@@ -527,6 +529,7 @@ preloadFeedbackAssets();
 
 async function endGame() {
     clearInterval(state.timerInterval);
+    AudioManager.stopMusic();
     
     // Achievement Check
     const localAchievements = JSON.parse(localStorage.getItem('dfwa_achievements') || '[]');

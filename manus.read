@@ -148,9 +148,10 @@
 - **Aufgabe**: UI für Freundesanfragen und eine Freundesliste im `BATTLE_LOBBY` Screen integrieren. Anbindung der `/api/social/` Endpunkte.
 - **Status**: Erfolgreich abgeschlossen am 2026-07-09. UI integriert, API angebunden und Build validiert.
 
-### 4. Audio-System Verfeinerung (A3) [IN_PLANUNG]
+### 4. Audio-System Verfeinerung (A3) [ERLEDIGT]
 - **Ziel**: Dynamische Hintergrundmusik und adaptive Soundeffekte.
 - **Aufgabe**: Integration einer spannungsgeladenen Hintergrundmusik, die sich dem Timer-Status anpasst (schneller werdend bei < 5s).
+- **Status**: Erfolgreich abgeschlossen am 2026-07-09. Dynamische Musik-Logik implementiert, adaptives Tempo bei Zeitdruck integriert und Build validiert.
 
 ### 5. PWA-Offline-Härtung (O1) [IN_PLANUNG]
 - **Ziel**: Vollständige Spielbarkeit ohne Internetverbindung.
@@ -218,3 +219,9 @@
 - [x] **UI-Manager Update**: `renderFriendsList` Funktion zur dynamischen Anzeige der Freundesliste in `scripts/ui-manager.js` hinzugefügt.
 - [x] **Frontend-Integration**: `updateFriends` Logik und Event-Handler für Freundesanfragen in `app.js` verdrahtet. Automatische Aktualisierung beim Öffnen der Lobby.
 - [x] **Build-Validierung**: `pnpm install` und `pnpm build` erfolgreich durchgeführt.
+
+### Instanz 2026-07-09 (Audio-System Verfeinerung A3)
+- [x] **Dynamische Musik-Logik**: `startMusic`, `stopMusic` und `updateMusicSpeed` in `scripts/audio-manager.js` implementiert.
+- [x] **Adaptive Geschwindigkeit**: Hintergrundmusik beschleunigt sich automatisch bei einer Restzeit von weniger als 5 Sekunden (max. 1.5x Speed).
+- [x] **Frontend-Integration**: Musiksteuerung in `startGame`, `updateTimerUI` und `endGame` in `app.js` integriert.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Audio-System-Upgrades durchgeführt.
