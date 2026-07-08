@@ -134,3 +134,10 @@
 - [x] **K2: PWA-Integrität**: Lokaler Build-Test verifiziert, dass `vite-plugin-pwa` die Links für `manifest.webmanifest` und `registerSW.js` korrekt in die `dist/index.html` injiziert.
 - [x] **Injektions-Validierung**: Die Injektion erfolgt nun zuverlässig am Ende des `<head>`. Der Befund der fehlenden Links im Live-System ist auf den veralteten Build (K3) zurückzuführen, der nun durch den Sync-Fix behoben ist.
 - [x] **Pfad-Härtung**: Die `base: './'` Konfiguration in der `vite.config.js` stellt sicher, dass PWA-Assets auch in Unterverzeichnissen (wie bei GitHub Pages) korrekt aufgelöst werden.
+
+### Instanz 2026-07-08 (Spiellogik-Integration K1)
+- [x] **Modul-Aktivierung**: `app.js` refactored und auf ESM-Imports umgestellt.
+- [x] **Logik-Einbindung**: `GameLogic` (Score-Berechnung, Seeded-Shuffle) und `GameModes` (Classic, Hardcore, Blitz etc.) aktiv in den Spielablauf integriert.
+- [x] **UI-Management**: `UIManager` zur zentralen Steuerung von Modals und HUD-Elementen eingebunden.
+- [x] **PWA-Integrität**: Erfolgreicher Build bestätigt die korrekte Verarbeitung der neuen Modulstruktur und Asset-Injektion.
+- [x] **Bereinigung**: Redundante Inline-Logik in `app.js` durch saubere Modul-Aufrufe ersetzt.

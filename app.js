@@ -1,11 +1,17 @@
 /**
  * DFWA - Core Application Logic
- * Integrates high-quality question catalogs and fixes UI interactions.
+ * Integrates high-quality question catalogs and active module system.
  */
+
+import { GameLogic } from './scripts/game-logic.js';
+import { GameModes, ModeConfig } from './scripts/game-modes.js';
+import { UIManager } from './scripts/ui-manager.js';
+import { StorageManager } from './scripts/storage.js';
 
 const state = {
     playerName: localStorage.getItem('dfwa_player_name') || 'GUEST',
-    selectedCategory: 'Gegenteil', // Default category from JSON
+    selectedCategory: 'Gegenteil',
+    selectedMode: GameModes.CLASSIC,
     questions: [],
     currentQuestionIndex: 0,
     score: 0,
@@ -13,99 +19,21 @@ const state = {
     streak: 0,
     timer: 15,
     timerInterval: null,
-    availableCategories: []
+    availableCategories: [],
+    seed: Math.floor(Math.random() * 1000000)
 };
 
 async function loadQuestions() {
     try {
         const response = await fetch('./questions_i18n.json');
         const data = await response.json();
-        
-        // Extract unique categories
         state.availableCategories = [...new Set(data.map(q => q.cat))];
         console.log("Loaded categories:", state.availableCategories);
-        
         return data;
     } catch (error) {
         console.error("Failed to load questions:", error);
         return [];
     }
-}
-
-function initStartScreen() {
-    console.log("Initializing DFWA Core...");
-    initPWAUpdate();
-    
-    // Disable glitches as requested
-    const eyeContainer = document.getElementById('eye-bg-container');
-    if (eyeContainer) {
-        eyeContainer.style.animation = 'none';
-        eyeContainer.style.filter = 'none';
-    }
-    
-    const coreEye = document.getElementById('core-eye');
-    if (coreEye) {
-        coreEye.style.animation = 'none';
-    }
-
-    updateNameDisplay();
-
-    // Härtung der Event-Listener für Mobile/Touch
-    const handleInteraction = (e) => {
-        const target = e.target.closest('button');
-        if (!target) return;
-
-        console.log(`Interaction detected on: ${target.id || 'anonymous button'}`);
-        
-        // Vibration für haptisches Feedback bei jedem Button-Klick
-        if ('vibrate' in navigator) navigator.vibrate(10);
-
-        if (target.id === 'category-modal-btn') {
-            showCategoryModal();
-        } else if (target.id === 'add-player-btn') {
-            handleAddPlayer();
-        } else if (target.id === 'start-btn') {
-            startGame();
-        } else if (target.id === 'close-system-btn') {
-            const overlay = document.getElementById('modal-overlay');
-            if (overlay) overlay.style.display = 'none';
-            // Härtung: Alle Screens explizit deaktivieren
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-            document.getElementById('start-screen').classList.add('active');
-        }
-    };
-
-    // Nutze sowohl 'pointerup' als auch 'click' für maximale Kompatibilität
-    document.body.addEventListener('pointerup', (e) => {
-        // Verhindere Doppel-Trigger, wenn click auch gefeuert wird
-        if (e.pointerType === 'touch' || e.pointerType === 'mouse') {
-            handleInteraction(e);
-        }
-    });
-
-    // Fallback für Browser ohne PointerEvents
-    if (!window.PointerEvent) {
-        document.body.addEventListener('click', handleInteraction);
-    }
-
-    // Remove redundant Server Room button from start screen if it exists
-    const startLeaderboardBtn = document.getElementById('start-show-leaderboard-btn');
-    if (startLeaderboardBtn) {
-        startLeaderboardBtn.remove();
-    }
-
-    // Initial load of questions to populate categories
-    loadQuestions().then(allQuestions => {
-        window.allQuestions = allQuestions; // Global cache
-        if (state.availableCategories.length > 0 && !state.availableCategories.includes(state.selectedCategory)) {
-            state.selectedCategory = state.availableCategories[0];
-            const display = document.getElementById('current-category-display');
-            if (display) display.textContent = state.selectedCategory.toUpperCase();
-        }
-    });
-
-    // UI Heartbeat for Name Sync
-    setInterval(updateNameDisplay, 500);
 }
 
 function updateNameDisplay() {
@@ -140,101 +68,120 @@ function handleAddPlayer() {
             localStorage.setItem('dfwa_player_name', state.playerName);
             updateNameDisplay();
             input.value = '';
-            // Visuelles Feedback
             input.placeholder = "USER_REGISTERED";
             setTimeout(() => { input.placeholder = "ENTER_CODENAME"; }, 1500);
         } else {
-            // Error Feedback
             input.classList.add('error-shake');
             setTimeout(() => input.classList.remove('error-shake'), 500);
         }
     }
 }
 
-function showCategoryModal() {
+function initStartScreen() {
+    console.log("Initializing DFWA Core...");
+    initPWAUpdate();
+    
+    const eyeContainer = document.getElementById('eye-bg-container');
+    if (eyeContainer) {
+        eyeContainer.style.animation = 'none';
+        eyeContainer.style.filter = 'none';
+    }
+
+    updateNameDisplay();
+
+    // Global Interaction Handler
+    document.body.addEventListener('pointerup', (e) => {
+        const target = e.target.closest('button');
+        if (!target) return;
+
+        if ('vibrate' in navigator) navigator.vibrate(10);
+
+        if (target.id === 'category-modal-btn') {
+            openCategoryModal();
+        } else if (target.id === 'add-player-btn') {
+            handleAddPlayer();
+        } else if (target.id === 'start-btn') {
+            state.selectedMode = GameModes.CLASSIC;
+            openCategoryModal();
+        } else if (target.id === 'close-system-btn') {
+            document.getElementById('modal-overlay').style.display = 'none';
+        } else if (target.classList.contains('mode-btn') && target.dataset.mode) {
+            state.selectedMode = GameModes[target.dataset.mode.toUpperCase()];
+            openCategoryModal();
+        }
+    });
+
+    loadQuestions().then(allQuestions => {
+        window.allQuestions = allQuestions;
+    });
+
+    setInterval(updateNameDisplay, 500);
+}
+
+function openCategoryModal() {
     const overlay = document.getElementById('modal-overlay');
-    const title = document.getElementById('modal-title');
     const list = document.getElementById('category-modal-list');
     const text = document.getElementById('modal-text');
     
     if (overlay && list) {
-        title.textContent = "SELECT_OPERATIONAL_REALM";
-        text.textContent = "Choose your data sector:";
-        list.style.display = "grid";
-        list.innerHTML = ''; 
-        
+        list.style.display = 'grid';
+        list.innerHTML = '';
         state.availableCategories.forEach(cat => {
             const btn = document.createElement('button');
-            btn.className = 'mode-btn';
-            if (cat === state.selectedCategory) btn.classList.add('active');
-            btn.innerHTML = `<strong>${cat.toUpperCase()}</strong><small>DATA_SECTOR_${cat.slice(0,3).toUpperCase()}</small>`;
-            
-            // Beschleunigte Auswahl für Mobile
-            const selectCat = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                state.selectedCategory = cat;
-                const display = document.getElementById('current-category-display');
-                if (display) display.textContent = cat.toUpperCase();
-                overlay.style.display = 'none';
-                if ('vibrate' in navigator) navigator.vibrate(20);
-            };
-            
-            btn.addEventListener('pointerup', selectCat);
-            btn.addEventListener('click', selectCat);
+            btn.className = 'option-btn';
+            btn.textContent = cat.toUpperCase();
+            btn.onclick = () => startGame(cat);
             list.appendChild(btn);
         });
-        
+        UIManager.showModal("SELECT_OPERATIONAL_REALM", "CHOOSE_YOUR_SECTOR");
         overlay.style.display = 'flex';
     }
 }
 
-function startGame() {
-    console.log("Attempting to start game...");
+async function startGame(category) {
+    state.selectedCategory = category;
     if (!window.allQuestions) {
-        console.warn("Questions not loaded yet. Retrying...");
-        loadQuestions().then(allQuestions => {
-            window.allQuestions = allQuestions;
-            if (window.allQuestions) startGame();
-        });
-        return;
+        window.allQuestions = await loadQuestions();
     }
     
-    state.questions = window.allQuestions.filter(q => q.cat === state.selectedCategory);
-    if (state.questions.length === 0) {
-        console.error("No questions found for category:", state.selectedCategory);
-        state.questions = window.allQuestions.slice(0, 20); // Fallback
-    }
+    state.questions = GameLogic.shuffle(
+        window.allQuestions.filter(q => q.cat === category),
+        state.seed
+    );
 
-    // Shuffle questions
-    state.questions.sort(() => Math.random() - 0.5);
-    
-    state.currentQuestionIndex = 0;
+    const config = ModeConfig[state.selectedMode];
+    state.lives = config.initialLives;
+    state.timer = config.initialTimer;
     state.score = 0;
-    state.lives = 3;
     state.streak = 0;
-    
-    // Härtung: Alle Screens explizit deaktivieren, bevor der neue aktiviert wird
+    state.currentQuestionIndex = 0;
+
+    document.getElementById('modal-overlay').style.display = 'none';
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById('game-screen').classList.add('active');
     
+    updateHUD();
     showNextQuestion();
 }
 
+function updateHUD() {
+    UIManager.setText('hud-score', `${state.score}_PTS`);
+    UIManager.setText('lives-display', state.lives);
+}
+
 function showNextQuestion() {
-    if (state.currentQuestionIndex >= state.questions.length || state.lives <= 0) {
+    if (state.lives <= 0 || state.currentQuestionIndex >= state.questions.length) {
         endGame();
         return;
     }
-    
+
     const q = state.questions[state.currentQuestionIndex];
-    // Nutze sowohl question-text als auch question-box für maximale Kompatibilität
-    const questionBox = document.getElementById('question-box') || document.getElementById('question-text');
-    const optionsContainer = document.getElementById('options-container');
     const catDisplay = document.getElementById('cat-display');
-    
+    const questionText = document.getElementById('question-box') || document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+
     if (catDisplay) catDisplay.textContent = `SECTOR: ${state.selectedCategory.toUpperCase()}`;
-    if (questionBox) questionBox.textContent = q.text.de || q.text;
+    if (questionText) questionText.textContent = q.text.de || q.text;
     
     if (optionsContainer) {
         optionsContainer.innerHTML = '';
@@ -243,24 +190,22 @@ function showNextQuestion() {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
             btn.textContent = opt;
-            
             const submitAnswer = (e) => {
                 e.preventDefault();
                 handleAnswer(index === q.correct);
             };
-            
             btn.addEventListener('pointerup', submitAnswer);
             btn.addEventListener('click', submitAnswer);
             optionsContainer.appendChild(btn);
         });
     }
-    
     startTimer();
 }
 
 function startTimer() {
     clearInterval(state.timerInterval);
-    state.timer = 15;
+    const config = ModeConfig[state.selectedMode];
+    state.timer = config.initialTimer;
     updateTimerUI();
     
     state.timerInterval = setInterval(() => {
@@ -274,17 +219,20 @@ function startTimer() {
 }
 
 function updateTimerUI() {
+    const config = ModeConfig[state.selectedMode];
     const bar = document.getElementById('timer-bar');
     const text = document.getElementById('timer-text');
-    if (bar) bar.style.width = `${(state.timer / 15) * 100}%`;
+    if (bar) bar.style.width = `${(state.timer / config.initialTimer) * 100}%`;
     if (text) text.textContent = `${Math.ceil(state.timer)}S`;
 }
 
 function handleAnswer(isCorrect) {
     clearInterval(state.timerInterval);
-    
+    const config = ModeConfig[state.selectedMode];
+
     if (isCorrect) {
-        state.score += 100 + (state.streak * 10);
+        const points = GameLogic.calculateScore(state.timer, state.streak + 1);
+        state.score += Math.round(points * config.scoreMultiplier);
         state.streak++;
         if ('vibrate' in navigator) navigator.vibrate(50);
         showFeedback(true);
@@ -294,21 +242,26 @@ function handleAnswer(isCorrect) {
         if ('vibrate' in navigator) navigator.vibrate([100, 50, 100]);
         showFeedback(false);
     }
-    
-    document.getElementById('hud-score').textContent = `${state.score}_PTS`;
-    document.getElementById('lives-display').textContent = state.lives;
-    
+
+    updateHUD();
     state.currentQuestionIndex++;
-    setTimeout(showNextQuestion, 1000);
+    
+    const isGameOver = state.lives <= 0 || 
+                       (config.maxQuestions && state.currentQuestionIndex >= config.maxQuestions) ||
+                       state.currentQuestionIndex >= state.questions.length;
+
+    if (isGameOver) {
+        setTimeout(endGame, 1000);
+    } else {
+        setTimeout(showNextQuestion, 1000);
+    }
 }
 
 function showFeedback(isCorrect) {
     const screen = document.getElementById('feedback-screen');
     const msg = document.getElementById('feedback-msg');
     const eyeBase = document.getElementById('feedback-eye-base');
-    
     if (screen && msg && eyeBase) {
-        // Dynamische Bildauswahl basierend auf Korrektheit
         const correctImages = [
             './assets/images/ack_victory.webp',
             './assets/images/ack_eye_wink.webp',
@@ -320,50 +273,30 @@ function showFeedback(isCorrect) {
             './assets/images/ack_interference_glitch.webp',
             './assets/images/ack_panic_hamster.webp'
         ];
-
         const selectedImage = isCorrect 
             ? correctImages[Math.floor(Math.random() * correctImages.length)]
             : wrongImages[Math.floor(Math.random() * wrongImages.length)];
-
         eyeBase.src = selectedImage;
         msg.textContent = isCorrect ? "ACCESS_GRANTED" : "CONNECTION_LOST";
         msg.style.color = isCorrect ? "var(--neon)" : "var(--error)";
-        
         screen.classList.add('active');
-        
-        if (isCorrect) {
-            eyeBase.classList.add('zoom-anim');
-            if (navigator.vibrate) navigator.vibrate(50);
-        } else {
-            if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
-        }
-
-        setTimeout(() => {
-            screen.classList.remove('active');
-            eyeBase.classList.remove('zoom-anim');
-        }, 1200);
+        setTimeout(() => screen.classList.remove('active'), 1200);
     }
 }
 
 function endGame() {
-    const overlay = document.getElementById('modal-overlay');
-    const title = document.getElementById('modal-title');
-    const text = document.getElementById('modal-text');
+    clearInterval(state.timerInterval);
+    UIManager.showModal(
+        "SESSION_TERMINATED", 
+        `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}`
+    );
     const list = document.getElementById('category-modal-list');
-    
-    if (overlay) {
-        title.textContent = "SESSION_TERMINATED";
-        text.textContent = `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}`;
-        if (list) list.style.display = "none";
-        overlay.style.display = 'flex';
-    }
+    if (list) list.style.display = "none";
 }
 
 function initPWAUpdate() {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.addEventListener('controllerchange', () => {
-            console.log("SYSTEM: NEW_VERSION_DETECTED_RELOADING");
-            // Optionale Benachrichtigung vor dem Reload
             const banner = document.createElement('div');
             banner.style.cssText = `
                 position: fixed; top: 0; left: 0; width: 100%; 
@@ -372,7 +305,6 @@ function initPWAUpdate() {
             `;
             banner.textContent = "UPDATING_CORE_SYSTEM...";
             document.body.appendChild(banner);
-            
             setTimeout(() => window.location.reload(), 1500);
         });
     }
