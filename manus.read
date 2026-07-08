@@ -70,6 +70,7 @@
 ### 1. Multiplayer & Battle-Modus Härtung (M2) [ERLEDIGT]
 - **Ziel**: Challenge-Code System finalisieren und Fehlerbehandlung verbessern.
 - **Aufgabe**: Implementierung der Challenge-Code Generierung in `battle-manager.js` und Anbindung an das UI. Härtung der Socket-Verbindung bei instabilem Netz.
+- **Status**: Erfolgreich abgeschlossen am 2026-07-08. HMAC-Signatur für Challenge-Codes implementiert und Server-Sync validiert.
 
 ### 2. Test-Abdeckung & QA-Härtung (Q1) [ERLEDIGT]
 - **Ziel**: Reaktivierung der übersprungenen Integration-Tests.
