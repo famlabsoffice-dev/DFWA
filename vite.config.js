@@ -87,12 +87,13 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: false,
-        drop_debugger: true,
-      },
-    },
+143	    terserOptions: {
+144	      compress: {
+145	        drop_console: true,
+146	        drop_debugger: true,
+147	        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+148	      },
+149	    },
     target: 'es2020',
     rollupOptions: {
       input: {

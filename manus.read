@@ -59,6 +59,10 @@
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt zur Sicherstellung der Produktionsreife.
 - [x] **QA-Härtung Finalisierung**: Q1-Meilenstein in der Auftragsliste als erledigt markiert.
 
+### Instanz 2026-07-08 (Performance-Optimierung P1 - Teil 1)
+- [x] **Asset-Analyse**: Identifikation von Groß-Assets (z.B. `ack_splash_void.webp` mit 2.7MB).
+- [x] **Build-Konfiguration**: Vite-Minifizierung verschärft (`drop_console: true`, `pure_funcs` für Logs), um Bundle-Größe zu reduzieren.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
