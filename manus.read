@@ -51,6 +51,10 @@
 - [x] **Integration-Test Reaktivierung**: `describe.skip` in `tests/integration.test.js` entfernt.
 - [x] **Timeout-Anpassung**: Globales Jest-Timeout auf 60s erhöht, um GitHub Action Umgebungen Rechnung zu tragen.
 
+### Instanz 2026-07-08 (QA-Härtung Q1 - Teil 2)
+- [x] **PWA-Test Reaktivierung**: Alle `test.skip` innerhalb der PWA-Suite in `tests/integration.test.js` entfernt für volle Testabdeckung.
+- [x] **Dependency-Check**: `pnpm install` ausgeführt, um lokale Testumgebung zu validieren.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)

@@ -48,7 +48,7 @@ afterAll(async () => {
 
 describe('DFWA Integration Tests', () => {
   describe('PWA & Service Worker', () => {
-    test.skip('Service Worker should be registered', async () => {
+    test('Service Worker should be registered', async () => {
       await page.goto('http://localhost:3000', { waitUntil: 'networkidle2' });
       const swRegistered = await page.evaluate(() => {
         return navigator.serviceWorker ? true : false;
@@ -56,7 +56,7 @@ describe('DFWA Integration Tests', () => {
       expect(swRegistered).toBe(true);
     });
 
-    test.skip('Manifest should be valid', async () => {
+    test('Manifest should be valid', async () => {
       await page.goto('http://localhost:3000', { waitUntil: 'networkidle2' });
       const manifest = await page.evaluate(() => {
         const link = document.querySelector('link[rel="manifest"]');
@@ -65,7 +65,7 @@ describe('DFWA Integration Tests', () => {
       expect(manifest).toBeTruthy();
     });
 
-    test.skip('Critical assets should be cached', async () => {
+    test('Critical assets should be cached', async () => {
       await page.goto('http://localhost:3000', { waitUntil: 'networkidle2' });
       const cacheNames = await page.evaluate(() => {
         return caches.keys().then((names) => names);
@@ -73,7 +73,7 @@ describe('DFWA Integration Tests', () => {
       expect(cacheNames.length).toBeGreaterThan(0);
     });
 
-    test.skip('Offline fallback should work', async () => {
+    test('Offline fallback should work', async () => {
       await page.goto('http://localhost:3000', { waitUntil: 'networkidle2' });
       await page.context().setOfflineMode(true);
       const response = await page
