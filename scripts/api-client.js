@@ -32,9 +32,7 @@ export const APIClient = {
     try {
       const res = await fetch(`${baseUrl}${API_ENDPOINTS.LEADERBOARD}?limit=${limit}&mode=${mode}`);
       if (res.ok) {
-        const data = await res.json();
-        // Support both old array format and new object format for backward compatibility
-        return Array.isArray(data) ? data : data.entries;
+        return await res.json();
       }
       throw new Error(`HTTP_${res.status}`);
     } catch (e) {

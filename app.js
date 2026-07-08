@@ -224,6 +224,47 @@ function initStartScreen() {
         };
     }
 
+    const showLeaderboardBtn = document.getElementById('show-leaderboard-btn');
+    if (showLeaderboardBtn) {
+        showLeaderboardBtn.onclick = async () => {
+            const entriesDiv = document.getElementById('leaderboard-entries');
+            const data = await APIClient.fetchLeaderboard(window.location.origin, 20, 'classic');
+            if (data && data.entries) {
+                UIManager.renderLeaderboard(entriesDiv, data.entries);
+                
+                const seasonDash = document.getElementById('season-dashboard');
+                if (data.season && seasonDash) {
+                    seasonDash.style.display = 'block';
+                    document.getElementById('season-number').textContent = data.season.season_number;
+                }
+            }
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('leaderboard-screen').classList.add('active');
+        };
+    }
+
+    const hideLeaderboardBtn = document.getElementById('hide-leaderboard-btn');
+    if (hideLeaderboardBtn) {
+        hideLeaderboardBtn.onclick = () => {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('battle-lobby').classList.add('active');
+        };
+    }
+
+    const leaderboardFilters = document.querySelectorAll('#leaderboard-filters .mode-btn');
+    leaderboardFilters.forEach(btn => {
+        btn.addEventListener('click', async () => {
+            leaderboardFilters.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const mode = btn.dataset.mode;
+            const entriesDiv = document.getElementById('leaderboard-entries');
+            const data = await APIClient.fetchLeaderboard(window.location.origin, 20, mode);
+            if (data && data.entries) {
+                UIManager.renderLeaderboard(entriesDiv, data.entries);
+            }
+        });
+    });
+
     // Sabotage Event Listener
     window.addEventListener('sabotage_timer', (e) => {
         const duration = e.detail.duration || 5;

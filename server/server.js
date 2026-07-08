@@ -196,6 +196,7 @@ db.serialize(() => {
 app.get('/api/leaderboard', async (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
   const mode = req.query.mode || 'classic';
+  const variant = req.query.variant; // New filter
 
   // Import league logic (ESM)
   const { shouldResetSeason, performSoftReset, getSeasonEndBonus, getLeagueFromRating } = await import(
@@ -244,15 +245,26 @@ app.get('/api/leaderboard', async (req, res) => {
         );
       });
     } else {
-      fetchLeaderboardData(res, mode, limit, season);
+      fetchLeaderboardData(res, mode, limit, season, variant);
     }
   });
 });
 
-function fetchLeaderboardData(res, mode, limit, seasonInfo) {
+function fetchLeaderboardData(res, mode, limit, seasonInfo, variant) {
+  let query = `SELECT playerName, score, wins, losses, elo, league, season_points, variant, accuracy FROM leaderboard WHERE mode = ?`;
+  let params = [mode];
+
+  if (variant) {
+    query += ` AND variant = ?`;
+    params.push(variant);
+  }
+
+  query += ` ORDER BY score DESC LIMIT ?`;
+  params.push(limit);
+
   db.all(
-    `SELECT playerName, score, wins, losses, elo, league, season_points FROM leaderboard WHERE mode = ? ORDER BY score DESC LIMIT ?`,
-    [mode, limit],
+    query,
+    params,
     (err, rows) => {
       if (err) {
         res.status(500).json({ error: 'Database error' });

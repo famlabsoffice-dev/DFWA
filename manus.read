@@ -116,6 +116,13 @@
 - [x] **UI-Manager Refinement**: `showProfile` Funktion zur Unterstützung des neuen Dashboard-Layouts und der Animationen aktualisiert.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Qualitätssicherung.
 
+### Instanz 2026-07-08 (Leaderboard-Filter & Season-Härtung L1)
+- [x] **Backend-Filter**: Leaderboard-Endpunkt in `server.js` um `variant`-Filter und detaillierte Datenrückgabe erweitert.
+- [x] **UI-Filter**: Modus-Filter (BLITZ, SURVIVAL) in die Leaderboard-Ansicht (`index.html`) integriert.
+- [x] **Detaillierte Anzeige**: Leaderboard zeigt nun ELO und Liga der Spieler an.
+- [x] **Season-Sync**: Leaderboard-Ansicht synchronisiert nun korrekt mit dem Season-Dashboard.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` durchgeführt.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)

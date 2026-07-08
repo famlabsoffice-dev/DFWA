@@ -103,12 +103,27 @@ export const UIManager = {
       const row = document.createElement('div');
       row.className = 'leaderboard-entry animate';
       row.style.animationDelay = `${index * 0.05}s`;
+      row.style.display = 'grid';
+      row.style.gridTemplateColumns = '0.5fr 1.5fr 1fr 1fr';
+      row.style.alignItems = 'center';
 
       const rankSpan = document.createElement('span');
       rankSpan.textContent = `#${index + 1}`;
 
+      const nameContainer = document.createElement('div');
+      nameContainer.style.display = 'flex';
+      nameContainer.style.flexDirection = 'column';
+      
       const nameSpan = document.createElement('span');
       nameSpan.textContent = entry.playerName;
+      nameSpan.style.fontWeight = '900';
+      
+      const leagueSpan = document.createElement('span');
+      leagueSpan.textContent = `${entry.league || 'BRONZE'} [${entry.elo || 1000}]`;
+      leagueSpan.style.fontSize = '0.5rem';
+      leagueSpan.style.color = 'var(--cyber-blue)';
+      
+      nameContainer.append(nameSpan, leagueSpan);
 
       const scoreSpan = document.createElement('span');
       scoreSpan.textContent = String(entry.score);
@@ -116,7 +131,7 @@ export const UIManager = {
       const statsSpan = document.createElement('span');
       statsSpan.textContent = `${entry.wins}/${entry.losses}`;
 
-      row.append(rankSpan, nameSpan, scoreSpan, statsSpan);
+      row.append(rankSpan, nameContainer, scoreSpan, statsSpan);
       entriesDiv.appendChild(row);
     });
   },
