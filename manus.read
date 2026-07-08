@@ -129,3 +129,8 @@
 - [x] **B1: Fragetext-Selektor**: In `style.css` Selektor von `#question-box` auf `#question-text` korrigiert. Schriftgröße auf `clamp(1.2rem, 5vw, 1.8rem)` erhöht und `margin-top: 18vh` gesetzt.
 - [x] **B2: Timer-Position**: `index.html:221` und `style.css:357` auf `top: 12vh` korrigiert, um Überlagerung mit der Überschrift zu vermeiden.
 - [x] **B3: Modal-Überschrift**: `word-break: break-all` und `hyphens: auto` in `#modal-title` ergänzt, um unteilbare Strings auf Mobile abzufangen.
+
+### Instanz 2026-07-07 (Schritt 3: PWA-Integrität)
+- [x] **K2: PWA-Integrität**: Lokaler Build-Test verifiziert, dass `vite-plugin-pwa` die Links für `manifest.webmanifest` und `registerSW.js` korrekt in die `dist/index.html` injiziert.
+- [x] **Injektions-Validierung**: Die Injektion erfolgt nun zuverlässig am Ende des `<head>`. Der Befund der fehlenden Links im Live-System ist auf den veralteten Build (K3) zurückzuführen, der nun durch den Sync-Fix behoben ist.
+- [x] **Pfad-Härtung**: Die `base: './'` Konfiguration in der `vite.config.js` stellt sicher, dass PWA-Assets auch in Unterverzeichnissen (wie bei GitHub Pages) korrekt aufgelöst werden.
