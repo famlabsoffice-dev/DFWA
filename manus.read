@@ -123,3 +123,9 @@
 - [x] **Integritäts-Protokoll**: Alle ausgeführten Schritte der heutigen Sitzung wurden chronologisch erfasst und gegen Löschung gesichert.
 - [x] **Deployment-Bestätigung**: Live-Prüfung auf GitHub Pages bestätigt die korrekte Auslieferung des Schwarz-Grün Designs und der PWA-Features.
 - [x] **Zukunfts-Sicherung**: Die `manus.read` dient nun als Master-Dokument für alle nachfolgenden Instanzen, um Redundanz zu vermeiden und Fehlerquellen sofort einzugrenzen.
+
+### Instanz 2026-07-07 (Schritt 1 & 2: Build-Sync & CSS-Fixes)
+- [x] **K3: Build-Sync**: `dist/` Ordner gelöscht und `pnpm build` ausgeführt. Verifiziert, dass die Asset-Hashes nun dem aktuellen Stand entsprechen.
+- [x] **B1: Fragetext-Selektor**: In `style.css` Selektor von `#question-box` auf `#question-text` korrigiert. Schriftgröße auf `clamp(1.2rem, 5vw, 1.8rem)` erhöht und `margin-top: 18vh` gesetzt.
+- [x] **B2: Timer-Position**: `index.html:221` und `style.css:357` auf `top: 12vh` korrigiert, um Überlagerung mit der Überschrift zu vermeiden.
+- [x] **B3: Modal-Überschrift**: `word-break: break-all` und `hyphens: auto` in `#modal-title` ergänzt, um unteilbare Strings auf Mobile abzufangen.

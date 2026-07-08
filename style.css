@@ -351,14 +351,15 @@ h1 {
 #timeline-container {
   width: calc(100% - 40px);
   max-width: 600px;
-  height: 6px;
+  height: 12px;
   background: rgba(255, 255, 255, 0.1);
   position: absolute;
-  top: 10vh;
+  top: 12vh;
   left: 50%;
   transform: translateX(-50%);
   z-index: 50;
-  border: 1px solid rgba(57, 255, 20, 0.3);
+  border: 2px solid rgba(57, 255, 20, 0.6);
+  box-shadow: 0 0 10px var(--neon-bg);
 }
 #timeline-bar {
   width: 100%;
@@ -369,20 +370,20 @@ h1 {
     background 0.3s ease;
 }
 
-#question-box {
+#question-text {
   height: auto;
   min-height: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: clamp(1.1rem, 5vw, 1.5rem);
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
   padding: 20px;
-  margin-top: 15vh;
+  margin-top: 18vh;
   width: 100%;
   max-width: 600px;
   color: #fff;
-  text-shadow: 0 0 10px var(--neon);
+  text-shadow: 0 0 15px var(--neon);
   font-weight: 900;
   pointer-events: none;
 }
@@ -478,11 +479,12 @@ h1 {
   gap: 15px;
 }
 #modal-title {
-  font-size: clamp(1.2rem, 6vw, 2rem) !important;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 10px;
+  font-size: clamp(1.1rem, 5vw, 1.8rem) !important;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  margin-bottom: 15px;
+  line-height: 1.2;
 }
 #share-btn {
   background: var(--neon) !important;
