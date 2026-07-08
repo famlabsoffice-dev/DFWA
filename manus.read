@@ -27,12 +27,25 @@
 
 ---
 
-## AKTUELLE AUFTRAGSLISTE (Priorisiert)
+## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
 
-1. **PWA-Vollständigkeit**: Sicherstellen, dass die App offline ausnahmslos funktioniert.
-2. **Mobile Interaktion**: Verifizierung der Button-Reaktivität auf dem Redmi Note 8 Pro.
-3. **Layout-Feinschliff**: Prüfung auf schiefe Elemente oder unleserliche Texte in verschiedenen Auflösungen.
-4. **Audio-Vorbereitung**: Infrastruktur für Sounds bereithalten (ohne Implementierung schwerer Dateien).
+### 1. Build-Sync & Deployment-Fix (K3)
+- **Problem**: `dist/assets/main-*.css` ist veraltet (~64 Min Differenz zu `style.css`).
+- **Befund**: Vorhandene Fixes sind nicht im Live-System angekommen.
+- **Fix**: Erzwungener Clean-Build und Verifizierung der Asset-Hashes vor dem Deployment.
+
+### 2. CSS-Bugfixing (B1, B2, B3)
+- **B1: Fragetext-Selektor**: `style.css` (372, 674, 726, 804) von `#question-box` auf `#question-text` korrigieren (HTML-Mismatch).
+- **B2: Timer-Position**: `index.html:221` von `top: 7.5vh` auf `top: 12vh` verschieben, um Überlagerung mit `h1` (~10.3vh) zu beheben.
+- **B3: Modal-Überschrift**: `"SELECT_OPERATIONAL_REALM"` sprengt den Rahmen. Fehlende `#modal-title` Regel im Live-CSS (s. K3) durch `word-break: break-all` ergänzen.
+
+### 3. PWA-Integrität (K2)
+- **Befund**: Kein Manifest-Link, keine `manifest.json`, kein `sw.js` in der Live-`index.html`.
+- **Fix**: Injektion der PWA-Assets in den Produktions-Build sicherstellen (Vite-Config vs. Build-Output).
+
+### 4. Spiellogik-Integration (K1)
+- **Befund**: `app.js` importiert nichts aus `scripts/`. Game-Modes, HMAC und Seeded-Shuffle sind toter Code.
+- **Fix**: Refactoring der `app.js` zur aktiven Einbindung der Module aus `scripts/` (besonders `game-modes.js`).
 
 ---
 
