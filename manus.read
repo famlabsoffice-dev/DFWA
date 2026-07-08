@@ -36,16 +36,22 @@
 - [x] **Asset-Optimierung**: `preloadFeedbackAssets()` implementiert, um Feedback-Bilder verzögerungsfrei zu laden.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Code-Änderungen durchgeführt.
 - [x] **Multiplayer-Vorbereitung (M1)**: `BattleManager` refactored und in `app.js` integriert.
-- [x] **Sabotage-Mechanik**: Automatischer `timer_drain` Sabotage-Versand bei 5er Streak implementiert.
+- [x] **Sabotage-Mechanik**: Automatischer `timer_drain` Sabotage-Versand bei 5er streak implementiert.
 - [x] **Lobby-Wiring**: Event-Handler für `BATTLE_LOBBY` und `LIVE_BATTLE` in `app.js` verdrahtet.
 - [x] **Build-Success**: Validierung via `pnpm build` erfolgreich abgeschlossen.
 - [x] **UI-Konsistenz**: Schriftgrößen und Button-Styles im Kategorie-Modal an das Gesamtdesign angepasst (min. 1.1rem Schrift, optimiertes Padding).
+
+### Instanz 2026-07-08 (Multiplayer-Härtung M2)
+- [x] **Challenge-Code System**: Implementierung von `generateChallengeCode` und `createChallenge` in `battle-manager.js`.
+- [x] **Socket-Härtung**: Automatische Wiederverbindung (`reconnect`) und verbessertes Fehlerhandling bei Verbindungsabbrüchen implementiert.
+- [x] **UI-Integration**: Challenge-Code Input und Start-Buttons in `app.js` funktional angebunden.
+- [x] **Build-Validierung**: `pnpm install` und `pnpm build` erfolgreich zur Qualitätssicherung durchgeführt.
 
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
 
-### 1. Multiplayer & Battle-Modus Härtung (M2)
+### 1. Multiplayer & Battle-Modus Härtung (M2) [ERLEDIGT]
 - **Ziel**: Challenge-Code System finalisieren und Fehlerbehandlung verbessern.
 - **Aufgabe**: Implementierung der Challenge-Code Generierung in `battle-manager.js` und Anbindung an das UI. Härtung der Socket-Verbindung bei instabilem Netz.
 

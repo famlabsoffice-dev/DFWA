@@ -48,10 +48,32 @@ export const BattleManager = {
       this.updateLobbyUI(activePlayers);
     });
 
-    this.socket.on('disconnect', () => {
-      console.log('Disconnected from Battle Server');
+    this.socket.on('disconnect', (reason) => {
+      console.log('Disconnected from Battle Server:', reason);
       this.updateConnectionStatus(false);
       this.stopPing();
+      
+      if (reason === 'io server disconnect') {
+        this.socket.connect();
+      }
+    });
+
+    this.socket.on('connect_error', (error) => {
+      console.error('Connection Error:', error);
+      this.updateConnectionStatus(false);
+      UIManager.showToast('LINK_ERROR: RETRYING...', 'error');
+    });
+
+    this.socket.on('reconnect_attempt', (attempt) => {
+      console.log(`Reconnection attempt #${attempt}`);
+      UIManager.showToast(`LINK_RECOVERY: ATTEMPT_${attempt}`, 'warning');
+    });
+
+    this.socket.on('reconnect', () => {
+      UIManager.showToast('LINK_RESTORED', 'success');
+      if (this.currentBattleId) {
+        this.joinBattle(this.currentBattleId);
+      }
     });
 
     this.socket.on('pong', () => {
@@ -149,10 +171,30 @@ export const BattleManager = {
     }
   },
 
+  generateChallengeCode() {
+    return Math.random().toString(36).substring(2, 8).toUpperCase();
+  },
+
   joinBattle(battleId) {
-    if (!this.socket || !this.playerId) return;
+    if (!this.socket || !this.playerId) {
+      UIManager.showToast('SYSTEM_ERROR: LINK_INACTIVE', 'error');
+      return;
+    }
+    
     this.currentBattleId = battleId;
-    this.socket.emit('join_battle', { battleId, playerId: this.playerId });
+    UIManager.showToast(`JOINING_BATTLE: ${battleId}`, 'info');
+    
+    this.socket.emit('join_battle', { 
+      battleId, 
+      playerId: this.playerId,
+      playerName: this.playerName 
+    });
+  },
+
+  createChallenge() {
+    const code = this.generateChallengeCode();
+    this.joinBattle(code);
+    return code;
   },
 
   sendAction(action) {

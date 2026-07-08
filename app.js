@@ -145,7 +145,31 @@ function initStartScreen() {
     if (liveBattleBtn) {
         liveBattleBtn.onclick = () => {
             BattleManager.joinBattle('GLOBAL_ARENA');
-            UIManager.showToast("JOINING_GLOBAL_ARENA...", "info");
+        };
+    }
+
+    const startChallengeBtn = document.getElementById('start-challenge-btn');
+    const challengeInput = document.getElementById('challenge-code-input');
+    if (startChallengeBtn && challengeInput) {
+        startChallengeBtn.onclick = () => {
+            const code = challengeInput.value.trim().toUpperCase();
+            if (code) {
+                BattleManager.joinBattle(code);
+            } else {
+                const newCode = BattleManager.createChallenge();
+                challengeInput.value = newCode;
+                UIManager.showToast(`CHALLENGE_CREATED: ${newCode}`, "warning");
+            }
+        };
+    }
+
+    const refreshLobbyBtn = document.getElementById('refresh-lobby-btn');
+    if (refreshLobbyBtn) {
+        refreshLobbyBtn.onclick = () => {
+            if (BattleManager.socket) {
+                BattleManager.socket.disconnect().connect();
+                UIManager.showToast("RE-ESTABLISHING_LINK...", "info");
+            }
         };
     }
 
