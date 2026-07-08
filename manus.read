@@ -89,6 +89,12 @@
 - [x] **Content-Erweiterung**: Fragenkatalog um spezialisierte Kategorien (Cybersecurity, Artificial Intelligence) erweitert.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Qualitätssicherung.
 
+### Instanz 2026-07-08 (Audio & Offline-Härtung A2)
+- [x] **Achievement-Sounds**: Akustisches Feedback bei Freischaltung via `AudioManager.play('achievement')` integriert.
+- [x] **Offline-Resilienz**: Automatischer Profil-Sync-Retry bei Wiederherstellung der Internetverbindung (`online` Event-Listener) implementiert.
+- [x] **Audio-Initialisierung**: `AudioManager.init()` in den App-Start-Zyklus aufgenommen.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` durchgeführt.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)

@@ -10,6 +10,7 @@ import { StorageManager } from './scripts/storage.js';
 import { BattleManager } from './scripts/battle-manager.js';
 import { APIClient } from './scripts/api-client.js';
 import { AchievementManager } from './scripts/achievement-manager.js';
+import { AudioManager } from './scripts/audio-manager.js';
 
 const state = {
     playerName: localStorage.getItem('dfwa_player_name') || 'GUEST',
@@ -84,6 +85,7 @@ function handleAddPlayer() {
 function initStartScreen() {
     console.log("Initializing DFWA Core...");
     initPWAUpdate();
+    AudioManager.init();
     
     const eyeContainer = document.getElementById('eye-bg-container');
     if (eyeContainer) {
@@ -154,16 +156,24 @@ function initStartScreen() {
     // Initial Profile Sync
     const high_score = localStorage.getItem('dfwa_high_score') || 0;
     const achievements = JSON.parse(localStorage.getItem('dfwa_achievements') || '[]');
-    APIClient.syncProfile(window.location.origin, {
-        playerId,
-        playerName: state.playerName,
-        score: high_score,
-        wins: 0,
-        losses: 0,
-        league: 'BRONZE',
-        elo: 1000,
-        achievements: AchievementManager.getAchievementNames(achievements)
-    }, state.secret);
+    
+    const syncProfile = () => {
+        APIClient.syncProfile(window.location.origin, {
+            playerId,
+            playerName: state.playerName,
+            score: high_score,
+            wins: 0,
+            losses: 0,
+            league: 'BRONZE',
+            elo: 1000,
+            achievements: AchievementManager.getAchievementNames(achievements)
+        }, state.secret);
+    };
+
+    if (navigator.onLine) {
+        syncProfile();
+    }
+    window.addEventListener('online', syncProfile);
 
     // Battle Lobby UI Handlers
     const showLobbyBtn = document.getElementById('show-lobby-btn');
@@ -442,6 +452,7 @@ async function endGame() {
     if (newlyUnlocked.length > 0) {
         const updatedAchievements = [...localAchievements, ...newlyUnlocked];
         localStorage.setItem('dfwa_achievements', JSON.stringify(updatedAchievements));
+        AudioManager.play('achievement');
         newlyUnlocked.forEach(id => {
             const ach = AchievementManager.ACHIEVEMENTS.find(a => a.id === id);
             UIManager.showToast(`UNLOCKED: ${ach.name}`, "neon");
