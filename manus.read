@@ -141,3 +141,14 @@
 - [x] **UI-Management**: `UIManager` zur zentralen Steuerung von Modals und HUD-Elementen eingebunden.
 - [x] **PWA-Integrität**: Erfolgreicher Build bestätigt die korrekte Verarbeitung der neuen Modulstruktur und Asset-Injektion.
 - [x] **Bereinigung**: Redundante Inline-Logik in `app.js` durch saubere Modul-Aufrufe ersetzt.
+
+### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
+- [x] **Index-Bereinigung**: Gehashte Build-Artefakte (main-*.js/css) aus der `index.html` entfernt, um Build-Kontamination zu vermeiden.
+- [x] **Build-Sync (K3)**: Erfolgreicher Clean-Build durchgeführt; Asset-Injektion (JS/CSS/PWA) verifiziert.
+- [x] **CSS-Härtung (Bug 1)**: Verbleibende 3 Media-Query-Blöcke in `style.css` von `#question-box` auf `#question-text` korrigiert.
+- [x] **PWA-Validierung (K2)**: Manifest-Link und Service-Worker-Registrierung in der Produktions-`index.html` erfolgreich verifiziert.
+- [x] **Rest-K1 Integration**:
+    - HMAC-Generierung via `GameLogic.generateChallengeCode` in `endGame()` integriert.
+    - `StorageManager.saveSecure` zur verschlüsselten Score-Speicherung angebunden.
+    - Fehlende Mode-Buttons (Blitz, Survival) in `index.html` ergänzt und verdrahtet.
+- [x] **Timer-Check (Bug 2)**: Visuelle Verifizierung der Timer-Position (`top: 12vh`) abgeschlossen.
