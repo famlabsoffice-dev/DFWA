@@ -96,3 +96,12 @@
 - [x] **Modus-UI-Sync**: Visuelles Feedback (Klasse `active`) für Modus-Buttons hinzugefügt, damit die Auswahl sofort erkennbar ist.
 - [x] **Overlay-Härtung**: `sabotage-layer` explizit auf `pointer-events: none` gesetzt, um Button-Blockaden zu verhindern.
 - [x] **Build-Validierung**: Erfolgreicher Re-Build nach CSS/JS-Anpassungen.
+
+### Instanz 2026-07-08 (Multiplayer-Härtung M2 - Finalisierung)
+- [x] **Challenge-Code HMAC-Härtung**: `generateChallengeCode` in `game-logic.js` implementiert, das nun eine HMAC-Signatur über `seed`, `score` und `ts` erstellt.
+- [x] **Challenge-Code Integration**: `BattleManager` nutzt nun das HMAC-basierte Challenge-System für sicherere Multiplayer-Sessions.
+- [x] **Server-Sync**: `server.js` an das neue Challenge-Format angepasst (Verwendung der vollen Signatur und Feldname `auth`).
+- [x] **Bugfix (Tests)**: `TypeError: GameLogic.generateChallengeCode is not a function` in `tests/game-logic.test.js` durch Implementierung der fehlenden Funktion behoben.
+- [x] **Bugfix (Build)**: Syntaxfehler in `vite.config.js` (Artefakt aus früherer Instanz) behoben.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach allen Änderungen durchgeführt.
+- [x] **Test-Validierung**: `pnpm test` bestätigt die Korrektheit der `GameLogic` (30 Tests bestanden).

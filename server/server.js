@@ -366,16 +366,15 @@ app.post('/api/challenge/verify', (req, res) => {
 
   try {
     const data = JSON.parse(Buffer.from(code, 'base64').toString());
-    const { seed, score, ts, sig } = data;
+    const { seed, score, ts, auth } = data;
 
     const msg = JSON.stringify({ seed, score, ts });
     const expectedSig = crypto
       .createHmac('sha256', SYSTEM_SECRET)
       .update(msg)
-      .digest('hex')
-      .slice(0, 16);
+      .digest('hex');
 
-    if (sig !== expectedSig) {
+    if (auth !== expectedSig) {
       return res.status(403).json({ valid: false, error: 'INVALID_SIGNATURE' });
     }
 
