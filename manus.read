@@ -69,6 +69,13 @@
 - [x] **Integritäts-Check**: HMAC-Validierung und Replay-Schutz für Profil-Synchronisation integriert.
 - [x] **Build-Validierung**: `pnpm install` und `pnpm build` erfolgreich durchgeführt.
 
+### Instanz 2026-07-08 (Frontend-Profil-Integration U2)
+- [x] **UI-Erweiterung**: Profil-Ansicht (Modal) in `index.html` integriert.
+- [x] **Profil-Trigger**: Interaktiver CORE_LINK Trigger (`#stat-id`) zur Anzeige des Spielerprofils implementiert.
+- [x] **Sync-Logik**: Automatischer Profil-Sync beim App-Start in `app.js` integriert.
+- [x] **UI-Manager Update**: `showProfile` Funktion zur dynamischen Darstellung von ELO, Liga und Achievements hinzugefügt.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Qualitätssicherung.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)

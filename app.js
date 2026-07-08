@@ -8,6 +8,7 @@ import { GameModes, ModeConfig } from './scripts/game-modes.js';
 import { UIManager } from './scripts/ui-manager.js';
 import { StorageManager } from './scripts/storage.js';
 import { BattleManager } from './scripts/battle-manager.js';
+import { APIClient } from './scripts/api-client.js';
 
 const state = {
     playerName: localStorage.getItem('dfwa_player_name') || 'GUEST',
@@ -126,6 +127,40 @@ function initStartScreen() {
     const playerId = localStorage.getItem('dfwa_player_id') || `ID_${Math.random().toString(36).slice(2, 9).toUpperCase()}`;
     localStorage.setItem('dfwa_player_id', playerId);
     BattleManager.init(window.location.origin, playerId, state.playerName);
+
+    // Profile Interaction
+    const profileTrigger = document.getElementById('stat-id');
+    if (profileTrigger) {
+        profileTrigger.onclick = async () => {
+            const baseUrl = window.location.origin;
+            const profile = await APIClient.fetchProfile(baseUrl, playerId);
+            if (profile) {
+                UIManager.showProfile(profile);
+            } else {
+                // Fallback to local data if sync failed
+                UIManager.showProfile({
+                    playerName: state.playerName,
+                    score: localStorage.getItem('dfwa_high_score') || 0,
+                    wins: 0,
+                    losses: 0,
+                    league: 'BRONZE',
+                    elo: 1000
+                });
+            }
+        };
+    }
+
+    // Initial Profile Sync
+    const high_score = localStorage.getItem('dfwa_high_score') || 0;
+    APIClient.syncProfile(window.location.origin, {
+        playerId,
+        playerName: state.playerName,
+        score: high_score,
+        wins: 0,
+        losses: 0,
+        league: 'BRONZE',
+        elo: 1000
+    }, state.secret);
 
     // Battle Lobby UI Handlers
     const showLobbyBtn = document.getElementById('show-lobby-btn');

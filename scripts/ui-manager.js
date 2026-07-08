@@ -18,13 +18,56 @@ export const UIManager = {
     const overlay = document.getElementById('modal-overlay');
     const titleEl = document.getElementById('modal-title');
     const textEl = document.getElementById('modal-text');
+    const profileView = document.getElementById('profile-view');
+    const categoryList = document.getElementById('category-modal-list');
 
     if (overlay) overlay.style.display = 'flex';
     if (titleEl) {
       titleEl.textContent = title;
       titleEl.style.color = color;
     }
-    if (textEl) textEl.textContent = text;
+    if (textEl) {
+      textEl.textContent = text;
+      textEl.style.display = text ? 'block' : 'none';
+    }
+    if (profileView) profileView.style.display = 'none';
+    if (categoryList) categoryList.style.display = 'none';
+  },
+
+  showProfile(data) {
+    const overlay = document.getElementById('modal-overlay');
+    const profileView = document.getElementById('profile-view');
+    const titleEl = document.getElementById('modal-title');
+    const textEl = document.getElementById('modal-text');
+    const categoryList = document.getElementById('category-modal-list');
+
+    if (!overlay || !profileView) return;
+
+    this.setText('prof-league', data.league || 'BRONZE');
+    this.setText('prof-elo', data.elo || '1000');
+    this.setText('prof-score', data.score || '0');
+    this.setText('prof-stats', `${data.wins || 0}/${data.losses || 0}`);
+
+    const achContainer = document.getElementById('prof-achievements');
+    if (achContainer) {
+      achContainer.innerHTML = '';
+      (data.achievements || []).forEach(ach => {
+        const tag = document.createElement('span');
+        tag.style.cssText = 'background: rgba(0, 255, 255, 0.1); border: 1px solid var(--cyber-blue); padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; color: var(--cyber-blue);';
+        tag.textContent = ach;
+        achContainer.appendChild(tag);
+      });
+    }
+
+    if (titleEl) {
+      titleEl.textContent = 'PLAYER_PROFILE';
+      titleEl.style.color = 'var(--cyber-blue)';
+    }
+    if (textEl) textEl.style.display = 'none';
+    if (categoryList) categoryList.style.display = 'none';
+    
+    profileView.style.display = 'block';
+    overlay.style.display = 'flex';
   },
 
   showToast(message, type = 'info') {

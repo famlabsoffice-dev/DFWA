@@ -73,7 +73,7 @@
           <div id="stat-lives" class="stat-overlay">
             VITAL_SIGNS//<br /><span id="lives-display">3</span>_UNITS
           </div>
-          <div id="stat-id" class="stat-overlay">
+          <div id="stat-id" class="stat-overlay" style="cursor: pointer;" id="profile-trigger">
             CORE_LINK//<br />#<span id="id-display">0000</span>
           </div>
           <div id="stat-best" class="stat-overlay">
@@ -300,11 +300,26 @@
     </div>
 
     <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div id="modal-content">
+        <div id="modal-content">
         <h2 id="modal-title" style="color: var(--warning); margin-bottom: 20px">
           CHALLENGE_COMPLETE
         </h2>
         <div id="category-modal-list" class="mode-selector-container" style="display: none; margin-bottom: 20px;"></div>
+        <div id="profile-view" style="display: none; width: 100%; margin-bottom: 20px; text-align: left; font-family: monospace;">
+          <div class="cyber-card" style="border: 1px solid var(--cyber-blue); padding: 15px; background: rgba(0, 255, 255, 0.05);">
+            <div style="color: var(--cyber-blue); margin-bottom: 10px; font-size: 0.9rem;">>> PLAYER_PROFILE_SYNCED</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.8rem;">
+              <div>LEAGUE: <span id="prof-league" style="color: var(--neon);">---</span></div>
+              <div>ELO: <span id="prof-elo" style="color: var(--neon);">---</span></div>
+              <div>TOTAL_SCORE: <span id="prof-score" style="color: var(--neon);">---</span></div>
+              <div>WINS/LOSSES: <span id="prof-stats" style="color: var(--neon);">---</span></div>
+            </div>
+            <div style="margin-top: 15px; border-top: 1px solid rgba(0, 255, 255, 0.2); pt: 10px;">
+              <div style="color: var(--cyber-blue); font-size: 0.7rem; margin-bottom: 5px;">ACHIEVEMENTS_UNLOCKED:</div>
+              <div id="prof-achievements" style="display: flex; flex-wrap: wrap; gap: 5px;"></div>
+            </div>
+          </div>
+        </div>
         <p
           id="modal-text"
           style="color: #fff; margin-bottom: 20px; font-family: monospace; word-break: break-all"
