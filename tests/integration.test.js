@@ -30,7 +30,7 @@ const stopServer = () => {
   });
 };
 
-jest.setTimeout(30000);
+jest.setTimeout(60000);
 
 beforeAll(async () => {
   await startServer();
@@ -46,7 +46,7 @@ afterAll(async () => {
   await stopServer();
 });
 
-describe.skip('DFWA Integration Tests', () => {
+describe('DFWA Integration Tests', () => {
   describe('PWA & Service Worker', () => {
     test.skip('Service Worker should be registered', async () => {
       await page.goto('http://localhost:3000', { waitUntil: 'networkidle2' });

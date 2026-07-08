@@ -47,6 +47,10 @@
 - [x] **UI-Integration**: Challenge-Code Input und Start-Buttons in `app.js` funktional angebunden.
 - [x] **Build-Validierung**: `pnpm install` und `pnpm build` erfolgreich zur Qualitätssicherung durchgeführt.
 
+### Instanz 2026-07-08 (QA-Härtung Q1 - Teil 1)
+- [x] **Integration-Test Reaktivierung**: `describe.skip` in `tests/integration.test.js` entfernt.
+- [x] **Timeout-Anpassung**: Globales Jest-Timeout auf 60s erhöht, um GitHub Action Umgebungen Rechnung zu tragen.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
