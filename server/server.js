@@ -163,6 +163,11 @@ db.serialize(() => {
           ip TEXT,
           timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
       )`);
+  db.run(`CREATE TABLE IF NOT EXISTS profiles (
+          playerId TEXT PRIMARY KEY,
+          data TEXT,
+          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+      )`);
   db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, () => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN accuracy INTEGER`, () => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN mode TEXT DEFAULT 'classic'`, () => {});
@@ -413,6 +418,48 @@ app.post('/api/metrics', (req, res) => {
       res.json({ success: true });
     }
   );
+});
+
+// --- Profile Endpoints ---
+app.post('/api/profile/sync', (req, res) => {
+  const { playerId, auth, ts, ...profileData } = req.body;
+  
+  // Replay protection
+  const now = Date.now();
+  if (!ts || Math.abs(now - ts) > 60000) {
+    return res.status(403).json({ error: 'TIMESTAMP_EXPIRED' });
+  }
+
+  // Integrity validation
+  const msg = JSON.stringify({
+    playerId,
+    ts,
+    data: { playerId, ...profileData }
+  });
+  const expectedAuth = crypto.createHmac('sha256', SYSTEM_SECRET).update(msg).digest('hex');
+
+  if (auth !== expectedAuth) {
+    return res.status(403).json({ error: 'INVALID_AUTH' });
+  }
+
+  db.run(
+    `INSERT INTO profiles (playerId, data, timestamp) VALUES (?, ?, CURRENT_TIMESTAMP)
+     ON CONFLICT(playerId) DO UPDATE SET data = excluded.data, timestamp = CURRENT_TIMESTAMP`,
+    [playerId, JSON.stringify(profileData)],
+    (err) => {
+      if (err) return res.status(500).json({ error: 'Database error' });
+      res.json({ success: true });
+    }
+  );
+});
+
+app.get('/api/profile/:playerId', (req, res) => {
+  const { playerId } = req.params;
+  db.get(`SELECT data FROM profiles WHERE playerId = ?`, [playerId], (err, row) => {
+    if (err) return res.status(500).json({ error: 'Database error' });
+    if (!row) return res.status(404).json({ error: 'Profile not found' });
+    res.json(JSON.parse(row.data));
+  });
 });
 
 const WEBHOOK_URL = process.env.ERROR_WEBHOOK_URL;
