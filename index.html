@@ -30,6 +30,7 @@
     <link rel="apple-touch-icon" href="./assets/icons/icon-192.png" />
 
 
+    <link rel="stylesheet" href="./style.css">
     <script type="module" src="./app.js"></script>
     <link rel="preload" href="./assets/images/ack_cyber_eye.webp" as="image">
     <link rel="preload" href="./assets/images/ack_category_realm.webp" as="image">
@@ -62,10 +63,10 @@
     <div class="overlay"></div>
     <div id="sabotage-overlay" class="sabotage-layer"></div>
     <div id="game-container">
-      <h1>A.C.K.</h1>
+      <h1 style="z-index: 100;">A.C.K.</h1>
       <div id="start-screen" class="screen active">
-        <div id="eye-bg-container">
-          <img id="core-eye" src="./assets/images/ack_cyber_eye.webp" />
+        <div id="eye-bg-container" style="z-index: 1;">
+          <img id="core-eye" src="./assets/images/ack_cyber_eye.webp" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" />
           <div id="stat-player" class="stat-overlay">
             USER_IDENT//<br /><span id="player-display">GUEST</span>
           </div>
