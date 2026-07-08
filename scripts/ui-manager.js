@@ -51,10 +51,20 @@ export const UIManager = {
     const achContainer = document.getElementById('prof-achievements');
     if (achContainer) {
       achContainer.innerHTML = '';
-      (data.achievements || []).forEach(ach => {
+      (data.achievements || []).forEach(achName => {
         const tag = document.createElement('span');
-        tag.style.cssText = 'background: rgba(0, 255, 255, 0.1); border: 1px solid var(--cyber-blue); padding: 2px 6px; border-radius: 3px; font-size: 0.6rem; color: var(--cyber-blue);';
-        tag.textContent = ach;
+        tag.style.cssText = 'background: rgba(0, 255, 255, 0.1); border: 1px solid var(--cyber-blue); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; color: var(--cyber-blue); display: flex; align-items: center; gap: 5px;';
+        
+        // Find icon if possible (mock logic or mapping)
+        const iconMap = {
+          'First Win': '🏆',
+          'Novice Hacker': '⚡',
+          'Code Breaker': '🔓',
+          'Elite Operative': '💎',
+          'System Survivor': '💀'
+        };
+        
+        tag.innerHTML = `<span>${iconMap[achName] || '🎖️'}</span> ${achName}`;
         achContainer.appendChild(tag);
       });
     }

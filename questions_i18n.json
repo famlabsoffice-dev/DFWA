@@ -1,5 +1,49 @@
 [
   {
+    "cat": "Cybersecurity",
+    "text": {
+      "de": "Was ist die primäre Funktion einer Firewall?",
+      "en": "What is the primary function of a firewall?"
+    },
+    "options": {
+      "de": [
+        "Netzwerkverkehr überwachen und filtern",
+        "Viren vom Computer löschen",
+        "Die Internetgeschwindigkeit erhöhen",
+        "Passwörter sicher speichern"
+      ],
+      "en": [
+        "Monitor and filter network traffic",
+        "Delete viruses from the computer",
+        "Increase internet speed",
+        "Securely store passwords"
+      ]
+    },
+    "correct": 0
+  },
+  {
+    "cat": "Artificial Intelligence",
+    "text": {
+      "de": "Was beschreibt der Begriff 'Deep Learning'?",
+      "en": "What does the term 'Deep Learning' describe?"
+    },
+    "options": {
+      "de": [
+        "Ein Teilbereich des Machine Learning basierend auf neuronalen Netzen",
+        "Das Auswendiglernen von Datenbanken",
+        "Eine Methode zur Hardware-Kühlung",
+        "Die Programmierung von einfachen Wenn-Dann-Regeln"
+      ],
+      "en": [
+        "A subfield of machine learning based on neural networks",
+        "Memorizing databases",
+        "A method for hardware cooling",
+        "Programming simple if-then rules"
+      ]
+    },
+    "correct": 0
+  },
+  {
     "cat": "Gegenteil",
     "text": {
       "de": "Welche dieser Städte ist NICHT die Hauptstadt von Frankreich?",

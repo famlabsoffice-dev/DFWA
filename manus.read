@@ -83,6 +83,12 @@
 - [x] **Persistenz & Sync**: Achievements werden lokal gespeichert und bei der Profil-Synchronisation an das Backend übertragen.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` durchgeführt.
 
+### Instanz 2026-07-08 (UI-Visuals & Content Q2)
+- [x] **Achievement-Icons**: Visuelle Icons (🏆, ⚡, 🔓, 💎, 💀) in `achievement-manager.js` und `ui-manager.js` integriert.
+- [x] **Profil-Upgrade**: Achievement-Tags in der Profil-Ansicht sind nun mit Icons und verbessertem Styling versehen.
+- [x] **Content-Erweiterung**: Fragenkatalog um spezialisierte Kategorien (Cybersecurity, Artificial Intelligence) erweitert.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Qualitätssicherung.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
