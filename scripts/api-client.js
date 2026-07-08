@@ -32,11 +32,22 @@ export const APIClient = {
     try {
       const res = await fetch(`${baseUrl}${API_ENDPOINTS.LEADERBOARD}?limit=${limit}&mode=${mode}`);
       if (res.ok) {
-        return await res.json();
+        const data = await res.json();
+        // Lokales Backup für Offline-Vorschau
+        localStorage.setItem(`dfwa_leaderboard_cache_${mode}`, JSON.stringify(data));
+        return data;
       }
       throw new Error(`HTTP_${res.status}`);
     } catch (e) {
       this.reportError(baseUrl, { context: 'fetchLeaderboard', message: e.message });
+      
+      // Offline-Fallback aus Cache
+      const cachedData = localStorage.getItem(`dfwa_leaderboard_cache_${mode}`);
+      if (cachedData) {
+        console.warn('Using cached leaderboard data (offline)');
+        return JSON.parse(cachedData);
+      }
+      
       throw new Error('SERVER_UNAVAILABLE', { cause: e });
     }
   },

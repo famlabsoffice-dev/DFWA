@@ -153,9 +153,10 @@
 - **Aufgabe**: Integration einer spannungsgeladenen Hintergrundmusik, die sich dem Timer-Status anpasst (schneller werdend bei < 5s).
 - **Status**: Erfolgreich abgeschlossen am 2026-07-09. Dynamische Musik-Logik implementiert, adaptives Tempo bei Zeitdruck integriert und Build validiert.
 
-### 5. PWA-Offline-Härtung (O1) [IN_PLANUNG]
+### 5. PWA-Offline-Härtung (O1) [ERLEDIGT]
 - **Ziel**: Vollständige Spielbarkeit ohne Internetverbindung.
 - **Aufgabe**: Sicherstellen, dass alle Fragenkataloge und Assets im Service-Worker Cache liegen. Implementierung einer lokalen Leaderboard-Vorschau bei Offline-Status.
+- **Status**: Erfolgreich abgeschlossen am 2026-07-09. Caching-Strategien optimiert, Offline-Leaderboard-Cache implementiert und Build validiert.
 
 ### 6. UI/UX Polishing (U4) [IN_PLANUNG]
 - **Ziel**: Haptisches Feedback und visuelle Belohnungen.
@@ -225,3 +226,9 @@
 - [x] **Adaptive Geschwindigkeit**: Hintergrundmusik beschleunigt sich automatisch bei einer Restzeit von weniger als 5 Sekunden (max. 1.5x Speed).
 - [x] **Frontend-Integration**: Musiksteuerung in `startGame`, `updateTimerUI` und `endGame` in `app.js` integriert.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Audio-System-Upgrades durchgeführt.
+
+### Instanz 2026-07-09 (PWA-Offline-Härtung O1)
+- [x] **Vite-PWA Upgrade**: `maximumFileSizeToCacheInBytes` auf 10MB erhöht, um alle Assets (inkl. großer WebP-Dateien) sicher zu cachen.
+- [x] **Runtime Caching**: Dedizierte Caching-Strategien für `questions_i18n.json` (StaleWhileRevalidate) und Assets (CacheFirst) in `vite.config.js` implementiert.
+- [x] **Offline-Leaderboard**: `fetchLeaderboard` in `scripts/api-client.js` um lokalen Cache-Fallback erweitert, um Bestenlisten auch offline anzuzeigen.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` mit PWA-Manifest und Service-Worker Generierung.
