@@ -7,6 +7,21 @@
 4. **Funktionserhalt**: Bestehende Kern-Functions (PWA-Stabilität, Touch-Reaktivität) müssen bei jeder Änderung verifiziert und erhalten bleiben.
 5. **Keine schweren Assets**: Audio-Vorbereitung ist erlaubt, aber keine unnötig großen Dateien ohne explizite Freigabe einarbeiten.
 6. **Augenschonendes Design**: Alle Schriften und Buttons müssen für maximale Lesbarkeit groß dimensioniert sein (Buttons min. 22px Padding, Schriften min. 1.1rem für Stats).
+7. **Instanz-Kontinuität (Skill: DFWA_CORE_EXECUTION)**: Jede Instanz muss die Arbeit der vorherigen Instanz exakt dort fortsetzen, wo sie unterbrochen wurde. Alle Fortschritte sind nach jedem Teilschritt zu speichern und zu pushen.
+
+## SKILL: DFWA_CORE_EXECUTION (Verpflichtend für alle Instanzen)
+- **Ziel**: Maximale Präzision, Effizienz und Wissensanwendung bei minimalem Credit-Verbrauch.
+- **Modus**: Verhalte dich als höchstbegabter Fachmann im jeweiligen Teilbereich.
+- **Kommunikation**: Keine Floskeln, keine Nebensätze, keine Erklärungen. Nur reine Fakten, Umsetzung und Ergebnisse.
+- **Teilschritt-Protokoll**: 
+  1. Analysiere den aktuellen Stand in `manus.read`.
+  2. Führe exakt einen logischen Teilschritt aus.
+  3. Validiere das Ergebnis (`pnpm build`).
+  4. Dokumentiere den Fortschritt in `manus.read` (Abschnitt: AUSGEFÜHRTE SCHRITTE).
+  5. Speichere und pushe die Änderungen sofort.
+- **Archivierung**: Die Historie der "AUSGEFÜHRTE SCHRITTE" darf niemals gekürzt oder gelöscht werden.
+- **PWA-Integrität**: Die Anwendung muss eine reine PWA bleiben (Offline-Fähigkeit, Manifest, Service Worker).
+- **Fragen-Qualität**: Keine Platzhalterfragen; nur hochwertige, reale Inhalte verwenden.
 
 ---
 
