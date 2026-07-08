@@ -7,6 +7,7 @@ import { GameLogic } from './scripts/game-logic.js';
 import { GameModes, ModeConfig } from './scripts/game-modes.js';
 import { UIManager } from './scripts/ui-manager.js';
 import { StorageManager } from './scripts/storage.js';
+import { BattleManager } from './scripts/battle-manager.js';
 
 const state = {
     playerName: localStorage.getItem('dfwa_player_name') || 'GUEST',
@@ -117,6 +118,43 @@ function initStartScreen() {
     });
 
     setInterval(updateNameDisplay, 500);
+
+    // Initialize BattleManager
+    const playerId = localStorage.getItem('dfwa_player_id') || `ID_${Math.random().toString(36).slice(2, 9).toUpperCase()}`;
+    localStorage.setItem('dfwa_player_id', playerId);
+    BattleManager.init(window.location.origin, playerId, state.playerName);
+
+    // Battle Lobby UI Handlers
+    const showLobbyBtn = document.getElementById('show-lobby-btn');
+    if (showLobbyBtn) {
+        showLobbyBtn.onclick = () => {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('battle-lobby').classList.add('active');
+        };
+    }
+
+    const hideLobbyBtn = document.getElementById('hide-lobby-btn');
+    if (hideLobbyBtn) {
+        hideLobbyBtn.onclick = () => {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('start-screen').classList.add('active');
+        };
+    }
+
+    const liveBattleBtn = document.getElementById('live-battle-btn');
+    if (liveBattleBtn) {
+        liveBattleBtn.onclick = () => {
+            BattleManager.joinBattle('GLOBAL_ARENA');
+            UIManager.showToast("JOINING_GLOBAL_ARENA...", "info");
+        };
+    }
+
+    // Sabotage Event Listener
+    window.addEventListener('sabotage_timer', (e) => {
+        const duration = e.detail.duration || 5;
+        state.timer = Math.max(0, state.timer - duration);
+        updateTimerUI();
+    });
 }
 
 function openCategoryModal() {
@@ -162,6 +200,7 @@ async function startGame(category) {
     document.getElementById('game-screen').classList.add('active');
     
     updateHUD();
+    BattleManager.syncState({ score: state.score, streak: state.streak });
     showNextQuestion();
 }
 
@@ -237,12 +276,30 @@ function handleAnswer(isCorrect) {
         state.streak++;
         if ('vibrate' in navigator) navigator.vibrate(50);
         showFeedback(true);
+        
+        // Sync Battle State
+        BattleManager.sendAction({ type: 'correct', score: state.score });
+        
+        // Sabotage Opponent on high streak
+        if (state.streak >= 5) {
+            BattleManager.sendAction({ 
+                type: 'sabotage', 
+                sabotageType: 'timer_drain', 
+                duration: 5 
+            });
+            UIManager.showToast("SABOTAGE_DEPLOYED!", "warning");
+        }
     } else {
         state.lives--;
         state.streak = 0;
         if ('vibrate' in navigator) navigator.vibrate([100, 50, 100]);
         showFeedback(false);
+        
+        // Sync Battle State
+        BattleManager.sendAction({ type: 'error', score: state.score });
     }
+    
+    BattleManager.syncState({ score: state.score, streak: state.streak });
 
     updateHUD();
     state.currentQuestionIndex++;

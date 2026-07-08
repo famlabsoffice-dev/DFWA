@@ -35,14 +35,18 @@
 - [x] **Glitch-Feedback**: Sabotage-Glitch-Animation bei falscher Antwort integriert.
 - [x] **Asset-Optimierung**: `preloadFeedbackAssets()` implementiert, um Feedback-Bilder verzögerungsfrei zu laden.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Code-Änderungen durchgeführt.
+- [x] **Multiplayer-Vorbereitung (M1)**: `BattleManager` refactored und in `app.js` integriert.
+- [x] **Sabotage-Mechanik**: Automatischer `timer_drain` Sabotage-Versand bei 5er Streak implementiert.
+- [x] **Lobby-Wiring**: Event-Handler für `BATTLE_LOBBY` und `LIVE_BATTLE` in `app.js` verdrahtet.
+- [x] **Build-Success**: Validierung via `pnpm build` erfolgreich abgeschlossen.
 
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
 
-### 1. Multiplayer & Battle-Modus Vorbereitung (M1)
-- **Ziel**: Die Infrastruktur für den Battle-Modus (Lobby, Challenge-Codes) stabilisieren.
-- **Aufgabe**: Refactoring des `battle-manager.js` zur Nutzung der neuen `GameLogic`-Struktur. Implementierung der Lobby-Synchronisation.
+### 1. Multiplayer & Battle-Modus Härtung (M2)
+- **Ziel**: Challenge-Code System finalisieren und Fehlerbehandlung verbessern.
+- **Aufgabe**: Implementierung der Challenge-Code Generierung in `battle-manager.js` und Anbindung an das UI. Härtung der Socket-Verbindung bei instabilem Netz.
 
 ### 2. Test-Abdeckung & QA-Härtung (Q1)
 - **Ziel**: Reaktivierung der übersprungenen Integration-Tests.
