@@ -9,6 +9,7 @@ import { UIManager } from './scripts/ui-manager.js';
 import { StorageManager } from './scripts/storage.js';
 import { BattleManager } from './scripts/battle-manager.js';
 import { APIClient } from './scripts/api-client.js';
+import { AchievementManager } from './scripts/achievement-manager.js';
 
 const state = {
     playerName: localStorage.getItem('dfwa_player_name') || 'GUEST',
@@ -152,6 +153,7 @@ function initStartScreen() {
 
     // Initial Profile Sync
     const high_score = localStorage.getItem('dfwa_high_score') || 0;
+    const achievements = JSON.parse(localStorage.getItem('dfwa_achievements') || '[]');
     APIClient.syncProfile(window.location.origin, {
         playerId,
         playerName: state.playerName,
@@ -159,7 +161,8 @@ function initStartScreen() {
         wins: 0,
         losses: 0,
         league: 'BRONZE',
-        elo: 1000
+        elo: 1000,
+        achievements: AchievementManager.getAchievementNames(achievements)
     }, state.secret);
 
     // Battle Lobby UI Handlers
@@ -433,6 +436,18 @@ preloadFeedbackAssets();
 async function endGame() {
     clearInterval(state.timerInterval);
     
+    // Achievement Check
+    const localAchievements = JSON.parse(localStorage.getItem('dfwa_achievements') || '[]');
+    const newlyUnlocked = AchievementManager.checkAchievements(state, localAchievements);
+    if (newlyUnlocked.length > 0) {
+        const updatedAchievements = [...localAchievements, ...newlyUnlocked];
+        localStorage.setItem('dfwa_achievements', JSON.stringify(updatedAchievements));
+        newlyUnlocked.forEach(id => {
+            const ach = AchievementManager.ACHIEVEMENTS.find(a => a.id === id);
+            UIManager.showToast(`UNLOCKED: ${ach.name}`, "neon");
+        });
+    }
+
     // HMAC & Secure Storage Integration
     try {
         const playerId = localStorage.getItem('dfwa_player_id') || `ID_${Math.random().toString(36).slice(2, 9).toUpperCase()}`;

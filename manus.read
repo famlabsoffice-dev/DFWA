@@ -76,6 +76,13 @@
 - [x] **UI-Manager Update**: `showProfile` Funktion zur dynamischen Darstellung von ELO, Liga und Achievements hinzugefügt.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Qualitätssicherung.
 
+### Instanz 2026-07-08 (Achievement-System A1)
+- [x] **Achievement-Manager**: `scripts/achievement-manager.js` mit Logik für automatische Abzeichen-Vergabe erstellt.
+- [x] **Event-Trigger**: Integration der Achievement-Prüfung in `endGame()` (app.js).
+- [x] **Visual Feedback**: Toast-Benachrichtigungen bei Freischaltung neuer Achievements implementiert.
+- [x] **Persistenz & Sync**: Achievements werden lokal gespeichert und bei der Profil-Synchronisation an das Backend übertragen.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` durchgeführt.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
