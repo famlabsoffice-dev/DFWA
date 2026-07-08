@@ -143,6 +143,22 @@
 - **Ziel**: Reaktivierung der übersprungenen Integration-Tests.
 - **Aufgabe**: Behebung der Timeout-Probleme in `tests/integration.test.js` für die GitHub Action Umgebung. Sicherstellung einer 100% grünen Pipeline.
 
+### 3. Social-Features & Friend-System (S3) [IN_PLANUNG]
+- **Ziel**: Implementierung der Friend-Request und Battle-Invite Logik im Frontend.
+- **Aufgabe**: UI für Freundesanfragen und eine Freundesliste im `BATTLE_LOBBY` Screen integrieren. Anbindung der `/api/social/` Endpunkte.
+
+### 4. Audio-System Verfeinerung (A3) [IN_PLANUNG]
+- **Ziel**: Dynamische Hintergrundmusik und adaptive Soundeffekte.
+- **Aufgabe**: Integration einer spannungsgeladenen Hintergrundmusik, die sich dem Timer-Status anpasst (schneller werdend bei < 5s).
+
+### 5. PWA-Offline-Härtung (O1) [IN_PLANUNG]
+- **Ziel**: Vollständige Spielbarkeit ohne Internetverbindung.
+- **Aufgabe**: Sicherstellen, dass alle Fragenkataloge und Assets im Service-Worker Cache liegen. Implementierung einer lokalen Leaderboard-Vorschau bei Offline-Status.
+
+### 6. UI/UX Polishing (U4) [IN_PLANUNG]
+- **Ziel**: Haptisches Feedback und visuelle Belohnungen.
+- **Aufgabe**: Erweiterung der `vibrate` Muster bei Fehlern und Integration von Partikel-Effekten (Konfetti) bei neuen Highscores oder Achievement-Freischaltungen.
+
 ---
 
 ## HISTORISCHE ANALYSE (Archiv)
