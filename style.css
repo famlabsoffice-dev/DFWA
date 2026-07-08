@@ -673,7 +673,7 @@ h1 {
   #stat-best {
     bottom: 25%;
   }
-  #question-box {
+  #question-text {
     height: 15vh;
     font-size: 1rem;
     margin-top: 10vh;
@@ -725,7 +725,7 @@ h1 {
     bottom: 30%;
     right: 10%;
   }
-  #question-box {
+  #question-text {
     height: 30vh;
     font-size: 2.5rem;
     margin-top: 20vh;
@@ -803,7 +803,7 @@ h1 {
     bottom: 20%;
     right: 8%;
   }
-  #question-box {
+  #question-text {
     height: 12vh;
     font-size: 0.9rem;
     margin-top: 5vh;

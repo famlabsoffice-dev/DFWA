@@ -20,7 +20,8 @@ const state = {
     timer: 15,
     timerInterval: null,
     availableCategories: [],
-    seed: Math.floor(Math.random() * 1000000)
+    seed: Math.floor(Math.random() * 1000000),
+    secret: 'DFWA_SYSTEM_SECURE_2026' // Placeholder for HMAC
 };
 
 async function loadQuestions() {
@@ -284,12 +285,29 @@ function showFeedback(isCorrect) {
     }
 }
 
-function endGame() {
+async function endGame() {
     clearInterval(state.timerInterval);
-    UIManager.showModal(
-        "SESSION_TERMINATED", 
-        `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}`
-    );
+    
+    // HMAC & Secure Storage Integration
+    try {
+        const challengeCode = await GameLogic.generateChallengeCode(state.seed, state.score, state.secret);
+        console.log("SECURE_CHALLENGE_CODE_GENERATED");
+        
+        // Save score securely
+        await StorageManager.saveSecure('dfwa_last_score', state.score, state.secret);
+        
+        UIManager.showModal(
+            "SESSION_TERMINATED", 
+            `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}\nCODE: ${challengeCode.slice(0, 8)}...`
+        );
+    } catch (e) {
+        console.error("SECURE_FINALIZATION_FAILED", e);
+        UIManager.showModal(
+            "SESSION_TERMINATED", 
+            `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}`
+        );
+    }
+
     const list = document.getElementById('category-modal-list');
     if (list) list.style.display = "none";
 }

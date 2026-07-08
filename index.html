@@ -34,8 +34,7 @@
     <link rel="preload" href="./assets/images/ack_cyber_eye.webp" as="image">
     <link rel="preload" href="./assets/images/ack_category_realm.webp" as="image">
     <link rel="preload" href="./assets/images/ack_cyber_eye.webp" as="image">
-  <script type="module" crossorigin src="./assets/main-B4VhbFAM.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-CI57xuHV.css">
+
 </head>
   <body>
     <noscript
@@ -124,7 +123,13 @@
             id="mode-selector"
             class="mode-selector-container"
             aria-label="Modus auswählen"
-          ></div>
+          >
+            <button class="mode-btn active" data-mode="classic"><strong>CLASSIC</strong><small>3_LIVES</small></button>
+            <button class="mode-btn" data-mode="timeAttack"><strong>TIME_ATTACK</strong><small>60_SEC</small></button>
+            <button class="mode-btn" data-mode="hardcore"><strong>HARDCORE</strong><small>1_LIFE</small></button>
+            <button class="mode-btn" data-mode="blitz"><strong>BLITZ</strong><small>20_QUES</small></button>
+            <button class="mode-btn" data-mode="survival"><strong>SURVIVAL</strong><small>NO_LIMIT</small></button>
+          </div>
           <button id="resume-btn" class="option-btn battle-btn" style="display: none">
             RESUME_PROTOCOL
           </button>
