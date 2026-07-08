@@ -290,15 +290,40 @@ async function endGame() {
     
     // HMAC & Secure Storage Integration
     try {
-        const challengeCode = await GameLogic.generateChallengeCode(state.seed, state.score, state.secret);
-        console.log("SECURE_CHALLENGE_CODE_GENERATED");
+        const playerId = localStorage.getItem('dfwa_player_id') || `ID_${Math.random().toString(36).slice(2, 9).toUpperCase()}`;
+        localStorage.setItem('dfwa_player_id', playerId);
+
+        const payload = await GameLogic.generateAuthPayload(
+            playerId,
+            state.score,
+            0, // wins (placeholder)
+            0, // losses (placeholder)
+            state.selectedMode.id,
+            state.secret
+        );
+        
+        console.log("SECURE_AUTH_PAYLOAD_GENERATED", payload);
         
         // Save score securely
         await StorageManager.saveSecure('dfwa_last_score', state.score, state.secret);
         
+        // Attempt to submit score to backend
+        fetch('/api/leaderboard', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                ...payload,
+                playerName: state.playerName
+            })
+        }).then(res => res.json()).then(data => {
+            console.log("BACKEND_SYNC_RESULT", data);
+        }).catch(err => {
+            console.warn("BACKEND_SYNC_FAILED", err);
+        });
+
         UIManager.showModal(
             "SESSION_TERMINATED", 
-            `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}\nCODE: ${challengeCode.slice(0, 8)}...`
+            `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}\nSYNC_AUTH: ${payload.auth.slice(0, 8)}...`
         );
     } catch (e) {
         console.error("SECURE_FINALIZATION_FAILED", e);

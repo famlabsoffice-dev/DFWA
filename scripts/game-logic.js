@@ -19,18 +19,21 @@ export const GameLogic = {
     return array;
   },
 
-  async generateChallengeCode(seed, score, secret) {
-    const payload = { seed, score, ts: Date.now() };
+  async generateAuthPayload(playerId, score, wins, losses, mode, secret) {
+    const ts = Date.now();
+    const payload = { 
+      playerId, 
+      score: Number(score), 
+      wins: Number(wins), 
+      losses: Number(losses), 
+      mode: mode || 'classic', 
+      ts 
+    };
     const msg = JSON.stringify(payload);
     const cryptoObj = this._crypto || globalThis.crypto;
     const key = await cryptoObj.subtle.importKey(
       'raw',
-      new TextEncoder().encode(
-        secret ||
-          (() => {
-            throw new Error('SYSTEM_SECRET not provided for GameLogic');
-          })()
-      ),
+      new TextEncoder().encode(secret),
       { name: 'HMAC', hash: 'SHA-256' },
       false,
       ['sign']
@@ -38,8 +41,7 @@ export const GameLogic = {
     const sig = await cryptoObj.subtle.sign('HMAC', key, new TextEncoder().encode(msg));
     const sigHex = Array.from(new Uint8Array(sig))
       .map((b) => b.toString(16).padStart(2, '0'))
-      .join('')
-      .slice(0, 16);
-    return btoa(JSON.stringify({ ...payload, sig: sigHex }));
+      .join('');
+    return { ...payload, auth: sigHex };
   },
 };

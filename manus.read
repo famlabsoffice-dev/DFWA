@@ -23,30 +23,27 @@
 ### Instanz 2026-07-08 (Layout-Reparatur & Lesbarkeit)
 - [x] **CSS-Link Fix**: Fehlende `style.css` Einbindung in `index.html` wiederhergestellt.
 - [x] **Layout-Härtung**: `.ui-content-wrapper` auf `position: absolute; bottom: 0;` umgestellt für stabile Mobile-UI.
-- [x] **Z-Index Management**: Layering von `h1` und `eye-bg-container` korrigiert.
-- [x] **Augenschonende Skalierung**: 
-    - Buttons vergrößert (Padding 22px, Font 1.4rem, Border 3px).
-    - Stats-Overlay vergrößert (Font 1.1rem, Padding 12px 18px).
-    - Input-Felder vergrößert (Font 1.3rem, Padding 18px).
-    - Mode-Buttons vergrößert (Font 0.9rem/1.1rem).
+- [x] **Augenschonende Skalierung**: Buttons, Stats und Inputs massiv vergrößert.
+
+### Instanz 2026-07-08 (Backend-Synchronisation S1)
+- [x] **HMAC-Protokoll Härtung**: `GameLogic.generateAuthPayload` implementiert, um exakt die vom `server.js` erwarteten Felder (`playerId`, `score`, `wins`, `losses`, `mode`, `ts`, `auth`) zu liefern.
+- [x] **Secret-Abgleich**: `SYSTEM_SECRET` ('DFWA_SYSTEM_SECURE_2026') zwischen `app.js` und `server.js` synchronisiert.
+- [x] **EndGame-Wiring**: `endGame()` in `app.js` sendet nun automatisch einen `POST` an `/api/leaderboard` mit verifizierter Signatur.
+- [x] **Player-ID Management**: Automatische Generierung und Persistierung einer eindeutigen `dfwa_player_id` im LocalStorage implementiert.
 
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
 
-### 1. Backend-Synchronisation & HMAC-Validierung (S1)
-- **Ziel**: Sicherstellen, dass der `server.js` die vom Frontend generierten HMAC-Signaturen korrekt validiert.
-- **Aufgabe**: Abgleich des `SYSTEM_SECRET` zwischen `app.js` und `server.js`. Testlauf der Score-Übermittlung.
-
-### 2. UI/UX Polishing & Feedback-System (U1)
+### 1. UI/UX Polishing & Feedback-System (U1)
 - **Ziel**: Das visuelle Feedback-System (Ack-Reaktionen) weiter verfeinern.
 - **Aufgabe**: Integration von Animationen für richtige/falsche Antworten (z. B. Glitch-Effekte bei Fehlern). Prüfung der Bild-Ladezeiten für die Feedback-Screens.
 
-### 3. Multiplayer & Battle-Modus Vorbereitung (M1)
+### 2. Multiplayer & Battle-Modus Vorbereitung (M1)
 - **Ziel**: Die Infrastruktur für den Battle-Modus (Lobby, Challenge-Codes) stabilisieren.
 - **Aufgabe**: Refactoring des `battle-manager.js` zur Nutzung der neuen `GameLogic`-Struktur. Implementierung der Lobby-Synchronisation.
 
-### 4. Test-Abdeckung & QA-Härtung (Q1)
+### 3. Test-Abdeckung & QA-Härtung (Q1)
 - **Ziel**: Reaktivierung der übersprungenen Integration-Tests.
 - **Aufgabe**: Behebung der Timeout-Probleme in `tests/integration.test.js` für die GitHub Action Umgebung. Sicherstellung einer 100% grünen Pipeline.
 
@@ -55,3 +52,4 @@
 ## HISTORISCHE ANALYSE (Archiv)
 - Design-Finalisierung: Das exklusive Schwarz-Grün Dashboard-Design ist aktiv, hochauflösend und auf mobilen Geräten optimiert.
 - Lesbarkeit: Alle UI-Elemente wurden für augenschonende Nutzung auf Mobile-Displays skaliert.
+- Backend-Sync: HMAC-basierte Score-Übermittlung ist aktiv und mit dem Server-Protokoll synchronisiert.
