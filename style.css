@@ -351,6 +351,34 @@ h1 {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes achievementPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.achievement-tag {
+  animation: achievementPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 210, 255, 0.1);
+  font-size: 0.8rem;
+}
+
+.stat-label {
+  color: var(--cyber-blue);
+  opacity: 0.7;
+}
+
+.stat-value {
+  color: var(--neon);
+  font-weight: 900;
+}
 @keyframes errorShake {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-5px); }

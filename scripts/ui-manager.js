@@ -43,19 +43,21 @@ export const UIManager = {
 
     if (!overlay || !profileView) return;
 
+    this.setText('prof-name', data.playerName || 'GUEST');
     this.setText('prof-league', data.league || 'BRONZE');
     this.setText('prof-elo', data.elo || '1000');
     this.setText('prof-score', data.score || '0');
     this.setText('prof-stats', `${data.wins || 0}/${data.losses || 0}`);
+    this.setText('prof-accuracy', `${data.accuracy || 0}%`);
 
     const achContainer = document.getElementById('prof-achievements');
     if (achContainer) {
       achContainer.innerHTML = '';
-      (data.achievements || []).forEach(achName => {
+      (data.achievements || []).forEach((achName, index) => {
         const tag = document.createElement('span');
-        tag.style.cssText = 'background: rgba(0, 255, 255, 0.1); border: 1px solid var(--cyber-blue); padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; color: var(--cyber-blue); display: flex; align-items: center; gap: 5px;';
+        tag.className = 'achievement-tag';
+        tag.style.cssText = `background: rgba(0, 255, 255, 0.1); border: 1px solid var(--cyber-blue); padding: 6px 10px; border-radius: 4px; font-size: 0.7rem; color: var(--cyber-blue); display: flex; align-items: center; gap: 8px; animation-delay: ${index * 0.1}s;`;
         
-        // Find icon if possible (mock logic or mapping)
         const iconMap = {
           'First Win': '🏆',
           'Novice Hacker': '⚡',
@@ -64,7 +66,7 @@ export const UIManager = {
           'System Survivor': '💀'
         };
         
-        tag.innerHTML = `<span>${iconMap[achName] || '🎖️'}</span> ${achName}`;
+        tag.innerHTML = `<span style="font-size: 1rem;">${iconMap[achName] || '🎖️'}</span> ${achName}`;
         achContainer.appendChild(tag);
       });
     }

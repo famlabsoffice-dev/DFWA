@@ -95,6 +95,12 @@
 - [x] **Audio-Initialisierung**: `AudioManager.init()` in den App-Start-Zyklus aufgenommen.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` durchgeführt.
 
+### Instanz 2026-07-08 (Profil-Härtung & Dashboard U3)
+- [x] **Statistik-Dashboard**: Detaillierte Profil-Ansicht mit ELO, Liga, Score, Battle-Record und Accuracy in `index.html` implementiert.
+- [x] **Achievement-Animationen**: `achievementPop` Animation für Achievement-Tags in `style.css` integriert.
+- [x] **UI-Manager Refinement**: `showProfile` Funktion zur Unterstützung des neuen Dashboard-Layouts und der Animationen aktualisiert.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Qualitätssicherung.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
