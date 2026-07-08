@@ -103,7 +103,7 @@ function initStartScreen() {
         } else if (target.id === 'add-player-btn') {
             handleAddPlayer();
         } else if (target.id === 'start-btn') {
-            state.selectedMode = GameModes.CLASSIC;
+
             openCategoryModal();
         } else if (target.id === 'close-system-btn') {
             document.getElementById('modal-overlay').style.display = 'none';

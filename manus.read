@@ -66,3 +66,11 @@
 - Lesbarkeit: Alle UI-Elemente wurden für augenschonende Nutzung auf Mobile-Displays skaliert.
 - Backend-Sync: HMAC-basierte Score-Übermittlung ist aktiv und mit dem Server-Protokoll synchronisiert.
 - UI/UX Feedback: Visuelles Feedback-System (U1) mit Glitch-Effekten und Preloading gehärtet.
+
+### Instanz 2026-07-08 (Button-Funktionalität)
+- [x] **Modus-Persistenz**: Hardcodierte `CLASSIC`-Zuweisung beim `INIT_PROTOCOL`-Button entfernt, um den zuvor ausgewählten Modus zu verwenden.
+
+- [x] **Kategorie-Dynamik**: Validiert, dass die Liste im Kategorie-Modal dynamisch aus `questions_i18n.json` generiert wird.
+
+- [x] **Build-Validierung**: `pnpm install` und `pnpm build` nach Modus-Korrektur erfolgreich durchgeführt.
+- [x] **Event-Handler Audit**: Alle Startbildschirm-Buttons auf korrekte Verknüpfung in `app.js` geprüft und verifiziert.
