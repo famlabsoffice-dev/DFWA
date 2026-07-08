@@ -123,6 +123,13 @@
 - [x] **Season-Sync**: Leaderboard-Ansicht synchronisiert nun korrekt mit dem Season-Dashboard.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` durchgeführt.
 
+### Instanz 2026-07-08 (UI-Interaktion & Button-Fix B1)
+- [x] **Global Interaction Handler**: Button-Logik in `app.js` durch einen robusten globalen Event-Listener ersetzt, der sowohl `click` als auch `pointerup` (für Mobile) unterstützt.
+- [x] **ID-Bereinigung**: Doppelte/Fehlerhafte IDs in `index.html` (z.B. `#stat-id`) korrigiert.
+- [x] **Audio-Feedback**: Klick-Sounds in die globale Interaktions-Logik integriert.
+- [x] **Mode-Switching**: Logik zur visuellen Aktualisierung der Modus-Buttons gehärtet.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` durchgeführt.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)

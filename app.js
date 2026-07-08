@@ -96,28 +96,38 @@ function initStartScreen() {
     updateNameDisplay();
 
     // Global Interaction Handler
-    document.body.addEventListener('click', (e) => {
+    const handleGlobalClick = (e) => {
         const target = e.target.closest('button');
         if (!target) return;
 
         if ('vibrate' in navigator) navigator.vibrate(10);
+        AudioManager.play('click');
 
-        if (target.id === 'category-modal-btn') {
+        if (target.id === 'category-modal-btn' || target.id === 'start-btn') {
             openCategoryModal();
         } else if (target.id === 'add-player-btn') {
             handleAddPlayer();
-        } else if (target.id === 'start-btn') {
-            openCategoryModal();
-        } else if (target.id === 'close-system-btn') {
+        } else if (target.id === 'close-system-btn' || target.id === 'modal-close-btn') {
             document.getElementById('modal-overlay').style.display = 'none';
         } else if (target.classList.contains('mode-btn') && target.dataset.mode) {
-            // Update active state visually
-            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-            target.classList.add('active');
+            const container = target.closest('.mode-selector-container');
+            if (container) {
+                container.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+                target.classList.add('active');
+            }
             
-            state.selectedMode = GameModes[target.dataset.mode.toUpperCase()];
-            console.log("Mode selected:", state.selectedMode);
+            const modeKey = target.dataset.mode.toUpperCase();
+            if (GameModes[modeKey]) {
+                state.selectedMode = GameModes[modeKey];
+                console.log("Mode selected:", state.selectedMode);
+            }
         }
+    };
+
+    document.body.removeEventListener('click', handleGlobalClick);
+    document.body.addEventListener('click', handleGlobalClick);
+    document.body.addEventListener('pointerup', (e) => {
+        if (e.target.closest('button')) handleGlobalClick(e);
     });
 
     loadQuestions().then(allQuestions => {
