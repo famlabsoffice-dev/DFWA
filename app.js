@@ -131,7 +131,16 @@ function initStartScreen() {
     };
 
     document.addEventListener('click', handleGlobalClick, { passive: false });
-    // pointerup removed to prevent double triggers on mobile devices
+    
+    // Explicit Fallback for Core Buttons
+    const addBtn = document.getElementById('add-player-btn');
+    if (addBtn) addBtn.onclick = handleAddPlayer;
+    
+    const startBtn = document.getElementById('start-btn');
+    if (startBtn) startBtn.onclick = () => startGame(state.selectedCategory);
+    
+    const catBtn = document.getElementById('category-modal-btn');
+    if (catBtn) catBtn.onclick = openCategoryModal;
 
     loadQuestions().then(allQuestions => {
         window.allQuestions = allQuestions;
