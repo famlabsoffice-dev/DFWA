@@ -282,3 +282,10 @@
 - [x] **Feedback-System**: `showFeedback` integriert visuelle (Eye-Images) und haptische (Vibration) Rückmeldung. `sabotage-overlay` Trigger bei Fehlern verifiziert.
 - [x] **Modus-Integrität**: `startGame` initialisiert Leben und Timer basierend auf `state.selectedMode`. Fallback auf `CLASSIC` via `ModeConfig` sichergestellt.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich zur Sicherstellung der logischen Verkabelung.
+
+### Instanz 2026-07-09 (Stufenweiser Voll-Test - Phase 4: Backend-Sync & Persistenz)
+- [x] **HMAC-Integrität**: `GameLogic.generateAuthPayload` (scripts/game-logic.js) und `server.js` (POST /api/leaderboard) auf Protokoll-Gleichheit geprüft. Replay-Schutz (30s Window) serverseitig verifiziert.
+- [x] **Persistenz-Audit**: `StorageManager` (scripts/storage.js) verifiziert. `saveSecure` und `validateIntegrity` nutzen HMAC-Signaturen im LocalStorage zur Manipulationserkennung.
+- [x] **Profil-Sync Flow**: `syncProfile` (scripts/api-client.js) und `server.js` (POST /api/profile/sync) geprüft. Korrekte Daten-Struktur (inkl. Achievements) und HMAC-Validierung bestätigt.
+- [x] **Leaderboard-Logik**: `fetchLeaderboard` (scripts/api-client.js) nutzt `variant` und `mode` Parameter. Offline-Fallback via `localStorage` verifiziert.
+- [x] **Build-Validierung**: `pnpm build` erfolgreich zur Sicherstellung der Datenfluss-Integrität.
