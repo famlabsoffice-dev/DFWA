@@ -125,10 +125,8 @@ function initStartScreen() {
     };
 
     document.body.removeEventListener('click', handleGlobalClick);
-    document.body.addEventListener('click', handleGlobalClick);
-    document.body.addEventListener('pointerup', (e) => {
-        if (e.target.closest('button')) handleGlobalClick(e);
-    });
+    document.body.addEventListener('click', handleGlobalClick, { passive: false });
+    // pointerup removed to prevent double triggers on mobile devices
 
     loadQuestions().then(allQuestions => {
         window.allQuestions = allQuestions;
