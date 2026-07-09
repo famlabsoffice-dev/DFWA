@@ -100,7 +100,7 @@ export async function acceptFriendRequest(db, requestId, receiverId) {
  */
 export async function listFriends(db, userId) {
   return new Promise((resolve, reject) => {
-    const query = "SELECT CASE WHEN user_id1 = ? THEN user_id2 ELSE user_id1 END AS friendId, l.playerName, l.elo, l.league FROM friends f JOIN leaderboard l ON l.playerId = friendId WHERE user_id1 = ? OR user_id2 = ?";
+    const query = "SELECT CASE WHEN user_id1 = ? THEN user_id2 ELSE user_id1 END AS playerId, l.playerName, l.elo, l.league FROM friends f JOIN leaderboard l ON l.playerId = playerId WHERE user_id1 = ? OR user_id2 = ?";
     db.all(query, [userId, userId, userId], (err, rows) => {
       if (err) return reject(err);
       resolve(rows || []);

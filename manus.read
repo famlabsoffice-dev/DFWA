@@ -245,6 +245,11 @@
 - [x] **UI-Manager Erweiterung**: `launchConfetti` Methode in `scripts/ui-manager.js` implementiert.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Integration der neuen Abhängigkeiten durchgeführt.
 
+### Instanz 2026-07-09 (Social-System Härtung & Fixes)
+- [x] **Datenbank-Fix**: Fehlende Tabellen `friends` und `friend_requests` in `server.js` zur automatischen Initialisierung hinzugefügt.
+- [x] **API-Inkonsistenz behoben**: Feldname in `listFriends` (server/social/friends.js) von `friendId` zu `playerId` korrigiert, um mit dem Frontend (`ui-manager.js`) zu harmonieren.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Verifizierung der Systemintegrität.
+
 ### Instanz 2026-07-09 (QA-Audit & Bug-Fixing-Zyklus B2)
 - [x] **Repo-Cleanup**: Veraltete Build-Artefakte (`game-*.js`, `main-*.js`) aus `assets/` entfernt und `.gitignore` um entsprechende Pattern erweitert.
 - [x] **Audit-Reconciliation**: Manueller Abgleich der `manus.read` mit externem Analyse-Bericht durchgeführt.

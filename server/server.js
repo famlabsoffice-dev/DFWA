@@ -168,6 +168,19 @@ db.serialize(() => {
           data TEXT,
           timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
       )`);
+  db.run(`CREATE TABLE IF NOT EXISTS friend_requests (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          sender_id TEXT,
+          receiver_id TEXT,
+          status TEXT DEFAULT 'PENDING',
+          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+      )`);
+  db.run(`CREATE TABLE IF NOT EXISTS friends (
+          user_id1 TEXT,
+          user_id2 TEXT,
+          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+          PRIMARY KEY (user_id1, user_id2)
+      )`);
   db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, () => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN accuracy INTEGER`, () => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN mode TEXT DEFAULT 'classic'`, () => {});
