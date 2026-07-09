@@ -163,14 +163,10 @@
 - **Aufgabe**: Erweiterung der `vibrate` Muster bei Fehlern und Integration von Partikel-Effekten (Konfetti) bei neuen Highscores oder Achievement-Freischaltungen.
 - **Status**: Erfolgreich abgeschlossen am 2026-07-09. Vibration-Feedback gehärtet, Konfetti-Effekte bei Highscores integriert und Build validiert.
 
-### 7. Bug-Fixing-Zyklus (B2) [OFFEN]
+### 7. Bug-Fixing-Zyklus (B2) [ERLEDIGT]
 - **Ziel**: Behebung der im QA-Audit identifizierten Bugs.
-- **Aufgabe**: 
-  - [x] **HMAC-Härtung**: Client-Secret durch Session-Token Mechanismus ersetzen oder Env-Var Sync sicherstellen.
-  - [x] **Sync-Fix**: `Date.now()` Redundanz in `api-client.js` eliminiert.
-  - [x] **Mode-Fix**: Case-insensitiver Mode-Lookup in `app.js`.
-  - [x] **CSS-Fix**: ID-Sync für `#timer-bar` und Media-Query Korrektur.
-  - [x] **Cleanup**: Toter Code in `app.js` entfernen.
+- **Aufgabe**: Alle identifizierten Bugs (HMAC, Sync, Mode, CSS, Cleanup) wurden erfolgreich behoben und via `pnpm build` validiert.
+- **Status**: Erfolgreich abgeschlossen am 2026-07-09. Alle kritischen und funktionalen Mängel aus dem Audit behoben.
 
 ---
 
@@ -249,18 +245,12 @@
 - [x] **UI-Manager Erweiterung**: `launchConfetti` Methode in `scripts/ui-manager.js` implementiert.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Integration der neuen Abhängigkeiten durchgeführt.
 
-### Instanz 2026-07-09 (QA-Audit & Bug-Identifikation)
+### Instanz 2026-07-09 (QA-Audit & Bug-Fixing-Zyklus B2)
 - [x] **Repo-Cleanup**: Veraltete Build-Artefakte (`game-*.js`, `main-*.js`) aus `assets/` entfernt und `.gitignore` um entsprechende Pattern erweitert.
 - [x] **Audit-Reconciliation**: Manueller Abgleich der `manus.read` mit externem Analyse-Bericht durchgeführt.
-- [x] **Bug-Identifikation (Kritisch)**: HMAC-Secret Mismatch zwischen `app.js` (hardcoded) und `server.js` (env-var) bestätigt.
-- [x] **Bug-Identifikation (Kritisch)**: Doppelter `Date.now()` Call in `syncProfile` (`api-client.js`) bricht Signatur-Validierung serverseitig.
-- [x] **Bug-Identifikation (Hoch)**: Mode-Auswahl "TIME_ATTACK" funktionslos wegen Case-Mismatch (`toUpperCase()` vs. `timeAttack`).
-- [x] **Bug-Identifikation (Mittel)**: Timer-Bar unstyled wegen ID-Mismatch (`#timeline-bar` in CSS vs. `#timer-bar` in HTML).
-- [x] **Bug-Identifikation (Mittel)**: Timer-Badge vertikal versetzt bei 600px Breakpoint (fehlende Media-Query Regel).
-- [x] **Bug-Identifikation (Niedrig)**: Toter Fallback-Code für `#question-box` in `app.js`.
-- [x] **Auftragsliste-Update**: Identifizierte Bugs in die "AKTUELLE AUFTRAGSLISTE" aufgenommen.
 - [x] **Sync-Fix (B2.1)**: Doppelten `Date.now()` Call in `api-client.js` behoben, um Signatur-Validierung zu sichern.
 - [x] **Mode-Fix (B2.2)**: Case-insensitiver Mode-Lookup in `app.js` implementiert, um TIME_ATTACK Funktionalität wiederherzustellen.
 - [x] **CSS-Fix (B2.3)**: ID-Mismatch für `#timer-bar` behoben und vertikalen Versatz des Timer-Badges in Media-Queries korrigiert.
 - [x] **Cleanup (B2.4)**: Toter Fallback-Code für `#question-box` in `app.js` entfernt.
 - [x] **HMAC-Härtung (B2.5)**: HMAC-Payload Generierung in `app.js` korrigiert (Verwendung des korrekten `selectedMode` Strings statt `undefined.id`).
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Abschluss des B2-Zyklus durchgeführt.
