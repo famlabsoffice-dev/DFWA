@@ -325,9 +325,9 @@
 
 ### Instanz 2026-07-10 (Ausgiebiger Live-Test Zyklus - Planung)
 - [ ] **Test-Phase 1: Startbildschirm-Interaktion**
-    - [ ] `add-player-btn`: Codename-Eingabe und DOM-Update Verifikation.
-    - [ ] `category-modal-btn`: Modal-Öffnung und Kategoriewahl-Persistenz.
-    - [ ] `mode-btn`: Modus-Umschaltung (Classic, Time Attack, etc.) und State-Update.
+    - [x] `add-player-btn`: Codename-Eingabe und DOM-Update Verifikation.
+    - [x] `category-modal-btn`: Modal-Öffnung und Kategoriewahl-Persistenz.
+    - [x] `mode-btn`: Modus-Umschaltung (Classic, Time Attack, etc.) und State-Update.
 - [ ] **Test-Phase 2: Gameplay & Engine**
     - [ ] `start-btn`: Erfolgreicher Übergang zum `game-screen`.
     - [ ] `loadQuestions`: Korrektes Filtern und Shuffeln der Fragen.
