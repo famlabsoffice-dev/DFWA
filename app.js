@@ -92,6 +92,11 @@ function handleAddPlayer() {
     }
 }
 
+window.onerror = function(msg, url, lineNo, columnNo, error) {
+    console.log('CRITICAL_ERROR: ' + msg + ' at ' + url + ':' + lineNo);
+    return false;
+};
+
 function initStartScreen() {
     console.log("Initializing DFWA Core...");
     initPWAUpdate();
@@ -403,10 +408,12 @@ async function startGame(category) {
     const gameScreen = document.getElementById('game-screen');
     if (gameScreen) {
         gameScreen.classList.add('active');
-        gameScreen.style.display = 'flex';
-        gameScreen.style.opacity = '1';
-        gameScreen.style.visibility = 'visible';
+        gameScreen.setAttribute('style', 'display: flex !important; opacity: 1 !important; visibility: visible !important; z-index: 9999 !important;');
     }
+    
+    // Final UI Cleanup
+    const startScreen = document.getElementById('start-screen');
+    if (startScreen) startScreen.style.display = 'none';
     
     updateHUD();
     BattleManager.syncState({ score: state.score, streak: state.streak });

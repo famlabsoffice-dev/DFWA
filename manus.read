@@ -327,4 +327,5 @@
 - [x] **Server-Logik Fix**: `ReferenceError` im Express-Server behoben (`distPathForStatic` zu `distPath` korrigiert), um SPA-Fallback und Assets wiederherzustellen.
 - [x] **Test-Härtung**: CSP und Helmet temporär deaktiviert, um Blockaden durch Browser-Sicherheitsrichtlinien während der Live-Tests vollständig auszuschließen.
 - [x] **Interaktions-Härtung**: Button-Selector in `app.js` um Klassen-Check erweitert, um Spielstart auch bei ID-Konflikten zu garantieren.
+- [x] **Finaler UI-Fix**: `!important` Styles und explizite Screen-Deaktivierung in `startGame` hinzugefügt, um den Übergang zum Spielbildschirm unter allen Umständen zu erzwingen.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
