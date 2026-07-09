@@ -65,16 +65,22 @@ function updateNameDisplay() {
 }
 
 function handleAddPlayer() {
+    console.log("handleAddPlayer triggered");
     const input = document.getElementById('player-name');
     if (input) {
         const name = input.value.trim().toUpperCase();
+        console.log("Input name:", name);
         if (name) {
             state.playerName = name;
             localStorage.setItem('dfwa_player_name', state.playerName);
             updateNameDisplay();
-            // Trigger an immediate update for any potential display delays
+            
+            // Force DOM update
             const display = document.getElementById('player-display');
-            if (display) display.textContent = state.playerName;
+            if (display) {
+                display.textContent = state.playerName;
+                console.log("DOM updated with:", state.playerName);
+            }
             
             input.value = '';
             input.placeholder = "USER_REGISTERED";
@@ -101,8 +107,11 @@ function initStartScreen() {
 
     // Global Interaction Handler
     const handleGlobalClick = (e) => {
+        console.log("Global click on:", e.target);
         const target = e.target.closest('button');
         if (!target) return;
+        
+        console.log("Button target ID:", target.id);
 
         if ('vibrate' in navigator) navigator.vibrate(10);
         AudioManager.play('click');

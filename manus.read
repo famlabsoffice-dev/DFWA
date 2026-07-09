@@ -319,4 +319,5 @@
 - [x] **Test-Fix (Namenseingabe)**: Direkte DOM-Aktualisierung für `player-display` hinzugefügt, um UI-Sync-Verzögerungen zu beheben.
 - [x] **Event-Fix**: Globalen Klick-Handler von `document.body` auf `document` verschoben, um Event-Delegation-Probleme zu beheben.
 - [x] **Button-Fallback**: Explizite `onclick` Listener für Kern-Buttons (`add-player-btn`, `start-btn`, `category-modal-btn`) als Fallback zur globalen Delegation hinzugefügt.
+- [x] **Debug-Härtung**: Logging für Button-Events und Namensaktualisierung hinzugefügt, um reale Funktion besser tracken zu können.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
