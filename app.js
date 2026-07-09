@@ -667,4 +667,8 @@ function initPWAUpdate() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', initStartScreen);
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStartScreen);
+} else {
+    initStartScreen();
+}

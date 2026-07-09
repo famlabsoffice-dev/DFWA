@@ -323,4 +323,5 @@
 - [x] **Server-Härtung**: Statik-Serving im Express-Server aktiviert und CSP (Content Security Policy) für Inline-Styles und externe Medien (`actions.google.com`) gelockert.
 - [x] **Spielstart-Härtung**: `startGame` Logik um Fallbacks für Kategorien und explizite Sichtbarkeitssteuerung für den Screen-Wechsel erweitert.
 - [x] **PWA-Härtung**: Pfad zum `apple-touch-icon` korrigiert, um 404-Fehler im Manifest zu beheben.
+- [x] **Initialisierungs-Härtung**: `DOMContentLoaded` Logik verbessert, um sicherzustellen, dass `initStartScreen` auch bei bereits geladenem DOM ausgeführt wird.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
