@@ -309,8 +309,8 @@
 - [x] **Kontinuitäts-Check**: Alle in `manus.read` geforderten Standards (PWA, UI-Skalierung, HMAC) verifiziert und erhalten.
 
 ### Instanz 2026-07-10 (Startbildschirm-Buttons Fix-Zyklus)
-- [ ] **Strategie-Dokumentation**: Analyse von `style.css` und `app.js` zeigt potenzielle Klick-Blockaden durch `touch-action: none` und Z-Index Konflikte.
-- [ ] **Fix 1: Event-Härtung**: Radikale Umstellung auf direkte Event-Listener statt Delegation, um Shadow-DOM oder Layer-Blockaden zu umgehen.
-- [ ] **Fix 2: CSS-Layering**: Korrektur von `pointer-events` in Overlays und Erhöhung der Button-Z-Indizes.
-- [ ] **Fix 3: Mobile-UX**: Aktivierung von `touch-action: manipulation` für alle interaktiven Elemente zur Sicherstellung der Klick-Registrierung auf Mobile.
-- [ ] **Build-Validierung**: `pnpm build` zur Sicherstellung der Integrität.
+- [x] **Strategie-Dokumentation**: Analyse von `style.css` und `app.js` zeigt potenzielle Klick-Blockaden durch `touch-action: none` und Z-Index Konflikte.
+- [x] **Fix 1: Event-Härtung**: Radikale Umstellung auf direkte Event-Listener mit `preventDefault()` und `stopPropagation()` in `app.js`.
+- [x] **Fix 2: CSS-Layering**: Buttons auf `z-index: 100` und `position: relative` gesetzt; Overlays geprüft.
+- [x] **Fix 3: Mobile-UX**: `touch-action: manipulation` global und spezifisch für Buttons in `style.css` aktiviert.
+- [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.

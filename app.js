@@ -147,17 +147,51 @@ function initStartScreen() {
         }
     };
 
-    document.addEventListener('click', handleGlobalClick, { passive: false });
-    
-    // Explicit Fallback for Core Buttons
+    // RADICAL FIX: Use direct addEventListener on elements instead of delegation or onclick
     const addBtn = document.getElementById('add-player-btn');
-    if (addBtn) addBtn.onclick = handleAddPlayer;
+    if (addBtn) {
+        addBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("Add player clicked");
+            handleAddPlayer();
+        }, { passive: false });
+    }
     
     const startBtn = document.getElementById('start-btn');
-    if (startBtn) startBtn.onclick = () => startGame(state.selectedCategory);
+    if (startBtn) {
+        startBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("Start game clicked");
+            startGame(state.selectedCategory);
+        }, { passive: false });
+    }
     
     const catBtn = document.getElementById('category-modal-btn');
-    if (catBtn) catBtn.onclick = openCategoryModal;
+    if (catBtn) {
+        catBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("Category modal clicked");
+            openCategoryModal();
+        }, { passive: false });
+    }
+    
+    // Re-bind mode buttons directly
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const mode = btn.dataset.mode;
+            console.log("Mode clicked:", mode);
+            if (mode) {
+                document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                state.selectedMode = mode;
+            }
+        }, { passive: false });
+    });
 
     loadQuestions().then(allQuestions => {
         window.allQuestions = allQuestions;
