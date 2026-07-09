@@ -327,7 +327,10 @@ function openCategoryModal() {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
             btn.textContent = cat.toUpperCase();
-            btn.onclick = () => startGame(cat);
+            btn.onclick = (e) => {
+                e.stopPropagation();
+                startGame(cat);
+            };
             list.appendChild(btn);
         });
         overlay.style.display = 'flex';
