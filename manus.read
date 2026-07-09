@@ -275,3 +275,10 @@
 - [x] **UI-Manager Konsistenz**: `UIManager` (ui-manager.js) auf korrekte Element-Referenzen geprüft. Modale, Toasts und Profile-Views nutzen die konsistenten CSS-Variablen (`--neon`, `--cyber-blue`).
 - [x] **Responsive Layout Check**: `style.css` auf Mobile-Optimierungen geprüft. `touch-action: manipulation` und `-webkit-tap-highlight-color` für saubere Touch-Interaktion auf iOS/Android integriert.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich zur Verifizierung der Asset-Pfad-Integrität.
+
+### Instanz 2026-07-09 (Stufenweiser Voll-Test - Phase 3: Core-Logic & Game-Engine)
+- [x] **Game-Engine Audit**: `handleAnswer` und `showNextQuestion` (app.js) geprüft. Korrekte Punkteberechnung via `GameLogic.calculateScore` und Multiplikator-Anwendung aus `ModeConfig` bestätigt.
+- [x] **Timer-Präzision**: `startTimer` nutzt 100ms Intervalle für flüssige UI-Updates. `updateTimerUI` synchronisiert die `#timer-bar` Breite und den Text-Counter in Echtzeit.
+- [x] **Feedback-System**: `showFeedback` integriert visuelle (Eye-Images) und haptische (Vibration) Rückmeldung. `sabotage-overlay` Trigger bei Fehlern verifiziert.
+- [x] **Modus-Integrität**: `startGame` initialisiert Leben und Timer basierend auf `state.selectedMode`. Fallback auf `CLASSIC` via `ModeConfig` sichergestellt.
+- [x] **Build-Validierung**: `pnpm build` erfolgreich zur Sicherstellung der logischen Verkabelung.
