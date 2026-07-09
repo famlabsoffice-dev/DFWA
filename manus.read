@@ -311,3 +311,4 @@
 ### Instanz 2026-07-09 (Startbildschirm Fixes - Teil 1)
 - [x] **HTML-Bereinigung**: Doppelte Preload-Links für `ack_cyber_eye.webp` in `index.html` entfernt.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
+- [x] **UI-Härtung**: `z-index` für `stat-id` erhöht und Schriftgröße für `category-modal-btn` optimiert.
