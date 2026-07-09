@@ -329,9 +329,9 @@
     - [x] `category-modal-btn`: Modal-Öffnung und Kategoriewahl-Persistenz.
     - [x] `mode-btn`: Modus-Umschaltung (Classic, Time Attack, etc.) und State-Update.
 - [ ] **Test-Phase 2: Gameplay & Engine**
-    - [ ] `start-btn`: Erfolgreicher Übergang zum `game-screen`.
-    - [ ] `loadQuestions`: Korrektes Filtern und Shuffeln der Fragen.
-    - [ ] `Timer`: Präzision der 100ms Intervalle und UI-Synchronisation.
+    - [x] `start-btn`: Erfolgreicher Übergang zum `game-screen`.
+    - [x] `loadQuestions`: Korrektes Filtern und Shuffeln der Fragen.
+    - [x] `Timer`: Präzision der 100ms Intervalle und UI-Synchronisation.
 - [ ] **Test-Phase 3: Feedback & Abschluss**
     - [ ] `handleAnswer`: Korrekte Punkteberechnung und Streak-Logik.
     - [ ] `showFeedback`: Visuelle Rückmeldung und Sabotage-Trigger.
