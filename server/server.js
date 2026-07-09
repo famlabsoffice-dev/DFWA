@@ -46,12 +46,6 @@ if (SYSTEM_SECRET === 'LOCAL_ONLY_UNTRUSTED') {
 app.set('trust proxy', 1);
 
 // Middleware
-app.use(
-    helmet({
-    contentSecurityPolicy: false,
-    crossOriginEmbedderPolicy: false,
-  })
-);
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
