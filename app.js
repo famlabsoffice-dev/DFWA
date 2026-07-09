@@ -555,7 +555,7 @@ async function endGame() {
             state.score,
             0, // wins (placeholder)
             0, // losses (placeholder)
-            state.selectedMode.id,
+            state.selectedMode,
             state.secret
         );
         

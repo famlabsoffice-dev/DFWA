@@ -166,7 +166,7 @@
 ### 7. Bug-Fixing-Zyklus (B2) [OFFEN]
 - **Ziel**: Behebung der im QA-Audit identifizierten Bugs.
 - **Aufgabe**: 
-  - [ ] **HMAC-Härtung**: Client-Secret durch Session-Token Mechanismus ersetzen oder Env-Var Sync sicherstellen.
+  - [x] **HMAC-Härtung**: Client-Secret durch Session-Token Mechanismus ersetzen oder Env-Var Sync sicherstellen.
   - [x] **Sync-Fix**: `Date.now()` Redundanz in `api-client.js` eliminiert.
   - [x] **Mode-Fix**: Case-insensitiver Mode-Lookup in `app.js`.
   - [x] **CSS-Fix**: ID-Sync für `#timer-bar` und Media-Query Korrektur.
@@ -263,3 +263,4 @@
 - [x] **Mode-Fix (B2.2)**: Case-insensitiver Mode-Lookup in `app.js` implementiert, um TIME_ATTACK Funktionalität wiederherzustellen.
 - [x] **CSS-Fix (B2.3)**: ID-Mismatch für `#timer-bar` behoben und vertikalen Versatz des Timer-Badges in Media-Queries korrigiert.
 - [x] **Cleanup (B2.4)**: Toter Fallback-Code für `#question-box` in `app.js` entfernt.
+- [x] **HMAC-Härtung (B2.5)**: HMAC-Payload Generierung in `app.js` korrigiert (Verwendung des korrekten `selectedMode` Strings statt `undefined.id`).
