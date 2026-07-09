@@ -322,3 +322,17 @@
 - [x] **Build-Validierung**: `pnpm install` und `pnpm build` erfolgreich durchgeführt. Alle Assets korrekt generiert.
 - [x] **Git-Push**: Änderungen committed und gepusht. Commit: `0bd990b` mit Nachricht "CRITICAL_FIX: Z-Index Bug beheben".
 - [x] **Ergebnis**: Buttons sind jetzt klickbar. Der Bug war rein CSS-basiert und nicht event-listener-basiert. Alle bisherigen Event-Listener-Fixes waren unnötig, aber die CSS-Hierarchie war das echte Problem.
+
+### Instanz 2026-07-10 (Ausgiebiger Live-Test Zyklus - Planung)
+- [ ] **Test-Phase 1: Startbildschirm-Interaktion**
+    - [ ] `add-player-btn`: Codename-Eingabe und DOM-Update Verifikation.
+    - [ ] `category-modal-btn`: Modal-Öffnung und Kategoriewahl-Persistenz.
+    - [ ] `mode-btn`: Modus-Umschaltung (Classic, Time Attack, etc.) und State-Update.
+- [ ] **Test-Phase 2: Gameplay & Engine**
+    - [ ] `start-btn`: Erfolgreicher Übergang zum `game-screen`.
+    - [ ] `loadQuestions`: Korrektes Filtern und Shuffeln der Fragen.
+    - [ ] `Timer`: Präzision der 100ms Intervalle und UI-Synchronisation.
+- [ ] **Test-Phase 3: Feedback & Abschluss**
+    - [ ] `handleAnswer`: Korrekte Punkteberechnung und Streak-Logik.
+    - [ ] `showFeedback`: Visuelle Rückmeldung und Sabotage-Trigger.
+    - [ ] `endGame`: HMAC-Generierung, Secure Storage und Leaderboard-Sync.
