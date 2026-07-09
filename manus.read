@@ -313,4 +313,5 @@
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
 - [x] **UI-Härtung**: `z-index` für `stat-id` erhöht und Schriftgröße für `category-modal-btn` optimiert.
 - [x] **Event-Härtung**: `pointerup` Listener entfernt, um Double-Tap Bugs auf Mobile zu verhindern; `click` Handler auf `{ passive: false }` gesetzt.
+- [x] **Logik-Fix**: `start-btn` startet nun direkt das Spiel statt das Kategorie-Modal zu öffnen.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.

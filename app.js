@@ -103,7 +103,9 @@ function initStartScreen() {
         if ('vibrate' in navigator) navigator.vibrate(10);
         AudioManager.play('click');
 
-        if (target.id === 'category-modal-btn' || target.id === 'start-btn') {
+        if (target.id === 'start-btn') {
+            startGame(state.selectedCategory);
+        } else if (target.id === 'category-modal-btn') {
             openCategoryModal();
         } else if (target.id === 'add-player-btn') {
             handleAddPlayer();
