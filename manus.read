@@ -320,4 +320,5 @@
 - [x] **Event-Fix**: Globalen Klick-Handler von `document.body` auf `document` verschoben, um Event-Delegation-Probleme zu beheben.
 - [x] **Button-Fallback**: Explizite `onclick` Listener für Kern-Buttons (`add-player-btn`, `start-btn`, `category-modal-btn`) als Fallback zur globalen Delegation hinzugefügt.
 - [x] **Debug-Härtung**: Logging für Button-Events und Namensaktualisierung hinzugefügt, um reale Funktion besser tracken zu können.
+- [x] **Server-Härtung**: Statik-Serving im Express-Server aktiviert und CSP (Content Security Policy) für Inline-Styles und externe Medien (`actions.google.com`) gelockert.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.

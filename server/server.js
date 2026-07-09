@@ -47,14 +47,15 @@ app.set('trust proxy', 1);
 
 // Middleware
 app.use(
-  helmet({
+    helmet({
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'"],
-        styleSrc: ["'self'", 'https://fonts.googleapis.com'],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
         fontSrc: ["'self'", 'https://fonts.gstatic.com'],
         imgSrc: ["'self'", 'data:', 'https://*'],
+        mediaSrc: ["'self'", 'https://actions.google.com'],
         connectSrc: ["'self'"],
         frameAncestors: ["'none'"],
         upgradeInsecureRequests: [],
@@ -114,10 +115,9 @@ const adminLimiter = rateLimit({
 });
 app.use('/api/admin/', adminLimiter);
 // Statische Dateien aus dem Vite-Build-Output (dist/) servieren
-// Fallback auf Root-Verzeichnis falls dist/ nicht existiert (Entwicklung)
-// const distPath = join(__dirname, '..', 'dist');
-// const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
-  // app.use(express.static(staticPath));
+const distPath = join(__dirname, '..', 'dist');
+const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
+app.use(express.static(staticPath));
 
 // Database setup
 const dbPath = join(__dirname, 'leaderboard.db');
