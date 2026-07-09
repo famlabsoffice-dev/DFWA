@@ -114,11 +114,6 @@ const adminLimiter = rateLimit({
   },
 });
 app.use('/api/admin/', adminLimiter);
-// Statische Dateien aus dem Vite-Build-Output (dist/) servieren
-const distPath = join(__dirname, '..', 'dist');
-const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
-app.use(express.static(staticPath));
-
 // Database setup
 const dbPath = join(__dirname, 'leaderboard.db');
 const db = new sqlite3.Database(dbPath, (err) => {
@@ -386,9 +381,10 @@ app.post('/api/leaderboard', (req, res) => {
   });
 });
 
-// Statische Dateien und SPA-Fallback erst NACH den API-Routen
-  const distPathForStatic = join(__dirname, '..', 'dist');
-  app.use(express.static(distPathForStatic));
+// Statische Dateien aus dem Vite-Build-Output (dist/) servieren
+const distPath = join(__dirname, '..', 'dist');
+const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
+app.use(express.static(staticPath));
 
 app.post('/api/challenge/verify', (req, res) => {
   const { code } = req.body;
@@ -662,7 +658,7 @@ app.get('/share/:playerId', (req, res) => {
 
 // SPA-Fallback: Alle nicht-API-Routen auf index.html weiterleiten
 app.get(/^\/(?!api).*/, (req, res) => {
-  const indexPath = join(distPathForStatic, 'index.html');
+  const indexPath = join(distPath, 'index.html');
   res.sendFile(indexPath);
 });
 
