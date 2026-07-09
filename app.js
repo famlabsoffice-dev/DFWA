@@ -359,26 +359,51 @@ function openCategoryModal() {
 }
 
 async function startGame(category) {
-    state.selectedCategory = category;
-    if (!window.allQuestions) {
+    console.log("startGame initiated for category:", category);
+    state.selectedCategory = category || 'Gegenteil';
+    
+    if (!window.allQuestions || window.allQuestions.length === 0) {
+        console.log("Questions not loaded, loading now...");
         window.allQuestions = await loadQuestions();
     }
     
-    state.questions = GameLogic.shuffle(
-        window.allQuestions.filter(q => q.cat === category),
-        state.seed
-    );
+    const filtered = window.allQuestions.filter(q => q.cat === state.selectedCategory);
+    console.log(`Filtered questions count: ${filtered.length}`);
+    
+    if (filtered.length === 0) {
+        console.warn("No questions found for category, falling back to first available.");
+        state.selectedCategory = state.availableCategories[0] || 'Gegenteil';
+        state.questions = GameLogic.shuffle(
+            window.allQuestions.filter(q => q.cat === state.selectedCategory),
+            state.seed
+        );
+    } else {
+        state.questions = GameLogic.shuffle(filtered, state.seed);
+    }
 
-    const config = ModeConfig[state.selectedMode];
+    const config = ModeConfig[state.selectedMode] || ModeConfig[GameModes.CLASSIC];
     state.lives = config.initialLives;
     state.timer = config.initialTimer;
     state.score = 0;
     state.streak = 0;
     state.currentQuestionIndex = 0;
 
-    document.getElementById('modal-overlay').style.display = 'none';
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('game-screen').classList.add('active');
+    console.log("Switching to game-screen...");
+    const modal = document.getElementById('modal-overlay');
+    if (modal) modal.style.display = 'none';
+    
+    document.querySelectorAll('.screen').forEach(s => {
+        s.classList.remove('active');
+        s.style.display = 'none';
+    });
+    
+    const gameScreen = document.getElementById('game-screen');
+    if (gameScreen) {
+        gameScreen.classList.add('active');
+        gameScreen.style.display = 'flex';
+        gameScreen.style.opacity = '1';
+        gameScreen.style.visibility = 'visible';
+    }
     
     updateHUD();
     BattleManager.syncState({ score: state.score, streak: state.streak });

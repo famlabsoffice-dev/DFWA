@@ -321,4 +321,5 @@
 - [x] **Button-Fallback**: Explizite `onclick` Listener für Kern-Buttons (`add-player-btn`, `start-btn`, `category-modal-btn`) als Fallback zur globalen Delegation hinzugefügt.
 - [x] **Debug-Härtung**: Logging für Button-Events und Namensaktualisierung hinzugefügt, um reale Funktion besser tracken zu können.
 - [x] **Server-Härtung**: Statik-Serving im Express-Server aktiviert und CSP (Content Security Policy) für Inline-Styles und externe Medien (`actions.google.com`) gelockert.
+- [x] **Spielstart-Härtung**: `startGame` Logik um Fallbacks für Kategorien und explizite Sichtbarkeitssteuerung für den Screen-Wechsel erweitert.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
