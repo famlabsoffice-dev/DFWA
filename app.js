@@ -72,6 +72,10 @@ function handleAddPlayer() {
             state.playerName = name;
             localStorage.setItem('dfwa_player_name', state.playerName);
             updateNameDisplay();
+            // Trigger an immediate update for any potential display delays
+            const display = document.getElementById('player-display');
+            if (display) display.textContent = state.playerName;
+            
             input.value = '';
             input.placeholder = "USER_REGISTERED";
             setTimeout(() => { input.placeholder = "ENTER_CODENAME"; }, 1500);
