@@ -169,7 +169,7 @@
   - [ ] **HMAC-Härtung**: Client-Secret durch Session-Token Mechanismus ersetzen oder Env-Var Sync sicherstellen.
   - [x] **Sync-Fix**: `Date.now()` Redundanz in `api-client.js` eliminiert.
   - [x] **Mode-Fix**: Case-insensitiver Mode-Lookup in `app.js`.
-  - [ ] **CSS-Fix**: ID-Sync für `#timer-bar` und Media-Query Korrektur.
+  - [x] **CSS-Fix**: ID-Sync für `#timer-bar` und Media-Query Korrektur.
   - [ ] **Cleanup**: Toter Code in `app.js` entfernen.
 
 ---
@@ -261,3 +261,4 @@
 - [x] **Auftragsliste-Update**: Identifizierte Bugs in die "AKTUELLE AUFTRAGSLISTE" aufgenommen.
 - [x] **Sync-Fix (B2.1)**: Doppelten `Date.now()` Call in `api-client.js` behoben, um Signatur-Validierung zu sichern.
 - [x] **Mode-Fix (B2.2)**: Case-insensitiver Mode-Lookup in `app.js` implementiert, um TIME_ATTACK Funktionalität wiederherzustellen.
+- [x] **CSS-Fix (B2.3)**: ID-Mismatch für `#timer-bar` behoben und vertikalen Versatz des Timer-Badges in Media-Queries korrigiert.
