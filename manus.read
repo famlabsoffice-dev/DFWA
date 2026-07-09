@@ -315,4 +315,5 @@
 - [x] **Event-Härtung**: `pointerup` Listener entfernt, um Double-Tap Bugs auf Mobile zu verhindern; `click` Handler auf `{ passive: false }` gesetzt.
 - [x] **Logik-Fix**: `start-btn` startet nun direkt das Spiel statt das Kategorie-Modal zu öffnen.
 - [x] **Modal-Härtung**: `stopPropagation` in Kategorie-Buttons hinzugefügt, um Konflikte mit dem globalen Handler zu vermeiden.
+- [x] **CSS-Visibility Fix**: Explizite Inline-Styles für den Startbildschirm hinzugefügt, um Initialisierungs-Glitch zu verhindern.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
