@@ -285,7 +285,14 @@
 
 ### Instanz 2026-07-09 (Stufenweiser Voll-Test - Phase 4: Backend-Sync & Persistenz)
 - [x] **HMAC-Integrität**: `GameLogic.generateAuthPayload` (scripts/game-logic.js) und `server.js` (POST /api/leaderboard) auf Protokoll-Gleichheit geprüft. Replay-Schutz (30s Window) serverseitig verifiziert.
-- [x] **Persistenz-Audit**: `StorageManager` (scripts/storage.js) verifiziert. `saveSecure` und `validateIntegrity` nutzen HMAC-Signaturen im LocalStorage zur Manipulationserkennung.
+- [x] **Persistenz-Audit**: `StorageManager` (scripts/storage.js) verifiziert. `saveSecure` von Achievements und Highscores via HMAC-Signaturen im LocalStorage bestätigt.
 - [x] **Profil-Sync Flow**: `syncProfile` (scripts/api-client.js) und `server.js` (POST /api/profile/sync) geprüft. Korrekte Daten-Struktur (inkl. Achievements) und HMAC-Validierung bestätigt.
 - [x] **Leaderboard-Logik**: `fetchLeaderboard` (scripts/api-client.js) nutzt `variant` und `mode` Parameter. Offline-Fallback via `localStorage` verifiziert.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich zur Sicherstellung der Datenfluss-Integrität.
+
+### Instanz 2026-07-09 (Stufenweiser Voll-Test - Phase 5: Multiplayer & Real-Time Sync)
+- [x] **Socket-Flow Verifikation**: `BattleManager` (scripts/battle-manager.js) und `battleSync.js` (server) auf Event-Integrität geprüft. `join_battle`, `sync_state` und `battle_action` korrekt verdrahtet.
+- [x] **Sabotage-Mechanik**: Trigger-Logik in `app.js` (5er Streak) und Empfänger-Logik in `BattleManager.handleSabotage` verifiziert. Custom-Event `sabotage_timer` korrekt an UI gebunden.
+- [x] **Challenge-Code Integrität**: `GameLogic.generateChallengeCode` erstellt verifizierbare HMAC-Signaturen. Server-Endpunkt `/api/challenge/verify` bestätigt die Integrität und den Replay-Schutz (24h).
+- [x] **RTT & Latenz-Monitoring**: `startPing` und `updateLatencyUI` (battle-manager.js) sorgen für Echtzeit-Feedback der Verbindungsqualität.
+- [x] **Build-Validierung**: `pnpm build` erfolgreich zur Sicherstellung der Echtzeit-Verkabelung.
