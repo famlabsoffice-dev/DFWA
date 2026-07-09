@@ -117,10 +117,13 @@ function initStartScreen() {
         AudioManager.play('click');
 
         if (target.id === 'start-btn') {
+            console.log("Start button clicked, calling startGame...");
             startGame(state.selectedCategory);
         } else if (target.id === 'category-modal-btn') {
+            console.log("Category modal button clicked, calling openCategoryModal...");
             openCategoryModal();
         } else if (target.id === 'add-player-btn') {
+            console.log("Add player button clicked, calling handleAddPlayer...");
             handleAddPlayer();
         } else if (target.id === 'close-system-btn' || target.id === 'modal-close-btn') {
             document.getElementById('modal-overlay').style.display = 'none';

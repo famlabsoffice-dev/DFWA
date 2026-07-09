@@ -322,4 +322,5 @@
 - [x] **Debug-Härtung**: Logging für Button-Events und Namensaktualisierung hinzugefügt, um reale Funktion besser tracken zu können.
 - [x] **Server-Härtung**: Statik-Serving im Express-Server aktiviert und CSP (Content Security Policy) für Inline-Styles und externe Medien (`actions.google.com`) gelockert.
 - [x] **Spielstart-Härtung**: `startGame` Logik um Fallbacks für Kategorien und explizite Sichtbarkeitssteuerung für den Screen-Wechsel erweitert.
+- [x] **PWA-Härtung**: Pfad zum `apple-touch-icon` korrigiert, um 404-Fehler im Manifest zu beheben.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
