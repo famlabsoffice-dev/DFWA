@@ -116,9 +116,9 @@ function initStartScreen() {
                 target.classList.add('active');
             }
             
-            const modeKey = target.dataset.mode.toUpperCase();
-            if (GameModes[modeKey]) {
-                state.selectedMode = GameModes[modeKey];
+            const modeValue = target.dataset.mode;
+            if (Object.values(GameModes).includes(modeValue)) {
+                state.selectedMode = modeValue;
                 console.log("Mode selected:", state.selectedMode);
             }
         }
