@@ -170,7 +170,7 @@
   - [x] **Sync-Fix**: `Date.now()` Redundanz in `api-client.js` eliminiert.
   - [x] **Mode-Fix**: Case-insensitiver Mode-Lookup in `app.js`.
   - [x] **CSS-Fix**: ID-Sync für `#timer-bar` und Media-Query Korrektur.
-  - [ ] **Cleanup**: Toter Code in `app.js` entfernen.
+  - [x] **Cleanup**: Toter Code in `app.js` entfernen.
 
 ---
 
@@ -262,3 +262,4 @@
 - [x] **Sync-Fix (B2.1)**: Doppelten `Date.now()` Call in `api-client.js` behoben, um Signatur-Validierung zu sichern.
 - [x] **Mode-Fix (B2.2)**: Case-insensitiver Mode-Lookup in `app.js` implementiert, um TIME_ATTACK Funktionalität wiederherzustellen.
 - [x] **CSS-Fix (B2.3)**: ID-Mismatch für `#timer-bar` behoben und vertikalen Versatz des Timer-Badges in Media-Queries korrigiert.
+- [x] **Cleanup (B2.4)**: Toter Fallback-Code für `#question-box` in `app.js` entfernt.

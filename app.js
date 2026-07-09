@@ -375,7 +375,7 @@ function showNextQuestion() {
 
     const q = state.questions[state.currentQuestionIndex];
     const catDisplay = document.getElementById('cat-display');
-    const questionText = document.getElementById('question-box') || document.getElementById('question-text');
+    const questionText = document.getElementById('question-text');
     const optionsContainer = document.getElementById('options-container');
 
     if (catDisplay) catDisplay.textContent = `SECTOR: ${state.selectedCategory.toUpperCase()}`;
