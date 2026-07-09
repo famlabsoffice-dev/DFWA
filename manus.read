@@ -308,24 +308,9 @@
 - [x] **Test-Validierung**: Alle 36 Tests (inkl. Multiplayer-Regression und Integration-Tests) erfolgreich bestanden.
 - [x] **Kontinuitäts-Check**: Alle in `manus.read` geforderten Standards (PWA, UI-Skalierung, HMAC) verifiziert und erhalten.
 
-### Instanz 2026-07-09 (Startbildschirm Fixes - Teil 1)
-- [x] **HTML-Bereinigung**: Doppelte Preload-Links für `ack_cyber_eye.webp` in `index.html` entfernt.
-- [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
-- [x] **UI-Härtung**: `z-index` für `stat-id` erhöht und Schriftgröße für `category-modal-btn` optimiert.
-- [x] **Event-Härtung**: `pointerup` Listener entfernt, um Double-Tap Bugs auf Mobile zu verhindern; `click` Handler auf `{ passive: false }` gesetzt.
-- [x] **Logik-Fix**: `start-btn` startet nun direkt das Spiel statt das Kategorie-Modal zu öffnen.
-- [x] **Modal-Härtung**: `stopPropagation` in Kategorie-Buttons hinzugefügt, um Konflikte mit dem globalen Handler zu vermeiden.
-- [x] **CSS-Visibility Fix**: Explizite Inline-Styles für den Startbildschirm hinzugefügt, um Initialisierungs-Glitch zu verhindern.
-- [x] **Test-Fix (Namenseingabe)**: Direkte DOM-Aktualisierung für `player-display` hinzugefügt, um UI-Sync-Verzögerungen zu beheben.
-- [x] **Event-Fix**: Globalen Klick-Handler von `document.body` auf `document` verschoben, um Event-Delegation-Probleme zu beheben.
-- [x] **Button-Fallback**: Explizite `onclick` Listener für Kern-Buttons (`add-player-btn`, `start-btn`, `category-modal-btn`) als Fallback zur globalen Delegation hinzugefügt.
-- [x] **Debug-Härtung**: Logging für Button-Events und Namensaktualisierung hinzugefügt, um reale Funktion besser tracken zu können.
-- [x] **Server-Härtung**: Statik-Serving im Express-Server aktiviert und CSP (Content Security Policy) für Inline-Styles und externe Medien (`actions.google.com`) gelockert.
-- [x] **Spielstart-Härtung**: `startGame` Logik um Fallbacks für Kategorien und explizite Sichtbarkeitssteuerung für den Screen-Wechsel erweitert.
-- [x] **PWA-Härtung**: Pfad zum `apple-touch-icon` korrigiert, um 404-Fehler im Manifest zu beheben.
-- [x] **Initialisierungs-Härtung**: `DOMContentLoaded` Logik verbessert, um sicherzustellen, dass `initStartScreen` auch bei bereits geladenem DOM ausgeführt wird.
-- [x] **Server-Logik Fix**: `ReferenceError` im Express-Server behoben (`distPathForStatic` zu `distPath` korrigiert), um SPA-Fallback und Assets wiederherzustellen.
-- [x] **Test-Härtung**: CSP und Helmet temporär deaktiviert, um Blockaden durch Browser-Sicherheitsrichtlinien während der Live-Tests vollständig auszuschließen.
-- [x] **Interaktions-Härtung**: Button-Selector in `app.js` um Klassen-Check erweitert, um Spielstart auch bei ID-Konflikten zu garantieren.
-- [x] **Finaler UI-Fix**: `!important` Styles und explizite Screen-Deaktivierung in `startGame` hinzugefügt, um den Übergang zum Spielbildschirm unter allen Umständen zu erzwingen.
-- [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
+### Instanz 2026-07-10 (Startbildschirm-Buttons Fix-Zyklus)
+- [ ] **Strategie-Dokumentation**: Analyse von `style.css` und `app.js` zeigt potenzielle Klick-Blockaden durch `touch-action: none` und Z-Index Konflikte.
+- [ ] **Fix 1: Event-Härtung**: Radikale Umstellung auf direkte Event-Listener statt Delegation, um Shadow-DOM oder Layer-Blockaden zu umgehen.
+- [ ] **Fix 2: CSS-Layering**: Korrektur von `pointer-events` in Overlays und Erhöhung der Button-Z-Indizes.
+- [ ] **Fix 3: Mobile-UX**: Aktivierung von `touch-action: manipulation` für alle interaktiven Elemente zur Sicherstellung der Klick-Registrierung auf Mobile.
+- [ ] **Build-Validierung**: `pnpm build` zur Sicherstellung der Integrität.
