@@ -254,3 +254,10 @@
 - [x] **Cleanup (B2.4)**: Toter Fallback-Code für `#question-box` in `app.js` entfernt.
 - [x] **HMAC-Härtung (B2.5)**: HMAC-Payload Generierung in `app.js` korrigiert (Verwendung des korrekten `selectedMode` Strings statt `undefined.id`).
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach Abschluss des B2-Zyklus durchgeführt.
+
+### Instanz 2026-07-09 (Multiplayer Regression & QA)
+- [x] **Regression-Tests**: Dedizierte Test-Suite `tests/multiplayer-regression.test.js` erstellt und erfolgreich ausgeführt.
+- [x] **Challenge-Code Validierung**: Signatur-Integrität und Replay-Schutz (Timestamp) für Challenge-Codes verifiziert.
+- [x] **Auth-Payload Audit**: Korrektheit der HMAC-Generierung für Leaderboard-Submissions über alle Modi hinweg bestätigt.
+- [x] **Socket-Flow Analyse**: Battle-Sync-Protokoll (Lobby, Actions, Sabotage) auf Konsistenz zwischen Client (`BattleManager`) und Server (`battleSync.js`) geprüft.
+- [x] **Build-Success**: Projekt-Integrität via `pnpm build` erneut bestätigt.
