@@ -307,3 +307,7 @@
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Verifizierung der Code-Integrität durchgeführt.
 - [x] **Test-Validierung**: Alle 36 Tests (inkl. Multiplayer-Regression und Integration-Tests) erfolgreich bestanden.
 - [x] **Kontinuitäts-Check**: Alle in `manus.read` geforderten Standards (PWA, UI-Skalierung, HMAC) verifiziert und erhalten.
+
+### Instanz 2026-07-09 (Startbildschirm Fixes - Teil 1)
+- [x] **HTML-Bereinigung**: Doppelte Preload-Links für `ack_cyber_eye.webp` in `index.html` entfernt.
+- [x] **Build-Validierung**: `pnpm build` erfolgreich durchgeführt.
