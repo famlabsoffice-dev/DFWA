@@ -116,8 +116,8 @@ function initStartScreen() {
         if ('vibrate' in navigator) navigator.vibrate(10);
         AudioManager.play('click');
 
-        if (target.id === 'start-btn') {
-            console.log("Start button clicked, calling startGame...");
+        if (target.id === 'start-btn' || target.classList.contains('start-btn')) {
+            console.log("CRITICAL_LOG: Start button clicked, calling startGame...");
             startGame(state.selectedCategory);
         } else if (target.id === 'category-modal-btn') {
             console.log("Category modal button clicked, calling openCategoryModal...");
@@ -362,7 +362,7 @@ function openCategoryModal() {
 }
 
 async function startGame(category) {
-    console.log("startGame initiated for category:", category);
+    console.log("CRITICAL_LOG: startGame initiated for category:", category);
     state.selectedCategory = category || 'Gegenteil';
     
     if (!window.allQuestions || window.allQuestions.length === 0) {
