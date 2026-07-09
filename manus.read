@@ -167,7 +167,7 @@
 - **Ziel**: Behebung der im QA-Audit identifizierten Bugs.
 - **Aufgabe**: 
   - [ ] **HMAC-Härtung**: Client-Secret durch Session-Token Mechanismus ersetzen oder Env-Var Sync sicherstellen.
-  - [ ] **Sync-Fix**: `Date.now()` Redundanz in `api-client.js` eliminieren.
+  - [x] **Sync-Fix**: `Date.now()` Redundanz in `api-client.js` eliminiert.
   - [ ] **Mode-Fix**: Case-insensitiver Mode-Lookup in `app.js`.
   - [ ] **CSS-Fix**: ID-Sync für `#timer-bar` und Media-Query Korrektur.
   - [ ] **Cleanup**: Toter Code in `app.js` entfernen.
@@ -259,3 +259,4 @@
 - [x] **Bug-Identifikation (Mittel)**: Timer-Badge vertikal versetzt bei 600px Breakpoint (fehlende Media-Query Regel).
 - [x] **Bug-Identifikation (Niedrig)**: Toter Fallback-Code für `#question-box` in `app.js`.
 - [x] **Auftragsliste-Update**: Identifizierte Bugs in die "AKTUELLE AUFTRAGSLISTE" aufgenommen.
+- [x] **Sync-Fix (B2.1)**: Doppelten `Date.now()` Call in `api-client.js` behoben, um Signatur-Validierung zu sichern.

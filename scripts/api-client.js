@@ -139,16 +139,17 @@ export const APIClient = {
   },
   async syncProfile(baseUrl, profileData, secret) {
     try {
+      const ts = Date.now();
       const msg = JSON.stringify({
         playerId: profileData.playerId,
-        ts: Date.now(),
+        ts,
         data: profileData
       });
       const auth = await this.generateHMAC(msg, secret);
       const res = await fetch(`${baseUrl}/api/profile/sync`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...profileData, auth, ts: Date.now() }),
+        body: JSON.stringify({ ...profileData, auth, ts }),
       });
       return res.ok;
     } catch (e) {
