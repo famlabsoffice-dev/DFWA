@@ -192,8 +192,8 @@ function initStartScreen() {
 
     const updateFriends = async () => {
         const friends = await APIClient.fetchFriends(window.location.origin, playerId);
-        UIManager.renderFriendsList(friendsListContainer, friends, (friendId) => {
-            const challengeCode = BattleManager.createChallenge();
+        UIManager.renderFriendsList(friendsListContainer, friends, async (friendId) => {
+            const challengeCode = await BattleManager.createChallenge();
             UIManager.showToast(`INVITE_SENT_TO: ${friendId}`, "info");
             // In a real scenario, we would send a socket message or notification here
             // For now, we just populate the challenge code
@@ -244,12 +244,12 @@ function initStartScreen() {
     const startChallengeBtn = document.getElementById('start-challenge-btn');
     const challengeInput = document.getElementById('challenge-code-input');
     if (startChallengeBtn && challengeInput) {
-        startChallengeBtn.onclick = () => {
+        startChallengeBtn.onclick = async () => {
             const code = challengeInput.value.trim().toUpperCase();
             if (code) {
                 BattleManager.joinBattle(code);
             } else {
-                const newCode = BattleManager.createChallenge();
+                const newCode = await BattleManager.createChallenge();
                 challengeInput.value = newCode;
                 UIManager.showToast(`CHALLENGE_CREATED: ${newCode}`, "warning");
             }

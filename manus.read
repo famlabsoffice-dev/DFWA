@@ -301,3 +301,9 @@
 - [x] **Challenge-Code Integrität**: `GameLogic.generateChallengeCode` erstellt verifizierbare HMAC-Signaturen. Server-Endpunkt `/api/challenge/verify` bestätigt die Integrität und den Replay-Schutz (24h).
 - [x] **RTT & Latenz-Monitoring**: `startPing` und `updateLatencyUI` (battle-manager.js) sorgen für Echtzeit-Feedback der Verbindungsqualität.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich zur Sicherstellung der Echtzeit-Verkabelung.
+
+### Instanz 2026-07-09 (System-Härtung & Async-Fixes)
+- [x] **Async-Härtung**: Fehlende `await` Schlüsselwörter bei `BattleManager.createChallenge()` Aufrufen in `app.js` (Social-Integration & Challenge-Button) ergänzt.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Verifizierung der Code-Integrität durchgeführt.
+- [x] **Test-Validierung**: Alle 36 Tests (inkl. Multiplayer-Regression und Integration-Tests) erfolgreich bestanden.
+- [x] **Kontinuitäts-Check**: Alle in `manus.read` geforderten Standards (PWA, UI-Skalierung, HMAC) verifiziert und erhalten.
