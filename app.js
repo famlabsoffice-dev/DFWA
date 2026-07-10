@@ -51,13 +51,21 @@ function initStartScreen() {
     updateNameDisplay();
 
     // Härtung der Event-Listener für Mobile/Touch
+    let lastInteractionTime = 0;
     const handleInteraction = (e) => {
+        // Verhindere Ghost-Clicks und Double-Taps (300ms Threshold)
+        const now = Date.now();
+        if (now - lastInteractionTime < 300) return;
+        lastInteractionTime = now;
+
         const target = e.target.closest('button');
         if (!target) return;
 
+        // Verhindere Standard-Event-Propagation
+        if (e.cancelable) e.preventDefault();
+
         console.log(`Interaction detected on: ${target.id || 'anonymous button'}`);
         
-        // Vibration für haptisches Feedback bei jedem Button-Klick
         if ('vibrate' in navigator) navigator.vibrate(10);
 
         if (target.id === 'category-modal-btn') {
@@ -69,22 +77,21 @@ function initStartScreen() {
         } else if (target.id === 'close-system-btn') {
             const overlay = document.getElementById('modal-overlay');
             if (overlay) overlay.style.display = 'none';
-            // Härtung: Alle Screens explizit deaktivieren
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             document.getElementById('start-screen').classList.add('active');
         }
     };
 
-    // Nutze sowohl 'pointerup' als auch 'click' für maximale Kompatibilität
-    document.body.addEventListener('pointerup', (e) => {
-        // Verhindere Doppel-Trigger, wenn click auch gefeuert wird
+    // Nutze 'pointerdown' für schnellste Reaktion auf Mobile, 'click' als stabilen Fallback
+    document.body.addEventListener('pointerdown', (e) => {
         if (e.pointerType === 'touch' || e.pointerType === 'mouse') {
             handleInteraction(e);
         }
-    });
+    }, { passive: false });
 
-    // Fallback für Browser ohne PointerEvents
+    // Fallback für Umgebungen ohne PointerEvents
     if (!window.PointerEvent) {
+        document.body.addEventListener('touchstart', handleInteraction, { passive: false });
         document.body.addEventListener('click', handleInteraction);
     }
 
@@ -169,7 +176,6 @@ function showCategoryModal() {
             if (cat === state.selectedCategory) btn.classList.add('active');
             btn.innerHTML = `<strong>${cat.toUpperCase()}</strong><small>DATA_SECTOR_${cat.slice(0,3).toUpperCase()}</small>`;
             
-            // Beschleunigte Auswahl für Mobile
             const selectCat = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
@@ -180,7 +186,8 @@ function showCategoryModal() {
                 if ('vibrate' in navigator) navigator.vibrate(20);
             };
             
-            btn.addEventListener('pointerup', selectCat);
+            // Verwende nur 'click' innerhalb des Modals, da der globale Listener bereits auf Body liegt
+            // und wir hier eine isolierte Auswahl benötigen.
             btn.addEventListener('click', selectCat);
             list.appendChild(btn);
         });

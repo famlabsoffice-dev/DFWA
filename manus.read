@@ -46,6 +46,9 @@
 - [x] **Multiplayer-Härtung (G1)**: `generateChallengeCode` als asynchrone Methode in `GameLogic` (scripts/game-logic.js) implementiert, inklusive HMAC-Signierung (SHA-256) und Base64-Encoding.
 - [x] **Test-Validierung**: Dedizierte Tests in `tests/game-logic.test.js` erfolgreich bestanden. Integration-Tests nach `pnpm build` ebenfalls erfolgreich verifiziert.
 - [x] **Instanz-Sicherung**: Änderungen gespeichert, validiert und für Kontinuität dokumentiert.
+- [x] **Interaktions-Härtung (B3)**: Globaler Event-Listener in `app.js` auf `pointerdown` umgestellt für schnellste Reaktion. Ghost-Click Schutz (300ms Threshold) und `preventDefault()` zur Unterdrückung von Browser-Standardverhalten bei Touch integriert.
+- [x] **Kategorie-Fix (B3.1)**: Event-Inkonsistenz im Kategorie-Modal durch Entkopplung vom globalen Listener behoben. Auswahl reagiert nun präzise ohne Doppel-Trigger.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` und Integrationstests bestätigen die Stabilität der neuen Interaktions-Logik.
 
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
 - [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.
