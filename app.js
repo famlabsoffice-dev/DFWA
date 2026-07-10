@@ -74,6 +74,10 @@ function initStartScreen() {
             handleAddPlayer();
         } else if (target.id === 'start-btn') {
             startGame();
+        } else if (target.id === 'show-lobby-btn') {
+            showLobby();
+        } else if (target.id === 'hide-lobby-btn') {
+            hideLobby();
         } else if (target.id === 'close-system-btn') {
             const overlay = document.getElementById('modal-overlay');
             if (overlay) overlay.style.display = 'none';
@@ -207,7 +211,10 @@ function startGame() {
         return;
     }
     
-    state.questions = window.allQuestions.filter(q => q.cat === state.selectedCategory);
+    // Normalisierung des Kategorienamens (z.B. "Literatur" vs "LITERATUR")
+    const targetCat = state.selectedCategory.toLowerCase();
+    state.questions = window.allQuestions.filter(q => q.cat.toLowerCase() === targetCat);
+    
     if (state.questions.length === 0) {
         console.error("No questions found for category:", state.selectedCategory);
         state.questions = window.allQuestions.slice(0, 20); // Fallback
@@ -350,6 +357,16 @@ function showFeedback(isCorrect) {
             eyeBase.classList.remove('zoom-anim');
         }, 1200);
     }
+}
+
+function showLobby() {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('battle-lobby').classList.add('active');
+}
+
+function hideLobby() {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('start-screen').classList.add('active');
 }
 
 function endGame() {
