@@ -139,6 +139,12 @@
 - [x] **Health-Endpunkt**: `/api/health` in `server.js` implementiert, gibt `{status: ok, timestamp}` zurueck.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich nach Backend-Aenderungen.
 
+### Instanz 2026-07-10 (Live Test Button T3 - Fehlerbehandlung)
+- [x] **Timeout-Handling**: AbortController mit 5s Timeout in `handleLiveTest` implementiert.
+- [x] **HTTP-Status-Check**: Validierung von `response.ok` hinzugefuegt.
+- [x] **Toast-Feedback**: `UIManager.showToast` Integration fuer Erfolgs- und Fehlermeldungen.
+- [x] **Build-Validierung**: `pnpm build` erfolgreich nach Fehlerbehandlung-Aenderungen.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)

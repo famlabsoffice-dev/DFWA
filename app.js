@@ -210,19 +210,30 @@ async function handleLiveTest() {
     btn.disabled = true;
     
     try {
-        const response = await fetch('/api/health');
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        
+        const response = await fetch('/api/health', { signal: controller.signal });
+        clearTimeout(timeoutId);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        
         const data = await response.json();
         if (data.status === 'ok') {
             btn.style.borderColor = 'var(--neon)';
             btn.style.color = 'var(--neon)';
             btn.innerText = 'CORE_ONLINE';
+            UIManager.showToast('SYSTEM_OPERATIONAL', 'neon');
         } else {
-            throw new Error('Offline');
+            throw new Error('Invalid response');
         }
     } catch (err) {
         btn.style.borderColor = 'var(--error)';
         btn.style.color = 'var(--error)';
         btn.innerText = 'CORE_OFFLINE';
+        UIManager.showToast(`ERROR: ${err.message}`, 'error');
     } finally {
         setTimeout(() => {
             btn.innerText = originalText;
