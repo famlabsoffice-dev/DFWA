@@ -143,6 +143,14 @@
 - **Ziel**: Reaktivierung der übersprungenen Integration-Tests.
 - **Aufgabe**: Behebung der Timeout-Probleme in `tests/integration.test.js` für die GitHub Action Umgebung. Sicherstellung einer 100% grünen Pipeline.
 
+### 3. Friend-List & Social Interaction (S3) [IN ARBEIT]
+- **Ziel**: Implementierung einer Freundesliste zur direkten Herausforderung.
+- **Aufgabe**: Backend-Endpunkte für Freundesanfragen und -liste finalisieren. Frontend-UI zur Verwaltung von Freunden und zum Versenden von Einladungen integrieren.
+
+### 4. Real-Time Sync & WebSocket Hardening (M3) [GEPLANT]
+- **Ziel**: Härtung der Echtzeit-Synchronisation via WebSockets.
+- **Aufgabe**: Optimierung der Socket-Events für Leaderboard-Updates und Live-Battles. Implementierung von RTT-Monitoring (Ping/Pong) zur Latenz-Anzeige.
+
 ---
 
 ## HISTORISCHE ANALYSE (Archiv)
