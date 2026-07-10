@@ -154,6 +154,14 @@ function initStartScreen() {
 
     // Nutze 'pointerdown' für schnellste Reaktion auf Mobile, 'click' als stabilen Fallback
     document.body.addEventListener('pointerdown', (e) => {
+        // Fix: Verhindere Propagation, wenn das Modal offen ist, um sofortiges Schließen zu vermeiden
+        const overlay = document.getElementById('modal-overlay');
+        if (overlay && overlay.style.display === 'flex') {
+            if (e.target === overlay || overlay.contains(e.target)) {
+                return; 
+            }
+        }
+
         if (e.pointerType === 'touch' || e.pointerType === 'mouse') {
             handleInteraction(e);
         }
@@ -161,8 +169,16 @@ function initStartScreen() {
 
     // Fallback für Umgebungen ohne PointerEvents
     if (!window.PointerEvent) {
-        document.body.addEventListener('touchstart', handleInteraction, { passive: false });
-        document.body.addEventListener('click', handleInteraction);
+        document.body.addEventListener('touchstart', (e) => {
+            const overlay = document.getElementById('modal-overlay');
+            if (overlay && overlay.style.display === 'flex') return;
+            handleInteraction(e);
+        }, { passive: false });
+        document.body.addEventListener('click', (e) => {
+            const overlay = document.getElementById('modal-overlay');
+            if (overlay && overlay.style.display === 'flex') return;
+            handleInteraction(e);
+        });
     }
 
     // Remove redundant Server Room button from start screen if it exists
@@ -396,8 +412,6 @@ function showFeedback(isCorrect) {
         ];
         const wrongImages = [
             './assets/images/ack_defeat.webp',
-            './assets/images/ack_eye_skeptical.webp',
-            './assets/images/ack_interference_glitch.webp',
             './assets/images/ack_panic_hamster.webp'
         ];
 
