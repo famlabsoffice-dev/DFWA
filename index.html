@@ -33,7 +33,7 @@
     <link rel="preload" href="./assets/images/ack_splash_void.webp" as="image">
     <link rel="preload" href="./assets/images/ack_category_realm.webp" as="image">
     <link rel="preload" href="./assets/images/ack_splash_void.webp" as="image">
-  <script type="module" crossorigin src="./assets/main-DmAEny8n.js"></script>
+  <script type="module" crossorigin src="./assets/main-B0WabDP4.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/main-CI57xuHV.css">
 <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
@@ -200,12 +200,22 @@
               <span>SOCIAL_LINK // FRIENDS</span>
               <span id="friend-count">0</span>
             </div>
-            <div id="friend-list" style="max-height: 120px; overflow-y: auto; margin-bottom: 10px;">
+            <div id="friend-list" style="max-height: 100px; overflow-y: auto; margin-bottom: 10px;">
               <div style="text-align:center; color:rgba(0,255,0,0.5); padding: 10px;">SCANNING_FOR_ALLIES...</div>
             </div>
-            <div style="display: flex; gap: 5px;">
-              <input type="text" id="friend-id-input" class="cyber-input" style="font-size: 0.6rem; padding: 5px; border-color: var(--neon);" placeholder="ENTER_FRIEND_ID">
-              <button id="send-request-btn" class="option-btn" style="font-size: 0.6rem; padding: 5px 10px; width: auto; border-color: var(--neon); color: var(--neon);">ADD</button>
+            
+            <div id="pending-requests-container" style="margin-bottom: 10px; display: none; border: 1px dashed var(--warning); padding: 5px;">
+              <!-- Pending requests populated by JS -->
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+              <input type="text" id="friend-search-input" class="cyber-input" style="font-size: 0.6rem; padding: 5px; border-color: var(--cyber-blue);" placeholder="SEARCH_PLAYERS">
+              <div id="search-results-container" style="max-height: 80px; overflow-y: auto; background: rgba(0,0,0,0.2);"></div>
+              
+              <div style="display: flex; gap: 5px; opacity: 0.6; margin-top: 5px;">
+                <input type="text" id="friend-id-input" class="cyber-input" style="font-size: 0.5rem; padding: 3px; border-color: var(--neon);" placeholder="OR_DIRECT_ID">
+                <button id="send-request-btn" class="option-btn" style="font-size: 0.5rem; padding: 3px 8px; width: auto; border-color: var(--neon); color: var(--neon);">LINK</button>
+              </div>
             </div>
           </div>
           <div id="leaderboard-list" class="cyber-list">
