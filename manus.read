@@ -36,6 +36,8 @@
 - [x] **Pause-Button**: Pause/Resume-Logik implementiert.
 - [x] **Code-Audit & Validierung**: `app.js` auf Button-Binding-Integrität geprüft. `pnpm build` erfolgreich durchgeführt.
 - [x] **Instanz-Sicherung**: Erster Teilschritt verifiziert und für Kontinuität gesichert.
+- [x] **Automatisierte Funktionsprüfung**: Alle 7 Test-Suites (44 Tests) erfolgreich bestanden. Core-Logik, Multiplayer-Regression und Integration verifiziert.
+- [x] **Integritäts-Validierung**: Storage-Manager HMAC-Validierung durch Tests bestätigt (INTEGRITY_FAILURE Simulation erfolgreich).
 
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
 - [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.
