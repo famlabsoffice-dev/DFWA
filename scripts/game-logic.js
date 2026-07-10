@@ -44,4 +44,25 @@ export const GameLogic = {
       .join('');
     return { ...payload, auth: sigHex };
   },
+
+  async generateChallengeCode(seed, score, secret) {
+    if (!secret) throw new Error('SYSTEM_SECRET not provided for GameLogic');
+    const ts = Date.now();
+    const payload = { seed, score, ts };
+    const msg = JSON.stringify(payload);
+    const cryptoObj = this._crypto || globalThis.crypto;
+    const key = await cryptoObj.subtle.importKey(
+      'raw',
+      new TextEncoder().encode(secret),
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['sign']
+    );
+    const sig = await cryptoObj.subtle.sign('HMAC', key, new TextEncoder().encode(msg));
+    const sigHex = Array.from(new Uint8Array(sig))
+      .map((b) => b.toString(16).padStart(2, '0'))
+      .join('');
+    const finalPayload = { ...payload, auth: sigHex };
+    return btoa(JSON.stringify(finalPayload));
+  },
 };

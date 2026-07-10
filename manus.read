@@ -43,6 +43,9 @@
 - [x] **Asset-Verfügbarkeit**: `questions_i18n.json` und alle notwendigen WebP-Assets (Startscreen, Feedback-Bilder) verifiziert.
 - [x] **Logic-Audit**: Scoring-Logik (Streak/Time Bonus) und deterministisches Shuffling (Seed-basiert) in `game-logic.js` verifiziert.
 - [x] **End-to-End Bereitschaft**: Kernkomponenten für einen vollständigen Spielablauf sind funktional und vorhanden.
+- [x] **Multiplayer-Härtung (G1)**: `generateChallengeCode` als asynchrone Methode in `GameLogic` (scripts/game-logic.js) implementiert, inklusive HMAC-Signierung (SHA-256) und Base64-Encoding.
+- [x] **Test-Validierung**: Dedizierte Tests in `tests/game-logic.test.js` erfolgreich bestanden. Integration-Tests nach `pnpm build` ebenfalls erfolgreich verifiziert.
+- [x] **Instanz-Sicherung**: Änderungen gespeichert, validiert und für Kontinuität dokumentiert.
 
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
 - [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.
