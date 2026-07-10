@@ -33,6 +33,7 @@
 - [x] **Lobby-Funktionen**: `start-challenge-btn` und `live-battle-btn` implementiert.
 - [x] **Resume-Logik**: `resume-btn` an Session-State gekoppelt.
 - [x] **Leaderboard-Filter**: Modus-Filter im Server-Room funktional angebunden.
+- [x] **Pause-Button**: Pause/Resume-Logik implementiert.
 
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
 - [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.

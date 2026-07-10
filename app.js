@@ -180,6 +180,21 @@ function initStartScreen() {
         startGame(state.selectedCategory);
     });
 
+    // Pause Button
+    bind('pause-btn', () => {
+        if (state.timerInterval) {
+            clearInterval(state.timerInterval);
+            UIManager.showToast('GAME_PAUSED', 'warning');
+            const pauseBtn = document.getElementById('pause-btn');
+            if (pauseBtn) pauseBtn.textContent = 'RESUME';
+        } else {
+            startTimer();
+            UIManager.showToast('GAME_RESUMED', 'success');
+            const pauseBtn = document.getElementById('pause-btn');
+            if (pauseBtn) pauseBtn.textContent = 'PAUSE';
+        }
+    });
+
     // Mode & Leaderboard Filter Buttons
     document.querySelectorAll('.mode-btn').forEach(btn => {
         const handleMode = (e) => {
