@@ -155,6 +155,14 @@
 - [x] **Phase 5: Multiplayer**: Socket-Flow, Sabotage-Mechaniken und Challenge-Code-Sicherheit validiert.
 - [x] **Phase 6: Finaler Build**: Erfolgreicher `pnpm build` bestätigt die gesamte Pipeline-Integrität.
 
+### Instanz 2026-07-09 (Radikale PWA-Härtung & Startbildschirm-Fix)
+- [x] **PWA-Integrität**: `vite.config.js` auf `registerType: 'prompt'` umgestellt, um Cache-Blockaden bei neuen Versionen zu verhindern. `maximumFileSizeToCacheInBytes` auf 20MB erhöht.
+- [x] **Update-Logik**: `initPWAUpdate` in `app.js` implementiert. Nutzer werden nun aktiv aufgefordert, bei neuen Versionen zu aktualisieren (`location.reload(true)`), was manuelle Cache-Löschungen überflüssig macht.
+- [x] **Startbildschirm-Überholung**: Kompletter Rewrite der Interaktions-Logik. Verwendung von direktem `onclick` und `ontouchend` Binding pro Button statt Delegation, um 100% Klick-Garantie auf allen Geräten (iOS/Android) zu sichern.
+- [x] **Asset-Busting**: `loadQuestions` nutzt nun Cache-Busting Parameter (`?cb=timestamp`), um immer den aktuellsten Fragenkatalog zu laden.
+- [x] **Multi-Event Binding**: Alle kritischen Buttons (Start, Add Player, Mode) sind nun doppelt gegen Event-Loss abgesichert.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` nach radikalem Refactoring durchgeführt.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)

@@ -8,14 +8,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   plugins: [
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt', // Change to prompt to ensure user gets the latest version
       injectRegister: 'auto',
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2,mp3,wav,ogg,json}'],
         cleanupOutdatedCaches: true,
-        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // Erhöht für größere Assets
+        maximumFileSizeToCacheInBytes: 20 * 1024 * 1024, // Erhöht für massive Assets
         clientsClaim: true,
         skipWaiting: true,
+        navigateFallback: 'index.html',
+        dontCacheBustURLsMatching: /\.[0-9a-f]{8}\./,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/storage\.googleapis\.com\/workbox-cdn\/.*/i,
