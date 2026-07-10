@@ -31,7 +31,7 @@
 - [x] **Lobby-Navigation**: `show-lobby-btn` und `hide-lobby-btn` funktional angebunden.
 - [x] **Leaderboard-Navigation**: `show-leaderboard-btn` und `hide-leaderboard-btn` funktional angebunden.
 - [x] **Lobby-Funktionen**: `start-challenge-btn` und `live-battle-btn` implementiert.
-- [ ] **Resume-Logik**: `resume-btn` an Session-State gekoppelt.
+- [x] **Resume-Logik**: `resume-btn` an Session-State gekoppelt.
 
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
 - [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.

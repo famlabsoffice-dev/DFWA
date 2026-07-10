@@ -125,6 +125,11 @@ function initStartScreen() {
 
     bind('add-player-btn', handleAddPlayer);
     bind('start-btn', () => startGame(state.selectedCategory));
+    bind('resume-btn', () => {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById('game-screen').classList.add('active');
+        startTimer();
+    });
     bind('category-modal-btn', openCategoryModal);
     bind('close-system-btn', () => { document.getElementById('modal-overlay').style.display = 'none'; });
     bind('modal-close-btn', () => { document.getElementById('modal-overlay').style.display = 'none'; });
@@ -276,6 +281,10 @@ async function startGame(category) {
     BattleManager.syncState({ score: state.score, streak: state.streak });
     AudioManager.startMusic();
     showNextQuestion();
+    
+    // Show resume button for future use
+    const resumeBtn = document.getElementById('resume-btn');
+    if (resumeBtn) resumeBtn.style.display = 'block';
 }
 
 function updateHUD() {
