@@ -150,6 +150,10 @@
 - [x] **Frontend-Diagnostik**: Toast zeigt DB-Status (DB_OK/DB_WARN) an.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich nach Diagnostik-Integration.
 
+### Instanz 2026-07-10 (CI-Härtung Q1)
+- [x] **CI-Workflow**: `npx puppeteer browsers install chrome` zu `.github/workflows/ci.yml` hinzugefügt, um Integration-Tests in der GitHub Action Umgebung zu ermöglichen.
+- [x] **Git-Sync**: Änderungen committet und in den `main` Branch gepusht.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
