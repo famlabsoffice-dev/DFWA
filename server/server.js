@@ -600,6 +600,23 @@ app.get('/api/social/friends/:userId', async (req, res) => {
   }
 });
 
+// Search for players to add as friends
+app.get('/api/social/search-players', async (req, res) => {
+  const { query, excludeId } = req.query;
+  if (!query || query.length < 2) return res.status(400).json({ error: 'QUERY_TOO_SHORT' });
+
+  const sql = `
+    SELECT playerId, playerName, elo, league 
+    FROM leaderboard 
+    WHERE playerName LIKE ? AND playerId != ? 
+    LIMIT 5
+  `;
+  db.all(sql, [`%${query}%`, excludeId || ''], (err, rows) => {
+    if (err) return res.status(500).json({ error: 'Database error' });
+    res.json(rows || []);
+  });
+});
+
 // Dynamische Meta-Tags für Social Sharing
 app.get('/share/:playerId', (req, res) => {
   const { playerId } = req.params;

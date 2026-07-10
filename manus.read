@@ -37,6 +37,11 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 - [x] **State-Locking**: `isProcessing` Lock in `initGame` implementiert, um Mehrfach-Starts zu verhindern.
 - [x] **Dokumentation**: `manus.read` auf Status [STABILISIERT] aktualisiert.
 
+### Instanz 2026-07-10 (Social S3 - Teilschritt 1)
+- [x] **Backend-Search**: API-Endpunkt `/api/social/search-players` in `server.js` implementiert.
+- [x] **Daten-Integrität**: Suche schließt den anfragenden Spieler (`excludeId`) aus und ist auf 5 Ergebnisse limitiert.
+- [x] **Vorbereitung**: Datenbank-Tabellen `friends` und `friend_requests` in `server.js` bereits vorhanden und validiert.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
@@ -51,6 +56,7 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 
 ### 3. Friend-List & Social Interaction (S3) [IN ARBEIT]
 - **Ziel**: Implementierung einer Freundesliste zur direkten Herausforderung.
+- **Fortschritt**: Backend-Suche implementiert. Nächster Schritt: UI für Suche und Anfragen.
 
 ### 4. Real-Time Sync & WebSocket Hardening (M3) [GEPLANT]
 - **Ziel**: Härtung der Echtzeit-Synchronisation via WebSockets.
@@ -58,4 +64,4 @@ Maximale PWA-Integrität und optimiertes mobiles Gameplay für den stabilen Live
 ---
 
 **Status:** PWA Ready. Mobile Gameplay validiert. Button-Handling [STABILISIERT].
-**Zuletzt aktualisiert:** 10.07.2026 - 20:05 GMT+2
+**Zuletzt aktualisiert:** 10.07.2026 - 20:15 GMT+2
