@@ -156,6 +156,25 @@ function initStartScreen() {
         document.getElementById('battle-lobby').classList.add('active');
     });
 
+    // Lobby Functions
+    bind('start-challenge-btn', async () => {
+        const input = document.getElementById('challenge-code-input');
+        const code = input ? input.value.trim() : '';
+        if (code) {
+            BattleManager.joinBattle(code);
+            startGame(state.selectedCategory);
+        } else {
+            const newCode = await BattleManager.createChallenge();
+            if (input) input.value = newCode;
+            UIManager.showToast(`CHALLENGE_CREATED: ${newCode}`, 'success');
+        }
+    });
+
+    bind('live-battle-btn', () => {
+        BattleManager.joinBattle('LIVE_POOL');
+        startGame(state.selectedCategory);
+    });
+
     // Mode Buttons
     document.querySelectorAll('.mode-btn').forEach(btn => {
         const handleMode = (e) => {
