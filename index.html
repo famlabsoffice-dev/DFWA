@@ -192,6 +192,20 @@
               <div id="season-progress-bar" style="width: 0%; height: 100%; background: var(--cyber-blue); box-shadow: 0 0 5px var(--cyber-blue);"></div>
             </div>
           </div>
+
+          <div id="social-dashboard" class="cyber-card" style="margin-bottom: 20px; border: 1px solid var(--neon); padding: 10px; font-size: 0.7rem;">
+            <div style="display: flex; justify-content: space-between; color: var(--neon); margin-bottom: 10px; border-bottom: 1px solid rgba(0,255,0,0.2); padding-bottom: 5px;">
+              <span>SOCIAL_LINK // FRIENDS</span>
+              <span id="friend-count">0</span>
+            </div>
+            <div id="friend-list" style="max-height: 120px; overflow-y: auto; margin-bottom: 10px;">
+              <div style="text-align:center; color:rgba(0,255,0,0.5); padding: 10px;">SCANNING_FOR_ALLIES...</div>
+            </div>
+            <div style="display: flex; gap: 5px;">
+              <input type="text" id="friend-id-input" class="cyber-input" style="font-size: 0.6rem; padding: 5px; border-color: var(--neon);" placeholder="ENTER_FRIEND_ID">
+              <button id="send-request-btn" class="option-btn" style="font-size: 0.6rem; padding: 5px 10px; width: auto; border-color: var(--neon); color: var(--neon);">ADD</button>
+            </div>
+          </div>
           <div id="leaderboard-list" class="cyber-list">
             <div class="list-header">
               <span>RANK</span>

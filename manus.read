@@ -153,6 +153,14 @@
 - [x] **Mode-Switching**: Logik zur visuellen Aktualisierung der Modus-Buttons gehärtet.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` durchgeführt.
 
+### Instanz 2026-07-10 (Friend-List & Social Integration S3)
+- [x] **Backend-Audit**: Social-Logik in `server.js` und `friends.js` verifiziert.
+- [x] **UI-Integration**: `social-dashboard` in `index.html` integriert, inklusive Freundesliste und Eingabe für IDs.
+- [x] **UIManager Update**: `renderFriends` Methode zur dynamischen Anzeige von Verbündeten hinzugefügt.
+- [x] **APIClient Erweiterung**: `sendFriendRequest` und `listFriends` Methoden implementiert.
+- [x] **Logik-Wiring**: `loadSocialData` und `handleSendFriendRequest` in `app.js` verdrahtet.
+- [x] **Build-Validierung**: Erfolgreicher `pnpm build` zur Qualitätssicherung.
+
 ### Instanz 2026-07-09 (QA-Audit & Bug-Fixing-Zyklus B2)
 - [x] **Repo-Cleanup**: Veraltete Build-Artefakte (`game-*.js`, `main-*.js`) aus `assets/` entfernt und `.gitignore` um entsprechende Pattern erweitert.
 - [x] **Audit-Reconciliation**: Manueller Abgleich der `manus.read` mit externem Analyse-Bericht durchgeführt.
@@ -199,6 +207,7 @@
 - **Ziel**: Reaktivierung der übersprungenen Integration-Tests.
 - **Aufgabe**: Behebung der Timeout-Probleme in `tests/integration.test.js` für die GitHub Action Umgebung. Sicherstellung einer 100% grünen Pipeline.
 
+<<<<<<< HEAD
 ### 3. Social-Features & Friend-System (S3) [ERLEDIGT]
 - **Ziel**: Implementierung der Friend-Request und Battle-Invite Logik im Frontend.
 - **Aufgabe**: UI für Freundesanfragen und eine Freundesliste im `BATTLE_LOBBY` Screen integrieren. Anbindung der `/api/social/` Endpunkte.
@@ -228,6 +237,15 @@
 - **Ziel**: Validierung der realen Funktionalität und logischen Verkabelung aller PWA-Elemente.
 - **Aufgabe**: Durchführung eines 6-Phasen-Testzyklus (PWA-Kern, UI/UX, Engine, Sync, Multiplayer, Final Build).
 - **Status**: Erfolgreich abgeschlossen am 2026-07-09. Alle Phasen validiert, Dokumentation finalisiert und gepusht.
+=======
+### 3. Friend-List & Social Interaction (S3) [IN ARBEIT]
+- **Ziel**: Implementierung einer Freundesliste zur direkten Herausforderung.
+- **Aufgabe**: Backend-Endpunkte für Freundesanfragen und -liste finalisieren. Frontend-UI zur Verwaltung von Freunden und zum Versenden von Einladungen integrieren.
+
+### 4. Real-Time Sync & WebSocket Hardening (M3) [GEPLANT]
+- **Ziel**: Härtung der Echtzeit-Synchronisation via WebSockets.
+- **Aufgabe**: Optimierung der Socket-Events für Leaderboard-Updates und Live-Battles. Implementierung von RTT-Monitoring (Ping/Pong) zur Latenz-Anzeige.
+>>>>>>> e415cd0 (docs: update task list in manus.read)
 
 ---
 

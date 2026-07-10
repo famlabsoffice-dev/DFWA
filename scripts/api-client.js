@@ -155,5 +155,27 @@ export const APIClient = {
     } catch (e) {
       return null;
     }
+  },
+  async sendFriendRequest(baseUrl, senderId, receiverId, secret) {
+    try {
+      const auth = await this.generateHMAC(JSON.stringify({ senderId, receiverId }), secret);
+      const res = await fetch(`${baseUrl}/api/social/friend-request`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ senderId, receiverId, auth }),
+      });
+      return res.ok;
+    } catch (e) {
+      return false;
+    }
+  },
+  async listFriends(baseUrl, userId) {
+    try {
+      const res = await fetch(`${baseUrl}/api/social/friends/${userId}`);
+      if (res.ok) return await res.json();
+      return [];
+    } catch (e) {
+      return [];
+    }
   }
 };

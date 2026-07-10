@@ -40,6 +40,34 @@ export const UIManager = {
     setTimeout(() => toast.remove(), 3000);
   },
 
+  renderFriends(friendsDiv, friends) {
+    if (!friendsDiv) return;
+    friendsDiv.replaceChildren();
+
+    if (friends.length === 0) {
+      friendsDiv.innerHTML = '<div style="text-align:center; color:rgba(0,255,0,0.5); padding: 10px;">NO_ALLIES_CONNECTED</div>';
+      return;
+    }
+
+    friends.forEach((friend) => {
+      const row = document.createElement('div');
+      row.style.display = 'flex';
+      row.style.justifyContent = 'space-between';
+      row.style.alignItems = 'center';
+      row.style.padding = '5px 0';
+      row.style.borderBottom = '1px solid rgba(0,255,0,0.1)';
+
+      row.innerHTML = `
+        <div style="display:flex; flex-direction:column;">
+          <span style="font-weight:900; color:var(--neon);">${friend.playerName}</span>
+          <span style="font-size:0.5rem; color:var(--cyber-blue);">${friend.league} [${friend.elo}]</span>
+        </div>
+        <button class="option-btn challenge-friend-btn" data-id="${friend.playerId}" style="font-size: 0.5rem; padding: 2px 8px; width: auto; border-color: var(--warning); color: var(--warning);">BATTLE</button>
+      `;
+      friendsDiv.appendChild(row);
+    });
+  },
+
   renderLeaderboard(entriesDiv, data) {
     if (!entriesDiv) return;
     entriesDiv.replaceChildren();

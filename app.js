@@ -83,6 +83,72 @@ function initStartScreen() {
             if (overlay) overlay.style.display = 'none';
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
             document.getElementById('start-screen').classList.add('active');
+        } else if (target.id === 'show-leaderboard-btn') {
+            showLeaderboard();
+        } else if (target.id === 'hide-leaderboard-btn') {
+            hideLobby(); // Zurück zur Lobby
+        } else if (target.id === 'send-request-btn') {
+            handleSendFriendRequest();
+        } else if (target.classList.contains('mode-btn')) {
+            // Update mode filter visually and reload
+            document.querySelectorAll('#leaderboard-filters .mode-btn').forEach(b => b.classList.remove('active'));
+            target.classList.add('active');
+            loadLeaderboard(target.dataset.mode);
+        }
+    };
+
+    const showLeaderboard = async () => {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById('leaderboard-screen').classList.add('active');
+        await loadLeaderboard();
+        await loadSocialData();
+    };
+
+    const loadLeaderboard = async (mode = 'classic') => {
+        const entriesDiv = document.getElementById('leaderboard-entries');
+        try {
+            const data = await APIClient.fetchLeaderboard(window.location.origin, 20, mode);
+            if (data && data.entries) {
+                UIManager.renderLeaderboard(entriesDiv, data.entries);
+                
+                const seasonDash = document.getElementById('season-dashboard');
+                if (data.season && seasonDash) {
+                    seasonDash.style.display = 'block';
+                    document.getElementById('season-number').textContent = data.season.season_number;
+                }
+            }
+        } catch (err) {
+            console.error("LEADERBOARD_SYNC_FAILED", err);
+        }
+    };
+
+    const loadSocialData = async () => {
+        const friendListDiv = document.getElementById('friend-list');
+        const friendCountSpan = document.getElementById('friend-count');
+        const playerId = localStorage.getItem('dfwa_player_id');
+        
+        try {
+            const friends = await APIClient.listFriends(window.location.origin, playerId);
+            UIManager.renderFriends(friendListDiv, friends);
+            if (friendCountSpan) friendCountSpan.textContent = friends.length;
+        } catch (err) {
+            console.error("SOCIAL_SYNC_FAILED", err);
+        }
+    };
+
+    const handleSendFriendRequest = async () => {
+        const input = document.getElementById('friend-id-input');
+        const receiverId = input.value.trim();
+        const senderId = localStorage.getItem('dfwa_player_id');
+        
+        if (!receiverId) return;
+        
+        const success = await APIClient.sendFriendRequest(window.location.origin, senderId, receiverId, state.secret);
+        if (success) {
+            UIManager.showToast("REQUEST_SENT", "neon");
+            input.value = '';
+        } else {
+            UIManager.showToast("LINK_FAILED", "error");
         }
     };
 
