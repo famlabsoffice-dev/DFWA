@@ -644,6 +644,11 @@ app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(indexPath);
 });
 
+// Health Check Endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 setupBattleSync(io, db);
 
 httpServer.listen(PORT, () => {

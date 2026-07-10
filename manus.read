@@ -135,6 +135,10 @@
 - [x] **Navigation-Handler**: `handleLiveTest` in `app.js` implementiert mit visueller Status-Rückmeldung (Testing -> Online/Offline).
 - [x] **Build-Validierung**: `pnpm build` erfolgreich nach UI-Änderungen.
 
+### Instanz 2026-07-10 (Live Test Button T2 - Backend)
+- [x] **Health-Endpunkt**: `/api/health` in `server.js` implementiert, gibt `{status: ok, timestamp}` zurueck.
+- [x] **Build-Validierung**: `pnpm build` erfolgreich nach Backend-Aenderungen.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
