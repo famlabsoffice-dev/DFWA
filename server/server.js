@@ -644,9 +644,19 @@ app.get(/^\/(?!api).*/, (req, res) => {
   res.sendFile(indexPath);
 });
 
-// Health Check Endpoint
+// Health Check Endpoint with diagnostics
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+  const diagnostics = {
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    database: 'checking'
+  };
+  
+  db.get('SELECT 1', (err) => {
+    diagnostics.database = err ? 'error' : 'connected';
+    res.json(diagnostics);
+  });
 });
 
 setupBattleSync(io, db);

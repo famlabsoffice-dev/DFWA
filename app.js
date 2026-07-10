@@ -225,7 +225,8 @@ async function handleLiveTest() {
             btn.style.borderColor = 'var(--neon)';
             btn.style.color = 'var(--neon)';
             btn.innerText = 'CORE_ONLINE';
-            UIManager.showToast('SYSTEM_OPERATIONAL', 'neon');
+            const dbStatus = data.database === 'connected' ? 'DB_OK' : 'DB_WARN';
+            UIManager.showToast(`SYSTEM_OPERATIONAL [${dbStatus}]`, 'neon');
         } else {
             throw new Error('Invalid response');
         }

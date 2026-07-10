@@ -145,6 +145,11 @@
 - [x] **Toast-Feedback**: `UIManager.showToast` Integration fuer Erfolgs- und Fehlermeldungen.
 - [x] **Build-Validierung**: `pnpm build` erfolgreich nach Fehlerbehandlung-Aenderungen.
 
+### Instanz 2026-07-10 (Live Test Button T4 - Diagnostik)
+- [x] **Backend-Diagnostik**: `/api/health` um uptime, memory, database-Status erweitert.
+- [x] **Frontend-Diagnostik**: Toast zeigt DB-Status (DB_OK/DB_WARN) an.
+- [x] **Build-Validierung**: `pnpm build` erfolgreich nach Diagnostik-Integration.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
