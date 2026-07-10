@@ -40,6 +40,9 @@
 - [x] **Integritäts-Validierung**: Storage-Manager HMAC-Validierung durch Tests bestätigt (INTEGRITY_FAILURE Simulation erfolgreich).
 - [x] **API-Audit**: `APIClient` auf HMAC-Integrität geprüft. `generateHMAC` nutzt `crypto.subtle` (SHA-256) für manipulationssichere Kommunikation.
 - [x] **Signatur-Verifizierung**: `updateLeaderboard`, `syncProfile` und Social-Endpunkte sind korrekt durch HMAC-Payloads (`ts`, `auth`) abgesichert.
+- [x] **Asset-Verfügbarkeit**: `questions_i18n.json` und alle notwendigen WebP-Assets (Startscreen, Feedback-Bilder) verifiziert.
+- [x] **Logic-Audit**: Scoring-Logik (Streak/Time Bonus) und deterministisches Shuffling (Seed-basiert) in `game-logic.js` verifiziert.
+- [x] **End-to-End Bereitschaft**: Kernkomponenten für einen vollständigen Spielablauf sind funktional und vorhanden.
 
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
 - [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.
