@@ -34,6 +34,8 @@
 - [x] **Resume-Logik**: `resume-btn` an Session-State gekoppelt.
 - [x] **Leaderboard-Filter**: Modus-Filter im Server-Room funktional angebunden.
 - [x] **Pause-Button**: Pause/Resume-Logik implementiert.
+- [x] **Code-Audit & Validierung**: `app.js` auf Button-Binding-Integrität geprüft. `pnpm build` erfolgreich durchgeführt.
+- [x] **Instanz-Sicherung**: Erster Teilschritt verifiziert und für Kontinuität gesichert.
 
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
 - [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.
