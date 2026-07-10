@@ -46,23 +46,6 @@ if (SYSTEM_SECRET === 'LOCAL_ONLY_UNTRUSTED') {
 app.set('trust proxy', 1);
 
 // Middleware
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
-        scriptSrc: ["'self'"],
-        styleSrc: ["'self'", 'https://fonts.googleapis.com'],
-        fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-        imgSrc: ["'self'", 'data:', 'https://*'],
-        connectSrc: ["'self'"],
-        frameAncestors: ["'none'"],
-        upgradeInsecureRequests: [],
-      },
-    },
-    crossOriginEmbedderPolicy: false,
-  })
-);
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
@@ -113,12 +96,6 @@ const adminLimiter = rateLimit({
   },
 });
 app.use('/api/admin/', adminLimiter);
-// Statische Dateien aus dem Vite-Build-Output (dist/) servieren
-// Fallback auf Root-Verzeichnis falls dist/ nicht existiert (Entwicklung)
-// const distPath = join(__dirname, '..', 'dist');
-// const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
-  // app.use(express.static(staticPath));
-
 // Database setup
 const dbPath = join(__dirname, 'leaderboard.db');
 const db = new sqlite3.Database(dbPath, (err) => {
@@ -167,6 +144,19 @@ db.serialize(() => {
           playerId TEXT PRIMARY KEY,
           data TEXT,
           timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+      )`);
+  db.run(`CREATE TABLE IF NOT EXISTS friend_requests (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          sender_id TEXT,
+          receiver_id TEXT,
+          status TEXT DEFAULT 'PENDING',
+          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+      )`);
+  db.run(`CREATE TABLE IF NOT EXISTS friends (
+          user_id1 TEXT,
+          user_id2 TEXT,
+          timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+          PRIMARY KEY (user_id1, user_id2)
       )`);
   db.run(`ALTER TABLE leaderboard ADD COLUMN variant TEXT`, () => {});
   db.run(`ALTER TABLE leaderboard ADD COLUMN accuracy INTEGER`, () => {});
@@ -373,9 +363,10 @@ app.post('/api/leaderboard', (req, res) => {
   });
 });
 
-// Statische Dateien und SPA-Fallback erst NACH den API-Routen
-  const distPathForStatic = join(__dirname, '..', 'dist');
-  app.use(express.static(distPathForStatic));
+// Statische Dateien aus dem Vite-Build-Output (dist/) servieren
+const distPath = join(__dirname, '..', 'dist');
+const staticPath = existsSync(distPath) ? distPath : join(__dirname, '..');
+app.use(express.static(staticPath));
 
 app.post('/api/challenge/verify', (req, res) => {
   const { code } = req.body;
@@ -649,7 +640,7 @@ app.get('/share/:playerId', (req, res) => {
 
 // SPA-Fallback: Alle nicht-API-Routen auf index.html weiterleiten
 app.get(/^\/(?!api).*/, (req, res) => {
-  const indexPath = join(distPathForStatic, 'index.html');
+  const indexPath = join(distPath, 'index.html');
   res.sendFile(indexPath);
 });
 

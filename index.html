@@ -30,12 +30,12 @@
     <link rel="apple-touch-icon" href="./assets/icons/icon-192.png" />
 
 
-    <link rel="stylesheet" href="./style.css">
     <script type="module" src="./app.js"></script>
     <link rel="preload" href="./assets/images/ack_cyber_eye.webp" as="image">
     <link rel="preload" href="./assets/images/ack_category_realm.webp" as="image">
     <link rel="preload" href="./assets/images/ack_cyber_eye.webp" as="image">
-
+  <script type="module" crossorigin src="./assets/main-B4VhbFAM.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-CI57xuHV.css">
 </head>
   <body>
     <noscript
@@ -63,17 +63,17 @@
     <div class="overlay"></div>
     <div id="sabotage-overlay" class="sabotage-layer"></div>
     <div id="game-container">
-      <h1 style="z-index: 100;">A.C.K.</h1>
+      <h1>A.C.K.</h1>
       <div id="start-screen" class="screen active">
-        <div id="eye-bg-container" style="z-index: 1;">
-          <img id="core-eye" src="./assets/images/ack_cyber_eye.webp" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <div id="eye-bg-container">
+          <img id="core-eye" src="./assets/images/ack_cyber_eye.webp" />
           <div id="stat-player" class="stat-overlay">
             USER_IDENT//<br /><span id="player-display">GUEST</span>
           </div>
           <div id="stat-lives" class="stat-overlay">
             VITAL_SIGNS//<br /><span id="lives-display">3</span>_UNITS
           </div>
-          <div id="stat-id" class="stat-overlay" style="cursor: pointer;">
+          <div id="stat-id" class="stat-overlay">
             CORE_LINK//<br />#<span id="id-display">0000</span>
           </div>
           <div id="stat-best" class="stat-overlay">
@@ -124,13 +124,7 @@
             id="mode-selector"
             class="mode-selector-container"
             aria-label="Modus auswählen"
-          >
-            <button class="mode-btn active" data-mode="classic"><strong>CLASSIC</strong><small>3_LIVES</small></button>
-            <button class="mode-btn" data-mode="timeAttack"><strong>TIME_ATTACK</strong><small>60_SEC</small></button>
-            <button class="mode-btn" data-mode="hardcore"><strong>HARDCORE</strong><small>1_LIFE</small></button>
-            <button class="mode-btn" data-mode="blitz"><strong>BLITZ</strong><small>20_QUES</small></button>
-            <button class="mode-btn" data-mode="survival"><strong>SURVIVAL</strong><small>NO_LIMIT</small></button>
-          </div>
+          ></div>
           <button id="resume-btn" class="option-btn battle-btn" style="display: none">
             RESUME_PROTOCOL
           </button>
@@ -188,8 +182,6 @@
             <button class="mode-btn active" data-mode="classic">CLASSIC</button>
             <button class="mode-btn" data-mode="timeAttack">TIME_ATTACK</button>
             <button class="mode-btn" data-mode="hardcore">HARDCORE</button>
-            <button class="mode-btn" data-mode="blitz">BLITZ</button>
-            <button class="mode-btn" data-mode="survival">SURVIVAL</button>
           </div>
           <div id="season-dashboard" class="cyber-card" style="margin-bottom: 20px; border: 1px solid var(--cyber-blue); padding: 10px; font-size: 0.7rem; display: none;">
             <div style="display: flex; justify-content: space-between; color: var(--cyber-blue); margin-bottom: 5px;">
@@ -198,6 +190,20 @@
             </div>
             <div id="season-progress-container" style="width: 100%; height: 4px; background: rgba(0,255,255,0.1); border-radius: 2px;">
               <div id="season-progress-bar" style="width: 0%; height: 100%; background: var(--cyber-blue); box-shadow: 0 0 5px var(--cyber-blue);"></div>
+            </div>
+          </div>
+
+          <div id="social-dashboard" class="cyber-card" style="margin-bottom: 20px; border: 1px solid var(--neon); padding: 10px; font-size: 0.7rem;">
+            <div style="display: flex; justify-content: space-between; color: var(--neon); margin-bottom: 10px; border-bottom: 1px solid rgba(0,255,0,0.2); padding-bottom: 5px;">
+              <span>SOCIAL_LINK // FRIENDS</span>
+              <span id="friend-count">0</span>
+            </div>
+            <div id="friend-list" style="max-height: 120px; overflow-y: auto; margin-bottom: 10px;">
+              <div style="text-align:center; color:rgba(0,255,0,0.5); padding: 10px;">SCANNING_FOR_ALLIES...</div>
+            </div>
+            <div style="display: flex; gap: 5px;">
+              <input type="text" id="friend-id-input" class="cyber-input" style="font-size: 0.6rem; padding: 5px; border-color: var(--neon);" placeholder="ENTER_FRIEND_ID">
+              <button id="send-request-btn" class="option-btn" style="font-size: 0.6rem; padding: 5px 10px; width: auto; border-color: var(--neon); color: var(--neon);">ADD</button>
             </div>
           </div>
           <div id="leaderboard-list" class="cyber-list">
@@ -226,7 +232,7 @@
         >
           <div id="timer-bar"></div>
         </div>
-        <span id="timer-text" style="position: absolute; top: 12vh; right: 25px; font-size: 1.1rem; font-weight: 900; color: #000; background: var(--warning); padding: 2px 10px; border-radius: 4px; z-index: 60; box-shadow: 0 0 15px var(--warning); font-family: monospace; border: 1px solid #000;">15S</span>
+        <span id="timer-text" style="position: absolute; top: 7.5vh; right: 25px; font-size: 1.1rem; font-weight: 900; color: #000; background: var(--warning); padding: 2px 10px; border-radius: 4px; z-index: 60; box-shadow: 0 0 15px var(--warning); font-family: monospace; border: 1px solid #000;">15S</span>
         <div
           id="score-hud"
           aria-live="polite"
@@ -302,29 +308,11 @@
     </div>
 
     <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div id="modal-content">
+      <div id="modal-content">
         <h2 id="modal-title" style="color: var(--warning); margin-bottom: 20px">
           CHALLENGE_COMPLETE
         </h2>
         <div id="category-modal-list" class="mode-selector-container" style="display: none; margin-bottom: 20px;"></div>
-        <div id="profile-view" style="display: none; width: 100%; margin-bottom: 20px; text-align: left; font-family: monospace;">
-          <div class="cyber-card" style="border: 1px solid var(--cyber-blue); padding: 15px; background: rgba(0, 255, 255, 0.05);">
-            <div style="color: var(--cyber-blue); margin-bottom: 15px; font-size: 0.9rem; border-bottom: 1px solid var(--cyber-blue); padding-bottom: 5px;">>> DATA_STREAM: <span id="prof-name">GUEST</span></div>
-            
-            <div id="prof-stats-grid" style="margin-bottom: 20px;">
-              <div class="stat-row"><span class="stat-label">LEAGUE_RANK</span><span id="prof-league" class="stat-value">---</span></div>
-              <div class="stat-row"><span class="stat-label">ELO_RATING</span><span id="prof-elo" class="stat-value">---</span></div>
-              <div class="stat-row"><span class="stat-label">CUMULATIVE_SCORE</span><span id="prof-score" class="stat-value">---</span></div>
-              <div class="stat-row"><span class="stat-label">BATTLE_RECORD</span><span id="prof-stats" class="stat-value">---</span></div>
-              <div class="stat-row"><span class="stat-label">ACCURACY_RATE</span><span id="prof-accuracy" class="stat-value">---</span></div>
-            </div>
-
-            <div style="margin-top: 15px;">
-              <div style="color: var(--cyber-blue); font-size: 0.7rem; margin-bottom: 10px; letter-spacing: 1px;">>> UNLOCKED_ACHIEVEMENTS</div>
-              <div id="prof-achievements" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
-            </div>
-          </div>
-        </div>
         <p
           id="modal-text"
           style="color: #fff; margin-bottom: 20px; font-family: monospace; word-break: break-all"

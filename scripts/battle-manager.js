@@ -171,9 +171,8 @@ export const BattleManager = {
     }
   },
 
-  async generateChallengeCode(seed, score) {
-    const secret = window.SYSTEM_SECRET || 'DFWA_SYSTEM_SECURE_2026';
-    return await GameLogic.generateChallengeCode(seed, score, secret);
+  generateChallengeCode() {
+    return Math.random().toString(36).substring(2, 8).toUpperCase();
   },
 
   joinBattle(battleId) {
@@ -192,8 +191,8 @@ export const BattleManager = {
     });
   },
 
-  async createChallenge(seed = 1, score = 0) {
-    const code = await this.generateChallengeCode(seed, score);
+  createChallenge() {
+    const code = this.generateChallengeCode();
     this.joinBattle(code);
     return code;
   },

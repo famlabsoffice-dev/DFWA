@@ -8,14 +8,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   plugins: [
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt', // Change to prompt to ensure user gets the latest version
       injectRegister: 'auto',
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff2,mp3,wav,ogg,json}'],
         cleanupOutdatedCaches: true,
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+        maximumFileSizeToCacheInBytes: 20 * 1024 * 1024, // Erhöht für massive Assets
         clientsClaim: true,
         skipWaiting: true,
+        navigateFallback: 'index.html',
+        dontCacheBustURLsMatching: /\.[0-9a-f]{8}\./,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/storage\.googleapis\.com\/workbox-cdn\/.*/i,
@@ -28,6 +30,28 @@ export default defineConfig({
               },
               cacheableResponse: {
                 statuses: [0, 200]
+              }
+            }
+          },
+          {
+            urlPattern: /questions_i18n\.json$/,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'content-cache',
+              expiration: {
+                maxEntries: 5,
+                maxAgeSeconds: 60 * 60 * 24 // 24 hours
+              }
+            }
+          },
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|svg|webp)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'image-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
               }
             }
           }
