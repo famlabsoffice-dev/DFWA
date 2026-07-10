@@ -51,6 +51,12 @@
 
 ## AUSGEFÜHRTE SCHRITTE (Protokoll)
 
+### Instanz 2026-07-10 (WebSocket-Härtung M3)
+- [x] **Backend-Härtung**: `battleSync.js` um Grace-Period (5s) für Reconnects und State-Caching erweitert.
+- [x] **Client-Härtung**: `battle-manager.js` mit verbesserter Reconnection-Strategie und RTT-Messung (`ping_rtt`) ausgestattet.
+- [x] **UX-Verbesserung**: Toast-Benachrichtigungen für Verbindungsstatus-Änderungen ("LINK_RECOVERY", "LINK_RESTORED") verfeinert.
+- [x] **Build-Validierung**: Erfolgreicher Produktions-Build (`pnpm build`) und Bestehen der Multiplayer-Regressionstests.
+
 ### Instanz 2026-07-10 (Social-System S3 Finalisierung)
 - [x] **Backend-Erweiterung**: `/api/social/pending-requests/:userId` Endpoint implementiert zur Abfrage ausstehender Anfragen.
 - [x] **API-Client Update**: `searchPlayers`, `fetchPendingRequests` und `acceptFriendRequest` in `api-client.js` integriert.
@@ -220,8 +226,9 @@
 - **Ziel**: Implementierung einer Freundesliste zur direkten Herausforderung.
 - **Status**: Erfolgreich abgeschlossen. Suche, Anfragen und Akzeptieren-Logik voll funktionsfähig und im UI integriert.
 
-### 4. Real-Time Sync & WebSocket Hardening (M3) [GEPLANT]
+### 4. Real-Time Sync & WebSocket Hardening (M3) [ERLEDIGT]
 - **Ziel**: Härtung der Echtzeit-Synchronisation via WebSockets.
+- **Status**: Erfolgreich abgeschlossen. Reconnection-Logik, RTT-Messung und Grace-Period für Reconnects implementiert.
 
 ---
 

@@ -1,6 +1,5 @@
 import { io } from 'socket.io-client';
 import { UIManager } from './ui-manager.js';
-import { GameLogic } from './game-logic.js';
 
 export const BattleManager = {
   socket: null,
@@ -9,75 +8,98 @@ export const BattleManager = {
   rtt: 0,
   playerId: null,
   playerName: null,
+  reconnectAttempts: 0,
+  maxReconnectAttempts: 5,
 
   init(baseUrl, playerId, playerName) {
     if (this.socket) return;
 
     this.playerId = playerId;
     this.playerName = playerName;
-    this.socket = io(baseUrl);
+    
+    // Enhanced Socket.io configuration for hardening
+    this.socket = io(baseUrl, {
+      reconnection: true,
+      reconnectionAttempts: this.maxReconnectAttempts,
+      reconnectionDelay: 1000,
+      reconnectionDelayMax: 5000,
+      timeout: 20000,
+      transports: ['websocket', 'polling'] // Prefer websocket
+    });
 
     this.socket.on('connect', () => {
-      console.log('Connected to Battle Server');
+      console.log('LINK_ESTABLISHED: SECURE_CHANNEL_OPEN');
+      this.reconnectAttempts = 0;
       this.updateConnectionStatus(true);
       this.startPing();
-    });
-
-    this.socket.on('player_joined', ({ playerId: joinedPlayerId, activePlayers }) => {
-      console.log(`Player joined: ${joinedPlayerId}`);
-      this.updateLobbyUI(activePlayers);
-    });
-
-    this.socket.on('opponent_action', ({ playerId: opponentId, action }) => {
-      console.log(`Opponent ${opponentId} action:`, action);
-      this.handleOpponentAction(action);
-    });
-
-    this.socket.on('opponent_sync', ({ playerId: opponentId, state: opponentState }) => {
-      console.log(`Opponent ${opponentId} state:`, opponentState);
-      this.updateOpponentHUD(opponentState);
-    });
-
-    this.socket.on('sabotage', ({ type, duration, attackerId }) => {
-      console.log(`SABOTAGE RECEIVED: ${type} from ${attackerId}`);
-      this.handleSabotage(type, duration);
-    });
-
-    this.socket.on('player_left', ({ socketId, activePlayers }) => {
-      console.log(`Opponent left: ${socketId}`);
-      this.updateLobbyUI(activePlayers);
-    });
-
-    this.socket.on('disconnect', (reason) => {
-      console.log('Disconnected from Battle Server:', reason);
-      this.updateConnectionStatus(false);
-      this.stopPing();
       
-      if (reason === 'io server disconnect') {
-        this.socket.connect();
-      }
-    });
-
-    this.socket.on('connect_error', (error) => {
-      console.error('Connection Error:', error);
-      this.updateConnectionStatus(false);
-      UIManager.showToast('LINK_ERROR: RETRYING...', 'error');
-    });
-
-    this.socket.on('reconnect_attempt', (attempt) => {
-      console.log(`Reconnection attempt #${attempt}`);
-      UIManager.showToast(`LINK_RECOVERY: ATTEMPT_${attempt}`, 'warning');
-    });
-
-    this.socket.on('reconnect', () => {
-      UIManager.showToast('LINK_RESTORED', 'success');
+      // Auto-rejoin if we were in a battle
       if (this.currentBattleId) {
         this.joinBattle(this.currentBattleId);
       }
     });
 
-    this.socket.on('pong', () => {
-      this.rtt = Date.now() - this.lastPingTime;
+    this.socket.on('player_joined', ({ playerId: joinedPlayerId, playerName: joinedName, activePlayers }) => {
+      console.log(`ENTITY_JOINED: ${joinedName} (${joinedPlayerId})`);
+      if (joinedPlayerId !== this.playerId) {
+        UIManager.showToast(`NEW_ENTITY: ${joinedName}`, 'info');
+      }
+      this.updateLobbyUI(activePlayers);
+    });
+
+    this.socket.on('opponent_action', ({ playerId: opponentId, action }) => {
+      this.handleOpponentAction(action);
+    });
+
+    this.socket.on('opponent_sync', ({ playerId: opponentId, state: opponentState }) => {
+      this.updateOpponentHUD(opponentState);
+    });
+
+    this.socket.on('sabotage', ({ type, duration, attackerId }) => {
+      this.handleSabotage(type, duration);
+    });
+
+    this.socket.on('player_disconnected', ({ playerId: discId }) => {
+      console.warn(`ENTITY_LINK_LOST: ${discId}`);
+      if (discId !== this.playerId) {
+        UIManager.showToast('OPPONENT_LINK_LOST: WAITING...', 'warning');
+      }
+    });
+
+    this.socket.on('player_left', ({ playerId: leftId, activePlayers }) => {
+      console.log(`ENTITY_TERMINATED: ${leftId}`);
+      this.updateLobbyUI(activePlayers);
+    });
+
+    this.socket.on('disconnect', (reason) => {
+      console.error('LINK_TERMINATED:', reason);
+      this.updateConnectionStatus(false);
+      this.stopPing();
+      
+      if (reason === 'io server disconnect') {
+        // Server kicked us, try to reconnect manually
+        this.socket.connect();
+      }
+    });
+
+    this.socket.on('connect_error', (error) => {
+      console.error('LINK_ERROR:', error.message);
+      this.updateConnectionStatus(false);
+      this.reconnectAttempts++;
+      UIManager.showToast(`LINK_ERROR: RETRY_${this.reconnectAttempts}`, 'error');
+    });
+
+    this.socket.on('reconnect_attempt', (attempt) => {
+      console.log(`LINK_RECOVERY: ATTEMPT_${attempt}`);
+      UIManager.showToast(`LINK_RECOVERY: ATTEMPT_${attempt}`, 'warning');
+    });
+
+    this.socket.on('reconnect', () => {
+      UIManager.showToast('LINK_RESTORED', 'success');
+    });
+
+    this.socket.on('pong_rtt', (clientTs) => {
+      this.rtt = Date.now() - clientTs;
       this.updateLatencyUI();
     });
   },
@@ -93,7 +115,7 @@ export const BattleManager = {
   updateLobbyUI(activePlayers = []) {
     const countEl = document.getElementById('lobby-player-count');
     if (countEl) {
-      countEl.innerText = `ACTIVE_USERS: ${activePlayers.length}`;
+      countEl.innerText = `ACTIVE_ENTITIES: ${activePlayers.length}`;
     }
     
     const oppHud = document.getElementById('opponent-hud');
@@ -135,7 +157,7 @@ export const BattleManager = {
 
   handleSabotage(type, duration) {
     if (type === 'timer_drain') {
-      UIManager.showToast('SYSTEM BREACH: TIMER DRAINED!', 'error');
+      UIManager.showToast('SYSTEM_BREACH: TIMER_DRAINED!', 'error');
       window.dispatchEvent(new CustomEvent('sabotage_timer', { detail: { duration } }));
     }
     
@@ -149,8 +171,9 @@ export const BattleManager = {
   startPing() {
     this.stopPing();
     this.pingInterval = setInterval(() => {
-      this.lastPingTime = Date.now();
-      this.socket.emit('ping');
+      if (this.socket && this.socket.connected) {
+        this.socket.emit('ping_rtt', Date.now());
+      }
     }, 2000);
   },
 
@@ -165,14 +188,10 @@ export const BattleManager = {
     const latencyEl = document.getElementById('latency-display');
     if (latencyEl) {
       latencyEl.innerText = `RTT: ${this.rtt}MS`;
-      if (this.rtt < 50) latencyEl.style.color = 'var(--neon)';
-      else if (this.rtt < 150) latencyEl.style.color = 'var(--warning)';
+      if (this.rtt < 80) latencyEl.style.color = 'var(--neon)';
+      else if (this.rtt < 200) latencyEl.style.color = 'var(--warning)';
       else latencyEl.style.color = 'var(--error)';
     }
-  },
-
-  generateChallengeCode() {
-    return Math.random().toString(36).substring(2, 8).toUpperCase();
   },
 
   joinBattle(battleId) {
@@ -182,8 +201,6 @@ export const BattleManager = {
     }
     
     this.currentBattleId = battleId;
-    UIManager.showToast(`JOINING_BATTLE: ${battleId}`, 'info');
-    
     this.socket.emit('join_battle', { 
       battleId, 
       playerId: this.playerId,
@@ -191,14 +208,8 @@ export const BattleManager = {
     });
   },
 
-  createChallenge() {
-    const code = this.generateChallengeCode();
-    this.joinBattle(code);
-    return code;
-  },
-
   sendAction(action) {
-    if (!this.socket || !this.currentBattleId || !this.playerId) return;
+    if (!this.socket || !this.socket.connected || !this.currentBattleId) return;
     this.socket.emit('battle_action', { 
       battleId: this.currentBattleId, 
       playerId: this.playerId, 
@@ -208,10 +219,10 @@ export const BattleManager = {
 
   lastSync: 0,
   syncState(state) {
-    if (!this.socket || !this.currentBattleId || !this.playerId) return;
+    if (!this.socket || !this.socket.connected || !this.currentBattleId) return;
     
     const now = Date.now();
-    if (now - this.lastSync < 200) return;
+    if (now - this.lastSync < 250) return; // Throttled to 4/s
     this.lastSync = now;
 
     this.socket.emit('sync_state', { 
