@@ -27,6 +27,12 @@
 
 ## AUSGEFÜHRTE SCHRITTE (Protokoll)
 
+### Instanz 2026-07-10 (Startbildschirm-Buttons & Lobby-Wiring)
+- [x] **Lobby-Navigation**: `show-lobby-btn` und `hide-lobby-btn` funktional angebunden.
+- [ ] **Leaderboard-Navigation**: `show-leaderboard-btn` und `hide-leaderboard-btn` funktional angebunden.
+- [ ] **Lobby-Funktionen**: `start-challenge-btn` und `live-battle-btn` implementiert.
+- [ ] **Resume-Logik**: `resume-btn` an Session-State gekoppelt.
+
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
 - [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.
 - [x] **Build-Sync (K3)**: Clean-Build verifiziert.

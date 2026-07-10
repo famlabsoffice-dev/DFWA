@@ -129,6 +129,16 @@ function initStartScreen() {
     bind('close-system-btn', () => { document.getElementById('modal-overlay').style.display = 'none'; });
     bind('modal-close-btn', () => { document.getElementById('modal-overlay').style.display = 'none'; });
     
+    // Lobby Navigation
+    bind('show-lobby-btn', () => {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById('battle-lobby').classList.add('active');
+    });
+    bind('hide-lobby-btn', () => {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById('start-screen').classList.add('active');
+    });
+
     // Mode Buttons
     document.querySelectorAll('.mode-btn').forEach(btn => {
         const handleMode = (e) => {
