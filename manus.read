@@ -230,3 +230,15 @@
 - Lesbarkeit: Alle UI-Elemente wurden für augenschonende Nutzung auf Mobile-Displays skaliert.
 - Backend-Sync: HMAC-basierte Score-Übermittlung ist aktiv und mit dem Server-Protokoll synchronisiert.
 - UI/UX Feedback: Visuelles Feedback-System (U1) mit Glitch-Effekten und Preloading gehärtet.
+
+### Instanz 2026-07-10 (Recovery & Stabilisierung)
+- [x] **Wiederherstellung**: Stabiler Zustand von Commit `c72261f` (Test-Phase 1: Startbildschirm-Interaktion verifiziert) wiederhergestellt.
+- [x] **Rollback-Dateien**: `app.js`, `index.html`, `style.css` und `scripts/` auf funktionierenden Stand zurückgesetzt.
+- [x] **Validierung**: `pnpm build` und Integrationstests erfolgreich durchgeführt.
+- [x] **Status**: Startbildschirm-Interaktion ist wiederhergestellt und stabil.
+
+
+### Instanz 2026-07-10 (QA-Strategie & Dokumentation)
+- [x] **Strategie-Entwicklung**: `QA_GUIDE.md` erstellt, um zukünftige Instabilitäten zu vermeiden.
+- [x] **Dokumentations-Upgrade**: Regeln für effektive `manus.read`-Nutzung und "Atomic Changes" definiert.
+- [x] **Sicherungs-Protokoll**: Obligatorische Validierungskette (Build -> Test -> Commit) als Standard etabliert.

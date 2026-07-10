@@ -1,42 +1,11 @@
 /**
- * DFWA - Core Application Logic (RADICAL REWRITE)
- * Focus: PWA Integrity, Cache-Busting, Button Reliability
+ * DFWA - Core Application Logic
+ * Integrates high-quality question catalogs and fixes UI interactions.
  */
-
-import { GameLogic } from './scripts/game-logic.js';
-import { GameModes, ModeConfig } from './scripts/game-modes.js';
-import { UIManager } from './scripts/ui-manager.js';
-import { StorageManager } from './scripts/storage.js';
-import { BattleManager } from './scripts/battle-manager.js';
-import { APIClient } from './scripts/api-client.js';
-import { AchievementManager } from './scripts/achievement-manager.js';
-import { AudioManager } from './scripts/audio-manager.js';
-
-// PWA Update Logic - Force update on new version
-async function initPWAUpdate() {
-    if ('serviceWorker' in navigator) {
-        try {
-            const { registerSW } = await import('virtual:pwa-register');
-            registerSW({
-                onNeedRefresh() {
-                    if (confirm('NEUE SYSTEM-VERSION VERFÜGBAR. JETZT AKTUALISIEREN?')) {
-                        location.reload(true);
-                    }
-                },
-                onOfflineReady() {
-                    console.log('SYSTEM_OFFLINE_READY');
-                },
-            });
-        } catch (e) {
-            console.warn('PWA_REGISTRATION_FAILED', e);
-        }
-    }
-}
 
 const state = {
     playerName: localStorage.getItem('dfwa_player_name') || 'GUEST',
-    selectedCategory: 'Gegenteil',
-    selectedMode: GameModes.CLASSIC,
+    selectedCategory: 'Gegenteil', // Default category from JSON
     questions: [],
     currentQuestionIndex: 0,
     score: 0,
@@ -44,21 +13,99 @@ const state = {
     streak: 0,
     timer: 15,
     timerInterval: null,
-    availableCategories: [],
-    seed: Math.floor(Math.random() * 1000000),
-    secret: 'DFWA_SYSTEM_SECURE_2026'
+    availableCategories: []
 };
 
 async function loadQuestions() {
     try {
-        const response = await fetch(`./questions_i18n.json?cb=${Date.now()}`);
+        const response = await fetch('./questions_i18n.json');
         const data = await response.json();
+        
+        // Extract unique categories
         state.availableCategories = [...new Set(data.map(q => q.cat))];
+        console.log("Loaded categories:", state.availableCategories);
+        
         return data;
     } catch (error) {
         console.error("Failed to load questions:", error);
         return [];
     }
+}
+
+function initStartScreen() {
+    console.log("Initializing DFWA Core...");
+    initPWAUpdate();
+    
+    // Disable glitches as requested
+    const eyeContainer = document.getElementById('eye-bg-container');
+    if (eyeContainer) {
+        eyeContainer.style.animation = 'none';
+        eyeContainer.style.filter = 'none';
+    }
+    
+    const coreEye = document.getElementById('core-eye');
+    if (coreEye) {
+        coreEye.style.animation = 'none';
+    }
+
+    updateNameDisplay();
+
+    // Härtung der Event-Listener für Mobile/Touch
+    const handleInteraction = (e) => {
+        const target = e.target.closest('button');
+        if (!target) return;
+
+        console.log(`Interaction detected on: ${target.id || 'anonymous button'}`);
+        
+        // Vibration für haptisches Feedback bei jedem Button-Klick
+        if ('vibrate' in navigator) navigator.vibrate(10);
+
+        if (target.id === 'category-modal-btn') {
+            showCategoryModal();
+        } else if (target.id === 'add-player-btn') {
+            handleAddPlayer();
+        } else if (target.id === 'start-btn') {
+            startGame();
+        } else if (target.id === 'close-system-btn') {
+            const overlay = document.getElementById('modal-overlay');
+            if (overlay) overlay.style.display = 'none';
+            // Härtung: Alle Screens explizit deaktivieren
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('start-screen').classList.add('active');
+        }
+    };
+
+    // Nutze sowohl 'pointerup' als auch 'click' für maximale Kompatibilität
+    document.body.addEventListener('pointerup', (e) => {
+        // Verhindere Doppel-Trigger, wenn click auch gefeuert wird
+        if (e.pointerType === 'touch' || e.pointerType === 'mouse') {
+            handleInteraction(e);
+        }
+    });
+
+    // Fallback für Browser ohne PointerEvents
+    if (!window.PointerEvent) {
+        document.body.addEventListener('click', handleInteraction);
+    }
+
+    // Remove redundant Server Room button from start screen if it exists
+    const startLeaderboardBtn = document.getElementById('start-show-leaderboard-btn');
+    if (startLeaderboardBtn) {
+        startLeaderboardBtn.remove();
+    }
+
+    // Initial load of questions to populate categories
+    loadQuestions().then(allQuestions => {
+        window.allQuestions = allQuestions; // Global cache
+        if (state.availableCategories.length > 0 && !state.availableCategories.includes(state.selectedCategory)) {
+            state.selectedCategory = state.availableCategories[0];
+            const display = document.getElementById('current-category-display');
+            if (display) display.textContent = state.selectedCategory.toUpperCase();
+        }
+    });
+
+    // UI Heartbeat for Name Sync
+    setInterval(updateNameDisplay, 500);
 }
 
 function updateNameDisplay() {
@@ -67,10 +114,18 @@ function updateNameDisplay() {
         const el = document.getElementById(id);
         if (el) {
             if (id === 'stat-player') {
-                const nameSpan = el.querySelector('#player-display') || el;
-                nameSpan.textContent = state.playerName;
+                const nameSpan = el.querySelector('#player-display');
+                if (nameSpan) {
+                    if (nameSpan.textContent !== state.playerName) {
+                        nameSpan.textContent = state.playerName;
+                    }
+                } else {
+                    el.innerHTML = `USER_IDENT//<br /><span id="player-display">${state.playerName}</span>`;
+                }
             } else {
-                el.textContent = state.playerName;
+                if (el.textContent !== state.playerName) {
+                    el.textContent = state.playerName;
+                }
             }
         }
     });
@@ -85,278 +140,129 @@ function handleAddPlayer() {
             localStorage.setItem('dfwa_player_name', state.playerName);
             updateNameDisplay();
             input.value = '';
+            // Visuelles Feedback
             input.placeholder = "USER_REGISTERED";
             setTimeout(() => { input.placeholder = "ENTER_CODENAME"; }, 1500);
-            AudioManager.play('click');
         } else {
+            // Error Feedback
             input.classList.add('error-shake');
             setTimeout(() => input.classList.remove('error-shake'), 500);
         }
     }
 }
 
-function initStartScreen() {
-    console.log("Initializing Start Screen (Hardened)...");
-    
-    // 1. PWA & Audio Init
-    initPWAUpdate();
-    AudioManager.init();
-    updateNameDisplay();
-
-    // 2. Button Binding - Direct & Delegated for 100% Reliability
-    const bind = (id, fn) => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.onclick = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                AudioManager.play('click');
-                fn(e);
-            };
-            // Support touch devices specifically
-            el.ontouchend = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                AudioManager.play('click');
-                fn(e);
-            };
-        }
-    };
-
-    bind('add-player-btn', handleAddPlayer);
-    bind('start-btn', () => startGame(state.selectedCategory));
-    bind('resume-btn', () => {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById('game-screen').classList.add('active');
-        startTimer();
-    });
-    bind('category-modal-btn', openCategoryModal);
-    bind('close-system-btn', () => { document.getElementById('modal-overlay').style.display = 'none'; });
-    bind('modal-close-btn', () => { document.getElementById('modal-overlay').style.display = 'none'; });
-    
-    // Lobby Navigation
-    bind('show-lobby-btn', () => {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById('battle-lobby').classList.add('active');
-    });
-    bind('hide-lobby-btn', () => {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById('start-screen').classList.add('active');
-    });
-
-    // Leaderboard Navigation
-    bind('show-leaderboard-btn', () => {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById('leaderboard-screen').classList.add('active');
-        // Initial load for classic mode
-        const list = document.getElementById('leaderboard-entries');
-        if (list) {
-            APIClient.fetchLeaderboard(window.location.origin, 'classic').then(data => {
-                UIManager.renderLeaderboard(list, data);
-            });
-        }
-    });
-    bind('hide-leaderboard-btn', () => {
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById('battle-lobby').classList.add('active');
-    });
-
-    // Lobby Functions
-    bind('start-challenge-btn', async () => {
-        const input = document.getElementById('challenge-code-input');
-        const code = input ? input.value.trim() : '';
-        if (code) {
-            BattleManager.joinBattle(code);
-            startGame(state.selectedCategory);
-        } else {
-            const newCode = await BattleManager.createChallenge();
-            if (input) input.value = newCode;
-            UIManager.showToast(`CHALLENGE_CREATED: ${newCode}`, 'success');
-        }
-    });
-
-    bind('live-battle-btn', () => {
-        BattleManager.joinBattle('LIVE_POOL');
-        startGame(state.selectedCategory);
-    });
-
-    // Pause Button
-    bind('pause-btn', () => {
-        if (state.timerInterval) {
-            clearInterval(state.timerInterval);
-            UIManager.showToast('GAME_PAUSED', 'warning');
-            const pauseBtn = document.getElementById('pause-btn');
-            if (pauseBtn) pauseBtn.textContent = 'RESUME';
-        } else {
-            startTimer();
-            UIManager.showToast('GAME_RESUMED', 'success');
-            const pauseBtn = document.getElementById('pause-btn');
-            if (pauseBtn) pauseBtn.textContent = 'PAUSE';
-        }
-    });
-
-    // Mode & Leaderboard Filter Buttons
-    document.querySelectorAll('.mode-btn').forEach(btn => {
-        const handleMode = (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const mode = btn.dataset.mode;
-            if (!mode) return;
-
-            const isLeaderboardFilter = btn.closest('#leaderboard-filters');
-            
-            if (isLeaderboardFilter) {
-                // Leaderboard Filter Logic
-                btn.parentElement.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const list = document.getElementById('leaderboard-entries');
-                if (list) {
-                    APIClient.fetchLeaderboard(window.location.origin, mode).then(data => {
-                        UIManager.renderLeaderboard(list, data);
-                    });
-                }
-            } else {
-                // Game Mode Logic
-                document.querySelectorAll('#mode-selector .mode-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                state.selectedMode = mode;
-            }
-            AudioManager.play('click');
-        };
-        btn.onclick = handleMode;
-        btn.ontouchend = handleMode;
-    });
-
-    // Profile Trigger
-    bind('stat-id', async () => {
-        const playerId = localStorage.getItem('dfwa_player_id');
-        const profile = await APIClient.fetchProfile(window.location.origin, playerId);
-        UIManager.showProfile(profile || {
-            playerName: state.playerName,
-            score: localStorage.getItem('dfwa_high_score') || 0,
-            wins: 0,
-            losses: 0,
-            league: 'BRONZE',
-            elo: 1000
-        });
-    });
-
-    // 3. Question Preloading
-    loadQuestions().then(allQuestions => {
-        window.allQuestions = allQuestions;
-    });
-
-    // 4. BattleManager Init
-    const playerId = localStorage.getItem('dfwa_player_id') || `ID_${Math.random().toString(36).slice(2, 9).toUpperCase()}`;
-    localStorage.setItem('dfwa_player_id', playerId);
-    BattleManager.init(window.location.origin, playerId, state.playerName);
-
-    // 5. Initial Sync
-    if (navigator.onLine) {
-        APIClient.syncProfile(window.location.origin, {
-            playerId,
-            playerName: state.playerName,
-            score: localStorage.getItem('dfwa_high_score') || 0,
-            wins: 0,
-            losses: 0,
-            league: 'BRONZE',
-            elo: 1000,
-            achievements: []
-        }, state.secret);
-    }
-}
-
-function openCategoryModal() {
+function showCategoryModal() {
     const overlay = document.getElementById('modal-overlay');
+    const title = document.getElementById('modal-title');
     const list = document.getElementById('category-modal-list');
+    const text = document.getElementById('modal-text');
+    
     if (overlay && list) {
-        UIManager.showModal("SELECT_OPERATIONAL_REALM", "");
-        list.style.display = 'grid';
-        list.innerHTML = '';
+        title.textContent = "SELECT_OPERATIONAL_REALM";
+        text.textContent = "Choose your data sector:";
+        list.style.display = "grid";
+        list.innerHTML = ''; 
+        
         state.availableCategories.forEach(cat => {
             const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.textContent = cat.toUpperCase();
-            btn.onclick = (e) => {
+            btn.className = 'mode-btn';
+            if (cat === state.selectedCategory) btn.classList.add('active');
+            btn.innerHTML = `<strong>${cat.toUpperCase()}</strong><small>DATA_SECTOR_${cat.slice(0,3).toUpperCase()}</small>`;
+            
+            // Beschleunigte Auswahl für Mobile
+            const selectCat = (e) => {
                 e.preventDefault();
-                startGame(cat);
+                e.stopPropagation();
+                state.selectedCategory = cat;
+                const display = document.getElementById('current-category-display');
+                if (display) display.textContent = cat.toUpperCase();
+                overlay.style.display = 'none';
+                if ('vibrate' in navigator) navigator.vibrate(20);
             };
+            
+            btn.addEventListener('pointerup', selectCat);
+            btn.addEventListener('click', selectCat);
             list.appendChild(btn);
         });
+        
         overlay.style.display = 'flex';
     }
 }
 
-async function startGame(category) {
-    state.selectedCategory = category;
-    if (!window.allQuestions) window.allQuestions = await loadQuestions();
+function startGame() {
+    console.log("Attempting to start game...");
+    if (!window.allQuestions) {
+        console.warn("Questions not loaded yet. Retrying...");
+        loadQuestions().then(allQuestions => {
+            window.allQuestions = allQuestions;
+            if (window.allQuestions) startGame();
+        });
+        return;
+    }
     
-    state.questions = GameLogic.shuffle(
-        window.allQuestions.filter(q => q.cat === category),
-        state.seed
-    );
+    state.questions = window.allQuestions.filter(q => q.cat === state.selectedCategory);
+    if (state.questions.length === 0) {
+        console.error("No questions found for category:", state.selectedCategory);
+        state.questions = window.allQuestions.slice(0, 20); // Fallback
+    }
 
-    const config = ModeConfig[state.selectedMode] || ModeConfig.classic;
-    state.lives = config.initialLives;
-    state.timer = config.initialTimer;
-    state.score = 0;
-    state.streak = 0;
+    // Shuffle questions
+    state.questions.sort(() => Math.random() - 0.5);
+    
     state.currentQuestionIndex = 0;
-
-    document.getElementById('modal-overlay').style.display = 'none';
+    state.score = 0;
+    state.lives = 3;
+    state.streak = 0;
+    
+    // Härtung: Alle Screens explizit deaktivieren, bevor der neue aktiviert wird
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById('game-screen').classList.add('active');
     
-    updateHUD();
-    BattleManager.syncState({ score: state.score, streak: state.streak });
-    AudioManager.startMusic();
     showNextQuestion();
-    
-    // Show resume button for future use
-    const resumeBtn = document.getElementById('resume-btn');
-    if (resumeBtn) resumeBtn.style.display = 'block';
-}
-
-function updateHUD() {
-    UIManager.setText('hud-score', `${state.score}_PTS`);
-    UIManager.setText('lives-display', state.lives);
 }
 
 function showNextQuestion() {
-    if (state.lives <= 0 || state.currentQuestionIndex >= state.questions.length) {
+    if (state.currentQuestionIndex >= state.questions.length || state.lives <= 0) {
         endGame();
         return;
     }
-
-    const q = state.questions[state.currentQuestionIndex];
-    UIManager.setText('cat-display', `SECTOR: ${state.selectedCategory.toUpperCase()}`);
-    UIManager.setText('question-text', q.text.de || q.text);
     
-    const container = document.getElementById('options-container');
-    if (container) {
-        container.innerHTML = '';
+    const q = state.questions[state.currentQuestionIndex];
+    // Nutze sowohl question-text als auch question-box für maximale Kompatibilität
+    const questionBox = document.getElementById('question-box') || document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const catDisplay = document.getElementById('cat-display');
+    
+    if (catDisplay) catDisplay.textContent = `SECTOR: ${state.selectedCategory.toUpperCase()}`;
+    if (questionBox) questionBox.textContent = q.text.de || q.text;
+    
+    if (optionsContainer) {
+        optionsContainer.innerHTML = '';
         const options = q.options.de || q.options;
         options.forEach((opt, index) => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
             btn.textContent = opt;
-            const submit = (e) => {
+            
+            const submitAnswer = (e) => {
                 e.preventDefault();
                 handleAnswer(index === q.correct);
             };
-            btn.onclick = submit;
-            btn.ontouchend = submit;
-            container.appendChild(btn);
+            
+            btn.addEventListener('pointerup', submitAnswer);
+            btn.addEventListener('click', submitAnswer);
+            optionsContainer.appendChild(btn);
         });
     }
+    
     startTimer();
 }
 
 function startTimer() {
     clearInterval(state.timerInterval);
-    const config = ModeConfig[state.selectedMode] || ModeConfig.classic;
-    state.timer = config.initialTimer;
+    state.timer = 15;
     updateTimerUI();
+    
     state.timerInterval = setInterval(() => {
         state.timer -= 0.1;
         if (state.timer <= 0) {
@@ -368,95 +274,108 @@ function startTimer() {
 }
 
 function updateTimerUI() {
-    const config = ModeConfig[state.selectedMode] || ModeConfig.classic;
     const bar = document.getElementById('timer-bar');
     const text = document.getElementById('timer-text');
-    if (bar) bar.style.width = `${(state.timer / config.initialTimer) * 100}%`;
+    if (bar) bar.style.width = `${(state.timer / 15) * 100}%`;
     if (text) text.textContent = `${Math.ceil(state.timer)}S`;
-    AudioManager.updateMusicSpeed(state.timer, config.initialTimer);
 }
 
 function handleAnswer(isCorrect) {
     clearInterval(state.timerInterval);
-    const config = ModeConfig[state.selectedMode] || ModeConfig.classic;
-
+    
     if (isCorrect) {
-        if ('vibrate' in navigator) navigator.vibrate(50);
-        state.score += Math.round(GameLogic.calculateScore(state.timer, state.streak + 1) * config.scoreMultiplier);
+        state.score += 100 + (state.streak * 10);
         state.streak++;
+        if ('vibrate' in navigator) navigator.vibrate(50);
         showFeedback(true);
-        BattleManager.sendAction({ type: 'correct', score: state.score });
-        if (state.streak >= 5) {
-            BattleManager.sendAction({ type: 'sabotage', sabotageType: 'timer_drain', duration: 5 });
-            UIManager.showToast("SABOTAGE_DEPLOYED!", "warning");
-        }
     } else {
-        if ('vibrate' in navigator) navigator.vibrate([100, 50, 100]);
         state.lives--;
         state.streak = 0;
+        if ('vibrate' in navigator) navigator.vibrate([100, 50, 100]);
         showFeedback(false);
-        BattleManager.sendAction({ type: 'error', score: state.score });
     }
     
-    updateHUD();
-    setTimeout(() => {
-        state.currentQuestionIndex++;
-        showNextQuestion();
-    }, 1000);
+    document.getElementById('hud-score').textContent = `${state.score}_PTS`;
+    document.getElementById('lives-display').textContent = state.lives;
+    
+    state.currentQuestionIndex++;
+    setTimeout(showNextQuestion, 1000);
 }
 
 function showFeedback(isCorrect) {
-    const eye = document.getElementById('cyber-eye');
-    const overlay = document.getElementById('sabotage-overlay');
-    if (eye) {
-        eye.src = isCorrect ? './assets/images/ack_cyber_eye_green.webp' : './assets/images/ack_cyber_eye_red.webp';
-        eye.classList.add('feedback-pulse');
-        setTimeout(() => eye.classList.remove('feedback-pulse'), 800);
-    }
-    if (!isCorrect && overlay) {
-        overlay.classList.add('sabotage-active');
-        setTimeout(() => overlay.classList.remove('sabotage-active'), 500);
+    const screen = document.getElementById('feedback-screen');
+    const msg = document.getElementById('feedback-msg');
+    const eyeBase = document.getElementById('feedback-eye-base');
+    
+    if (screen && msg && eyeBase) {
+        // Dynamische Bildauswahl basierend auf Korrektheit
+        const correctImages = [
+            './assets/images/ack_victory.webp',
+            './assets/images/ack_eye_wink.webp',
+            './assets/images/ack_hypnotic_opening.webp'
+        ];
+        const wrongImages = [
+            './assets/images/ack_defeat.webp',
+            './assets/images/ack_eye_skeptical.webp',
+            './assets/images/ack_interference_glitch.webp',
+            './assets/images/ack_panic_hamster.webp'
+        ];
+
+        const selectedImage = isCorrect 
+            ? correctImages[Math.floor(Math.random() * correctImages.length)]
+            : wrongImages[Math.floor(Math.random() * wrongImages.length)];
+
+        eyeBase.src = selectedImage;
+        msg.textContent = isCorrect ? "ACCESS_GRANTED" : "CONNECTION_LOST";
+        msg.style.color = isCorrect ? "var(--neon)" : "var(--error)";
+        
+        screen.classList.add('active');
+        
+        if (isCorrect) {
+            eyeBase.classList.add('zoom-anim');
+            if (navigator.vibrate) navigator.vibrate(50);
+        } else {
+            if (navigator.vibrate) navigator.vibrate([100, 50, 100]);
+        }
+
+        setTimeout(() => {
+            screen.classList.remove('active');
+            eyeBase.classList.remove('zoom-anim');
+        }, 1200);
     }
 }
 
-async function endGame() {
-    clearInterval(state.timerInterval);
-    AudioManager.stopMusic();
+function endGame() {
+    const overlay = document.getElementById('modal-overlay');
+    const title = document.getElementById('modal-title');
+    const text = document.getElementById('modal-text');
+    const list = document.getElementById('category-modal-list');
     
-    const high_score = parseInt(localStorage.getItem('dfwa_high_score') || '0');
-    const isNewHighscore = state.score > high_score;
-    if (isNewHighscore) {
-        localStorage.setItem('dfwa_high_score', state.score);
-        UIManager.launchConfetti();
+    if (overlay) {
+        title.textContent = "SESSION_TERMINATED";
+        text.textContent = `FINAL_SCORE: ${state.score}_PTS | SECTOR: ${state.selectedCategory}`;
+        if (list) list.style.display = "none";
+        overlay.style.display = 'flex';
     }
-
-    const payload = await GameLogic.generateAuthPayload(
-        localStorage.getItem('dfwa_player_id'),
-        state.score,
-        0, 0, // Wins/Losses placeholder
-        state.selectedMode,
-        state.secret
-    );
-    
-    APIClient.submitScore(window.location.origin, payload);
-    UIManager.showModal(
-        isNewHighscore ? "NEW_RECORD_ESTABLISHED" : "SESSION_TERMINATED",
-        `FINAL_SCORE: ${state.score}_PTS`,
-        isNewHighscore ? "var(--neon)" : "var(--error)"
-    );
-
-    setTimeout(() => {
-        document.getElementById('modal-overlay').style.display = 'none';
-        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-        document.getElementById('start-screen').classList.add('active');
-    }, 3000);
 }
 
-// Global Initialization
-document.addEventListener('DOMContentLoaded', initStartScreen);
-window.addEventListener('load', () => {
-    // Force immediate PWA registration check
+function initPWAUpdate() {
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js').catch(() => {});
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            console.log("SYSTEM: NEW_VERSION_DETECTED_RELOADING");
+            // Optionale Benachrichtigung vor dem Reload
+            const banner = document.createElement('div');
+            banner.style.cssText = `
+                position: fixed; top: 0; left: 0; width: 100%; 
+                background: var(--neon); color: #000; 
+                padding: 10px; text-align: center; font-weight: bold; z-index: 9999;
+            `;
+            banner.textContent = "UPDATING_CORE_SYSTEM...";
+            document.body.appendChild(banner);
+            
+            setTimeout(() => window.location.reload(), 1500);
+        });
     }
-});
+}
+
+document.addEventListener('DOMContentLoaded', initStartScreen);

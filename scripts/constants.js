@@ -6,9 +6,6 @@ export const API_ENDPOINTS = {
   ADMIN_ERROR_LOGS: '/api/admin/error-logs',
   ANALYTICS: '/api/analytics',
   METRICS: '/api/metrics',
-  FRIEND_REQUEST: '/api/social/friend-request',
-  FRIEND_ACCEPT: '/api/social/friend-accept',
-  FRIENDS: '/api/social/friends/'
 };
 
 export const STORAGE_KEYS = {

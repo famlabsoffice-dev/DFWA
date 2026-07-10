@@ -33,21 +33,12 @@ export const APIClient = {
       const res = await fetch(`${baseUrl}${API_ENDPOINTS.LEADERBOARD}?limit=${limit}&mode=${mode}`);
       if (res.ok) {
         const data = await res.json();
-        // Lokales Backup für Offline-Vorschau
-        localStorage.setItem(`dfwa_leaderboard_cache_${mode}`, JSON.stringify(data));
-        return data;
+        // Support both old array format and new object format for backward compatibility
+        return Array.isArray(data) ? data : data.entries;
       }
       throw new Error(`HTTP_${res.status}`);
     } catch (e) {
       this.reportError(baseUrl, { context: 'fetchLeaderboard', message: e.message });
-      
-      // Offline-Fallback aus Cache
-      const cachedData = localStorage.getItem(`dfwa_leaderboard_cache_${mode}`);
-      if (cachedData) {
-        console.warn('Using cached leaderboard data (offline)');
-        return JSON.parse(cachedData);
-      }
-      
       throw new Error('SERVER_UNAVAILABLE', { cause: e });
     }
   },
@@ -139,17 +130,16 @@ export const APIClient = {
   },
   async syncProfile(baseUrl, profileData, secret) {
     try {
-      const ts = Date.now();
       const msg = JSON.stringify({
         playerId: profileData.playerId,
-        ts,
+        ts: Date.now(),
         data: profileData
       });
       const auth = await this.generateHMAC(msg, secret);
       const res = await fetch(`${baseUrl}/api/profile/sync`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...profileData, auth, ts }),
+        body: JSON.stringify({ ...profileData, auth, ts: Date.now() }),
       });
       return res.ok;
     } catch (e) {
@@ -165,30 +155,5 @@ export const APIClient = {
     } catch (e) {
       return null;
     }
-  },
-  async sendFriendRequest(baseUrl, senderId, receiverId, secret) {
-    const msg = JSON.stringify({ senderId, receiverId });
-    const auth = await this.generateHMAC(msg, secret);
-    const res = await fetch(`${baseUrl}${API_ENDPOINTS.FRIEND_REQUEST}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ senderId, receiverId, auth }),
-    });
-    return await res.json();
-  },
-  async acceptFriendRequest(baseUrl, requestId, receiverId, secret) {
-    const msg = JSON.stringify({ requestId, receiverId });
-    const auth = await this.generateHMAC(msg, secret);
-    const res = await fetch(`${baseUrl}${API_ENDPOINTS.FRIEND_ACCEPT}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ requestId, receiverId, auth }),
-    });
-    return await res.json();
-  },
-  async fetchFriends(baseUrl, userId) {
-    const res = await fetch(`${baseUrl}${API_ENDPOINTS.FRIENDS}${userId}`);
-    if (res.ok) return await res.json();
-    return [];
   }
 };
