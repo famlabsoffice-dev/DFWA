@@ -177,5 +177,36 @@ export const APIClient = {
     } catch (e) {
       return [];
     }
+  },
+  async searchPlayers(baseUrl, query, excludeId) {
+    try {
+      const res = await fetch(`${baseUrl}/api/social/search-players?query=${encodeURIComponent(query)}&excludeId=${excludeId}`);
+      if (res.ok) return await res.json();
+      return [];
+    } catch (e) {
+      return [];
+    }
+  },
+  async fetchPendingRequests(baseUrl, userId) {
+    try {
+      const res = await fetch(`${baseUrl}/api/social/pending-requests/${userId}`);
+      if (res.ok) return await res.json();
+      return [];
+    } catch (e) {
+      return [];
+    }
+  },
+  async acceptFriendRequest(baseUrl, requestId, receiverId, secret) {
+    try {
+      const auth = await this.generateHMAC(JSON.stringify({ requestId, receiverId }), secret);
+      const res = await fetch(`${baseUrl}/api/social/friend-accept`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ requestId, receiverId, auth }),
+      });
+      return res.ok;
+    } catch (e) {
+      return false;
+    }
   }
 };

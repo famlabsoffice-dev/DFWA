@@ -600,6 +600,21 @@ app.get('/api/social/friends/:userId', async (req, res) => {
   }
 });
 
+// List pending friend requests
+app.get('/api/social/pending-requests/:userId', async (req, res) => {
+  const { userId } = req.params;
+  const sql = `
+    SELECT fr.id as requestId, fr.sender_id as playerId, l.playerName, l.elo, l.league 
+    FROM friend_requests fr 
+    JOIN leaderboard l ON fr.sender_id = l.playerId 
+    WHERE fr.receiver_id = ? AND fr.status = 'PENDING'
+  `;
+  db.all(sql, [userId], (err, rows) => {
+    if (err) return res.status(500).json({ error: 'Database error' });
+    res.json(rows || []);
+  });
+});
+
 // Search for players to add as friends
 app.get('/api/social/search-players', async (req, res) => {
   const { query, excludeId } = req.query;

@@ -51,6 +51,13 @@
 
 ## AUSGEFÜHRTE SCHRITTE (Protokoll)
 
+### Instanz 2026-07-10 (Social-System S3 Finalisierung)
+- [x] **Backend-Erweiterung**: `/api/social/pending-requests/:userId` Endpoint implementiert zur Abfrage ausstehender Anfragen.
+- [x] **API-Client Update**: `searchPlayers`, `fetchPendingRequests` und `acceptFriendRequest` in `api-client.js` integriert.
+- [x] **UI-Härtung**: Echtzeit-Suche (Debounced) und Container für ausstehende Anfragen in `index.html` und `ui-manager.js` hinzugefügt.
+- [x] **Interaktions-Wiring**: Event-Handling für Suche, Add und Accept in `app.js` vervollständigt.
+- [x] **Build-Validierung**: Erfolgreicher Produktions-Build (`pnpm build`) durchgeführt.
+
 ### Instanz 2026-07-10 (Social S3 - Teilschritt 1)
 - [x] **Backend-Search**: API-Endpunkt `/api/social/search-players` in `server.js` implementiert.
 - [x] **Daten-Integrität**: Suche schließt den anfragenden Spieler (`excludeId`) aus und ist auf 5 Ergebnisse limitiert.
@@ -209,14 +216,14 @@
 - **Ziel**: Reaktivierung der Integration-Tests und 100% grüne Pipeline.
 - **Status**: Erfolgreich abgeschlossen.
 
-### 3. Friend-List & Social Interaction (S3) [IN ARBEIT]
+### 3. Friend-List & Social Interaction (S3) [ERLEDIGT]
 - **Ziel**: Implementierung einer Freundesliste zur direkten Herausforderung.
-- **Fortschritt**: Backend-Suche implementiert. Nächster Schritt: UI für Suche und Anfragen.
+- **Status**: Erfolgreich abgeschlossen. Suche, Anfragen und Akzeptieren-Logik voll funktionsfähig und im UI integriert.
 
 ### 4. Real-Time Sync & WebSocket Hardening (M3) [GEPLANT]
 - **Ziel**: Härtung der Echtzeit-Synchronisation via WebSockets.
 
 ---
 
-**Status:** PWA Ready. Mobile Gameplay validiert. Button-Handling [STABILISIERT].
-**Zuletzt aktualisiert:** 10.07.2026 - 20:30 GMT+2
+**Status:** PWA Ready. Social System [ONLINE]. Mobile Gameplay validiert.
+**Zuletzt aktualisiert:** 10.07.2026 - 21:00 GMT+2

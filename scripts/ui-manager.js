@@ -68,6 +68,64 @@ export const UIManager = {
     });
   },
 
+  renderSearchResults(container, results) {
+    if (!container) return;
+    container.innerHTML = '';
+    if (results.length === 0) {
+      container.innerHTML = '<div style="padding:10px; color:rgba(0,255,0,0.5);">NO_PLAYERS_FOUND</div>';
+      return;
+    }
+    results.forEach(player => {
+      const div = document.createElement('div');
+      div.className = 'leaderboard-entry';
+      div.style.padding = '10px';
+      div.style.marginBottom = '5px';
+      div.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+          <div>
+            <div style="color:var(--neon); font-weight:bold;">${player.playerName}</div>
+            <div style="font-size:0.7rem; color:var(--cyber-blue);">${player.league} [${player.elo}]</div>
+          </div>
+          <button class="option-btn add-friend-btn" data-id="${player.playerId}" style="width:auto; padding:5px 15px;">ADD</button>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  },
+
+  renderPendingRequests(container, requests) {
+    if (!container) return;
+    container.innerHTML = '';
+    if (requests.length === 0) {
+      container.style.display = 'none';
+      return;
+    }
+    container.style.display = 'block';
+    const title = document.createElement('div');
+    title.style.color = 'var(--warning)';
+    title.style.fontSize = '0.7rem';
+    title.style.marginBottom = '10px';
+    title.textContent = 'PENDING_INCOMING_LINK_REQUESTS:';
+    container.appendChild(title);
+
+    requests.forEach(req => {
+      const div = document.createElement('div');
+      div.className = 'leaderboard-entry';
+      div.style.padding = '10px';
+      div.style.marginBottom = '5px';
+      div.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+          <div>
+            <div style="color:var(--neon); font-weight:bold;">${req.playerName}</div>
+            <div style="font-size:0.7rem; color:var(--cyber-blue);">${req.league} [${req.elo}]</div>
+          </div>
+          <button class="option-btn accept-friend-btn" data-request-id="${req.requestId}" style="width:auto; padding:5px 15px; border-color:var(--neon); color:var(--neon);">ACCEPT</button>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  },
+
   renderLeaderboard(entriesDiv, data) {
     if (!entriesDiv) return;
     entriesDiv.replaceChildren();

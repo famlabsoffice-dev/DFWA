@@ -91,6 +91,10 @@ function initStartScreen() {
             hideLobby(); // Zurück zur Lobby
         } else if (target.id === 'send-request-btn') {
             handleSendFriendRequest();
+        } else if (target.classList.contains('add-friend-btn')) {
+            handleSendFriendRequest(target.dataset.id);
+        } else if (target.classList.contains('accept-friend-btn')) {
+            handleAcceptFriendRequest(target.dataset.requestId);
         } else if (target.classList.contains('mode-btn')) {
             // Update mode filter visually and reload
             document.querySelectorAll('#leaderboard-filters .mode-btn').forEach(b => b.classList.remove('active'));
@@ -127,20 +131,26 @@ function initStartScreen() {
     const loadSocialData = async () => {
         const friendListDiv = document.getElementById('friend-list');
         const friendCountSpan = document.getElementById('friend-count');
+        const pendingContainer = document.getElementById('pending-requests-container');
         const playerId = localStorage.getItem('dfwa_player_id');
         
         try {
+            // Load Friends
             const friends = await APIClient.listFriends(window.location.origin, playerId);
             UIManager.renderFriends(friendListDiv, friends);
             if (friendCountSpan) friendCountSpan.textContent = friends.length;
+
+            // Load Pending Requests
+            const pending = await APIClient.fetchPendingRequests(window.location.origin, playerId);
+            UIManager.renderPendingRequests(pendingContainer, pending);
         } catch (err) {
             console.error("SOCIAL_SYNC_FAILED", err);
         }
     };
 
-    const handleSendFriendRequest = async () => {
+    const handleSendFriendRequest = async (explicitId = null) => {
         const input = document.getElementById('friend-id-input');
-        const receiverId = input.value.trim();
+        const receiverId = explicitId || input.value.trim();
         const senderId = localStorage.getItem('dfwa_player_id');
         
         if (!receiverId) return;
@@ -148,11 +158,51 @@ function initStartScreen() {
         const success = await APIClient.sendFriendRequest(window.location.origin, senderId, receiverId, state.secret);
         if (success) {
             UIManager.showToast("REQUEST_SENT", "neon");
-            input.value = '';
+            if (!explicitId) input.value = '';
+            // Clear search results if any
+            const resultsContainer = document.getElementById('search-results-container');
+            if (resultsContainer) resultsContainer.innerHTML = '';
+            const searchInput = document.getElementById('friend-search-input');
+            if (searchInput) searchInput.value = '';
         } else {
             UIManager.showToast("LINK_FAILED", "error");
         }
     };
+
+    const handleAcceptFriendRequest = async (requestId) => {
+        const playerId = localStorage.getItem('dfwa_player_id');
+        const success = await APIClient.acceptFriendRequest(window.location.origin, requestId, playerId, state.secret);
+        if (success) {
+            UIManager.showToast("LINK_ESTABLISHED", "neon");
+            await loadSocialData();
+        } else {
+            UIManager.showToast("ACCEPT_FAILED", "error");
+        }
+    };
+
+    const handleFriendSearch = async (e) => {
+        const query = e.target.value.trim();
+        const resultsContainer = document.getElementById('search-results-container');
+        const playerId = localStorage.getItem('dfwa_player_id');
+
+        if (query.length < 2) {
+            resultsContainer.innerHTML = '';
+            return;
+        }
+
+        const results = await APIClient.searchPlayers(window.location.origin, query, playerId);
+        UIManager.renderSearchResults(resultsContainer, results);
+    };
+
+    // Add search listener
+    const searchInput = document.getElementById('friend-search-input');
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => handleFriendSearch(e), 300);
+        });
+    }
 
     // Nutze 'pointerdown' für schnellste Reaktion auf Mobile, 'click' als stabilen Fallback
     document.body.addEventListener('pointerdown', (e) => {
