@@ -139,6 +139,23 @@ function initStartScreen() {
         document.getElementById('start-screen').classList.add('active');
     });
 
+    // Leaderboard Navigation
+    bind('show-leaderboard-btn', () => {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById('leaderboard-screen').classList.add('active');
+        // Initial load for classic mode
+        const list = document.getElementById('leaderboard-entries');
+        if (list) {
+            APIClient.fetchLeaderboard(window.location.origin, 'classic').then(data => {
+                UIManager.renderLeaderboard(list, data);
+            });
+        }
+    });
+    bind('hide-leaderboard-btn', () => {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        document.getElementById('battle-lobby').classList.add('active');
+    });
+
     // Mode Buttons
     document.querySelectorAll('.mode-btn').forEach(btn => {
         const handleMode = (e) => {
