@@ -74,6 +74,8 @@ function initStartScreen() {
             handleAddPlayer();
         } else if (target.id === 'start-btn') {
             startGame();
+        } else if (target.id === 'live-test-btn') {
+            handleLiveTest();
         } else if (target.id === 'show-lobby-btn') {
             showLobby();
         } else if (target.id === 'hide-lobby-btn') {
@@ -199,6 +201,36 @@ function initStartScreen() {
 
     // UI Heartbeat for Name Sync
     setInterval(updateNameDisplay, 500);
+}
+
+async function handleLiveTest() {
+    const btn = document.getElementById('live-test-btn');
+    const originalText = btn.innerText;
+    btn.innerText = 'TESTING...';
+    btn.disabled = true;
+    
+    try {
+        const response = await fetch('/api/health');
+        const data = await response.json();
+        if (data.status === 'ok') {
+            btn.style.borderColor = 'var(--neon)';
+            btn.style.color = 'var(--neon)';
+            btn.innerText = 'CORE_ONLINE';
+        } else {
+            throw new Error('Offline');
+        }
+    } catch (err) {
+        btn.style.borderColor = 'var(--error)';
+        btn.style.color = 'var(--error)';
+        btn.innerText = 'CORE_OFFLINE';
+    } finally {
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.borderColor = 'var(--warning)';
+            btn.style.color = 'var(--warning)';
+            btn.disabled = false;
+        }, 2000);
+    }
 }
 
 function updateNameDisplay() {

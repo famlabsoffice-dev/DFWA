@@ -130,6 +130,11 @@
 - [x] **Mode-Switching**: Logik zur visuellen Aktualisierung der Modus-Buttons gehärtet.
 - [x] **Build-Validierung**: Erfolgreicher `pnpm build` durchgeführt.
 
+### Instanz 2026-07-10 (Live Test Button T1)
+- [x] **UI-Integration**: `LIVE_TEST_CORE` Button in `index.html` hinzugefügt (Warn-Farbe Gelb).
+- [x] **Navigation-Handler**: `handleLiveTest` in `app.js` implementiert mit visueller Status-Rückmeldung (Testing -> Online/Offline).
+- [x] **Build-Validierung**: `pnpm build` erfolgreich nach UI-Änderungen.
+
 ---
 
 ## AKTUELLE AUFTRAGSLISTE (STRIKTE REIHENFOLGE)
