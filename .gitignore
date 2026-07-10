@@ -1,9 +1,0 @@
-node_modules/
-server/leaderboard.db
-server/server.log
-dist/
-public/
-.env
-.env.local
-.env.*.local
-assets/*-[A-Za-z0-9_]*.js
