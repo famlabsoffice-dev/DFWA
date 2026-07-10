@@ -180,18 +180,33 @@ function initStartScreen() {
         startGame(state.selectedCategory);
     });
 
-    // Mode Buttons
+    // Mode & Leaderboard Filter Buttons
     document.querySelectorAll('.mode-btn').forEach(btn => {
         const handleMode = (e) => {
             e.preventDefault();
             e.stopPropagation();
             const mode = btn.dataset.mode;
-            if (mode) {
-                document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+            if (!mode) return;
+
+            const isLeaderboardFilter = btn.closest('#leaderboard-filters');
+            
+            if (isLeaderboardFilter) {
+                // Leaderboard Filter Logic
+                btn.parentElement.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const list = document.getElementById('leaderboard-entries');
+                if (list) {
+                    APIClient.fetchLeaderboard(window.location.origin, mode).then(data => {
+                        UIManager.renderLeaderboard(list, data);
+                    });
+                }
+            } else {
+                // Game Mode Logic
+                document.querySelectorAll('#mode-selector .mode-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 state.selectedMode = mode;
-                AudioManager.play('click');
             }
+            AudioManager.play('click');
         };
         btn.onclick = handleMode;
         btn.ontouchend = handleMode;
