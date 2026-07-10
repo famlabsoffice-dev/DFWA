@@ -231,11 +231,13 @@
 - Backend-Sync: HMAC-basierte Score-Übermittlung ist aktiv und mit dem Server-Protokoll synchronisiert.
 - UI/UX Feedback: Visuelles Feedback-System (U1) mit Glitch-Effekten und Preloading gehärtet.
 
-### Instanz 2026-07-10 (Recovery & Stabilisierung)
-- [x] **Wiederherstellung**: Stabiler Zustand von Commit `c72261f` (Test-Phase 1: Startbildschirm-Interaktion verifiziert) wiederhergestellt.
-- [x] **Rollback-Dateien**: `app.js`, `index.html`, `style.css` und `scripts/` auf funktionierenden Stand zurückgesetzt.
-- [x] **Validierung**: `pnpm build` und Integrationstests erfolgreich durchgeführt.
-- [x] **Status**: Startbildschirm-Interaktion ist wiederhergestellt und stabil.
+### Instanz 2026-07-10 (Deep Recovery & Hard-Rollback)
+- [x] **Status-Analyse**: Identifikation massiver Instabilitäten in den Versionen vom 08.07. bis 10.07. trotz hohem Credit-Verbrauch.
+- [x] **Deep Rollback**: Vollständige Wiederherstellung des Code-Zustands vom **07.07.2026 (Commit 294b308)**. Dies ist die letzte nachweislich stabile Version vor den fehlerhaften Reparaturzyklen.
+- [x] **Live-Validierung**: `pnpm build` und Integrationstests (PWA/Service Worker) erfolgreich abgeschlossen.
+- [x] **Sofortiger Push**: Alle Änderungen wurden unmittelbar nach der Wiederherstellung in das Repository gepusht.
+- [x] **Status**: System ist auf den stabilen Stand vom 07.07. zurückgesetzt. Alle fehlerhaften Änderungen der letzten 48 Stunden wurden im Code-Base neutralisiert.
+
 
 
 ### Instanz 2026-07-10 (QA-Strategie & Dokumentation)
