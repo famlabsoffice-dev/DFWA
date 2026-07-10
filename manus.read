@@ -38,6 +38,8 @@
 - [x] **Instanz-Sicherung**: Erster Teilschritt verifiziert und für Kontinuität gesichert.
 - [x] **Automatisierte Funktionsprüfung**: Alle 7 Test-Suites (44 Tests) erfolgreich bestanden. Core-Logik, Multiplayer-Regression und Integration verifiziert.
 - [x] **Integritäts-Validierung**: Storage-Manager HMAC-Validierung durch Tests bestätigt (INTEGRITY_FAILURE Simulation erfolgreich).
+- [x] **API-Audit**: `APIClient` auf HMAC-Integrität geprüft. `generateHMAC` nutzt `crypto.subtle` (SHA-256) für manipulationssichere Kommunikation.
+- [x] **Signatur-Verifizierung**: `updateLeaderboard`, `syncProfile` und Social-Endpunkte sind korrekt durch HMAC-Payloads (`ts`, `auth`) abgesichert.
 
 ### Instanz 2026-07-08 (Korrektur-Zyklus K1-K3)
 - [x] **Index-Bereinigung**: Gehashte Build-Artefakte entfernt.
