@@ -51,6 +51,11 @@
 
 ## AUSGEFÜHRTE SCHRITTE (Protokoll)
 
+### Instanz 2026-07-10 (Startbildschirm-Optimierung - Teilschritt 2)
+- [x] **Layout-Stabilität**: Stat-Overlays (`USER_IDENT`, `CORE_LINK`, etc.) mittels `clamp()` und `backdrop-filter` für alle Displaygrößen stabilisiert und optisch aufgewertet.
+- [x] **Responsive Design**: Positionierung der Overlays von 15% auf 8% Randabstand optimiert für bessere Ausnutzung des Viewports auf schmalen Geräten.
+- [x] **Interaktivität**: Subtiles Scale-Feedback beim Tippen auf Stat-Overlays hinzugefügt.
+
 ### Instanz 2026-07-10 (Startbildschirm-Optimierung - Teilschritt 1)
 - [x] **Visuals**: Reaktivierung und Optimierung der CSS-Animationen für das "Cyber-Eye" (Pulse, Float, Scan).
 - [x] **JS-Cleanup**: Entfernung der Code-Blockaden, die Animationen am Start unterdrückt haben.
