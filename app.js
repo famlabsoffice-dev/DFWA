@@ -36,16 +36,15 @@ function initStartScreen() {
     console.log("Initializing DFWA Core...");
     initPWAUpdate();
     
-    // Disable glitches as requested
+    // Re-enable and optimize core animations for 1A quality
     const eyeContainer = document.getElementById('eye-bg-container');
     if (eyeContainer) {
-        eyeContainer.style.animation = 'none';
-        eyeContainer.style.filter = 'none';
+        eyeContainer.style.animation = 'irisPulse 8s ease-in-out infinite, irisFloat 12s ease-in-out infinite';
     }
     
     const coreEye = document.getElementById('core-eye');
     if (coreEye) {
-        coreEye.style.animation = 'none';
+        coreEye.style.animation = 'irisScan 15s linear infinite';
     }
 
     updateNameDisplay();

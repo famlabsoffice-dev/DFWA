@@ -51,6 +51,11 @@
 
 ## AUSGEFÜHRTE SCHRITTE (Protokoll)
 
+### Instanz 2026-07-10 (Startbildschirm-Optimierung - Teilschritt 1)
+- [x] **Visuals**: Reaktivierung und Optimierung der CSS-Animationen für das "Cyber-Eye" (Pulse, Float, Scan).
+- [x] **JS-Cleanup**: Entfernung der Code-Blockaden, die Animationen am Start unterdrückt haben.
+- [x] **Build-Validierung**: Erfolgreicher Build nach CSS/JS-Anpassungen.
+
 ### Instanz 2026-07-10 (WebSocket-Härtung M3)
 - [x] **Backend-Härtung**: `battleSync.js` um Grace-Period (5s) für Reconnects und State-Caching erweitert.
 - [x] **Client-Härtung**: `battle-manager.js` mit verbesserter Reconnection-Strategie und RTT-Messung (`ping_rtt`) ausgestattet.
