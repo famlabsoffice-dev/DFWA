@@ -33,9 +33,6 @@
     <script type="module" src="./app.js"></script>
     <link rel="preload" href="./assets/images/ack_cyber_eye.webp" as="image">
     <link rel="preload" href="./assets/images/ack_category_realm.webp" as="image">
-    <link rel="preload" href="./assets/images/ack_cyber_eye.webp" as="image">
-  <script type="module" crossorigin src="./assets/main-B4VhbFAM.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-CI57xuHV.css">
 </head>
   <body>
     <noscript
@@ -115,12 +112,6 @@
             SELECT_CATEGORY: <span id="current-category-display">CLASSIC</span>
           </button>
           <div
-            id="category-selector"
-            class="mode-selector-container"
-            aria-label="Kategorie auswählen"
-            style="display: none;"
-          ></div>
-          <div
             id="mode-selector"
             class="mode-selector-container"
             aria-label="Modus auswählen"
@@ -130,9 +121,6 @@
           </button>
           <button id="start-btn" class="option-btn start-btn" aria-label="Spiel starten">
             INIT_PROTOCOL
-          </button>
-          <button id="live-test-btn" class="option-btn" style="border-color: var(--warning); color: var(--warning); margin-top: 10px;">
-            LIVE_TEST_CORE
           </button>
           <button
             class="option-btn battle-btn"
@@ -193,30 +181,6 @@
             </div>
             <div id="season-progress-container" style="width: 100%; height: 4px; background: rgba(0,255,255,0.1); border-radius: 2px;">
               <div id="season-progress-bar" style="width: 0%; height: 100%; background: var(--cyber-blue); box-shadow: 0 0 5px var(--cyber-blue);"></div>
-            </div>
-          </div>
-
-          <div id="social-dashboard" class="cyber-card" style="margin-bottom: 20px; border: 1px solid var(--neon); padding: 10px; font-size: 0.7rem;">
-            <div style="display: flex; justify-content: space-between; color: var(--neon); margin-bottom: 10px; border-bottom: 1px solid rgba(0,255,0,0.2); padding-bottom: 5px;">
-              <span>SOCIAL_LINK // FRIENDS</span>
-              <span id="friend-count">0</span>
-            </div>
-            <div id="friend-list" style="max-height: 100px; overflow-y: auto; margin-bottom: 10px;">
-              <div style="text-align:center; color:rgba(0,255,0,0.5); padding: 10px;">SCANNING_FOR_ALLIES...</div>
-            </div>
-            
-            <div id="pending-requests-container" style="margin-bottom: 10px; display: none; border: 1px dashed var(--warning); padding: 5px;">
-              <!-- Pending requests populated by JS -->
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 5px;">
-              <input type="text" id="friend-search-input" class="cyber-input" style="font-size: 0.6rem; padding: 5px; border-color: var(--cyber-blue);" placeholder="SEARCH_PLAYERS">
-              <div id="search-results-container" style="max-height: 80px; overflow-y: auto; background: rgba(0,0,0,0.2);"></div>
-              
-              <div style="display: flex; gap: 5px; opacity: 0.6; margin-top: 5px;">
-                <input type="text" id="friend-id-input" class="cyber-input" style="font-size: 0.5rem; padding: 3px; border-color: var(--neon);" placeholder="OR_DIRECT_ID">
-                <button id="send-request-btn" class="option-btn" style="font-size: 0.5rem; padding: 3px 8px; width: auto; border-color: var(--neon); color: var(--neon);">LINK</button>
-              </div>
             </div>
           </div>
           <div id="leaderboard-list" class="cyber-list">
