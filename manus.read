@@ -19,3 +19,20 @@ Die PWA-Integrität wurde verifiziert und gefundene Pfad-Diskrepanzen wurden beh
 ## Nächste Schritte
 - Die Änderungen wurden in das Repository gepusht.
 - Die PWA sollte nun auf allen mobilen Endgeräten korrekt das Icon bei der Installation anzeigen.
+
+
+## AUSGEFÜHRTE SCHRITTE (2026-07-14)
+- Repository erneut analysiert für Startbildschirm-Funktionstest.
+- Abhängigkeiten mit `pnpm install` installiert.
+- Entwicklungs-Server auf Port 5173 gestartet.
+- Funktionstest des Startbildschirms durchgeführt:
+    - Spieler-Codename "TESTUSER" erfolgreich registriert.
+    - Kategorie "ARTIFICIAL INTELLIGENCE" erfolgreich ausgewählt.
+    - Modus "Time Attack" erfolgreich aktiviert.
+    - Spielstart via "INIT_PROTOCOL" verifiziert.
+- Testbericht `test_report_start_screen.md` erstellt.
+
+## NÄCHSTE SCHRITTE
+- Battle-Lobby Funktionstest.
+- Persistenz-Tests (LocalStorage).
+- Mobile Responsivität prüfen.
