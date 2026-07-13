@@ -130,16 +130,22 @@ export const APIClient = {
   },
   async syncProfile(baseUrl, profileData, secret) {
     try {
+      // BUGFIX: ts wurde vorher zweimal separat via Date.now() erzeugt (einmal fuer
+      // die signierte Nachricht, einmal fuer den gesendeten Body-Wert). Beide Aufrufe
+      // liefern praktisch nie denselben Millisekundenwert, wodurch die Server-seitige
+      // HMAC-Rekonstruktion mit dem falschen ts lief und die Signatur nie passte.
+      // Fix: ts genau einmal erzeugen und in Nachricht + Body wiederverwenden.
+      const ts = Date.now();
       const msg = JSON.stringify({
         playerId: profileData.playerId,
-        ts: Date.now(),
+        ts,
         data: profileData
       });
       const auth = await this.generateHMAC(msg, secret);
       const res = await fetch(`${baseUrl}/api/profile/sync`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...profileData, auth, ts: Date.now() }),
+        body: JSON.stringify({ ...profileData, auth, ts }),
       });
       return res.ok;
     } catch (e) {
@@ -154,59 +160,6 @@ export const APIClient = {
       return null;
     } catch (e) {
       return null;
-    }
-  },
-  async sendFriendRequest(baseUrl, senderId, receiverId, secret) {
-    try {
-      const auth = await this.generateHMAC(JSON.stringify({ senderId, receiverId }), secret);
-      const res = await fetch(`${baseUrl}/api/social/friend-request`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ senderId, receiverId, auth }),
-      });
-      return res.ok;
-    } catch (e) {
-      return false;
-    }
-  },
-  async listFriends(baseUrl, userId) {
-    try {
-      const res = await fetch(`${baseUrl}/api/social/friends/${userId}`);
-      if (res.ok) return await res.json();
-      return [];
-    } catch (e) {
-      return [];
-    }
-  },
-  async searchPlayers(baseUrl, query, excludeId) {
-    try {
-      const res = await fetch(`${baseUrl}/api/social/search-players?query=${encodeURIComponent(query)}&excludeId=${excludeId}`);
-      if (res.ok) return await res.json();
-      return [];
-    } catch (e) {
-      return [];
-    }
-  },
-  async fetchPendingRequests(baseUrl, userId) {
-    try {
-      const res = await fetch(`${baseUrl}/api/social/pending-requests/${userId}`);
-      if (res.ok) return await res.json();
-      return [];
-    } catch (e) {
-      return [];
-    }
-  },
-  async acceptFriendRequest(baseUrl, requestId, receiverId, secret) {
-    try {
-      const auth = await this.generateHMAC(JSON.stringify({ requestId, receiverId }), secret);
-      const res = await fetch(`${baseUrl}/api/social/friend-accept`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ requestId, receiverId, auth }),
-      });
-      return res.ok;
-    } catch (e) {
-      return false;
     }
   }
 };

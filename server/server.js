@@ -42,6 +42,18 @@ if (SYSTEM_SECRET === 'LOCAL_ONLY_UNTRUSTED') {
   );
 }
 
+// BUGFIX (K4): /config/secret wurde entfernt, weil SYSTEM_SECRET (schuetzt auch die
+// Admin-Routen) niemals an den Client ausgeliefert werden darf. Der Client versuchte
+// aber weiterhin, einen Secret ueber diesen Endpoint zu beziehen, scheiterte und fiel
+// auf den hartkodierten Default 'LOCAL_ONLY_UNTRUSTED' zurueck -- der in Produktion nie
+// mit SYSTEM_SECRET uebereinstimmt. Ergebnis: /api/leaderboard und /api/profile/sync
+// gaben dauerhaft 403 zurueck.
+// Fix: separater, aus SYSTEM_SECRET abgeleiteter Client-Token. Er ist sicher genug, um
+// oeffentlich ausgeliefert zu werden (schuetzt weiterhin vor zufaelligem Spam/Tampering),
+// gewaehrt aber KEINEN Zugriff auf die Admin-Routen, die weiterhin den echten
+// SYSTEM_SECRET verlangen.
+const CLIENT_TOKEN = crypto.createHmac('sha256', SYSTEM_SECRET).update('dfwa-client-token-v1').digest('hex');
+
 // Security: Trust proxy for correct IP resolution in rate limiting
 app.set('trust proxy', 1);
 
@@ -179,9 +191,11 @@ db.serialize(() => {
 });
 
 // Routes
-// app.get("/config/secret", (req, res) => {
-//     res.json({ secret: SYSTEM_SECRET });
-// }); // Entfernt, da SYSTEM_SECRET nicht an den Client ausgeliefert werden darf.
+app.get('/config/secret', (req, res) => {
+  // Liefert NICHT SYSTEM_SECRET aus, sondern den davon abgeleiteten CLIENT_TOKEN
+  // (siehe Kommentar oben bei der Konstante). Siehe FEHLERLISTE.md K4.
+  res.json({ secret: CLIENT_TOKEN });
+});
 
 app.get('/api/leaderboard', async (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
@@ -295,9 +309,13 @@ app.post('/api/leaderboard', (req, res) => {
     mode: modeVal,
     ts: tsNum,
   });
-  const expectedAuth = crypto.createHmac('sha256', SYSTEM_SECRET).update(msg).digest('hex');
+  const expectedAuth = crypto.createHmac('sha256', CLIENT_TOKEN).update(msg).digest('hex');
 
-  if (auth !== expectedAuth && auth !== SYSTEM_SECRET) {
+  // BUGFIX (K4): der alte Bypass `auth !== SYSTEM_SECRET` erlaubte, den rohen
+  // Master-Secret direkt als gueltige Signatur einzureichen und hebelte damit den
+  // gesamten Tamper-/Replay-Schutz aus. Entfernt -- nur noch eine gueltige HMAC
+  // gegen CLIENT_TOKEN wird akzeptiert.
+  if (auth !== expectedAuth) {
     return res.status(403).json({ error: 'INVALID_AUTH_SIGNATURE' });
   }
 
@@ -377,8 +395,10 @@ app.post('/api/challenge/verify', (req, res) => {
     const { seed, score, ts, auth } = data;
 
     const msg = JSON.stringify({ seed, score, ts });
+    // Client signiert Challenge-Codes mit CLIENT_TOKEN (siehe K4) -- Server muss
+    // dieselbe Ableitung verwenden, sonst schlaegt jede Challenge-Verifikation fehl.
     const expectedSig = crypto
-      .createHmac('sha256', SYSTEM_SECRET)
+      .createHmac('sha256', CLIENT_TOKEN)
       .update(msg)
       .digest('hex');
 
@@ -439,7 +459,7 @@ app.post('/api/profile/sync', (req, res) => {
     ts,
     data: { playerId, ...profileData }
   });
-  const expectedAuth = crypto.createHmac('sha256', SYSTEM_SECRET).update(msg).digest('hex');
+  const expectedAuth = crypto.createHmac('sha256', CLIENT_TOKEN).update(msg).digest('hex');
 
   if (auth !== expectedAuth) {
     return res.status(403).json({ error: 'INVALID_AUTH' });
@@ -600,38 +620,6 @@ app.get('/api/social/friends/:userId', async (req, res) => {
   }
 });
 
-// List pending friend requests
-app.get('/api/social/pending-requests/:userId', async (req, res) => {
-  const { userId } = req.params;
-  const sql = `
-    SELECT fr.id as requestId, fr.sender_id as playerId, l.playerName, l.elo, l.league 
-    FROM friend_requests fr 
-    JOIN leaderboard l ON fr.sender_id = l.playerId 
-    WHERE fr.receiver_id = ? AND fr.status = 'PENDING'
-  `;
-  db.all(sql, [userId], (err, rows) => {
-    if (err) return res.status(500).json({ error: 'Database error' });
-    res.json(rows || []);
-  });
-});
-
-// Search for players to add as friends
-app.get('/api/social/search-players', async (req, res) => {
-  const { query, excludeId } = req.query;
-  if (!query || query.length < 2) return res.status(400).json({ error: 'QUERY_TOO_SHORT' });
-
-  const sql = `
-    SELECT playerId, playerName, elo, league 
-    FROM leaderboard 
-    WHERE playerName LIKE ? AND playerId != ? 
-    LIMIT 5
-  `;
-  db.all(sql, [`%${query}%`, excludeId || ''], (err, rows) => {
-    if (err) return res.status(500).json({ error: 'Database error' });
-    res.json(rows || []);
-  });
-});
-
 // Dynamische Meta-Tags für Social Sharing
 app.get('/share/:playerId', (req, res) => {
   const { playerId } = req.params;
@@ -674,21 +662,6 @@ app.get('/share/:playerId', (req, res) => {
 app.get(/^\/(?!api).*/, (req, res) => {
   const indexPath = join(distPath, 'index.html');
   res.sendFile(indexPath);
-});
-
-// Health Check Endpoint with diagnostics
-app.get('/api/health', (req, res) => {
-  const diagnostics = {
-    status: 'ok',
-    timestamp: new Date().toISOString(),
-    uptime: process.uptime(),
-    database: 'checking'
-  };
-  
-  db.get('SELECT 1', (err) => {
-    diagnostics.database = err ? 'error' : 'connected';
-    res.json(diagnostics);
-  });
 });
 
 setupBattleSync(io, db);
